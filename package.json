@@ -1,0 +1,20 @@
+{
+  "name": "foco-blog-engine",
+  "version": "1.0.0",
+  "description": "Automated blog post pipeline for tryfoco.com — SEO + GEO optimized for ADHD niche",
+  "private": true,
+  "scripts": {
+    "post": "node create-post.js",
+    "covers": "node regenerate-covers.js",
+    "rebuild-charts": "node rebuild-charts.js",
+    "shorten-titles": "node shorten-titles.js",
+    "fix-links": "node fix-broken-links.js",
+    "llms": "node setup-llms-txt.js"
+  },
+  "dependencies": {
+    "playwright": "^1.45.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

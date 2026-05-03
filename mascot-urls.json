@@ -1,0 +1,26 @@
+{
+  "foco_state_1_presence": {
+    "id": 66,
+    "url": "https://tryfoco.com/wp-content/uploads/2026/05/foco_state_1_presence.png"
+  },
+  "foco_state_2_alignment": {
+    "id": 67,
+    "url": "https://tryfoco.com/wp-content/uploads/2026/05/foco_state_2_alignment.png"
+  },
+  "foco_state_3_focus": {
+    "id": 68,
+    "url": "https://tryfoco.com/wp-content/uploads/2026/05/foco_state_3_focus.png"
+  },
+  "foco_state_4_drift": {
+    "id": 69,
+    "url": "https://tryfoco.com/wp-content/uploads/2026/05/foco_state_4_drift.png"
+  },
+  "foco_state_5_completion": {
+    "id": 70,
+    "url": "https://tryfoco.com/wp-content/uploads/2026/05/foco_state_5_completion.png"
+  },
+  "foco_state_6_pause": {
+    "id": 71,
+    "url": "https://tryfoco.com/wp-content/uploads/2026/05/foco_state_6_pause.png"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "_comment": "Live mapping of FOCO blog slugs to WordPress post IDs. Auto-updated by create-post.js. Reservation status: planned | draft | publish.",
+
+  "pillars": {
+    "adhd-task-paralysis":         { "id": null, "status": "planned", "role": "P1 flagship",   "mascot": "foco_state_6_pause" },
+    "adhd-executive-function":     { "id": null, "status": "planned", "role": "P2 clinical",   "mascot": "foco_state_1_presence" },
+    "how-to-focus-with-adhd":      { "id": null, "status": "planned", "role": "P3 procedural", "mascot": "foco_state_3_focus" },
+    "adhd-for-students":           { "id": null, "status": "planned", "role": "P4 students",   "mascot": "foco_state_3_focus" },
+    "adhd-at-work":                { "id": null, "status": "planned", "role": "P5 work",       "mascot": "foco_state_2_alignment" },
+    "adhd-task-breakdown-apps":    { "id": null, "status": "planned", "role": "P6 conversion", "mascot": "foco_state_5_completion" }
+  },
+
+  "spokes": {
+    "how-to-break-adhd-task-paralysis":   { "id": null, "status": "planned", "pillar": "adhd-task-paralysis" },
+    "adhd-cant-start-anything":           { "id": null, "status": "planned", "pillar": "adhd-task-paralysis" },
+    "task-initiation-deficit-explained":  { "id": null, "status": "planned", "pillar": "adhd-task-paralysis" },
+    "adhd-shutdown-vs-paralysis":         { "id": null, "status": "planned", "pillar": "adhd-task-paralysis" },
+    "procrastination-vs-paralysis":       { "id": null, "status": "planned", "pillar": "adhd-task-paralysis" },
+    "2-minute-rule-adhd":                 { "id": null, "status": "planned", "pillar": "adhd-task-paralysis" },
+
+    "executive-function-skills-list":          { "id": null, "status": "planned", "pillar": "adhd-executive-function" },
+    "working-memory-adhd":                     { "id": null, "status": "planned", "pillar": "adhd-executive-function" },
+    "time-blindness-adhd":                     { "id": null, "status": "planned", "pillar": "adhd-executive-function" },
+    "emotional-regulation-adhd":               { "id": null, "status": "planned", "pillar": "adhd-executive-function" },
+    "adhd-transitions":                        { "id": null, "status": "planned", "pillar": "adhd-executive-function" },
+    "russell-barkley-executive-function-model":{ "id": null, "status": "planned", "pillar": "adhd-executive-function" },
+
+    "pomodoro-for-adhd":      { "id": null, "status": "planned", "pillar": "how-to-focus-with-adhd" },
+    "body-doubling-adhd":     { "id": null, "status": "planned", "pillar": "how-to-focus-with-adhd" },
+    "hyperfocus-adhd":        { "id": null, "status": "planned", "pillar": "how-to-focus-with-adhd" },
+    "brown-noise-adhd":       { "id": null, "status": "planned", "pillar": "how-to-focus-with-adhd" },
+    "adhd-time-blocking":     { "id": null, "status": "planned", "pillar": "how-to-focus-with-adhd" },
+    "best-adhd-fidget-tools": { "id": null, "status": "planned", "pillar": "how-to-focus-with-adhd" },
+
+    "adhd-college-survival-guide": { "id": null, "status": "planned", "pillar": "adhd-for-students" },
+    "adhd-studying-techniques":    { "id": null, "status": "planned", "pillar": "adhd-for-students" },
+    "adhd-test-anxiety":           { "id": null, "status": "planned", "pillar": "adhd-for-students" },
+    "adhd-homework-help-parents":  { "id": null, "status": "planned", "pillar": "adhd-for-students" },
+    "adhd-teen-organization":      { "id": null, "status": "planned", "pillar": "adhd-for-students" },
+    "adhd-accommodations-school":  { "id": null, "status": "planned", "pillar": "adhd-for-students" },
+
+    "managing-adhd-at-work":      { "id": null, "status": "planned", "pillar": "adhd-at-work" },
+    "adhd-remote-work":           { "id": null, "status": "planned", "pillar": "adhd-at-work" },
+    "adhd-job-interview-tips":    { "id": null, "status": "planned", "pillar": "adhd-at-work" },
+    "disclosing-adhd-to-employer":{ "id": null, "status": "planned", "pillar": "adhd-at-work" },
+    "adhd-meetings-strategies":   { "id": null, "status": "planned", "pillar": "adhd-at-work" },
+    "adhd-burnout-symptoms":      { "id": null, "status": "planned", "pillar": "adhd-at-work" },
+
+    "foco-vs-goblin-tools":              { "id": null, "status": "planned", "pillar": "adhd-task-breakdown-apps" },
+    "foco-vs-tiimo":                     { "id": null, "status": "planned", "pillar": "adhd-task-breakdown-apps" },
+    "foco-vs-inflow":                    { "id": null, "status": "planned", "pillar": "adhd-task-breakdown-apps" },
+    "best-task-breakdown-apps-for-adhd": { "id": null, "status": "planned", "pillar": "adhd-task-breakdown-apps" },
+    "best-free-adhd-apps":               { "id": null, "status": "planned", "pillar": "adhd-task-breakdown-apps" },
+    "best-adhd-apps-for-moms":           { "id": null, "status": "planned", "pillar": "adhd-task-breakdown-apps" }
+  },
+
+  "infrastructure": {
+    "adhd-glossary":                  { "id": 106,  "status": "draft",   "type": "DefinedTermSet" },
+    "adhd-research":                  { "id": null, "status": "planned", "type": "Dataset (hub)" },
+    "adhd-task-initiation-research":  { "id": null, "status": "planned", "type": "Article (research synthesis Q1)" },
+    "adhd-stories":                   { "id": null, "status": "planned", "type": "ItemList" }
+  }
+}
