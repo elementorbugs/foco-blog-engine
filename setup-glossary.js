@@ -27,7 +27,7 @@ const DRY = process.argv.includes('--dry-run');
 
 const SOURCE_FILE = path.join(__dirname, 'posts-new', 'page-adhd-glossary.html');
 const COVERS_DIR  = path.join(__dirname, 'covers-new');
-const MASCOT_DIR  = 'C:\\Users\\User\\design foco\\states_1024';
+const MASCOT_DIR  = path.join(__dirname, 'assets', 'mascots');
 
 const C = { bg: '#040208', bg2: '#0a0410', primary: '#7C3AED', primary2: '#A78BFA' };
 

@@ -41,7 +41,7 @@ const auth = Buffer.from(WP_USER + ':' + WP_PASS).toString('base64');
 // ─── CONFIG ──────────────────────────────────────────────────────────────────
 const COVERS_DIR = path.join(__dirname, 'covers-new');
 const POSTS_DIR  = path.join(__dirname, 'posts-new');
-const MASCOT_DIR = 'C:\\Users\\User\\design foco\\states_1024';
+const MASCOT_DIR = path.join(__dirname, 'assets', 'mascots');
 const SLUG_MAP_PATH = path.join(__dirname, 'slug-map.json');
 const TITLE_LIMIT_DB = 58;
 const TITLE_SUFFIX = ' — FOCO';

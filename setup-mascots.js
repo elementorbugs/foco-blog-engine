@@ -25,7 +25,7 @@ const ENV = loadEnv();
 const auth = Buffer.from(ENV.WP_USER + ':' + ENV.WP_APP_PASSWORD).toString('base64');
 const HOST = ENV.WP_HOST;
 
-const MASCOT_DIR = 'C:\\Users\\User\\design foco\\states_1024';
+const MASCOT_DIR = path.join(__dirname, 'assets', 'mascots');
 const URL_MAP_PATH = path.join(__dirname, 'mascot-urls.json');
 const FORCE = process.argv.includes('--force');
 
