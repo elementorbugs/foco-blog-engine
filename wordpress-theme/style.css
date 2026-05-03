@@ -1,0 +1,1078 @@
+/*
+Theme Name: FOCO
+Theme URI: https://focoapp.com/
+Author: FOCO
+Author URI: https://focoapp.com/
+Description: Custom landing-page theme for FOCO — the ADHD focus companion. Pixel-matched to the design prototype, fully editable via ACF, dynamic menu via WP, dynamic logo via Customizer, scoped CSS.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.5
+Requires PHP: 7.4
+License: GPL v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: foco
+Tags: dark, full-width-template, custom-colors, custom-logo, custom-menu, featured-images, threaded-comments, theme-options
+*/
+
+/* =========================================================
+   FOCO LANDING — CSS scoped under .foco-app to avoid bleeding
+   into WordPress admin / other themed pages.
+   ========================================================= */
+
+:root {
+  --foco-bg: #040208;
+  --foco-bg-2: #0a0410;
+  --foco-primary: #7C3AED;
+  --foco-primary-2: #A78BFA;
+  --foco-primary-soft: rgba(124, 58, 237, 0.18);
+  --foco-celebrate: #FB923C;
+  --foco-celebrate-soft: rgba(251, 146, 60, 0.22);
+  --foco-text: #FFFFFF;
+  --foco-muted: #B8B0CC;
+  --foco-muted-2: #7d738f;
+  --foco-card: rgba(255, 255, 255, 0.035);
+  --foco-card-hover: rgba(255, 255, 255, 0.06);
+  --foco-stroke: rgba(167, 139, 250, 0.18);
+  --foco-stroke-strong: rgba(167, 139, 250, 0.4);
+  --foco-max-w: 1200px;
+  --foco-r-sm: 12px;
+  --foco-r: 20px;
+  --foco-r-lg: 28px;
+  /* Aliases used inside .foco-app to keep existing var names readable */
+  --bg: var(--foco-bg);
+  --bg-2: var(--foco-bg-2);
+  --primary: var(--foco-primary);
+  --primary-2: var(--foco-primary-2);
+  --primary-soft: var(--foco-primary-soft);
+  --celebrate: var(--foco-celebrate);
+  --celebrate-soft: var(--foco-celebrate-soft);
+  --text: var(--foco-text);
+  --muted: var(--foco-muted);
+  --muted-2: var(--foco-muted-2);
+  --card: var(--foco-card);
+  --card-hover: var(--foco-card-hover);
+  --stroke: var(--foco-stroke);
+  --stroke-strong: var(--foco-stroke-strong);
+  --max-w: var(--foco-max-w);
+  --r-sm: var(--foco-r-sm);
+  --r: var(--foco-r);
+  --r-lg: var(--foco-r-lg);
+}
+
+/* Reset (scoped) */
+.foco-app, .foco-app *, .foco-app *::before, .foco-app *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.foco-app {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--foco-bg);
+  color: var(--foco-text);
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 70% 50% at 50% -10%, rgba(124, 58, 237, 0.12), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 20%, rgba(167, 139, 250, 0.04), transparent 70%);
+  min-height: 100vh;
+  position: relative;
+}
+
+.foco-app img { max-width: 100%; display: block; height: auto; }
+.foco-app a { color: inherit; text-decoration: none; }
+.foco-app button { font: inherit; cursor: pointer; border: 0; background: 0; color: inherit; }
+
+.foco-app .wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+.foco-app .accent { color: var(--primary-2); }
+.foco-app .muted { color: var(--muted); }
+
+/* Smooth scroll + dark background + anchor offset for fixed nav */
+html {
+  background: var(--foco-bg);
+  width: 100%;
+  overflow-x: hidden;
+  scroll-padding-top: 90px;
+  scroll-behavior: smooth;
+}
+@media (max-width: 900px) {
+  html { scroll-padding-top: 78px; }
+}
+body.foco-page {
+  scroll-behavior: smooth;
+  background: var(--foco-bg);
+  width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* =========== NAV =========== */
+.foco-app .foco-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 18px 0;
+  transition: background 0.3s, backdrop-filter 0.3s, border-color 0.3s;
+  border-bottom: 1px solid transparent;
+}
+.foco-app .foco-nav.scrolled {
+  background: rgba(4, 2, 8, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--stroke);
+}
+.foco-app .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+.foco-app .logo {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 800; font-size: 20px; letter-spacing: -0.02em;
+  color: #fff;
+}
+.foco-app .logo img { max-height: 36px; width: auto; }
+.foco-app .logo-mark {
+  width: 32px; height: 32px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  border-radius: 9px;
+  display: grid; place-items: center;
+  box-shadow: 0 0 24px rgba(124, 58, 237, 0.5);
+}
+.foco-app .logo-mark::after { content: "F"; font-weight: 900; font-size: 18px; }
+.foco-app .nav-links { display: flex; gap: 28px; list-style: none; padding: 0; margin: 0; }
+.foco-app .nav-links a, .foco-app .nav-links li > a {
+  font-size: 14px; font-weight: 500; color: var(--muted);
+  transition: color 0.2s;
+}
+.foco-app .nav-links a:hover { color: var(--text); }
+.foco-app .btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 22px;
+  font-weight: 600; font-size: 14px;
+  border-radius: 999px;
+  transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+}
+.foco-app .btn-primary {
+  background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+  color: #fff;
+  box-shadow: 0 8px 28px rgba(124, 58, 237, 0.45), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+.foco-app .btn-primary:hover { transform: translateY(-2px); filter: brightness(1.08); }
+.foco-app .btn-ghost {
+  border: 1px solid var(--stroke-strong);
+  color: var(--text);
+  background: rgba(255,255,255,0.02);
+}
+.foco-app .btn-ghost:hover { background: rgba(255,255,255,0.06); }
+
+/* =========== HERO =========== */
+.foco-app .hero {
+  position: relative;
+  padding: 160px 0 80px;
+  overflow: hidden;
+}
+.foco-app .hero::before {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 50% 40% at 70% 50%, rgba(124, 58, 237, 0.25), transparent 60%);
+  pointer-events: none;
+}
+.foco-app .hero-inner {
+  display: grid; grid-template-columns: 1.1fr 1fr; gap: 60px; align-items: center;
+  position: relative; z-index: 1;
+}
+.foco-app .eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 14px;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--primary-2);
+  background: var(--primary-soft);
+  border: 1px solid var(--stroke);
+  border-radius: 999px;
+  margin-bottom: 24px;
+}
+.foco-app .eyebrow .dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--primary-2);
+  box-shadow: 0 0 10px var(--primary-2);
+}
+.foco-app h1.hero-h {
+  font-size: clamp(44px, 6vw, 84px);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  margin-bottom: 24px;
+}
+.foco-app h1.hero-h .grad {
+  background: linear-gradient(135deg, #a78bfa 0%, #c4b5fd 50%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 30px rgba(167, 139, 250, 0.4));
+}
+.foco-app .hero-sub {
+  font-size: clamp(16px, 1.4vw, 19px);
+  color: var(--muted);
+  max-width: 520px;
+  margin-bottom: 36px;
+}
+.foco-app .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 28px; }
+.foco-app .store-badges { display: flex; gap: 12px; flex-wrap: wrap; }
+.foco-app .store-badge {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 0 20px; height: 60px;
+  background: linear-gradient(180deg, #1a1a1c 0%, #050507 100%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none; min-width: 180px;
+  position: relative; overflow: hidden;
+}
+.foco-app .store-badge::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.0) 0%, rgba(167, 139, 250, 0) 100%);
+  transition: background 0.3s ease;
+  pointer-events: none;
+}
+.foco-app .store-badge:hover {
+  transform: translateY(-3px);
+  border-color: rgba(167, 139, 250, 0.55);
+  box-shadow: 0 16px 36px rgba(124, 58, 237, 0.40), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+.foco-app .store-badge:hover::before {
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.10) 0%, rgba(124, 58, 237, 0.04) 100%);
+}
+.foco-app .store-icon { flex-shrink: 0; width: 26px; height: 26px; position: relative; z-index: 1; }
+.foco-app .store-badge .text {
+  display: flex; flex-direction: column; gap: 2px; line-height: 1; color: #fff;
+  position: relative; z-index: 1;
+}
+.foco-app .store-badge .small { font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.85); letter-spacing: 0.06em; }
+.foco-app .store-badge .big { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; }
+
+.foco-app .trust-row { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--muted); }
+.foco-app .stars { color: #fbbf24; letter-spacing: 2px; }
+
+.foco-app .hero-visual { position: relative; display: grid; place-items: center; min-height: 480px; }
+.foco-app .hero-orb {
+  position: absolute; width: 460px; height: 460px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.45) 0%, rgba(124, 58, 237, 0.1) 40%, transparent 70%);
+  filter: blur(20px);
+  animation: foco-pulse 4s ease-in-out infinite;
+}
+@keyframes foco-pulse { 0%,100%{ transform:scale(1); opacity:0.7;} 50%{transform:scale(1.1); opacity:1;} }
+.foco-app .hero-mascot {
+  position: relative; width: 380px; max-width: 90%;
+  filter: drop-shadow(0 30px 50px rgba(124, 58, 237, 0.5));
+  animation: foco-float 6s ease-in-out infinite;
+}
+@keyframes foco-float { 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-12px);} }
+.foco-app .sparkles { position: absolute; inset: 0; pointer-events: none; }
+.foco-app .sparkle {
+  position: absolute; width: 6px; height: 6px;
+  background: var(--primary-2); border-radius: 50%;
+  box-shadow: 0 0 12px var(--primary-2);
+  animation: foco-twinkle 3s ease-in-out infinite;
+}
+.foco-app .sparkle:nth-child(1) { top:15%; left:10%; animation-delay:0s; }
+.foco-app .sparkle:nth-child(2) { top:25%; right:15%; animation-delay:0.7s; }
+.foco-app .sparkle:nth-child(3) { bottom:30%; left:8%; animation-delay:1.4s; }
+.foco-app .sparkle:nth-child(4) { top:50%; right:5%; animation-delay:2.1s; width:4px; height:4px; }
+.foco-app .sparkle:nth-child(5) { bottom:15%; right:25%; animation-delay:0.3s; }
+@keyframes foco-twinkle { 0%,100%{ opacity:0.3; transform:scale(0.8);} 50%{ opacity:1; transform:scale(1.2);} }
+
+/* =========== SECTIONS =========== */
+.foco-app section { padding: 120px 0; position: relative; }
+.foco-app .section-eyebrow {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--primary-2);
+  margin-bottom: 16px;
+}
+.foco-app h1, .foco-app h2, .foco-app h3 { text-wrap: balance; }
+.foco-app h2 {
+  font-size: clamp(30px, 4.5vw, 60px);
+  font-weight: 800; line-height: 1.08; letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+.foco-app h2 .grad {
+  background: linear-gradient(135deg, #a78bfa, #7c3aed);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.foco-app .section-sub { font-size: 18px; color: var(--muted); max-width: 600px; margin-bottom: 56px; }
+
+/* =========== HERO MICROCTA =========== */
+.foco-app .hero-microcta {
+  display: inline-block;
+  padding: 10px 18px; margin-bottom: 22px;
+  background: var(--card); border: 1px solid var(--stroke);
+  border-radius: 999px; font-size: 14px; color: var(--muted);
+  line-height: 1.4; max-width: 100%;
+}
+.foco-app .hero-microcta strong { color: var(--text); font-weight: 700; }
+.foco-app .hero-microcta .arrow {
+  display: inline-block; margin-right: 4px;
+  filter: drop-shadow(0 0 8px var(--primary-2));
+}
+
+/* =========== PROBLEM =========== */
+.foco-app .problem-intro { text-align: center; max-width: 720px; margin: 0 auto 64px; }
+.foco-app .problem-intro .layered {
+  font-size: clamp(22px, 2.5vw, 30px);
+  font-weight: 700; line-height: 1.5; letter-spacing: -0.01em;
+}
+.foco-app .problem-intro .layered span { display: block; }
+.foco-app .problem-intro .layered .fade { color: var(--muted); }
+.foco-app .problem-intro .layered .climax { color: var(--primary-2); margin-top: 14px; }
+
+.foco-app .problem-image {
+  position: relative; max-width: 720px; margin: 36px auto 8px;
+  border-radius: var(--r-lg); overflow: hidden;
+  border: 1px solid var(--stroke);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.7), 0 0 50px rgba(124, 58, 237, 0.12);
+  background: #0a0410;
+}
+.foco-app .problem-image img {
+  width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block;
+  filter: contrast(1.04) saturate(0.92) brightness(0.92);
+}
+.foco-app .problem-image::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, rgba(4,2,8,0) 55%, rgba(4,2,8,0.55) 100%);
+}
+.foco-app .problem-image-caption {
+  position: absolute; bottom: 18px; left: 24px; max-width: 55%; z-index: 1;
+  font-size: 13px; font-style: italic;
+  color: rgba(255,255,255,0.85);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.95);
+  line-height: 1.4;
+}
+.foco-app .companion-mascot {
+  position: absolute; bottom: 0; right: 4%; width: 26%; max-width: 220px;
+  z-index: 2; pointer-events: none;
+  filter: drop-shadow(0 18px 28px rgba(0,0,0,0.7)) drop-shadow(0 0 30px rgba(124, 58, 237, 0.45));
+  animation: foco-companion 1.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s both;
+}
+@keyframes foco-companion {
+  0% { transform: translateY(40px) scale(0.5); opacity: 0; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.foco-app .problem-resolution { max-width: 580px; margin: 32px auto 0; text-align: center; }
+.foco-app .problem-resolution .rejected {
+  font-size: 17px; color: var(--muted); margin-bottom: 4px; line-height: 1.5;
+}
+.foco-app .problem-resolution .rejected .strike {
+  text-decoration: line-through;
+  text-decoration-color: rgba(167, 139, 250, 0.55);
+  text-decoration-thickness: 1.8px;
+  color: rgba(255, 255, 255, 0.42); font-weight: 500;
+}
+.foco-app .problem-resolution .truth {
+  font-size: clamp(20px, 2.4vw, 26px);
+  font-weight: 700; color: var(--text);
+  margin-top: 22px; letter-spacing: -0.015em; line-height: 1.35;
+}
+.foco-app .problem-resolution .truth .grad {
+  background: linear-gradient(135deg, #a78bfa, #7c3aed);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+.foco-app .problem-vignettes {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;
+  max-width: 760px; margin: 0 auto;
+}
+.foco-app .vignette {
+  position: relative; padding: 28px 24px 24px;
+  background: var(--card); border: 1px solid var(--stroke);
+  border-radius: 16px;
+  transition: background 0.3s, border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+  display: flex; flex-direction: column; justify-content: space-between;
+  min-height: 180px;
+}
+.foco-app .vignette::before {
+  content: attr(data-num);
+  position: absolute; top: 16px; right: 20px;
+  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+  color: rgba(167, 139, 250, 0.45); z-index: 1;
+}
+.foco-app .vignette::after {
+  content: ""; position: absolute; top: -50px; right: -50px;
+  width: 160px; height: 160px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.22), transparent 70%);
+  opacity: 0; transition: opacity 0.4s; pointer-events: none;
+}
+.foco-app .vignette:hover {
+  background: var(--card-hover);
+  border-color: rgba(167, 139, 250, 0.45);
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.45);
+}
+.foco-app .vignette:hover::after { opacity: 1; }
+.foco-app .vignette-headline {
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 800; letter-spacing: -0.03em; line-height: 1.02;
+  background: linear-gradient(135deg, #ffffff 0%, #c4b5fd 60%, #7c3aed 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  margin: 4px 0 14px; position: relative; z-index: 1;
+}
+.foco-app .vignette-text {
+  font-size: 14px; line-height: 1.55; color: var(--muted);
+  margin: 0; position: relative; z-index: 1;
+}
+.foco-app .vignette-text strong { color: rgba(255, 255, 255, 0.92); font-weight: 600; }
+
+/* =========== INSIGHT =========== */
+.foco-app .insight { text-align: center; }
+.foco-app .insight .insight-inner { max-width: 760px; margin: 0 auto; }
+.foco-app .insight-mascot {
+  width: 280px; margin: 40px auto 0;
+  filter: drop-shadow(0 20px 50px rgba(124, 58, 237, 0.5));
+}
+.foco-app .insight p { font-size: 17px; color: var(--muted); margin-bottom: 16px; }
+.foco-app .tid-box {
+  display: inline-block; margin: 24px auto 0;
+  padding: 28px 44px;
+  background: linear-gradient(180deg, rgba(124, 58, 237, 0.15), rgba(124, 58, 237, 0.05));
+  border: 1px solid var(--stroke-strong); border-radius: var(--r);
+}
+.foco-app .tid-box .label { font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.foco-app .tid-box .name {
+  font-size: clamp(30px, 4vw, 44px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1;
+  background: linear-gradient(135deg, #fff, var(--primary-2));
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.foco-app .bridge { margin-top: 36px; font-size: 18px; color: var(--muted); }
+.foco-app .bridge .arrow-quote {
+  display: inline-block; padding: 14px 22px;
+  background: var(--card); border: 1px solid var(--stroke);
+  border-radius: 14px; font-weight: 600; color: var(--text);
+  margin: 12px 6px 0;
+}
+
+/* =========== SECTION BRIDGE =========== */
+.foco-app .section-bridge {
+  text-align: center; padding: 0 24px 0;
+  position: relative; max-width: 480px; margin: 0 auto;
+}
+.foco-app .section-bridge::before {
+  content: ""; display: block; width: 1px; height: 48px; margin: 0 auto;
+  background: linear-gradient(180deg, transparent 0%, rgba(167, 139, 250, 0.55) 100%);
+}
+.foco-app .bridge-orb {
+  display: inline-block; width: 10px; height: 10px; border-radius: 50%;
+  background: var(--primary-2);
+  box-shadow: 0 0 24px rgba(167, 139, 250, 0.85), 0 0 60px rgba(124, 58, 237, 0.45);
+  margin: 14px auto 0; position: relative;
+}
+.foco-app .bridge-orb::before {
+  content: ""; position: absolute; inset: -10px; border-radius: 50%;
+  background: rgba(167, 139, 250, 0.20);
+  animation: foco-bridge-ring 2.6s ease-out infinite;
+  pointer-events: none;
+}
+.foco-app .bridge-orb::after {
+  content: ""; position: absolute; inset: -16px; border-radius: 50%;
+  border: 1px solid rgba(167, 139, 250, 0.25);
+  animation: foco-bridge-ring 2.6s ease-out 0.4s infinite;
+  pointer-events: none;
+}
+@keyframes foco-bridge-ring {
+  0% { transform: scale(0.4); opacity: 0.9; }
+  100% { transform: scale(3.5); opacity: 0; }
+}
+.foco-app .bridge-text {
+  font-size: 15px; font-style: italic; color: var(--muted);
+  margin: 18px auto 0; max-width: 420px;
+  line-height: 1.55; letter-spacing: 0.005em;
+}
+.foco-app .bridge-text strong { color: var(--text); font-style: normal; font-weight: 600; }
+
+/* =========== SHIFT =========== */
+.foco-app .shift {
+  text-align: center; padding: 80px 0;
+  background: radial-gradient(ellipse 50% 70% at 50% 50%, rgba(124, 58, 237, 0.12), transparent 70%);
+}
+.foco-app .shift-mascot {
+  width: 240px; max-width: 60%;
+  margin: 28px auto 24px; display: block;
+  filter: drop-shadow(0 25px 45px rgba(124, 58, 237, 0.55));
+  animation: foco-float 6s ease-in-out infinite;
+}
+.foco-app .shift-stack {
+  max-width: 720px; margin: 0 auto;
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 600; line-height: 1.5; color: var(--muted);
+}
+.foco-app .shift-stack .strike { text-decoration: line-through; opacity: 0.55; display: block; margin-bottom: 6px; }
+.foco-app .shift-key {
+  display: block; margin-top: 32px;
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 800; letter-spacing: -0.025em; line-height: 1.05;
+  background: linear-gradient(135deg, #fff, var(--primary-2));
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.foco-app .shift-coda {
+  margin-top: 28px; color: var(--muted); font-size: 17px;
+  max-width: 580px; margin-left: auto; margin-right: auto; line-height: 1.6;
+}
+.foco-app .shift-coda strong { color: var(--text); }
+
+/* =========== HOW IT WORKS =========== */
+.foco-app .how-steps {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+  margin-top: 48px; position: relative;
+}
+.foco-app .how-steps::before {
+  content: ""; position: absolute;
+  top: 60px; left: 16%; right: 16%; height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.3), transparent);
+  z-index: 0;
+}
+.foco-app .step { position: relative; z-index: 1; text-align: center; }
+.foco-app .step-num {
+  width: 48px; height: 48px; margin: 0 auto 24px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  border-radius: 50%; display: grid; place-items: center;
+  font-weight: 800; font-size: 18px;
+  box-shadow: 0 0 0 6px rgba(4, 2, 8, 1), 0 8px 24px rgba(124, 58, 237, 0.6);
+}
+.foco-app .phone {
+  position: relative; width: 220px; max-width: 100%; margin: 0 auto 24px;
+  border-radius: 36px; padding: 8px;
+  background: linear-gradient(180deg, #2a1c40, #16091f);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 40px rgba(124, 58, 237, 0.25);
+}
+.foco-app .phone img { width: 100%; border-radius: 28px; display: block; }
+.foco-app .phone::before {
+  content: ""; position: absolute; top: 14px; left: 50%; transform: translateX(-50%);
+  width: 60px; height: 18px; border-radius: 12px; background: #000; z-index: 2;
+}
+.foco-app .step h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+.foco-app .step p { color: var(--muted); font-size: 14px; }
+.foco-app .task-examples {
+  display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+  margin: 14px 0 4px;
+}
+.foco-app .task-chip {
+  padding: 8px 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--stroke);
+  border-radius: 999px; font-size: 13px; color: var(--muted);
+}
+
+/* =========== FEATURE SPOTLIGHTS =========== */
+.foco-app .feature-spot {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  padding: 70px 0; position: relative;
+}
+.foco-app .feature-spot + .feature-spot { border-top: 1px solid rgba(255,255,255,0.04); }
+.foco-app .feature-spot--reverse > .feature-spot-copy { grid-column: 2; }
+.foco-app .feature-spot--reverse > .feature-spot-visual { grid-column: 1; grid-row: 1; }
+.foco-app .feature-spot-copy { max-width: 480px; }
+.foco-app .feature-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 16px;
+  background: var(--card); border: 1px solid var(--stroke-strong);
+  border-radius: 999px; font-size: 13px; font-weight: 600;
+  color: var(--primary-2); margin-bottom: 24px;
+}
+.foco-app .feature-spot h3 {
+  font-size: clamp(34px, 4.2vw, 52px);
+  font-weight: 800; line-height: 1.05; letter-spacing: -0.03em;
+  margin-bottom: 20px; color: var(--text);
+}
+.foco-app .feature-spot h3 .grad {
+  background: linear-gradient(135deg, #a78bfa, #7c3aed);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.foco-app .feature-spot-copy p {
+  font-size: 17px; line-height: 1.55; color: var(--muted); margin-bottom: 28px;
+}
+.foco-app .btn-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 24px; background: #fff; color: #0a0410;
+  border-radius: 999px; font-weight: 600; font-size: 14px;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+.foco-app .btn-pill:hover {
+  transform: translateY(-2px); background: #f3f0ff;
+  box-shadow: 0 12px 30px rgba(167, 139, 250, 0.25);
+}
+.foco-app .feature-spot-visual {
+  position: relative; display: flex; justify-content: center; align-items: center;
+  min-height: 480px;
+}
+.foco-app .feature-spot-visual::before {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 65% at 50% 50%, rgba(124, 58, 237, 0.30), transparent 60%);
+  pointer-events: none; filter: blur(8px);
+}
+.foco-app .feature-spot-phone {
+  position: relative; width: 280px; max-width: 80%;
+  border-radius: 40px; padding: 8px;
+  background: linear-gradient(180deg, #2a1c40, #0a0410);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 50px 90px rgba(0,0,0,0.75), 0 0 80px rgba(124, 58, 237, 0.32);
+  transform: rotate(-8deg); transition: transform 0.5s ease;
+}
+.foco-app .feature-spot-phone img { width: 100%; border-radius: 32px; display: block; }
+.foco-app .feature-spot-phone::before {
+  content: ""; position: absolute; top: 16px; left: 50%; transform: translateX(-50%);
+  width: 60px; height: 18px; border-radius: 12px; background: #000; z-index: 2;
+}
+.foco-app .feature-spot--reverse .feature-spot-phone { transform: rotate(8deg); }
+.foco-app .feature-spot:hover .feature-spot-phone { transform: rotate(-3deg) scale(1.03); }
+.foco-app .feature-spot--reverse:hover .feature-spot-phone { transform: rotate(3deg) scale(1.03); }
+
+/* =========== SOCIAL PROOF =========== */
+.foco-app .proof { text-align: center; }
+.foco-app .stat-row {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  padding: 40px 0; margin: 0 auto 56px;
+  border-top: 1px solid var(--stroke); border-bottom: 1px solid var(--stroke);
+  max-width: 1000px;
+}
+.foco-app .stat .num {
+  font-size: clamp(32px, 4vw, 48px); font-weight: 800;
+  background: linear-gradient(135deg, #fff, var(--primary-2));
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  letter-spacing: -0.03em; line-height: 1;
+}
+.foco-app .stat .label { font-size: 13px; color: var(--muted); margin-top: 8px; }
+
+.foco-app .testi-cards {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+  margin-top: 8px; text-align: left;
+}
+.foco-app .testi-card {
+  position: relative;
+  background: var(--card); border: 1px solid var(--stroke);
+  border-radius: var(--r); overflow: hidden;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+  display: flex; flex-direction: column;
+}
+.foco-app .testi-card:hover {
+  transform: translateY(-4px); border-color: var(--stroke-strong);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.5), 0 0 32px rgba(124, 58, 237, 0.18);
+}
+.foco-app .testi-photo {
+  position: relative; aspect-ratio: 1 / 1;
+  background-size: cover; background-position: center top; background-color: #1a0a2e;
+}
+.foco-app .testi-photo::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 45%, rgba(4,2,8,0.4) 70%, rgba(4,2,8,0.92) 100%);
+}
+.foco-app .testi-photo-overlay { position: absolute; bottom: 12px; left: 14px; right: 14px; z-index: 1; }
+.foco-app .testi-photo-overlay .name {
+  font-size: 16px; font-weight: 700; color: #fff;
+  letter-spacing: -0.01em; margin-bottom: 6px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+}
+.foco-app .testi-photo-overlay .meta {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 3px 8px;
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 999px;
+  font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.92);
+}
+.foco-app .testi-photo-overlay .meta .flag {
+  display: inline-block; padding: 1px 5px;
+  background: rgba(255,255,255,0.14); border-radius: 3px;
+  font-size: 9px; font-weight: 700; letter-spacing: 0.05em;
+}
+.foco-app .testi-quote-block { padding: 14px 16px 18px; flex: 1; }
+.foco-app .testi-quote-block .stars { color: #fbbf24; letter-spacing: 1.5px; font-size: 11px; margin-bottom: 8px; }
+.foco-app .testi-quote-block p { font-size: 13.5px; line-height: 1.5; color: var(--text); }
+.foco-app .testi-quote-block .role {
+  display: block; font-size: 11.5px; color: var(--muted);
+  margin-top: 10px; padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.foco-app .big-stat-card {
+  margin-top: 36px; padding: 56px 32px; text-align: center;
+  background:
+    radial-gradient(ellipse 60% 80% at 50% 50%, rgba(124, 58, 237, 0.22), transparent 70%),
+    linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(167, 139, 250, 0.04));
+  border: 1px solid var(--stroke-strong); border-radius: var(--r-lg);
+  position: relative; overflow: hidden;
+}
+.foco-app .big-stat-card::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(167, 139, 250, 0.15), transparent 50%),
+    radial-gradient(circle at 80% 100%, rgba(124, 58, 237, 0.18), transparent 50%);
+  pointer-events: none;
+}
+.foco-app .big-stat-num {
+  font-size: clamp(48px, 8vw, 96px); font-weight: 800; letter-spacing: -0.04em;
+  background: linear-gradient(135deg, #fff, var(--primary-2));
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  line-height: 1; margin-bottom: 12px; position: relative;
+}
+.foco-app .big-stat-label {
+  font-size: clamp(16px, 1.6vw, 20px);
+  color: var(--muted); font-weight: 500; position: relative;
+}
+.foco-app .big-stat-label strong { color: var(--text); }
+
+/* =========== MOMENTUM =========== */
+.foco-app .momentum {
+  text-align: center; padding: 140px 0;
+  background:
+    radial-gradient(ellipse 50% 60% at 50% 50%, rgba(251, 146, 60, 0.15), transparent 70%),
+    radial-gradient(ellipse 80% 50% at 50% 100%, rgba(124, 58, 237, 0.2), transparent 70%);
+}
+.foco-app .momentum-mascot {
+  width: 280px; margin: 32px auto;
+  filter: drop-shadow(0 0 60px rgba(251, 146, 60, 0.6)) drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+  animation: foco-float 5s ease-in-out infinite;
+}
+.foco-app .momentum h2 .accent-orange {
+  background: linear-gradient(135deg, #fb923c, #fbbf24);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.foco-app .momentum-stack {
+  max-width: 700px; margin: 0 auto;
+  font-size: clamp(20px, 2vw, 24px);
+  font-weight: 600; color: var(--muted); line-height: 1.5;
+}
+.foco-app .momentum-stack span { display: block; }
+.foco-app .momentum-stack .punch {
+  margin-top: 18px; color: var(--text);
+  font-size: clamp(28px, 3.5vw, 40px); font-weight: 800; letter-spacing: -0.02em;
+}
+.foco-app .momentum-stack .punch .grad-orange {
+  background: linear-gradient(135deg, #fb923c, #fbbf24);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+/* =========== PRICING =========== */
+.foco-app .risk-hook {
+  display: inline-block; padding: 12px 22px; margin-bottom: 32px;
+  background: linear-gradient(180deg, rgba(251, 146, 60, 0.15), rgba(251, 146, 60, 0.05));
+  border: 1px solid rgba(251, 146, 60, 0.4);
+  border-radius: 999px;
+  font-size: 15px; font-weight: 600; color: #fed7aa;
+}
+.foco-app .pricing-cards {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  max-width: 920px; margin: 36px auto 0;
+}
+.foco-app .pricing-tier {
+  position: relative; overflow: hidden;
+  padding: 36px 32px;
+  background: var(--card); border: 1px solid var(--stroke);
+  border-radius: var(--r-lg); text-align: left;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.foco-app .pricing-tier:hover { border-color: var(--stroke-strong); transform: translateY(-3px); }
+.foco-app .pricing-tier.featured {
+  background: linear-gradient(180deg, rgba(124, 58, 237, 0.20), rgba(124, 58, 237, 0.04));
+  border: 1.5px solid rgba(167, 139, 250, 0.55);
+  box-shadow: 0 0 60px rgba(124, 58, 237, 0.28), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+.foco-app .pricing-tier.featured::before {
+  content: ""; position: absolute; top: -40%; right: -30%;
+  width: 80%; height: 200%;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.25), transparent 60%);
+  pointer-events: none;
+}
+.foco-app .save-badge {
+  position: absolute; top: 18px; right: 18px;
+  padding: 7px 14px;
+  background: linear-gradient(135deg, #fb923c, #fbbf24);
+  color: #1a0a2e; border-radius: 999px;
+  font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+  z-index: 2;
+  box-shadow: 0 8px 24px rgba(251, 146, 60, 0.45);
+}
+.foco-app .tier-header { position: relative; margin-bottom: 18px; z-index: 1; }
+.foco-app .tier-header .tier-name {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 14px;
+}
+.foco-app .best-pill {
+  padding: 4px 10px;
+  background: var(--primary-soft); border: 1px solid var(--stroke-strong);
+  border-radius: 999px;
+  font-size: 10px; font-weight: 800; letter-spacing: 0.08em;
+  color: var(--primary-2);
+}
+.foco-app .tier-price { display: flex; align-items: baseline; gap: 6px; }
+.foco-app .tier-price .amount {
+  font-size: clamp(40px, 5.5vw, 56px);
+  font-weight: 800; letter-spacing: -0.035em;
+  color: var(--text); line-height: 1;
+}
+.foco-app .tier-price .period { font-size: 17px; color: var(--muted); font-weight: 500; }
+.foco-app .tier-equiv { margin-top: 8px; font-size: 13px; color: var(--primary-2); font-weight: 600; }
+.foco-app .tier-equiv .strike {
+  color: var(--muted-2); text-decoration: line-through;
+  margin-right: 6px; font-weight: 500;
+}
+.foco-app .tier-tagline {
+  font-size: 14px; color: var(--muted); margin: 16px 0 22px;
+  padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.07);
+  position: relative;
+}
+.foco-app .pricing-tier .benefits { margin-bottom: 24px; position: relative; }
+.foco-app .benefits { list-style: none; padding: 0; margin: 0; }
+.foco-app .benefits li {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 0; font-size: 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.foco-app .benefits li:last-child { border-bottom: 0; }
+.foco-app .check {
+  width: 22px; height: 22px; flex-shrink: 0; border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  display: grid; place-items: center;
+  font-size: 12px; font-weight: 800;
+}
+.foco-app .pricing-tier .pricing-cta {
+  display: block; text-align: center;
+  width: 100%; padding: 14px;
+  font-size: 15px; position: relative;
+}
+.foco-app .pricing-coda { margin-top: 40px; text-align: center; }
+.foco-app .quote-pill {
+  display: inline-block; padding: 16px 30px;
+  background: rgba(255,255,255,0.04); border: 1px solid var(--stroke);
+  border-radius: 999px; font-size: 16px; color: var(--muted);
+  margin-bottom: 22px;
+}
+.foco-app .quote-pill strong { color: var(--primary-2); }
+.foco-app .pricing-trust {
+  display: inline-flex; gap: 18px; align-items: center;
+  flex-wrap: wrap; justify-content: center;
+  font-size: 14px; color: var(--muted);
+}
+.foco-app .pricing-trust .item { display: inline-flex; align-items: center; gap: 8px; }
+.foco-app .pricing-trust .shield { font-size: 14px; filter: drop-shadow(0 0 6px var(--primary-2)); }
+.foco-app .pricing-trust .sep { color: var(--muted-2); }
+
+/* =========== FAQ =========== */
+.foco-app .faq-grid { max-width: 760px; margin: 0 auto; }
+.foco-app .faq-item { border-bottom: 1px solid var(--stroke); }
+.foco-app .faq-q {
+  width: 100%; padding: 24px 0;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 17px; font-weight: 600; text-align: left;
+  color: var(--text);
+}
+.foco-app .faq-q .chev {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--card); border: 1px solid var(--stroke);
+  display: grid; place-items: center;
+  font-size: 18px; transition: transform 0.3s, background 0.2s;
+}
+.foco-app .faq-item.open .faq-q .chev { transform: rotate(45deg); background: var(--primary-soft); }
+.foco-app .faq-a {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  color: var(--muted); font-size: 15px; line-height: 1.7;
+}
+.foco-app .faq-item.open .faq-a { max-height: 600px; padding: 0 0 24px; }
+.foco-app .faq-pause-mascot {
+  position: absolute; bottom: 0; right: 8%;
+  width: 160px; opacity: 0.5; pointer-events: none;
+  filter: drop-shadow(0 20px 40px rgba(124, 58, 237, 0.5));
+}
+
+/* =========== FINAL CTA =========== */
+.foco-app .cta-band {
+  text-align: center; padding: 100px 0 120px;
+  background: radial-gradient(ellipse 60% 70% at 50% 50%, rgba(124, 58, 237, 0.3), transparent 70%);
+  border-top: 1px solid var(--stroke);
+  border-bottom: 1px solid var(--stroke);
+}
+.foco-app .cta-band h2 { max-width: 800px; margin: 0 auto 32px; }
+.foco-app .cta-band .store-badges { justify-content: center; }
+.foco-app .cta-band .trust-row { justify-content: center; margin-top: 24px; }
+
+/* =========== FOOTER =========== */
+.foco-app footer { padding: 64px 0 40px; }
+.foco-app .foot-grid {
+  display: grid; grid-template-columns: 1.5fr repeat(4, 1fr); gap: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--stroke);
+}
+.foco-app .foot-brand .logo { margin-bottom: 16px; }
+.foco-app .foot-brand p { font-size: 14px; color: var(--muted); max-width: 280px; }
+.foco-app .foot-col h4 {
+  font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  margin-bottom: 16px; color: var(--text);
+}
+.foco-app .foot-col ul { list-style: none; padding: 0; margin: 0; }
+.foco-app .foot-col li { margin-bottom: 10px; }
+.foco-app .foot-col a { font-size: 14px; color: var(--muted); transition: color 0.2s; }
+.foco-app .foot-col a:hover { color: var(--text); }
+.foco-app .foot-bottom {
+  padding-top: 32px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px; color: var(--muted-2);
+}
+
+/* =========== ALTERNATING SECTION TONES =========== */
+.foco-app .insight,
+.foco-app #features,
+.foco-app #pricing {
+  background-color: var(--bg-2);
+  position: relative;
+  box-shadow:
+    inset 0 1px 0 rgba(167, 139, 250, 0.05),
+    inset 0 -1px 0 rgba(167, 139, 250, 0.05);
+}
+.foco-app .section-bridge {
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+}
+
+.foco-app #problem { padding-bottom: 32px; }
+.foco-app .insight { padding-top: 40px; }
+
+/* =========== BLOG =========== */
+.foco-app .blog-archive,
+.foco-app .blog-single {
+  padding: 140px 0 80px;
+  max-width: 760px; margin: 0 auto;
+}
+.foco-app .blog-archive h1,
+.foco-app .blog-single h1 {
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 800; letter-spacing: -0.03em; line-height: 1.1;
+  margin-bottom: 40px;
+}
+.foco-app .post-card {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--stroke);
+  transition: transform 0.2s ease, background 0.2s;
+  border-radius: 12px;
+}
+.foco-app .post-card:hover { transform: translateX(4px); }
+.foco-app .post-card-thumb {
+  flex: 0 0 280px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--stroke);
+  background: var(--bg-2);
+  aspect-ratio: 16 / 9;
+  position: relative;
+}
+.foco-app .post-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.foco-app .post-card:hover .post-card-thumb img { transform: scale(1.04); }
+.foco-app .post-card-body { flex: 1; min-width: 0; }
+.foco-app .post-card .post-date {
+  font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 12px;
+}
+.foco-app .post-card h2 {
+  font-size: clamp(22px, 2.4vw, 30px); margin-bottom: 12px;
+  color: var(--text);
+  line-height: 1.2;
+}
+.foco-app .post-card .excerpt { color: var(--muted); font-size: 16px; line-height: 1.6; }
+.foco-app .post-card .read-more {
+  display: inline-block; margin-top: 14px; color: var(--primary-2);
+  font-weight: 600; font-size: 14px;
+}
+@media (max-width: 760px) {
+  .foco-app .post-card { flex-direction: column; gap: 18px; padding: 24px 0; }
+  .foco-app .post-card-thumb { flex: none; width: 100%; aspect-ratio: 16 / 9; }
+}
+
+.foco-app .blog-single article > * { margin-bottom: 18px; line-height: 1.7; color: var(--muted); }
+.foco-app .blog-single article h2,
+.foco-app .blog-single article h3 { color: var(--text); margin-top: 32px; }
+.foco-app .blog-single article a { color: var(--primary-2); border-bottom: 1px solid currentColor; }
+.foco-app .blog-single article img { border-radius: var(--r); margin: 24px auto; }
+.foco-app .blog-single .post-meta {
+  display: flex; gap: 16px; font-size: 13px; color: var(--muted);
+  margin-bottom: 32px;
+}
+
+/* =========== RESPONSIVE =========== */
+@media (max-width: 1100px) {
+  .foco-app .testi-cards { grid-template-columns: repeat(3, 1fr); }
+  .foco-app .faq-pause-mascot { display: none; }
+}
+@media (max-width: 900px) {
+  .foco-app .nav-links { display: none; }
+  .foco-app .hero { padding: 100px 0 40px; }
+  .foco-app .hero-inner { grid-template-columns: 1fr; gap: 20px; }
+  .foco-app .hero-visual { min-height: 240px; order: -1; }
+  .foco-app .hero-mascot { width: 200px; }
+  .foco-app .hero-orb { width: 260px; height: 260px; }
+  .foco-app section { padding: 80px 0; }
+  .foco-app .how-steps { grid-template-columns: 1fr; gap: 48px; }
+  .foco-app .how-steps::before { display: none; }
+  .foco-app .stat-row { grid-template-columns: repeat(2, 1fr); gap: 32px 16px; }
+  .foco-app .foot-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .foco-app .foot-brand { grid-column: 1 / -1; }
+  .foco-app .foot-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  .foco-app .feature-spot {
+    grid-template-columns: 1fr; gap: 40px; padding: 50px 0; text-align: center;
+  }
+  .foco-app .feature-spot-copy { max-width: 100%; margin: 0 auto; grid-column: 1 !important; grid-row: 2 !important; }
+  .foco-app .feature-spot-visual { min-height: auto; grid-column: 1 !important; grid-row: 1 !important; }
+  .foco-app .feature-spot-phone { width: 240px; }
+  .foco-app .shift { padding: 50px 0; }
+  .foco-app .insight { padding-bottom: 40px; padding-top: 32px; }
+  .foco-app .insight-mascot { margin-top: 28px; }
+  .foco-app #problem { padding-bottom: 24px; }
+  .foco-app .section-bridge::before { height: 36px; }
+  .foco-app .bridge-text { font-size: 14px; }
+}
+@media (max-width: 800px) {
+  .foco-app .testi-cards { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 760px) {
+  .foco-app .pricing-cards { grid-template-columns: 1fr; }
+  .foco-app .pricing-trust { gap: 10px; flex-direction: column; }
+  .foco-app .pricing-trust .sep { display: none; }
+}
+@media (max-width: 700px) {
+  .foco-app .problem-image img { aspect-ratio: 4 / 5; }
+  .foco-app .problem-image-caption { font-size: 12px; bottom: 14px; left: 16px; max-width: 60%; }
+  .foco-app .companion-mascot { width: 32%; right: 4%; }
+}
+@media (max-width: 520px) {
+  .foco-app h1.hero-h { font-size: 44px; }
+  .foco-app h2 { font-size: 32px; }
+  .foco-app .hero-visual { min-height: 200px; }
+  .foco-app .hero-mascot { width: 170px; }
+  .foco-app .hero-orb { width: 220px; height: 220px; }
+  .foco-app .stat-row { grid-template-columns: 1fr 1fr; }
+  .foco-app .store-badge { min-width: 0; flex: 1; padding: 10px 14px; }
+  .foco-app .store-badge .big { font-size: 14px; }
+}
+@media (max-width: 480px) {
+  .foco-app .testi-cards { grid-template-columns: 1fr; }
+  .foco-app .big-stat-card { padding: 40px 22px; }
+  .foco-app .problem-vignettes { gap: 10px; }
+  .foco-app .vignette { padding: 22px 18px 18px; border-radius: 14px; min-height: 160px; }
+  .foco-app .vignette::before { top: 14px; right: 16px; font-size: 10px; }
+  .foco-app .vignette-headline { font-size: 22px; margin-bottom: 10px; }
+  .foco-app .vignette-text { font-size: 13px; }
+  .foco-app .problem-resolution .rejected { font-size: 15px; }
+  .foco-app .problem-resolution .truth { font-size: 19px; margin-top: 18px; }
+}
+@media (max-width: 420px) {
+  .foco-app .hero-microcta { border-radius: 16px; font-size: 13px; padding: 9px 14px; }
+}
+
+/* WordPress admin bar offset (so fixed nav doesn't sit under admin bar) */
+body.admin-bar.foco-page .foco-app .foco-nav { top: 32px; }
+@media (max-width: 782px) {
+  body.admin-bar.foco-page .foco-app .foco-nav { top: 46px; }
+}
