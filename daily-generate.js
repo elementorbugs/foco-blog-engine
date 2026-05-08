@@ -82,6 +82,7 @@ const arg = (n) => {
 const DRY_RUN = flag('dry-run');
 const COUNT = parseInt(arg('count') || '3', 10);
 const FORCE_KEYWORD = arg('keyword');
+const SKIP_COVER = flag('skip-cover'); // for cloud env — skips playwright cover render
 
 // ─── HTTP helper ─────────────────────────────────────────────────────────────
 function req(host, method, p, headers = {}, body = null) {
@@ -271,7 +272,8 @@ Write the complete article now. ~2,800 words.`;
 // ─── PHASE 4: Run create-post.js engine ──────────────────────────────────────
 function runEngine(slug, keyword) {
   const file = `posts-new/post-${slug}.html`;
-  const cmd = `node create-post.js ${JSON.stringify(file)} --keyword=${JSON.stringify(keyword)}`;
+  const skipCoverFlag = SKIP_COVER ? ' --skip-cover' : '';
+  const cmd = `node create-post.js ${JSON.stringify(file)} --keyword=${JSON.stringify(keyword)}${skipCoverFlag}`;
   try {
     const out = execSync(cmd, { cwd: __dirname, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
     const idMatch = out.match(/Post ID:\s+(\d+)/);
