@@ -1,0 +1,186 @@
+<h1>15-Minute Timer for ADHD: Where Focus Settles</h1>
+
+<div class="foco-tldr"><strong>TL;DR.</strong> A 15-minute timer is the sweet spot between starting and sustained focus. It's longer than a 10-minute initiation block but shorter than a full Pomodoro, so it works for ADHD adults who can't commit to 25 minutes but need more than just breaking the activation wall. Fifteen minutes is enough for focused reading, light exercise, learning a skill in bites, or making real progress on a single piece of work. Use the timer below — no signup, no app needed.</div>
+
+<!-- wp:html --><div class="foco-timer-wrap" role="region" aria-label="15-minute focus timer for ADHD"><div class="foco-timer-card"><div class="foco-timer-display"><svg class="foco-timer-ring" viewBox="0 0 220 220" aria-hidden="true"><circle class="foco-timer-track" cx="110" cy="110" r="100"></circle><circle class="foco-timer-progress" cx="110" cy="110" r="100" data-foco-progress></circle></svg><div class="foco-timer-digits" data-foco-digits>15:00</div><div class="foco-timer-state" data-foco-state>Ready</div></div><div class="foco-timer-controls"><button type="button" class="foco-timer-btn-primary" data-foco-action="start">Start</button><button type="button" class="foco-timer-btn-secondary" data-foco-action="pause" disabled>Pause</button><button type="button" class="foco-timer-btn-secondary" data-foco-action="reset">Reset</button></div><label class="foco-timer-sound"><input type="checkbox" data-foco-sound><span>Play chime when done</span></label></div></div><style>.foco-timer-wrap{margin:32px 0;display:flex;justify-content:center}.foco-timer-card{background:rgba(255,255,255,0.035);border:1px solid rgba(167,139,250,0.18);border-radius:24px;padding:32px 28px;width:100%;max-width:480px;text-align:center;box-shadow:0 10px 40px rgba(124,58,237,0.08)}.foco-timer-display{position:relative;width:240px;height:240px;margin:0 auto 22px}.foco-timer-ring{width:100%;height:100%;transform:rotate(-90deg)}.foco-timer-track{fill:none;stroke:rgba(167,139,250,0.18);stroke-width:8}.foco-timer-progress{fill:none;stroke:#7C3AED;stroke-width:8;stroke-linecap:round;stroke-dasharray:628.3;stroke-dashoffset:0;transition:stroke-dashoffset .25s linear,stroke .3s ease}.foco-timer-digits{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:54px;font-weight:800;color:#FFFFFF;letter-spacing:-2px;font-variant-numeric:tabular-nums}.foco-timer-state{position:absolute;top:calc(50% + 38px);left:50%;transform:translate(-50%,-50%);font-size:12px;color:#B8B0CC;text-transform:uppercase;letter-spacing:1.5px}.foco-timer-controls{display:flex;justify-content:center;gap:10px;margin-bottom:14px}.foco-timer-btn-primary,.foco-timer-btn-secondary{padding:12px 28px;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;border:none;transition:all .15s ease;font-family:inherit}.foco-timer-btn-primary{background:#7C3AED;color:#FFFFFF}.foco-timer-btn-primary:hover{background:#A78BFA}.foco-timer-btn-secondary{background:rgba(255,255,255,0.06);color:#FFFFFF;border:1px solid rgba(167,139,250,0.18)}.foco-timer-btn-secondary:hover:not(:disabled){background:rgba(255,255,255,0.12)}.foco-timer-btn-secondary:disabled{opacity:0.4;cursor:not-allowed}.foco-timer-sound{display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;color:#B8B0CC;cursor:pointer}.foco-timer-sound input{accent-color:#7C3AED;width:16px;height:16px;cursor:pointer}.foco-timer-card.is-finished .foco-timer-progress{stroke:#FB923C}.foco-timer-card.is-finished .foco-timer-digits{color:#FB923C}.foco-timer-card.is-finished .foco-timer-state{color:#FB923C}@media (max-width:480px){.foco-timer-card{padding:24px 18px}.foco-timer-display{width:200px;height:200px}.foco-timer-digits{font-size:44px}}</style><script>(function(){var DUR=900;var card=document.querySelector('.foco-timer-card');if(!card)return;var digits=card.querySelector('[data-foco-digits]');var state=card.querySelector('[data-foco-state]');var progress=card.querySelector('[data-foco-progress]');var soundEl=card.querySelector('[data-foco-sound]');var startBtn=card.querySelector('[data-foco-action="start"]');var pauseBtn=card.querySelector('[data-foco-action="pause"]');var resetBtn=card.querySelector('[data-foco-action="reset"]');var DASH=628.3;var remaining=DUR;var tickHandle=null;var endAt=null;var running=false;function fmt(s){var m=Math.floor(s/60);var ss=Math.floor(s%60);return (m<10?'0':'')+m+':'+(ss<10?'0':'')+ss}function render(){digits.textContent=fmt(Math.max(0,remaining));var pct=Math.max(0,remaining)/DUR;progress.style.strokeDashoffset=DASH*(1-pct)}function chime(){if(!soundEl.checked)return;try{var ac=new (window.AudioContext||window.webkitAudioContext)();var notes=[660,880,990];notes.forEach(function(f,i){var o=ac.createOscillator();var g=ac.createGain();o.type='sine';o.frequency.value=f;o.connect(g);g.connect(ac.destination);var t=ac.currentTime+i*0.18;g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(0.18,t+0.02);g.gain.exponentialRampToValueAtTime(0.0001,t+0.4);o.start(t);o.stop(t+0.5)})}catch(e){}}function vibrate(){if(navigator.vibrate)try{navigator.vibrate([200,100,200])}catch(e){}}function tick(){var now=Date.now();remaining=Math.max(0,(endAt-now)/1000);render();if(remaining<=0){finish()}else{tickHandle=requestAnimationFrame(tick)}}function start(){if(running)return;running=true;endAt=Date.now()+remaining*1000;card.classList.remove('is-finished');state.textContent='Running';startBtn.disabled=true;pauseBtn.disabled=false;tickHandle=requestAnimationFrame(tick)}function pause(){if(!running)return;running=false;cancelAnimationFrame(tickHandle);state.textContent='Paused';startBtn.disabled=false;pauseBtn.disabled=true;startBtn.textContent='Resume'}function reset(){running=false;cancelAnimationFrame(tickHandle);remaining=DUR;render();state.textContent='Ready';startBtn.disabled=false;pauseBtn.disabled=true;startBtn.textContent='Start';card.classList.remove('is-finished')}function finish(){running=false;cancelAnimationFrame(tickHandle);remaining=0;render();state.textContent='Done';startBtn.disabled=false;pauseBtn.disabled=true;startBtn.textContent='Start';card.classList.add('is-finished');chime();vibrate()}startBtn.addEventListener('click',start);pauseBtn.addEventListener('click',pause);resetBtn.addEventListener('click',reset);render()})();</script><!-- /wp:html -->
+
+<div class="foco-key-takeaways">
+<h2>Key Takeaways</h2>
+<ul>
+<li>Fifteen minutes is the boundary where shallow focus becomes real focus. The first 5-7 minutes are still about settling in; minutes 8-15 are where actual progress happens.</li>
+<li>It works best for tasks that need a thinking warm-up — focused reading, learning, light writing, single-task workouts — but don't require deep flow.</li>
+<li>Pair it with a single specific task, not "be productive." The constraint is what makes 15 minutes work.</li>
+<li>Two back-to-back 15-minute blocks with a 1-minute breath between them outperforms one 30-minute block for most ADHD adults.</li>
+<li>If 15 minutes feels uncomfortable to commit to, drop to 10. If you finish 15 wanting more, run another. Don't fight your nervous system's signal.</li>
+</ul>
+</div>
+
+<h2>Table of Contents</h2>
+<ol>
+<li><a href="#why-15-minutes">Why a 15-minute timer fits the ADHD brain</a></li>
+<li><a href="#15-vs-others">15 vs 10 vs 25 — which timer for which task</a></li>
+<li><a href="#5-uses">5 ways to use 15 minutes well</a></li>
+<li><a href="#double-block">The double-15 protocol</a></li>
+<li><a href="#when-it-fails">When 15 minutes doesn't work</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ol>
+
+<h2 id="why-15-minutes">Why a 15-minute timer fits the ADHD brain</h2>
+
+<p>Most ADHD focus research describes attention as bursty — short, intense, then fading. The classic Pomodoro at 25 minutes is calibrated for neurotypical sustained attention. For ADHD adults, the burst often peaks earlier and crashes if pushed too long.</p>
+
+<p>Fifteen minutes lands inside the natural attention curve for many ADHD brains. It's long enough to settle past the initial fidget, but short enough to finish before the inevitable drift starts pulling you elsewhere.</p>
+
+<p>This isn't a rule. Some ADHD adults thrive on 25-minute blocks. Some can only sustain 5. Fifteen is a useful default — short enough to feel achievable, long enough to do something that wasn't possible in 5.</p>
+
+<p><strong>Time blindness</strong> is part of why this matters. Russell Barkley's research on ADHD self-regulation shows that the brain's ability to perceive elapsed time is impaired. A visible 15-minute countdown externalizes time, lowering the cognitive load of tracking it internally.</p>
+
+<p>Read more on <a href="https://www.tryfoco.com/time-blindness-adhd/">ADHD time blindness</a> if you want the underlying mechanism.</p>
+
+<h2 id="15-vs-others">15 vs 10 vs 25 — which timer for which task</h2>
+
+<p>Picking the wrong duration is one of the quietest reasons focus strategies fail. A 25-minute block on a low-energy day defeats you before you start. A 5-minute block on a flow day cuts you off before momentum.</p>
+
+<div class="foco-table-wrap" style="overflow-x:auto;margin:24px 0">
+<table style="width:100%;border-collapse:collapse;font-size:15px">
+<thead>
+<tr style="background:rgba(124,58,237,0.18)">
+<th style="text-align:left;padding:12px;border:1px solid rgba(167,139,250,0.18)">Duration</th>
+<th style="text-align:left;padding:12px;border:1px solid rgba(167,139,250,0.18)">Best for</th>
+<th style="text-align:left;padding:12px;border:1px solid rgba(167,139,250,0.18)">When to skip it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)"><strong>10 min</strong></td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">Task initiation. Breaking the wall on something avoided.</td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">Tasks needing thinking warm-up.</td>
+</tr>
+<tr>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)"><strong>15 min</strong></td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">Light cognitive work. Focused reading, single-task warmups, learning in bites.</td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">Deep work that needs full flow.</td>
+</tr>
+<tr>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)"><strong>25 min (Pomodoro)</strong></td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">Deep work — writing, coding, problem-solving.</td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">Low-energy days. If you can't start at 10, 25 is impossible.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>The pattern: shorter timers solve initiation problems. Longer timers solve depth problems. Fifteen is the bridge between the two.</p>
+
+<p>For more on the longer-block end, see <a href="https://www.tryfoco.com/pomodoro-for-adhd/">the Pomodoro technique for ADHD</a>. For the initiation end, see <a href="https://www.tryfoco.com/10-minute-timer-adhd/">the 10-minute timer</a>.</p>
+
+<h2 id="5-uses">5 ways to use 15 minutes well</h2>
+
+<h3>1. Focused reading (one chapter, no scrolling)</h3>
+
+<p>Pick one chapter or one article. Set the timer. Read until it rings, with phone in another room.</p>
+
+<p>Most ADHD adults can't read for an hour without drifting. Fifteen minutes is short enough that drift doesn't have time to build, and long enough to absorb something substantial.</p>
+
+<h3>2. Single-exercise workout</h3>
+
+<p>Don't try to "work out for 15 minutes." Pick one specific exercise — push-ups, planks, a mobility flow, a single weight movement — and do that for the duration.</p>
+
+<p>The constraint is what makes the timer work. Vague workouts get abandoned in minute 4.</p>
+
+<h3>3. Learning one concept</h3>
+
+<p>If you're trying to learn a skill, fifteen minutes is enough to study one concept properly. One section of a course. One chapter of documentation. One practice problem.</p>
+
+<p>This is far better than 90-minute "study sessions" most ADHD adults can't actually sustain.</p>
+
+<h3>4. Email triage (not reply)</h3>
+
+<p>Open inbox. Delete or archive everything that doesn't need a response. Star the few that do. Don't reply yet.</p>
+
+<p>Triage is a different cognitive mode than replying. Mixing them is part of why email overwhelm builds. Fifteen minutes of triage clears the visible mountain.</p>
+
+<h3>5. One pass at a creative draft</h3>
+
+<p>Open the document. Write or edit for 15 minutes without stopping to check anything. No looking up references, no rewriting paragraph 1. Forward motion only.</p>
+
+<p>Polish later. Fifteen minutes of forward motion beats 90 minutes of perfectionist loops.</p>
+
+<h2 id="double-block">The double-15 protocol</h2>
+
+<p>Two 15-minute blocks separated by a 60-second breath outperform one 30-minute block for most ADHD adults. The reason: the brief reset between blocks lets attention recharge.</p>
+
+<p>The protocol:</p>
+
+<ol>
+<li>Run a 15-minute timer on task X.</li>
+<li>When it rings, stand up. Take 5 deep breaths. Drink water. Don't open your phone.</li>
+<li>Run a second 15-minute timer on task X.</li>
+<li>When it rings again, stop. You've done 30 minutes of focused work without the cognitive crash.</li>
+</ol>
+
+<p>This is essentially a half-Pomodoro with a micro-break instead of a full break. It's especially useful when you need to do focused work but full Pomodoro feels too long.</p>
+
+<h2 id="when-it-fails">When 15 minutes doesn't work</h2>
+
+<p>Three failure modes are worth knowing.</p>
+
+<p><strong>You can't start.</strong> If 15 minutes feels impossible, you're likely in <a href="https://www.tryfoco.com/adhd-task-paralysis/">task paralysis</a>. Drop to 5 minutes, or 2. The principle is identical, just smaller.</p>
+
+<p><strong>You finish but produce nothing.</strong> If you ran the timer and have nothing to show, the task was probably too vague. Try a more specific behavior — "write the first paragraph" instead of "work on the document."</p>
+
+<p><strong>You hit deeper flow at minute 12 and the timer feels like an interruption.</strong> Pause it. Continue working. When the natural break comes, run a fresh timer. Don't sacrifice flow to the timer's schedule.</p>
+
+<h2 id="faq">FAQ</h2>
+
+<h3>Why 15 minutes specifically?</h3>
+
+<p>Because it's the shortest block that gives you both initiation and meaningful work in one stretch. Five and 10 minutes are great for starting; 25+ requires sustained focus most ADHD adults can't reliably hold. Fifteen splits the difference.</p>
+
+<h3>How does this compare to the Pomodoro Technique?</h3>
+
+<p>Pomodoro is 25 minutes work, 5 minutes break. The 15-minute timer is a different rhythm — better for tasks that don't need full flow, and for ADHD adults who can't sustain 25-minute blocks. You can absolutely chain 15-minute blocks in a Pomodoro-like pattern.</p>
+
+<h3>Is 15 minutes too short for serious work?</h3>
+
+<p>For some tasks, yes. Writing a long-form essay, debugging complex code, deep problem-solving — these often need 25+ minutes to enter flow. For everything else (reading, learning, exercise, light writing, email triage), 15 minutes is plenty.</p>
+
+<h3>Should I take a break after every 15-minute block?</h3>
+
+<p>No. If you're in flow at minute 15, run another block. Breaks should come when your attention is naturally fading, not on a fixed schedule. The point of the timer is helping you start and stay focused, not forcing arbitrary stops.</p>
+
+<h3>What if I keep finishing the timer with time to spare?</h3>
+
+<p>That's a sign you can either choose harder tasks or extend to 20 or 25 minutes. The goal is gentle stretching of focus capacity, not staying in a comfort zone forever. Try 20 minutes for a week, see how it feels.</p>
+
+<h3>Does the visual ring help, or is the digital countdown enough?</h3>
+
+<p>For most ADHD brains, the visual ring helps because it externalizes time spatially. You can glance at it and immediately see how much is left. Pure digital countdowns require a quick mental subtraction, which is small but not free for working memory.</p>
+
+<h2>The Bottom Line</h2>
+
+<p>A 15-minute timer is the bridge between starting and sustaining. It's the right tool for tasks that need real attention but don't need full Pomodoro depth.</p>
+
+<p>Use the timer above. Pick one specific task — one chapter, one exercise, one paragraph. When the ring fades, decide: another block, or a real break.</p>
+
+<p>If you find yourself coming back to this page often, FOCO is the app version of the same principle, with AI task-breakdown for when you're not sure what to do for 15 minutes.</p>
+
+<h2>Related articles</h2>
+<ul>
+<li><a href="https://www.tryfoco.com/10-minute-timer-adhd/">10-Minute Timer for ADHD</a></li>
+<li><a href="https://www.tryfoco.com/5-minute-timer-adhd/">5-Minute Timer for ADHD</a></li>
+<li><a href="https://www.tryfoco.com/pomodoro-for-adhd/">The Pomodoro Technique for ADHD</a></li>
+<li><a href="https://www.tryfoco.com/adhd-task-paralysis/">ADHD Task Paralysis: Why You Can't Start</a></li>
+<li><a href="https://www.tryfoco.com/how-to-focus-with-adhd/">How to Focus with ADHD</a></li>
+<li><a href="https://www.tryfoco.com/time-blindness-adhd/">ADHD Time Blindness</a></li>
+<li><a href="https://www.tryfoco.com/body-doubling-adhd/">Body Doubling for ADHD</a></li>
+</ul>
+
+<h2>References</h2>
+<ul class="foco-references" style="font-size:14px;color:#B8B0CC;line-height:1.6">
+<li><a href="https://www.nimh.nih.gov/health/topics/attention-deficit-hyperactivity-disorder-adhd" target="_blank" rel="noopener">National Institute of Mental Health. Attention-Deficit/Hyperactivity Disorder.</a></li>
+<li><a href="https://www.cdc.gov/adhd/about/index.html" target="_blank" rel="noopener">Centers for Disease Control and Prevention. ADHD in Adults: Symptoms and Treatment.</a></li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/9000892/" target="_blank" rel="noopener">Barkley RA. Behavioral inhibition, sustained attention, and executive functions: constructing a unifying theory of ADHD. Psychol Bull. 1997;121(1):65-94.</a></li>
+<li><a href="https://www.nature.com/articles/nrdp201520" target="_blank" rel="noopener">Faraone SV, Asherson P, Banaschewski T, et al. Attention-deficit/hyperactivity disorder. Nat Rev Dis Primers. 2015;1:15020.</a></li>
+<li><a href="https://chadd.org/about-adhd/overview/" target="_blank" rel="noopener">CHADD. ADHD Overview.</a></li>
+</ul>

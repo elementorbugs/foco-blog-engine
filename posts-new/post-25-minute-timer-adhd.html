@@ -1,0 +1,200 @@
+<h1>25-Minute Timer for ADHD: The Pomodoro Block Explained</h1>
+
+<div class="foco-tldr"><strong>TL;DR.</strong> A 25-minute timer is the classic Pomodoro block — Francesco Cirillo's original interval for sustained focus. For ADHD adults, it's the standard for deep work when attention is on your side, but it's not always the right tool. This guide explains when 25 minutes works for the ADHD brain, when it doesn't, and how to make Pomodoro fit your nervous system instead of fighting it. Use the timer below — no signup, no app needed.</div>
+
+<!-- wp:html --><div class="foco-timer-wrap" role="region" aria-label="25-minute focus timer for ADHD"><div class="foco-timer-card"><div class="foco-timer-display"><svg class="foco-timer-ring" viewBox="0 0 220 220" aria-hidden="true"><circle class="foco-timer-track" cx="110" cy="110" r="100"></circle><circle class="foco-timer-progress" cx="110" cy="110" r="100" data-foco-progress></circle></svg><div class="foco-timer-digits" data-foco-digits>25:00</div><div class="foco-timer-state" data-foco-state>Ready</div></div><div class="foco-timer-controls"><button type="button" class="foco-timer-btn-primary" data-foco-action="start">Start</button><button type="button" class="foco-timer-btn-secondary" data-foco-action="pause" disabled>Pause</button><button type="button" class="foco-timer-btn-secondary" data-foco-action="reset">Reset</button></div><label class="foco-timer-sound"><input type="checkbox" data-foco-sound><span>Play chime when done</span></label></div></div><style>.foco-timer-wrap{margin:32px 0;display:flex;justify-content:center}.foco-timer-card{background:rgba(255,255,255,0.035);border:1px solid rgba(167,139,250,0.18);border-radius:24px;padding:32px 28px;width:100%;max-width:480px;text-align:center;box-shadow:0 10px 40px rgba(124,58,237,0.08)}.foco-timer-display{position:relative;width:240px;height:240px;margin:0 auto 22px}.foco-timer-ring{width:100%;height:100%;transform:rotate(-90deg)}.foco-timer-track{fill:none;stroke:rgba(167,139,250,0.18);stroke-width:8}.foco-timer-progress{fill:none;stroke:#7C3AED;stroke-width:8;stroke-linecap:round;stroke-dasharray:628.3;stroke-dashoffset:0;transition:stroke-dashoffset .25s linear,stroke .3s ease}.foco-timer-digits{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:54px;font-weight:800;color:#FFFFFF;letter-spacing:-2px;font-variant-numeric:tabular-nums}.foco-timer-state{position:absolute;top:calc(50% + 38px);left:50%;transform:translate(-50%,-50%);font-size:12px;color:#B8B0CC;text-transform:uppercase;letter-spacing:1.5px}.foco-timer-controls{display:flex;justify-content:center;gap:10px;margin-bottom:14px}.foco-timer-btn-primary,.foco-timer-btn-secondary{padding:12px 28px;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;border:none;transition:all .15s ease;font-family:inherit}.foco-timer-btn-primary{background:#7C3AED;color:#FFFFFF}.foco-timer-btn-primary:hover{background:#A78BFA}.foco-timer-btn-secondary{background:rgba(255,255,255,0.06);color:#FFFFFF;border:1px solid rgba(167,139,250,0.18)}.foco-timer-btn-secondary:hover:not(:disabled){background:rgba(255,255,255,0.12)}.foco-timer-btn-secondary:disabled{opacity:0.4;cursor:not-allowed}.foco-timer-sound{display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;color:#B8B0CC;cursor:pointer}.foco-timer-sound input{accent-color:#7C3AED;width:16px;height:16px;cursor:pointer}.foco-timer-card.is-finished .foco-timer-progress{stroke:#FB923C}.foco-timer-card.is-finished .foco-timer-digits{color:#FB923C}.foco-timer-card.is-finished .foco-timer-state{color:#FB923C}@media (max-width:480px){.foco-timer-card{padding:24px 18px}.foco-timer-display{width:200px;height:200px}.foco-timer-digits{font-size:44px}}</style><script>(function(){var DUR=1500;var card=document.querySelector('.foco-timer-card');if(!card)return;var digits=card.querySelector('[data-foco-digits]');var state=card.querySelector('[data-foco-state]');var progress=card.querySelector('[data-foco-progress]');var soundEl=card.querySelector('[data-foco-sound]');var startBtn=card.querySelector('[data-foco-action="start"]');var pauseBtn=card.querySelector('[data-foco-action="pause"]');var resetBtn=card.querySelector('[data-foco-action="reset"]');var DASH=628.3;var remaining=DUR;var tickHandle=null;var endAt=null;var running=false;function fmt(s){var m=Math.floor(s/60);var ss=Math.floor(s%60);return (m<10?'0':'')+m+':'+(ss<10?'0':'')+ss}function render(){digits.textContent=fmt(Math.max(0,remaining));var pct=Math.max(0,remaining)/DUR;progress.style.strokeDashoffset=DASH*(1-pct)}function chime(){if(!soundEl.checked)return;try{var ac=new (window.AudioContext||window.webkitAudioContext)();var notes=[660,880,990];notes.forEach(function(f,i){var o=ac.createOscillator();var g=ac.createGain();o.type='sine';o.frequency.value=f;o.connect(g);g.connect(ac.destination);var t=ac.currentTime+i*0.18;g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(0.18,t+0.02);g.gain.exponentialRampToValueAtTime(0.0001,t+0.4);o.start(t);o.stop(t+0.5)})}catch(e){}}function vibrate(){if(navigator.vibrate)try{navigator.vibrate([200,100,200])}catch(e){}}function tick(){var now=Date.now();remaining=Math.max(0,(endAt-now)/1000);render();if(remaining<=0){finish()}else{tickHandle=requestAnimationFrame(tick)}}function start(){if(running)return;running=true;endAt=Date.now()+remaining*1000;card.classList.remove('is-finished');state.textContent='Running';startBtn.disabled=true;pauseBtn.disabled=false;tickHandle=requestAnimationFrame(tick)}function pause(){if(!running)return;running=false;cancelAnimationFrame(tickHandle);state.textContent='Paused';startBtn.disabled=false;pauseBtn.disabled=true;startBtn.textContent='Resume'}function reset(){running=false;cancelAnimationFrame(tickHandle);remaining=DUR;render();state.textContent='Ready';startBtn.disabled=false;pauseBtn.disabled=true;startBtn.textContent='Start';card.classList.remove('is-finished')}function finish(){running=false;cancelAnimationFrame(tickHandle);remaining=0;render();state.textContent='Done';startBtn.disabled=false;pauseBtn.disabled=true;startBtn.textContent='Start';card.classList.add('is-finished');chime();vibrate()}startBtn.addEventListener('click',start);pauseBtn.addEventListener('click',pause);resetBtn.addEventListener('click',reset);render()})();</script><!-- /wp:html -->
+
+<div class="foco-key-takeaways">
+<h2>Key Takeaways</h2>
+<ul>
+<li>The 25-minute timer is the original Pomodoro block, designed by Francesco Cirillo in the late 1980s for sustained focus on a single task.</li>
+<li>For ADHD adults, it works on good attention days but often breaks down on bad ones. The timer doesn't adapt to your nervous system; you have to.</li>
+<li>The full Pomodoro structure is 25 min work, 5 min break, repeated four times, then a 20-30 min long break. This rhythm matters as much as the work duration.</li>
+<li>The 5-minute break must be a real break — no phone, no social media, no email. Otherwise you're not breaking, you're switching cognitive modes.</li>
+<li>If 25 minutes consistently feels like a stretch, drop to 20. The point is sustainable focus over a day, not heroic single blocks.</li>
+</ul>
+</div>
+
+<h2>Table of Contents</h2>
+<ol>
+<li><a href="#why-25-minutes">Why 25 minutes — the Cirillo origin</a></li>
+<li><a href="#full-pomodoro">The full Pomodoro structure (not just the work block)</a></li>
+<li><a href="#adhd-fit">When 25 minutes works for ADHD (and when it doesn't)</a></li>
+<li><a href="#5-uses">5 ways to use a 25-minute Pomodoro</a></li>
+<li><a href="#breaks">What to actually do in the 5-minute break</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ol>
+
+<h2 id="why-25-minutes">Why 25 minutes — the Cirillo origin</h2>
+
+<p>Francesco Cirillo developed the Pomodoro Technique as a university student in the late 1980s. He used a tomato-shaped kitchen timer (pomodoro = tomato in Italian) and discovered that 25-minute focused intervals separated by short breaks improved his sustained focus.</p>
+
+<p>The 25-minute number was empirical — it was the duration his attention naturally held before quality dropped. He didn't research ADHD specifically; he was solving his own focus problem.</p>
+
+<p>The technique spread because it actually works for many people. Twenty-five minutes is long enough to enter flow on substantive work but short enough that the brain doesn't pre-emptively reject the commitment.</p>
+
+<p>For ADHD adults, the picture is more nuanced. Research on ADHD attention patterns shows shorter and more variable focus windows than neurotypical baselines. Twenty-five minutes works on good days; on bad days, attention crashes around minute 20.</p>
+
+<p>That doesn't mean Pomodoro is wrong for ADHD — it means you might need to vary the duration more than a non-ADHD user does.</p>
+
+<h2 id="full-pomodoro">The full Pomodoro structure (not just the work block)</h2>
+
+<p>Most people who try Pomodoro use the 25-minute work block and skip the rest of the structure. That's where the technique fails.</p>
+
+<p>The full Cirillo protocol:</p>
+
+<ol>
+<li><strong>Choose one task.</strong> Pomodoro is single-task. Multi-tasking inside a Pomodoro defeats the technique.</li>
+<li><strong>Set the timer for 25 minutes.</strong> Work on that one task only.</li>
+<li><strong>When the timer rings, mark a Pomodoro complete.</strong> Track them — Cirillo used pen and paper.</li>
+<li><strong>Take a 5-minute break.</strong> Stand up. Move. Don't open your phone.</li>
+<li><strong>Repeat.</strong> After four Pomodoros, take a longer break (20-30 minutes).</li>
+</ol>
+
+<p>The long break after four Pomodoros is the part most people skip — and it's the part that prevents burnout. Without it, you're producing work but accumulating fatigue. By Pomodoro 7-8 of the day, output quality is dropping but you don't notice.</p>
+
+<p>For ADHD adults, the long break matters even more because of how attention varies across the day. Skip it and tomorrow's morning Pomodoros will be unusable.</p>
+
+<h2 id="adhd-fit">When 25 minutes works for ADHD (and when it doesn't)</h2>
+
+<div class="foco-table-wrap" style="overflow-x:auto;margin:24px 0">
+<table style="width:100%;border-collapse:collapse;font-size:15px">
+<thead>
+<tr style="background:rgba(124,58,237,0.18)">
+<th style="text-align:left;padding:12px;border:1px solid rgba(167,139,250,0.18)">Pomodoro works when</th>
+<th style="text-align:left;padding:12px;border:1px solid rgba(167,139,250,0.18)">Pomodoro fails when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">You slept enough last night</td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">You're sleep-deprived (sub-7 hours)</td>
+</tr>
+<tr>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">The task is well-defined</td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">You haven't broken the task down — every block becomes "what should I do?"</td>
+</tr>
+<tr>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">You're not in <a href="https://www.tryfoco.com/adhd-task-paralysis/">acute task paralysis</a></td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">You can't even start — try a 10-minute timer first</td>
+</tr>
+<tr>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">The task needs deep focus</td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">The task is admin/email — those don't need 25 minutes</td>
+</tr>
+<tr>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">You're respecting the breaks</td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">You're chaining blocks without breaks — burnout in 2 hours</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>For deeper coverage of how Pomodoro fits the ADHD brain specifically, see our <a href="https://www.tryfoco.com/pomodoro-for-adhd/">full Pomodoro for ADHD guide</a>.</p>
+
+<h2 id="5-uses">5 ways to use a 25-minute Pomodoro</h2>
+
+<h3>1. Writing (drafting or editing one section)</h3>
+
+<p>Twenty-five minutes is enough to draft one section of a longer piece, or to edit one substantial paragraph cluster. Pick which mode (draft or edit) and stay in it.</p>
+
+<p>Don't switch between drafting and editing in the same Pomodoro. They're different cognitive modes and switching wastes the warm-up.</p>
+
+<h3>2. Coding one feature or one bug</h3>
+
+<p>Pick one specific feature, bug, or refactor. Set the timer. Work that one thing.</p>
+
+<p>If you finish before 25 minutes, that's fine. If you're not done at 25, mark where you are and take the break — your next Pomodoro continues from the marker.</p>
+
+<h3>3. Studying one chapter or one concept</h3>
+
+<p>Read one chapter with full attention. No phone in sight. No notes taking during read — let the material absorb. Take notes after, in the next Pomodoro.</p>
+
+<h3>4. Problem-solving one specific question</h3>
+
+<p>Pick one question you've been stuck on. Twenty-five minutes is enough for several rounds of "think, write, think differently."</p>
+
+<p>If you've made no progress at 25 minutes, the problem is bigger than this Pomodoro. Take the break, then try a different angle.</p>
+
+<h3>5. Deep cleaning one room</h3>
+
+<p>Twenty-five minutes can deeply clean one small room (bathroom, half a kitchen, one bedroom). The duration matches the natural attention curve for moderately repetitive physical tasks.</p>
+
+<p>Music helps. Audiobooks usually don't — they compete for attention.</p>
+
+<h2 id="breaks">What to actually do in the 5-minute break</h2>
+
+<p>This is where Pomodoro lives or dies for ADHD adults. The break is not just "stop working" — it's an active reset.</p>
+
+<p><strong>Good 5-minute breaks:</strong></p>
+<ul>
+<li>Stand up. Walk to the window or another room.</li>
+<li>Drink water. Refill the bottle.</li>
+<li>Stretch (shoulders, neck, hips — whatever's tight from sitting).</li>
+<li>Look at something more than 6 feet away (eye relief).</li>
+<li>Step outside for 60 seconds if possible.</li>
+</ul>
+
+<p><strong>Bad 5-minute breaks:</strong></p>
+<ul>
+<li>Open social media. Scroll. (This is dopamine-loading, not resting.)</li>
+<li>Check email. (Different cognitive mode, not a break.)</li>
+<li>Read news. (Activates worry circuits.)</li>
+<li>Start a different work task. (You're not breaking, you're switching.)</li>
+</ul>
+
+<p>The point of the break is letting attention recover so the next Pomodoro starts fresh. Phone scrolling defeats this entirely — you finish the break more depleted than you started.</p>
+
+<h2 id="faq">FAQ</h2>
+
+<h3>Is 25 minutes too long for ADHD?</h3>
+
+<p>For some people, yes — particularly on low-energy days. If you reliably crash at minute 20, drop to a <a href="https://www.tryfoco.com/20-minute-timer-adhd/">20-minute timer</a>. The point is sustainable focus, not heroic blocks. There's no medal for finishing 25 minutes when 20 would have produced better work.</p>
+
+<h3>Can I extend a Pomodoro if I'm in flow?</h3>
+
+<p>Yes. The Cirillo rules are guidelines, not laws. If you're in deep flow at minute 25, pause the timer (or ignore the chime) and keep working. Run the next break when the natural break point arrives. Don't sacrifice flow to a clock.</p>
+
+<h3>What if I get interrupted mid-Pomodoro?</h3>
+
+<p>Cirillo's original rule was to abandon the Pomodoro and start fresh. For most people, that's too strict. Modern practice: pause the timer for short interruptions (under 2 minutes), abandon for longer ones. You're aiming for sustained focus, not Pomodoro purity.</p>
+
+<h3>How many Pomodoros should I do per day?</h3>
+
+<p>For ADHD adults, 4-6 quality Pomodoros is a strong day. Eight is heroic. Ten and you're producing low-quality work that needs redoing tomorrow. Quality > quantity.</p>
+
+<h3>Should I use the chime?</h3>
+
+<p>Cirillo's original used a kitchen timer with a loud bell. Modern ADHD practice often disables the sound because the startle is unpleasant. Try both. The chime is off by default in the timer above for the startle-sensitive majority.</p>
+
+<h3>Why the 4-block long break?</h3>
+
+<p>Because cognitive fatigue accumulates even when each block feels fine. The long break (20-30 minutes) prevents the slow-burn exhaustion that ruins your evening and tomorrow's morning. Skipping it is the most common reason Pomodoro burns people out.</p>
+
+<h2>The Bottom Line</h2>
+
+<p>The 25-minute timer is the Pomodoro standard — well-tested, well-known, and effective for ADHD adults on good attention days. The structure (25 work + 5 break, with a long break after 4) matters as much as the duration.</p>
+
+<p>Use the timer above. Pick one task. Take real breaks. After four blocks, take a long break — that's the part most people skip and the part that prevents burnout.</p>
+
+<p>If 25 minutes consistently feels like too much, that's not a personal failure. Try the 20-minute version. The goal is sustainable focus, not heroic single blocks.</p>
+
+<h2>Related articles</h2>
+<ul>
+<li><a href="https://www.tryfoco.com/pomodoro-for-adhd/">The Pomodoro Technique for ADHD (full guide)</a></li>
+<li><a href="https://www.tryfoco.com/20-minute-timer-adhd/">20-Minute Timer for ADHD</a></li>
+<li><a href="https://www.tryfoco.com/30-minute-timer-adhd/">30-Minute Timer for ADHD</a></li>
+<li><a href="https://www.tryfoco.com/adhd-task-paralysis/">ADHD Task Paralysis</a></li>
+<li><a href="https://www.tryfoco.com/how-to-focus-with-adhd/">How to Focus with ADHD</a></li>
+<li><a href="https://www.tryfoco.com/hyperfocus-adhd/">ADHD Hyperfocus</a></li>
+<li><a href="https://www.tryfoco.com/body-doubling-adhd/">Body Doubling for ADHD</a></li>
+</ul>
+
+<h2>References</h2>
+<ul class="foco-references" style="font-size:14px;color:#B8B0CC;line-height:1.6">
+<li><a href="https://www.nimh.nih.gov/health/topics/attention-deficit-hyperactivity-disorder-adhd" target="_blank" rel="noopener">National Institute of Mental Health. Attention-Deficit/Hyperactivity Disorder.</a></li>
+<li><a href="https://www.cdc.gov/adhd/about/index.html" target="_blank" rel="noopener">Centers for Disease Control and Prevention. ADHD in Adults: Symptoms and Treatment.</a></li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/9000892/" target="_blank" rel="noopener">Barkley RA. Behavioral inhibition, sustained attention, and executive functions: constructing a unifying theory of ADHD. Psychol Bull. 1997;121(1):65-94.</a></li>
+<li><a href="https://www.nature.com/articles/nrdp201520" target="_blank" rel="noopener">Faraone SV, Asherson P, Banaschewski T, et al. Attention-deficit/hyperactivity disorder. Nat Rev Dis Primers. 2015;1:15020.</a></li>
+<li><a href="https://chadd.org/about-adhd/overview/" target="_blank" rel="noopener">CHADD. ADHD Overview.</a></li>
+</ul>

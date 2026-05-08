@@ -1,0 +1,207 @@
+<h1>30-Minute Timer for ADHD: Half-Hour Deep Focus</h1>
+
+<div class="foco-tldr"><strong>TL;DR.</strong> A 30-minute timer is the largest focus block most ADHD adults can sustain reliably without nervous-system crash. It's longer than the standard Pomodoro 25 by design — half an hour rounds cleanly, fits calendar slots, and matches the natural rhythm of hour-long work sessions broken in half. Use the 30-minute timer below for tasks that need more depth than a 20- or 25-minute block, but where 60 minutes would be too much.</div>
+
+<!-- wp:html --><div class="foco-timer-wrap" role="region" aria-label="30-minute focus timer for ADHD"><div class="foco-timer-card"><div class="foco-timer-display"><svg class="foco-timer-ring" viewBox="0 0 220 220" aria-hidden="true"><circle class="foco-timer-track" cx="110" cy="110" r="100"></circle><circle class="foco-timer-progress" cx="110" cy="110" r="100" data-foco-progress></circle></svg><div class="foco-timer-digits" data-foco-digits>30:00</div><div class="foco-timer-state" data-foco-state>Ready</div></div><div class="foco-timer-controls"><button type="button" class="foco-timer-btn-primary" data-foco-action="start">Start</button><button type="button" class="foco-timer-btn-secondary" data-foco-action="pause" disabled>Pause</button><button type="button" class="foco-timer-btn-secondary" data-foco-action="reset">Reset</button></div><label class="foco-timer-sound"><input type="checkbox" data-foco-sound><span>Play chime when done</span></label></div></div><style>.foco-timer-wrap{margin:32px 0;display:flex;justify-content:center}.foco-timer-card{background:rgba(255,255,255,0.035);border:1px solid rgba(167,139,250,0.18);border-radius:24px;padding:32px 28px;width:100%;max-width:480px;text-align:center;box-shadow:0 10px 40px rgba(124,58,237,0.08)}.foco-timer-display{position:relative;width:240px;height:240px;margin:0 auto 22px}.foco-timer-ring{width:100%;height:100%;transform:rotate(-90deg)}.foco-timer-track{fill:none;stroke:rgba(167,139,250,0.18);stroke-width:8}.foco-timer-progress{fill:none;stroke:#7C3AED;stroke-width:8;stroke-linecap:round;stroke-dasharray:628.3;stroke-dashoffset:0;transition:stroke-dashoffset .25s linear,stroke .3s ease}.foco-timer-digits{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:54px;font-weight:800;color:#FFFFFF;letter-spacing:-2px;font-variant-numeric:tabular-nums}.foco-timer-state{position:absolute;top:calc(50% + 38px);left:50%;transform:translate(-50%,-50%);font-size:12px;color:#B8B0CC;text-transform:uppercase;letter-spacing:1.5px}.foco-timer-controls{display:flex;justify-content:center;gap:10px;margin-bottom:14px}.foco-timer-btn-primary,.foco-timer-btn-secondary{padding:12px 28px;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;border:none;transition:all .15s ease;font-family:inherit}.foco-timer-btn-primary{background:#7C3AED;color:#FFFFFF}.foco-timer-btn-primary:hover{background:#A78BFA}.foco-timer-btn-secondary{background:rgba(255,255,255,0.06);color:#FFFFFF;border:1px solid rgba(167,139,250,0.18)}.foco-timer-btn-secondary:hover:not(:disabled){background:rgba(255,255,255,0.12)}.foco-timer-btn-secondary:disabled{opacity:0.4;cursor:not-allowed}.foco-timer-sound{display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;color:#B8B0CC;cursor:pointer}.foco-timer-sound input{accent-color:#7C3AED;width:16px;height:16px;cursor:pointer}.foco-timer-card.is-finished .foco-timer-progress{stroke:#FB923C}.foco-timer-card.is-finished .foco-timer-digits{color:#FB923C}.foco-timer-card.is-finished .foco-timer-state{color:#FB923C}@media (max-width:480px){.foco-timer-card{padding:24px 18px}.foco-timer-display{width:200px;height:200px}.foco-timer-digits{font-size:44px}}</style><script>(function(){var DUR=1800;var card=document.querySelector('.foco-timer-card');if(!card)return;var digits=card.querySelector('[data-foco-digits]');var state=card.querySelector('[data-foco-state]');var progress=card.querySelector('[data-foco-progress]');var soundEl=card.querySelector('[data-foco-sound]');var startBtn=card.querySelector('[data-foco-action="start"]');var pauseBtn=card.querySelector('[data-foco-action="pause"]');var resetBtn=card.querySelector('[data-foco-action="reset"]');var DASH=628.3;var remaining=DUR;var tickHandle=null;var endAt=null;var running=false;function fmt(s){var m=Math.floor(s/60);var ss=Math.floor(s%60);return (m<10?'0':'')+m+':'+(ss<10?'0':'')+ss}function render(){digits.textContent=fmt(Math.max(0,remaining));var pct=Math.max(0,remaining)/DUR;progress.style.strokeDashoffset=DASH*(1-pct)}function chime(){if(!soundEl.checked)return;try{var ac=new (window.AudioContext||window.webkitAudioContext)();var notes=[660,880,990];notes.forEach(function(f,i){var o=ac.createOscillator();var g=ac.createGain();o.type='sine';o.frequency.value=f;o.connect(g);g.connect(ac.destination);var t=ac.currentTime+i*0.18;g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(0.18,t+0.02);g.gain.exponentialRampToValueAtTime(0.0001,t+0.4);o.start(t);o.stop(t+0.5)})}catch(e){}}function vibrate(){if(navigator.vibrate)try{navigator.vibrate([200,100,200])}catch(e){}}function tick(){var now=Date.now();remaining=Math.max(0,(endAt-now)/1000);render();if(remaining<=0){finish()}else{tickHandle=requestAnimationFrame(tick)}}function start(){if(running)return;running=true;endAt=Date.now()+remaining*1000;card.classList.remove('is-finished');state.textContent='Running';startBtn.disabled=true;pauseBtn.disabled=false;tickHandle=requestAnimationFrame(tick)}function pause(){if(!running)return;running=false;cancelAnimationFrame(tickHandle);state.textContent='Paused';startBtn.disabled=false;pauseBtn.disabled=true;startBtn.textContent='Resume'}function reset(){running=false;cancelAnimationFrame(tickHandle);remaining=DUR;render();state.textContent='Ready';startBtn.disabled=false;pauseBtn.disabled=true;startBtn.textContent='Start';card.classList.remove('is-finished')}function finish(){running=false;cancelAnimationFrame(tickHandle);remaining=0;render();state.textContent='Done';startBtn.disabled=false;pauseBtn.disabled=true;startBtn.textContent='Start';card.classList.add('is-finished');chime();vibrate()}startBtn.addEventListener('click',start);pauseBtn.addEventListener('click',pause);resetBtn.addEventListener('click',reset);render()})();</script><!-- /wp:html -->
+
+<div class="foco-key-takeaways">
+<h2>Key Takeaways</h2>
+<ul>
+<li>Thirty minutes is the upper edge of sustainable single-block focus for most ADHD adults. Beyond this, attention quality typically drops faster than work output rises.</li>
+<li>It's the right tool for tasks that need real depth — meeting prep, deep work, gym sessions, food prep — but where 60+ minutes would crash you.</li>
+<li>The 30-minute block fits real-world calendar slots. It's easier to schedule "30 min on the project" than to fit a Pomodoro into a meeting-heavy day.</li>
+<li>Take a real 10-minute break after a 30-minute block. Five minutes is enough for shorter work blocks; 30 minutes earns more.</li>
+<li>Two 30-minute blocks per day on a hard task is more sustainable than one 90-minute heroic session that ruins tomorrow.</li>
+</ul>
+</div>
+
+<h2>Table of Contents</h2>
+<ol>
+<li><a href="#why-30-minutes">Why 30 minutes is the upper sustainable edge</a></li>
+<li><a href="#30-vs-pomodoro">30-min block vs full Pomodoro structure</a></li>
+<li><a href="#5-uses">5 ways to use 30 minutes well</a></li>
+<li><a href="#breaks">The 10-minute break (longer than Pomodoro)</a></li>
+<li><a href="#when-it-fails">When 30 minutes is too long</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ol>
+
+<h2 id="why-30-minutes">Why 30 minutes is the upper sustainable edge</h2>
+
+<p>Research on focused attention windows consistently shows that quality drops sharply after 30-45 minutes of single-task work, even for neurotypical adults. For ADHD adults, the drop tends to come earlier — often around minute 25-30.</p>
+
+<p>Pushing past the natural drop produces work that needs redoing tomorrow. The Pomodoro Technique landed on 25 minutes for this reason; many ADHD-aware adaptations use 20 instead.</p>
+
+<p>So why have a 30-minute timer at all? Because some tasks genuinely need more than 25 minutes of unbroken time. Cooking a real meal. Prepping for a meeting. A continuous gym session. A long-form draft.</p>
+
+<p>For these, 30 minutes is the sustainable upper edge — long enough for the work, short enough that you can recover with a real break instead of a longer crash.</p>
+
+<p><strong>Time blindness</strong> matters here too. Half-hour blocks fit calendars, classroom periods, and meeting slots in a way 25-minute blocks don't. The cognitive overhead of "did I run 25 or 27 minutes?" disappears at 30. Read more on <a href="https://www.tryfoco.com/time-blindness-adhd/">ADHD time blindness</a>.</p>
+
+<h2 id="30-vs-pomodoro">30-min block vs full Pomodoro structure</h2>
+
+<p>The trade-off between 25 (Pomodoro standard) and 30:</p>
+
+<div class="foco-table-wrap" style="overflow-x:auto;margin:24px 0">
+<table style="width:100%;border-collapse:collapse;font-size:15px">
+<thead>
+<tr style="background:rgba(124,58,237,0.18)">
+<th style="text-align:left;padding:12px;border:1px solid rgba(167,139,250,0.18)">Aspect</th>
+<th style="text-align:left;padding:12px;border:1px solid rgba(167,139,250,0.18)">25-min Pomodoro</th>
+<th style="text-align:left;padding:12px;border:1px solid rgba(167,139,250,0.18)">30-min block</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">Calendar fit</td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">Awkward (needs 30-min slot anyway)</td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">Clean fit</td>
+</tr>
+<tr>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">Productive minutes per block</td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">~17-20 min after warm-up</td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">~22-25 min</td>
+</tr>
+<tr>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">Recovery break needed</td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">5 min</td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">10 min</td>
+</tr>
+<tr>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">Risk of attention crash</td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">Low</td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">Moderate (last 5 min often dragged)</td>
+</tr>
+<tr>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">Best for</td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">Sustained focus across many blocks</td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">A few high-depth blocks per day</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>The honest answer: the 25-minute Pomodoro is better for sustained daily output across 4-6 blocks. The 30-minute block is better when you need genuine depth on one or two specific tasks and don't plan to repeat all day.</p>
+
+<p>For the standard Pomodoro structure with 25-minute blocks, see our <a href="https://www.tryfoco.com/pomodoro-for-adhd/">Pomodoro for ADHD guide</a>.</p>
+
+<h2 id="5-uses">5 ways to use 30 minutes well</h2>
+
+<h3>1. Meeting prep</h3>
+
+<p>Half an hour is the right amount for prepping a substantive meeting — reading the agenda properly, drafting your talking points, anticipating questions, prepping documents.</p>
+
+<p>The trap: starting prep 5 minutes before the meeting and trying to read everything in real time. Block 30 minutes earlier in the day for this.</p>
+
+<h3>2. Cooking a real meal</h3>
+
+<p>Most home-cooked meals run 25-40 minutes from prep to plate. A 30-minute timer keeps you on pace and prevents the ADHD trap of starting one dish, getting distracted by another, and ending with three half-done foods.</p>
+
+<p>Set the timer at chopping. Plate when it rings. Adjust technique if you're consistently running over.</p>
+
+<h3>3. Workout block (gym, run, or full home routine)</h3>
+
+<p>Thirty minutes of focused exercise outperforms 60 minutes of half-attention exercise for most ADHD adults. The shorter window keeps focus sharp; the longer window invites zone-out.</p>
+
+<p>Pick one specific routine (4-5 exercises) for 30 minutes. Don't browse for new exercises mid-workout — that's avoidance disguised as research.</p>
+
+<h3>4. Long-form writing or coding</h3>
+
+<p>A 30-minute block is enough for genuine depth on writing or coding — long enough to enter flow, short enough to stop before quality drops.</p>
+
+<p>The constraint is critical: pick one specific section, function, or feature. "Work on the project" is too vague even for 30 minutes.</p>
+
+<h3>5. Self-care that's not phone scrolling</h3>
+
+<p>Thirty minutes of real rest looks different from 30 minutes of scrolling. The latter ends more depleted than it started.</p>
+
+<p>What real 30-minute rest looks like: lying down with eyes closed, stretching, slow walks, a hot bath, reading a book that isn't urgent. The criterion: did your nervous system actually downshift?</p>
+
+<h2 id="breaks">The 10-minute break (longer than Pomodoro)</h2>
+
+<p>After a 30-minute block, take 10 minutes off — not 5. The longer work block earns the longer recovery.</p>
+
+<p>What works in a 10-minute break:</p>
+
+<ul>
+<li>Walk outside for 5+ minutes</li>
+<li>Eat a small snack with protein (especially if you're 3+ hours from your last meal)</li>
+<li>Lie flat on the floor for 2-3 minutes (releases hip tension from sitting)</li>
+<li>Stretch the parts that are tight from your work posture</li>
+<li>Drink water and refill the bottle</li>
+</ul>
+
+<p>What doesn't work:</p>
+
+<ul>
+<li>Phone scrolling (ADHD brains rarely "rest" via screens — they switch cognitive modes)</li>
+<li>Email or Slack (different work, not a break)</li>
+<li>Starting a different project (you're not breaking, you're avoiding)</li>
+</ul>
+
+<p>If you find your 10-minute break consistently runs to 30, that's a signal you might be over-extending the work blocks. Try 25 instead and see if breaks naturally shorten.</p>
+
+<h2 id="when-it-fails">When 30 minutes is too long</h2>
+
+<p>Three patterns signal you should drop to 20 or 25:</p>
+
+<p><strong>You consistently dread starting the timer.</strong> The dread is information — your nervous system knows the duration is wrong for the current state. Listen.</p>
+
+<p><strong>The last 5-10 minutes consistently drag.</strong> If you produce real work in minutes 5-25 but the last 5-10 are willpower fumes, your block is too long. The forced minutes produce work that needs redoing.</p>
+
+<p><strong>You're too crashed to start the next block.</strong> If a single 30-minute block leaves you needing 30+ minutes to recover, the cost-benefit is wrong. Two 20-minute blocks with 5-minute breaks would produce more total output.</p>
+
+<p>If you can't even start a 30-minute block, see our <a href="https://www.tryfoco.com/10-minute-timer-adhd/">10-minute timer</a> or <a href="https://www.tryfoco.com/5-minute-timer-adhd/">5-minute timer</a> for the initiation pattern.</p>
+
+<h2 id="faq">FAQ</h2>
+
+<h3>Is 30 minutes too long for ADHD focus?</h3>
+
+<p>Sometimes. It depends on the day, the task, and your current state. On a well-rested day with a clear task, 30 minutes is fine for many ADHD adults. On a low-energy day, it's a stretch — drop to 20 or 25.</p>
+
+<h3>How does this compare to Pomodoro?</h3>
+
+<p>Pomodoro is 25 minutes work, 5 minutes break, repeated. The 30-minute block is a different rhythm: longer work, longer break, fewer total blocks per day. Same principles, different calibration. Use Pomodoro for sustained daily output; use 30-minute blocks for occasional deep dives.</p>
+
+<h3>Should I take 5 or 10 minutes after a 30-minute block?</h3>
+
+<p>Ten. The longer work block earns the longer break. Trying to use 5-minute Pomodoro-style breaks after 30-minute blocks is the most common reason this pattern burns people out by mid-afternoon.</p>
+
+<h3>Can I chain 30-minute blocks?</h3>
+
+<p>Yes, but with limits. Most ADHD adults sustain 2-3 quality 30-minute blocks per day before output drops. After that, switch to shorter blocks or stop. Heroic 4-block days produce work that needs redoing tomorrow.</p>
+
+<h3>What if I enter flow at minute 25 and don't want to stop?</h3>
+
+<p>Don't stop. The timer is a guide, not a master. Pause it. Keep working. When the natural break point arrives, run a fresh timer. Don't sacrifice flow to a clock.</p>
+
+<h3>Why not just work for an hour?</h3>
+
+<p>Because hour-long focused work is genuinely difficult for most ADHD brains, and the second half typically produces lower-quality work that needs revisiting. Two 30-minute blocks with a real break between them outperforms one 60-minute block for almost everyone with ADHD.</p>
+
+<h2>The Bottom Line</h2>
+
+<p>A 30-minute timer is the upper sustainable edge for ADHD focus — long enough for real depth, short enough that you can recover and run another block tomorrow.</p>
+
+<p>Use the timer above. Pick one specific task. Take a real 10-minute break afterward. Two quality blocks beats one heroic session every time.</p>
+
+<p>If you find yourself coming back to this page often, FOCO is the app version of this same principle, with AI task-breakdown for the days when picking the right task is harder than the work.</p>
+
+<h2>Related articles</h2>
+<ul>
+<li><a href="https://www.tryfoco.com/25-minute-timer-adhd/">25-Minute Timer for ADHD (Pomodoro standard)</a></li>
+<li><a href="https://www.tryfoco.com/20-minute-timer-adhd/">20-Minute Timer for ADHD</a></li>
+<li><a href="https://www.tryfoco.com/15-minute-timer-adhd/">15-Minute Timer for ADHD</a></li>
+<li><a href="https://www.tryfoco.com/pomodoro-for-adhd/">The Pomodoro Technique for ADHD</a></li>
+<li><a href="https://www.tryfoco.com/hyperfocus-adhd/">ADHD Hyperfocus</a></li>
+<li><a href="https://www.tryfoco.com/how-to-focus-with-adhd/">How to Focus with ADHD</a></li>
+<li><a href="https://www.tryfoco.com/time-blindness-adhd/">ADHD Time Blindness</a></li>
+</ul>
+
+<h2>References</h2>
+<ul class="foco-references" style="font-size:14px;color:#B8B0CC;line-height:1.6">
+<li><a href="https://www.nimh.nih.gov/health/topics/attention-deficit-hyperactivity-disorder-adhd" target="_blank" rel="noopener">National Institute of Mental Health. Attention-Deficit/Hyperactivity Disorder.</a></li>
+<li><a href="https://www.cdc.gov/adhd/about/index.html" target="_blank" rel="noopener">Centers for Disease Control and Prevention. ADHD in Adults: Symptoms and Treatment.</a></li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/9000892/" target="_blank" rel="noopener">Barkley RA. Behavioral inhibition, sustained attention, and executive functions: constructing a unifying theory of ADHD. Psychol Bull. 1997;121(1):65-94.</a></li>
+<li><a href="https://www.nature.com/articles/nrdp201520" target="_blank" rel="noopener">Faraone SV, Asherson P, Banaschewski T, et al. Attention-deficit/hyperactivity disorder. Nat Rev Dis Primers. 2015;1:15020.</a></li>
+<li><a href="https://chadd.org/about-adhd/overview/" target="_blank" rel="noopener">CHADD. ADHD Overview.</a></li>
+</ul>

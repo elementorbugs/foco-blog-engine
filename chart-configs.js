@@ -11,6 +11,347 @@ const K = require('./chart-kit');
 
 module.exports = {
 
+  // ── SPOKE: Pomodoro for ADHD (under P3) ────────────────────────────────
+  'pomodoro-for-adhd': {
+    postId: null,
+    file: 'post-pomodoro-for-adhd.html',
+    pexelsPlans: [
+      { query: 'kitchen timer minimal desk modern',         anchor: '<h2>What is the Pomodoro Technique?</h2>' },
+      { query: 'focused person headphones writing laptop',  anchor: '<h2>How do you actually use Pomodoro?</h2>' },
+      { query: 'morning coffee notebook routine planning',  anchor: '<h2>What if 25 minutes feels wrong?</h2>' },
+      { query: 'apps phone screen productivity tools',      anchor: '<h2>Are there good Pomodoro apps for ADHD?</h2>' },
+    ],
+    charts: [
+      { pos: 2, html: K.progressTimeline({
+        title: 'The Standard Pomodoro Cycle',
+        caption: 'Repeat 4 times, then take a 15-30 minute long break. Sustainability beats intensity.',
+        steps: [
+          { label: '25 min',  sub: 'Focused single-task work' },
+          { label: '5 min',   sub: 'Real break — no phone' },
+          { label: '×4',      sub: 'Repeat for one set' },
+          { label: '15-30',   sub: 'Long recovery break' },
+        ],
+      }) },
+      { pos: 3, html: K.infographicList({
+        title: 'Why Pomodoro Works for ADHD',
+        caption: '4 specific mechanisms — none of them require willpower.',
+        items: [
+          { icon: '⏱️', label: 'Bounded time',     value: 'Brain commits to 25, not "all day"' },
+          { icon: '☕', label: 'Guaranteed break', value: "You're scheduling rest, not denying it" },
+          { icon: '🎯', label: 'External pacing',  value: 'Timer compensates for time blindness' },
+          { icon: '🔄', label: 'Dopamine reset',   value: 'New pomodoro = small novelty hit' },
+        ],
+      }) },
+      { pos: 4, html: K.statGrid({
+        title: 'Common Pomodoro Variants',
+        caption: 'The 25/5 split is standard. Adjust to fit your brain — the principle is what matters.',
+        stats: [
+          { value: '15/5',  label: 'For bad days, fatigue, or just-diagnosed ADHD' },
+          { value: '25/5',  label: 'Standard — works for most ADHD adults' },
+          { value: '50/10', label: 'For deep work + experienced focus' },
+          { value: '90/15', label: 'For ultradian-rhythm advanced users' },
+        ],
+      }) },
+      { pos: 5, html: K.infographicList({
+        title: '4 Mistakes That Kill Pomodoro for ADHD',
+        caption: 'Almost every "it didn\'t work" comes down to one of these.',
+        items: [
+          { icon: '⏭️', label: 'Skip the break',      value: 'Burnout by mid-afternoon' },
+          { icon: '📱', label: 'Phone during break',   value: 'Different work, not rest' },
+          { icon: '🧺', label: 'Multiple tasks/pomo',  value: 'None get done well' },
+          { icon: '🎭', label: 'Productivity theater', value: 'Looking busy ≠ doing it' },
+        ],
+      }) },
+    ],
+  },
+
+  // ── SPOKE: ADHD Hyperfocus (under P3) ──────────────────────────────────
+  'hyperfocus-adhd': {
+    postId: null,
+    file: 'post-hyperfocus-adhd.html',
+    pexelsPlans: [
+      { query: 'person deeply focused laptop late night',     anchor: '<h2>What is hyperfocus?</h2>' },
+      { query: 'gamer focused screen intense concentration',  anchor: '<h2>How is hyperfocus possible if ADHD is an attention disorder?</h2>' },
+      { query: 'morning routine coffee focused planning',     anchor: '<h2>How do you channel hyperfocus instead of being controlled by it?</h2>' },
+      { query: 'tired exhausted person rest break recovery',  anchor: '<h2>How do you safely come out of hyperfocus?</h2>' },
+    ],
+    charts: [
+      { pos: 2, html: K.infographicList({
+        title: 'The Signature Features of Hyperfocus',
+        caption: 'If most of these felt familiar, you have firsthand experience with ADHD hyperfocus.',
+        items: [
+          { icon: '⏰', label: 'Time disappears',     value: 'What felt like 30 min was 4 hours' },
+          { icon: '🍽️', label: 'Hunger stops',       value: 'Forgot to eat for 8+ hours' },
+          { icon: '📵', label: 'Phone ignored',       value: 'Texts, calls — invisible' },
+          { icon: '😵', label: 'Coming out is jarring', value: 'Sudden re-entry to the world' },
+        ],
+      }) },
+      { pos: 3, html: K.stackedCompare({
+        title: 'Same Brain, Two Modes',
+        leftLabel: 'Boring task',
+        rightLabel: 'Interesting task',
+        source: 'Volkow et al., JAMA (2009); Barkley executive function research',
+        caption: 'ADHD attention isn\'t broken — it\'s deeply unevenly distributed. The same brain that hyperfocuses for 8 hours can fail to start a 5-minute task. The variable is dopamine, not willpower.',
+        segments: [
+          { label: 'Dopamine generated',     left: 15, right: 92 },
+          { label: 'Focus available',        left: 18, right: 88 },
+          { label: 'Time you can sustain',   left: 8,  right: 95 },
+          { label: 'How easy to start',      left: 12, right: 90 },
+        ],
+      }) },
+      { pos: 4, html: K.progressTimeline({
+        title: 'Channeling Hyperfocus: The 5-Step Plan',
+        caption: 'You can\'t summon hyperfocus on demand, but you can stack conditions to make it more likely to land on what matters.',
+        steps: [
+          { label: 'Pre-block',  sub: 'Calendar-protect 1-2 hours/day' },
+          { label: 'Time it',    sub: 'Schedule when dopamine peaks' },
+          { label: 'Gamify',     sub: 'Make boring tasks novel' },
+          { label: 'Interrupt',  sub: 'External alarms + people' },
+          { label: 'Recover',    sub: 'Plan rest day after' },
+        ],
+      }) },
+    ],
+  },
+
+  // ── SPOKE: Brown Noise for ADHD (under P3) ─────────────────────────────
+  'brown-noise-adhd': {
+    postId: null,
+    file: 'post-brown-noise-adhd.html',
+    pexelsPlans: [
+      { query: 'headphones person focused desk minimal',     anchor: '<h2>What is brown noise?</h2>' },
+      { query: 'noise canceling headphones over ear modern', anchor: '<h2>How do you actually use brown noise?</h2>' },
+      { query: 'phone music app screen settings',            anchor: '<h2>What about coloured noise apps?</h2>' },
+    ],
+    charts: [
+      { pos: 2, html: K.statGrid({
+        title: 'How the Noise Spectrum Compares',
+        caption: 'Most ADHD adults who experiment end up preferring brown — the depth feels grounding, not sharp.',
+        stats: [
+          { value: 'White', label: 'Equal frequencies — hissy, harsh' },
+          { value: 'Pink',  label: 'Lightly weighted lower — softer' },
+          { value: 'Brown', label: 'Heavily weighted lower — deepest, warmest' },
+        ],
+      }) },
+      { pos: 3, html: K.infographicList({
+        title: 'Why Brown Noise Helps ADHD Focus',
+        caption: 'Three mechanisms working together. Occupies, masks, and stays neutral.',
+        items: [
+          { icon: '🌊', label: 'Occupies background',     value: 'Wandering attention has somewhere to land' },
+          { icon: '🔇', label: 'Masks distractions',      value: 'Voices, traffic, fridge — gone' },
+          { icon: '🚫', label: 'No language or melody',   value: "Brain can ignore it (can't ignore words)" },
+        ],
+      }) },
+      { pos: 4, html: K.donutChart({
+        title: 'ADHD Adults Who Find Brown Noise Helpful',
+        value: 65,
+        label: 'find it helps',
+        unit: '%',
+        source: 'Anecdotal estimates from ADHD coaching practice (no formal trials yet)',
+        caption: 'Most ADHD adults respond. A meaningful 30-40% don\'t. If you\'re in that group, try pink noise, nature sounds, or silence with noise-canceling headphones.',
+      }) },
+    ],
+  },
+
+  // ── COMPARISON CLUSTER (P10 — adhd-comparisons) ────────────────────────
+  'adhd-and-autism': {
+    postId: null,
+    file: 'post-adhd-and-autism.html',
+    pexelsPlans: [
+      { query: 'brain neuroscience overlap research',     anchor: '<h2>How are ADHD and autism related?</h2>' },
+      { query: 'thoughtful adult quiet contemplation',    anchor: '<h2>What\'s different about ADHD vs autism?</h2>' },
+      { query: 'therapist clinical evaluation patient',   anchor: '<h2>How is AuDHD diagnosed and treated?</h2>' },
+    ],
+    charts: [
+      { pos: 1, html: K.donutChart({
+        title: 'How Often ADHD and Autism Co-Occur',
+        value: 50,
+        label: 'overlap rate',
+        unit: '%',
+        source: 'Synthesis of recent ADHD-autism comorbidity studies (2015-2024)',
+        caption: 'Range varies by study (30-80%), with newer research suggesting the rate is higher than historical estimates. Until 2013, dual diagnosis was forbidden by DSM-IV — so older data understates the overlap.',
+      }) },
+      { pos: 2, html: K.stackedCompare({
+        title: 'ADHD vs Autism: Core Differences',
+        leftLabel: 'ADHD core',
+        rightLabel: 'Autism core',
+        source: 'DSM-5 + clinical literature',
+        caption: 'Same brain can have both — but the underlying motivational systems are different. ADHD seeks novelty; autism seeks predictability.',
+        segments: [
+          { label: 'Novelty-seeking',          left: 88, right: 22 },
+          { label: 'Routine preference',       left: 25, right: 90 },
+          { label: 'Variable attention',       left: 90, right: 38 },
+          { label: 'Social comm. difficulty',  left: 45, right: 88 },
+          { label: 'Sensory sensitivity',      left: 55, right: 80 },
+        ],
+      }) },
+      { pos: 3, html: K.infographicList({
+        title: 'What ADHD and Autism Share',
+        caption: 'These are the overlap areas — and why the conditions are so often confused.',
+        items: [
+          { icon: '🧠', label: 'Executive dysfunction',  value: 'Task initiation, working memory' },
+          { icon: '👂', label: 'Sensory sensitivity',   value: 'Lights, sounds, textures' },
+          { icon: '❤️', label: 'Emotional regulation',  value: 'Intense feelings, slow recovery' },
+          { icon: '🛏️', label: 'Sleep difficulties',    value: 'Insomnia, delayed sleep phase' },
+          { icon: '🤝', label: 'Social challenges',     value: 'Different reasons, similar effect' },
+          { icon: '🔥', label: 'Hyperfocus / interests', value: 'Both lock onto interests intensely' },
+        ],
+      }) },
+    ],
+  },
+
+
+  'adhd-or-add': {
+    postId: null,
+    file: 'post-adhd-or-add.html',
+    pexelsPlans: [
+      { query: 'medical history old paperwork records',     anchor: '<h2>Are ADHD and ADD different conditions?</h2>' },
+      { query: 'thoughtful woman daydream window light',    anchor: '<h2>What\'s the difference between ADHD and ADHD-PI (the inattentive type)?</h2>' },
+      { query: 'mental health professional consultation',   anchor: '<h2>If I was diagnosed with "ADD" 25 years ago, do I need to be re-evaluated?</h2>' },
+    ],
+    charts: [
+      { pos: 2, html: K.progressTimeline({
+        title: 'How "ADD" Became "ADHD" — Diagnostic History',
+        source: 'DSM-III (1980), DSM-III-R (1987), DSM-5 (2013)',
+        caption: 'Same condition. Different decade names. The neurology never changed — only the words for it.',
+        steps: [
+          { label: 'Pre-1980', sub: '"Minimal brain dysfunction"' },
+          { label: '1980',     sub: 'DSM-III: ADD coined' },
+          { label: '1987',     sub: 'DSM-III-R: renamed ADHD' },
+          { label: '2013',     sub: 'DSM-5: 3 presentations' },
+        ],
+      }) },
+      { pos: 4, html: K.infographicList({
+        title: 'Internal vs External Hyperactivity (Adults)',
+        caption: 'Many adults insist they\'re "not hyperactive" because they only know the kid version. Their hyperactivity moved inside.',
+        items: [
+          { icon: '🏃', label: 'External (kid version)', value: 'Running, climbing, fidgeting' },
+          { icon: '💭', label: 'Racing thoughts',         value: 'Mind won\'t quiet' },
+          { icon: '🛋️', label: "Can't relax",            value: 'Body still, brain spinning' },
+          { icon: '👟', label: 'Micro-fidgeting',         value: 'Foot tap, pen click, below awareness' },
+        ],
+      }) },
+    ],
+  },
+
+  // ── SPOKE: ADHD Diagnostic Codes (under future P9 diagnosis) ──────────
+  'adhd-diagnostic-codes': {
+    postId: null,
+    file: 'post-adhd-diagnostic-codes.html',
+    pexelsPlans: [
+      { query: 'medical chart paperwork doctor records',     anchor: '<h2>Why do diagnostic codes matter?</h2>' },
+      { query: 'doctor patient consultation paperwork',      anchor: '<h2>How do you find your own diagnostic code?</h2>' },
+      { query: 'school accommodations meeting professional', anchor: '<h2>How do diagnostic codes affect accommodations?</h2>' },
+    ],
+    charts: [
+      { pos: 2, html: K.infographicList({
+        title: 'The 5 ADHD Diagnostic Codes (DSM-5 / ICD-10)',
+        caption: 'Same F90.x family used in both DSM-5 and ICD-10 for billing compatibility worldwide.',
+        items: [
+          { icon: '🧠', label: 'F90.0 — Inattentive',  value: 'Most common in girls/women, often missed' },
+          { icon: '⚡', label: 'F90.1 — Hyperactive',  value: 'More common in young children' },
+          { icon: '🌀', label: 'F90.2 — Combined',     value: 'Most common overall, ~50-60%' },
+          { icon: '📋', label: 'F90.8 — Other',        value: 'Specific symptoms, doesn\'t fit a subtype' },
+          { icon: '❓', label: 'F90.9 — Unspecified',  value: 'Temporary while evaluation completes' },
+        ],
+      }) },
+      { pos: 3, html: K.stackedCompare({
+        title: 'DSM-5/ICD-10 vs ICD-11 — Equivalent Codes',
+        leftLabel: 'ICD-10 / DSM-5',
+        rightLabel: 'ICD-11 (newer)',
+        source: 'WHO ICD-11; American Psychiatric Association DSM-5-TR',
+        caption: 'Same categories, different numbering. Most US healthcare still uses F90.x.',
+        segments: [
+          { label: 'Inattentive',          left: 100, right: 100 },
+          { label: 'Hyperactive-impulsive', left: 100, right: 100 },
+          { label: 'Combined',             left: 100, right: 100 },
+        ],
+      }) },
+      { pos: 5, html: K.statGrid({
+        title: 'Where Your Code Appears',
+        caption: '4 places to look for it. If you\'ve ever been diagnosed, you have one — even if you\'ve never seen it.',
+        stats: [
+          { value: '📄',  label: 'Evaluation report (top or bottom)' },
+          { value: '💳',  label: 'Insurance EOB claims' },
+          { value: '💊',  label: 'Pharmacy prescription records' },
+          { value: '☎️',  label: 'Just ask your clinician' },
+        ],
+      }) },
+    ],
+  },
+
+  // ── SPOKE: Best Productivity Apps for ADHD (under P6) ─────────────────
+  'best-productivity-apps-for-adhd': {
+    postId: null,
+    file: 'post-best-productivity-apps-for-adhd.html',
+    pexelsPlans: [
+      { query: 'phone apps screen productivity tools',         anchor: '<h2>What makes a productivity app actually good for ADHD?</h2>' },
+      { query: 'person choosing decision multiple options',    anchor: '<h2>Which ADHD productivity app should you choose?</h2>' },
+      { query: 'subscription billing money smartphone',        anchor: '<h2>Are paid ADHD productivity apps worth it?</h2>' },
+    ],
+    charts: [
+      { pos: 1, html: K.infographicList({
+        title: 'The 3 Properties of an ADHD-Friendly App',
+        caption: 'Apps that fail for ADHD typically violate at least one of these. Apps that succeed have all three.',
+        items: [
+          { icon: '🪒', label: 'Low setup friction',     value: 'Use it in under 60 seconds' },
+          { icon: '🎯', label: 'External structure',     value: 'App does the executive function work' },
+          { icon: '⚡', label: 'Dopamine at the start',  value: 'Tiny rewards for beginning' },
+        ],
+      }) },
+      { pos: 7, html: K.statGrid({
+        title: 'Match Your Weakness to the Right App',
+        caption: 'Pick based on which executive function is your biggest struggle, not based on features.',
+        stats: [
+          { value: "Can't start", label: 'FOCO or Goblin Tools' },
+          { value: 'Time blind',  label: 'Tiimo or visual planner' },
+          { value: 'No focus',    label: 'Forest + Brain.fm' },
+          { value: 'Chaotic day', label: 'Sunsama or TickTick' },
+        ],
+      }) },
+    ],
+  },
+
+  // ── PILLAR 3: How to Focus With ADHD ───────────────────────────────────
+  'how-to-focus-with-adhd': {
+    postId: null,
+    file: 'post-how-to-focus-with-adhd.html',
+    pexelsPlans: [
+      { query: 'focused person headphones laptop work',         anchor: '<h2>Why is focus so hard for ADHD?</h2>' },
+      { query: 'pomodoro timer kitchen desk minimal',           anchor: '<h2>How does the Pomodoro Technique work for ADHD?</h2>' },
+      { query: 'two people coworking coffee shop laptops',      anchor: '<h2>What is body doubling and why does it help?</h2>' },
+      { query: 'organized planner schedule calendar week',      anchor: '<h2>What is time blocking and how do you do it for ADHD?</h2>' },
+    ],
+    charts: [
+      { pos: 2, html: K.infographicList({
+        title: 'The 3 Principles That Make Focus Techniques Work',
+        caption: 'Almost every focus technique that works for ADHD shares these three. Almost everything that fails violates at least one.',
+        items: [
+          { icon: '⏱️', label: 'Bound the time',       value: '"25 min" beats "all afternoon"' },
+          { icon: '🪒', label: 'Reduce start friction', value: 'Pre-stage everything' },
+          { icon: '🤝', label: 'External structure',   value: 'Timer, body double, alarm' },
+        ],
+      }) },
+      { pos: 3, html: K.progressTimeline({
+        title: 'The Pomodoro Cycle for ADHD',
+        caption: 'Standard 25/5 split works for most. Try 15/5 or 50/10 if 25 feels wrong.',
+        steps: [
+          { label: '25 min', sub: 'Focused work, no distractions' },
+          { label: '5 min',  sub: 'Break — stand, water, walk' },
+          { label: 'Repeat', sub: 'Cycle 4 times' },
+          { label: '15-30',  sub: 'Long break after cycle' },
+        ],
+      }) },
+      { pos: 6, html: K.donutChart({
+        title: 'ADHD Adults Who Respond to Stimulant Medication',
+        value: 75,
+        label: 'respond to first-line',
+        unit: '%',
+        source: 'NIMH; multiple meta-analyses of adult ADHD pharmacotherapy',
+        caption: '70-80% of ADHD adults respond to first-line stimulants when properly prescribed. Medication is not a cure, but it raises the focus baseline that all other techniques compound on top of.',
+      }) },
+    ],
+  },
+
   // ── PILLAR 2: ADHD Executive Function ──────────────────────────────────
   'adhd-executive-function': {
     postId: null,
@@ -704,6 +1045,78 @@ module.exports = {
           { label: 'Treatment', sub: 'Therapy + medication' },
         ],
       }) },
+    ],
+  },
+
+  '10-minute-timer-adhd': {
+    file: 'post-10-minute-timer-adhd.html',
+    pexelsPlans: [
+      { query: 'analog kitchen timer minimal desk',           anchor: '<h2 id="why-10-minutes">Why 10 minutes works for the ADHD brain</h2>' },
+      { query: 'cluttered desk before tidying messy papers',  anchor: '<h2 id="5-uses">5 ADHD-tested ways to use a 10-minute timer</h2>' },
+      { query: 'two people working laptop coffee shop',       anchor: '<h2 id="body-doubling">Using a 10-minute timer for body doubling</h2>' },
+    ],
+  },
+
+  '5-minute-timer-adhd': {
+    file: 'post-5-minute-timer-adhd.html',
+    pexelsPlans: [
+      { query: 'small kitchen timer hourglass simple',         anchor: '<h2 id="why-5-minutes">Why a 5-minute timer works for ADHD</h2>' },
+      { query: 'person putting on sneakers shoes morning',     anchor: '<h2 id="5-uses">5 things you can actually do in 5 minutes</h2>' },
+      { query: 'tired exhausted overwhelmed person rest',      anchor: '<h2 id="when-it-fails">When 5 minutes still feels impossible</h2>' },
+    ],
+  },
+
+  '15-minute-timer-adhd': {
+    file: 'post-15-minute-timer-adhd.html',
+    pexelsPlans: [
+      { query: 'person reading book coffee morning calm',     anchor: '<h2 id="why-15-minutes">Why a 15-minute timer fits the ADHD brain</h2>' },
+      { query: 'home workout yoga mat exercise routine',      anchor: '<h2 id="5-uses">5 ways to use 15 minutes well</h2>' },
+      { query: 'taking deep breath relax break window',       anchor: '<h2 id="double-block">The double-15 protocol</h2>' },
+    ],
+  },
+
+  '20-minute-timer-adhd': {
+    file: 'post-20-minute-timer-adhd.html',
+    pexelsPlans: [
+      { query: 'focused person writing laptop workspace',     anchor: '<h2 id="why-20-minutes">Why 20 minutes works for ADHD</h2>' },
+      { query: 'tomato kitchen timer pomodoro vintage',       anchor: '<h2 id="20-vs-25">Why 20 instead of the standard Pomodoro 25</h2>' },
+      { query: 'developer coding screen monitor focused',     anchor: '<h2 id="5-uses">5 ways to spend 20 minutes well</h2>' },
+    ],
+  },
+
+  '25-minute-timer-adhd': {
+    file: 'post-25-minute-timer-adhd.html',
+    pexelsPlans: [
+      { query: 'pomodoro tomato red kitchen timer wood',      anchor: '<h2 id="why-25-minutes">Why 25 minutes — the Cirillo origin</h2>' },
+      { query: 'person concentrated writing journal table',   anchor: '<h2 id="5-uses">5 ways to use a 25-minute Pomodoro</h2>' },
+      { query: 'walking outside park nature break fresh',     anchor: '<h2 id="breaks">What to actually do in the 5-minute break</h2>' },
+    ],
+  },
+
+  '30-minute-timer-adhd': {
+    file: 'post-30-minute-timer-adhd.html',
+    pexelsPlans: [
+      { query: 'half hour clock minimal modern desk',         anchor: '<h2 id="why-30-minutes">Why 30 minutes is the upper sustainable edge</h2>' },
+      { query: 'cooking kitchen ingredients prep meal',       anchor: '<h2 id="5-uses">5 ways to use 30 minutes well</h2>' },
+      { query: 'person stretching break floor relax',         anchor: '<h2 id="breaks">The 10-minute break (longer than Pomodoro)</h2>' },
+    ],
+  },
+
+  'best-adhd-planner': {
+    file: 'post-best-adhd-planner.html',
+    pexelsPlans: [
+      { query: 'paper planner notebook calendar pen desk',    anchor: '<h2 id="why-fail">Why most planners fail the ADHD brain</h2>' },
+      { query: 'phone calendar app digital planner screen',   anchor: '<h2 id="digital-options">Digital ADHD planners reviewed</h2>' },
+      { query: 'leather journal paper hand writing morning',  anchor: '<h2 id="paper-options">Paper ADHD planners reviewed</h2>' },
+    ],
+  },
+
+  'adhd-imposter-syndrome': {
+    file: 'post-adhd-imposter-syndrome.html',
+    pexelsPlans: [
+      { query: 'person looking mirror reflection thoughtful',  anchor: '<h2 id="what-it-is">What ADHD imposter syndrome actually is</h2>' },
+      { query: 'overwhelmed person hands face stress quiet',   anchor: '<h2 id="rsd-connection">The RSD connection</h2>' },
+      { query: 'journal notebook writing introspection desk',  anchor: '<h2 id="how-to-break">How to break the pattern</h2>' },
     ],
   },
 

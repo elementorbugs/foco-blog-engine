@@ -1,0 +1,220 @@
+<h1>10-Minute Timer for ADHD: Start the Task You're Avoiding</h1>
+
+<div class="foco-tldr"><strong>TL;DR.</strong> A 10-minute timer is the most reliable task-initiation tool for the ADHD brain because it's short enough to bypass the "this will take forever" wall and long enough to produce real progress. It works by making invisible time visible, lowering the activation cost of starting, and creating a small dopamine reward at the end. Use the timer below — no signup, no app download — and pair it with one tiny task you've been avoiding.</div>
+
+<!-- wp:html --><div class="foco-timer-wrap" role="region" aria-label="10-minute focus timer for ADHD"><div class="foco-timer-card"><div class="foco-timer-context" data-foco-context>Pick a preset, or just press Start</div><div class="foco-timer-display"><svg class="foco-timer-ring" viewBox="0 0 220 220" aria-hidden="true"><circle class="foco-timer-track" cx="110" cy="110" r="100"></circle><circle class="foco-timer-progress" cx="110" cy="110" r="100" data-foco-progress></circle></svg><div class="foco-timer-digits" data-foco-digits>10:00</div><div class="foco-timer-state" data-foco-state>Ready</div></div><div class="foco-timer-presets"><button type="button" data-foco-preset="Tidy one surface — table, counter, or desk">Tidy</button><button type="button" data-foco-preset="Email sprint — clear the most urgent 3">Email</button><button type="button" data-foco-preset="Brain dump — write everything stuck in your head">Brain dump</button><button type="button" data-foco-preset="Stretch, water, eyes off screen">Move</button><button type="button" data-foco-preset="Start the task you've been avoiding">Just start</button></div><div class="foco-timer-controls"><button type="button" class="foco-timer-btn-primary" data-foco-action="start">Start</button><button type="button" class="foco-timer-btn-secondary" data-foco-action="pause" disabled>Pause</button><button type="button" class="foco-timer-btn-secondary" data-foco-action="reset">Reset</button></div><label class="foco-timer-sound"><input type="checkbox" data-foco-sound><span>Play chime when done</span></label></div></div><style>.foco-timer-wrap{margin:32px 0;display:flex;justify-content:center}.foco-timer-card{background:rgba(255,255,255,0.035);border:1px solid rgba(167,139,250,0.18);border-radius:24px;padding:32px 28px;width:100%;max-width:480px;text-align:center;box-shadow:0 10px 40px rgba(124,58,237,0.08)}.foco-timer-context{font-size:14px;color:#B8B0CC;min-height:20px;margin-bottom:18px;font-style:italic;line-height:1.4}.foco-timer-display{position:relative;width:240px;height:240px;margin:0 auto 22px}.foco-timer-ring{width:100%;height:100%;transform:rotate(-90deg)}.foco-timer-track{fill:none;stroke:rgba(167,139,250,0.18);stroke-width:8}.foco-timer-progress{fill:none;stroke:#7C3AED;stroke-width:8;stroke-linecap:round;stroke-dasharray:628.3;stroke-dashoffset:0;transition:stroke-dashoffset .25s linear,stroke .3s ease}.foco-timer-digits{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:54px;font-weight:800;color:#FFFFFF;letter-spacing:-2px;font-variant-numeric:tabular-nums}.foco-timer-state{position:absolute;top:calc(50% + 38px);left:50%;transform:translate(-50%,-50%);font-size:12px;color:#B8B0CC;text-transform:uppercase;letter-spacing:1.5px}.foco-timer-presets{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:22px}.foco-timer-presets button{background:rgba(124,58,237,0.18);color:#FFFFFF;border:1px solid rgba(167,139,250,0.18);border-radius:999px;padding:8px 14px;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s ease}.foco-timer-presets button:hover{background:rgba(124,58,237,0.32);border-color:rgba(167,139,250,0.4)}.foco-timer-presets button[aria-pressed="true"]{background:#7C3AED;border-color:#7C3AED}.foco-timer-controls{display:flex;justify-content:center;gap:10px;margin-bottom:14px}.foco-timer-btn-primary,.foco-timer-btn-secondary{padding:12px 28px;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;border:none;transition:all .15s ease;font-family:inherit}.foco-timer-btn-primary{background:#7C3AED;color:#FFFFFF}.foco-timer-btn-primary:hover{background:#A78BFA}.foco-timer-btn-secondary{background:rgba(255,255,255,0.06);color:#FFFFFF;border:1px solid rgba(167,139,250,0.18)}.foco-timer-btn-secondary:hover:not(:disabled){background:rgba(255,255,255,0.12)}.foco-timer-btn-secondary:disabled{opacity:0.4;cursor:not-allowed}.foco-timer-sound{display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;color:#B8B0CC;cursor:pointer}.foco-timer-sound input{accent-color:#7C3AED;width:16px;height:16px;cursor:pointer}.foco-timer-card.is-finished .foco-timer-progress{stroke:#FB923C}.foco-timer-card.is-finished .foco-timer-digits{color:#FB923C}.foco-timer-card.is-finished .foco-timer-state{color:#FB923C}@media (max-width:480px){.foco-timer-card{padding:24px 18px}.foco-timer-display{width:200px;height:200px}.foco-timer-digits{font-size:44px}}</style><script>(function(){var DUR=600;var card=document.querySelector('.foco-timer-card');if(!card)return;var digits=card.querySelector('[data-foco-digits]');var state=card.querySelector('[data-foco-state]');var progress=card.querySelector('[data-foco-progress]');var ctxEl=card.querySelector('[data-foco-context]');var soundEl=card.querySelector('[data-foco-sound]');var startBtn=card.querySelector('[data-foco-action="start"]');var pauseBtn=card.querySelector('[data-foco-action="pause"]');var resetBtn=card.querySelector('[data-foco-action="reset"]');var presets=card.querySelectorAll('[data-foco-preset]');var DASH=628.3;var remaining=DUR;var tickHandle=null;var endAt=null;var running=false;function fmt(s){var m=Math.floor(s/60);var ss=Math.floor(s%60);return (m<10?'0':'')+m+':'+(ss<10?'0':'')+ss}function render(){digits.textContent=fmt(Math.max(0,remaining));var pct=Math.max(0,remaining)/DUR;progress.style.strokeDashoffset=DASH*(1-pct)}function chime(){if(!soundEl.checked)return;try{var ac=new (window.AudioContext||window.webkitAudioContext)();var notes=[660,880,990];notes.forEach(function(f,i){var o=ac.createOscillator();var g=ac.createGain();o.type='sine';o.frequency.value=f;o.connect(g);g.connect(ac.destination);var t=ac.currentTime+i*0.18;g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(0.18,t+0.02);g.gain.exponentialRampToValueAtTime(0.0001,t+0.4);o.start(t);o.stop(t+0.5)})}catch(e){}}function vibrate(){if(navigator.vibrate)try{navigator.vibrate([200,100,200])}catch(e){}}function tick(){var now=Date.now();remaining=Math.max(0,(endAt-now)/1000);render();if(remaining<=0){finish()}else{tickHandle=requestAnimationFrame(tick)}}function start(){if(running)return;running=true;endAt=Date.now()+remaining*1000;card.classList.remove('is-finished');state.textContent='Running';startBtn.disabled=true;pauseBtn.disabled=false;tickHandle=requestAnimationFrame(tick)}function pause(){if(!running)return;running=false;cancelAnimationFrame(tickHandle);state.textContent='Paused';startBtn.disabled=false;pauseBtn.disabled=true;startBtn.textContent='Resume'}function reset(){running=false;cancelAnimationFrame(tickHandle);remaining=DUR;render();state.textContent='Ready';startBtn.disabled=false;pauseBtn.disabled=true;startBtn.textContent='Start';card.classList.remove('is-finished')}function finish(){running=false;cancelAnimationFrame(tickHandle);remaining=0;render();state.textContent='Done';startBtn.disabled=false;pauseBtn.disabled=true;startBtn.textContent='Start';card.classList.add('is-finished');chime();vibrate()}startBtn.addEventListener('click',start);pauseBtn.addEventListener('click',pause);resetBtn.addEventListener('click',reset);presets.forEach(function(b){b.addEventListener('click',function(){presets.forEach(function(p){p.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');ctxEl.textContent=b.dataset.focoPreset;reset()})});render()})();</script><!-- /wp:html -->
+
+<div class="foco-key-takeaways">
+<h2>Key Takeaways</h2>
+<ul>
+<li>A 10-minute timer reduces the activation energy required to start a task because the brain calculates "10 minutes" as a finite, survivable cost — unlike an open-ended commitment.</li>
+<li><strong>Time blindness</strong> is the underlying ADHD challenge. Visible countdowns externalize time so the prefrontal cortex doesn't have to track it internally.</li>
+<li>Russell Barkley's research describes ADHD as a deficit in self-regulation across time. A timer is a low-cost prosthesis for that deficit.</li>
+<li>Pair the timer with one specific task — not "work on the project" but "open the document and write one sentence."</li>
+<li>Finishing a 10-minute block creates a small dopamine release. That reward is the bridge to a second 10-minute block, which is where momentum starts.</li>
+</ul>
+</div>
+
+<h2>Table of Contents</h2>
+<ol>
+<li><a href="#why-10-minutes">Why 10 minutes works for the ADHD brain</a></li>
+<li><a href="#time-blindness">The time blindness problem (and why a visible timer fixes it)</a></li>
+<li><a href="#5-uses">5 ADHD-tested ways to use a 10-minute timer</a></li>
+<li><a href="#how-to-pick-duration">10 vs 5 vs 15 vs 25: which timer fits which task</a></li>
+<li><a href="#body-doubling">Using a 10-minute timer for body doubling</a></li>
+<li><a href="#when-it-fails">When a 10-minute timer doesn't work (and what to try instead)</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ol>
+
+<h2 id="why-10-minutes">Why 10 minutes works for the ADHD brain</h2>
+
+<p>Ten minutes is the sweet spot between "too short to matter" and "too long to start." It's specifically tuned to the way ADHD task initiation actually breaks.</p>
+
+<p>When you face a task you've been avoiding, the prefrontal cortex runs a quick cost-benefit calculation: how much effort, for how long, against what reward? In ADHD brains, this calculation is biased toward overestimating the cost — partly because of weak working memory, partly because of dopamine differences in the reward circuit.</p>
+
+<p>"Sit down and work on the report" registers as an unbounded, expensive task. The brain refuses to start.</p>
+
+<p>"Sit down and work on the report for 10 minutes" registers as a bounded, finite task. The cost is calculable. The end is visible. The brain agrees to start.</p>
+
+<p>This is the principle behind the <a href="https://www.tryfoco.com/2-minute-rule-adhd/">2-minute rule</a> taken one step further. Two minutes is enough to bypass the wall but rarely produces meaningful progress on substantial work. Ten minutes is where real momentum starts.</p>
+
+<p>Research on focus and attention intervals consistently shows that short, defined work blocks outperform open-ended sessions for people with ADHD. The <a href="https://www.tryfoco.com/pomodoro-for-adhd/">Pomodoro technique</a> uses 25-minute blocks; a 10-minute block is essentially "Pomodoro for the days when 25 minutes feels impossible."</p>
+
+<h2 id="time-blindness">The time blindness problem (and why a visible timer fixes it)</h2>
+
+<p><strong>Time blindness</strong> is one of the most consistent features of adult ADHD. It refers to the brain's reduced ability to perceive, estimate, and track time without external cues. The clock on the wall keeps moving — but your internal sense of how much time has passed lags behind, runs ahead, or simply isn't there.</p>
+
+<p>Russell Barkley, one of the most cited researchers in adult ADHD, frames the entire condition as a disorder of self-regulation across time. In his model, executive function is essentially the brain's ability to pull future consequences into the present moment.</p>
+
+<p>When that ability is impaired, "I'll do it later" feels equally true at 9 AM and 9 PM. The future doesn't feel real until it crashes into the present as a deadline.</p>
+
+<p>A visible countdown timer hijacks this entire problem by externalizing time. Instead of asking your prefrontal cortex to track an invisible 10 minutes, you let the display do it. The cognitive load drops to almost zero.</p>
+
+<p>The progress ring in the timer above is deliberately large and high-contrast for this reason. It's not decoration. It's a working memory aid for a brain that struggles to hold "elapsed time" as an internal variable.</p>
+
+<p>For more on this mechanism, see our deeper dive on <a href="https://www.tryfoco.com/time-blindness-adhd/">ADHD time blindness</a>.</p>
+
+<h2 id="5-uses">5 ADHD-tested ways to use a 10-minute timer</h2>
+
+<p>The timer above includes five presets because the way you frame the 10 minutes determines whether it actually starts you. "Just focus" is too vague. A specific behavior beats a general intention every time.</p>
+
+<h3>1. Tidy one surface (not the whole room)</h3>
+
+<p>Pick one specific surface — a table, a counter, your desk. Set the timer. Move objects toward where they belong, even if you can't fully put them away.</p>
+
+<p>The constraint of "one surface" prevents the ADHD trap of starting in the kitchen, getting distracted by something in the living room, ending up in the bedroom, and never finishing anything.</p>
+
+<h3>2. Email sprint (clear the most urgent 3)</h3>
+
+<p>Open your inbox. Find the three most urgent emails. Reply to those three only. Don't scroll. Don't read others.</p>
+
+<p>This converts "deal with email" — an unbounded task that triggers task paralysis — into a bounded, completable mission. Most ADHD adults can finish three urgent replies in 10 minutes.</p>
+
+<h3>3. Brain dump</h3>
+
+<p>Open a blank document or notebook. Write down everything that's currently floating in your head — to-dos, worries, ideas, half-formed plans, things you're afraid you'll forget.</p>
+
+<p>The ADHD brain holds far more in working memory than is comfortable. A 10-minute brain dump offloads that into external storage, which is one of the most reliable ways to reduce the background cognitive load that fuels overwhelm.</p>
+
+<h3>4. Stretch, water, eyes off screen</h3>
+
+<p>If you've been working for hours and your nervous system is fried, "take a break" rarely works because you don't know what to do with the break. The timer plus a specific behavior (stretch, drink water, look at something more than 6 feet away) makes the break actually happen.</p>
+
+<p>This is especially important during long focus sessions. The 10-minute reset prevents the cognitive crash that follows pushing past your sustainable focus window.</p>
+
+<h3>5. Just start (the task you've been avoiding)</h3>
+
+<p>This is the killer use case. You have a task you've been postponing for hours, days, or weeks. The full task feels impossible. So you commit to 10 minutes — only 10 — and you make a deal with yourself that you're allowed to stop the moment the timer rings.</p>
+
+<p>What usually happens: you don't stop. The first 10 minutes break the activation barrier. Once you're in, continuing is much easier than starting was.</p>
+
+<p>If you do stop at 10 minutes, that's still progress. Coming back tomorrow is easier when you've already started than when you've never touched it.</p>
+
+<h2 id="how-to-pick-duration">10 vs 5 vs 15 vs 25 minutes: which timer fits which task</h2>
+
+<p>Different timer durations serve different functions. Picking the wrong one is one of the quietest ways focus strategies fail.</p>
+
+<div class="foco-table-wrap" style="overflow-x:auto;margin:24px 0">
+<table style="width:100%;border-collapse:collapse;font-size:15px">
+<thead>
+<tr style="background:rgba(124,58,237,0.18)">
+<th style="text-align:left;padding:12px;border:1px solid rgba(167,139,250,0.18)">Duration</th>
+<th style="text-align:left;padding:12px;border:1px solid rgba(167,139,250,0.18)">Best for</th>
+<th style="text-align:left;padding:12px;border:1px solid rgba(167,139,250,0.18)">When to skip it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)"><strong>2 minutes</strong></td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">Tasks you keep forgetting (reply to one text, hang up that one shirt). The 2-minute rule is about clearing micro-tasks, not progressing on bigger work.</td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">Anything that needs a thinking warm-up.</td>
+</tr>
+<tr>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)"><strong>5 minutes</strong></td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">Quick wins. Sending one email, drinking water, doing one set of dishes. A starting nudge when 10 feels intimidating.</td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">Substantial creative or cognitive work.</td>
+</tr>
+<tr>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)"><strong>10 minutes</strong></td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">Task initiation on avoided work. Tidying, brain dumps, focused email sprints. Real progress without committing to a long block.</td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">Deep work that needs flow state.</td>
+</tr>
+<tr>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)"><strong>15 minutes</strong></td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">Light workout, focused reading, learning a new skill in small bites.</td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">When 10 is enough — the marginal cost of 5 extra minutes raises the activation barrier for some people.</td>
+</tr>
+<tr>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)"><strong>25 minutes (Pomodoro)</strong></td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">Deep cognitive work — writing, coding, problem-solving. Long enough to enter flow.</td>
+<td style="padding:12px;border:1px solid rgba(167,139,250,0.18)">High-friction starting days. If you can't initiate for 10, 25 is impossible.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>The pattern: short timers solve initiation problems. Long timers solve focus-depth problems. They are not interchangeable.</p>
+
+<p>Most ADHD adults default to the wrong timer. They reach for 25 minutes when they need 10 (and then can't start), or they reach for 5 minutes when they need 10 (and then nothing meaningful gets done).</p>
+
+<h2 id="body-doubling">Using a 10-minute timer for body doubling</h2>
+
+<p>Body doubling is the practice of working alongside another person — physically or virtually — to make a difficult task easier to start and continue. It's one of the most effective ADHD strategies that has nothing to do with willpower.</p>
+
+<p>A 10-minute timer makes body doubling lightweight enough to actually use. Instead of committing to a one-hour session with a friend, you set a 10-minute block. You both work on whatever each of you needs to do. When the timer rings, you check in.</p>
+
+<p>This works asynchronously too. Start the timer. Tell yourself: "the FOCO mascot is sitting next to me for the next 10 minutes." It sounds silly. It works because the human nervous system is intensely social, and the perception of being witnessed activates engagement circuits even when the witness is imaginary.</p>
+
+<p>Read more about <a href="https://www.tryfoco.com/body-doubling-adhd/">body doubling for ADHD</a> if you want to go deeper. The 10-minute timer is the simplest way to test whether body doubling helps your specific brain — start with one block, see what happens.</p>
+
+<h2 id="when-it-fails">When a 10-minute timer doesn't work (and what to try instead)</h2>
+
+<p>The 10-minute timer is powerful, but it's not universal. Three failure modes are worth knowing about.</p>
+
+<p><strong>Failure mode 1: complete shutdown.</strong> If you're in <a href="https://www.tryfoco.com/adhd-task-paralysis/">acute task paralysis</a> — frozen, unable to start anything, often shame-flooded — even a 10-minute commitment may feel impossible. In that state, drop to a 2-minute timer and a single physical action ("stand up and walk to the kitchen"). The goal is not progress; it's nervous system reset.</p>
+
+<p><strong>Failure mode 2: hyperfocus interruption.</strong> If you're already deep in <a href="https://www.tryfoco.com/hyperfocus-adhd/">ADHD hyperfocus</a> on something, a 10-minute timer to switch tasks will jolt you out of flow without delivering you cleanly to the new task. Use it differently: set a 10-minute "wind down" timer for the current task, then stop, then start fresh on the new one.</p>
+
+<p><strong>Failure mode 3: chronic burnout.</strong> If you've been pushing through ADHD task paralysis with willpower and timers for weeks, the timer stops working because your nervous system is no longer responding to small commitments. The fix is not a better timer — it's rest, sleep, and probably medication or treatment review.</p>
+
+<p>If the timer keeps failing, that's signal, not noise. It usually means the underlying ADHD load is bigger than a focus tool can solve. Work with a clinician familiar with adult ADHD before assuming you "just need to try harder."</p>
+
+<h2 id="faq">FAQ</h2>
+
+<h3>Why does 10 minutes feel impossible to start sometimes?</h3>
+
+<p>Because task initiation in ADHD isn't about laziness — it's a real deficit in the prefrontal circuits that translate "I should do this" into "I am doing this." When the gap is wide, even 10 minutes feels insurmountable.</p>
+
+<p>If 10 feels impossible, drop to 2 minutes. The principle is the same: bypass the activation wall with the smallest possible commitment.</p>
+
+<h3>Is a visual timer better than a digital countdown?</h3>
+
+<p>For most ADHD brains, yes — and the timer above gives you both. The progress ring shows time spatially (how much is left, visible at a glance), while the digits give precision. Spatial representation is easier to process than abstract digit counting, especially when working memory is loaded.</p>
+
+<h3>Should I always use the chime?</h3>
+
+<p>No. The chime is off by default in the timer above because some ADHD brains are highly sensitive to sudden sounds — what helps one person regulate startles another. Try it both ways. If the chime makes you tense, use the visual completion state instead (the ring turns orange when the timer ends).</p>
+
+<h3>How is this different from Pomodoro?</h3>
+
+<p>Pomodoro is a 25-minute focus block followed by a 5-minute break, repeated. It's designed for sustained deep work.</p>
+
+<p>A 10-minute timer is for starting. Once you've started, you can switch to Pomodoro if you want longer blocks. Most people find that doing two or three 10-minute blocks back-to-back ends up looking like Pomodoro anyway.</p>
+
+<h3>Can I use this timer on my phone?</h3>
+
+<p>Yes — the timer above works on phones, tablets, and desktops. Bookmark this page for one-tap access. If you want timers on your wrist or homescreen, most phones include a built-in timer app that works fine; the advantage of using this one is the ADHD-specific presets and the visual ring.</p>
+
+<h3>What if I keep ignoring the timer when it goes off?</h3>
+
+<p>That usually means one of two things. Either you're in flow and want to continue (in which case ignoring it is correct — pause, then run another 10-minute block consciously), or you're avoiding the next thing on your list (in which case stopping the timer is itself a form of task paralysis).</p>
+
+<p>If it's the second pattern, try pairing the timer with a written commitment: "When this rings, I will close the laptop and stand up." The pre-commitment is what makes the action happen, not the timer alone.</p>
+
+<h2>The Bottom Line</h2>
+
+<p>A 10-minute timer is the cheapest, fastest, lowest-friction tool for ADHD task initiation. It works because it externalizes time, lowers the activation cost of starting, and creates a small completion reward at the end.</p>
+
+<p>The timer above is fully functional, requires no signup, and runs entirely in your browser. Bookmark this page and open it any time you're stuck. Pair it with a specific 10-minute task — not "be productive" but "tidy the kitchen counter" or "write the first paragraph."</p>
+
+<p>If you find yourself coming back here often, FOCO is the app version of this same principle, with AI task-breakdown built in for the days when even the 10-minute commitment feels too vague.</p>
+
+<h2>Related articles</h2>
+<ul>
+<li><a href="https://www.tryfoco.com/adhd-task-paralysis/">ADHD Task Paralysis: Why You Can't Start</a></li>
+<li><a href="https://www.tryfoco.com/how-to-focus-with-adhd/">How to Focus with ADHD: A Practical Guide</a></li>
+<li><a href="https://www.tryfoco.com/time-blindness-adhd/">ADHD Time Blindness: Why Time Feels Different</a></li>
+<li><a href="https://www.tryfoco.com/body-doubling-adhd/">Body Doubling for ADHD: Why It Works</a></li>
+<li><a href="https://www.tryfoco.com/pomodoro-for-adhd/">The Pomodoro Technique for ADHD</a></li>
+<li><a href="https://www.tryfoco.com/2-minute-rule-adhd/">The 2-Minute Rule for ADHD</a></li>
+<li><a href="https://www.tryfoco.com/brown-noise-adhd/">Brown Noise for ADHD Focus</a></li>
+</ul>
+
+<h2>References</h2>
+<ul class="foco-references" style="font-size:14px;color:#B8B0CC;line-height:1.6">
+<li><a href="https://www.nimh.nih.gov/health/topics/attention-deficit-hyperactivity-disorder-adhd" target="_blank" rel="noopener">National Institute of Mental Health. Attention-Deficit/Hyperactivity Disorder.</a></li>
+<li><a href="https://www.cdc.gov/adhd/about/index.html" target="_blank" rel="noopener">Centers for Disease Control and Prevention. ADHD in Adults: Symptoms and Treatment.</a></li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/9000892/" target="_blank" rel="noopener">Barkley RA. Behavioral inhibition, sustained attention, and executive functions: constructing a unifying theory of ADHD. Psychol Bull. 1997;121(1):65-94.</a></li>
+<li><a href="https://www.nature.com/articles/nrdp201520" target="_blank" rel="noopener">Faraone SV, Asherson P, Banaschewski T, et al. Attention-deficit/hyperactivity disorder. Nat Rev Dis Primers. 2015;1:15020.</a></li>
+<li><a href="https://chadd.org/about-adhd/overview/" target="_blank" rel="noopener">CHADD. ADHD Overview.</a></li>
+</ul>

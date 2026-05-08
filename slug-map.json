@@ -51,13 +51,31 @@
     "foco-vs-inflow":                    { "id": null, "status": "planned", "pillar": "adhd-task-breakdown-apps" },
     "best-task-breakdown-apps-for-adhd": { "id": null, "status": "planned", "pillar": "adhd-task-breakdown-apps" },
     "best-free-adhd-apps":               { "id": null, "status": "planned", "pillar": "adhd-task-breakdown-apps" },
-    "best-adhd-apps-for-moms":           { "id": null, "status": "planned", "pillar": "adhd-task-breakdown-apps" }
+    "best-adhd-apps-for-moms":           { "id": null, "status": "planned", "pillar": "adhd-task-breakdown-apps" },
+    "best-productivity-apps-for-adhd":   { "id": null, "status": "planned", "pillar": "adhd-task-breakdown-apps" },
+    "adhd-diagnostic-codes":             { "id": null, "status": "planned", "pillar": "adult-adhd-diagnosis" },
+
+    "adhd-or-add":                       { "id": null, "status": "planned", "pillar": "adhd-comparisons", "volume": 49500, "difficulty": 41 },
+    "adhd-and-autism":                   { "id": null, "status": "planned", "pillar": "adhd-comparisons", "volume": 12100, "difficulty": 54 },
+    "adhd-vs-add":                       { "id": null, "status": "planned", "pillar": "adhd-comparisons", "volume": 9900,  "difficulty": 58 },
+    "adhd-and-anxiety":                  { "id": null, "status": "planned", "pillar": "adhd-comparisons", "volume": 8100,  "difficulty": 43 },
+    "adhd-vs-autism":                    { "id": null, "status": "planned", "pillar": "adhd-comparisons", "volume": 8100,  "difficulty": 53 },
+    "adhd-and-depression":               { "id": null, "status": "planned", "pillar": "adhd-comparisons", "volume": 8100,  "difficulty": 58 },
+    "adhd-and-dopamine":                 { "id": null, "status": "planned", "pillar": "adhd-comparisons", "volume": 6600,  "difficulty": 47 },
+    "adhd-vs-ocd":                       { "id": null, "status": "planned", "pillar": "adhd-comparisons", "volume": 3600,  "difficulty": 32 }
   },
 
   "infrastructure": {
     "adhd-glossary":                  { "id": 106,  "status": "draft",   "type": "DefinedTermSet" },
     "adhd-research":                  { "id": null, "status": "planned", "type": "Dataset (hub)" },
     "adhd-task-initiation-research":  { "id": null, "status": "planned", "type": "Article (research synthesis Q1)" },
-    "adhd-stories":                   { "id": null, "status": "planned", "type": "ItemList" }
+    "adhd-stories":                   { "id": null, "status": "planned", "type": "ItemList" },
+    "5-minute-timer-adhd":            { "id": null, "status": "planned", "type": "Tool (focus timer)" },
+    "10-minute-timer-adhd":           { "id": 699,  "status": "publish", "type": "Tool (focus timer)" },
+    "15-minute-timer-adhd":           { "id": null, "status": "planned", "type": "Tool (focus timer)" },
+    "20-minute-timer-adhd":           { "id": null, "status": "planned", "type": "Tool (focus timer)" },
+    "25-minute-timer-adhd":           { "id": null, "status": "planned", "type": "Tool (focus timer)" },
+    "30-minute-timer-adhd":           { "id": null, "status": "planned", "type": "Tool (focus timer)" },
+    "best-adhd-planner":              { "id": null, "status": "planned", "type": "Comparison (commercial intent)" }
   }
 }
