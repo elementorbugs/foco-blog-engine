@@ -305,8 +305,10 @@ async function postProcess(postId) {
   let html = r.body.content.raw;
   let changes = [];
   if (!html.includes('foco-disclaimer')) {
-    if (html.includes('<h2>References</h2>')) {
-      html = html.replace('<h2>References</h2>', DISCLAIMER + '\n\n<h2>References</h2>');
+    // Match <h2> with optional attributes (e.g., <h2 id="references">)
+    const refsMatch = html.match(/<h2[^>]*>References<\/h2>/);
+    if (refsMatch) {
+      html = html.replace(refsMatch[0], DISCLAIMER + '\n\n' + refsMatch[0]);
       changes.push('disclaimer');
     }
   }

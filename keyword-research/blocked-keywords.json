@@ -37,6 +37,8 @@
     {"keyword": "predominantly inattentive adhd", "reason": "Already covered by post 457 (adhd-inattentive-presentation)"},
     {"keyword": "adhd inattentive", "reason": "Already covered by post 457"},
     {"keyword": "adhd inattentive type", "reason": "Already covered by post 457"},
-    {"keyword": "inattentive adhd", "reason": "Already covered by post 457"}
+    {"keyword": "inattentive adhd", "reason": "Already covered by post 457"},
+    {"keyword": "adhd pi", "reason": "Already covered by post 457 — PI = Predominantly Inattentive"},
+    {"keyword": "adhd-pi", "reason": "Same — PI shorthand for inattentive"}
   ]
 }
