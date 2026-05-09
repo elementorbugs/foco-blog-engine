@@ -60,7 +60,12 @@ const WP_USER = E('WP_USER');
 const WP_APP_PASSWORD = E('WP_APP_PASSWORD', 'WP_PASS');
 const ANTHROPIC_API_KEY = E('ANTHROPIC_API_KEY');
 const RESEND_KEY = E('RESEND_KEY');
-const PEXELS_KEY = E('PEXELS_KEY');
+// PEXELS_KEY: env var first, then file fallback for local
+let PEXELS_KEY = E('PEXELS_KEY');
+if (!PEXELS_KEY) {
+  const p = path.join(__dirname, '.pexels-key');
+  if (fs.existsSync(p)) PEXELS_KEY = fs.readFileSync(p, 'utf8').trim();
+}
 const NOTIFY_EMAIL = E('NOTIFY_EMAIL') || 'adibenelyahu@gmail.com';
 
 const missing = [];
@@ -394,6 +399,97 @@ async function postProcess(postId) {
   return { ok: upd.status === 200, changes, status: upd.status };
 }
 
+// ─── PHASE 6.5: Inject Pexels images at H2 anchors ──────────────────────────
+function pexelsSearch(query) {
+  return new Promise((res, rej) => {
+    const opts = {
+      hostname: 'api.pexels.com', port: 443,
+      path: `/v1/search?query=${encodeURIComponent(query)}&per_page=5&orientation=landscape`,
+      headers: { Authorization: PEXELS_KEY },
+    };
+    https.get(opts, (r) => {
+      let d = ''; r.on('data', x => d += x);
+      r.on('end', () => { try { res(JSON.parse(d)); } catch { rej(new Error('Pexels parse fail')); } });
+    }).on('error', rej);
+  });
+}
+
+function downloadFile(url) {
+  return new Promise((res, rej) => {
+    https.get(url, (r) => {
+      if (r.statusCode === 301 || r.statusCode === 302) return res(downloadFile(r.headers.location));
+      const chunks = [];
+      r.on('data', c => chunks.push(c));
+      r.on('end', () => res(Buffer.concat(chunks)));
+    }).on('error', rej);
+  });
+}
+
+async function uploadToWp(buffer, filename, contentType) {
+  return new Promise((res, rej) => {
+    const opts = {
+      hostname: WP_HOST, port: 443, path: '/wp-json/wp/v2/media', method: 'POST',
+      headers: {
+        Authorization: 'Basic ' + AUTH,
+        'Content-Type': contentType,
+        'Content-Disposition': `attachment; filename="${filename}"`,
+        'Content-Length': buffer.length,
+      },
+    };
+    const r = https.request(opts, (response) => {
+      let d = ''; response.on('data', x => d += x);
+      response.on('end', () => { try { res({ status: response.statusCode, body: JSON.parse(d) }); } catch { res({ status: response.statusCode, body: d }); } });
+    });
+    r.on('error', rej);
+    r.write(buffer); r.end();
+  });
+}
+
+async function injectPexelsImages(postId, keyword) {
+  if (!PEXELS_KEY) return { ok: false, msg: 'no PEXELS_KEY — skipping Pexels' };
+  // Fetch the post content
+  const post = await wpReq('GET', `/wp-json/wp/v2/posts/${postId}?context=edit&_fields=content,slug`);
+  if (post.status !== 200) return { ok: false, msg: 'fetch fail ' + post.status };
+  let html = post.body.content.raw;
+  // Pull H2 anchors (the engine wraps anchored sections like <h2 id="slug-x">)
+  const h2Re = /<h2[^>]*id="([^"]+)"[^>]*>([^<]+)<\/h2>/g;
+  const h2s = [...html.matchAll(h2Re)].slice(0, 5); // up to 5 candidate H2s
+  if (h2s.length === 0) return { ok: false, msg: 'no anchored H2s found' };
+  // Pick 3 H2s spread across the article
+  const picked = h2s.length <= 3 ? h2s : [h2s[0], h2s[Math.floor(h2s.length / 2)], h2s[h2s.length - 1]];
+  let inserted = 0;
+  const slug = post.body.slug;
+  for (const h2 of picked) {
+    const h2Tag = h2[0];
+    const h2Text = h2[2];
+    const query = `${keyword} ${h2Text.split(' ').slice(0, 4).join(' ')}`.replace(/[^a-zA-Z0-9 ]/g, '').trim();
+    try {
+      const pex = await pexelsSearch(query);
+      if (!pex.photos || pex.photos.length === 0) continue;
+      const photo = pex.photos[0];
+      const imgUrl = photo.src.large; // 940x650
+      const imgBuf = await downloadFile(imgUrl);
+      const photographer = (photo.photographer || 'Pexels').replace(/[^a-zA-Z0-9 ]/g, '');
+      const ext = imgUrl.match(/\.(jpe?g|png|webp)/i) ? imgUrl.match(/\.(jpe?g|png|webp)/i)[0] : '.jpg';
+      const fname = `${slug}-${photo.id}${ext}`;
+      const up = await uploadToWp(imgBuf, fname, 'image/jpeg');
+      if (up.status !== 201) continue;
+      const mediaUrl = up.body.source_url;
+      const altText = `${keyword} — ${h2Text}`.slice(0, 120);
+      const figure = `\n<!-- wp:html --><figure class="foco-img" style="margin:28px 0"><img src="${mediaUrl}" alt="${altText.replace(/"/g, '&quot;')}" loading="lazy" style="width:100%;height:auto;border-radius:14px;display:block;border:1px solid rgba(167,139,250,0.18)"/><figcaption style="font-size:13px;color:#B8B0CC;text-align:center;margin-top:8px;font-style:italic;opacity:0.75">Photo: ${photographer} via Pexels</figcaption></figure><!-- /wp:html -->\n`;
+      // Insert figure right AFTER the h2 closing tag
+      html = html.replace(h2Tag, h2Tag + figure);
+      inserted++;
+    } catch (e) {
+      // Skip this image, try next
+    }
+  }
+  if (inserted === 0) return { ok: false, msg: 'no images inserted' };
+  // Push updated content
+  const upd = await wpReq('POST', `/wp-json/wp/v2/posts/${postId}`, { content: html });
+  return { ok: upd.status === 200, msg: `${inserted} Pexels image(s) inserted` };
+}
+
 // ─── PHASE 7: Programmatic audit ─────────────────────────────────────────────
 async function audit(postId) {
   const r = await wpReq('GET', `/wp-json/wp/v2/posts/${postId}?context=edit&_fields=content,title,status`);
@@ -539,6 +635,11 @@ async function sendFailureEmail(stage, error) {
       console.log('  [5] Adding disclaimer + HowTo schema...');
       result.postProcess = await postProcess(result.engine.postId);
       console.log(`  [5] ${result.postProcess.changes.join(', ') || 'no changes'}`);
+
+      // Phase 6.5: Pexels images
+      console.log('  [6.5] Injecting Pexels images at H2 anchors...');
+      result.pexels = await injectPexelsImages(result.engine.postId, pick.keyword);
+      console.log(`  [6.5] ${result.pexels.msg}`);
 
       // Phase 7: audit
       console.log('  [7] Running spec audit...');

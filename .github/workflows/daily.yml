@@ -34,6 +34,7 @@ jobs:
           WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           RESEND_KEY: ${{ secrets.RESEND_KEY }}
+          PEXELS_KEY: ${{ secrets.PEXELS_KEY }}
           NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
 
       - name: Send failure notification on workflow error
