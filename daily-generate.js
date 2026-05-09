@@ -211,28 +211,37 @@ function slugify(s) {
 // ─── PHASE 3: Generate article HTML via Anthropic API ────────────────────────
 async function generateArticle({ keyword, slug, cluster }) {
   if (!ANTHROPIC_API_KEY) throw new Error('ANTHROPIC_API_KEY missing');
-  const system = `You are FOCO's content generator. Produce ONE complete blog post in HTML matching this spec exactly:
+  const system = `You are FOCO's senior content writer. Produce ONE complete blog post in HTML that ranks on Google AND feels like a real person who gets it wrote it.
 
-Brand voice: validating, plain-spoken, neuroscience-grounded, zero shame. Anti-hustle. Defines ADHD struggles in physiological terms (not character flaws). Slightly dry humor on lighter posts; tender on shame topics.
+BRAND VOICE — non-negotiable:
+- Validating, plain-spoken, neuroscience-grounded, zero shame
+- Anti-hustle. Define ADHD struggles in physiological terms, not character flaws
+- Address the reader directly ("you") throughout — never "the patient", "the individual", "people with ADHD"
+- Each major section MUST contain ONE moment of dry humor, validation, or specific lived-experience that breaks clinical tone. Examples:
+  • "Yes, you can fail an ADHD test by being too articulate. Welcome to gifted-burnt-out adulthood."
+  • "You may have survived high school on willpower and adrenaline, then crashed when adulthood added kids, mortgage, and zero margin."
+  • "If you're reading this at 2am because you can't stop thinking about it, that's the executive function deficit talking — not character."
+- When you describe a problem, NAME the specific lived behavior: "six unfinished projects in your garage" beats "disorganization"
+- Acknowledge nuance and edge cases (high-masking, late-diagnosed, comorbid) — don't write to a single archetype
 
 REQUIRED structure (in this order):
-1. <h1> — primary keyword front-loaded, ≤58 characters total
-2. <div class="foco-tldr"><strong>TL;DR.</strong> {40-60 word direct answer}</div>
-3. <div class="foco-key-takeaways"><h2>Key Takeaways</h2><ul><li>×5</li></ul></div>
+1. <h1> — primary keyword front-loaded, ≤58 characters total. NEVER exceed 58.
+2. <div class="foco-tldr"><strong>TL;DR.</strong> {40-60 word direct answer with specifics}</div>
+3. <div class="foco-key-takeaways"><h2>Key Takeaways</h2><ul><li>×5 — specific, with numbers/names where possible</li></ul></div>
 4. <h2>Table of Contents</h2><ol> with anchor links to each H2 below
-5. 5-7 <h2 id="..."> sections, each 200-400 words. Each H2 phrased as a question or definitive statement.
-6. <h2>FAQ</h2> with 6 <h3> questions + <p> answers (40-100 words each)
-7. <h2>The Bottom Line</h2> — 2-3 paragraphs closing
-8. <h2>Related articles</h2><ul> with these links (use as available, pick 5-7):
-   - https://www.tryfoco.com/adhd-task-paralysis/
-   - https://www.tryfoco.com/adhd-executive-function/
-   - https://www.tryfoco.com/how-to-focus-with-adhd/
-   - https://www.tryfoco.com/task-initiation-deficit-explained/
-   - https://www.tryfoco.com/time-blindness-adhd/
-   - https://www.tryfoco.com/body-doubling-adhd/
-   - https://www.tryfoco.com/pomodoro-for-adhd/
-   - https://www.tryfoco.com/10-minute-timer-adhd/
-   - https://www.tryfoco.com/adhd-and-rejection-sensitive-dysphoria/
+5. 5-7 <h2 id="..."> sections, each 250-400 words. Each H2 phrased as a question or definitive statement. Each section MUST include one of: a specific stat, a named example, a pattern that validates lived experience, or a counterintuitive truth.
+6. <h2>FAQ</h2> with 6 <h3> questions + <p> answers (40-100 words). Use real questions a person would Google, not generic ones.
+7. <h2>The Bottom Line</h2> — ONE paragraph. Punchy. Just the truth. NO "in conclusion" framing.
+8. <h2>Related articles</h2><ul> with 5-7 of these links (pick what fits the topic):
+   https://www.tryfoco.com/adhd-task-paralysis/
+   https://www.tryfoco.com/adhd-executive-function/
+   https://www.tryfoco.com/how-to-focus-with-adhd/
+   https://www.tryfoco.com/task-initiation-deficit-explained/
+   https://www.tryfoco.com/time-blindness-adhd/
+   https://www.tryfoco.com/body-doubling-adhd/
+   https://www.tryfoco.com/pomodoro-for-adhd/
+   https://www.tryfoco.com/10-minute-timer-adhd/
+   https://www.tryfoco.com/adhd-and-rejection-sensitive-dysphoria/
 9. <h2>References</h2><ul class="foco-references"> with these 5 (always include all):
    <li><a href="https://www.nimh.nih.gov/health/topics/attention-deficit-hyperactivity-disorder-adhd" target="_blank" rel="noopener">National Institute of Mental Health. Attention-Deficit/Hyperactivity Disorder.</a></li>
    <li><a href="https://www.cdc.gov/adhd/about/index.html" target="_blank" rel="noopener">CDC. ADHD in Adults: Symptoms and Treatment.</a></li>
@@ -240,15 +249,18 @@ REQUIRED structure (in this order):
    <li><a href="https://www.nature.com/articles/nrdp201520" target="_blank" rel="noopener">Faraone SV, Asherson P, Banaschewski T, et al. Attention-deficit/hyperactivity disorder. Nat Rev Dis Primers. 2015;1:15020.</a></li>
    <li><a href="https://chadd.org/about-adhd/overview/" target="_blank" rel="noopener">CHADD. ADHD Overview.</a></li>
 
+INTERNAL LINKING (CRITICAL — don't dump all in Related Articles):
+Weave 4-6 internal links INTO the body text, contextually placed where the topic naturally comes up. Use absolute URLs (https://www.tryfoco.com/...). When discussing executive function, link to the executive function pillar. When discussing initiation, link to task-paralysis. Make the links feel earned, not stuffed.
+
 CRITICAL RULES:
 - Max 1-2 sentences per paragraph. NEVER 3+ sentences in one block.
 - Wrap every paragraph in explicit <p>...</p>.
-- All internal links use absolute https://www.tryfoco.com/... (not relative).
 - Word count: 2,500-3,000.
 - NO editorial markers like [PERSONAL], [CITATION:], [CHART:], [IMAGE:].
 - NO markdown links — use HTML <a href> only.
-- For YMYL content (medications, diagnostic codes): NO specific milligram numbers in body (use "your prescriber sets the dose" style).
-- For comparison content: NO fabricated prices or stats — use durable categories.
+- For YMYL content (medications, diagnostic codes): NO specific milligram numbers in body. Use "your prescriber sets the dose" style.
+- For comparison content: NO fabricated prices or stats. Use durable categories.
+- Where you make a claim about prevalence, efficacy, or research, include the specific number or study where you can. "70-80% heritability" beats "highly heritable".
 - Banned words: delve, navigate (verb), game-changer, moreover, furthermore, in conclusion, unleash, leverage (verb), seamlessly, dive deep, robust, cutting-edge, revolutionary, transformative, harness, embark on, journey (metaphorical).
 
 OUTPUT: Just the HTML, starting with <h1>. No preamble, no markdown fence.`;
@@ -445,29 +457,70 @@ async function uploadToWp(buffer, filename, contentType) {
   });
 }
 
+// Build a visual-rich Pexels query from H2 text. Strips "what/why/how" lead, keeps content nouns.
+function pexelsQueryFor(keyword, h2Text) {
+  // Strip leading interrogatives + connectives
+  let cleaned = h2Text
+    .replace(/^(what|why|how|when|who|do|does|is|are|the|a|an)\b\s+/gi, '')
+    .replace(/[?:.!,]/g, '')
+    .trim();
+  // Add visual modifiers based on topic clues
+  const visualHints = [];
+  if (/work|career|office|meeting/i.test(h2Text)) visualHints.push('workplace');
+  else if (/sleep|rest|tired|exhaust/i.test(h2Text)) visualHints.push('bedroom morning');
+  else if (/medic|drug|pill|prescrib|dose/i.test(h2Text)) visualHints.push('hands holding');
+  else if (/test|diagnos|evaluat|appointment/i.test(h2Text)) visualHints.push('therapist office calm');
+  else if (/focus|task|start|do/i.test(h2Text)) visualHints.push('desk laptop');
+  else if (/cook|kitchen|meal|food/i.test(h2Text)) visualHints.push('kitchen prep');
+  else if (/clean|tidy|home/i.test(h2Text)) visualHints.push('bright apartment');
+  else if (/relat|partner|friend|social/i.test(h2Text)) visualHints.push('two people talking');
+  else if (/kid|child|parent|family/i.test(h2Text)) visualHints.push('parent child home');
+  else visualHints.push('person thoughtful');
+  // Take first 3 content words from H2 + visual hint
+  const contentWords = cleaned.split(/\s+/).slice(0, 3).join(' ');
+  return `${contentWords} ${visualHints.join(' ')}`.replace(/[^a-zA-Z0-9 ]/g, '').toLowerCase().trim();
+}
+
+// Generate descriptive alt text from H2 + visual scene (NOT keyword + title concat)
+function altTextFor(h2Text, photographerHint) {
+  const cleaned = h2Text
+    .replace(/^(what|why|how|when|who|do|does|is|are)\b\s+/gi, '')
+    .replace(/[?:.!,]/g, '')
+    .trim();
+  return `Person reflecting on ${cleaned.toLowerCase()}`.slice(0, 120);
+}
+
 async function injectPexelsImages(postId, keyword) {
   if (!PEXELS_KEY) return { ok: false, msg: 'no PEXELS_KEY — skipping Pexels' };
-  // Fetch the post content
   const post = await wpReq('GET', `/wp-json/wp/v2/posts/${postId}?context=edit&_fields=content,slug`);
   if (post.status !== 200) return { ok: false, msg: 'fetch fail ' + post.status };
   let html = post.body.content.raw;
-  // Pull H2 anchors (the engine wraps anchored sections like <h2 id="slug-x">)
   const h2Re = /<h2[^>]*id="([^"]+)"[^>]*>([^<]+)<\/h2>/g;
-  const h2s = [...html.matchAll(h2Re)].slice(0, 5); // up to 5 candidate H2s
+  const h2s = [...html.matchAll(h2Re)].slice(0, 5);
   if (h2s.length === 0) return { ok: false, msg: 'no anchored H2s found' };
-  // Pick 3 H2s spread across the article
   const picked = h2s.length <= 3 ? h2s : [h2s[0], h2s[Math.floor(h2s.length / 2)], h2s[h2s.length - 1]];
+
+  // Track used photo IDs + photographers across this article so we don't repeat
+  const usedPhotoIds = new Set();
+  const usedPhotographers = new Set();
   let inserted = 0;
   const slug = post.body.slug;
+
   for (const h2 of picked) {
     const h2Tag = h2[0];
     const h2Text = h2[2];
-    const query = `${keyword} ${h2Text.split(' ').slice(0, 4).join(' ')}`.replace(/[^a-zA-Z0-9 ]/g, '').trim();
+    const query = pexelsQueryFor(keyword, h2Text);
     try {
       const pex = await pexelsSearch(query);
       if (!pex.photos || pex.photos.length === 0) continue;
-      const photo = pex.photos[0];
-      const imgUrl = photo.src.large; // 940x650
+      // Pick first photo whose id+photographer aren't already used in this article
+      const candidates = pex.photos.filter(p => !usedPhotoIds.has(p.id) && !usedPhotographers.has(p.photographer));
+      const pool = candidates.length > 0 ? candidates : pex.photos;
+      // Random pick within first 5 (diversity)
+      const photo = pool[Math.floor(Math.random() * Math.min(5, pool.length))];
+      usedPhotoIds.add(photo.id);
+      usedPhotographers.add(photo.photographer);
+      const imgUrl = photo.src.large;
       const imgBuf = await downloadFile(imgUrl);
       const photographer = (photo.photographer || 'Pexels').replace(/[^a-zA-Z0-9 ]/g, '');
       const ext = imgUrl.match(/\.(jpe?g|png|webp)/i) ? imgUrl.match(/\.(jpe?g|png|webp)/i)[0] : '.jpg';
@@ -475,19 +528,17 @@ async function injectPexelsImages(postId, keyword) {
       const up = await uploadToWp(imgBuf, fname, 'image/jpeg');
       if (up.status !== 201) continue;
       const mediaUrl = up.body.source_url;
-      const altText = `${keyword} — ${h2Text}`.slice(0, 120);
+      const altText = altTextFor(h2Text, photographer);
       const figure = `\n<!-- wp:html --><figure class="foco-img" style="margin:28px 0"><img src="${mediaUrl}" alt="${altText.replace(/"/g, '&quot;')}" loading="lazy" style="width:100%;height:auto;border-radius:14px;display:block;border:1px solid rgba(167,139,250,0.18)"/><figcaption style="font-size:13px;color:#B8B0CC;text-align:center;margin-top:8px;font-style:italic;opacity:0.75">Photo: ${photographer} via Pexels</figcaption></figure><!-- /wp:html -->\n`;
-      // Insert figure right AFTER the h2 closing tag
       html = html.replace(h2Tag, h2Tag + figure);
       inserted++;
     } catch (e) {
-      // Skip this image, try next
+      // Skip this H2's image
     }
   }
   if (inserted === 0) return { ok: false, msg: 'no images inserted' };
-  // Push updated content
   const upd = await wpReq('POST', `/wp-json/wp/v2/posts/${postId}`, { content: html });
-  return { ok: upd.status === 200, msg: `${inserted} Pexels image(s) inserted` };
+  return { ok: upd.status === 200, msg: `${inserted} Pexels image(s) inserted (diverse photographers)` };
 }
 
 // ─── PHASE 7: Programmatic audit ─────────────────────────────────────────────
