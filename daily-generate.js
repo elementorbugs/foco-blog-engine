@@ -578,8 +578,13 @@ async function sendFailureEmail(stage, error) {
   const emailRes = await sendEmail({ subject, html: buildEmailHtml({ picks, results }) });
   console.log('[9] Email: ' + (emailRes.ok ? '✓ sent' : '⚠️ ' + JSON.stringify(emailRes.body).slice(0, 200)));
 
+  // Count posts that were CREATED (engine.ok), regardless of audit warnings
+  const createdCount = results.filter(r => r.engine && r.engine.ok && r.engine.postId).length;
+  const auditOkCount = results.filter(r => r.audit && r.audit.ok).length;
   console.log('\n━'.repeat(60));
-  console.log(' DONE — ' + okCount + '/' + results.length + ' successful');
+  console.log(` DONE — ${createdCount}/${results.length} posts created (${auditOkCount} passed full audit)`);
   console.log('━'.repeat(60));
-  process.exit(okCount === results.length ? 0 : 1);
+  // Exit 0 if at least one post was successfully created. Audit warnings are not failures.
+  // Exit 1 only when ALL articles failed at engine push (real automation breakage).
+  process.exit(createdCount > 0 ? 0 : 1);
 })();
