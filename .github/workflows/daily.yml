@@ -1,0 +1,44 @@
+name: Foco Daily Article Generator
+
+on:
+  schedule:
+    # 18:00 Israel time (UTC+3 during DST) = 15:00 UTC
+    # Adjust to '0 16 * * *' if Israel switches to standard time (UTC+2)
+    - cron: '0 15 * * *'
+  workflow_dispatch:  # allow manual trigger from GitHub UI
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies (skip playwright Chromium download)
+        run: npm install --omit=optional --ignore-scripts --silent
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+
+      - name: Run daily generator
+        run: node daily-generate.js --count=3 --skip-cover
+        env:
+          WP_HOST: ${{ secrets.WP_HOST }}
+          WP_USER: ${{ secrets.WP_USER }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          RESEND_KEY: ${{ secrets.RESEND_KEY }}
+          NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
+
+      - name: Send failure notification on workflow error
+        if: failure()
+        run: |
+          curl -X POST https://api.resend.com/emails \
+            -H "Authorization: Bearer ${{ secrets.RESEND_KEY }}" \
+            -H 'Content-Type: application/json' \
+            -d "{\"from\":\"Foco Daily <onboarding@resend.dev>\",\"to\":[\"${{ secrets.NOTIFY_EMAIL }}\"],\"subject\":\"⚠️ Foco Daily — workflow error\",\"html\":\"<p>The daily routine workflow failed. Check the GitHub Actions log:<br><a href='https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'>${{ github.repository }} run #${{ github.run_id }}</a></p>\"}"
