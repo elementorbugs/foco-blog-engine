@@ -297,7 +297,22 @@ Write the complete article now. ~2,800 words.`;
 }
 
 // ─── PHASE 4: Run create-post.js engine ──────────────────────────────────────
+// Ensure .env exists for create-post.js (which reads its own .env file).
+// In GitHub Actions / cloud envs, .env doesn't exist on disk — write it from process.env.
+function ensureEnvFile() {
+  const envPath = path.join(__dirname, '.env');
+  if (fs.existsSync(envPath)) return;
+  const envContent = [
+    'WP_HOST=' + WP_HOST,
+    'WP_USER=' + WP_USER,
+    'WP_APP_PASSWORD=' + WP_APP_PASSWORD,
+  ].join('\n') + '\n';
+  fs.writeFileSync(envPath, envContent);
+  console.log('  [env] wrote .env for create-post.js (runtime-generated from process.env)');
+}
+
 function runEngine(slug, keyword) {
+  ensureEnvFile();
   const file = `posts-new/post-${slug}.html`;
   const skipCoverFlag = SKIP_COVER ? ' --skip-cover' : '';
   const cmd = `node create-post.js ${JSON.stringify(file)} --keyword=${JSON.stringify(keyword)}${skipCoverFlag}`;
