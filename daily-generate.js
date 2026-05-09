@@ -110,9 +110,12 @@ const wpReq = (m, p, b) => req(WP_HOST, m, p, { Authorization: 'Basic ' + AUTH }
 
 // ─── PHASE 1: Pick keywords ──────────────────────────────────────────────────
 async function pickKeywords() {
-  const masterPath = path.join(__dirname, '..', '.foco-config', 'master-plan.json');
+  // Try repo-local first (works in GitHub Actions), fall back to parent .foco-config (local dev)
+  const masterPathRepo = path.join(__dirname, 'keyword-research', 'master-plan.json');
+  const masterPathLocal = path.join(__dirname, '..', '.foco-config', 'master-plan.json');
+  const masterPath = fs.existsSync(masterPathRepo) ? masterPathRepo : masterPathLocal;
   if (!fs.existsSync(masterPath)) {
-    throw new Error('master-plan.json not found at ' + masterPath);
+    throw new Error('master-plan.json not found at ' + masterPathRepo + ' or ' + masterPathLocal);
   }
   const master = JSON.parse(fs.readFileSync(masterPath, 'utf8'));
   // schedule has pre-built picks; clusters has scored candidates
