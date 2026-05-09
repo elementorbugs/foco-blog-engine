@@ -47,6 +47,8 @@
     {"keyword": "adhd symptoms", "reason": "Too generic — competitor-dominated, cannibalizes 463"},
     {"keyword": "add vs adhd", "reason": "Duplicates post 232 (adhd-or-add) — same comparison intent"},
     {"keyword": "add or adhd", "reason": "Already exists as post 232"},
-    {"keyword": "adhd vs add", "reason": "Already exists as post 239"}
+    {"keyword": "adhd vs add", "reason": "Already exists as post 239"},
+    {"keyword": "adhd rejection sensitive dysphoria", "reason": "Duplicates post 314 (adhd-and-rejection-sensitive-dysphoria, RSD pillar)"},
+    {"keyword": "rejection sensitive dysphoria adhd", "reason": "Duplicates post 314"}
   ]
 }
