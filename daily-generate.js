@@ -266,6 +266,30 @@ Write the complete article now. ~2,800 words.`;
   }
   let html = r.body.content[0].text || '';
   html = html.replace(/^```html\s*/i, '').replace(/```\s*$/, '').trim();
+  // Ensure article starts with <h1>. If Sonnet wrote a preamble, strip it.
+  const h1Idx = html.indexOf('<h1');
+  if (h1Idx > 0) html = html.slice(h1Idx);
+  // If still no <h1>, retry once with stricter prompt
+  if (!html.includes('<h1')) {
+    const retry = await req('api.anthropic.com', 'POST', '/v1/messages', {
+      'x-api-key': ANTHROPIC_API_KEY,
+      'anthropic-version': '2023-06-01',
+    }, {
+      model: 'claude-sonnet-4-5',
+      max_tokens: 8192,
+      system,
+      messages: [
+        { role: 'user', content: user },
+        { role: 'assistant', content: html.slice(0, 100) },
+        { role: 'user', content: 'Your previous response was missing the <h1>. Output the COMPLETE article starting with <h1>{title}</h1>. No preamble, no markdown fence, just HTML starting with <h1>.' },
+      ],
+    });
+    if (retry.status === 200 && retry.body.content && retry.body.content[0]) {
+      html = (retry.body.content[0].text || '').replace(/^```html\s*/i, '').replace(/```\s*$/, '').trim();
+      const h1Idx2 = html.indexOf('<h1');
+      if (h1Idx2 > 0) html = html.slice(h1Idx2);
+    }
+  }
   return html;
 }
 
@@ -404,6 +428,21 @@ function buildEmailHtml({ picks, results }) {
 }
 
 // ─── MAIN ────────────────────────────────────────────────────────────────────
+async function sendFailureEmail(stage, error) {
+  try {
+    const html = `<div style="font-family:-apple-system,Segoe UI,sans-serif;max-width:680px;color:#222">
+      <h2 style="color:#FB923C">⚠️ Foco Daily — FAILED at ${stage}</h2>
+      <p style="color:#666">${new Date().toLocaleString('en-GB', { timeZone: 'Asia/Jerusalem' })} Israel time</p>
+      <p>The daily routine could not complete. Stage that failed: <strong>${stage}</strong></p>
+      <pre style="background:#fafafa;padding:12px;border-radius:4px;font-family:monospace;font-size:11px;white-space:pre-wrap;overflow:auto">${String(error.stack || error.message || error).slice(0, 4000)}</pre>
+      <p style="color:#666;margin-top:24px">No articles created today. Check the error above and rerun manually if needed.</p>
+    </div>`;
+    await sendEmail({ subject: `⚠️ Foco Daily — failed at ${stage}`, html });
+  } catch (e) {
+    console.error('Could not send failure email:', e.message);
+  }
+}
+
 (async () => {
   console.log('━'.repeat(60));
   console.log(' FOCO DAILY ROUTINE — ' + new Date().toISOString());
@@ -411,11 +450,18 @@ function buildEmailHtml({ picks, results }) {
 
   // PHASE 1: pick
   let picks;
-  if (FORCE_KEYWORD) {
-    picks = [{ keyword: FORCE_KEYWORD, slug: slugify(FORCE_KEYWORD), cluster: 'manual', volume: 0, sd: 0, score: 0 }];
-  } else {
-    console.log('\n[Phase 1] Picking ' + COUNT + ' keywords...');
-    picks = await pickKeywords();
+  try {
+    if (FORCE_KEYWORD) {
+      picks = [{ keyword: FORCE_KEYWORD, slug: slugify(FORCE_KEYWORD), cluster: 'manual', volume: 0, sd: 0, score: 0 }];
+    } else {
+      console.log('\n[Phase 1] Picking ' + COUNT + ' keywords...');
+      picks = await pickKeywords();
+    }
+    if (!picks || picks.length === 0) throw new Error('Picker returned 0 candidates — blocklist or filters too strict');
+  } catch (e) {
+    console.error('PICK FAILED:', e.message);
+    await sendFailureEmail('Phase 1 — keyword picker', e);
+    process.exit(1);
   }
   console.log(`  Picked: ${picks.map(p => p.keyword).join(' | ')}`);
 

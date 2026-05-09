@@ -39,6 +39,14 @@
     {"keyword": "adhd inattentive type", "reason": "Already covered by post 457"},
     {"keyword": "inattentive adhd", "reason": "Already covered by post 457"},
     {"keyword": "adhd pi", "reason": "Already covered by post 457 — PI = Predominantly Inattentive"},
-    {"keyword": "adhd-pi", "reason": "Same — PI shorthand for inattentive"}
+    {"keyword": "adhd-pi", "reason": "Same — PI shorthand for inattentive"},
+    {"keyword": "symptoms of women with adhd", "reason": "Duplicates post 463 (adhd-symptoms-women)"},
+    {"keyword": "adhd in women symptoms", "reason": "Duplicates post 463"},
+    {"keyword": "adhd women", "reason": "Duplicates post 463"},
+    {"keyword": "symptoms to adhd", "reason": "Generated content lacked H1; rephrased keyword too generic"},
+    {"keyword": "adhd symptoms", "reason": "Too generic — competitor-dominated, cannibalizes 463"},
+    {"keyword": "add vs adhd", "reason": "Duplicates post 232 (adhd-or-add) — same comparison intent"},
+    {"keyword": "add or adhd", "reason": "Already exists as post 232"},
+    {"keyword": "adhd vs add", "reason": "Already exists as post 239"}
   ]
 }
