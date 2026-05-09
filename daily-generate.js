@@ -409,7 +409,7 @@ async function audit(postId) {
     'FAQ': /<h2[^>]*>FAQ<\/h2>/i.test(html),
     'Bottom Line': /Bottom Line/i.test(html),
     'Disclaimer': html.includes('foco-disclaimer'),
-    'Related articles': html.includes('Related articles'),
+    'Related articles': /related\s+articles/i.test(html),
     'References': html.includes('foco-references'),
     'FAQPage schema': html.includes('FAQPage'),
     'Article schema': html.includes('"Article"'),
