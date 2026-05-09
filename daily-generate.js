@@ -311,11 +311,39 @@ function ensureEnvFile() {
   console.log('  [env] wrote .env for create-post.js (runtime-generated from process.env)');
 }
 
+function extractH1(slug) {
+  // Read the saved post HTML and extract the H1 text (used for --title fallback)
+  try {
+    const html = fs.readFileSync(path.join(__dirname, 'posts-new', `post-${slug}.html`), 'utf8');
+    const m = html.match(/<h1[^>]*>([^<]+)<\/h1>/);
+    return m ? m[1].trim() : null;
+  } catch { return null; }
+}
+
+function shortenTitle(h1, max = 58) {
+  // If H1 ≤ max, return null (no override needed). Else truncate at last word boundary.
+  if (h1.length <= max) return null;
+  // Try to cut at the colon if there is one
+  const colon = h1.indexOf(':');
+  if (colon > 0 && colon <= max) return h1.slice(0, colon).trim();
+  // Else truncate at word boundary
+  const truncated = h1.slice(0, max);
+  const lastSpace = truncated.lastIndexOf(' ');
+  return lastSpace > 30 ? truncated.slice(0, lastSpace).trim() : truncated.trim();
+}
+
 function runEngine(slug, keyword) {
   ensureEnvFile();
   const file = `posts-new/post-${slug}.html`;
   const skipCoverFlag = SKIP_COVER ? ' --skip-cover' : '';
-  const cmd = `node create-post.js ${JSON.stringify(file)} --keyword=${JSON.stringify(keyword)}${skipCoverFlag}`;
+  // Auto-detect H1 too long and pass --title with shortened version
+  const h1 = extractH1(slug);
+  let titleFlag = '';
+  if (h1) {
+    const short = shortenTitle(h1);
+    if (short) titleFlag = ` --title=${JSON.stringify(short)}`;
+  }
+  const cmd = `node create-post.js ${JSON.stringify(file)} --keyword=${JSON.stringify(keyword)}${skipCoverFlag}${titleFlag}`;
   try {
     const out = execSync(cmd, { cwd: __dirname, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
     const idMatch = out.match(/Post ID:\s+(\d+)/);

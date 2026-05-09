@@ -20,13 +20,14 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install dependencies (skip playwright Chromium download)
-        run: npm install --omit=optional --ignore-scripts --silent
-        env:
-          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+      - name: Install dependencies
+        run: npm install --silent
+
+      - name: Install Playwright Chromium (needed for cover gen even with --skip-cover for new posts)
+        run: npx playwright install chromium --with-deps
 
       - name: Run daily generator
-        run: node daily-generate.js --count=3 --skip-cover
+        run: node daily-generate.js --count=3
         env:
           WP_HOST: ${{ secrets.WP_HOST }}
           WP_USER: ${{ secrets.WP_USER }}
