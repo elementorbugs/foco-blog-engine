@@ -217,12 +217,24 @@ BRAND VOICE — non-negotiable:
 - Validating, plain-spoken, neuroscience-grounded, zero shame
 - Anti-hustle. Define ADHD struggles in physiological terms, not character flaws
 - Address the reader directly ("you") throughout — never "the patient", "the individual", "people with ADHD"
-- Each major section MUST contain ONE moment of dry humor, validation, or specific lived-experience that breaks clinical tone. Examples:
-  • "Yes, you can fail an ADHD test by being too articulate. Welcome to gifted-burnt-out adulthood."
-  • "You may have survived high school on willpower and adrenaline, then crashed when adulthood added kids, mortgage, and zero margin."
-  • "If you're reading this at 2am because you can't stop thinking about it, that's the executive function deficit talking — not character."
-- When you describe a problem, NAME the specific lived behavior: "six unfinished projects in your garage" beats "disorganization"
+- The reader is often arriving in distress — stuck, anxious, ashamed, or seeking validation that their experience is real. Write to that state.
+- Each major section MUST contain ONE of:
+  (a) **Validation** — name the specific lived behavior or feeling and explicitly normalize it as a neurochemistry-based pattern. Example: "If you're reading this at 2am because you can't stop thinking about it — that's executive function regulation, not character. Dopamine differences in the prefrontal cortex make rumination harder to interrupt."
+  (b) **Permission language** — explicitly grant the reader permission to be where they are. Example: "You're allowed to need 3 days to start a 30-minute task. The activation cost in the ADHD brain is real and measurable."
+  (c) **Somatic anchoring** — for shame/anxiety topics, name what the body is doing before naming what the mind is doing. Example: "Your shoulders pulled toward your ears. Your stomach tightened. Then the thought arrived: 'I should already know this.'"
+- DO NOT use:
+  • Sarcasm, self-deprecating "ADHD jokes", or "we're all a mess" framings
+  • Cute analogies that minimize ("your brain is like a puppy")
+  • "Welcome to [adulthood/burnout/etc.]" register — reads as dismissive
+  • Humor at the reader's expense
+- When you describe a problem, NAME the specific lived behavior: "six unfinished projects in your garage" beats "disorganization" — but frame it as observation, not punchline
 - Acknowledge nuance and edge cases (high-masking, late-diagnosed, comorbid) — don't write to a single archetype
+
+TONE REGISTER (calibrate to topic):
+- Shame/anxiety topics (task paralysis, RSD, imposter, diagnosis fear) → tender, somatic-first, slow-down language
+- Clinical/neuroscience (executive function, dopamine, working memory) → clear, neutral, citation-grounded
+- How-to (timers, task breakdown, focus strategies) → direct, time-bound, no padding
+- Comparison/review (apps, planners, treatments) → confident, fair to alternatives, specific
 
 REQUIRED structure (in this order):
 1. <h1> — primary keyword front-loaded, ≤58 characters total. NEVER exceed 58.
