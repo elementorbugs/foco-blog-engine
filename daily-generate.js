@@ -252,6 +252,23 @@ REQUIRED structure (in this order):
 INTERNAL LINKING (CRITICAL — don't dump all in Related Articles):
 Weave 4-6 internal links INTO the body text, contextually placed where the topic naturally comes up. Use absolute URLs (https://www.tryfoco.com/...). When discussing executive function, link to the executive function pillar. When discussing initiation, link to task-paralysis. Make the links feel earned, not stuffed.
 
+VISUAL STRUCTURE (CRITICAL — articles must be scannable):
+Every section needs at least ONE structural element beyond prose:
+- **Lists**: where you have 3+ items, USE <ol> for sequenced or <ul> for unordered. Don't write "5 ways" as 5 paragraphs.
+- **Tables**: comparing 3+ things → use <div class="foco-table-wrap" style="overflow-x:auto;margin:24px 0"><table style="width:100%;border-collapse:collapse;font-size:15px"><thead><tr style="background:rgba(124,58,237,0.18)"><th style="text-align:left;padding:12px;border:1px solid rgba(167,139,250,0.18)">Header</th>...</tr></thead><tbody>...</tbody></table></div>
+- **Charts** (REQUIRED — include 1-2 per article): emit a chart marker that the build pipeline will render. Format:
+\`\`\`
+<!-- FOCO_CHART:TYPE
+{json_spec}
+-->
+\`\`\`
+TYPES available:
+  • statGrid — 4-6 big stats. spec: {"title":"...","caption":"...","items":[{"label":"4.4%","sub":"adult prevalence"},...]}
+  • horizontalBar — comparing values. spec: {"title":"...","caption":"...","data":[{"label":"Item","value":75,"highlight":true},...]}
+  • progressTimeline — sequence of steps. spec: {"title":"...","caption":"...","steps":[{"label":"Step 1","sub":"description"},...]}
+  • infographicList — labeled facts with value column. spec: {"title":"...","caption":"...","items":[{"icon":"⏰","label":"Time","value":"30 min"},...]}
+Place chart markers in their own <p> on a blank line. Use real numbers, not placeholders. If you don't have a real stat, don't fabricate — pick a different chart type or skip.
+
 CRITICAL RULES:
 - Max 1-2 sentences per paragraph. NEVER 3+ sentences in one block.
 - Wrap every paragraph in explicit <p>...</p>.
@@ -541,6 +558,50 @@ async function injectPexelsImages(postId, keyword) {
   return { ok: upd.status === 200, msg: `${inserted} Pexels image(s) inserted (diverse photographers)` };
 }
 
+// ─── PHASE 6.6: Render FOCO_CHART markers via chart-kit.js ───────────────────
+async function renderCharts(postId) {
+  let K;
+  try { K = require('./chart-kit'); } catch (e) { return { ok: false, msg: 'chart-kit.js not loadable: ' + e.message }; }
+  const post = await wpReq('GET', `/wp-json/wp/v2/posts/${postId}?context=edit&_fields=content`);
+  if (post.status !== 200) return { ok: false, msg: 'fetch fail ' + post.status };
+  let html = post.body.content.raw;
+  // Match: <!-- FOCO_CHART:TYPE\n{json}\n-->
+  const re = /<!--\s*FOCO_CHART:(\w+)\s*([\s\S]*?)-->/g;
+  const matches = [...html.matchAll(re)];
+  if (matches.length === 0) return { ok: true, msg: '0 chart markers found' };
+  let rendered = 0;
+  for (const m of matches) {
+    const type = m[1];
+    const jsonRaw = m[2].trim();
+    let spec;
+    try { spec = JSON.parse(jsonRaw); }
+    catch (e) {
+      // Strip code fences if present
+      const cleaned = jsonRaw.replace(/^```(?:json)?\s*/i, '').replace(/```\s*$/, '').trim();
+      try { spec = JSON.parse(cleaned); } catch (e2) {
+        console.log(`  [6.6] ⚠ chart ${type}: JSON parse failed, skipping`);
+        continue;
+      }
+    }
+    if (typeof K[type] !== 'function') {
+      console.log(`  [6.6] ⚠ chart type "${type}" not in chart-kit.js, skipping`);
+      continue;
+    }
+    try {
+      const chartHtml = K[type](spec);
+      const wrapped = `<!-- wp:html -->${chartHtml}<!-- /wp:html -->`;
+      // Replace the entire <!-- FOCO_CHART... --> marker with wrapped chart
+      html = html.replace(m[0], wrapped);
+      rendered++;
+    } catch (e) {
+      console.log(`  [6.6] ⚠ chart ${type} render failed: ${e.message}`);
+    }
+  }
+  if (rendered === 0) return { ok: true, msg: `0/${matches.length} charts rendered` };
+  const upd = await wpReq('POST', `/wp-json/wp/v2/posts/${postId}`, { content: html });
+  return { ok: upd.status === 200, msg: `${rendered}/${matches.length} chart(s) rendered + pushed` };
+}
+
 // ─── PHASE 7: Programmatic audit ─────────────────────────────────────────────
 async function audit(postId) {
   const r = await wpReq('GET', `/wp-json/wp/v2/posts/${postId}?context=edit&_fields=content,title,status`);
@@ -691,6 +752,11 @@ async function sendFailureEmail(stage, error) {
       console.log('  [6.5] Injecting Pexels images at H2 anchors...');
       result.pexels = await injectPexelsImages(result.engine.postId, pick.keyword);
       console.log(`  [6.5] ${result.pexels.msg}`);
+
+      // Phase 6.6: Render FOCO_CHART markers via chart-kit.js
+      console.log('  [6.6] Rendering chart markers (statGrid, horizontalBar, etc.)...');
+      result.charts = await renderCharts(result.engine.postId);
+      console.log(`  [6.6] ${result.charts.msg}`);
 
       // Phase 7: audit
       console.log('  [7] Running spec audit...');
