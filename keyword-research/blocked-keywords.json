@@ -49,6 +49,8 @@
     {"keyword": "add or adhd", "reason": "Already exists as post 232"},
     {"keyword": "adhd vs add", "reason": "Already exists as post 239"},
     {"keyword": "adhd rejection sensitive dysphoria", "reason": "Duplicates post 314 (adhd-and-rejection-sensitive-dysphoria, RSD pillar)"},
-    {"keyword": "rejection sensitive dysphoria adhd", "reason": "Duplicates post 314"}
+    {"keyword": "rejection sensitive dysphoria adhd", "reason": "Duplicates post 314"},
+    {"keyword": "adhd psychiatrist", "reason": "Auto-blocked: semantic duplicate of \"psychiatrist-for-adhd\" — Both posts cover finding and working with psychiatrists for ADHD, with only minor wording variation between 'adhd psychiatrist' and 'psychiatrist for adhd'"},
+    {"keyword": "adhd in women signs", "reason": "Auto-blocked: semantic duplicate of \"adhd-symptoms-women\" — Both posts cover signs and symptoms of ADHD specifically in women, with nearly identical scope and audience intent."}
   ]
 }

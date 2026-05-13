@@ -157,17 +157,26 @@ async function pickKeywords() {
   for (const run of tracker.runs.slice(-7)) for (const p of run.posts || []) recentSlugs.add(p.slug);
 
   // Fetch all trashed slugs once — we don't want to re-create things we deliberately killed
-  const trashRes = await wpReq('GET', '/wp-json/wp/v2/posts?per_page=100&status=trash&context=edit&_fields=slug');
+  const trashRes = await wpReq('GET', '/wp-json/wp/v2/posts?per_page=100&status=trash&context=edit&_fields=slug,title');
   const trashSlugs = new Set();
+  const trashPosts = [];
   if (Array.isArray(trashRes.body)) {
-    for (const p of trashRes.body) trashSlugs.add(p.slug.replace(/__trashed$/, ''));
+    for (const p of trashRes.body) {
+      const cleanSlug = p.slug.replace(/__trashed$/, '');
+      trashSlugs.add(cleanSlug);
+      trashPosts.push({ slug: cleanSlug, title: (p.title && (p.title.rendered || p.title.raw)) || '', status: 'trash' });
+    }
   }
 
   // Fetch all live slugs (publish/future/draft) once for cannibalization check
-  const liveRes = await wpReq('GET', '/wp-json/wp/v2/posts?per_page=100&status=publish,future,draft&context=edit&_fields=slug');
+  const liveRes = await wpReq('GET', '/wp-json/wp/v2/posts?per_page=100&status=publish,future,draft&context=edit&_fields=slug,title');
   const liveSlugs = new Set();
+  const livePosts = [];
   if (Array.isArray(liveRes.body)) {
-    for (const p of liveRes.body) liveSlugs.add(p.slug);
+    for (const p of liveRes.body) {
+      liveSlugs.add(p.slug);
+      livePosts.push({ slug: p.slug, title: (p.title && (p.title.rendered || p.title.raw)) || '', status: 'live' });
+    }
   }
 
   // Explicit blocklist — keywords we never want to re-create
@@ -198,7 +207,102 @@ async function pickKeywords() {
     usedClusters.add(c.cluster);
   }
   console.log(`  [filter] skipped — low vol:${skipped.lowVol}, recently picked:${skipped.recent}, trashed:${skipped.trashed}, live:${skipped.live}, blocked:${skipped.blocked}, cluster-dup:${skipped.clusterDup}`);
-  return picks;
+
+  if (picks.length === 0) return picks;
+  const existingPosts = [...livePosts, ...trashPosts];
+  const survivors = await semanticDuplicateFilter(picks, existingPosts, blockedPath);
+  const dropped = picks.length - survivors.length;
+  if (dropped > 0) console.log(`  [semantic] dropped ${dropped} duplicate(s); appended to blocked-keywords.json`);
+  return survivors;
+}
+
+// Pre-flight: catch wording variations that string-match against blockedKeywords missed.
+// Costs ~$0.0005/candidate vs ~$0.05 wasted on a duplicate full generation downstream.
+async function semanticDuplicateFilter(picks, existingPosts, blockedPath) {
+  if (!ANTHROPIC_API_KEY || existingPosts.length === 0) return picks;
+  const survivors = [];
+  const newBlocks = [];
+  for (const pick of picks) {
+    const judgment = await claudeJudgeDuplicate(pick, existingPosts);
+    if (judgment && judgment.duplicate) {
+      const matchSlug = judgment.matchSlug || 'unknown';
+      console.log(`  [semantic] BLOCKED "${pick.keyword}" — duplicate of ${matchSlug}: ${judgment.reason || ''}`);
+      newBlocks.push({
+        keyword: pick.keyword,
+        reason: `Auto-blocked: semantic duplicate of "${matchSlug}" — ${judgment.reason || 'pre-flight check'}`,
+      });
+    } else {
+      survivors.push(pick);
+    }
+  }
+  if (newBlocks.length > 0) {
+    const current = fs.existsSync(blockedPath)
+      ? JSON.parse(fs.readFileSync(blockedPath, 'utf8'))
+      : { blocked: [] };
+    current.blocked = current.blocked || [];
+    current.blocked.push(...newBlocks);
+    fs.writeFileSync(blockedPath, serializeBlockedKeywords(current));
+  }
+  return survivors;
+}
+
+// Custom serializer for blocked-keywords.json — keeps each entry on one line
+// so the file stays scannable. JSON.stringify(.., null, 2) would explode each
+// entry into 4 lines, which makes diffs noisy and the file long.
+function serializeBlockedKeywords(obj) {
+  const lines = ['{'];
+  const keys = Object.keys(obj);
+  keys.forEach((key, i) => {
+    const trailing = i < keys.length - 1 ? ',' : '';
+    if (key === 'blocked' && Array.isArray(obj[key])) {
+      lines.push('  "blocked": [');
+      obj[key].forEach((entry, j) => {
+        const c = j < obj[key].length - 1 ? ',' : '';
+        const pairs = Object.entries(entry).map(([k, v]) => `${JSON.stringify(k)}: ${JSON.stringify(v)}`).join(', ');
+        lines.push(`    {${pairs}}${c}`);
+      });
+      lines.push(`  ]${trailing}`);
+    } else {
+      lines.push(`  ${JSON.stringify(key)}: ${JSON.stringify(obj[key])}${trailing}`);
+    }
+  });
+  lines.push('}');
+  return lines.join('\n') + '\n';
+}
+
+async function claudeJudgeDuplicate(pick, existingPosts) {
+  const list = existingPosts
+    .map(p => `- ${p.slug}: ${(p.title || '').replace(/\s+/g, ' ').trim()}`)
+    .join('\n');
+  const prompt = `You are checking for content duplication on a blog about ADHD task initiation.
+
+CANDIDATE keyword for a new post: "${pick.keyword}" (slug: ${pick.slug})
+
+EXISTING posts on the site (slug: title):
+${list}
+
+Would a new post on the candidate keyword substantially overlap with an existing one? Treat wording variations of the same topic as duplicates (e.g. "adhd pi" overlaps with "adhd-inattentive-presentation"; "symptoms to adhd" overlaps with "adhd-symptoms-in-adults"; "cognitive therapy for adhd" overlaps with "cbt-for-adhd" or "therapy-for-adhd").
+
+Reply with ONLY a JSON object, no surrounding text:
+{"duplicate": true|false, "matchSlug": "slug-of-existing-post-or-empty-string", "reason": "one short sentence"}`;
+
+  try {
+    const r = await req('api.anthropic.com', 'POST', '/v1/messages', {
+      'x-api-key': ANTHROPIC_API_KEY,
+      'anthropic-version': '2023-06-01',
+    }, { model: 'claude-haiku-4-5', max_tokens: 200, messages: [{ role: 'user', content: prompt }] });
+    if (r.status !== 200 || !r.body.content || !r.body.content[0]) {
+      console.log(`  [semantic] Haiku check failed for "${pick.keyword}" (status ${r.status}) — defaulting to allow`);
+      return null;
+    }
+    const text = r.body.content[0].text || '';
+    const m = text.match(/\{[\s\S]*?\}/);
+    if (!m) return null;
+    return JSON.parse(m[0]);
+  } catch (e) {
+    console.log(`  [semantic] Haiku error for "${pick.keyword}" (${e.message}) — defaulting to allow`);
+    return null;
+  }
 }
 
 function slugify(s) {
