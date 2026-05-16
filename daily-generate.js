@@ -192,9 +192,16 @@ async function pickKeywords() {
 
   // Track which clusters already used today (max 1 per cluster per run = diversity)
   const usedClusters = new Set();
+  const existingPosts = [...livePosts, ...trashPosts];
 
   const picks = [];
-  const skipped = { lowVol: 0, recent: 0, trashed: 0, live: 0, blocked: 0, clusterDup: 0 };
+  const newBlocks = [];
+  const skipped = { lowVol: 0, recent: 0, trashed: 0, live: 0, blocked: 0, clusterDup: 0, semantic: 0 };
+
+  // Iterate the sorted pool. For each candidate that passes string filters, do the
+  // semantic check inline. If Haiku rejects, log + queue for blocklist + CONTINUE
+  // (don't mark the cluster as used — let the next candidate in that cluster try).
+  // Loop ends when we have COUNT accepted picks OR exhaust the pool.
   for (const c of all) {
     if (picks.length >= COUNT) break;
     if (c.volume < 50) { skipped.lowVol++; continue; }
@@ -203,38 +210,27 @@ async function pickKeywords() {
     if (trashSlugs.has(c.slug)) { skipped.trashed++; continue; }
     if (liveSlugs.has(c.slug)) { skipped.live++; continue; }
     if (usedClusters.has(c.cluster)) { skipped.clusterDup++; continue; }
+
+    // Semantic check (runs only if Anthropic API key + existing posts exist).
+    if (ANTHROPIC_API_KEY && existingPosts.length > 0) {
+      const judgment = await claudeJudgeDuplicate(c, existingPosts);
+      if (judgment && judgment.duplicate) {
+        const matchSlug = judgment.matchSlug || 'unknown';
+        console.log(`  [semantic] BLOCKED "${c.keyword}" — duplicate of ${matchSlug}: ${judgment.reason || ''}`);
+        newBlocks.push({
+          keyword: c.keyword,
+          reason: `Auto-blocked: semantic duplicate of "${matchSlug}" — ${judgment.reason || 'pre-flight check'}`,
+        });
+        skipped.semantic++;
+        continue;
+      }
+    }
+
     picks.push(c);
     usedClusters.add(c.cluster);
   }
-  console.log(`  [filter] skipped — low vol:${skipped.lowVol}, recently picked:${skipped.recent}, trashed:${skipped.trashed}, live:${skipped.live}, blocked:${skipped.blocked}, cluster-dup:${skipped.clusterDup}`);
 
-  if (picks.length === 0) return picks;
-  const existingPosts = [...livePosts, ...trashPosts];
-  const survivors = await semanticDuplicateFilter(picks, existingPosts, blockedPath);
-  const dropped = picks.length - survivors.length;
-  if (dropped > 0) console.log(`  [semantic] dropped ${dropped} duplicate(s); appended to blocked-keywords.json`);
-  return survivors;
-}
-
-// Pre-flight: catch wording variations that string-match against blockedKeywords missed.
-// Costs ~$0.0005/candidate vs ~$0.05 wasted on a duplicate full generation downstream.
-async function semanticDuplicateFilter(picks, existingPosts, blockedPath) {
-  if (!ANTHROPIC_API_KEY || existingPosts.length === 0) return picks;
-  const survivors = [];
-  const newBlocks = [];
-  for (const pick of picks) {
-    const judgment = await claudeJudgeDuplicate(pick, existingPosts);
-    if (judgment && judgment.duplicate) {
-      const matchSlug = judgment.matchSlug || 'unknown';
-      console.log(`  [semantic] BLOCKED "${pick.keyword}" — duplicate of ${matchSlug}: ${judgment.reason || ''}`);
-      newBlocks.push({
-        keyword: pick.keyword,
-        reason: `Auto-blocked: semantic duplicate of "${matchSlug}" — ${judgment.reason || 'pre-flight check'}`,
-      });
-    } else {
-      survivors.push(pick);
-    }
-  }
+  // Persist newly discovered blocks so future runs catch them via string-match.
   if (newBlocks.length > 0) {
     const current = fs.existsSync(blockedPath)
       ? JSON.parse(fs.readFileSync(blockedPath, 'utf8'))
@@ -242,8 +238,11 @@ async function semanticDuplicateFilter(picks, existingPosts, blockedPath) {
     current.blocked = current.blocked || [];
     current.blocked.push(...newBlocks);
     fs.writeFileSync(blockedPath, serializeBlockedKeywords(current));
+    console.log(`  [semantic] appended ${newBlocks.length} duplicate(s) to blocked-keywords.json`);
   }
-  return survivors;
+
+  console.log(`  [filter] skipped — low vol:${skipped.lowVol}, recently picked:${skipped.recent}, trashed:${skipped.trashed}, live:${skipped.live}, blocked:${skipped.blocked}, cluster-dup:${skipped.clusterDup}, semantic:${skipped.semantic}`);
+  return picks;
 }
 
 // Custom serializer for blocked-keywords.json — keeps each entry on one line
@@ -291,6 +290,14 @@ Reply with ONLY a JSON object, no surrounding text:
       'x-api-key': ANTHROPIC_API_KEY,
       'anthropic-version': '2023-06-01',
     }, { model: 'claude-haiku-4-5', max_tokens: 200, messages: [{ role: 'user', content: prompt }] });
+    // Credit balance check — fast-fail with a clear message if billing is the issue.
+    // Otherwise every candidate would silently default to "allow" and we'd burn a
+    // Sonnet generation that ALSO fails on billing. Worse: the failure email would
+    // just say "workflow failed", masking the real cause.
+    const bodyStr = typeof r.body === 'string' ? r.body : JSON.stringify(r.body || {});
+    if (r.status === 400 && /credit balance.*too low/i.test(bodyStr)) {
+      throw new Error('ANTHROPIC_BILLING: credit balance too low. Top up at https://console.anthropic.com/settings/billing — daily generator cannot continue without API credit.');
+    }
     if (r.status !== 200 || !r.body.content || !r.body.content[0]) {
       console.log(`  [semantic] Haiku check failed for "${pick.keyword}" (status ${r.status}) — defaulting to allow`);
       return null;
@@ -300,6 +307,8 @@ Reply with ONLY a JSON object, no surrounding text:
     if (!m) return null;
     return JSON.parse(m[0]);
   } catch (e) {
+    // Re-throw billing errors so they bubble up and produce a clear failure email.
+    if (e.message && e.message.startsWith('ANTHROPIC_BILLING:')) throw e;
     console.log(`  [semantic] Haiku error for "${pick.keyword}" (${e.message}) — defaulting to allow`);
     return null;
   }
@@ -856,11 +865,23 @@ async function sendFailureEmail(stage, error) {
       console.log('\n[Phase 1] Picking ' + COUNT + ' keywords...');
       picks = await pickKeywords();
     }
-    if (!picks || picks.length === 0) throw new Error('Picker returned 0 candidates — blocklist or filters too strict');
   } catch (e) {
     console.error('PICK FAILED:', e.message);
     await sendFailureEmail('Phase 1 — keyword picker', e);
     process.exit(1);
+  }
+
+  // Empty picks = pool exhausted, NOT an error. Send an informational email and exit clean.
+  if (!picks || picks.length === 0) {
+    console.log('  [picker] No eligible candidates today — the pool is fully covered by existing posts + blocklist.');
+    const html = `<div style="font-family:-apple-system,Segoe UI,sans-serif;max-width:680px;color:#222">
+      <h2 style="color:#7C3AED">🤖 Foco Daily — nothing to publish today</h2>
+      <p style="color:#666">${new Date().toLocaleString('en-GB', { timeZone: 'Asia/Jerusalem' })} Israel time</p>
+      <p>The keyword pool from <code>master-plan.json</code> is fully covered by existing posts and the blocklist. The picker found 0 eligible candidates today.</p>
+      <p style="color:#666;margin-top:16px"><strong>This is not a failure.</strong> It means the niche is well-covered for the current pool. To resume daily publishing, expand the pool (add new keywords to master-plan.json) or relax filters.</p>
+    </div>`;
+    await sendEmail({ subject: `Foco Daily — no new candidates (pool covered)`, html });
+    process.exit(0);
   }
   console.log(`  Picked: ${picks.map(p => p.keyword).join(' | ')}`);
 
