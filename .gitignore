@@ -13,6 +13,9 @@ covers-new/*.html
 .audit-cache/
 *.log
 
+# YouTube Studio outputs (large MP4/MP3 binaries, generated artifacts)
+video-assets/
+
 # OS
 .DS_Store
 Thumbs.db
