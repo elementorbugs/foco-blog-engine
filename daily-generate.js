@@ -88,6 +88,8 @@ const DRY_RUN = flag('dry-run');
 const COUNT = parseInt(arg('count') || '3', 10);
 const FORCE_KEYWORD = arg('keyword');
 const SKIP_COVER = flag('skip-cover'); // for cloud env — skips playwright cover render
+const PULL_GSC = flag('pull-gsc');     // refresh GSC data + overlay before picking (daily routine)
+const USE_GSC = flag('use-gsc') || PULL_GSC; // opt-in: merge gsc-overlay.json into scoring (auto-on with --pull-gsc)
 
 // ─── HTTP helper ─────────────────────────────────────────────────────────────
 function req(host, method, p, headers = {}, body = null) {
@@ -123,6 +125,22 @@ async function pickKeywords() {
     throw new Error('master-plan.json not found at ' + masterPathRepo + ' or ' + masterPathLocal);
   }
   const master = JSON.parse(fs.readFileSync(masterPath, 'utf8'));
+
+  // GSC overlay (opt-in via --use-gsc). Surfaces striking-distance keywords,
+  // content gaps, and CTR opportunities from live Search Console data.
+  // Locked decisions live in memory/project_gsc_engine_upgrade.md.
+  const overlay = USE_GSC ? loadGscOverlay() : null;
+  const boosts = overlay?.boosts || {};
+  const gscOnly = overlay?.gscOnlyCandidates || [];
+  const ctrOppSlugs = new Set((overlay?.ctrOpportunities || []).map(o => o.slug));
+  if (USE_GSC) {
+    if (overlay) {
+      console.log(`  [gsc] overlay loaded: ${Object.keys(boosts).length} boost(s), ${gscOnly.length} gsc-only candidate(s), ${ctrOppSlugs.size} CTR opp(s) excluded`);
+    } else {
+      console.log('  [gsc] --use-gsc passed but no gsc-overlay.json found. Run gsc-pull.js && gsc-analyze.js first. Falling back to Ubersuggest-only.');
+    }
+  }
+
   // schedule has pre-built picks; clusters has scored candidates
   const candidates = [];
   if (Array.isArray(master.clusters)) {
@@ -131,19 +149,44 @@ async function pickKeywords() {
       const items = cluster.items || cluster.keywords || cluster.candidates || [];
       for (const k of items) {
         if (k.covered) continue; // already in WP per master-plan's own tracking
+        const baseScore = k.score || (k.volume || 0) / Math.max(k.sd || 30, 5);
+        const boost = boosts[String(k.keyword).toLowerCase().trim()] || null;
         candidates.push({
           keyword: k.keyword,
           slug: k.slug || slugify(k.keyword),
           cluster: cluster.name,
           volume: k.volume || 0,
           sd: k.sd || 50,
-          score: k.score || (k.volume || 0) / Math.max(k.sd || 30, 5),
+          score: boost ? baseScore * boost.multiplier : baseScore,
+          baseScore,
+          gsc: boost,                                   // null when no boost applies
+          source: boost ? `master+${boost.reason}` : 'master',
           intent: k.intent || '',
         });
       }
     }
   }
-  // Dedupe by slug
+
+  // Inject GSC-only candidates (keywords with GSC impressions that aren't in
+  // master-plan at all). Synthetic score: impressions × multiplier × 50. The
+  // 50 is chosen so a gsc-only entry with ~20 impr competes with a master
+  // candidate of ~vol 1000 (similar order of magnitude as base scores).
+  for (const g of gscOnly) {
+    candidates.push({
+      keyword: g.keyword,
+      slug: g.slug || slugify(g.keyword),
+      cluster: 'GSC content gap',
+      volume: g.impressions, // proxy — real volume unknown
+      sd: 50,
+      score: g.impressions * (g.multiplier || 2.0) * 50,
+      baseScore: g.impressions * 50,
+      gsc: g,
+      source: `gsc-only:${g.reason}`,
+      intent: '',
+    });
+  }
+
+  // Dedupe by slug (master candidate wins over gsc-only on collision)
   const bySlug = new Map();
   for (const c of candidates) if (!bySlug.has(c.slug)) bySlug.set(c.slug, c);
   const all = [...bySlug.values()];
@@ -196,7 +239,7 @@ async function pickKeywords() {
 
   const picks = [];
   const newBlocks = [];
-  const skipped = { lowVol: 0, recent: 0, trashed: 0, live: 0, blocked: 0, clusterDup: 0, semantic: 0 };
+  const skipped = { lowVol: 0, recent: 0, trashed: 0, live: 0, blocked: 0, clusterDup: 0, semantic: 0, ctrOpp: 0 };
 
   // Iterate the sorted pool. For each candidate that passes string filters, do the
   // semantic check inline. If Haiku rejects, log + queue for blocklist + CONTINUE
@@ -204,11 +247,14 @@ async function pickKeywords() {
   // Loop ends when we have COUNT accepted picks OR exhaust the pool.
   for (const c of all) {
     if (picks.length >= COUNT) break;
-    if (c.volume < 50) { skipped.lowVol++; continue; }
+    // Volume floor: master candidates need >=50 (Ubersuggest est.); GSC candidates
+    // already proved they get search impressions, so any impression count is fine.
+    if (!c.gsc && c.volume < 50) { skipped.lowVol++; continue; }
     if (blockedKeywords.has(c.keyword.toLowerCase()) || blockedSlugs.has(c.slug)) { skipped.blocked++; continue; }
     if (recentSlugs.has(c.slug)) { skipped.recent++; continue; }
     if (trashSlugs.has(c.slug)) { skipped.trashed++; continue; }
     if (liveSlugs.has(c.slug)) { skipped.live++; continue; }
+    if (ctrOppSlugs.has(c.slug)) { skipped.ctrOpp++; continue; } // page exists but needs a snippet rewrite, not a new post
     if (usedClusters.has(c.cluster)) { skipped.clusterDup++; continue; }
 
     // Semantic check (runs only if Anthropic API key + existing posts exist).
@@ -241,8 +287,24 @@ async function pickKeywords() {
     console.log(`  [semantic] appended ${newBlocks.length} duplicate(s) to blocked-keywords.json`);
   }
 
-  console.log(`  [filter] skipped — low vol:${skipped.lowVol}, recently picked:${skipped.recent}, trashed:${skipped.trashed}, live:${skipped.live}, blocked:${skipped.blocked}, cluster-dup:${skipped.clusterDup}, semantic:${skipped.semantic}`);
+  console.log(`  [filter] skipped — low vol:${skipped.lowVol}, recently picked:${skipped.recent}, trashed:${skipped.trashed}, live:${skipped.live}, blocked:${skipped.blocked}, cluster-dup:${skipped.clusterDup}, semantic:${skipped.semantic}, ctr-opp:${skipped.ctrOpp}`);
+  if (USE_GSC && picks.length) {
+    console.log('  [gsc] picks:');
+    for (const p of picks) console.log(`    [${p.source}] "${p.keyword}" — score ${Math.round(p.score)}${p.gsc ? ` (×${p.gsc.multiplier} from ${p.gsc.reason})` : ''}`);
+  }
   return picks;
+}
+
+// Load the GSC overlay JSON. Returns null (with a warning at call site) if the
+// file isn't present yet — caller falls back to pure Ubersuggest scoring.
+function loadGscOverlay() {
+  const overlayPath = path.join(__dirname, 'keyword-research', 'gsc-overlay.json');
+  if (!fs.existsSync(overlayPath)) return null;
+  try { return JSON.parse(fs.readFileSync(overlayPath, 'utf8')); }
+  catch (e) {
+    console.warn(`  [gsc] failed to parse gsc-overlay.json: ${e.message}`);
+    return null;
+  }
 }
 
 // Custom serializer for blocked-keywords.json — keeps each entry on one line
@@ -855,6 +917,20 @@ async function sendFailureEmail(stage, error) {
   console.log('━'.repeat(60));
   console.log(' FOCO DAILY ROUTINE — ' + new Date().toISOString());
   console.log('━'.repeat(60));
+
+  // PHASE 0: Refresh GSC overlay (only with --pull-gsc). Failures here are
+  // logged but don't abort the run — picker silently falls back to whatever
+  // overlay exists on disk, or pure Ubersuggest scoring if none.
+  if (PULL_GSC) {
+    console.log('\n[Phase 0] Refreshing GSC data + overlay...');
+    const { spawnSync } = require('child_process');
+    for (const script of ['gsc-pull.js', 'gsc-analyze.js', 'gsc-refresh.js']) {
+      const r = spawnSync(process.execPath, [path.join(__dirname, script)], { stdio: 'inherit' });
+      if (r.status !== 0) {
+        console.warn(`  [gsc] ${script} exited ${r.status} — continuing with existing overlay if any`);
+      }
+    }
+  }
 
   // PHASE 1: pick
   let picks;
