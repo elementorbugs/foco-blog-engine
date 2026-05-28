@@ -1,0 +1,38 @@
+# FOCO - ADHD Focus & Task-Initiation Support
+
+> FOCO is an ADHD-friendly productivity app and resource site focused on task initiation: helping overwhelmed ADHD brains start tasks, break them into tiny steps, and stay focused. Content covers focus techniques, executive function, and ADHD productivity. It is practical focus support, not medical advice.
+
+## Core Pillars
+- [ADHD Task Paralysis](https://www.tryfoco.com/adhd-task-paralysis/): Why ADHD brains freeze and can't start, and how to break the freeze.
+- [ADHD Executive Function](https://www.tryfoco.com/adhd-executive-function/): The mental skills behind starting and finishing tasks.
+- [How to Focus With ADHD](https://www.tryfoco.com/how-to-focus-with-adhd/): The full toolkit of ADHD focus techniques.
+- [Best ADHD App](https://www.tryfoco.com/best-adhd-app/): Choosing task-breakdown and focus apps for ADHD.
+
+## Focus Techniques & Audio
+- [ADHD Music (hub)](https://www.tryfoco.com/adhd-music/): What music actually helps ADHD focus.
+- [Lofi Music for ADHD](https://www.tryfoco.com/lofi-music-for-adhd/)
+- [Instrumental Music for ADHD](https://www.tryfoco.com/instrumental-music-for-adhd/)
+- [Brown Noise for ADHD](https://www.tryfoco.com/brown-noise-adhd/)
+- [Pomodoro for ADHD](https://www.tryfoco.com/pomodoro-for-adhd/)
+- [Body Doubling for ADHD](https://www.tryfoco.com/body-doubling-adhd/)
+- [The 2-Minute Rule for ADHD](https://www.tryfoco.com/2-minute-rule-adhd/)
+- [Hyperfocus and ADHD](https://www.tryfoco.com/hyperfocus-adhd/)
+
+## Task Initiation & Executive Function
+- [Task Initiation Deficit Explained](https://www.tryfoco.com/task-initiation-deficit-explained/)
+- [ADHD Task Initiation: Why You Can't Just Start](https://www.tryfoco.com/adhd-task-initiation-research/)
+- [Procrastination vs Task Paralysis](https://www.tryfoco.com/procrastination-vs-paralysis/)
+- [Time Blindness and ADHD](https://www.tryfoco.com/time-blindness-adhd/)
+- [Working Memory and ADHD](https://www.tryfoco.com/working-memory-adhd/)
+- [Executive Function Skills List](https://www.tryfoco.com/executive-function-skills-list/)
+
+## Reference & Tools
+- [ADHD Glossary](https://www.tryfoco.com/adhd-glossary/): Plain-language definitions of key ADHD terms.
+- [Free ADHD Tools](https://www.tryfoco.com/adhd-tools/): Focus timers and starter tools.
+- [ADHD Resources](https://www.tryfoco.com/adhd-resources/)
+
+## About
+- [About FOCO](https://www.tryfoco.com/about/)
+- [Founder Story](https://www.tryfoco.com/founders/)
+- [Editorial Policy](https://www.tryfoco.com/editorial-policy/)
+- [Get FOCO](https://www.tryfoco.com/get-foco/)

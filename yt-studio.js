@@ -206,6 +206,16 @@ async function renderThumbnails({ imageName, suffix, jobId }) {
   emit(jobId, 'phase', { step: 'thumbnails-done' });
 }
 
+// Extract a single still frame from a video cover (for thumbnails, which need an image).
+function extractFrame(videoPath, outPath) {
+  const ffmpegPath = require('ffmpeg-static');
+  return new Promise((resolve, reject) => {
+    const p = spawn(ffmpegPath, ['-y', '-i', videoPath, '-frames:v', '1', '-q:v', '2', outPath], { stdio: 'ignore' });
+    p.on('exit', (code) => code === 0 ? resolve(outPath) : reject(new Error(`frame extraction failed (exit ${code})`)));
+    p.on('error', reject);
+  });
+}
+
 // Template filling + metadata.txt builder live in yt-studio-text.js (shared with regen-metadata.js)
 
 // ─── job orchestration ───────────────────────────────────────────────────────
@@ -213,7 +223,7 @@ async function runJob(jobId, input) {
   try {
     const { imageTmp, audioTmp, imageOriginalName, audioOriginalName, keyword, credit, thumbnails } = input;
     const suffix = slugify(keyword) || 'session';
-    const imageExt = (imageOriginalName.match(/\.(png|jpg|jpeg|webp)$/i) || [null, 'png'])[1].toLowerCase();
+    const imageExt = (imageOriginalName.match(/\.(png|jpg|jpeg|webp|mov|mp4|webm|mkv|m4v)$/i) || [null, 'png'])[1].toLowerCase();
     const audioExt = (audioOriginalName.match(/\.(mp3|m4a|wav|aac|ogg)$/i) || [null, 'mp3'])[1].toLowerCase();
     const imageName = `yt-${suffix}.${imageExt === 'jpeg' ? 'jpg' : imageExt}`;
     const audioName = `yt-${suffix}.${audioExt}`;
@@ -236,7 +246,13 @@ async function runJob(jobId, input) {
     }
 
     if (thumbnails) {
-      await renderThumbnails({ imageName, suffix, jobId });
+      // Thumbnails need a still image. If the cover is a video, extract a frame first.
+      let thumbImage = imageName;
+      if (/\.(mov|mp4|webm|mkv|m4v)$/i.test(imageName)) {
+        thumbImage = `yt-${suffix}-thumbframe.png`;
+        await extractFrame(path.join(ASSETS, imageName), path.join(ASSETS, thumbImage));
+      }
+      await renderThumbnails({ imageName: thumbImage, suffix, jobId });
     }
 
     const metadata = await metadataPromise;
