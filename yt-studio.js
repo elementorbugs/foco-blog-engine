@@ -16,6 +16,7 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 const { spawn, exec } = require('child_process');
+const Busboy = require('busboy');
 const { buildPrompt } = require('./yt-studio-prompts');
 const { buildMetadataDocx } = require('./yt-studio-docx');
 const { fillTemplates, buildMetadataTxt } = require('./yt-studio-text');
@@ -210,16 +211,18 @@ async function renderThumbnails({ imageName, suffix, jobId }) {
 // ─── job orchestration ───────────────────────────────────────────────────────
 async function runJob(jobId, input) {
   try {
-    const { image, audio, keyword, credit, thumbnails } = input;
+    const { imageTmp, audioTmp, imageOriginalName, audioOriginalName, keyword, credit, thumbnails } = input;
     const suffix = slugify(keyword) || 'session';
-    const imageExt = (image.name.match(/\.(png|jpg|jpeg|webp)$/i) || [null, 'png'])[1].toLowerCase();
-    const audioExt = (audio.name.match(/\.(mp3|m4a|wav|aac|ogg)$/i) || [null, 'mp3'])[1].toLowerCase();
+    const imageExt = (imageOriginalName.match(/\.(png|jpg|jpeg|webp)$/i) || [null, 'png'])[1].toLowerCase();
+    const audioExt = (audioOriginalName.match(/\.(mp3|m4a|wav|aac|ogg)$/i) || [null, 'mp3'])[1].toLowerCase();
     const imageName = `yt-${suffix}.${imageExt === 'jpeg' ? 'jpg' : imageExt}`;
     const audioName = `yt-${suffix}.${audioExt}`;
 
     emit(jobId, 'phase', { step: 'saving' });
-    fs.writeFileSync(path.join(ASSETS, imageName), Buffer.from(image.data, 'base64'));
-    fs.writeFileSync(path.join(ASSETS, audioName), Buffer.from(audio.data, 'base64'));
+    // Files already streamed to disk by busboy; move from temp to canonical name.
+    // Use rename then fall back to copy+unlink if rename fails (e.g., target exists on some FS).
+    movePath(imageTmp, path.join(ASSETS, imageName));
+    movePath(audioTmp, path.join(ASSETS, audioName));
     emit(jobId, 'phase', { step: 'saving-done' });
 
     // Kick off metadata in parallel with video rendering (metadata returns first).
@@ -305,17 +308,83 @@ function mimeFor(p) {
   }[ext] || 'application/octet-stream';
 }
 
-function readBody(req, maxBytes = 20 * 1024 * 1024) {
+// Per-file upload caps. Audio dominates (large MP3s of focus music); image is small.
+const UPLOAD_LIMITS = {
+  audio: 500 * 1024 * 1024, // 500 MB — fits ~5 hours of 192 kbps MP3
+  image: 25 * 1024 * 1024,  // 25 MB — generous for any cover art
+};
+
+// Rename, falling back to copy+unlink if the destination exists or rename fails
+// across drives (shouldn't happen here since temp + final share ASSETS dir).
+function movePath(src, dst) {
+  try { fs.renameSync(src, dst); return; }
+  catch (e) {
+    fs.copyFileSync(src, dst);
+    try { fs.unlinkSync(src); } catch {}
+  }
+}
+
+function safeUnlink(p) {
+  if (p && fs.existsSync(p)) { try { fs.unlinkSync(p); } catch {} }
+}
+
+// Parse a multipart/form-data POST, streaming file parts directly to temp files
+// in ASSETS. Resolves with { files: { [field]: { tmpPath, originalName } }, fields: {...} }.
+// On any file exceeding its limit, rejects and cleans up partial temps.
+function parseMultipart(req) {
   return new Promise((resolve, reject) => {
-    const chunks = [];
-    let total = 0;
-    req.on('data', c => {
-      total += c.length;
-      if (total > maxBytes) { reject(new Error('Body too large')); req.destroy(); return; }
-      chunks.push(c);
+    let bb;
+    try { bb = Busboy({ headers: req.headers, limits: { files: 5, fields: 20 } }); }
+    catch (e) { return reject(e); }
+
+    const files = {};
+    const fields = {};
+    const writes = [];
+    let failed = null;
+
+    const fail = (err) => {
+      if (failed) return;
+      failed = err;
+      for (const f of Object.values(files)) safeUnlink(f.tmpPath);
+      try { req.unpipe(bb); } catch {}
+      try { bb.destroy(); } catch {}
+      reject(err);
+    };
+
+    bb.on('file', (name, file, info) => {
+      const { filename } = info;
+      const limit = UPLOAD_LIMITS[name] ?? UPLOAD_LIMITS.audio;
+      const tmpPath = path.join(ASSETS, `.upload-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}-${name}`);
+      const sink = fs.createWriteStream(tmpPath);
+      files[name] = { tmpPath, originalName: filename || '' };
+
+      let received = 0;
+      file.on('data', (chunk) => {
+        received += chunk.length;
+        if (received > limit) {
+          file.unpipe(sink);
+          sink.destroy();
+          fail(new Error(`${name} file exceeds ${Math.round(limit / 1024 / 1024)} MB limit`));
+        }
+      });
+      file.on('error', fail);
+      sink.on('error', fail);
+      const done = new Promise((res) => sink.on('close', res));
+      writes.push(done);
+      file.pipe(sink);
     });
-    req.on('end', () => resolve(Buffer.concat(chunks)));
-    req.on('error', reject);
+
+    bb.on('field', (name, val) => { fields[name] = val; });
+    bb.on('error', fail);
+    bb.on('finish', async () => {
+      if (failed) return;
+      await Promise.all(writes);
+      if (failed) return;
+      resolve({ files, fields });
+    });
+
+    req.on('aborted', () => fail(new Error('Client aborted upload')));
+    req.pipe(bb);
   });
 }
 
@@ -351,9 +420,14 @@ const server = http.createServer(async (req, res) => {
 
   if (req.method === 'POST' && pathname === '/generate') {
     try {
-      const raw = await readBody(req);
-      const body = JSON.parse(raw.toString('utf8'));
-      if (!body.image || !body.audio || !body.keyword) {
+      const ct = req.headers['content-type'] || '';
+      if (!ct.startsWith('multipart/form-data')) {
+        res.writeHead(415); return res.end('Expected multipart/form-data');
+      }
+      const { files, fields } = await parseMultipart(req);
+      if (!files.image || !files.audio || !fields.keyword) {
+        safeUnlink(files.image?.tmpPath);
+        safeUnlink(files.audio?.tmpPath);
         res.writeHead(400); return res.end('Missing required fields');
       }
       const jobId = newJobId();
@@ -361,10 +435,20 @@ const server = http.createServer(async (req, res) => {
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ jobId }));
       // fire and forget
-      runJob(jobId, body);
+      runJob(jobId, {
+        imageTmp: files.image.tmpPath,
+        audioTmp: files.audio.tmpPath,
+        imageOriginalName: files.image.originalName,
+        audioOriginalName: files.audio.originalName,
+        keyword: fields.keyword,
+        credit: fields.credit || '',
+        thumbnails: fields.thumbnails === 'true' || fields.thumbnails === '1' || fields.thumbnails === 'on',
+      });
     } catch (e) {
-      res.writeHead(400);
-      res.end('Invalid request: ' + e.message);
+      if (!res.headersSent) {
+        res.writeHead(400);
+        res.end('Upload failed: ' + (e.message || String(e)));
+      }
     }
     return;
   }

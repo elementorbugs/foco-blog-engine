@@ -1,0 +1,83 @@
+{
+  "startDate": "2026-04-28",
+  "endDate": "2026-05-25",
+  "rows": [
+    {
+      "page": "https://tryfoco.com/adhd-task-initiation-research/",
+      "clicks": 4,
+      "impressions": 2312,
+      "ctr": 0.0017301038062283738,
+      "position": 6.825259515570934
+    },
+    {
+      "page": "https://tryfoco.com/term-and-use/",
+      "clicks": 2,
+      "impressions": 24,
+      "ctr": 0.08333333333333333,
+      "position": 8.458333333333332
+    },
+    {
+      "page": "https://tryfoco.com/",
+      "clicks": 1,
+      "impressions": 38,
+      "ctr": 0.02631578947368421,
+      "position": 28.710526315789473
+    },
+    {
+      "page": "https://tryfoco.com/body-doubling-adhd/",
+      "clicks": 1,
+      "impressions": 77,
+      "ctr": 0.012987012987012988,
+      "position": 20.155844155844157
+    },
+    {
+      "page": "https://tryfoco.com/2-minute-rule-adhd/",
+      "clicks": 0,
+      "impressions": 115,
+      "ctr": 0,
+      "position": 6.895652173913043
+    },
+    {
+      "page": "https://tryfoco.com/adhd-task-paralysis/",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 5
+    },
+    {
+      "page": "https://tryfoco.com/blog/",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 3
+    },
+    {
+      "page": "https://tryfoco.com/category/uncategorized/",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 4
+    },
+    {
+      "page": "https://tryfoco.com/privacy-policy/",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 4.4
+    },
+    {
+      "page": "https://tryfoco.com/procrastination-vs-paralysis/",
+      "clicks": 0,
+      "impressions": 56,
+      "ctr": 0,
+      "position": 6.732142857142857
+    },
+    {
+      "page": "https://tryfoco.com/task-initiation-deficit-explained/",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 8
+    }
+  ]
+}

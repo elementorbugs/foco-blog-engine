@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-05-27T19:48:07.894Z",
+  "comparison": {
+    "prior": {
+      "startDate": "2026-03-30",
+      "endDate": "2026-04-26"
+    },
+    "recent": {
+      "startDate": "2026-04-27",
+      "endDate": "2026-05-24"
+    }
+  },
+  "thresholds": {
+    "posDropPct": 0.4,
+    "minPriorImpr": 30
+  },
+  "counts": {
+    "pagesEvaluated": 11,
+    "queued": 0,
+    "skipped": {
+      "newPage": 11,
+      "lowImpr": 0,
+      "healthy": 0,
+      "improved": 0
+    }
+  },
+  "queue": []
+}

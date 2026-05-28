@@ -1120,4 +1120,14 @@ module.exports = {
     ],
   },
 
+  'adhd-and-depression': {
+    file: 'post-adhd-and-depression.html',
+    pexelsPlans: [
+      { query: 'rainy window evening contemplative quiet',      anchor: '<h2>How are ADHD and depression connected?</h2>' },
+      { query: 'young adult journal morning light soft',        anchor: '<h2>How is ADHD-driven depression different from "regular" depression?</h2>' },
+      { query: 'therapy office warm soft chairs natural light', anchor: '<h2>Why does treating only depression often fail?</h2>' },
+      { query: 'medication bottle shelf calm natural light',    anchor: '<h2>Does ADHD medication help depression?</h2>' },
+    ],
+  },
+
 };

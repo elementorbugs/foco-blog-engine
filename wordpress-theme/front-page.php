@@ -452,7 +452,7 @@ $tdir = get_template_directory_uri();
 								<li><span class="check">✓</span> <?php echo esc_html( get_sub_field( 'benefit' ) ); ?></li>
 							<?php endwhile; endif; ?>
 						</ul>
-						<a href="<?php echo foco_sub_url( 'cta_url', '#' ); ?>" class="btn <?php echo $is_featured ? 'btn-primary' : 'btn-ghost'; ?> pricing-cta">
+						<a href="<?php echo foco_sub_url( 'cta_url', home_url( '/get-foco/' ) ); ?>" class="btn <?php echo $is_featured ? 'btn-primary' : 'btn-ghost'; ?> pricing-cta">
 							<?php echo esc_html( get_sub_field( 'cta' ) ?: 'Start 7-day free trial' ); ?>
 						</a>
 					</div>
@@ -473,7 +473,7 @@ $tdir = get_template_directory_uri();
 						<li><span class="check">✓</span> Progress tracking &amp; insights</li>
 						<li><span class="check">✓</span> Templates &amp; task scanning</li>
 					</ul>
-					<a href="#" class="btn btn-ghost pricing-cta">Start 7-day free trial</a>
+					<a href="<?php echo esc_url( home_url( '/get-foco/' ) ); ?>" class="btn btn-ghost pricing-cta">Start 7-day free trial</a>
 				</div>
 				<div class="pricing-tier featured">
 					<span class="save-badge">Save 58%</span>
@@ -489,7 +489,7 @@ $tdir = get_template_directory_uri();
 						<li><span class="check">✓</span> Progress tracking &amp; insights</li>
 						<li><span class="check">✓</span> Templates &amp; task scanning</li>
 					</ul>
-					<a href="#" class="btn btn-primary pricing-cta">👉 Start 7-day free trial</a>
+					<a href="<?php echo esc_url( home_url( '/get-foco/' ) ); ?>" class="btn btn-primary pricing-cta">👉 Start 7-day free trial</a>
 				</div>
 				<?php
 			endif;

@@ -12,6 +12,7 @@
     "llms": "node setup-llms-txt.js"
   },
   "dependencies": {
+    "busboy": "^1.6.0",
     "docx": "^9.6.1",
     "playwright": "^1.45.0"
   },

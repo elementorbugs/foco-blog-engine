@@ -223,6 +223,35 @@ function parseAndValidate(html) {
 }
 
 // ─── STEP 2: AUTO-SPLIT LONG PARAGRAPHS ──────────────────────────────────────
+// Wrap bare text paragraphs in <p>...</p>. Block-level HTML stays untouched.
+// Preserves wp:html / script / style blocks verbatim.
+// CLAUDE.md mandates this because wp:html blocks disable wpautop(), so any
+// blank-line-separated prose without explicit <p> tags renders as a wall.
+function wrapBareParagraphs(content) {
+  const placeholders = [];
+  const placehold = (match) => { const i = placeholders.length; placeholders.push(match); return `__BARE_PH_${i}__`; };
+  let s = content;
+  s = s.replace(/<!-- wp:html -->[\s\S]*?<!-- \/wp:html -->/g, placehold);
+  s = s.replace(/<script[\s\S]*?<\/script>/g, placehold);
+  s = s.replace(/<style[\s\S]*?<\/style>/g, placehold);
+
+  const blocks = s.split(/\n\s*\n/);
+  let wrapped = 0;
+  const fixed = blocks.map((b) => {
+    const t = b.trim();
+    if (!t) return b;
+    // Leave alone if starts with block-level HTML or placeholder
+    if (/^<(?:h[1-6]|ul|ol|li|div|figure|table|thead|tbody|tr|td|th|blockquote|p|hr|nav|section|article|aside|header|footer|form|address|pre|details|summary|!--|__BARE_PH_)/i.test(t)) return b;
+    // Single-tag-wrapped element with no prose text → leave alone
+    if (/^<[a-z][^>]*>[\s\S]*<\/[a-z]+>\s*$/i.test(t) && !/>\s*[A-Za-z]/.test(t.replace(/^<[^>]+>/, ''))) return b;
+    wrapped++;
+    return '<p>' + t + '</p>';
+  });
+  let out = fixed.join('\n\n');
+  out = out.replace(/__BARE_PH_(\d+)__/g, (_, i) => placeholders[+i]);
+  return { content: out, wrapped };
+}
+
 function splitLongParagraphs(content, maxSentences = 3) {
   let total = 0, pass = 0, prev = '', cur = content;
   while (cur !== prev && pass < 10) {
@@ -779,8 +808,14 @@ async function generateCover(slug, h1, coverTitleArg) {
   content = ef.content;
   log.ok(`External: ${ef.fixed} link(s) auto-fixed (added target/rel)`);
 
-  // STEP 7: Auto-split paragraphs
-  log.step('STEP 7/14: Auto-split long paragraphs');
+  // STEP 7: Wrap bare paragraphs in <p>, then auto-split long ones.
+  // The wrap-first-then-split order matters: splitLongParagraphs only operates
+  // on existing <p> tags, so any bare-text paragraph would otherwise stay long
+  // AND unwrapped — and bare prose renders as a wall in wp:html context.
+  log.step('STEP 7/14: Wrap bare paragraphs + auto-split long ones');
+  const wb = wrapBareParagraphs(content);
+  content = wb.content;
+  if (wb.wrapped > 0) log.ok(`Wrapped ${wb.wrapped} bare paragraph(s) in <p> tags`);
   const sp = splitLongParagraphs(content, 3);
   content = sp.content;
   log.ok(sp.count > 0 ? `Split ${sp.count} paragraph(s)` : 'All paragraphs already ≤3 sentences');
@@ -811,20 +846,33 @@ async function generateCover(slug, h1, coverTitleArg) {
     if (cfg[slug] && Array.isArray(cfg[slug].pexelsPlans)) pexelsPlans = cfg[slug].pexelsPlans;
   } catch (e) {}
 
-  // If curated Pexels plans exist, use them. Otherwise fall back to mascot dividers.
-  if (pexelsPlans && PEXELS_KEY && !dryRun) {
+  // Priority order for Step 9 visuals:
+  //   1. --skip-pexels flag (or no key) → mascot dividers only
+  //   2. Curated pexelsPlans in chart-configs.js → use those
+  //   3. Otherwise auto-fetch via Pexels API based on H2 anchors + keyword
+  //   4. If auto-fetch inserts 0 images → fall back to mascot dividers
+  if (dryRun) {
+    if (pexelsPlans) log.ok(`[dry-run] would inject ${pexelsPlans.length} curated Pexels image(s)`);
+    else if (skipPexels || !PEXELS_KEY) log.ok('[dry-run] would inject mascot dividers (no Pexels)');
+    else log.ok('[dry-run] would auto-fetch Pexels then fall back to mascot dividers if needed');
+  } else if (skipPexels || !PEXELS_KEY) {
+    const md = injectMascotDividers(content, slug);
+    content = md.content;
+    log.ok(`Mascot dividers (Pexels skipped): ${md.msg}`);
+  } else if (pexelsPlans) {
     const px = await injectPexelsFromPlans(content, slug, pexelsPlans);
     content = px.content;
     log.ok(`Pexels (curated): ${px.msg}`);
-  } else if (pexelsPlans && dryRun) {
-    log.ok(`[dry-run] would inject ${pexelsPlans.length} curated Pexels image(s)`);
-  } else if (!dryRun) {
-    // Fallback: mascot dividers
-    const md = injectMascotDividers(content, slug);
-    content = md.content;
-    log.ok(`No curated Pexels plan — using mascot dividers: ${md.msg}`);
   } else {
-    log.ok('[dry-run] would inject mascot dividers (no curated Pexels plan)');
+    const auto = await injectPexelsImages(content, keyword, slug);
+    content = auto.content;
+    if (auto.added > 0) {
+      log.ok(`Pexels (auto-fetch): ${auto.msg}`);
+    } else {
+      const md = injectMascotDividers(content, slug);
+      content = md.content;
+      log.ok(`Auto-fetch returned 0 — used mascot dividers: ${md.msg}`);
+    }
   }
 
   // STEP 10: Schema
@@ -847,6 +895,16 @@ async function generateCover(slug, h1, coverTitleArg) {
   };
   content = injectSchema(content, articleSchema, 'Article');
   log.ok('Article schema added');
+
+  // STEP 10.5: Strip body <h1> tags.
+  // WP template (single.php / page.php) already outputs an H1 via the_title().
+  // Keeping a second H1 in body content creates a duplicate that confuses crawlers.
+  // We extracted v.h1 in STEP 1 for wpTitle/cover/alt; safe to strip from content now.
+  const h1StripCount = (content.match(/<h1\b[^>]*>[\s\S]*?<\/h1>/gi) || []).length;
+  if (h1StripCount > 0) {
+    content = content.replace(/<h1\b[^>]*>[\s\S]*?<\/h1>\s*/gi, '');
+    log.ok(`Stripped ${h1StripCount} body <h1> tag(s) — template renders the title H1`);
+  }
 
   // STEP 11: Push to WP (with publish-lock for posts 1-10)
   log.step('STEP 11/14: Push to WP');

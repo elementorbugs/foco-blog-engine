@@ -442,7 +442,7 @@ TONE REGISTER (same three qualities, calibrated to topic):
 
 REQUIRED structure (in this order):
 1. <h1> — primary keyword front-loaded, ≤58 characters total. NEVER exceed 58.
-2. <div class="foco-tldr"><strong>TL;DR.</strong> {40-60 word direct answer with specifics}</div>
+2. <div class="foco-tldr">{40-60 word direct answer with specifics — NO "TL;DR" label, just the answer paragraph}</div>
 3. <div class="foco-key-takeaways"><h2>Key Takeaways</h2><ul><li>×5 — specific, with numbers/names where possible</li></ul></div>
 4. <h2>Table of Contents</h2><ol> with anchor links to each H2 below
 5. 5-7 <h2 id="..."> sections, each 250-400 words. Each H2 phrased as a question or definitive statement. Each section MUST include one of: a specific stat, a named example, a pattern that validates lived experience, or a counterintuitive truth.

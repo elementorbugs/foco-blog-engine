@@ -35,8 +35,12 @@ function foco_setup() {
 
 	// Register navigation menu locations
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu (top nav)', 'foco' ),
-		'footer'  => __( 'Footer Menu', 'foco' ),
+		'primary'          => __( 'Primary Menu (top nav)', 'foco' ),
+		'footer'           => __( 'Footer Menu (legacy)', 'foco' ),
+		'footer-product'   => __( 'Footer — Product', 'foco' ),
+		'footer-resources' => __( 'Footer — Resources', 'foco' ),
+		'footer-tools'     => __( 'Footer — Tools', 'foco' ),
+		'footer-company'   => __( 'Footer — Company', 'foco' ),
 	) );
 }
 endif;
@@ -467,8 +471,11 @@ function foco_google_play_svg() {
 }
 
 function foco_store_buttons() {
-	$apple  = foco_url( 'app_store_url', '#' );
-	$google = foco_url( 'google_play_url', '#' );
+	// Until ACF app_store_url / google_play_url are filled in, store badges
+	// fall back to the /get-foco/ waitlist so clicks don't hit a dead anchor.
+	$waitlist = home_url( '/get-foco/' );
+	$apple    = foco_url( 'app_store_url', $waitlist );
+	$google   = foco_url( 'google_play_url', $waitlist );
 	ob_start(); ?>
 	<a href="<?php echo $apple; ?>" class="store-badge" aria-label="Download on the App Store">
 		<?php echo foco_apple_badge_svg(); ?>

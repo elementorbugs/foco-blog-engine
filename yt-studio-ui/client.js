@@ -24,15 +24,6 @@ function clearJob() {
   try { localStorage.removeItem(JOB_STORAGE_KEY); } catch {}
 }
 
-function fileToBase64(file) {
-  return new Promise((resolve, reject) => {
-    const r = new FileReader();
-    r.onload = () => resolve(r.result.split(',')[1]);
-    r.onerror = reject;
-    r.readAsDataURL(file);
-  });
-}
-
 function setStep(step, state) {
   const li = progressList.querySelector(`[data-step="${step}"]`);
   if (!li) return;
@@ -257,17 +248,15 @@ form.addEventListener('submit', async (e) => {
   progressEl.classList.add('active');
 
   try {
-    const [imageB64, audioB64] = await Promise.all([fileToBase64(image), fileToBase64(audio)]);
+    const form = new FormData();
+    form.append('image', image, image.name);
+    form.append('audio', audio, audio.name);
+    form.append('keyword', keyword);
+    form.append('credit', credit);
+    form.append('thumbnails', wantThumbnails ? 'true' : 'false');
     const startRes = await fetch('/generate', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        image: { name: image.name, data: imageB64 },
-        audio: { name: audio.name, data: audioB64 },
-        keyword,
-        credit,
-        thumbnails: wantThumbnails,
-      }),
+      body: form, // browser sets multipart/form-data with boundary automatically
     });
     if (!startRes.ok) {
       const err = await startRes.text();

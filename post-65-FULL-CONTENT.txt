@@ -1,0 +1,222 @@
+<h1>Body Doubling for ADHD: Why It Works When Nothing Else Does</h1>
+
+<div class="foco-tldr">
+<strong>TL;DR.</strong> Body doubling is the practice of working alongside another person — physically or virtually — while you do your own task. For ADHD brains, it measurably reduces the friction of starting, sustains focus longer, and helps you finish things you've been frozen on for weeks. It works because another person's presence acts as external regulation that your brain can't generate on its own.
+</div>
+
+<!-- wp:html --><style>.foco-bd-tool{margin:32px 0;background:linear-gradient(135deg,#040208 0%,#0a0410 50%,#1a0a2e 100%);border-radius:20px;border:1px solid rgba(167,139,250,0.18);padding:24px;color:#fff;position:relative;overflow:hidden}.foco-bd-tool::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#7C3AED,#A78BFA,#FB923C)}.foco-bd-eyebrow{display:inline-block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#A78BFA;background:rgba(124,58,237,0.18);padding:6px 12px;border-radius:999px;margin-bottom:8px}.foco-bd-title{font-size:24px;font-weight:800;margin:8px 0 4px;color:#fff;line-height:1.2}.foco-bd-sub{font-size:14px;color:#B8B0CC;margin:0 0 16px;line-height:1.6}.foco-bd-stage{position:relative;border-radius:14px;overflow:hidden;background:#000;aspect-ratio:16/9;margin:16px 0;border:1px solid rgba(167,139,250,0.25)}.foco-bd-stage iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}.foco-bd-elapsed{position:absolute;top:14px;right:14px;background:rgba(0,0,0,0.55);backdrop-filter:blur(8px);border:1px solid rgba(167,139,250,0.3);border-radius:10px;padding:8px 12px;font-size:13px;font-weight:600;color:#fff;font-variant-numeric:tabular-nums;z-index:3;letter-spacing:0.5px;pointer-events:none}.foco-bd-elapsed::before{content:"●";color:#FB923C;margin-right:6px;font-size:10px;animation:focoBdDot 2s ease-in-out infinite}@keyframes focoBdDot{0%,100%{opacity:0.5}50%{opacity:1}}.foco-bd-timer{display:flex;align-items:center;gap:16px;margin-top:16px;flex-wrap:wrap}.foco-bd-time{font-size:54px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-2px;color:#fff;min-width:160px;line-height:1}.foco-bd-presets{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.foco-bd-btn{background:rgba(124,58,237,0.18);border:1px solid rgba(167,139,250,0.4);color:#fff;padding:10px 16px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.15s}.foco-bd-btn:hover{background:rgba(124,58,237,0.35)}.foco-bd-btn.active{background:#7C3AED;border-color:#7C3AED}.foco-bd-btn.primary{background:#7C3AED;border-color:#7C3AED}.foco-bd-btn.primary:hover{background:#6D28D9;border-color:#6D28D9}.foco-bd-status{font-size:13px;color:#B8B0CC;margin-top:14px;min-height:20px}.foco-bd-status strong{color:#FB923C;font-weight:700}.foco-bd-foot{display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding-top:16px;border-top:1px solid rgba(167,139,250,0.18);font-size:12px;color:#7d738f;flex-wrap:wrap;gap:8px}.foco-bd-foot a{color:#A78BFA;text-decoration:none;font-weight:600}.foco-bd-foot a:hover{color:#FB923C}@media (max-width:600px){.foco-bd-time{font-size:42px;min-width:120px}.foco-bd-title{font-size:20px}.foco-bd-tool{padding:18px}}</style><div class="foco-bd-tool"><span class="foco-bd-eyebrow">Free FOCO Tool</span><h2 class="foco-bd-title">ADHD Body Doubling Room</h2><p class="foco-bd-sub">Press play on the focus session below, pick a timer length, and start your task. Your ADHD brain borrows the structure of a present companion — even a quiet one. No signup, no ads.</p><div class="foco-bd-stage"><div class="foco-bd-elapsed" id="focoBdElapsed">Session 00:00</div><iframe id="focoBdVideo" src="https://www.youtube-nocookie.com/embed/1zC3cI9gQOA?modestbranding=1&rel=0&loop=1&playlist=1zC3cI9gQOA" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="FOCO ADHD body doubling focus session"></iframe></div><div class="foco-bd-timer"><div class="foco-bd-time" id="focoBdTime">25:00</div><div class="foco-bd-presets"><button class="foco-bd-btn active" data-mins="25" type="button">25 min</button><button class="foco-bd-btn" data-mins="50" type="button">50 min</button><button class="foco-bd-btn" data-mins="90" type="button">90 min</button><button class="foco-bd-btn primary" id="focoBdStart" type="button">Start session</button><button class="foco-bd-btn" id="focoBdReset" type="button">Reset</button></div></div><div class="foco-bd-status" id="focoBdStatus">Press play on the video, pick a length, then press start. FOCO will check in on you every 15 minutes.</div><div class="foco-bd-foot"><span>Body doubling means working alongside another presence to stay on task. Your brain borrows their structure.</span><a href="https://www.youtube.com/@FOCO-ADHDCOMPANION" target="_blank" rel="noopener">More sessions on YouTube →</a></div></div><script>(function(){var mins=25,remaining=25*60,interval=null,lastCheck=0,elapsedSec=0;var $time=document.getElementById('focoBdTime');var $elapsed=document.getElementById('focoBdElapsed');var $status=document.getElementById('focoBdStatus');var $start=document.getElementById('focoBdStart');var $reset=document.getElementById('focoBdReset');function fmt(s){var m=Math.floor(s/60);var x=s%60;return (m<10?'0':'')+m+':'+(x<10?'0':'')+x;}function render(){if($time)$time.textContent=fmt(remaining);if($elapsed)$elapsed.textContent='Session '+fmt(elapsedSec);}function setMins(m){mins=m;remaining=m*60;elapsedSec=0;lastCheck=0;render();}document.querySelectorAll('.foco-bd-btn[data-mins]').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.foco-bd-btn[data-mins]').forEach(function(x){x.classList.remove('active');});b.classList.add('active');setMins(parseInt(b.dataset.mins,10));stop();if($start)$start.textContent='Start session';if($status)$status.textContent='Press play on the video, pick a length, then press start. FOCO will check in on you every 15 minutes.';});});function start(){if(interval)return;interval=setInterval(function(){remaining--;elapsedSec++;if(remaining<=0){clearInterval(interval);interval=null;remaining=0;render();if($status)$status.innerHTML='<strong>Session complete.</strong> Nice work. Take 5 minutes, then start another.';if($start)$start.textContent='Start again';return;}var checkpoint=Math.floor(elapsedSec/(15*60));if(checkpoint>lastCheck){lastCheck=checkpoint;if($status)$status.innerHTML='<strong>'+(checkpoint*15)+' minutes in.</strong> Still here. Still focused. Keep going.';}render();},1000);if($start)$start.textContent='Pause';if($status)$status.textContent='Session in progress — FOCO is working alongside you.';}function stop(){if(interval){clearInterval(interval);interval=null;if($start)$start.textContent='Resume';}}if($start)$start.addEventListener('click',function(){if(interval){stop();}else if(remaining>0){start();}else{setMins(mins);start();}});if($reset)$reset.addEventListener('click',function(){stop();setMins(mins);if($start)$start.textContent='Start session';if($status)$status.textContent='Press play on the video, pick a length, then press start. FOCO will check in on you every 15 minutes.';});render();})();</script><!-- /wp:html -->
+
+<div class="foco-key-takeaways">
+<h2>Key Takeaways</h2>
+<ul>
+<li>Body doubling = doing your task alongside someone else doing theirs.</li>
+<li>It works for ADHD because another person's presence anchors your nervous system.</li>
+<li>It helps with starting, staying focused, and finishing — all three at once.</li>
+<li>You don't need to talk. You don't need them to do the same task. Presence is enough.</li>
+<li>It's free, requires no medication, and works for almost everyone with ADHD.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+<!-- wp:html --><figure class="foco-chart-104"><style>.foco-chart-104{margin:32px 0;padding:28px;background:#0a0410;border:1px solid rgba(167, 139, 250, 0.18);border-radius:20px;box-sizing:border-box;max-width:100%;overflow:hidden;color:#FFFFFF}.foco-chart-104 figcaption{font-size:19px;font-weight:700;color:#FFFFFF;margin-bottom:20px;line-height:1.3}.foco-chart-104-cap{font-size:15px;color:#B8B0CC;margin:14px 0 0;line-height:1.5}.foco-chart-104-src{font-size:13px;color:#B8B0CC;margin:8px 0 0;font-style:italic;opacity:0.75}.foco-chart-104 svg{display:block;width:100%;height:auto;max-width:100%}@media(max-width:600px){.foco-chart-104{padding:18px;margin:22px 0;border-radius:16px}.foco-chart-104 figcaption{font-size:16px;margin-bottom:14px}.foco-chart-104-cap{font-size:13px}.foco-chart-104-src{font-size:11px}}</style><figcaption>Why It Works: 3 Mechanisms</figcaption><style>.foco-chart-103-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}.foco-chart-103-item{display:flex;align-items:center;gap:14px;padding:14px 16px;background:rgba(255, 255, 255, 0.035);border:1px solid rgba(167, 139, 250, 0.18);border-radius:12px;transition:border-color 0.2s}.foco-chart-103-icon{font-size:28px;flex-shrink:0;line-height:1}.foco-chart-103-body{flex:1;min-width:0}.foco-chart-103-lbl{font-size:15px;font-weight:700;color:#FFFFFF;line-height:1.3}.foco-chart-103-val{font-size:13px;color:#A78BFA;font-weight:600;margin-top:4px}@media(max-width:600px){.foco-chart-103-grid{grid-template-columns:1fr}.foco-chart-103-item{padding:12px 14px}.foco-chart-103-icon{font-size:24px}.foco-chart-103-lbl{font-size:14px}.foco-chart-103-val{font-size:12px}}</style><div class="foco-chart-103-grid"><div class="foco-chart-103-item"><div class="foco-chart-103-icon">👀</div><div class="foco-chart-103-body"><div class="foco-chart-103-lbl">Soft accountability</div><div class="foco-chart-103-val">Their gaze keeps you in your seat</div></div></div><div class="foco-chart-103-item"><div class="foco-chart-103-icon">🤝</div><div class="foco-chart-103-body"><div class="foco-chart-103-lbl">Co-regulation</div><div class="foco-chart-103-val">Your nervous system borrows theirs</div></div></div><div class="foco-chart-103-item"><div class="foco-chart-103-icon">🧩</div><div class="foco-chart-103-body"><div class="foco-chart-103-lbl">Shared decisions</div><div class="foco-chart-103-val">You start when they start</div></div></div></div><p class="foco-chart-104-cap">Body doubling activates three different ADHD-friendly systems at once.</p></figure><!-- /wp:html -->
+
+<h2>Table of Contents</h2>
+<ol>
+  <li><a href="#what-is-body-doubling">What is body doubling?</a></li>
+  <li><a href="#why-does-body-doubling-work-for-adhd">Why does body doubling work for ADHD?</a></li>
+  <li><a href="#what-does-body-doubling-actually-look-like">What does body doubling actually look like?</a></li>
+  <li><a href="#how-do-you-start-body-doubling">How do you start body doubling?</a></li>
+  <li><a href="#what-if-you-dont-have-anyone-to-body-double-with">What if you don't have anyone to body double with?</a></li>
+  <li><a href="#what-does-the-research-say-about-body-doubling">What does the research say about body doubling?</a></li>
+  <li><a href="#how-does-body-doubling-fit-with-other-adhd-tools">How does body doubling fit with other ADHD tools?</a></li>
+</ol>
+
+
+<h2 id="what-is-body-doubling">What is body doubling?</h2>
+
+<!-- wp:html --><figure class="foco-img" style="margin:28px 0"><img src="https://www.tryfoco.com/wp-content/uploads/2026/05/body-doubling-adhd-4063793-3.jpg" alt="two people working coffee — Two women conversing over coffee and snacks in a bright, welcoming café environment." loading="lazy" style="width:100%;height:auto;border-radius:14px;display:block;border:1px solid rgba(167,139,250,0.18)"/><figcaption style="font-size:13px;color:#B8B0CC;text-align:center;margin-top:8px;font-style:italic;opacity:0.75">Photo: Marcus Aurelius via Pexels</figcaption></figure><!-- /wp:html -->
+
+
+<p>Body doubling is exactly what it sounds like: you work on your task while another person is present and working on theirs. They don't have to help you.</p>
+<p>They don't even have to be doing the same thing. Their job is just to be <em>there</em>.</p>
+
+<p>It can happen in person — a friend at the kitchen table, a coworker in the same room, a family member on the couch. It can also happen virtually — a video call where two people work in silence with cameras on, a coworking app, an ADHD focus session.</p>
+
+<p>The term comes from the ADHD coaching world, but the practice is much older. Anyone who's ever found themselves more productive at a coffee shop than alone at home has experienced body doubling without naming it.</p>
+
+<p>For people with ADHD, this isn't a preference. It's often the difference between starting and not starting at all.</p>
+
+
+
+
+
+
+
+
+<!-- wp:html --><figure class="foco-chart-106"><style>.foco-chart-106{margin:32px 0;padding:28px;background:#0a0410;border:1px solid rgba(167, 139, 250, 0.18);border-radius:20px;box-sizing:border-box;max-width:100%;overflow:hidden;color:#FFFFFF}.foco-chart-106 figcaption{font-size:19px;font-weight:700;color:#FFFFFF;margin-bottom:20px;line-height:1.3}.foco-chart-106-cap{font-size:15px;color:#B8B0CC;margin:14px 0 0;line-height:1.5}.foco-chart-106-src{font-size:13px;color:#B8B0CC;margin:8px 0 0;font-style:italic;opacity:0.75}.foco-chart-106 svg{display:block;width:100%;height:auto;max-width:100%}@media(max-width:600px){.foco-chart-106{padding:18px;margin:22px 0;border-radius:16px}.foco-chart-106 figcaption{font-size:16px;margin-bottom:14px}.foco-chart-106-cap{font-size:13px}.foco-chart-106-src{font-size:11px}}</style><figcaption>5 Ways to Start Body Doubling Today</figcaption><style>.foco-chart-105-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}.foco-chart-105-item{display:flex;align-items:center;gap:14px;padding:14px 16px;background:rgba(255, 255, 255, 0.035);border:1px solid rgba(167, 139, 250, 0.18);border-radius:12px;transition:border-color 0.2s}.foco-chart-105-icon{font-size:28px;flex-shrink:0;line-height:1}.foco-chart-105-body{flex:1;min-width:0}.foco-chart-105-lbl{font-size:15px;font-weight:700;color:#FFFFFF;line-height:1.3}.foco-chart-105-val{font-size:13px;color:#A78BFA;font-weight:600;margin-top:4px}@media(max-width:600px){.foco-chart-105-grid{grid-template-columns:1fr}.foco-chart-105-item{padding:12px 14px}.foco-chart-105-icon{font-size:24px}.foco-chart-105-lbl{font-size:14px}.foco-chart-105-val{font-size:12px}}</style><div class="foco-chart-105-grid"><div class="foco-chart-105-item"><div class="foco-chart-105-icon">💬</div><div class="foco-chart-105-body"><div class="foco-chart-105-lbl">Text a friend</div><div class="foco-chart-105-val">Video call, work in silence</div></div></div><div class="foco-chart-105-item"><div class="foco-chart-105-icon">📱</div><div class="foco-chart-105-body"><div class="foco-chart-105-lbl">Focusmate / Flow Club</div><div class="foco-chart-105-val">Match with strangers, free tier</div></div></div><div class="foco-chart-105-item"><div class="foco-chart-105-icon">🏠</div><div class="foco-chart-105-body"><div class="foco-chart-105-lbl">Family or roommate</div><div class="foco-chart-105-val">Just sit in the same room</div></div></div><div class="foco-chart-105-item"><div class="foco-chart-105-icon">☕</div><div class="foco-chart-105-body"><div class="foco-chart-105-lbl">Coffee shop</div><div class="foco-chart-105-val">Strangers count too</div></div></div><div class="foco-chart-105-item"><div class="foco-chart-105-icon">👥</div><div class="foco-chart-105-body"><div class="foco-chart-105-lbl">ADHD community</div><div class="foco-chart-105-val">Discord / Zoom / Slack rooms</div></div></div></div><p class="foco-chart-106-cap">Pick one. The first session feels weird. By the third, it feels obvious.</p></figure><!-- /wp:html -->
+
+<h2 id="why-does-body-doubling-work-for-adhd">Why does body doubling work for ADHD?</h2>
+
+<p>The short answer: <strong>your brain borrows another person's regulation when it can't generate its own.</strong></p>
+
+<p>The longer answer comes down to three mechanisms.</p>
+
+<p><strong>External accountability without pressure.</strong> Knowing someone can see you working triggers a mild, low-stakes form of accountability. It's not as intense as a deadline (which floods you with stress), but it's strong enough to keep you in your seat.</p>
+<p>Your brain treats the other person's gaze as a soft anchor.</p>
+
+<p><strong>Co-regulation of the nervous system.</strong> When you're around a calm, focused person, your nervous system slowly synchronizes with theirs. This is well-documented in research on co-regulation — humans are wired to attune to each other physiologically.</p>
+<p>For an ADHD brain that struggles with self-regulation, this borrowed regulation is enormous.</p>
+
+<p><strong>Reduced decision load.</strong> Working alone, you have to decide what to do, when to start, when to take a break, when to come back. Working alongside someone, those decisions get smaller — you start when they start, you focus when they focus.</p>
+<p>The cognitive cost of executive function gets shared.</p>
+
+<p>According to <a href="https://chadd.org/about-adhd/general-prevalence/" target="_blank" rel="noopener">CHADD</a>, executive function struggles affect roughly 9 in 10 people with ADHD. Body doubling addresses all three of the executive functions that make working alone hardest: <a href="https://www.tryfoco.com/task-initiation-deficit-explained/">task initiation</a>, sustained attention, and self-monitoring.</p>
+
+<h2 id="what-does-body-doubling-actually-look-like">What does body doubling actually look like?</h2>
+
+<!-- wp:html --><figure class="foco-img" style="margin:28px 0"><img src="https://www.tryfoco.com/wp-content/uploads/2026/05/body-doubling-adhd-7709240-2.jpg" alt="co-working space focused people — Diverse team of call center agents working at computers in an office setting, focused on ta" loading="lazy" style="width:100%;height:auto;border-radius:14px;display:block;border:1px solid rgba(167,139,250,0.18)"/><figcaption style="font-size:13px;color:#B8B0CC;text-align:center;margin-top:8px;font-style:italic;opacity:0.75">Photo: MART  PRODUCTION via Pexels</figcaption></figure><!-- /wp:html -->
+
+
+<p>It's quieter and weirder than you might expect.</p>
+
+<p><strong>In person:</strong> Two people sit in the same room. One is writing emails. The other is folding laundry.</p>
+<p>They don't talk much. They might not talk at all. After 90 minutes, both are done with what they meant to do.</p>
+
+<p><strong>Virtually:</strong> Two people get on a video call. They greet each other, say what they're working on, then mute themselves and turn the camera at their screen or workspace. They work for an hour.</p>
+<p>They check in for 30 seconds at the end. That's it.</p>
+
+<p><strong>In a co-working space or café:</strong> You're surrounded by other people working on their own things. There's no formal partnership, but the ambient presence of focused humans acts the same way. Many ADHD adults are vastly more productive in coffee shops than at home for exactly this reason.</p>
+
+<p>The common thread: you're not alone, you're not being interrupted, and you're not being asked to perform. You're just present with another person who is also being present.</p>
+
+
+
+
+
+
+
+
+<!-- wp:html --><figure class="foco-chart-108"><style>.foco-chart-108{margin:32px 0;padding:28px;background:#0a0410;border:1px solid rgba(167, 139, 250, 0.18);border-radius:20px;box-sizing:border-box;max-width:100%;overflow:hidden;color:#FFFFFF}.foco-chart-108 figcaption{font-size:19px;font-weight:700;color:#FFFFFF;margin-bottom:20px;line-height:1.3}.foco-chart-108-cap{font-size:15px;color:#B8B0CC;margin:14px 0 0;line-height:1.5}.foco-chart-108-src{font-size:13px;color:#B8B0CC;margin:8px 0 0;font-style:italic;opacity:0.75}.foco-chart-108 svg{display:block;width:100%;height:auto;max-width:100%}@media(max-width:600px){.foco-chart-108{padding:18px;margin:22px 0;border-radius:16px}.foco-chart-108 figcaption{font-size:16px;margin-bottom:14px}.foco-chart-108-cap{font-size:13px}.foco-chart-108-src{font-size:11px}}</style><figcaption>ADHD Adults With Executive Function Issues</figcaption><style>.foco-chart-107-wrap{display:flex;align-items:center;gap:32px;flex-wrap:wrap}.foco-chart-107-txt{flex:1;min-width:160px}.foco-chart-107-txt h4{font-size:18px;font-weight:700;color:#FFFFFF;margin:0 0 8px}.foco-chart-107-txt p{font-size:14px;color:#B8B0CC;margin:0;line-height:1.5}@media(max-width:600px){.foco-chart-107-wrap{flex-direction:column;align-items:center;text-align:center;gap:16px}.foco-chart-107-wrap svg{width:160px;height:160px}.foco-chart-107-txt h4{font-size:16px}.foco-chart-107-txt p{font-size:13px}}</style><div class="foco-chart-107-wrap"><svg viewBox="0 0 200 200" width="200" height="200" xmlns="http://www.w3.org/2000/svg" aria-label="ADHD Adults With Executive Function Issues" style="flex-shrink:0"><circle cx="100" cy="100" r="70" fill="none" stroke="rgba(167, 139, 250, 0.18)" stroke-width="22"/><circle cx="100" cy="100" r="70" fill="none" stroke="#7C3AED" stroke-width="22" stroke-dasharray="395.84067435231395 43.98229715025707" stroke-dashoffset="109.95574287564276" transform="rotate(-90 100 100)" stroke-linecap="round"/><text x="100" y="95" font-size="42" font-weight="800" fill="#FFFFFF" text-anchor="middle">90%</text><text x="100" y="120" font-size="13" fill="#B8B0CC" text-anchor="middle">benefit from this</text></svg><div class="foco-chart-107-txt"><h4>benefit from this</h4><p>You're not alone in this.</p></div></div><p class="foco-chart-108-cap">Roughly 9 in 10 adults with ADHD struggle with executive function. Body doubling addresses task initiation, sustained attention, and self-monitoring all at once — three things ADHD brains struggle with most.</p><p class="foco-chart-108-src">CHADD; Barkley executive function research</p></figure><!-- /wp:html -->
+
+<h2 id="how-do-you-start-body-doubling">How do you start body doubling?</h2>
+
+<!-- wp:html --><figure class="foco-img" style="margin:28px 0"><img src="https://www.tryfoco.com/wp-content/uploads/2026/05/body-doubling-adhd-5239913-3.jpg" alt="video call work from — Woman at home using headphones and laptop for online work or video call." loading="lazy" style="width:100%;height:auto;border-radius:14px;display:block;border:1px solid rgba(167,139,250,0.18)"/><figcaption style="font-size:13px;color:#B8B0CC;text-align:center;margin-top:8px;font-style:italic;opacity:0.75">Photo: www.kaboompics.com via Pexels</figcaption></figure><!-- /wp:html -->
+
+
+<p>You don't need a partner. You don't need an app. You don't need to "schedule something." Here's how to start in the next 10 minutes.</p>
+
+<p><strong>Option 1: Text a friend.</strong> "Hey, I'm trying to do paperwork I've been avoiding. Can we get on a video call for an hour where we both work on our own stuff?" Most people say yes.</p>
+<p>Most people also have something they've been avoiding.</p>
+
+<p><strong>Option 2: Use a free body-doubling app.</strong> Tools like Focusmate, Flow Club, and Cofocus connect you with strangers for short focus sessions. You meet on video, briefly say what you're working on, then work in silence.</p>
+<p>They're built specifically for this.</p>
+
+<p><strong>Option 3: Family member or roommate.</strong> "I need to finish this for the next 90 minutes. Can you sit in the room with me and do your own thing?</p>
+<p>You don't have to talk." Anyone counts.</p>
+
+<p><strong>Option 4: A coffee shop or library.</strong> Strangers count too. The ambient presence of focused humans is enough for many people with ADHD.</p>
+<p>Pack what you need so you don't have to leave to grab something.</p>
+
+<p><strong>Option 5: An ADHD-specific coworking community.</strong> Several Discord servers, Slack groups, and Zoom communities run open body-doubling rooms 24/7. ADDitude magazine maintains a regularly updated <a href="https://www.additudemag.com/adhd-body-doubling-best-apps/" target="_blank" rel="noopener">guide to body-doubling tools</a> if you want something curated.</p>
+
+
+
+
+
+
+
+
+<!-- wp:html --><figure class="foco-chart-110"><style>.foco-chart-110{margin:32px 0;padding:28px;background:#0a0410;border:1px solid rgba(167, 139, 250, 0.18);border-radius:20px;box-sizing:border-box;max-width:100%;overflow:hidden;color:#FFFFFF}.foco-chart-110 figcaption{font-size:19px;font-weight:700;color:#FFFFFF;margin-bottom:20px;line-height:1.3}.foco-chart-110-cap{font-size:15px;color:#B8B0CC;margin:14px 0 0;line-height:1.5}.foco-chart-110-src{font-size:13px;color:#B8B0CC;margin:8px 0 0;font-style:italic;opacity:0.75}.foco-chart-110 svg{display:block;width:100%;height:auto;max-width:100%}@media(max-width:600px){.foco-chart-110{padding:18px;margin:22px 0;border-radius:16px}.foco-chart-110 figcaption{font-size:16px;margin-bottom:14px}.foco-chart-110-cap{font-size:13px}.foco-chart-110-src{font-size:11px}}</style><figcaption>Stack Body Doubling With...</figcaption><style>.foco-chart-109-timeline{display:flex;align-items:flex-start;gap:0;overflow-x:auto;padding:8px 0}.foco-chart-109-step{display:flex;flex-direction:column;align-items:center;text-align:center;min-width:100px;flex:1}.foco-chart-109-num{width:36px;height:36px;background:linear-gradient(135deg,#7C3AED,#A78BFA);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;flex-shrink:0;box-shadow:0 8px 24px rgba(124,58,237,0.4)}.foco-chart-109-txt{margin-top:12px}.foco-chart-109-txt strong{display:block;font-size:14px;color:#FFFFFF}.foco-chart-109-txt span{display:block;font-size:12px;color:#B8B0CC;margin-top:4px}.foco-chart-109-connector{width:24px;min-width:16px;height:3px;background:rgba(167, 139, 250, 0.18);margin-top:17px;flex-shrink:0;border-radius:2px}@media(max-width:600px){.foco-chart-109-timeline{flex-direction:column;gap:0;align-items:stretch}.foco-chart-109-step{flex-direction:row;text-align:left;min-width:0;gap:14px;padding:10px 0}.foco-chart-109-connector{width:3px;height:18px;margin:0 0 0 17px}.foco-chart-109-txt{margin-top:0}}</style><div class="foco-chart-109-timeline"><div class="foco-chart-109-step"><div class="foco-chart-109-num">1</div><div class="foco-chart-109-txt"><strong>Launch</strong><span>2-minute rule</span></div></div><div class="foco-chart-109-connector"></div><div class="foco-chart-109-step"><div class="foco-chart-109-num">2</div><div class="foco-chart-109-txt"><strong>Sustain</strong><span>Body doubling</span></div></div><div class="foco-chart-109-connector"></div><div class="foco-chart-109-step"><div class="foco-chart-109-num">3</div><div class="foco-chart-109-txt"><strong>Pace</strong><span>Pomodoro blocks</span></div></div><div class="foco-chart-109-connector"></div><div class="foco-chart-109-step"><div class="foco-chart-109-num">4</div><div class="foco-chart-109-txt"><strong>Track</strong><span>External task list</span></div></div><div class="foco-chart-109-connector"></div><div class="foco-chart-109-step"><div class="foco-chart-109-num">5</div><div class="foco-chart-109-txt"><strong>Support</strong><span>Treatment if needed</span></div></div></div><p class="foco-chart-110-cap">Body doubling is a sustain tool. Pair it with a launch tool for compounding effect.</p></figure><!-- /wp:html -->
+
+<h2 id="what-if-you-dont-have-anyone-to-body-double-with">What if you don't have anyone to body double with?</h2>
+
+<!-- wp:html --><figure class="foco-img" style="margin:28px 0"><img src="https://www.tryfoco.com/wp-content/uploads/2026/05/body-doubling-adhd-9572338-2.jpg" alt="study group library focused — Group of students diligently studying in a traditional library filled with books, tables, and d" loading="lazy" style="width:100%;height:auto;border-radius:14px;display:block;border:1px solid rgba(167,139,250,0.18)"/><figcaption style="font-size:13px;color:#B8B0CC;text-align:center;margin-top:8px;font-style:italic;opacity:0.75">Photo: Tima Miroshnichenko via Pexels</figcaption></figure><!-- /wp:html -->
+
+
+<p>Most ADHD adults assume they need a friend who "gets it" to make this work. You don't.</p>
+
+<p>The body doubler doesn't need to know about ADHD. They don't need to understand what they're doing.</p>
+<p>They just need to be present and not interrupting. Anyone counts — your partner watching TV in the same room, your kid doing homework, your dog.</p>
+
+<p>If you live alone and have no one available right now, the apps mentioned above (Focusmate, Flow Club) are designed exactly for this. You'll be matched with a stranger.</p>
+<p>The first session feels a little weird. By the third, it feels normal — and you'll have done more in those three sessions than you did in the previous three weeks.</p>
+
+<p>Virtual body doubling on YouTube is also a thing. Search "body doubling ADHD" or "study with me" and you'll find hundreds of long-form videos of people working in silence. It's not as effective as a live person, but it's better than nothing — and it's available at 3am.</p>
+
+<h2 id="what-does-the-research-say-about-body-doubling">What does the research say about body doubling?</h2>
+
+<p>The evidence base is still small but consistent. Body doubling sits at the intersection of three well-researched areas: co-regulation, accountability effects, and externalized executive function.</p>
+
+<p><strong>Co-regulation.</strong> Research summarized by the <a href="https://www.nimh.nih.gov/health/topics/attention-deficit-hyperactivity-disorder-adhd" target="_blank" rel="noopener">National Institute of Mental Health</a> shows that ADHD brains often struggle with internal self-regulation, and benefit measurably from external structure.</p>
+
+<p><strong>Accountability effects.</strong> Studies on the "Hawthorne effect" — that people behave differently when they know they're being observed — apply directly here. ADHD adults have known this intuitively for decades.</p>
+<p>The presence of another person acts as a low-stakes observation that improves performance.</p>
+
+<p><strong>The Russell Barkley framework.</strong> In Dr. <a href="https://www.russellbarkley.org/factsheets/ADHD_EF_and_SR.pdf" target="_blank" rel="noopener">Russell Barkley's executive function model</a>, ADHD is fundamentally a problem of self-regulation. External regulation (which is what body doubling provides) is one of the most direct ways to compensate.</p>
+
+<p>None of this means body doubling is medication. It's not. But it's one of the few non-medication tools that works for almost every ADHD adult who tries it consistently.</p>
+
+<h2 id="how-does-body-doubling-fit-with-other-adhd-tools">How does body doubling fit with other ADHD tools?</h2>
+
+<p>Body doubling pairs well with almost every other ADHD strategy. A few combinations that work especially well:</p>
+
+<p><strong>Body doubling + <a href="https://www.tryfoco.com/2-minute-rule-adhd/">the 2-minute rule</a>.</strong> Use the 2-minute rule to start, the body double to keep going. The launch tool plus the sustain tool.</p>
+
+<p><strong>Body doubling + Pomodoro.</strong> 25-minute focus blocks with a partner present. Take breaks together.</p>
+<p>This is what most body-doubling apps default to.</p>
+
+<p><strong>Body doubling + a written task list.</strong> Tell your body double what you're working on at the start of the session. The act of saying it out loud creates a soft commitment your brain treats as accountability.</p>
+
+<p><strong>Body doubling + medication.</strong> If you take ADHD medication, body doubling extends the medication's window of usefulness. You'll often get more done in a 90-minute body doubling session on medication than in a full 4-hour solo work block.</p>
+
+<h2>FAQ</h2>
+
+<h3>Is body doubling weird?</h3>
+<p>It feels weird the first time. By the second or third session, it feels obvious — like wondering why you ever tried to work alone. Most ADHD adults who try it consistently call it the most underrated tool they've found.</p>
+
+<h3>Does the body double need to have ADHD?</h3>
+<p>No. They don't need to know anything about ADHD. They just need to be present and not interrupting. Their job is to exist, not to coach.</p>
+
+<h3>Can I body double with my partner or kids?</h3>
+<p>Yes. Anyone counts. The only requirement is that they're present and not pulling your attention away from your task. A spouse watching TV in the same room counts. A toddler does not.</p>
+
+<h3>How long should a session be?</h3>
+<p>Most apps default to 50 or 90 minutes. Many ADHD adults find 50 minutes is the sweet spot — long enough to actually finish something, short enough that it doesn't feel like a marathon.</p>
+
+<h3>Does it work for creative tasks?</h3>
+<p>Yes — sometimes better than for routine tasks. The friction of starting creative work is often the highest, and body doubling lowers that friction more than almost anything else.</p>
+
+<h3>What if I get distracted by the other person?</h3>
+<p>If you're chatting, you're not body doubling — you're hanging out. Real body doubling is mostly silent. If you and the partner can't keep silent, switch to virtual (mute the call) or find a different partner.</p>
+
+<h2>The Bottom Line</h2>
+
+<p>You don't have to do everything alone. In fact, your ADHD brain probably wasn't designed to.</p>
+
+<p>The presence of another person — any person, in person or virtual, friend or stranger — does something for your nervous system that you can't reliably do for yourself. That isn't weakness. That's how your brain is wired to work.</p>
+
+<p>Pick up your phone. Text someone. Get on a call. Open Focusmate. Sit in a coffee shop. Just stop trying to white-knuckle this alone.</p>
+
+<p>Your job is to get to the first 30 seconds. The rest takes care of itself.</p>
+
+
+
+<h2>Related articles</h2>
+<ul>
+<li><a href="/task-initiation-deficit-explained/">Task Initiation Deficit: Why You Can't Start</a></li>
+<li><a href="/adhd-task-initiation-research/">ADHD Task Initiation: 30 Years of Research</a></li>
+<li><a href="/adhd-task-paralysis/">ADHD Task Paralysis: Why You Can't Start</a></li>
+<li><a href="/procrastination-vs-paralysis/">Procrastination vs. Task Paralysis: How to Tell</a></li>
+</ul>
+
+<!-- wp:html --><div class="foco-disclaimer" style="margin:32px 0;padding:20px;background:rgba(167,139,250,0.06);border-left:3px solid #A78BFA;border-radius:8px;font-size:14px;color:#B8B0CC;line-height:1.6"><strong>Medical disclaimer.</strong> This article summarizes published research and clinical practice for informational purposes only. It is not medical advice and is not a substitute for evaluation, diagnosis, or treatment by a licensed healthcare provider. If symptoms are affecting your daily life, please consult a clinician with experience in adult ADHD or related conditions.</div><!-- /wp:html -->
+
+<!-- wp:html --><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is body doubling weird?","acceptedAnswer":{"@type":"Answer","text":"It feels weird the first time. By the second or third session, it feels obvious — like wondering why you ever tried to work alone. Most ADHD adults who try it consistently call it the most underrated tool they've found."}},{"@type":"Question","name":"Does the body double need to have ADHD?","acceptedAnswer":{"@type":"Answer","text":"No. They don't need to know anything about ADHD. They just need to be present and not interrupting. Their job is to exist, not to coach."}},{"@type":"Question","name":"Can I body double with my partner or kids?","acceptedAnswer":{"@type":"Answer","text":"Yes. Anyone counts. The only requirement is that they're present and not pulling your attention away from your task. A spouse watching TV in the same room counts. A toddler does not."}},{"@type":"Question","name":"How long should a session be?","acceptedAnswer":{"@type":"Answer","text":"Most apps default to 50 or 90 minutes. Many ADHD adults find 50 minutes is the sweet spot — long enough to actually finish something, short enough that it doesn't feel like a marathon."}},{"@type":"Question","name":"Does it work for creative tasks?","acceptedAnswer":{"@type":"Answer","text":"Yes — sometimes better than for routine tasks. The friction of starting creative work is often the highest, and body doubling lowers that friction more than almost anything else."}},{"@type":"Question","name":"What if I get distracted by the other person?","acceptedAnswer":{"@type":"Answer","text":"If you're chatting, you're not body doubling — you're hanging out. Real body doubling is mostly silent. If you and the partner can't keep silent, switch to virtual (mute the call) or find a different partner."}}]}</script><!-- /wp:html -->
+
+<!-- wp:html --><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Body Doubling for ADHD: Why It Works","keywords":"body doubling adhd","datePublished":"2026-05-02T10:53:36.476Z","author":{"@type":"Organization","name":"FOCO","url":"https://www.tryfoco.com"},"publisher":{"@type":"Organization","name":"FOCO","url":"https://www.tryfoco.com"}}</script><!-- /wp:html -->

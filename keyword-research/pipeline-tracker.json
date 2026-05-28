@@ -1,0 +1,33 @@
+{
+  "runs": [
+    {
+      "date": "2026-05-08T16:36:44.450Z",
+      "posts": [
+        {
+          "slug": "symptoms-to-adhd",
+          "keyword": "symptoms to adhd",
+          "cluster": "Symptoms",
+          "ok": false,
+          "failed": [
+            "error: Engine: \n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n  FOCO POST PIPELINE — 🔴 LIVE\n  File: posts-new/post-symptoms-to-adhd.html\n  Slug: symptoms-to-adhd   Pillar: no   Keyword: \"symptoms to adhd\"\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n━ STEP 1/14: Parse + Validate ━\n  ✗ No <h1> in post HTML\n\n  Aborting.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2026-05-08T16:38:52.112Z",
+      "posts": [
+        {
+          "slug": "adhd-pi",
+          "keyword": "adhd pi",
+          "cluster": "Inattentive Subtype",
+          "postId": 774,
+          "ok": false,
+          "failed": [
+            "Disclaimer"
+          ]
+        }
+      ]
+    }
+  ]
+}
