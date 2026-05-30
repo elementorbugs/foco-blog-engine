@@ -1189,3 +1189,66 @@ body.page:not(.foco-page) .foco-app h3 {
   .foco-app .blog-single article h2 { font-size: 22px; margin-top: 36px; }
   .foco-app .blog-single article h3 { font-size: 18px; margin-top: 26px; }
 }
+
+/* =====================================================
+   CONTENT CALLOUT BOXES — foco-tldr / foco-key-takeaways / foco-img
+   These classes are used on every post + page (the GEO answer box and
+   the Key Takeaways summary) but were never styled, so they rendered
+   as plain unstyled text. These rules give them the FOCO callout look.
+   ===================================================== */
+
+/* TL;DR / answer box — the GEO citation block at the top of every post */
+.foco-app .foco-tldr {
+  background: var(--primary-soft);
+  border: 1px solid var(--stroke-strong);
+  border-left: 4px solid var(--primary);
+  border-radius: var(--r);
+  padding: 20px 24px;
+  margin: 0 0 32px;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--text);
+}
+.foco-app .foco-tldr strong { color: var(--text); font-weight: 700; }
+.foco-app .foco-tldr a { color: var(--primary-2); border-bottom: 1px solid currentColor; }
+
+/* Key Takeaways summary card */
+.foco-app .foco-key-takeaways {
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  border-radius: var(--r);
+  padding: 24px 28px;
+  margin: 32px 0;
+}
+.foco-app .foco-key-takeaways h2 {
+  font-size: 19px !important;
+  font-weight: 700 !important;
+  margin: 0 0 16px !important;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+.foco-app .foco-key-takeaways ul { margin: 0; padding-left: 22px; }
+.foco-app .foco-key-takeaways li {
+  margin-bottom: 10px;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 15.5px;
+}
+.foco-app .foco-key-takeaways li:last-child { margin-bottom: 0; }
+.foco-app .foco-key-takeaways li strong { color: var(--text); }
+.foco-app .foco-key-takeaways a { color: var(--primary-2); border-bottom: 1px solid currentColor; }
+
+/* Inline article images */
+.foco-app .foco-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--r);
+  margin: 28px auto;
+  display: block;
+  border: 1px solid var(--stroke);
+}
+
+@media (max-width: 520px) {
+  .foco-app .foco-tldr { padding: 16px 18px; font-size: 15.5px; }
+  .foco-app .foco-key-takeaways { padding: 20px 18px; }
+}
