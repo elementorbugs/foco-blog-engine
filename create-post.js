@@ -44,7 +44,7 @@ const POSTS_DIR  = path.join(__dirname, 'posts-new');
 const MASCOT_DIR = path.join(__dirname, 'assets', 'mascots');
 const SLUG_MAP_PATH = path.join(__dirname, 'slug-map.json');
 const TITLE_LIMIT_DB = 58;
-const TITLE_SUFFIX = ' — FOCO';
+const TITLE_SUFFIX = ' - FOCO';
 const TITLE_SUFFIX_LEN = TITLE_SUFFIX.length;
 const PUBLISH_LOCK_THRESHOLD = 10; // posts 1-10 are forced-draft regardless of --publish
 

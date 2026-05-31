@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// daily-generate.js — Foco Daily Routine Orchestrator
+// daily-generate.js - Foco Daily Routine Orchestrator
 //
 // Runs the 9-phase daily article generation pipeline:
 //   1. Pick keywords from master-plan.json (top score, filtered)
@@ -13,10 +13,10 @@
 //   9. Send notification email via Resend
 //
 // Usage:
-//   node daily-generate.js                    — full live run, picks 3 keywords
-//   node daily-generate.js --count=1          — generate 1 article only (faster)
-//   node daily-generate.js --dry-run          — pick + announce, no generation
-//   node daily-generate.js --keyword="..."    — bypass picker, force keyword
+//   node daily-generate.js                    - full live run, picks 3 keywords
+//   node daily-generate.js --count=1          - generate 1 article only (faster)
+//   node daily-generate.js --dry-run          - pick + announce, no generation
+//   node daily-generate.js --keyword="..."    - bypass picker, force keyword
 //
 // Required env (in .env):
 //   WP_HOST, WP_USER, WP_APP_PASSWORD
@@ -87,7 +87,7 @@ const arg = (n) => {
 const DRY_RUN = flag('dry-run');
 const COUNT = parseInt(arg('count') || '3', 10);
 const FORCE_KEYWORD = arg('keyword');
-const SKIP_COVER = flag('skip-cover'); // for cloud env — skips playwright cover render
+const SKIP_COVER = flag('skip-cover'); // for cloud env - skips playwright cover render
 const PULL_GSC = flag('pull-gsc');     // refresh GSC data + overlay before picking (daily routine)
 const USE_GSC = flag('use-gsc') || PULL_GSC; // opt-in: merge gsc-overlay.json into scoring (auto-on with --pull-gsc)
 
@@ -145,7 +145,7 @@ async function pickKeywords() {
   const candidates = [];
   if (Array.isArray(master.clusters)) {
     for (const cluster of master.clusters) {
-      if (cluster.name === 'Other (general ADHD)') continue; // per spec — too generic
+      if (cluster.name === 'Other (general ADHD)') continue; // per spec - too generic
       const items = cluster.items || cluster.keywords || cluster.candidates || [];
       for (const k of items) {
         if (k.covered) continue; // already in WP per master-plan's own tracking
@@ -176,7 +176,7 @@ async function pickKeywords() {
       keyword: g.keyword,
       slug: g.slug || slugify(g.keyword),
       cluster: 'GSC content gap',
-      volume: g.impressions, // proxy — real volume unknown
+      volume: g.impressions, // proxy - real volume unknown
       sd: 50,
       score: g.impressions * (g.multiplier || 2.0) * 50,
       baseScore: g.impressions * 50,
@@ -199,7 +199,7 @@ async function pickKeywords() {
   const recentSlugs = new Set();
   for (const run of tracker.runs.slice(-7)) for (const p of run.posts || []) recentSlugs.add(p.slug);
 
-  // Fetch all trashed slugs once — we don't want to re-create things we deliberately killed
+  // Fetch all trashed slugs once - we don't want to re-create things we deliberately killed
   const trashRes = await wpReq('GET', '/wp-json/wp/v2/posts?per_page=100&status=trash&context=edit&_fields=slug,title');
   const trashSlugs = new Set();
   const trashPosts = [];
@@ -222,7 +222,7 @@ async function pickKeywords() {
     }
   }
 
-  // Explicit blocklist — keywords we never want to re-create
+  // Explicit blocklist - keywords we never want to re-create
   const blockedPath = path.join(__dirname, 'keyword-research', 'blocked-keywords.json');
   const blocked = fs.existsSync(blockedPath) ? JSON.parse(fs.readFileSync(blockedPath, 'utf8')) : { blocked: [] };
   const blockedKeywords = new Set();
@@ -243,7 +243,7 @@ async function pickKeywords() {
 
   // Iterate the sorted pool. For each candidate that passes string filters, do the
   // semantic check inline. If Haiku rejects, log + queue for blocklist + CONTINUE
-  // (don't mark the cluster as used — let the next candidate in that cluster try).
+  // (don't mark the cluster as used - let the next candidate in that cluster try).
   // Loop ends when we have COUNT accepted picks OR exhaust the pool.
   for (const c of all) {
     if (picks.length >= COUNT) break;
@@ -262,10 +262,10 @@ async function pickKeywords() {
       const judgment = await claudeJudgeDuplicate(c, existingPosts);
       if (judgment && judgment.duplicate) {
         const matchSlug = judgment.matchSlug || 'unknown';
-        console.log(`  [semantic] BLOCKED "${c.keyword}" — duplicate of ${matchSlug}: ${judgment.reason || ''}`);
+        console.log(`  [semantic] BLOCKED "${c.keyword}" - duplicate of ${matchSlug}: ${judgment.reason || ''}`);
         newBlocks.push({
           keyword: c.keyword,
-          reason: `Auto-blocked: semantic duplicate of "${matchSlug}" — ${judgment.reason || 'pre-flight check'}`,
+          reason: `Auto-blocked: semantic duplicate of "${matchSlug}" - ${judgment.reason || 'pre-flight check'}`,
         });
         skipped.semantic++;
         continue;
@@ -287,16 +287,16 @@ async function pickKeywords() {
     console.log(`  [semantic] appended ${newBlocks.length} duplicate(s) to blocked-keywords.json`);
   }
 
-  console.log(`  [filter] skipped — low vol:${skipped.lowVol}, recently picked:${skipped.recent}, trashed:${skipped.trashed}, live:${skipped.live}, blocked:${skipped.blocked}, cluster-dup:${skipped.clusterDup}, semantic:${skipped.semantic}, ctr-opp:${skipped.ctrOpp}`);
+  console.log(`  [filter] skipped - low vol:${skipped.lowVol}, recently picked:${skipped.recent}, trashed:${skipped.trashed}, live:${skipped.live}, blocked:${skipped.blocked}, cluster-dup:${skipped.clusterDup}, semantic:${skipped.semantic}, ctr-opp:${skipped.ctrOpp}`);
   if (USE_GSC && picks.length) {
     console.log('  [gsc] picks:');
-    for (const p of picks) console.log(`    [${p.source}] "${p.keyword}" — score ${Math.round(p.score)}${p.gsc ? ` (×${p.gsc.multiplier} from ${p.gsc.reason})` : ''}`);
+    for (const p of picks) console.log(`    [${p.source}] "${p.keyword}" - score ${Math.round(p.score)}${p.gsc ? ` (×${p.gsc.multiplier} from ${p.gsc.reason})` : ''}`);
   }
   return picks;
 }
 
 // Load the GSC overlay JSON. Returns null (with a warning at call site) if the
-// file isn't present yet — caller falls back to pure Ubersuggest scoring.
+// file isn't present yet - caller falls back to pure Ubersuggest scoring.
 function loadGscOverlay() {
   const overlayPath = path.join(__dirname, 'keyword-research', 'gsc-overlay.json');
   if (!fs.existsSync(overlayPath)) return null;
@@ -307,7 +307,7 @@ function loadGscOverlay() {
   }
 }
 
-// Custom serializer for blocked-keywords.json — keeps each entry on one line
+// Custom serializer for blocked-keywords.json - keeps each entry on one line
 // so the file stays scannable. JSON.stringify(.., null, 2) would explode each
 // entry into 4 lines, which makes diffs noisy and the file long.
 function serializeBlockedKeywords(obj) {
@@ -352,16 +352,16 @@ Reply with ONLY a JSON object, no surrounding text:
       'x-api-key': ANTHROPIC_API_KEY,
       'anthropic-version': '2023-06-01',
     }, { model: 'claude-haiku-4-5', max_tokens: 200, messages: [{ role: 'user', content: prompt }] });
-    // Credit balance check — fast-fail with a clear message if billing is the issue.
+    // Credit balance check - fast-fail with a clear message if billing is the issue.
     // Otherwise every candidate would silently default to "allow" and we'd burn a
     // Sonnet generation that ALSO fails on billing. Worse: the failure email would
     // just say "workflow failed", masking the real cause.
     const bodyStr = typeof r.body === 'string' ? r.body : JSON.stringify(r.body || {});
     if (r.status === 400 && /credit balance.*too low/i.test(bodyStr)) {
-      throw new Error('ANTHROPIC_BILLING: credit balance too low. Top up at https://console.anthropic.com/settings/billing — daily generator cannot continue without API credit.');
+      throw new Error('ANTHROPIC_BILLING: credit balance too low. Top up at https://console.anthropic.com/settings/billing - daily generator cannot continue without API credit.');
     }
     if (r.status !== 200 || !r.body.content || !r.body.content[0]) {
-      console.log(`  [semantic] Haiku check failed for "${pick.keyword}" (status ${r.status}) — defaulting to allow`);
+      console.log(`  [semantic] Haiku check failed for "${pick.keyword}" (status ${r.status}) - defaulting to allow`);
       return null;
     }
     const text = r.body.content[0].text || '';
@@ -371,7 +371,7 @@ Reply with ONLY a JSON object, no surrounding text:
   } catch (e) {
     // Re-throw billing errors so they bubble up and produce a clear failure email.
     if (e.message && e.message.startsWith('ANTHROPIC_BILLING:')) throw e;
-    console.log(`  [semantic] Haiku error for "${pick.keyword}" (${e.message}) — defaulting to allow`);
+    console.log(`  [semantic] Haiku error for "${pick.keyword}" (${e.message}) - defaulting to allow`);
     return null;
   }
 }
@@ -388,66 +388,67 @@ async function generateArticle({ keyword, slug, cluster }) {
   if (!ANTHROPIC_API_KEY) throw new Error('ANTHROPIC_API_KEY missing');
   const system = `You are FOCO's senior content writer. Produce ONE complete blog post in HTML that ranks on Google AND feels like a real person who gets it wrote it.
 
-BRAND VOICE — WHO YOU ARE:
+BRAND VOICE - WHO YOU ARE:
 You write like someone who deeply understands BOTH ADHD neuroscience AND the broken productivity culture surrounding it. You're not selling, motivating, or coaching. You're translating brain science to a tired adult who has tried everything and feels gaslit by the world. The reader is exhausted by Tim-Ferriss-style optimization and wants someone smart who finally explains how their brain actually works.
 
-THE THREE CORE QUALITIES — every paragraph, all three together:
+THE THREE CORE QUALITIES - every paragraph, all three together:
 
-**1. PERSONAL** — Address one reader directly. "You" — not "the patient", "the individual", "people with ADHD", "many adults". One specific person who arrived in distress.
+**1. PERSONAL** - Address one reader directly. "You" - not "the patient", "the individual", "people with ADHD", "many adults". One specific person who arrived in distress.
 
-**2. EMPATHIC** — Name the experience as real before explaining it. Acknowledge the state. Frame ADHD struggles as physiological events, not character flaws. "This isn't laziness — it's a measurable activation threshold."
+**2. EMPATHIC** - Name the experience as real before explaining it. Acknowledge the state. Frame ADHD struggles as physiological events, not character flaws. "This isn't laziness - it's a measurable activation threshold."
 
-**3. PRECISE ON DETAILS** — Replace vague generalities with specifics:
-  • Specific numbers — "47 minutes", "70-80% heritability", "5 of 9 DSM-5 criteria" (NOT "a long time", "highly heritable", "several criteria")
-  • Specific behaviors — "six unfinished projects in your garage and a water bill 3 months overdue" (NOT "disorganization")
-  • Specific mechanisms — "dopamine reuptake in the prefrontal cortex" (NOT "brain chemistry")
-  • Specific times — "your alarm went off at 6:30 and it's now 9:15" (NOT "you slept in")
+**3. PRECISE ON DETAILS** - Replace vague generalities with specifics:
+  • Specific numbers - "47 minutes", "70-80% heritability", "5 of 9 DSM-5 criteria" (NOT "a long time", "highly heritable", "several criteria")
+  • Specific behaviors - "six unfinished projects in your garage and a water bill 3 months overdue" (NOT "disorganization")
+  • Specific mechanisms - "dopamine reuptake in the prefrontal cortex" (NOT "brain chemistry")
+  • Specific times - "your alarm went off at 6:30 and it's now 9:15" (NOT "you slept in")
 
-THE SIX LAYERED TONES — operating beneath every paragraph:
+THE SIX LAYERED TONES - operating beneath every paragraph:
 
-**A. Validation without self-pity** — Say "you're not lazy" / "it's not willpower" — but never slip into therapy-cliché ("everything will be okay ❤️"). The register is "someone finally understands how my brain works", not emotional comfort food.
+**A. Validation without self-pity** - Say "you're not lazy" / "it's not willpower" - but never slip into therapy-cliché ("everything will be okay ❤️"). The register is "someone finally understands how my brain works", not emotional comfort food.
 
-**B. Intellectual but readable** — Cite real research and mechanisms, then immediately translate them into human language. Don't just write "dopamine reward pathway dysfunction" — translate it: "Knowing something matters and feeling motivated to start it are not the same thing." Make the reader feel smart, never stupid.
+**B. Intellectual but readable** - Cite real research and mechanisms, then immediately translate them into human language. Don't just write "dopamine reward pathway dysfunction" - translate it: "Knowing something matters and feeling motivated to start it are not the same thing." Make the reader feel smart, never stupid.
 
-**C. Critical of productivity culture** — Where the topic touches productivity/optimization, push back on the rise-and-grind religion explicitly. Reference patterns like "billionaires wake up at four", "the productivity-as-personality movement", "10 hacks", "morning routine optimization" — and explain why these don't work for ADHD brains. The reader feels: "everyone's been giving me advice that doesn't work for me — finally someone who gets that."
+**C. Critical of productivity culture** - Where the topic touches productivity/optimization, push back on the rise-and-grind religion explicitly. Reference patterns like "billionaires wake up at four", "the productivity-as-personality movement", "10 hacks", "morning routine optimization" - and explain why these don't work for ADHD brains. The reader feels: "everyone's been giving me advice that doesn't work for me - finally someone who gets that."
 
-**D. Calm, not aggressive** — No "Change your life NOW", "10 hacks", "Ultimate guide", urgency punctuation, or all-caps. Pacing is slow. Contained. Breathing. Even when proposing a solution, it doesn't sound like a pitch.
+**D. Calm, not aggressive** - No "Change your life NOW", "10 hacks", "Ultimate guide", urgency punctuation, or all-caps. Pacing is slow. Contained. Breathing. Even when proposing a solution, it doesn't sound like a pitch.
 
-**E. Adult ADHD register** — This is critical. Not kids ADHD. Not TikTok ADHD. Not meme ADHD. The reader is: working adults, exhausted parents, late-diagnosed women, people with comorbid burnout, knowledge workers, people with shame. The voice respects them as adults navigating real lives — work, kids, mortgage, fatigue.
+**E. Adult ADHD register** - This is critical. Not kids ADHD. Not TikTok ADHD. Not meme ADHD. The reader is: working adults, exhausted parents, late-diagnosed women, people with comorbid burnout, knowledge workers, people with shame. The voice respects them as adults navigating real lives - work, kids, mortgage, fatigue.
 
-**F. Soft authority** — Never claim "we're the experts." Just sound like one. Soft authority comes from: structured argument, real research, calm phrasing, and an absence of drama. No chest-thumping. No "as research shows" throat-clearing. Just clean, confident statements grounded in mechanism.
+**F. Soft authority** - Never claim "we're the experts." Just sound like one. Soft authority comes from: structured argument, real research, calm phrasing, and an absence of drama. No chest-thumping. No "as research shows" throat-clearing. Just clean, confident statements grounded in mechanism.
 
-EXEMPLAR — what all this looks like together:
-"You sat down to work 47 minutes ago. Your laptop is open. You've been telling yourself to start the report. The dopamine system in your prefrontal cortex needs novelty or urgency to fire — and the report has neither. This isn't laziness. It's a measurable threshold that hasn't been crossed yet. The 'rise and grind' crowd will tell you to push through. They're describing a different brain."
+EXEMPLAR - what all this looks like together:
+"You sat down to work 47 minutes ago. Your laptop is open. You've been telling yourself to start the report. The dopamine system in your prefrontal cortex needs novelty or urgency to fire - and the report has neither. This isn't laziness. It's a measurable threshold that hasn't been crossed yet. The 'rise and grind' crowd will tell you to push through. They're describing a different brain."
 
 Why this works: 47 min (precise), "you" (personal), "this isn't laziness" (validation without self-pity), "dopamine system in prefrontal cortex" then translated to "novelty or urgency" (intellectual but readable), "rise and grind crowd... different brain" (critical of productivity culture without aggression), no urgency punctuation (calm), addresses an adult worker (adult ADHD), no "as an expert" framing (soft authority).
 
-EXEMPLAR — what this voice looks like:
-"You sat down to work 47 minutes ago. Your laptop is open. You've been telling yourself to start the report. The dopamine system in your prefrontal cortex needs novelty or urgency to fire — and the report has neither. This isn't laziness. It's a measurable threshold that hasn't been crossed yet."
+EXEMPLAR - what this voice looks like:
+"You sat down to work 47 minutes ago. Your laptop is open. You've been telling yourself to start the report. The dopamine system in your prefrontal cortex needs novelty or urgency to fire - and the report has neither. This isn't laziness. It's a measurable threshold that hasn't been crossed yet."
 
 What's working: 47 minutes (specific), "you sat down" (personal), "this isn't laziness" (empathic), "dopamine system in prefrontal cortex" (precise mechanism), "measurable threshold" (precise framing).
 
 DO NOT use:
 - Sarcasm, self-deprecating "ADHD jokes", "we're all a mess" framings, humor at reader's expense
 - Cute analogies that minimize ("your brain is like a puppy")
-- "Welcome to [adulthood/burnout]" — reads as dismissive
+- "Welcome to [adulthood/burnout]" - reads as dismissive
 - Generalities ("many adults", "people often feel", "a lot of people")
-- Hedge words when a specific claim is available ("might be", "could possibly" — if research says it, say it)
+- Hedge words when a specific claim is available ("might be", "could possibly" - if research says it, say it)
+- Em dashes (—). Use commas, periods, or a regular hyphen (-) instead. Em dashes are one of the strongest "AI-generated" tells; banning them makes the writing read as human.
 
 TONE REGISTER (same three qualities, calibrated to topic):
 - Shame/anxiety topics (task paralysis, RSD, imposter, diagnosis fear) → slow down, name body sensations first, then mind. Permission language. "Your shoulders tensed. Your stomach tightened. Then the thought arrived."
 - Clinical/neuroscience topics (executive function, dopamine, working memory) → cite primary research, name specific brain regions and mechanisms.
 - How-to topics (timers, breakdowns, focus) → time-bound, action-first. "Set 10 minutes. Open the document. Write one sentence. Stop if you need to."
-- Comparison/review topics (apps, planners, treatments) → confident, fair to alternatives, specific differentiators. No fabricated prices or stats — use durable categories.
+- Comparison/review topics (apps, planners, treatments) → confident, fair to alternatives, specific differentiators. No fabricated prices or stats - use durable categories.
 
 REQUIRED structure (in this order):
-1. <h1> — primary keyword front-loaded, ≤58 characters total. NEVER exceed 58.
-2. <div class="foco-tldr">{40-60 word direct answer with specifics — NO "TL;DR" label, just the answer paragraph}</div>
-3. <div class="foco-key-takeaways"><h2>Key Takeaways</h2><ul><li>×5 — specific, with numbers/names where possible</li></ul></div>
+1. <h1> - primary keyword front-loaded, ≤58 characters total. NEVER exceed 58.
+2. <div class="foco-tldr">{40-60 word direct answer with specifics - NO "TL;DR" label, just the answer paragraph}</div>
+3. <div class="foco-key-takeaways"><h2>Key Takeaways</h2><ul><li>×5 - specific, with numbers/names where possible</li></ul></div>
 4. <h2>Table of Contents</h2><ol> with anchor links to each H2 below
 5. 5-7 <h2 id="..."> sections, each 250-400 words. Each H2 phrased as a question or definitive statement. Each section MUST include one of: a specific stat, a named example, a pattern that validates lived experience, or a counterintuitive truth.
 6. <h2>FAQ</h2> with 6 <h3> questions + <p> answers (40-100 words). Use real questions a person would Google, not generic ones.
-7. <h2>The Bottom Line</h2> — ONE paragraph. Punchy. Just the truth. NO "in conclusion" framing.
+7. <h2>The Bottom Line</h2> - ONE paragraph. Punchy. Just the truth. NO "in conclusion" framing.
 8. <h2>Related articles</h2><ul> with 5-7 of these links (pick what fits the topic):
    https://www.tryfoco.com/adhd-task-paralysis/
    https://www.tryfoco.com/adhd-executive-function/
@@ -465,32 +466,32 @@ REQUIRED structure (in this order):
    <li><a href="https://www.nature.com/articles/nrdp201520" target="_blank" rel="noopener">Faraone SV, Asherson P, Banaschewski T, et al. Attention-deficit/hyperactivity disorder. Nat Rev Dis Primers. 2015;1:15020.</a></li>
    <li><a href="https://chadd.org/about-adhd/overview/" target="_blank" rel="noopener">CHADD. ADHD Overview.</a></li>
 
-INTERNAL LINKING (CRITICAL — don't dump all in Related Articles):
+INTERNAL LINKING (CRITICAL - don't dump all in Related Articles):
 Weave 4-6 internal links INTO the body text, contextually placed where the topic naturally comes up. Use absolute URLs (https://www.tryfoco.com/...). When discussing executive function, link to the executive function pillar. When discussing initiation, link to task-paralysis. Make the links feel earned, not stuffed.
 
-VISUAL STRUCTURE (CRITICAL — articles must be scannable):
+VISUAL STRUCTURE (CRITICAL - articles must be scannable):
 Every section needs at least ONE structural element beyond prose:
 - **Lists**: where you have 3+ items, USE <ol> for sequenced or <ul> for unordered. Don't write "5 ways" as 5 paragraphs.
 - **Tables**: comparing 3+ things → use <div class="foco-table-wrap" style="overflow-x:auto;margin:24px 0"><table style="width:100%;border-collapse:collapse;font-size:15px"><thead><tr style="background:rgba(124,58,237,0.18)"><th style="text-align:left;padding:12px;border:1px solid rgba(167,139,250,0.18)">Header</th>...</tr></thead><tbody>...</tbody></table></div>
-- **Charts** (REQUIRED — include 1-2 per article): emit a chart marker that the build pipeline will render. Format:
+- **Charts** (REQUIRED - include 1-2 per article): emit a chart marker that the build pipeline will render. Format:
 \`\`\`
 <!-- FOCO_CHART:TYPE
 {json_spec}
 -->
 \`\`\`
 TYPES available:
-  • statGrid — 4-6 big stats. spec: {"title":"...","caption":"...","items":[{"label":"4.4%","sub":"adult prevalence"},...]}
-  • horizontalBar — comparing values. spec: {"title":"...","caption":"...","data":[{"label":"Item","value":75,"highlight":true},...]}
-  • progressTimeline — sequence of steps. spec: {"title":"...","caption":"...","steps":[{"label":"Step 1","sub":"description"},...]}
-  • infographicList — labeled facts with value column. spec: {"title":"...","caption":"...","items":[{"icon":"⏰","label":"Time","value":"30 min"},...]}
-Place chart markers in their own <p> on a blank line. Use real numbers, not placeholders. If you don't have a real stat, don't fabricate — pick a different chart type or skip.
+  • statGrid - 4-6 big stats. spec: {"title":"...","caption":"...","items":[{"label":"4.4%","sub":"adult prevalence"},...]}
+  • horizontalBar - comparing values. spec: {"title":"...","caption":"...","data":[{"label":"Item","value":75,"highlight":true},...]}
+  • progressTimeline - sequence of steps. spec: {"title":"...","caption":"...","steps":[{"label":"Step 1","sub":"description"},...]}
+  • infographicList - labeled facts with value column. spec: {"title":"...","caption":"...","items":[{"icon":"⏰","label":"Time","value":"30 min"},...]}
+Place chart markers in their own <p> on a blank line. Use real numbers, not placeholders. If you don't have a real stat, don't fabricate - pick a different chart type or skip.
 
 CRITICAL RULES:
 - Max 1-2 sentences per paragraph. NEVER 3+ sentences in one block.
 - Wrap every paragraph in explicit <p>...</p>.
 - Word count: 2,500-3,000.
 - NO editorial markers like [PERSONAL], [CITATION:], [CHART:], [IMAGE:].
-- NO markdown links — use HTML <a href> only.
+- NO markdown links - use HTML <a href> only.
 - For YMYL content (medications, diagnostic codes): NO specific milligram numbers in body. Use "your prescriber sets the dose" style.
 - For comparison content: NO fabricated prices or stats. Use durable categories.
 - Where you make a claim about prevalence, efficacy, or research, include the specific number or study where you can. "70-80% heritability" beats "highly heritable".
@@ -548,7 +549,7 @@ Write the complete article now. ~2,800 words.`;
 
 // ─── PHASE 4: Run create-post.js engine ──────────────────────────────────────
 // Ensure .env exists for create-post.js (which reads its own .env file).
-// In GitHub Actions / cloud envs, .env doesn't exist on disk — write it from process.env.
+// In GitHub Actions / cloud envs, .env doesn't exist on disk - write it from process.env.
 function ensureEnvFile() {
   const envPath = path.join(__dirname, '.env');
   if (fs.existsSync(envPath)) return;
@@ -604,7 +605,7 @@ function runEngine(slug, keyword) {
   }
 }
 
-// ─── PHASE 5: Post-process — disclaimer + HowTo schema ───────────────────────
+// ─── PHASE 5: Post-process - disclaimer + HowTo schema ───────────────────────
 const DISCLAIMER = '<!-- wp:html --><div class="foco-disclaimer" style="margin:32px 0;padding:20px;background:rgba(167,139,250,0.06);border-left:3px solid #A78BFA;border-radius:8px;font-size:14px;color:#B8B0CC;line-height:1.6"><strong>Note.</strong> This article describes a pattern observed in many ADHD adults. It is not a substitute for clinical evaluation. If symptoms are significantly affecting your daily life, please consult a clinician with experience in adult ADHD.</div><!-- /wp:html -->';
 
 function howToSchema(keyword) {
@@ -724,7 +725,7 @@ function altTextFor(h2Text, photographerHint) {
 }
 
 async function injectPexelsImages(postId, keyword) {
-  if (!PEXELS_KEY) return { ok: false, msg: 'no PEXELS_KEY — skipping Pexels' };
+  if (!PEXELS_KEY) return { ok: false, msg: 'no PEXELS_KEY - skipping Pexels' };
   const post = await wpReq('GET', `/wp-json/wp/v2/posts/${postId}?context=edit&_fields=content,slug`);
   if (post.status !== 200) return { ok: false, msg: 'fetch fail ' + post.status };
   let html = post.body.content.raw;
@@ -855,7 +856,7 @@ async function audit(postId) {
 
 // ─── PHASE 9: Email via Resend ───────────────────────────────────────────────
 async function sendEmail({ subject, html }) {
-  if (!RESEND_KEY) { console.log('No RESEND_KEY — skipping email'); return { ok: false, skip: true }; }
+  if (!RESEND_KEY) { console.log('No RESEND_KEY - skipping email'); return { ok: false, skip: true }; }
   const r = await req('api.resend.com', 'POST', '/emails', {
     Authorization: 'Bearer ' + RESEND_KEY,
   }, {
@@ -873,7 +874,7 @@ function buildEmailHtml({ picks, results }) {
   const ok = results.filter(r => r.audit && r.audit.ok);
   const fail = results.filter(r => !r.audit || !r.audit.ok);
   let html = `<div style="font-family:-apple-system,Segoe UI,sans-serif;max-width:680px;color:#222">`;
-  html += `<h2 style="color:#7C3AED">🤖 Foco Daily — ${date}</h2>`;
+  html += `<h2 style="color:#7C3AED">🤖 Foco Daily - ${date}</h2>`;
   html += `<p style="color:#666">${time} Israel time</p>`;
   html += `<h3>${ok.length}/${results.length} articles created ✓</h3>`;
   for (let i = 0; i < results.length; i++) {
@@ -901,13 +902,13 @@ function buildEmailHtml({ picks, results }) {
 async function sendFailureEmail(stage, error) {
   try {
     const html = `<div style="font-family:-apple-system,Segoe UI,sans-serif;max-width:680px;color:#222">
-      <h2 style="color:#FB923C">⚠️ Foco Daily — FAILED at ${stage}</h2>
+      <h2 style="color:#FB923C">⚠️ Foco Daily - FAILED at ${stage}</h2>
       <p style="color:#666">${new Date().toLocaleString('en-GB', { timeZone: 'Asia/Jerusalem' })} Israel time</p>
       <p>The daily routine could not complete. Stage that failed: <strong>${stage}</strong></p>
       <pre style="background:#fafafa;padding:12px;border-radius:4px;font-family:monospace;font-size:11px;white-space:pre-wrap;overflow:auto">${String(error.stack || error.message || error).slice(0, 4000)}</pre>
       <p style="color:#666;margin-top:24px">No articles created today. Check the error above and rerun manually if needed.</p>
     </div>`;
-    await sendEmail({ subject: `⚠️ Foco Daily — failed at ${stage}`, html });
+    await sendEmail({ subject: `⚠️ Foco Daily - failed at ${stage}`, html });
   } catch (e) {
     console.error('Could not send failure email:', e.message);
   }
@@ -915,11 +916,11 @@ async function sendFailureEmail(stage, error) {
 
 (async () => {
   console.log('━'.repeat(60));
-  console.log(' FOCO DAILY ROUTINE — ' + new Date().toISOString());
+  console.log(' FOCO DAILY ROUTINE - ' + new Date().toISOString());
   console.log('━'.repeat(60));
 
   // PHASE 0: Refresh GSC overlay (only with --pull-gsc). Failures here are
-  // logged but don't abort the run — picker silently falls back to whatever
+  // logged but don't abort the run - picker silently falls back to whatever
   // overlay exists on disk, or pure Ubersuggest scoring if none.
   if (PULL_GSC) {
     console.log('\n[Phase 0] Refreshing GSC data + overlay...');
@@ -927,7 +928,7 @@ async function sendFailureEmail(stage, error) {
     for (const script of ['gsc-pull.js', 'gsc-analyze.js', 'gsc-refresh.js']) {
       const r = spawnSync(process.execPath, [path.join(__dirname, script)], { stdio: 'inherit' });
       if (r.status !== 0) {
-        console.warn(`  [gsc] ${script} exited ${r.status} — continuing with existing overlay if any`);
+        console.warn(`  [gsc] ${script} exited ${r.status} - continuing with existing overlay if any`);
       }
     }
   }
@@ -943,20 +944,20 @@ async function sendFailureEmail(stage, error) {
     }
   } catch (e) {
     console.error('PICK FAILED:', e.message);
-    await sendFailureEmail('Phase 1 — keyword picker', e);
+    await sendFailureEmail('Phase 1 - keyword picker', e);
     process.exit(1);
   }
 
   // Empty picks = pool exhausted, NOT an error. Send an informational email and exit clean.
   if (!picks || picks.length === 0) {
-    console.log('  [picker] No eligible candidates today — the pool is fully covered by existing posts + blocklist.');
+    console.log('  [picker] No eligible candidates today - the pool is fully covered by existing posts + blocklist.');
     const html = `<div style="font-family:-apple-system,Segoe UI,sans-serif;max-width:680px;color:#222">
-      <h2 style="color:#7C3AED">🤖 Foco Daily — nothing to publish today</h2>
+      <h2 style="color:#7C3AED">🤖 Foco Daily - nothing to publish today</h2>
       <p style="color:#666">${new Date().toLocaleString('en-GB', { timeZone: 'Asia/Jerusalem' })} Israel time</p>
       <p>The keyword pool from <code>master-plan.json</code> is fully covered by existing posts and the blocklist. The picker found 0 eligible candidates today.</p>
       <p style="color:#666;margin-top:16px"><strong>This is not a failure.</strong> It means the niche is well-covered for the current pool. To resume daily publishing, expand the pool (add new keywords to master-plan.json) or relax filters.</p>
     </div>`;
-    await sendEmail({ subject: `Foco Daily — no new candidates (pool covered)`, html });
+    await sendEmail({ subject: `Foco Daily - no new candidates (pool covered)`, html });
     process.exit(0);
   }
   console.log(`  Picked: ${picks.map(p => p.keyword).join(' | ')}`);
@@ -1034,7 +1035,7 @@ async function sendFailureEmail(stage, error) {
   const okCount = results.filter(r => r.audit && r.audit.ok).length;
   const subject = okCount === results.length
     ? `Foco Daily ✓ ${okCount}/${results.length} articles created`
-    : `⚠️ Foco Daily — ${okCount}/${results.length} articles (some failed)`;
+    : `⚠️ Foco Daily - ${okCount}/${results.length} articles (some failed)`;
   const emailRes = await sendEmail({ subject, html: buildEmailHtml({ picks, results }) });
   console.log('[9] Email: ' + (emailRes.ok ? '✓ sent' : '⚠️ ' + JSON.stringify(emailRes.body).slice(0, 200)));
 
@@ -1042,7 +1043,7 @@ async function sendFailureEmail(stage, error) {
   const createdCount = results.filter(r => r.engine && r.engine.ok && r.engine.postId).length;
   const auditOkCount = results.filter(r => r.audit && r.audit.ok).length;
   console.log('\n━'.repeat(60));
-  console.log(` DONE — ${createdCount}/${results.length} posts created (${auditOkCount} passed full audit)`);
+  console.log(` DONE - ${createdCount}/${results.length} posts created (${auditOkCount} passed full audit)`);
   console.log('━'.repeat(60));
   // Exit 0 if at least one post was successfully created. Audit warnings are not failures.
   // Exit 1 only when ALL articles failed at engine push (real automation breakage).
