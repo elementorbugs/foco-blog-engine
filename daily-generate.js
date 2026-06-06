@@ -115,6 +115,23 @@ function req(host, method, p, headers = {}, body = null) {
 }
 const wpReq = (m, p, b) => req(WP_HOST, m, p, { Authorization: 'Basic ' + AUTH }, b);
 
+// Fetch ALL posts matching a status query, paginating past WP's 100-per-page cap.
+// req() doesn't expose response headers, so we can't read X-WP-TotalPages; instead
+// we page until a page returns <100 items, or a non-array (WP returns a 400
+// rest_post_invalid_page_number body once you request past the last page).
+// Without this, the live/trash slug filters silently miss posts beyond #100 and
+// the picker can re-create duplicates. 50-page cap (=5000 posts) is a safety stop.
+async function fetchAllPosts(statusQuery) {
+  const out = [];
+  for (let page = 1; page <= 50; page++) {
+    const res = await wpReq('GET', `/wp-json/wp/v2/posts?per_page=100&page=${page}&status=${statusQuery}&context=edit&_fields=slug,title`);
+    if (!Array.isArray(res.body)) break;
+    out.push(...res.body);
+    if (res.body.length < 100) break;
+  }
+  return out;
+}
+
 // ─── PHASE 1: Pick keywords ──────────────────────────────────────────────────
 async function pickKeywords() {
   // Try repo-local first (works in GitHub Actions), fall back to parent .foco-config (local dev)
@@ -229,27 +246,24 @@ async function pickKeywords() {
   for (const run of tracker.runs.slice(-7)) for (const p of run.posts || []) recentSlugs.add(p.slug);
 
   // Fetch all trashed slugs once - we don't want to re-create things we deliberately killed
-  const trashRes = await wpReq('GET', '/wp-json/wp/v2/posts?per_page=100&status=trash&context=edit&_fields=slug,title');
+  const trashAll = await fetchAllPosts('trash');
   const trashSlugs = new Set();
   const trashPosts = [];
-  if (Array.isArray(trashRes.body)) {
-    for (const p of trashRes.body) {
-      const cleanSlug = p.slug.replace(/__trashed$/, '');
-      trashSlugs.add(cleanSlug);
-      trashPosts.push({ slug: cleanSlug, title: (p.title && (p.title.rendered || p.title.raw)) || '', status: 'trash' });
-    }
+  for (const p of trashAll) {
+    const cleanSlug = p.slug.replace(/__trashed$/, '');
+    trashSlugs.add(cleanSlug);
+    trashPosts.push({ slug: cleanSlug, title: (p.title && (p.title.rendered || p.title.raw)) || '', status: 'trash' });
   }
 
   // Fetch all live slugs (publish/future/draft) once for cannibalization check
-  const liveRes = await wpReq('GET', '/wp-json/wp/v2/posts?per_page=100&status=publish,future,draft&context=edit&_fields=slug,title');
+  const liveAll = await fetchAllPosts('publish,future,draft');
   const liveSlugs = new Set();
   const livePosts = [];
-  if (Array.isArray(liveRes.body)) {
-    for (const p of liveRes.body) {
-      liveSlugs.add(p.slug);
-      livePosts.push({ slug: p.slug, title: (p.title && (p.title.rendered || p.title.raw)) || '', status: 'live' });
-    }
+  for (const p of liveAll) {
+    liveSlugs.add(p.slug);
+    livePosts.push({ slug: p.slug, title: (p.title && (p.title.rendered || p.title.raw)) || '', status: 'live' });
   }
+  console.log(`  [wp] fetched ${liveSlugs.size} live + ${trashSlugs.size} trashed slug(s) for cannibalization filter`);
 
   // Explicit blocklist - keywords we never want to re-create
   const blockedPath = path.join(__dirname, 'keyword-research', 'blocked-keywords.json');
