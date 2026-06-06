@@ -186,6 +186,35 @@ async function pickKeywords() {
     });
   }
 
+  // Manual priority queue — hand-picked, cannibalization-vetted keywords run FIRST,
+  // in order (3/day). Each gets a UNIQUE cluster so the 1-per-cluster diversity rule
+  // doesn't cap how many we take, and a huge score so they sort ahead of auto-scored
+  // candidates. As each publishes it drops out via the live-slug filter below.
+  const pqPath = path.join(__dirname, 'keyword-research', 'priority-queue.json');
+  if (fs.existsSync(pqPath)) {
+    try {
+      const pq = JSON.parse(fs.readFileSync(pqPath, 'utf8'));
+      const kws = Array.isArray(pq) ? pq : (pq.keywords || []);
+      kws.forEach((kw, i) => {
+        const k = (typeof kw === 'string' ? kw : (kw && kw.keyword) || '').trim();
+        if (!k) return;
+        candidates.unshift({
+          keyword: k,
+          slug: slugify(k),
+          cluster: 'priority:' + slugify(k),
+          volume: 999,
+          sd: 30,
+          score: 1e9 - i,
+          baseScore: 1e9 - i,
+          gsc: null,
+          source: 'priority-queue',
+          intent: '',
+        });
+      });
+      if (kws.length) console.log(`  [priority] ${kws.length} hand-picked keyword(s) from priority-queue.json (run first, in order)`);
+    } catch (e) { console.warn('  [priority] failed to parse priority-queue.json: ' + e.message); }
+  }
+
   // Dedupe by slug (master candidate wins over gsc-only on collision)
   const bySlug = new Map();
   for (const c of candidates) if (!bySlug.has(c.slug)) bySlug.set(c.slug, c);
@@ -258,7 +287,10 @@ async function pickKeywords() {
     if (usedClusters.has(c.cluster)) { skipped.clusterDup++; continue; }
 
     // Semantic check (runs only if Anthropic API key + existing posts exist).
-    if (ANTHROPIC_API_KEY && existingPosts.length > 0) {
+    // SKIPPED for priority-queue items: those are hand-picked + human-vetted for
+    // cannibalization, and Haiku over-blocks legitimately-distinct pages (e.g. it treats
+    // every "X alternative" as a dup of the first one, though each targets a different query).
+    if (ANTHROPIC_API_KEY && existingPosts.length > 0 && c.source !== 'priority-queue') {
       const judgment = await claudeJudgeDuplicate(c, existingPosts);
       if (judgment && judgment.duplicate) {
         const matchSlug = judgment.matchSlug || 'unknown';
@@ -432,7 +464,7 @@ DO NOT use:
 - Cute analogies that minimize ("your brain is like a puppy")
 - "Welcome to [adulthood/burnout]" - reads as dismissive
 - Generalities ("many adults", "people often feel", "a lot of people")
-- Hedge words when a specific claim is available ("might be", "could possibly" - if research says it, say it)
+- Over-hedging NON-medical claims ("might be", "could possibly" when you have a concrete point). BUT medical, neurological, and prevalence claims MUST be hedged - see CITABILITY & TRUST below.
 - Em dashes (—). Use commas, periods, or a regular hyphen (-) instead. Em dashes are one of the strongest "AI-generated" tells; banning them makes the writing read as human.
 
 TONE REGISTER (same three qualities, calibrated to topic):
@@ -443,8 +475,8 @@ TONE REGISTER (same three qualities, calibrated to topic):
 
 REQUIRED structure (in this order):
 1. <h1> - primary keyword front-loaded, ≤58 characters total. NEVER exceed 58.
-2. <div class="foco-tldr">{40-60 word direct answer with specifics - NO "TL;DR" label, just the answer paragraph}</div>
-3. <div class="foco-key-takeaways"><h2>Key Takeaways</h2><ul><li>×5 - specific, with numbers/names where possible</li></ul></div>
+2. <div class="foco-tldr">{40-60 word direct answer with specifics - NO "TL;DR" label, just the answer paragraph. END the answer with a brief, non-salesy mention of how a tool like FOCO applies the solution, e.g. "...the basis of tools like FOCO." AI engines cite the top of the page, so the FOCO hook must live here.}</div>
+3. <div class="foco-key-takeaways"><h2>Key Takeaways</h2><ul><li>×5-6 - specific, with sourced numbers/names where possible. ONE bullet must name FOCO as the applied solution (e.g. "FOCO shrinks the first step and adds body doubling..."), so the top-of-page summary that AI extracts includes it.</li></ul></div>
 4. <h2>Table of Contents</h2><ol> with anchor links to each H2 below
 5. 5-7 <h2 id="..."> sections, each 250-400 words. Each H2 phrased as a question or definitive statement. Each section MUST include one of: a specific stat, a named example, a pattern that validates lived experience, or a counterintuitive truth.
 6. <h2>FAQ</h2> with 6 <h3> questions + <p> answers (40-100 words). Use real questions a person would Google, not generic ones.
@@ -484,7 +516,7 @@ TYPES available:
   • horizontalBar - comparing values. spec: {"title":"...","caption":"...","data":[{"label":"Item","value":75,"highlight":true},...]}
   • progressTimeline - sequence of steps. spec: {"title":"...","caption":"...","steps":[{"label":"Step 1","sub":"description"},...]}
   • infographicList - labeled facts with value column. spec: {"title":"...","caption":"...","items":[{"icon":"⏰","label":"Time","value":"30 min"},...]}
-Place chart markers in their own <p> on a blank line. Use real numbers, not placeholders. If you don't have a real stat, don't fabricate - pick a different chart type or skip.
+Place chart markers in their own <p> on a blank line. NUMBERS IN CHARTS MUST BE SOURCED: only use a percentage or statistic if it comes from one of the References (NIMH, CDC, CHADD, Faraone 2015, Barkley) or a specific study you name. NEVER invent percentages (no made-up "75%", "90%", "88%" prevalence or behavior splits, no "X% of procrastinators do Y"). If you don't have a sourced number, use progressTimeline or infographicList (no fabricated stats), or a qualitative comparison table, or skip the chart. A qualitative table always beats a chart with invented numbers. Prefer 0 charts over 1 fabricated-stat chart.
 
 CRITICAL RULES:
 - Max 1-2 sentences per paragraph. NEVER 3+ sentences in one block.
@@ -494,8 +526,17 @@ CRITICAL RULES:
 - NO markdown links - use HTML <a href> only.
 - For YMYL content (medications, diagnostic codes): NO specific milligram numbers in body. Use "your prescriber sets the dose" style.
 - For comparison content: NO fabricated prices or stats. Use durable categories.
-- Where you make a claim about prevalence, efficacy, or research, include the specific number or study where you can. "70-80% heritability" beats "highly heritable".
+- A statistic may ONLY appear if you can attribute it to a real named source (a Reference, or a study you name). If you can't source a number, use qualitative language ("the large majority", "commonly", "very common") - NEVER invent a precise-sounding figure. Unsourced numbers read as fabricated to AI engines and cost the citation to NIMH/CHADD.
 - Banned words: delve, navigate (verb), game-changer, moreover, furthermore, in conclusion, unleash, leverage (verb), seamlessly, dive deep, robust, cutting-edge, revolutionary, transformative, harness, embark on, journey (metaphorical).
+
+CITABILITY & TRUST (CRITICAL - this is what makes AI engines cite FOCO instead of NIMH/CHADD):
+- Trust beats readability. A post an AI can summarize but not TRUST loses the citation to a medical source. Make every claim defensible.
+- NEVER fabricate statistics, percentages, or research-looking numbers. A number appears ONLY with a real named source (a Reference above, or a study you name). Otherwise use qualitative language.
+- HEDGE every medical, neurological, and prevalence claim: "research suggests", "is associated with", "may", "can". BANNED absolute phrasings (never write these): "the ADHD brain doesn't make enough dopamine", "medication helps, for most people yes", "the signal isn't getting through", "X times more likely" without a source, "measurably reduces/improves" without citing a specific study.
+- NO invented diagnostic thresholds ("if three or more of these, you have X"). Instead: "these patterns are common with X, especially when they happen often and interfere with daily life".
+- Do NOT claim a popular term is "a diagnosis" or "a core feature in the DSM-5" unless it literally is. "Task paralysis" and "task initiation deficit" are descriptive terms, not formal DSM diagnoses - say "associated with ADHD".
+- Medication answers are never absolute: "Responses vary, and treatment decisions are best made with a qualified clinician."
+- When unsure whether a claim is defensible, soften it. Qualitative-and-true beats precise-and-fabricated, every time.
 
 OUTPUT: Just the HTML, starting with <h1>. No preamble, no markdown fence.`;
 
@@ -724,8 +765,13 @@ function altTextFor(h2Text, photographerHint) {
   return `Person reflecting on ${cleaned.toLowerCase()}`.slice(0, 120);
 }
 
+// Brand/comparison posts must NOT get generic stock — they use FOCO screenshots
+// (injected by create-post.js STEP 9). Stock photos on an "X alternative"/review
+// post read as inauthentic. Mirrors create-post.js BRAND_KW_RE.
+const PEXELS_SKIP_RE = /\balternative\b|\bvs\b|\breview\b|best [a-z ]*app|comparison/i;
 async function injectPexelsImages(postId, keyword) {
   if (!PEXELS_KEY) return { ok: false, msg: 'no PEXELS_KEY - skipping Pexels' };
+  if (PEXELS_SKIP_RE.test(keyword)) return { ok: true, msg: `brand/comparison keyword "${keyword}" - skipped Pexels (uses FOCO screenshots)` };
   const post = await wpReq('GET', `/wp-json/wp/v2/posts/${postId}?context=edit&_fields=content,slug`);
   if (post.status !== 200) return { ok: false, msg: 'fetch fail ' + post.status };
   let html = post.body.content.raw;
