@@ -378,6 +378,12 @@ async function validateInternalLinks(content) {
   return { unique: slugs.length, live, drafts, planned, dead };
 }
 
+// Competitor domains (ADHD apps + ADHD content publications competing for our traffic).
+// Outbound links to these get rel="nofollow" so we never pass equity to a competitor.
+// NOT competitors (stay dofollow as authority citations): *.gov, *.edu, nih.gov, cdc.gov,
+// chadd.org, pubmed, nature.com, russellbarkley.org, who.int, etc.
+const COMPETITOR_RE = /(?:additudemag|healthline|verywellmind|psychcentral|choosingtherapy|webmd|psychologytoday|getinflow|focusmate|flowclub|tiimoapp|goblin\.tools|sunsama|brili|llamalife|routinery|saner\.ai|usemotion|todoist|structured\.app)/i;
+
 function autoFixExternalLinks(content) {
   let fixed = 0;
   const re = /<a\s+([^>]*?)href=["'](https?:\/\/[^"']+)["']([^>]*)>/gi;
@@ -385,12 +391,16 @@ function autoFixExternalLinks(content) {
   let m;
   while ((m = re.exec(content)) !== null) {
     if (/tryfoco\.com/.test(m[2])) continue;
+    const isCompetitor = COMPETITOR_RE.test(m[2]);
     const allAttrs = (m[1] + ' ' + m[3]).toLowerCase();
     const hasTarget = /target\s*=/.test(allAttrs);
     const hasNoopener = /rel\s*=\s*["'][^"']*noopener/.test(allAttrs);
-    if (hasTarget && hasNoopener) continue;
+    const hasNofollow = /rel\s*=\s*["'][^"']*nofollow/.test(allAttrs);
+    // Already compliant? (competitors must also carry nofollow)
+    if (hasTarget && hasNoopener && (!isCompetitor || hasNofollow)) continue;
     const cleanAttrs = (m[1] + m[3]).replace(/\btarget\s*=\s*["'][^"']*["']/gi, '').replace(/\brel\s*=\s*["'][^"']*["']/gi, '').replace(/\s+/g, ' ').trim();
-    const replacement = `<a href="${m[2]}"${cleanAttrs ? ' ' + cleanAttrs : ''} target="_blank" rel="noopener">`;
+    const rel = isCompetitor ? 'nofollow noopener' : 'noopener';
+    const replacement = `<a href="${m[2]}"${cleanAttrs ? ' ' + cleanAttrs : ''} target="_blank" rel="${rel}">`;
     replacements.push({ from: m[0], to: replacement });
     fixed++;
   }
@@ -603,6 +613,29 @@ async function injectPexelsFromPlans(content, slug, plans) {
   return { content, msg: `${added} curated Pexels image(s) inserted` };
 }
 
+// FOCO app screenshots — used INSTEAD of Pexels for brand/comparison/money keywords,
+// where Pexels keyword search returns irrelevant junk (it once put Middle-Eastern
+// pastries under "What is Tiimo good at?" on /tiimo-alternative/). Real product shots = authentic.
+const BRAND_KW_RE = /\balternative\b|\bvs\b|\breview\b|best [a-z ]*app|comparison/i;
+const FOCO_SHOTS = [
+  { url: 'https://www.tryfoco.com/wp-content/uploads/2026/05/foco-app.png', alt: 'FOCO, the ADHD focus companion built around starting tasks', cap: 'FOCO, built around starting, not just scheduling', max: 560, radius: 14 },
+  { url: 'https://www.tryfoco.com/wp-content/uploads/2026/05/foco-app-screenshot-scaled.png', alt: 'FOCO app screenshot: focus mode with a built-in timer', cap: 'Inside the FOCO app: focus mode keeps you on one step', max: 300, radius: 22 },
+];
+function focoShotFig(s) {
+  return `\n\n<!-- wp:html --><figure class="foco-img" style="margin:28px auto;max-width:${s.max}px;text-align:center"><img src="${s.url}" alt="${s.alt}" loading="lazy" style="width:100%;height:auto;border-radius:${s.radius}px;display:block;border:1px solid rgba(167,139,250,0.22)"/><figcaption style="font-size:13px;color:#B8B0CC;text-align:center;margin-top:8px;font-style:italic;opacity:0.8">${s.cap}</figcaption></figure><!-- /wp:html -->\n`;
+}
+function injectFocoScreenshots(content) {
+  const h2s = [...content.matchAll(/<h2[^>]*>([^<]+)<\/h2>/g)].filter(m => !/key takeaways|table of contents/i.test(m[1]));
+  if (!h2s.length) return { content, added: 0, msg: 'no H2 anchors' };
+  let added = 0;
+  // lifestyle shot after the first content H2
+  content = content.replace(h2s[0][0], h2s[0][0] + focoShotFig(FOCO_SHOTS[0])); added++;
+  // app screenshot after the first FOCO-specific H2 (or the 2nd content H2)
+  const focoH2 = h2s.find(m => /\bfoco\b/i.test(m[1]) && m[0] !== h2s[0][0]) || h2s[1];
+  if (focoH2) { content = content.replace(focoH2[0], focoH2[0] + focoShotFig(FOCO_SHOTS[1])); added++; }
+  return { content, added, msg: `${added} FOCO app screenshot(s) inserted` };
+}
+
 async function injectPexelsImages(content, kw, slug) {
   if (!PEXELS_KEY) return { content, added: 0, msg: 'no .pexels-key' };
 
@@ -671,6 +704,19 @@ function injectSchema(content, schema, type) {
   if (!schema) return content;
   if (content.includes(`"@type":"${type}"`)) return content;
   return content + '\n\n<!-- wp:html --><script type="application/ld+json">' + JSON.stringify(schema) + '</script><!-- /wp:html -->';
+}
+
+// Map a slug to a site category ID (taxonomy: 6=Understanding ADHD, 7=Focus & Productivity,
+// 8=ADHD Planners & Printables, 9=Focus Music & Audio, 10=Focus Timers, 11=App Reviews & Comparisons).
+// Rules mirror the corrected site-wide pass — note: NO bare "motion"/"vs" (those misfired on
+// "eMOTIONal-regulation" and "adhd-vs-ocd"); "best-*-app" roundups route to App Reviews.
+function classifyCategory(slug) {
+  if (/timer/.test(slug)) return 10;
+  if (/music|lofi|lo-fi|noise|binaural|asmr|\baudio\b|\bsound/.test(slug)) return 9;
+  if (/planner|workbook|printable|checklist|template/.test(slug)) return 8;
+  if (/alternative|review|inflow|tiimo|goblin|sunsama|todoist|notion|forest|coaches|best-[a-z-]*app/.test(slug)) return 11;
+  if (/body-doubling|2-minute-rule|two-minute|task-breakdown|how-to-focus|start-method|pomodoro|\bmotivation\b|routine|hyperfocus/.test(slug)) return 7;
+  return 6; // Understanding ADHD (explainer/conceptual fallback)
 }
 
 // ─── STEP 8: COVER GENERATION (mascot left + title right) ────────────────────
@@ -854,6 +900,7 @@ async function generateCover(slug, h1, coverTitleArg) {
   if (dryRun) {
     if (pexelsPlans) log.ok(`[dry-run] would inject ${pexelsPlans.length} curated Pexels image(s)`);
     else if (skipPexels || !PEXELS_KEY) log.ok('[dry-run] would inject mascot dividers (no Pexels)');
+    else if (BRAND_KW_RE.test(keyword)) log.ok('[dry-run] would inject authentic FOCO app screenshots (brand/comparison keyword, Pexels skipped)');
     else log.ok('[dry-run] would auto-fetch Pexels then fall back to mascot dividers if needed');
   } else if (skipPexels || !PEXELS_KEY) {
     const md = injectMascotDividers(content, slug);
@@ -863,6 +910,11 @@ async function generateCover(slug, h1, coverTitleArg) {
     const px = await injectPexelsFromPlans(content, slug, pexelsPlans);
     content = px.content;
     log.ok(`Pexels (curated): ${px.msg}`);
+  } else if (BRAND_KW_RE.test(keyword)) {
+    // Brand/comparison/money keyword → use authentic FOCO screenshots, NOT Pexels (which returns junk here)
+    const fsr = injectFocoScreenshots(content);
+    if (fsr.added > 0) { content = fsr.content; log.ok(`FOCO screenshots (brand/comparison keyword, Pexels skipped): ${fsr.msg}`); }
+    else { const md = injectMascotDividers(content, slug); content = md.content; log.ok(`Brand keyword, no H2 anchors — mascot dividers: ${md.msg}`); }
   } else {
     const auto = await injectPexelsImages(content, keyword, slug);
     content = auto.content;
@@ -883,18 +935,46 @@ async function generateCover(slug, h1, coverTitleArg) {
     log.ok(`FAQPage schema: ${faqSchema.mainEntity.length} Q&A`);
   } else log.warn('No FAQ section detected — schema skipped');
 
-  // Article schema (always)
+  // Organization entity anchor (so AI engines know what FOCO *is*, not just the article)
+  const FOCO_LOGO = `https://${WP_HOST}/wp-content/uploads/2026/05/foco-logo-mark.png`;
+  const orgSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'FOCO',
+    alternateName: 'FOCO ADHD Focus Companion',
+    url: `https://${WP_HOST}`,
+    logo: FOCO_LOGO,
+    description: 'FOCO is an ADHD app built around task initiation and body doubling, helping people start tasks rather than just plan them.',
+    sameAs: ['https://www.youtube.com/@FOCO-ADHDCOMPANION'],
+  };
+  content = injectSchema(content, orgSchema, 'Organization');
+
+  // Article schema (always). author = Person (founder, lived-experience E-E-A-T — NOT medical).
+  const nowISO = new Date().toISOString();
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: wpTitle,
     keywords: keyword,
-    datePublished: new Date().toISOString(),
-    author: { '@type': 'Organization', name: 'FOCO', url: `https://${WP_HOST}` },
-    publisher: { '@type': 'Organization', name: 'FOCO', url: `https://${WP_HOST}` },
+    datePublished: nowISO,
+    dateModified: nowISO,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://${WP_HOST}/${slug}/` },
+    author: {
+      '@type': 'Person',
+      name: 'Adi Ben Elyahu',
+      description: 'Founder of FOCO. Writes about ADHD productivity from product research and lived experience.',
+      url: `https://${WP_HOST}/about/`,
+      worksFor: { '@type': 'Organization', name: 'FOCO' },
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'FOCO',
+      url: `https://${WP_HOST}`,
+      logo: { '@type': 'ImageObject', url: FOCO_LOGO, width: 128, height: 128 },
+    },
   };
   content = injectSchema(content, articleSchema, 'Article');
-  log.ok('Article schema added');
+  log.ok('Article + Organization schema added');
 
   // STEP 10.5: Strip body <h1> tags.
   // WP template (single.php / page.php) already outputs an H1 via the_title().
@@ -933,7 +1013,7 @@ async function generateCover(slug, h1, coverTitleArg) {
   }
 
   if (!dryRun) {
-    const payload = { title: wpTitle, slug, content, ...(mediaId && { featured_media: mediaId }) };
+    const payload = { title: wpTitle, slug, content, categories: [classifyCategory(slug)], ...(mediaId && { featured_media: mediaId }) };
     if (postId) {
       if (willPublish && existingStatus !== 'publish') payload.status = 'publish';
       const r = await wpReq('PUT', '/wp-json/wp/v2/posts/' + postId, payload);
