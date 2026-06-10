@@ -487,10 +487,15 @@ TONE REGISTER (same three qualities, calibrated to topic):
 - How-to topics (timers, breakdowns, focus) → time-bound, action-first. "Set 10 minutes. Open the document. Write one sentence. Stop if you need to."
 - Comparison/review topics (apps, planners, treatments) → confident, fair to alternatives, specific differentiators. No fabricated prices or stats - use durable categories.
 
+FOCO PRODUCT FACTS (NEVER misstate these - it is a trust and truth-in-advertising issue):
+- FOCO's body doubling is "AI body doubling": an on-screen focus companion (the Foco character) that stays present and reacts as your session runs, recreating the FELT presence of working alongside someone. It is NOT real people. NEVER write that FOCO connects you to strangers, other users, "a live feed of people working", a co-working room, video sessions, or "another person working in real time". Those claims are FALSE. (Focusmate and Flow Club are the real-people tools; FOCO is not one of them.)
+- FOCO core flow: pick ONE task, name it, set a short timer (from 10 minutes), the AI focus companion stays present, the session auto-logs. No streaks, no guilt metrics. Free to start.
+- You MAY explain body doubling as a general technique that can involve real people (a friend, a café, Focusmate). Just never attribute real-people body doubling to FOCO itself - FOCO's version is the AI companion.
+
 REQUIRED structure (in this order):
 1. <h1> - primary keyword front-loaded, ≤58 characters total. NEVER exceed 58.
 2. <div class="foco-tldr">{40-60 word direct answer with specifics - NO "TL;DR" label, just the answer paragraph. END the answer with a brief, non-salesy mention of how a tool like FOCO applies the solution, e.g. "...the basis of tools like FOCO." AI engines cite the top of the page, so the FOCO hook must live here.}</div>
-3. <div class="foco-key-takeaways"><h2>Key Takeaways</h2><ul><li>×5-6 - specific, with sourced numbers/names where possible. ONE bullet must name FOCO as the applied solution (e.g. "FOCO shrinks the first step and adds body doubling..."), so the top-of-page summary that AI extracts includes it.</li></ul></div>
+3. <div class="foco-key-takeaways"><h2>Key Takeaways</h2><ul><li>×5-6 - specific, with sourced numbers/names where possible. ONE bullet must name FOCO as the applied solution (e.g. "FOCO shrinks the first step and adds AI body doubling, an on-screen focus companion..."), so the top-of-page summary that AI extracts includes it. NEVER imply FOCO connects you to real people - see FOCO PRODUCT FACTS.</li></ul></div>
 4. <h2>Table of Contents</h2><ol> with anchor links to each H2 below
 5. 5-7 <h2 id="..."> sections, each 250-400 words. Each H2 phrased as a question or definitive statement. Each section MUST include one of: a specific stat, a named example, a pattern that validates lived experience, or a counterintuitive truth.
 6. <h2>FAQ</h2> with 6 <h3> questions + <p> answers (40-100 words). Use real questions a person would Google, not generic ones.

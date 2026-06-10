@@ -730,7 +730,10 @@ function deriveCoverTitle(h1) {
 
 function coverHtml(title, mascotPath) {
   const mascotUri = 'file:///' + mascotPath.replace(/\\/g, '/');
-  const titleHtml = title.split('\n').map(l => `<span>${l}</span>`).join('<br>');
+  // Normalize a literal backslash-n (e.g. from --cover-title="A\nB" on the shell,
+  // where the shell passes two chars, not a newline) into a real newline so the
+  // split below breaks the line instead of printing "\n" as text on the cover.
+  const titleHtml = title.replace(/\\n/g, '\n').split('\n').map(l => `<span>${l}</span>`).join('<br>');
   return `<!DOCTYPE html><html><head><meta charset="utf-8"><style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{width:1200px;height:630px;overflow:hidden;font-family:'Inter',-apple-system,'Segoe UI',sans-serif}
@@ -944,7 +947,7 @@ async function generateCover(slug, h1, coverTitleArg) {
     alternateName: 'FOCO ADHD Focus Companion',
     url: `https://${WP_HOST}`,
     logo: FOCO_LOGO,
-    description: 'FOCO is an ADHD app built around task initiation and body doubling, helping people start tasks rather than just plan them.',
+    description: 'FOCO is an ADHD app built around task initiation and AI body doubling (an on-screen focus companion), helping people start tasks rather than just plan them.',
     sameAs: ['https://www.youtube.com/@FOCO-ADHDCOMPANION'],
   };
   content = injectSchema(content, orgSchema, 'Organization');
