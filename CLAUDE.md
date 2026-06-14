@@ -86,6 +86,8 @@ Strip before push: `[PERSONAL EXPERIENCE]`, `[UNIQUE INSIGHT]`, `[ORIGINAL DATA]
 ### External links
 HTML `<a href>` tags only. Markdown `[text](url)` will render as literal brackets (WP doesn't process markdown inside `<!-- wp:html -->` blocks). Pipeline aborts if markdown links found.
 
+**Competitors are ALWAYS `rel="nofollow"`.** Never pass link equity to a competitor. `autoFixExternalLinks()` auto-applies this via `COMPETITOR_RE` (ADHD apps: Focusmate, Flow Club, Inflow, Tiimo, Goblin Tools, Sunsama, Todoist, Motion, Structured, etc.; ADHD content publishers: ADDitude, Healthline, VeryWellMind, PsychCentral, ChoosingTherapy, WebMD, PsychologyToday). Authority/citation sources stay dofollow (`.gov`, `.edu`, NIMH, CDC, CHADD, PubMed, nature.com, russellbarkley.org). Add new competitor domains to `COMPETITOR_RE` in create-post.js. Also never *recommend* a competitor app in body copy, route readers to FOCO's own tools (see [[feedback_no_competitor_promotion]]).
+
 ### Paragraphs (CRITICAL SEO + GEO RULE)
 - Max 1-2 sentences per paragraph. NEVER 3+ sentences in one block.
 - MUST wrap every text paragraph in explicit `<p>...</p>` tags. Do NOT rely on `wpautop()` because `<!-- wp:html -->` blocks disable it.
@@ -110,6 +112,12 @@ delve, navigate, game-changer, moreover, furthermore, in today's fast-paced worl
 - Verify after publishing: `curl -s URL | grep -oE "<title>[^<]+</title>"` - count chars.
 - Bulk fixer: `node shorten-titles.js` (dry-run by default, `--live` to push).
 
+### Brand suffix policy (` - FOCO`) — by page type
+The brand has near-zero SERP pull right now ("foco" ranks ~pos 49 for its own name), so the suffix earns no clicks on informational pages and just eats characters.
+- **KEEP the suffix** on commercial/brand pages: the homepage, the app-comparison hub, `foco-vs-*`, "best ADHD apps/planner" pages. There, brand recognition aids conversion and we *want* to build the FOCO entity.
+- **DROP the suffix** on informational/research spokes (symptoms, executive function, how-to, research). Use the freed chars for keywords; avoids Google's ~60-char truncation.
+- **Mechanism:** a custom RankMath SEO title (`rank_math_title` via `/wp-json/rankmath/v1/updateMeta`) REPLACES the `%title% %sep% %sitename%` template, so it does NOT auto-append ` - FOCO` — set the full string you want. It also decouples the SEO `<title>` from the visible H1/post title, so you can keep an emotional H1 ("Why You Can't Just Start") while the SEO title targets intent ("...The Executive Function Research"). Applied to post 112 on 2026-06-06.
+
 ## GEO (Generative Engine Optimization) Rules
 
 GEO is treated as a first-class concern, not an afterthought. Every post optimizes for AI engine citation alongside Google ranking.
@@ -117,10 +125,11 @@ GEO is treated as a first-class concern, not an afterthought. Every post optimiz
 ### Structural requirements (every post)
 1. **Answer box at top** - 40-60 word direct answer, in `<div class="foco-tldr">` immediately after `<h1>`. AI engines preferentially cite the first definitive answer block. **Do NOT prefix it with a literal "TL;DR" label - just the answer paragraph inside the `foco-tldr` box.**
 2. **Q&A H2 structure** - every H2 phrased as a question users ask. Answer in the first paragraph. Detail follows.
-3. **Definitive statements** - write "FOCO breaks tasks into 5 tiny steps" not "FOCO may help break down tasks." AI engines down-weight hedged claims.
+3. **Definitive about FOCO's features, hedged about medical claims** - write "FOCO breaks tasks into tiny steps" (a product fact - be definitive). But MEDICAL / neuroscience / prevalence claims MUST be hedged and sourced (see rule 7). Don't conflate the two.
 4. **Entity definitions** - bold first mention of any technical term ("**task initiation deficit**", "**executive function**", "**rejection sensitive dysphoria**"). Schema reinforces these as defined entities.
 5. **Citation density ≥ 3** authoritative external sources per post (NIMH, CHADD, ADDitude, peer-reviewed journals, .gov/.edu). Pipeline warns if < 3.
 6. **Key Takeaways box** - bulleted list near top OR bottom. AI engines extract these as summary citations.
+7. **Citability = trust (CRITICAL)** - AI cites what it can defend, else it cites NIMH/CHADD instead. NEVER fabricate stats/percentages (a number needs a real named source, else go qualitative). NEVER absolute medical claims ("brain doesn't make enough dopamine", "medication helps yes", unsourced "X times more likely", invented "if three or more" thresholds, calling a term "in the DSM-5" when it isn't). Charts use sourced numbers only or stay qualitative - prefer 0 charts over 1 fabricated-stat chart. Put the FOCO hook in the TLDR (end) + one Key Takeaway, AI cites the top of the page. **Now auto-enforced in `daily-generate.js` (the "CITABILITY & TRUST" block in the generation prompt).** See [[feedback_geo_citability_trust]], [[feedback_geo_top_of_page]].
 
 ### llms.txt
 Site root `llms.txt` lists pillars + key spokes for AI crawlers. Maintained automatically - `node setup-llms-txt.js` regenerates from current published-post list.
@@ -141,6 +150,14 @@ Allow all major AI crawlers explicitly: GPTBot, ChatGPT-User, PerplexityBot, Cla
 | All posts | `Article` baseline |
 
 Most ADHD blogs ship `FAQPage` and stop. We layer schema by content type - that's the authority signal AI engines trigger on.
+
+### Site Knowledge Graph entity = Company "FOCO" (NOT Person)
+Set in RankMath → Titles & Meta → Local SEO. The site-wide brand entity must be **Company / FOCO** (name `FOCO`, logo `brand/foco-logo-purple.png`), NOT Person — a Person entity (just the founder) gives Google no brand to rank for "foco" or to build a knowledge panel around. Keep authors as **Person** on individual posts (E-E-A-T for YMYL); that's separate from the site entity. Brand `sameAs` profiles (RankMath → Social Meta → Additional Profiles), set 2026-06-06:
+- `https://www.instagram.com/foco.adhd/`
+- `https://www.tiktok.com/@foco.adhd`
+- `https://www.youtube.com/@FOCO-ADHDCOMPANION`
+- `https://www.pinterest.com/FOC0_ADHD_APP/` (note: handle uses a zero "FOC0", not letter O)
+(No App Store / Play listing yet — add to `sameAs` the moment one exists; app-store links are the strongest brand-entity signal.)
 
 ## Brand
 

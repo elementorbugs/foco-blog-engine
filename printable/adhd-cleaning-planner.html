@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  @page { size: Letter; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #1a1130; }
+
+  .page {
+    width: 8.5in; height: 11in; padding: 0.55in 0.6in;
+    background: #ffffff; position: relative;
+    display: flex; flex-direction: column;
+    page-break-after: always; overflow: hidden;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  /* shared bits */
+  .eyebrow { font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #7C3AED; }
+  h2.title { font-size: 30px; font-weight: 800; letter-spacing: -0.6px; margin: 4px 0 2px; line-height: 1.08; }
+  .sub { font-size: 13px; color: #7d738f; }
+  .foot { position: absolute; left: 0.6in; right: 0.6in; bottom: 0.34in; display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: #a79fb8; border-top: 1.5px solid #ece7f6; padding-top: 8px; }
+  .foot b { color: #7C3AED; font-weight: 800; letter-spacing: 0.5px; }
+
+  .mascot { display: block; }
+
+  /* checklist */
+  .list { list-style: none; }
+  .list li { display: flex; align-items: flex-start; gap: 11px; padding: 8px 0; border-bottom: 1px dashed #e7e1f2; font-size: 14px; line-height: 1.35; }
+  .list li:last-child { border-bottom: none; }
+  .cbox { width: 18px; height: 18px; border: 2px solid #b79ee8; border-radius: 5px; flex-shrink: 0; margin-top: 1px; }
+
+  .panel { border: 1.5px solid #e3ddf0; border-radius: 14px; padding: 16px 18px; }
+  .panel h3 { font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 4px; }
+  .ge { margin-top: 10px; font-size: 12.5px; color: #5b2bbf; background: #f0e9fe; border-radius: 8px; padding: 7px 11px; font-weight: 600; }
+
+  .pill { display: inline-block; font-size: 11px; font-weight: 800; color: #fff; padding: 3px 10px; border-radius: 20px; }
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 — COVER ============ -->
+<div class="page" style="background:linear-gradient(160deg,#f7f3ff 0%,#efe7fe 55%,#e7dcff 100%);justify-content:center;align-items:center;text-align:center">
+  <div style="position:absolute;top:0.5in;left:0;right:0;text-align:center;font-size:14px;font-weight:800;letter-spacing:3px;color:#7C3AED">FOCO</div>
+  <img class="mascot" src="../../states_1024/foco_state_2_alignment.png" style="width:230px;height:auto;margin-bottom:6px;filter:drop-shadow(0 18px 34px rgba(124,58,237,0.32))" alt="">
+  <div class="eyebrow" style="font-size:13px;letter-spacing:2px">The printable</div>
+  <h1 style="font-size:52px;font-weight:800;letter-spacing:-1.5px;line-height:1.02;margin:6px 0 14px;color:#1a1130">ADHD<br>Cleaning Planner</h1>
+  <p style="font-size:17px;color:#5b2bbf;font-weight:600;max-width:5in;line-height:1.4">Clean in tiny wins, not all-day marathons. Built for brains that get overwhelmed by the whole list.</p>
+  <div style="margin-top:26px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+    <span class="pill" style="background:#7C3AED">One room at a time</span>
+    <span class="pill" style="background:#A78BFA">Timer-boxed</span>
+    <span class="pill" style="background:#FB923C">Zero shame</span>
+  </div>
+  <div style="position:absolute;bottom:0.55in;left:0;right:0;text-align:center;font-size:13px;color:#7d738f;font-weight:600">tryfoco.com</div>
+</div>
+
+<!-- ============ PAGE 2 — HOW TO USE (THE ADHD WAY) ============ -->
+<div class="page">
+  <div class="eyebrow">Read this first</div>
+  <h2 class="title">The 5 ADHD Cleaning Rules</h2>
+  <p class="sub" style="margin-bottom:18px">Most cleaning planners assume you can just start and keep going. These rules are built for a brain that can't, and that's the point.</p>
+
+  <div style="display:flex;gap:18px;align-items:flex-start">
+    <div style="flex:1">
+      <div class="panel" style="margin-bottom:12px;background:#faf7ff;border-color:#e3d8fb">
+        <h3 style="color:#7C3AED">1. One room. Close the doors.</h3>
+        <p style="font-size:13.5px;color:#3a3050;line-height:1.45">Pick a single room and ignore the rest of the house. The whole house is not the task today. This room is.</p>
+      </div>
+      <div class="panel" style="margin-bottom:12px;background:#faf7ff;border-color:#e3d8fb">
+        <h3 style="color:#7C3AED">2. Set a timer. Stop when it rings.</h3>
+        <p style="font-size:13.5px;color:#3a3050;line-height:1.45">10 or 15 minutes. Cleaning ends when the timer ends, even mid-task. This kills the "if I start I'll lose the whole day" fear.</p>
+      </div>
+      <div class="panel" style="margin-bottom:12px;background:#faf7ff;border-color:#e3d8fb">
+        <h3 style="color:#7C3AED">3. Body double, don't go solo.</h3>
+        <p style="font-size:13.5px;color:#3a3050;line-height:1.45">Starting is easier with company. Clean alongside a friend, a video, or a <strong>FOCO</strong> body-doubling session so the activation energy drops.</p>
+      </div>
+    </div>
+    <div style="flex:1">
+      <div class="panel" style="margin-bottom:12px;background:#fff5ec;border-color:#fad9be">
+        <h3 style="color:#c2660f">4. Done beats perfect.</h3>
+        <p style="font-size:13.5px;color:#3a3050;line-height:1.45">Every checklist here has a "good enough" line. Hit that and you are finished. Deep-clean energy is a bonus, never the bar.</p>
+      </div>
+      <div class="panel" style="margin-bottom:12px;background:#fff5ec;border-color:#fad9be">
+        <h3 style="color:#c2660f">5. Missed a day? Skip it.</h3>
+        <p style="font-size:13.5px;color:#3a3050;line-height:1.45">No catch-up, no doubling up, no guilt pages. You start again today. Today is the only day that matters.</p>
+      </div>
+      <div style="text-align:center;margin-top:6px">
+        <img class="mascot" src="../../states_1024/foco_state_1_presence.png" style="width:130px;height:auto;filter:drop-shadow(0 14px 26px rgba(124,58,237,0.28))" alt="">
+        <p style="font-size:12.5px;color:#7d738f;font-style:italic;margin-top:2px">Calm beats frantic. Small and steady wins.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span><b>FOCO</b> ADHD Cleaning Planner</span><span>tryfoco.com</span></div>
+</div>
+
+<!-- ============ PAGE 3 — START HERE WHEN OVERWHELMED ============ -->
+<div class="page" style="background:linear-gradient(160deg,#ffffff 0%,#fbf8ff 100%)">
+  <div class="eyebrow" style="color:#FB923C">Panic button</div>
+  <h2 class="title">Start Here When You're Overwhelmed</h2>
+  <p class="sub" style="margin-bottom:16px">When the mess is so big your brain shuts down, ignore the rest of this planner. Do only this.</p>
+
+  <div style="display:flex;gap:20px;align-items:center;margin-bottom:14px">
+    <img class="mascot" src="../../states_1024/foco_state_4_drift.png" style="width:120px;height:auto;flex-shrink:0" alt="">
+    <div class="ge" style="margin:0;font-size:14px;background:#fff1e3;color:#9a4f08">You do not have to finish. You do not have to do it well. You only have to <strong>start the timer</strong>. That is the entire win.</div>
+  </div>
+
+  <div class="panel" style="border-color:#fad9be;background:#fffaf4">
+    <h3 style="color:#c2660f;margin-bottom:10px">The 15-Minute Reset</h3>
+    <ul class="list">
+      <li><span class="cbox" style="border-color:#f0a868"></span><div><strong>Set a timer for 15 minutes.</strong> When it rings, you are allowed to stop and be done.</div></li>
+      <li><span class="cbox" style="border-color:#f0a868"></span><div><strong>Trash lap.</strong> Grab a bag, walk one loop, throw away only obvious garbage. Don't sort, just toss.</div></li>
+      <li><span class="cbox" style="border-color:#f0a868"></span><div><strong>Dish gather.</strong> Carry every cup and plate to the sink. Stacking counts. Washing is optional.</div></li>
+      <li><span class="cbox" style="border-color:#f0a868"></span><div><strong>One surface.</strong> Pick the single worst flat surface and clear just that one.</div></li>
+      <li><span class="cbox" style="border-color:#f0a868"></span><div><strong>Stop and look.</strong> Find the one spot you cleared. Say "that counts." Because it does.</div></li>
+    </ul>
+  </div>
+
+  <div style="margin-top:16px;text-align:center;font-size:14px;color:#5b2bbf;font-weight:600;background:#f0e9fe;border-radius:10px;padding:12px">
+    Still stuck before step one? That's task initiation, not laziness. A <strong>FOCO</strong> session starts the timer with you so you're not doing it alone.
+  </div>
+  <div class="foot"><span><b>FOCO</b> ADHD Cleaning Planner</span><span>tryfoco.com</span></div>
+</div>
+
+<!-- ============ PAGE 4 — DAILY 10-MINUTE RESET ============ -->
+<div class="page">
+  <div class="eyebrow">Every day, low effort</div>
+  <h2 class="title">The Daily 10-Minute Reset</h2>
+  <p class="sub" style="margin-bottom:18px">Not deep cleaning. Just enough to stop the mess from snowballing. Ten minutes, same six moves, every day you can.</p>
+
+  <div style="display:flex;gap:22px">
+    <div style="flex:1.3">
+      <ul class="list" style="font-size:15px">
+        <li><span class="cbox"></span><div><strong>Make the bed.</strong> Pull the covers up. That's it, no hospital corners.</div></li>
+        <li><span class="cbox"></span><div><strong>Clear one surface.</strong> Pick the worst counter or table and reset it.</div></li>
+        <li><span class="cbox"></span><div><strong>Dishes home.</strong> Into the dishwasher or one neat sink stack.</div></li>
+        <li><span class="cbox"></span><div><strong>Trash + cups.</strong> One lap, collect rubbish and stray mugs.</div></li>
+        <li><span class="cbox"></span><div><strong>5-thing pickup.</strong> Put exactly five out-of-place things where they live.</div></li>
+        <li><span class="cbox"></span><div><strong>Wipe the sink you used.</strong> Ten seconds. Future-you says thanks.</div></li>
+      </ul>
+    </div>
+    <div style="flex:1">
+      <div class="panel" style="background:#faf7ff;border-color:#e3d8fb;text-align:center">
+        <img class="mascot" src="../../states_1024/foco_state_3_focus.png" style="width:120px;height:auto;margin:0 auto 6px;display:block" alt="">
+        <p style="font-size:13px;color:#3a3050;line-height:1.45">Pair it with the same daily cue, coffee brewing, kettle boiling, so it rides an existing habit instead of willpower.</p>
+      </div>
+      <div class="ge" style="margin-top:14px;text-align:center">Good enough: surfaces clear and the sink isn't a science experiment.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:22px">
+    <p style="font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#a79fb8;margin-bottom:8px">This week I did the reset on</p>
+    <div style="display:flex;gap:9px">
+      <div style="flex:1;text-align:center;font-size:12px;color:#7d738f"><div style="border:1.5px solid #d6c9f5;border-radius:8px;height:34px;margin-bottom:4px"></div>Mon</div>
+      <div style="flex:1;text-align:center;font-size:12px;color:#7d738f"><div style="border:1.5px solid #d6c9f5;border-radius:8px;height:34px;margin-bottom:4px"></div>Tue</div>
+      <div style="flex:1;text-align:center;font-size:12px;color:#7d738f"><div style="border:1.5px solid #d6c9f5;border-radius:8px;height:34px;margin-bottom:4px"></div>Wed</div>
+      <div style="flex:1;text-align:center;font-size:12px;color:#7d738f"><div style="border:1.5px solid #d6c9f5;border-radius:8px;height:34px;margin-bottom:4px"></div>Thu</div>
+      <div style="flex:1;text-align:center;font-size:12px;color:#7d738f"><div style="border:1.5px solid #d6c9f5;border-radius:8px;height:34px;margin-bottom:4px"></div>Fri</div>
+      <div style="flex:1;text-align:center;font-size:12px;color:#7d738f"><div style="border:1.5px solid #d6c9f5;border-radius:8px;height:34px;margin-bottom:4px"></div>Sat</div>
+      <div style="flex:1;text-align:center;font-size:12px;color:#7d738f"><div style="border:1.5px solid #d6c9f5;border-radius:8px;height:34px;margin-bottom:4px"></div>Sun</div>
+    </div>
+    <p style="font-size:11px;color:#b3aac4;font-style:italic;margin-top:7px">Blanks are fine. There is no streak to break here.</p>
+  </div>
+  <div class="foot"><span><b>FOCO</b> ADHD Cleaning Planner</span><span>tryfoco.com</span></div>
+</div>
+
+<!-- ============ PAGE 5 — WEEKLY SCHEDULE (ONE ZONE A DAY) ============ -->
+<div class="page">
+  <div class="eyebrow">One zone a day</div>
+  <h2 class="title">The Weekly Cleaning Schedule</h2>
+  <p class="sub" style="margin-bottom:16px">The whole house in one day is the trap. Instead, one focus area per day. Miss one? It just rolls to Saturday. No spiral.</p>
+
+  <div style="display:flex;flex-direction:column;gap:9px">
+    <div style="display:flex;align-items:center;gap:14px;border:1.5px solid #e3ddf0;border-radius:12px;padding:11px 16px"><span class="pill" style="background:#FB923C;min-width:44px;text-align:center">Mon</span><strong style="font-size:15px;width:150px">Kitchen reset</strong><span style="font-size:13px;color:#7d738f">Counters, sink, stovetop, floor by the fridge.</span></div>
+    <div style="display:flex;align-items:center;gap:14px;border:1.5px solid #e3ddf0;border-radius:12px;padding:11px 16px"><span class="pill" style="background:#3b82c4;min-width:44px;text-align:center">Tue</span><strong style="font-size:15px;width:150px">Bathroom</strong><span style="font-size:13px;color:#7d738f">Sink, toilet, mirror, swap the towels.</span></div>
+    <div style="display:flex;align-items:center;gap:14px;border:1.5px solid #e3ddf0;border-radius:12px;padding:11px 16px"><span class="pill" style="background:#7C3AED;min-width:44px;text-align:center">Wed</span><strong style="font-size:15px;width:150px">Floors, one room</strong><span style="font-size:13px;color:#7d738f">Pick the room that bugs you most. Just that one.</span></div>
+    <div style="display:flex;align-items:center;gap:14px;border:1.5px solid #e3ddf0;border-radius:12px;padding:11px 16px"><span class="pill" style="background:#A78BFA;min-width:44px;text-align:center">Thu</span><strong style="font-size:15px;width:150px">Laundry</strong><span style="font-size:13px;color:#7d738f">Wash, dry, and actually put it away. That last part counts.</span></div>
+    <div style="display:flex;align-items:center;gap:14px;border:1.5px solid #e3ddf0;border-radius:12px;padding:11px 16px"><span class="pill" style="background:#7C3AED;min-width:44px;text-align:center">Fri</span><strong style="font-size:15px;width:150px">Bedroom + surfaces</strong><span style="font-size:13px;color:#7d738f">Nightstand, dresser top, the chair that grows clothes.</span></div>
+    <div style="display:flex;align-items:center;gap:14px;border:1.5px solid #efe6d8;border-radius:12px;padding:11px 16px;background:#fffaf2"><span class="pill" style="background:#c2660f;min-width:44px;text-align:center">Sat</span><strong style="font-size:15px;width:150px">Catch-up / skip day</strong><span style="font-size:13px;color:#7d738f">Do a missed day, or do nothing. Both are allowed.</span></div>
+    <div style="display:flex;align-items:center;gap:14px;border:1.5px solid #e3ddf0;border-radius:12px;padding:11px 16px;background:#faf7ff"><span class="pill" style="background:#9ca3af;min-width:44px;text-align:center">Sun</span><strong style="font-size:15px;width:150px">Rest</strong><span style="font-size:13px;color:#7d738f">10-minute reset only. Your brain needs the off-day too.</span></div>
+  </div>
+  <div class="foot"><span><b>FOCO</b> ADHD Cleaning Planner</span><span>tryfoco.com</span></div>
+</div>
+
+<!-- ============ PAGE 6 — ROOM CHECKLISTS: KITCHEN + BATHROOM ============ -->
+<div class="page">
+  <div class="eyebrow">Room by room, tiny steps</div>
+  <h2 class="title">Kitchen &amp; Bathroom</h2>
+  <p class="sub" style="margin-bottom:16px">Each step is small on purpose. Tick what you can. Hit the "good enough" line and walk away proud.</p>
+
+  <div style="display:flex;gap:20px">
+    <div style="flex:1">
+      <div style="display:flex;align-items:center;gap:9px;margin-bottom:4px"><span class="pill" style="background:#FB923C">Kitchen</span></div>
+      <ul class="list">
+        <li><span class="cbox" style="border-color:#f0a868"></span><div>Dishes into dishwasher or one sink stack</div></li>
+        <li><span class="cbox" style="border-color:#f0a868"></span><div>Clear and wipe one counter</div></li>
+        <li><span class="cbox" style="border-color:#f0a868"></span><div>Wipe the stovetop</div></li>
+        <li><span class="cbox" style="border-color:#f0a868"></span><div>Trash out, fresh bag in</div></li>
+        <li><span class="cbox" style="border-color:#f0a868"></span><div>Sweep the main walkway only</div></li>
+        <li><span class="cbox" style="border-color:#f0a868"></span><div>Wipe the sink and faucet</div></li>
+      </ul>
+      <div class="ge" style="background:#fff1e3;color:#9a4f08">Good enough: counters clear and the sink is empty.</div>
+    </div>
+    <div style="flex:1">
+      <div style="display:flex;align-items:center;gap:9px;margin-bottom:4px"><span class="pill" style="background:#3b82c4">Bathroom</span></div>
+      <ul class="list">
+        <li><span class="cbox" style="border-color:#7eb0dd"></span><div>Trash out, including old products</div></li>
+        <li><span class="cbox" style="border-color:#7eb0dd"></span><div>Wipe sink, faucet, and counter</div></li>
+        <li><span class="cbox" style="border-color:#7eb0dd"></span><div>Swish the toilet bowl, wipe the seat</div></li>
+        <li><span class="cbox" style="border-color:#7eb0dd"></span><div>Spray and wipe the mirror</div></li>
+        <li><span class="cbox" style="border-color:#7eb0dd"></span><div>Swap in fresh towels</div></li>
+        <li><span class="cbox" style="border-color:#7eb0dd"></span><div>Shake out or sweep the floor</div></li>
+      </ul>
+      <div class="ge" style="background:#eaf3fb;color:#1f5d92">Good enough: sink and toilet are done.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;display:flex;align-items:center;gap:16px;background:#faf7ff;border:1.5px solid #e3d8fb;border-radius:14px;padding:14px 18px">
+    <img class="mascot" src="../../states_1024/foco_state_3_focus.png" style="width:84px;height:auto;flex-shrink:0" alt="">
+    <p style="font-size:13.5px;color:#3a3050;line-height:1.5">Pick the room with the lowest activation cost today, not the dirtiest. Momentum is the goal. The hard room is easier once you're already moving.</p>
+  </div>
+  <div class="foot"><span><b>FOCO</b> ADHD Cleaning Planner</span><span>tryfoco.com</span></div>
+</div>
+
+<!-- ============ PAGE 7 — ROOM CHECKLISTS: BEDROOM + LIVING ============ -->
+<div class="page">
+  <div class="eyebrow">Room by room, tiny steps</div>
+  <h2 class="title">Bedroom &amp; Living Areas</h2>
+  <p class="sub" style="margin-bottom:16px">Same idea: shrink it down. The floordrobe and the cup collection are not moral failures, they're just the next two ticks.</p>
+
+  <div style="display:flex;gap:20px">
+    <div style="flex:1">
+      <div style="display:flex;align-items:center;gap:9px;margin-bottom:4px"><span class="pill" style="background:#7C3AED">Bedroom</span></div>
+      <ul class="list">
+        <li><span class="cbox"></span><div>Make the bed</div></li>
+        <li><span class="cbox"></span><div>Clothes: hamper or hang, clear the floor</div></li>
+        <li><span class="cbox"></span><div>Clear and wipe the nightstand</div></li>
+        <li><span class="cbox"></span><div>Cups, plates, and trash out</div></li>
+        <li><span class="cbox"></span><div>Wipe one surface (dresser top)</div></li>
+        <li><span class="cbox"></span><div>Quick floor pass for the visible bits</div></li>
+      </ul>
+      <div class="ge">Good enough: bed made and floor walkable.</div>
+    </div>
+    <div style="flex:1">
+      <div style="display:flex;align-items:center;gap:9px;margin-bottom:4px"><span class="pill" style="background:#0e9488">Living areas</span></div>
+      <ul class="list">
+        <li><span class="cbox" style="border-color:#5bb5ab"></span><div>Cups and plates back to the kitchen</div></li>
+        <li><span class="cbox" style="border-color:#5bb5ab"></span><div>Cushions and blankets reset</div></li>
+        <li><span class="cbox" style="border-color:#5bb5ab"></span><div>10-thing pickup (put them where they live)</div></li>
+        <li><span class="cbox" style="border-color:#5bb5ab"></span><div>Clear one surface or coffee table</div></li>
+        <li><span class="cbox" style="border-color:#5bb5ab"></span><div>Quick floor pass for visible crumbs</div></li>
+        <li><span class="cbox" style="border-color:#5bb5ab"></span><div>Tidy the cable and remote chaos</div></li>
+      </ul>
+      <div class="ge" style="background:#e4f4f1;color:#0b6e64">Good enough: surfaces clear and floor walkable.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:20px">
+    <p style="font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#a79fb8;margin-bottom:7px">Brain dump: things I noticed while cleaning (deal with later)</p>
+    <div style="border:1.5px solid #ece7f6;border-radius:10px;height:62px"></div>
+    <p style="font-size:11px;color:#b3aac4;font-style:italic;margin-top:6px">Park the "ooh I should also..." thoughts here so they don't derail the timer.</p>
+  </div>
+  <div class="foot"><span><b>FOCO</b> ADHD Cleaning Planner</span><span>tryfoco.com</span></div>
+</div>
+
+<!-- ============ PAGE 8 — MONTHLY / DEEP ROTATION ============ -->
+<div class="page">
+  <div class="eyebrow">One a week, never all at once</div>
+  <h2 class="title">The Monthly Deep-Clean Rotation</h2>
+  <p class="sub" style="margin-bottom:16px">These are the tasks that pile up into a scary mountain. So don't batch them. Pick one per week and the mountain never forms.</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:11px">
+    <div style="display:flex;align-items:center;gap:11px;border:1.5px solid #e3ddf0;border-radius:11px;padding:12px 14px"><span class="cbox"></span><span style="font-size:14px">Wipe inside the microwave + one fridge shelf</span></div>
+    <div style="display:flex;align-items:center;gap:11px;border:1.5px solid #e3ddf0;border-radius:11px;padding:12px 14px"><span class="cbox"></span><span style="font-size:14px">Change the bed sheets</span></div>
+    <div style="display:flex;align-items:center;gap:11px;border:1.5px solid #e3ddf0;border-radius:11px;padding:12px 14px"><span class="cbox"></span><span style="font-size:14px">Dust shelves, screens, and sills</span></div>
+    <div style="display:flex;align-items:center;gap:11px;border:1.5px solid #e3ddf0;border-radius:11px;padding:12px 14px"><span class="cbox"></span><span style="font-size:14px">Clean one set of windows or mirrors</span></div>
+    <div style="display:flex;align-items:center;gap:11px;border:1.5px solid #e3ddf0;border-radius:11px;padding:12px 14px"><span class="cbox"></span><span style="font-size:14px">Bathroom deep clean: tub and shower</span></div>
+    <div style="display:flex;align-items:center;gap:11px;border:1.5px solid #e3ddf0;border-radius:11px;padding:12px 14px"><span class="cbox"></span><span style="font-size:14px">Vacuum under the couch cushions</span></div>
+    <div style="display:flex;align-items:center;gap:11px;border:1.5px solid #e3ddf0;border-radius:11px;padding:12px 14px"><span class="cbox"></span><span style="font-size:14px">Wipe baseboards in one room</span></div>
+    <div style="display:flex;align-items:center;gap:11px;border:1.5px solid #e3ddf0;border-radius:11px;padding:12px 14px"><span class="cbox"></span><span style="font-size:14px">Declutter one drawer or shelf</span></div>
+    <div style="display:flex;align-items:center;gap:11px;border:1.5px solid #e3ddf0;border-radius:11px;padding:12px 14px"><span class="cbox"></span><span style="font-size:14px">Mop the kitchen + bathroom floors</span></div>
+    <div style="display:flex;align-items:center;gap:11px;border:1.5px solid #e3ddf0;border-radius:11px;padding:12px 14px"><span class="cbox"></span><span style="font-size:14px">Wash one set of towels + bath mat</span></div>
+  </div>
+
+  <div style="margin-top:18px;display:flex;align-items:center;gap:16px;background:#fff7ef;border:1.5px solid #fad9be;border-radius:14px;padding:14px 18px">
+    <img class="mascot" src="../../states_1024/foco_state_1_presence.png" style="width:78px;height:auto;flex-shrink:0" alt="">
+    <p style="font-size:13.5px;color:#3a3050;line-height:1.5">Write the date next to one when you do it. Ten tasks, one a week, means the "deep clean" is always already handled in the background.</p>
+  </div>
+  <div class="foot"><span><b>FOCO</b> ADHD Cleaning Planner</span><span>tryfoco.com</span></div>
+</div>
+
+<!-- ============ PAGE 9 — CLEAN WINS / REWARD TRACKER ============ -->
+<div class="page" style="background:linear-gradient(160deg,#ffffff 0%,#fbf8ff 100%)">
+  <div class="eyebrow" style="color:#FB923C">Dopamine, on purpose</div>
+  <h2 class="title">Clean Wins &amp; Rewards</h2>
+  <p class="sub" style="margin-bottom:16px">ADHD brains run on reward, not discipline. Log the wins and actually collect the rewards. This page matters as much as the checklists.</p>
+
+  <div style="text-align:center;margin:6px 0 14px">
+    <img class="mascot" src="../../states_1024/foco_state_5_completion.png" style="width:140px;height:auto;filter:drop-shadow(0 16px 30px rgba(251,146,60,0.3))" alt="">
+    <p style="font-size:15px;color:#c2660f;font-weight:700;margin-top:2px">Done is done. Be proud of the spot that's clean, not ashamed of the spot that isn't.</p>
+  </div>
+
+  <div style="display:flex;gap:20px">
+    <div style="flex:1">
+      <p style="font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#a79fb8;margin-bottom:9px">My wins this week</p>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:9px"><span class="cbox" style="border-color:#FB923C"></span><div style="flex:1;border-bottom:1.5px solid #e7dff0;height:22px"></div></div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:9px"><span class="cbox" style="border-color:#FB923C"></span><div style="flex:1;border-bottom:1.5px solid #e7dff0;height:22px"></div></div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:9px"><span class="cbox" style="border-color:#FB923C"></span><div style="flex:1;border-bottom:1.5px solid #e7dff0;height:22px"></div></div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:9px"><span class="cbox" style="border-color:#FB923C"></span><div style="flex:1;border-bottom:1.5px solid #e7dff0;height:22px"></div></div>
+      <p style="font-size:11px;color:#b3aac4;font-style:italic;margin-top:4px">"Cleared one counter" is a win. Write it down anyway.</p>
+    </div>
+    <div style="flex:1">
+      <p style="font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#a79fb8;margin-bottom:9px">My reward menu</p>
+      <div class="panel" style="background:#faf7ff;border-color:#e3d8fb">
+        <p style="font-size:12.5px;color:#7d738f;margin-bottom:10px">Pick one after a session. No reward is too small.</p>
+        <div style="border-bottom:1.5px solid #e7dff0;height:24px;margin-bottom:9px"></div>
+        <div style="border-bottom:1.5px solid #e7dff0;height:24px;margin-bottom:9px"></div>
+        <div style="border-bottom:1.5px solid #e7dff0;height:24px;margin-bottom:9px"></div>
+        <div style="border-bottom:1.5px solid #e7dff0;height:24px"></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:18px;text-align:center;font-size:14px;color:#5b2bbf;font-weight:600;background:#f0e9fe;border-radius:12px;padding:14px">
+    Want a body double for your next session? Start one free at <strong>tryfoco.com</strong>, the app built to help ADHD brains begin.
+  </div>
+  <div class="foot"><span><b>FOCO</b> ADHD Cleaning Planner</span><span>tryfoco.com</span></div>
+</div>
+
+</body>
+</html>

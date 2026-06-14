@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-05-27T19:48:07.894Z",
+  "generated_at": "2026-06-06T10:13:38.092Z",
   "comparison": {
     "prior": {
-      "startDate": "2026-03-30",
-      "endDate": "2026-04-26"
+      "startDate": "2026-04-09",
+      "endDate": "2026-05-06"
     },
     "recent": {
-      "startDate": "2026-04-27",
-      "endDate": "2026-05-24"
+      "startDate": "2026-05-07",
+      "endDate": "2026-06-03"
     }
   },
   "thresholds": {
@@ -15,10 +15,10 @@
     "minPriorImpr": 30
   },
   "counts": {
-    "pagesEvaluated": 11,
+    "pagesEvaluated": 0,
     "queued": 0,
     "skipped": {
-      "newPage": 11,
+      "newPage": 0,
       "lowImpr": 0,
       "healthy": 0,
       "improved": 0

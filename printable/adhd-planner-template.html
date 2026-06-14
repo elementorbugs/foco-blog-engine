@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  @page { size: Letter; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 8.5in; height: 11in; }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1a1130;
+    padding: 0.5in 0.55in;
+    background: #ffffff;
+  }
+  .sheet { width: 100%; height: 100%; display: flex; flex-direction: column; }
+
+  /* Header */
+  .head { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 3px solid #7C3AED; padding-bottom: 10px; }
+  .head h1 { font-size: 26px; font-weight: 800; letter-spacing: -0.5px; color: #1a1130; }
+  .head .sub { font-size: 11px; color: #7d738f; margin-top: 3px; }
+  .brand { text-align: right; font-size: 13px; font-weight: 800; color: #7C3AED; letter-spacing: 0.5px; }
+  .brand span { display: block; font-size: 9px; font-weight: 600; color: #7d738f; letter-spacing: 0.3px; margin-top: 2px; }
+
+  .datebar { display: flex; gap: 16px; margin: 12px 0 4px; font-size: 12px; color: #1a1130; }
+  .datebar div { flex: 1; border-bottom: 1.5px solid #d9d2e8; padding-bottom: 4px; }
+  .datebar b { color: #7C3AED; font-weight: 700; }
+
+  .grid { display: flex; gap: 16px; flex: 1; margin-top: 12px; }
+  .col { flex: 1; display: flex; flex-direction: column; gap: 14px; }
+
+  .block { border: 1.5px solid #e3ddf0; border-radius: 10px; padding: 12px 14px; }
+  .block h2 { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; color: #7C3AED; margin-bottom: 9px; }
+  .block .hint { font-size: 9.5px; color: #a79fb8; font-weight: 600; text-transform: none; letter-spacing: 0; }
+
+  /* Top 3 priorities */
+  .top3 { background: #f6f2fe; border-color: #d6c9f5; }
+  .pri { display: flex; align-items: center; gap: 10px; margin-bottom: 11px; }
+  .pri:last-child { margin-bottom: 2px; }
+  .box { width: 20px; height: 20px; border: 2px solid #7C3AED; border-radius: 5px; flex-shrink: 0; }
+  .line { flex: 1; border-bottom: 1.5px solid #c9bce6; height: 20px; }
+
+  /* Time blocks */
+  .tb { margin-bottom: 9px; }
+  .tb:last-child { margin-bottom: 0; }
+  .tb .lab { font-size: 11px; font-weight: 700; color: #1a1130; display: inline-block; padding: 2px 8px; border-radius: 5px; margin-bottom: 5px; }
+  .tb.m .lab { background: #fde9d6; color: #b5650f; }
+  .tb.a .lab { background: #e7ddfb; color: #5b2bbf; }
+  .tb.e .lab { background: #dfe9ff; color: #2b4fbf; }
+  .tb .rule { border-bottom: 1.5px solid #e3ddf0; height: 17px; }
+  .tb .rule:first-of-type { margin-top: 0; }
+
+  /* Brain dump */
+  .dump { flex: 1; }
+  .dump .area { border-bottom: 1.5px solid #ece7f6; height: 19px; }
+
+  /* Habits */
+  .habits { background: #f6f2fe; border-color: #d6c9f5; }
+  .habit-row { display: flex; align-items: center; gap: 8px; margin-bottom: 9px; }
+  .habit-row:last-child { margin-bottom: 0; }
+  .habit-row .hlab { flex: 1; border-bottom: 1.5px solid #c9bce6; font-size: 11px; color: #7d738f; padding-bottom: 3px; }
+  .checks { display: flex; gap: 5px; }
+  .check { width: 15px; height: 15px; border: 1.5px solid #a78bd6; border-radius: 4px; }
+
+  /* Footer note */
+  .foot { margin-top: 12px; text-align: center; font-size: 11px; color: #7d738f; border-top: 1.5px solid #e3ddf0; padding-top: 9px; }
+  .foot b { color: #7C3AED; }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="head">
+    <div>
+      <h1>ADHD Daily Planner</h1>
+      <div class="sub">One page. One day. Built for how the ADHD brain actually works.</div>
+    </div>
+    <div class="brand">FOCO<span>tryfoco.com</span></div>
+  </div>
+
+  <div class="datebar">
+    <div><b>Date</b> &nbsp;_______________</div>
+    <div><b>Energy today</b> &nbsp;low &nbsp;/ &nbsp;ok &nbsp;/ &nbsp;high</div>
+    <div><b>One word for today</b> &nbsp;_______________</div>
+  </div>
+
+  <div class="grid">
+    <!-- LEFT -->
+    <div class="col">
+      <div class="block top3">
+        <h2>Top 3 Today <span class="hint">must happen, nothing more</span></h2>
+        <div class="pri"><div class="box"></div><div class="line"></div></div>
+        <div class="pri"><div class="box"></div><div class="line"></div></div>
+        <div class="pri"><div class="box"></div><div class="line"></div></div>
+      </div>
+
+      <div class="block" style="flex:1;display:flex;flex-direction:column">
+        <h2>Time Blocks <span class="hint">rough containers, not exact times</span></h2>
+        <div class="tb m"><span class="lab">Morning</span><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
+        <div class="tb a"><span class="lab">Afternoon</span><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
+        <div class="tb e"><span class="lab">Evening</span><div class="rule"></div><div class="rule"></div><div class="rule"></div></div>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="col">
+      <div class="block dump" style="display:flex;flex-direction:column">
+        <h2>Brain Dump <span class="hint">anything pulling at you, get it out</span></h2>
+        <div style="flex:1;display:flex;flex-direction:column;justify-content:space-between;margin-top:4px">
+          <div class="area"></div><div class="area"></div><div class="area"></div><div class="area"></div>
+          <div class="area"></div><div class="area"></div><div class="area"></div><div class="area"></div>
+        </div>
+      </div>
+
+      <div class="block habits">
+        <h2>Today I... <span class="hint">blanks are fine, no streaks to break</span></h2>
+        <div class="habit-row"><div class="hlab"></div><div class="checks"><div class="check"></div></div></div>
+        <div class="habit-row"><div class="hlab"></div><div class="checks"><div class="check"></div></div></div>
+        <div class="habit-row"><div class="hlab"></div><div class="checks"><div class="check"></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    Missed yesterday? Just write today's date and start here. <b>Today is the only day that matters.</b>
+  </div>
+
+</div>
+</body>
+</html>

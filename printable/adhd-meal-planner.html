@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  @page { size: Letter; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #1a1130; }
+  .page { width: 8.5in; height: 11in; padding: 0.55in 0.6in; background: #ffffff; position: relative; display: flex; flex-direction: column; page-break-after: always; overflow: hidden; }
+  .page:last-child { page-break-after: auto; }
+  .eyebrow { font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #7C3AED; }
+  h2.title { font-size: 30px; font-weight: 800; letter-spacing: -0.6px; margin: 4px 0 2px; line-height: 1.08; }
+  .sub { font-size: 13px; color: #7d738f; }
+  .foot { position: absolute; left: 0.6in; right: 0.6in; bottom: 0.34in; display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: #a79fb8; border-top: 1.5px solid #ece7f6; padding-top: 8px; }
+  .foot b { color: #7C3AED; font-weight: 800; letter-spacing: 0.5px; }
+  .list { list-style: none; }
+  .list li { display: flex; align-items: flex-start; gap: 11px; padding: 8px 0; border-bottom: 1px dashed #e7e1f2; font-size: 14px; line-height: 1.35; }
+  .list li:last-child { border-bottom: none; }
+  .cbox { width: 18px; height: 18px; border: 2px solid #b79ee8; border-radius: 5px; flex-shrink: 0; margin-top: 1px; }
+  .panel { border: 1.5px solid #e3ddf0; border-radius: 14px; padding: 16px 18px; }
+  .panel h3 { font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 4px; }
+  .ge { margin-top: 10px; font-size: 12.5px; color: #5b2bbf; background: #f0e9fe; border-radius: 8px; padding: 7px 11px; font-weight: 600; }
+  .pill { display: inline-block; font-size: 11px; font-weight: 800; color: #fff; padding: 3px 10px; border-radius: 20px; }
+  .writeline { border-bottom: 1.5px solid #e3ddf0; height: 26px; }
+</style>
+</head>
+<body>
+
+<!-- ===== PAGE 1 — COVER ===== -->
+<div class="page" style="background:linear-gradient(160deg,#f7f3ff 0%,#efe7fe 55%,#e7dcff 100%);justify-content:center;align-items:center;text-align:center">
+  <div style="position:absolute;top:0.5in;left:0;right:0;text-align:center;font-size:14px;font-weight:800;letter-spacing:3px;color:#7C3AED">FOCO</div>
+  <img src="../../states_1024/foco_state_2_alignment.png" style="width:230px;height:auto;margin-bottom:6px;filter:drop-shadow(0 18px 34px rgba(124,58,237,0.32))" alt="">
+  <div class="eyebrow" style="font-size:13px;letter-spacing:2px">The printable</div>
+  <h1 style="font-size:52px;font-weight:800;letter-spacing:-1.5px;line-height:1.02;margin:6px 0 14px;color:#1a1130">ADHD<br>Meal Planner</h1>
+  <p style="font-size:17px;color:#5b2bbf;font-weight:600;max-width:5.2in;line-height:1.4">Eat well without the daily "what's for dinner" spiral. Built for brains that run out of decisions before dinnertime.</p>
+  <div style="margin-top:26px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+    <span class="pill" style="background:#7C3AED">Decision-light</span>
+    <span class="pill" style="background:#A78BFA">Safe foods welcome</span>
+    <span class="pill" style="background:#FB923C">Zero shame</span>
+  </div>
+  <div style="position:absolute;bottom:0.55in;left:0;right:0;text-align:center;font-size:13px;color:#7d738f;font-weight:600">tryfoco.com</div>
+</div>
+
+<!-- ===== PAGE 2 — 5 RULES ===== -->
+<div class="page">
+  <div class="eyebrow">Read this first</div>
+  <h2 class="title">The 5 ADHD Meal-Planning Rules</h2>
+  <p class="sub" style="margin-bottom:18px">Meal planning fails ADHD brains when it asks for fresh decisions and effort you've already spent. These rules remove both.</p>
+
+  <div style="display:flex;gap:18px;align-items:flex-start">
+    <div style="flex:1">
+      <div class="panel" style="margin-bottom:12px;background:#faf7ff;border-color:#e3d8fb">
+        <h3 style="color:#7C3AED">1. Decide once, not daily.</h3>
+        <p style="font-size:13.5px;color:#3a3050;line-height:1.45">"What should I eat?" every day is dozens of decisions you don't have to spare. Pick from a short set list instead of deciding fresh.</p>
+      </div>
+      <div class="panel" style="margin-bottom:12px;background:#faf7ff;border-color:#e3d8fb">
+        <h3 style="color:#7C3AED">2. Safe foods count.</h3>
+        <p style="font-size:13.5px;color:#3a3050;line-height:1.45">The same five meals on repeat is a working system, not a failure. Variety is optional. Eating is the goal.</p>
+      </div>
+      <div class="panel" style="margin-bottom:12px;background:#faf7ff;border-color:#e3d8fb">
+        <h3 style="color:#7C3AED">3. Good enough is the bar.</h3>
+        <p style="font-size:13.5px;color:#3a3050;line-height:1.45">Frozen, pre-cut, and convenience foods are valid. A fed body beats a perfect plan you never cook.</p>
+      </div>
+    </div>
+    <div style="flex:1">
+      <div class="panel" style="margin-bottom:12px;background:#fff5ec;border-color:#fad9be">
+        <h3 style="color:#c2660f">4. Eat on a timer.</h3>
+        <p style="font-size:13.5px;color:#3a3050;line-height:1.45">Time blindness means you forget to eat until you're running on empty. Set meal cues like alarms, not hunger.</p>
+      </div>
+      <div class="panel" style="margin-bottom:12px;background:#fff5ec;border-color:#fad9be">
+        <h3 style="color:#c2660f">5. Plan for the low days.</h3>
+        <p style="font-size:13.5px;color:#3a3050;line-height:1.45">Keep a no-cook list for the days you have nothing left. Future-you in a slump needs an option, not a guilt trip.</p>
+      </div>
+      <div style="text-align:center;margin-top:6px">
+        <img src="../../states_1024/foco_state_1_presence.png" style="width:130px;height:auto;filter:drop-shadow(0 14px 26px rgba(124,58,237,0.28))" alt="">
+        <p style="font-size:12.5px;color:#7d738f;font-style:italic;margin-top:2px">Fewer decisions. More fed days.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span><b>FOCO</b> ADHD Meal Planner</span><span>tryfoco.com</span></div>
+</div>
+
+<!-- ===== PAGE 3 — WEEKLY MEAL PLAN GRID ===== -->
+<div class="page">
+  <div class="eyebrow">Decide once, eat all week</div>
+  <h2 class="title">Weekly Meal Plan</h2>
+  <p class="sub" style="margin-bottom:14px">Fill it in once. Repeat meals freely. Tick "easy" for the low-effort ones so a tired day still has a plan.</p>
+
+  <table style="width:100%;border-collapse:collapse;font-size:12.5px">
+    <thead>
+      <tr style="background:rgba(124,58,237,0.12)">
+        <th style="text-align:left;padding:9px 8px;border:1px solid #e3ddf0;width:54px">Day</th>
+        <th style="text-align:left;padding:9px 8px;border:1px solid #e3ddf0">Breakfast</th>
+        <th style="text-align:left;padding:9px 8px;border:1px solid #e3ddf0">Lunch</th>
+        <th style="text-align:left;padding:9px 8px;border:1px solid #e3ddf0">Dinner</th>
+        <th style="text-align:left;padding:9px 8px;border:1px solid #e3ddf0;width:78px">Snack</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="padding:14px 8px;border:1px solid #e3ddf0;font-weight:700;color:#7C3AED">Mon</td><td style="border:1px solid #e3ddf0"></td><td style="border:1px solid #e3ddf0"></td><td style="border:1px solid #e3ddf0"></td><td style="border:1px solid #e3ddf0"></td></tr>
+      <tr style="background:#faf7ff"><td style="padding:14px 8px;border:1px solid #e3ddf0;font-weight:700;color:#7C3AED">Tue</td><td style="border:1px solid #e3ddf0"></td><td style="border:1px solid #e3ddf0"></td><td style="border:1px solid #e3ddf0"></td><td style="border:1px solid #e3ddf0"></td></tr>
+      <tr><td style="padding:14px 8px;border:1px solid #e3ddf0;font-weight:700;color:#7C3AED">Wed</td><td style="border:1px solid #e3ddf0"></td><td style="border:1px solid #e3ddf0"></td><td style="border:1px solid #e3ddf0"></td><td style="border:1px solid #e3ddf0"></td></tr>
+      <tr style="background:#faf7ff"><td style="padding:14px 8px;border:1px solid #e3ddf0;font-weight:700;color:#7C3AED">Thu</td><td style="border:1px solid #e3ddf0"></td><td style="border:1px solid #e3ddf0"></td><td style="border:1px solid #e3ddf0"></td><td style="border:1px solid #e3ddf0"></td></tr>
+      <tr><td style="padding:14px 8px;border:1px solid #e3ddf0;font-weight:700;color:#7C3AED">Fri</td><td style="border:1px solid #e3ddf0"></td><td style="border:1px solid #e3ddf0"></td><td style="border:1px solid #e3ddf0"></td><td style="border:1px solid #e3ddf0"></td></tr>
+      <tr style="background:#faf7ff"><td style="padding:14px 8px;border:1px solid #e3ddf0;font-weight:700;color:#7C3AED">Sat</td><td style="border:1px solid #e3ddf0"></td><td style="border:1px solid #e3ddf0"></td><td style="border:1px solid #e3ddf0"></td><td style="border:1px solid #e3ddf0"></td></tr>
+      <tr><td style="padding:14px 8px;border:1px solid #e3ddf0;font-weight:700;color:#7C3AED">Sun</td><td style="border:1px solid #e3ddf0"></td><td style="border:1px solid #e3ddf0"></td><td style="border:1px solid #e3ddf0"></td><td style="border:1px solid #e3ddf0"></td></tr>
+    </tbody>
+  </table>
+
+  <div class="ge" style="margin-top:16px">Repeating Tuesday's dinner on Thursday is not cheating. It's the whole strategy.</div>
+  <div class="foot"><span><b>FOCO</b> ADHD Meal Planner</span><span>tryfoco.com</span></div>
+</div>
+
+<!-- ===== PAGE 4 — GO-TO MEALS + NO-COOK ===== -->
+<div class="page">
+  <div class="eyebrow">Your autopilot menu</div>
+  <h2 class="title">Go-To Meals &amp; No-Cook Options</h2>
+  <p class="sub" style="margin-bottom:16px">Build your set list once. When deciding feels impossible, you pick from here instead of from the entire world of food.</p>
+
+  <div style="display:flex;gap:20px">
+    <div style="flex:1">
+      <div style="display:flex;align-items:center;gap:9px;margin-bottom:6px"><span class="pill" style="background:#7C3AED">Go-to meals</span></div>
+      <p style="font-size:12px;color:#7d738f;margin-bottom:6px">Meals you can make on autopilot. Aim for 6 to 8.</p>
+      <div class="writeline"></div><div class="writeline"></div><div class="writeline"></div>
+      <div class="writeline"></div><div class="writeline"></div><div class="writeline"></div>
+      <div class="writeline"></div><div class="writeline"></div>
+    </div>
+    <div style="flex:1">
+      <div style="display:flex;align-items:center;gap:9px;margin-bottom:6px"><span class="pill" style="background:#FB923C">No-cook / low-spoon</span></div>
+      <p style="font-size:12px;color:#7d738f;margin-bottom:6px">For days with zero energy. Examples to steal, then add your own:</p>
+      <ul class="list" style="font-size:13px">
+        <li><span class="cbox" style="border-color:#f0a868"></span><div>Yogurt + granola + fruit</div></li>
+        <li><span class="cbox" style="border-color:#f0a868"></span><div>Toast + egg or nut butter</div></li>
+        <li><span class="cbox" style="border-color:#f0a868"></span><div>Cheese + crackers + apple</div></li>
+        <li><span class="cbox" style="border-color:#f0a868"></span><div>A good frozen meal (genuinely fine)</div></li>
+        <li><span class="cbox" style="border-color:#f0a868"></span><div>Cereal counts as dinner</div></li>
+      </ul>
+      <div class="writeline" style="margin-top:4px"></div><div class="writeline"></div>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;display:flex;align-items:center;gap:16px;background:#faf7ff;border:1.5px solid #e3d8fb;border-radius:14px;padding:14px 18px">
+    <img src="../../states_1024/foco_state_3_focus.png" style="width:84px;height:auto;flex-shrink:0" alt="">
+    <p style="font-size:13.5px;color:#3a3050;line-height:1.5">Stick this list on the fridge. The point isn't to cook more, it's to never stand in the kitchen at 8pm with no idea and no energy.</p>
+  </div>
+  <div class="foot"><span><b>FOCO</b> ADHD Meal Planner</span><span>tryfoco.com</span></div>
+</div>
+
+<!-- ===== PAGE 5 — GROCERY LIST ===== -->
+<div class="page">
+  <div class="eyebrow">Shop without the wander</div>
+  <h2 class="title">Grocery List by Section</h2>
+  <p class="sub" style="margin-bottom:16px">Sorted by store area so you're not crisscrossing the aisles or re-deciding mid-shop. Write from your weekly plan.</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px 24px">
+    <div><div style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:#0e9488;margin-bottom:8px">Produce</div><div class="writeline" style="height:22px"></div><div class="writeline" style="height:22px"></div><div class="writeline" style="height:22px"></div><div class="writeline" style="height:22px"></div></div>
+    <div><div style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:#3b82c4;margin-bottom:8px">Fridge / Dairy</div><div class="writeline" style="height:22px"></div><div class="writeline" style="height:22px"></div><div class="writeline" style="height:22px"></div><div class="writeline" style="height:22px"></div></div>
+    <div><div style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:#7C3AED;margin-bottom:8px">Freezer</div><div class="writeline" style="height:22px"></div><div class="writeline" style="height:22px"></div><div class="writeline" style="height:22px"></div><div class="writeline" style="height:22px"></div></div>
+    <div><div style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:#c2660f;margin-bottom:8px">Pantry</div><div class="writeline" style="height:22px"></div><div class="writeline" style="height:22px"></div><div class="writeline" style="height:22px"></div><div class="writeline" style="height:22px"></div></div>
+    <div><div style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:#A78BFA;margin-bottom:8px">Snacks</div><div class="writeline" style="height:22px"></div><div class="writeline" style="height:22px"></div><div class="writeline" style="height:22px"></div><div class="writeline" style="height:22px"></div></div>
+    <div><div style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:#7d738f;margin-bottom:8px">Don't forget</div><div class="writeline" style="height:22px"></div><div class="writeline" style="height:22px"></div><div class="writeline" style="height:22px"></div><div class="writeline" style="height:22px"></div></div>
+  </div>
+
+  <div class="ge" style="margin-top:18px">One trip, one list, in store order. Buy doubles of your safe-food staples so you never run out mid-week.</div>
+  <div class="foot"><span><b>FOCO</b> ADHD Meal Planner</span><span>tryfoco.com</span></div>
+</div>
+
+<!-- ===== PAGE 6 — FORGOT TO EAT ===== -->
+<div class="page" style="background:linear-gradient(160deg,#ffffff 0%,#fbf8ff 100%)">
+  <div class="eyebrow" style="color:#FB923C">Running on empty</div>
+  <h2 class="title">Forgot to Eat Again?</h2>
+  <p class="sub" style="margin-bottom:16px">When you suddenly realize it's 3pm and you haven't eaten, skip the plan. Just get fuel in, fast.</p>
+
+  <div style="display:flex;gap:20px;align-items:center;margin-bottom:14px">
+    <img src="../../states_1024/foco_state_4_drift.png" style="width:120px;height:auto;flex-shrink:0" alt="">
+    <div class="ge" style="margin:0;font-size:14px;background:#fff1e3;color:#9a4f08">It doesn't need to be a real meal. It needs to be <strong>something, now</strong>. Optimize later, eat first.</div>
+  </div>
+
+  <div class="panel" style="border-color:#fad9be;background:#fffaf4">
+    <h3 style="color:#c2660f;margin-bottom:10px">Grab-and-go fuel (no cooking)</h3>
+    <ul class="list">
+      <li><span class="cbox" style="border-color:#f0a868"></span><div>A banana or apple plus a handful of nuts</div></li>
+      <li><span class="cbox" style="border-color:#f0a868"></span><div>Cheese stick, crackers, whatever's fast</div></li>
+      <li><span class="cbox" style="border-color:#f0a868"></span><div>A glass of water first, you may be thirsty, not hungry</div></li>
+      <li><span class="cbox" style="border-color:#f0a868"></span><div>A protein bar or yogurt from the safe-food stash</div></li>
+      <li><span class="cbox" style="border-color:#f0a868"></span><div>Last night's leftovers, cold is allowed</div></li>
+    </ul>
+  </div>
+
+  <div style="margin-top:16px;text-align:center;font-size:14px;color:#5b2bbf;font-weight:600;background:#f0e9fe;border-radius:12px;padding:12px">
+    Set three meal alarms today. A repeating cue beats relying on hunger signals your brain doesn't reliably send.
+  </div>
+  <div class="foot"><span><b>FOCO</b> ADHD Meal Planner</span><span>tryfoco.com</span></div>
+</div>
+
+<!-- ===== PAGE 7 — WINS + BODY DOUBLE ===== -->
+<div class="page" style="background:linear-gradient(160deg,#ffffff 0%,#fbf8ff 100%)">
+  <div class="eyebrow" style="color:#FB923C">Dopamine, on purpose</div>
+  <h2 class="title">Meal Wins &amp; Cooking Company</h2>
+  <p class="sub" style="margin-bottom:16px">Cooking is a task like any other, and task initiation is the hard part. Log the wins, and don't cook alone if starting is the wall.</p>
+
+  <div style="text-align:center;margin:6px 0 14px">
+    <img src="../../states_1024/foco_state_5_completion.png" style="width:140px;height:auto;filter:drop-shadow(0 16px 30px rgba(251,146,60,0.3))" alt="">
+    <p style="font-size:15px;color:#c2660f;font-weight:700;margin-top:2px">You fed yourself today. That is the win. Full stop.</p>
+  </div>
+
+  <div style="display:flex;gap:20px">
+    <div style="flex:1">
+      <p style="font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#a79fb8;margin-bottom:9px">This week I...</p>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:9px"><span class="cbox" style="border-color:#FB923C"></span><div style="font-size:13px;color:#3a3050">Planned meals once instead of daily</div></div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:9px"><span class="cbox" style="border-color:#FB923C"></span><div style="font-size:13px;color:#3a3050">Ate on a timer, not on empty</div></div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:9px"><span class="cbox" style="border-color:#FB923C"></span><div style="font-size:13px;color:#3a3050">Used a no-cook option without guilt</div></div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:9px"><span class="cbox" style="border-color:#FB923C"></span><div style="font-size:13px;color:#3a3050">Did one grocery trip from the list</div></div>
+    </div>
+    <div style="flex:1">
+      <div class="panel" style="background:#faf7ff;border-color:#e3d8fb">
+        <h3 style="color:#7C3AED">Cook with company</h3>
+        <p style="font-size:13px;color:#3a3050;line-height:1.5">If you keep not-starting dinner, the block is initiation, not the recipe. Start a <strong>FOCO</strong> body-doubling session and cook alongside someone, so the hard first step happens with backup.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:18px;text-align:center;font-size:14px;color:#5b2bbf;font-weight:600;background:#f0e9fe;border-radius:12px;padding:14px">
+    Start a free body-doubling session at <strong>tryfoco.com</strong>, the app built to help ADHD brains begin.
+  </div>
+  <div class="foot"><span><b>FOCO</b> ADHD Meal Planner</span><span>tryfoco.com</span></div>
+</div>
+
+</body>
+</html>
