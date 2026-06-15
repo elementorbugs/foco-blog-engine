@@ -79,6 +79,7 @@ White FOCO wordmark + mark, bottom-right, max-height 36px. Source: `brand/foco-l
 - All `<style>` blocks must be **single-line** (no newlines) - WordPress `wpautop()` injects `<br/>` into multiline styles.
 - Charts/figures wrapped in `<!-- wp:html -->...<!-- /wp:html -->` to prevent WordPress `<p>` injection.
 - Tables wrapped in `<div class="foco-table-wrap">` with `overflow-x:auto` for mobile.
+- **NO FOCO mascot images inside post bodies (HARD RULE, 2026-06-16).** The mascot (`foco_state_*.png` / `foco-mascot-divider`) is for **covers ONLY**. In-body images must be **real photos** (Pexels for informational posts) or **real product/app screenshots** (for comparison/"alternative" posts) — never the mascot. `injectMascotDividers()` in create-post.js is now a no-op that strips them, so re-running the pipeline cleans old posts.
 
 ### Editorial markers - NEVER ship to publish
 Strip before push: `[PERSONAL EXPERIENCE]`, `[UNIQUE INSIGHT]`, `[ORIGINAL DATA]`, `[IMAGE:...]`, `[CHART:...]`, `[CITATION:...]`. Pipeline aborts if any are present.

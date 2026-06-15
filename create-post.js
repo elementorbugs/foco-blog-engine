@@ -525,46 +525,14 @@ function getDividerSequence(slug) {
 }
 
 function injectMascotDividers(content, slug) {
-  const urls = loadMascotUrls();
-  if (!urls) return { content, added: 0, msg: 'mascot-urls.json missing — run setup-mascots.js' };
-
-  // Strip any existing dividers first (idempotent re-runs)
+  // RULE (2026-06-16): FOCO mascot images are for COVERS ONLY, never inside post
+  // bodies. In-body images must be real photos or real product/app screenshots.
+  // This function no longer injects mascot dividers; it only strips any that exist
+  // so re-running the pipeline cleans old posts.
   const beforeStrip = (content.match(/class="foco-mascot-divider"/g) || []).length;
   content = stripMascotDividers(content);
-
-  const sequence = getDividerSequence(slug);
-
-  // Find content H2s (skip TOC, Key Takeaways, FAQ, Bottom Line)
-  const allH2 = [...content.matchAll(/<h2[^>]*>([\s\S]*?)<\/h2>/gi)];
-  const contentH2s = allH2.filter(m => {
-    const t = m[1].replace(/<[^>]+>/g, '').trim();
-    return !/^(table of contents|key takeaways|faq|frequently asked questions|the bottom line)$/i.test(t);
-  });
-
-  // Place dividers AFTER H2 #1, #3, #5 (so they sit at the top of those sections' content)
-  const targets = [1, 3, 5];
-  let added = 0;
-
-  // Process from latest to earliest so indexes don't shift
-  for (let i = targets.length - 1; i >= 0; i--) {
-    const h2Idx = targets[i];
-    const h2Match = contentH2s[h2Idx];
-    if (!h2Match) continue;
-    const mascotName = sequence[i] || sequence[sequence.length - 1];
-    const mascotData = urls[mascotName];
-    if (!mascotData) continue;
-
-    const after = h2Match[0];
-    const idx = content.indexOf(after);
-    if (idx === -1) continue;
-
-    const figure = `\n\n<!-- wp:html --><figure class="foco-mascot-divider" style="margin:36px auto 28px;text-align:center;max-width:100%"><img src="${mascotData.url}" alt="" loading="lazy" style="width:200px;max-width:60%;height:auto;display:inline-block;filter:drop-shadow(0 20px 40px rgba(124,58,237,0.45)) drop-shadow(0 0 30px rgba(167,139,250,0.25))" aria-hidden="true"/></figure><!-- /wp:html -->\n`;
-    content = content.slice(0, idx + after.length) + figure + content.slice(idx + after.length);
-    added++;
-  }
-
-  const msg = beforeStrip > 0 ? `rebuilt: stripped ${beforeStrip}, injected ${added} mascot divider(s)` : `${added} mascot divider(s) injected`;
-  return { content, added, msg };
+  const msg = beforeStrip > 0 ? `stripped ${beforeStrip} in-body mascot(s) — mascots are cover-only` : 'no in-body mascots (cover-only rule)';
+  return { content, added: 0, msg };
 }
 
 // Curated Pexels injection — used when chart-configs.js defines pexelsPlans.
