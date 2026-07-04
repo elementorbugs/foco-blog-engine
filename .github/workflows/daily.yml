@@ -1,11 +1,13 @@
 name: Foco Daily Article Generator
 
 on:
-  schedule:
-    # 18:00 Israel time (UTC+3 during DST) = 15:00 UTC
-    # Adjust to '0 16 * * *' if Israel switches to standard time (UTC+2)
-    - cron: '0 15 * * *'
-  workflow_dispatch:  # allow manual trigger from GitHub UI
+  # ⏸️ PAUSED 2026-07-04 by request — daily auto-generation is stopped until re-enabled.
+  # To RESUME: uncomment the schedule block below and push to main.
+  # schedule:
+  #   # 18:00 Israel time (UTC+3 during DST) = 15:00 UTC
+  #   # Adjust to '0 16 * * *' if Israel switches to standard time (UTC+2)
+  #   - cron: '0 15 * * *'
+  workflow_dispatch:  # allow manual trigger from GitHub UI (auto-schedule disabled)
 
 jobs:
   generate:
