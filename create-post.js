@@ -687,6 +687,23 @@ function classifyCategory(slug) {
   return 6; // Understanding ADHD (explainer/conceptual fallback)
 }
 
+// Inject the LIGHT ARTICLES stylesheet so every post ships light on the front-end.
+// Customizer custom_css is not REST-writable and the theme is classic, so the CSS
+// rides inside post content as a marked <!-- wp:html --><style> block. Idempotent:
+// strips any existing marked block first, then re-appends from light-articles.css.
+function injectLightArticles(content) {
+  const cssPath = path.join(__dirname, 'light-articles.css');
+  if (!fs.existsSync(cssPath)) return content;
+  const css = fs.readFileSync(cssPath, 'utf8')
+    .replace(/\/\*[\s\S]*?\*\//g, '')
+    .replace(/\s*\n\s*/g, ' ')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+  const block = '<!-- wp:html --><!--foco-light-start--><style>' + css + '</style><!--foco-light-end--><!-- /wp:html -->';
+  const re = /<!-- wp:html -->\s*<!--foco-light-start-->[\s\S]*?<!--foco-light-end-->\s*<!-- \/wp:html -->/g;
+  return content.replace(re, '').trimEnd() + '\n' + block;
+}
+
 // ─── STEP 8: COVER GENERATION (mascot left + title right) ────────────────────
 function deriveCoverTitle(h1) {
   const before = (h1.split(':')[0] || h1).trim();
@@ -956,6 +973,10 @@ async function generateCover(slug, h1, coverTitleArg) {
     content = content.replace(/<h1\b[^>]*>[\s\S]*?<\/h1>\s*/gi, '');
     log.ok(`Stripped ${h1StripCount} body <h1> tag(s) — template renders the title H1`);
   }
+
+  // STEP 10.6: Ship every post with the light-articles stylesheet (born light).
+  content = injectLightArticles(content);
+  log.ok('Injected light-articles stylesheet block');
 
   // STEP 11: Push to WP (with publish-lock for posts 1-10)
   log.step('STEP 11/14: Push to WP');

@@ -1,0 +1,62 @@
+/* ============================================================
+   FOCO — LIGHT ARTICLES  (v2, 2026-07-04)
+   Dark brand chrome (nav, hero, landing pages, app) stays dark.
+   Only .blog-single (blog POST reading area) becomes light.
+
+   HOW IT IS APPLIED: injected as a protected
+   <!-- wp:html --><style>…</style> block (marked
+   <!--foco-light-start/end-->) at the end of every blog POST's
+   content, because Customizer custom_css is not REST-writable and
+   the theme is classic. Re-run scripts/inject-light.mjs (reads +
+   minifies this file) to update all posts after any edit here.
+   Verified 0 contrast issues across 10 posts + full-width desktop.
+
+   MAINTENANCE: new posts don't inherit this. Add the block to the
+   daily generator when it un-pauses. Long-term home = theme CSS.
+   ============================================================ */
+
+.single-post .foco-nav{ background:#0A0611 !important; box-shadow:0 1px 0 rgba(167,139,250,.14) !important; }
+
+/* full-bleed light: fill the width, text stays a readable measure */
+.blog-single{ background:#FAF8FD !important; max-width:100% !important; width:100% !important; }
+.blog-single .wrap{ max-width:820px !important; margin-left:auto !important; margin-right:auto !important; padding-top:10px; padding-bottom:48px; }
+
+.blog-single h1{ color:#160F22 !important; }
+.blog-single .post-meta, .blog-single .post-meta span{ color:#6E6684 !important; }
+
+.blog-single article p, .blog-single article li{ color:#26203A !important; font-size:18px; line-height:1.78; }
+.blog-single article h2, .blog-single article h3, .blog-single article h4{ color:#160F22 !important; }
+.blog-single article strong{ color:#160F22 !important; }
+.blog-single article a, .blog-single article ol a, .blog-single article ul a{ color:#5B21B6 !important; }
+
+/* TL;DR -> branded dark answer box */
+.blog-single .foco-tldr{ background:linear-gradient(135deg,#160B26,#2d1257) !important; color:#F1EDFA !important; border:0 !important; border-radius:16px !important; padding:24px 26px !important; box-shadow:0 20px 40px -22px rgba(45,18,87,.55) !important; }
+.blog-single .foco-tldr strong{ color:#fff !important; }
+.blog-single .foco-tldr a{ color:#C9B8FF !important; }
+
+/* Key Takeaways -> light lilac card */
+.blog-single .foco-key-takeaways{ background:#F1EAFC !important; border:1px solid #E7DFF7 !important; border-radius:16px !important; color:#26203A !important; }
+.blog-single .foco-key-takeaways h2{ color:#5B21B6 !important; }
+.blog-single .foco-key-takeaways li, .blog-single .foco-key-takeaways strong{ color:#26203A !important; }
+
+/* tables -> light (audit: no dark-bg cells anywhere, so forcing dark text is safe) */
+.blog-single article table, .blog-single article thead, .blog-single article .foco-table-wrap{ color:#26203A !important; }
+.blog-single article table td{ color:#26203A !important; border-color:#E7DFF7 !important; }
+.blog-single article table th{ color:#160F22 !important; border-color:#E7DFF7 !important; }
+
+/* muted components now on light: image captions, author bio box, disclaimers */
+.blog-single article .foco-img, .blog-single article .foco-img *,
+.blog-single article figcaption, .blog-single article figcaption *,
+.blog-single article .foco-disclaimer, .blog-single article .foco-disclaimer *,
+.blog-single article .saboxplugin-wrap, .blog-single article .saboxplugin-wrap *{ color:#6E6684 !important; }
+.blog-single article .foco-img a, .blog-single article .saboxplugin-authorname a, .blog-single article .saboxplugin-socials a{ color:#5B21B6 !important; }
+
+/* comparison widget cards (alternative / vs posts) */
+.blog-single article .foco-cmp-wrap, .blog-single article .foco-cmp-wrap *{ color:#26203A !important; }
+.blog-single article .foco-cmp-wrap [style*="color:#A78BFA"]{ color:#5B21B6 !important; }
+
+/* brain-dump interactive tool: keep it a dark card so its native light text stays readable */
+.blog-single article .foco-bd-dump-tool{ background:#140D22 !important; border:1px solid rgba(167,139,250,.2) !important; border-radius:16px !important; padding:18px !important; }
+.blog-single article .foco-bd-dump-tool h2, .blog-single article .foco-bd-dump-tool h3, .blog-single article .foco-bd-dump-tool h4, .blog-single article .foco-bd-dump-tool strong{ color:#F5F1FC !important; }
+.blog-single article .foco-bd-dump-tool p, .blog-single article .foco-bd-dump-tool li, .blog-single article .foco-bd-dump-tool span, .blog-single article .foco-bd-dump-tool label, .blog-single article .foco-bd-dump-tool small, .blog-single article .foco-bd-dump-tool div{ color:#C4BCD6 !important; }
+.blog-single article .foco-bd-dump-tool textarea{ color:#EDE9F5 !important; }
