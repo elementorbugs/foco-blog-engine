@@ -31,8 +31,9 @@
 
 /* TL;DR -> branded dark answer box */
 .blog-single .foco-tldr{ background:linear-gradient(135deg,#160B26,#2d1257) !important; color:#F1EDFA !important; border:0 !important; border-radius:16px !important; padding:24px 26px !important; box-shadow:0 20px 40px -22px rgba(45,18,87,.55) !important; }
-.blog-single .foco-tldr strong{ color:#fff !important; }
-.blog-single .foco-tldr a{ color:#C9B8FF !important; }
+.blog-single article .foco-tldr, .blog-single article .foco-tldr *{ color:#F1EDFA !important; }
+.blog-single article .foco-tldr strong{ color:#fff !important; }
+.blog-single article .foco-tldr a{ color:#C9B8FF !important; }
 
 /* Key Takeaways -> light lilac card */
 .blog-single .foco-key-takeaways{ background:#F1EAFC !important; border:1px solid #E7DFF7 !important; border-radius:16px !important; color:#26203A !important; }
