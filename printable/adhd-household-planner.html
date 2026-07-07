@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  @page { size: Letter; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #1a1130; }
+
+  .page {
+    width: 8.5in; height: 11in; padding: 0.55in 0.6in;
+    background: #ffffff; position: relative;
+    display: flex; flex-direction: column;
+    page-break-after: always; overflow: hidden;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  .eyebrow { font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #7C3AED; }
+  h2.title { font-size: 30px; font-weight: 800; letter-spacing: -0.6px; margin: 4px 0 2px; line-height: 1.08; }
+  .sub { font-size: 13px; color: #7d738f; }
+  .foot { position: absolute; left: 0.6in; right: 0.6in; bottom: 0.34in; display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: #a79fb8; border-top: 1.5px solid #ece7f6; padding-top: 8px; }
+  .foot b { color: #7C3AED; font-weight: 800; letter-spacing: 0.5px; }
+
+  .mascot { display: block; }
+  .list { list-style: none; }
+  .list li { display: flex; align-items: flex-start; gap: 11px; padding: 8px 0; border-bottom: 1px dashed #e7e1f2; font-size: 14px; line-height: 1.35; }
+  .list li:last-child { border-bottom: none; }
+  .cbox { width: 18px; height: 18px; border: 2px solid #b79ee8; border-radius: 5px; flex-shrink: 0; margin-top: 1px; }
+  .panel { border: 1.5px solid #e3ddf0; border-radius: 14px; padding: 16px 18px; }
+  .panel h3 { font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 4px; }
+  .ge { margin-top: 10px; font-size: 12.5px; color: #5b2bbf; background: #f0e9fe; border-radius: 8px; padding: 7px 11px; font-weight: 600; }
+  .pill { display: inline-block; font-size: 11px; font-weight: 800; color: #fff; padding: 3px 10px; border-radius: 20px; }
+  .timetag { font-size: 11px; font-weight: 800; color: #7d738f; background: #f3eefb; border-radius: 12px; padding: 2px 9px; }
+</style>
+</head>
+<body>
+
+<!-- ===== PAGE 1 - COVER ===== -->
+<div class="page" style="background:linear-gradient(160deg,#f7f3ff 0%,#efe7fe 55%,#e7dcff 100%);justify-content:center;align-items:center;text-align:center">
+  <div style="position:absolute;top:0.5in;left:0;right:0;text-align:center;font-size:14px;font-weight:800;letter-spacing:3px;color:#7C3AED">FOCO</div>
+  <img class="mascot" src="../../states_1024/foco_state_2_alignment.png" style="width:230px;height:auto;margin-bottom:6px;filter:drop-shadow(0 18px 34px rgba(124,58,237,0.32))" alt="">
+  <div class="eyebrow" style="font-size:13px;letter-spacing:2px">The printable</div>
+  <h1 style="font-size:50px;font-weight:800;letter-spacing:-1.5px;line-height:1.02;margin:6px 0 14px;color:#1a1130">ADHD<br>Household Planner</h1>
+  <p style="font-size:17px;color:#5b2bbf;font-weight:600;max-width:5.2in;line-height:1.4">Running a home with an ADHD brain. One zone at a time, no all-or-nothing, and no shame for the pile.</p>
+  <div style="margin-top:26px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+    <span class="pill" style="background:#7C3AED">One zone a day</span>
+    <span class="pill" style="background:#A78BFA">Bare-minimum mode</span>
+    <span class="pill" style="background:#FB923C">Zero shame</span>
+  </div>
+  <div style="position:absolute;bottom:0.55in;left:0;right:0;text-align:center;font-size:13px;color:#7d738f;font-weight:600">tryfoco.com</div>
+</div>
+
+<!-- ===== PAGE 2 - THE 5 ADHD HOME RULES ===== -->
+<div class="page">
+  <div class="eyebrow">Read this first</div>
+  <h2 class="title">The 5 ADHD Home Rules</h2>
+  <p class="sub" style="margin-bottom:16px">Most household planners assume you can hold the whole system in your head and keep it running. These rules are built for a brain that can't, and that is the point.</p>
+  <div style="display:flex;gap:18px;align-items:flex-start">
+    <div style="flex:1">
+      <div class="panel" style="margin-bottom:11px;background:#faf7ff;border-color:#e3d8fb">
+        <h3 style="color:#7C3AED">1. One zone a day.</h3>
+        <p style="font-size:13.5px;color:#3a3050;line-height:1.45">Not the whole house. One area, today. The rest of the home is not the task.</p>
+      </div>
+      <div class="panel" style="margin-bottom:11px;background:#faf7ff;border-color:#e3d8fb">
+        <h3 style="color:#7C3AED">2. Set a timer. Stop when it rings.</h3>
+        <p style="font-size:13.5px;color:#3a3050;line-height:1.45">10 or 15 minutes. This kills the "if I start I'll lose the whole day" fear.</p>
+      </div>
+      <div class="panel" style="margin-bottom:11px;background:#faf7ff;border-color:#e3d8fb">
+        <h3 style="color:#7C3AED">3. Get it out of your head.</h3>
+        <p style="font-size:13.5px;color:#3a3050;line-height:1.45">Your brain is for ideas, not storage. Dump the mental load on the pages built for it.</p>
+      </div>
+    </div>
+    <div style="flex:1">
+      <div class="panel" style="margin-bottom:11px;background:#fff5ec;border-color:#fad9be">
+        <h3 style="color:#c2660f">4. A bad day has a bare minimum.</h3>
+        <p style="font-size:13.5px;color:#3a3050;line-height:1.45">On a hard day, a full win is tiny, and that still counts. There's a whole card for it.</p>
+      </div>
+      <div class="panel" style="margin-bottom:11px;background:#fff5ec;border-color:#fad9be">
+        <h3 style="color:#c2660f">5. Missed it? Skip it.</h3>
+        <p style="font-size:13.5px;color:#3a3050;line-height:1.45">No catch-up, no doubling up, no guilt. You start again today. Today is the only day that matters.</p>
+      </div>
+      <div style="text-align:center;margin-top:4px">
+        <img class="mascot" src="../../states_1024/foco_state_1_presence.png" style="width:108px;height:auto;filter:drop-shadow(0 14px 26px rgba(124,58,237,0.28))" alt="">
+        <p style="font-size:12px;color:#7d738f;font-style:italic;margin-top:2px">Calm beats frantic. Small and steady wins.</p>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:14px;font-size:12.5px;color:#5b2bbf;background:#f0e9fe;border-radius:10px;padding:11px 14px;line-height:1.5">
+    <strong>Running a home is bigger than ADHD.</strong> For the full family system, bills, calendar, and sharing the load with a partner, pair this with the general household guide at <strong>remindher.app/household-planning</strong>. This planner is the part ADHD makes hardest: actually doing it.
+  </div>
+  <div class="foot"><span><b>FOCO</b> ADHD Household Planner</span><span>tryfoco.com</span></div>
+</div>
+
+<!-- ===== PAGE 3 - PANIC BUTTON ===== -->
+<div class="page" style="background:linear-gradient(160deg,#ffffff 0%,#fbf8ff 100%)">
+  <div class="eyebrow" style="color:#FB923C">Panic button</div>
+  <h2 class="title">Start Here When the House Feels Impossible</h2>
+  <p class="sub" style="margin-bottom:16px">When the whole house feels like too much and your brain shuts down, ignore the rest of this planner. Do only this.</p>
+  <div style="display:flex;gap:20px;align-items:center;margin-bottom:14px">
+    <img class="mascot" src="../../states_1024/foco_state_4_drift.png" style="width:120px;height:auto;flex-shrink:0" alt="">
+    <div class="ge" style="margin:0;font-size:14px;background:#fff1e3;color:#9a4f08">You do not have to fix the house. You do not have to do it well. You only have to <strong>start the timer</strong>. That is the entire win.</div>
+  </div>
+  <div class="panel" style="border-color:#fad9be;background:#fffaf4">
+    <h3 style="color:#c2660f;margin-bottom:10px">The 15-Minute Home Reset</h3>
+    <ul class="list">
+      <li><span class="cbox" style="border-color:#f0a868"></span><div><strong>Set a timer for 15 minutes.</strong> When it rings, you are allowed to stop and be done.</div></li>
+      <li><span class="cbox" style="border-color:#f0a868"></span><div><strong>Trash lap.</strong> One bag, one loop, obvious garbage only. Don't sort, just toss.</div></li>
+      <li><span class="cbox" style="border-color:#f0a868"></span><div><strong>Dishes to the sink.</strong> Carry every cup and plate over. Stacking counts. Washing is optional.</div></li>
+      <li><span class="cbox" style="border-color:#f0a868"></span><div><strong>One surface.</strong> Pick the single worst flat surface and clear just that one.</div></li>
+      <li><span class="cbox" style="border-color:#f0a868"></span><div><strong>One tiny admin thing.</strong> Send one text, or pay one bill. Too much today? Skip it, that's allowed.</div></li>
+    </ul>
+  </div>
+  <div style="margin-top:16px;text-align:center;font-size:14px;color:#5b2bbf;font-weight:600;background:#f0e9fe;border-radius:10px;padding:12px">
+    Still stuck before step one? That's task initiation, not laziness. A <strong>FOCO</strong> session starts the timer with you so you're not doing it alone.
+  </div>
+  <div class="foot"><span><b>FOCO</b> ADHD Household Planner</span><span>tryfoco.com</span></div>
+</div>
+
+<!-- ===== PAGE 4 - THE WEEK, ONE ZONE A DAY ===== -->
+<div class="page">
+  <div class="eyebrow">One zone a day</div>
+  <h2 class="title">Your Week, One Zone a Day</h2>
+  <p class="sub" style="margin-bottom:16px">The whole house in one day is the trap. One focus area per day instead. Miss one? It just rolls to Saturday. No spiral.</p>
+  <div style="display:flex;flex-direction:column;gap:9px">
+    <div style="display:flex;align-items:center;gap:13px;border:1.5px solid #e3ddf0;border-radius:12px;padding:11px 16px"><span class="pill" style="background:#FB923C;min-width:44px;text-align:center">Mon</span><strong style="font-size:15px;width:138px">Kitchen</strong><span style="font-size:13px;color:#7d738f;flex:1">Counters, dishes, sink, one wipe of the stovetop.</span><span class="timetag">~15 min</span><span class="cbox"></span></div>
+    <div style="display:flex;align-items:center;gap:13px;border:1.5px solid #e3ddf0;border-radius:12px;padding:11px 16px"><span class="pill" style="background:#3b82c4;min-width:44px;text-align:center">Tue</span><strong style="font-size:15px;width:138px">Bathroom</strong><span style="font-size:13px;color:#7d738f;flex:1">Sink, toilet, mirror, swap the towels.</span><span class="timetag">~15 min</span><span class="cbox"></span></div>
+    <div style="display:flex;align-items:center;gap:13px;border:1.5px solid #e3ddf0;border-radius:12px;padding:11px 16px"><span class="pill" style="background:#7C3AED;min-width:44px;text-align:center">Wed</span><strong style="font-size:15px;width:138px">Laundry</strong><span style="font-size:13px;color:#7d738f;flex:1">Wash, dry, and put ONE load away. The last part counts most.</span><span class="timetag">~15 min</span><span class="cbox"></span></div>
+    <div style="display:flex;align-items:center;gap:13px;border:1.5px solid #e3ddf0;border-radius:12px;padding:11px 16px"><span class="pill" style="background:#A78BFA;min-width:44px;text-align:center">Thu</span><strong style="font-size:15px;width:138px">Floors + surfaces</strong><span style="font-size:13px;color:#7d738f;flex:1">Pick the one room that bugs you most. Just that one.</span><span class="timetag">~15 min</span><span class="cbox"></span></div>
+    <div style="display:flex;align-items:center;gap:13px;border:1.5px solid #e3ddf0;border-radius:12px;padding:11px 16px"><span class="pill" style="background:#0e9488;min-width:44px;text-align:center">Fri</span><strong style="font-size:15px;width:138px">Life admin</strong><span style="font-size:13px;color:#7d738f;flex:1">One bill, one call, one email. The avoided stuff, time-boxed.</span><span class="timetag">~15 min</span><span class="cbox"></span></div>
+    <div style="display:flex;align-items:center;gap:13px;border:1.5px solid #efe6d8;border-radius:12px;padding:11px 16px;background:#fffaf2"><span class="pill" style="background:#c2660f;min-width:44px;text-align:center">Sat</span><strong style="font-size:15px;width:138px">Catch-up / skip</strong><span style="font-size:13px;color:#7d738f;flex:1">Do a missed day, or do nothing. Both are allowed.</span><span class="cbox"></span></div>
+    <div style="display:flex;align-items:center;gap:13px;border:1.5px solid #e3ddf0;border-radius:12px;padding:11px 16px;background:#faf7ff"><span class="pill" style="background:#9ca3af;min-width:44px;text-align:center">Sun</span><strong style="font-size:15px;width:138px">Rest</strong><span style="font-size:13px;color:#7d738f;flex:1">Bare-minimum mode only. Your brain needs the off-day too.</span><span class="cbox"></span></div>
+  </div>
+  <p style="font-size:11px;color:#b3aac4;font-style:italic;margin-top:11px">Blanks are fine. There is no streak to break here.</p>
+  <div class="foot"><span><b>FOCO</b> ADHD Household Planner</span><span>tryfoco.com</span></div>
+</div>
+
+<!-- ===== PAGE 5 - THE DOOM PILE RESET ===== -->
+<div class="page">
+  <div class="eyebrow">One pile, four buckets</div>
+  <h2 class="title">The Doom Pile Reset</h2>
+  <p class="sub" style="margin-bottom:14px">The chair, the floordrobe, the everything-table. You don't clean it, you sort it. One pile, 15 minutes, four buckets.</p>
+  <div style="display:flex;gap:18px;align-items:center;margin-bottom:14px">
+    <img class="mascot" src="../../states_1024/foco_state_3_focus.png" style="width:96px;height:auto;flex-shrink:0" alt="">
+    <div style="flex:1">
+      <p style="font-size:13px;color:#3a3050;line-height:1.45;margin-bottom:6px"><strong>The pile I'm tackling today:</strong></p>
+      <div style="border-bottom:1.5px solid #d6c9f5;height:24px"></div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+    <div class="panel" style="background:#fff7ef;border-color:#fad9be"><h3 style="color:#c2660f">&#128465; Trash</h3><p style="font-size:13px;color:#3a3050;line-height:1.45">Obvious garbage. Don't agonize over it, just bin it.</p></div>
+    <div class="panel" style="background:#eef6fb;border-color:#cfe3f1"><h3 style="color:#1f5d92">&#10145; Belongs elsewhere</h3><p style="font-size:13px;color:#3a3050;line-height:1.45">One basket. Everything from another room goes in, deal with it later.</p></div>
+    <div class="panel" style="background:#faf7ff;border-color:#e3d8fb"><h3 style="color:#7C3AED">&#10003; Belongs here</h3><p style="font-size:13px;color:#3a3050;line-height:1.45">Put it where it actually lives, right now, while it's in your hand.</p></div>
+    <div class="panel" style="background:#f4f1f9;border-color:#ddd5ec"><h3 style="color:#5b2bbf">&#9208; Decide later</h3><p style="font-size:13px;color:#3a3050;line-height:1.45">One box, lid on. Write a date to revisit so it's not forever.</p></div>
+  </div>
+  <div class="ge" style="margin-top:16px;text-align:center;font-size:13.5px">Set 15 minutes. Sort, don't clean. When it rings, whatever's left goes in the Decide-later box and you are <strong>done</strong>.</div>
+  <div style="margin-top:20px">
+    <p style="font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#a79fb8;margin-bottom:10px">Common doom piles, circle the one you're starting with</p>
+    <div style="display:flex;flex-wrap:wrap;gap:9px">
+      <span style="font-size:13px;border:1.5px solid #d6c9f5;border-radius:20px;padding:6px 14px;color:#3a3050">The chair / floordrobe</span>
+      <span style="font-size:13px;border:1.5px solid #d6c9f5;border-radius:20px;padding:6px 14px;color:#3a3050">The kitchen table</span>
+      <span style="font-size:13px;border:1.5px solid #d6c9f5;border-radius:20px;padding:6px 14px;color:#3a3050">The junk drawer</span>
+      <span style="font-size:13px;border:1.5px solid #d6c9f5;border-radius:20px;padding:6px 14px;color:#3a3050">The mail and paper spot</span>
+      <span style="font-size:13px;border:1.5px solid #d6c9f5;border-radius:20px;padding:6px 14px;color:#3a3050">The car</span>
+      <span style="font-size:13px;border:1.5px solid #d6c9f5;border-radius:20px;padding:6px 14px;color:#3a3050">The bag dump</span>
+      <span style="font-size:13px;border:1.5px solid #d6c9f5;border-radius:20px;padding:6px 14px;color:#3a3050">The "to return" pile</span>
+    </div>
+  </div>
+  <div style="margin-top:16px;display:flex;align-items:center;gap:14px;background:#fff7ef;border:1.5px solid #fad9be;border-radius:12px;padding:13px 18px">
+    <span style="font-size:26px">&#129508;</span>
+    <p style="font-size:13.5px;color:#3a3050;line-height:1.5"><strong>The "belongs elsewhere" basket is not a new pile.</strong> Empty it by <span style="display:inline-block;border-bottom:1.5px solid #e2b98a;width:120px">&nbsp;</span> so it doesn't quietly become next week's doom pile.</p>
+  </div>
+  <div class="foot"><span><b>FOCO</b> ADHD Household Planner</span><span>tryfoco.com</span></div>
+</div>
+
+<!-- ===== PAGE 6 - THE INVISIBLE LIST ===== -->
+<div class="page">
+  <div class="eyebrow">Get it out of your head</div>
+  <h2 class="title">The Invisible List</h2>
+  <p class="sub" style="margin-bottom:14px">The mental load is the stuff no one sees: the refill, the appointment, the form, the thing you keep almost forgetting. Dump it all here so your brain can stop holding it.</p>
+  <p style="font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#a79fb8;margin-bottom:4px">Brain dump, everything on your mind</p>
+  <p style="font-size:11.5px;color:#b3aac4;font-style:italic;margin-bottom:8px">Staring at the blank box? Try: refills &middot; appointments &middot; forms &middot; that one email &middot; a birthday or gift &middot; the thing you keep almost forgetting.</p>
+  <div style="border:1.5px solid #ece7f6;border-radius:12px;height:2.7in;background:repeating-linear-gradient(#ffffff,#ffffff 33px,#f3eefb 34px)"></div>
+  <div style="margin-top:18px">
+    <p style="font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#c2660f;margin-bottom:9px">Now circle the 3 that actually matter this week</p>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:9px"><span class="cbox" style="border-color:#FB923C"></span><div style="flex:1;border-bottom:1.5px solid #e7dff0;height:22px"></div></div>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:9px"><span class="cbox" style="border-color:#FB923C"></span><div style="flex:1;border-bottom:1.5px solid #e7dff0;height:22px"></div></div>
+    <div style="display:flex;align-items:center;gap:10px"><span class="cbox" style="border-color:#FB923C"></span><div style="flex:1;border-bottom:1.5px solid #e7dff0;height:22px"></div></div>
+  </div>
+  <p style="font-size:12px;color:#7d738f;font-style:italic;margin-top:12px">Your brain is for having ideas, not holding them. Written down means you're allowed to forget it.</p>
+  <div class="foot"><span><b>FOCO</b> ADHD Household Planner</span><span>tryfoco.com</span></div>
+</div>
+
+<!-- ===== PAGE 7 - LIFE ADMIN & ERRANDS ===== -->
+<div class="page">
+  <div class="eyebrow">The stuff we avoid most</div>
+  <h2 class="title">Life Admin &amp; Errands</h2>
+  <p class="sub" style="margin-bottom:16px">Admin is the hardest ADHD task: boring, low-dopamine, easy to avoid until it becomes a crisis. Shrink each one to a single next step and do it in a focus session.</p>
+  <div style="display:flex;gap:20px">
+    <div style="flex:1">
+      <div style="margin-bottom:4px"><span class="pill" style="background:#0e9488">Calls &amp; messages</span></div>
+      <p style="font-size:11px;color:#b3aac4;font-style:italic;margin-bottom:4px">e.g., dentist, doctor, that callback, the school, a reply you owe</p>
+      <ul class="list">
+        <li><span class="cbox" style="border-color:#5bb5ab"></span><div style="flex:1;border-bottom:1px dashed #e7e1f2;min-height:18px"></div></li>
+        <li><span class="cbox" style="border-color:#5bb5ab"></span><div style="flex:1;border-bottom:1px dashed #e7e1f2;min-height:18px"></div></li>
+        <li><span class="cbox" style="border-color:#5bb5ab"></span><div style="flex:1;border-bottom:1px dashed #e7e1f2;min-height:18px"></div></li>
+        <li><span class="cbox" style="border-color:#5bb5ab"></span><div style="flex:1;border-bottom:1px dashed #e7e1f2;min-height:18px"></div></li>
+      </ul>
+    </div>
+    <div style="flex:1">
+      <div style="margin-bottom:4px"><span class="pill" style="background:#7C3AED">Bills, forms &amp; errands</span></div>
+      <p style="font-size:11px;color:#b3aac4;font-style:italic;margin-bottom:4px">e.g., electric bill, a return, renew a prescription, a form, cancel a subscription</p>
+      <ul class="list">
+        <li><span class="cbox"></span><div style="flex:1;border-bottom:1px dashed #e7e1f2;min-height:18px"></div></li>
+        <li><span class="cbox"></span><div style="flex:1;border-bottom:1px dashed #e7e1f2;min-height:18px"></div></li>
+        <li><span class="cbox"></span><div style="flex:1;border-bottom:1px dashed #e7e1f2;min-height:18px"></div></li>
+        <li><span class="cbox"></span><div style="flex:1;border-bottom:1px dashed #e7e1f2;min-height:18px"></div></li>
+      </ul>
+    </div>
+  </div>
+  <div style="margin-top:8px">
+    <p style="font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#a79fb8;margin-bottom:8px">Park it (not now, but don't lose it)</p>
+    <div style="border:1.5px solid #ece7f6;border-radius:10px;height:70px"></div>
+  </div>
+  <div style="margin-top:16px;display:flex;align-items:center;gap:16px;background:#faf7ff;border:1.5px solid #e3d8fb;border-radius:14px;padding:14px 18px">
+    <img class="mascot" src="../../states_1024/foco_state_3_focus.png" style="width:78px;height:auto;flex-shrink:0" alt="">
+    <p style="font-size:13.5px;color:#3a3050;line-height:1.5">Admin is the perfect <strong>FOCO</strong> task: set 10 minutes, make the one call, stop. The dread is almost always bigger than the task.</p>
+  </div>
+  <div class="foot"><span><b>FOCO</b> ADHD Household Planner</span><span>tryfoco.com</span></div>
+</div>
+
+<!-- ===== PAGE 8 - BAD BRAIN DAY CARD ===== -->
+<div class="page">
+  <div class="eyebrow">For the hard days</div>
+  <h2 class="title">The Bad Brain Day Card</h2>
+  <p class="sub" style="margin-bottom:20px">Some days the whole system is too much, and that is allowed. On those days, this is the entire plan. Cut it out and stick it on the fridge.</p>
+  <div style="flex:1;display:flex;align-items:center;justify-content:center">
+    <div style="border:2.5px dashed #c9bce6;border-radius:18px;padding:30px 34px;width:5in;text-align:center;background:linear-gradient(160deg,#faf7ff,#f3edfe)">
+      <img class="mascot" src="../../states_1024/foco_state_1_presence.png" style="width:96px;height:auto;margin:0 auto 8px;display:block;filter:drop-shadow(0 12px 22px rgba(124,58,237,0.25))" alt="">
+      <div style="font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#FB923C">Bad brain day</div>
+      <div style="font-size:20px;font-weight:800;color:#1a1130;margin:4px 0 16px">A full win today:</div>
+      <div style="text-align:left;max-width:3.4in;margin:0 auto">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:13px"><span class="cbox" style="width:22px;height:22px;border-color:#FB923C"></span><span style="font-size:16px;color:#1a1130">One surface cleared</span></div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:13px"><span class="cbox" style="width:22px;height:22px;border-color:#FB923C"></span><span style="font-size:16px;color:#1a1130">One meal (any meal counts)</span></div>
+        <div style="display:flex;align-items:center;gap:12px"><span class="cbox" style="width:22px;height:22px;border-color:#FB923C"></span><span style="font-size:16px;color:#1a1130">Meds + a glass of water</span></div>
+      </div>
+      <div style="font-size:15px;font-weight:700;color:#5b2bbf;margin-top:18px">That's it. You ran the house today.</div>
+      <div style="font-size:11px;color:#a79fb8;margin-top:10px;font-weight:700;letter-spacing:0.5px">FOCO &middot; tryfoco.com</div>
+    </div>
+  </div>
+  <p style="text-align:center;font-size:11px;color:#b3aac4;font-style:italic">&#9986; Cut along the dashes and keep it somewhere you'll see it on the bad days.</p>
+  <div class="foot"><span><b>FOCO</b> ADHD Household Planner</span><span>tryfoco.com</span></div>
+</div>
+
+<!-- ===== PAGE 9 - WINS THIS WEEK + FOCO CTA ===== -->
+<div class="page" style="background:linear-gradient(160deg,#ffffff 0%,#fbf8ff 100%)">
+  <div class="eyebrow" style="color:#FB923C">Dopamine, on purpose</div>
+  <h2 class="title">Wins This Week</h2>
+  <p class="sub" style="margin-bottom:16px">ADHD brains run on reward, not discipline. Log the small wins and actually collect the rewards. This page matters as much as the checklists.</p>
+  <div style="text-align:center;margin:6px 0 14px">
+    <img class="mascot" src="../../states_1024/foco_state_5_completion.png" style="width:130px;height:auto;filter:drop-shadow(0 16px 30px rgba(251,146,60,0.3))" alt="">
+    <p style="font-size:15px;color:#c2660f;font-weight:700;margin-top:2px">Done is done. Proof you did more than your brain remembers.</p>
+  </div>
+  <div style="display:flex;gap:20px">
+    <div style="flex:1">
+      <p style="font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#a79fb8;margin-bottom:9px">My wins this week</p>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:9px"><span class="cbox" style="border-color:#FB923C"></span><div style="flex:1;border-bottom:1.5px solid #e7dff0;height:22px"></div></div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:9px"><span class="cbox" style="border-color:#FB923C"></span><div style="flex:1;border-bottom:1.5px solid #e7dff0;height:22px"></div></div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:9px"><span class="cbox" style="border-color:#FB923C"></span><div style="flex:1;border-bottom:1.5px solid #e7dff0;height:22px"></div></div>
+      <div style="display:flex;align-items:center;gap:10px"><span class="cbox" style="border-color:#FB923C"></span><div style="flex:1;border-bottom:1.5px solid #e7dff0;height:22px"></div></div>
+      <p style="font-size:11px;color:#b3aac4;font-style:italic;margin-top:6px">"Cleared one counter" is a win. Write it down anyway.</p>
+    </div>
+    <div style="flex:1">
+      <p style="font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#a79fb8;margin-bottom:9px">My reward menu</p>
+      <div class="panel" style="background:#faf7ff;border-color:#e3d8fb">
+        <p style="font-size:12.5px;color:#7d738f;margin-bottom:10px">Pick one after a session. No reward is too small.</p>
+        <div style="border-bottom:1.5px solid #e7dff0;height:24px;margin-bottom:9px"></div>
+        <div style="border-bottom:1.5px solid #e7dff0;height:24px;margin-bottom:9px"></div>
+        <div style="border-bottom:1.5px solid #e7dff0;height:24px"></div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:18px;text-align:center;font-size:14px;color:#5b2bbf;font-weight:600;background:#f0e9fe;border-radius:12px;padding:14px">
+    Want a body double for the next thing you're avoiding? Start a free <strong>FOCO</strong> session at <strong>tryfoco.com</strong>, the app built to help ADHD brains begin.
+  </div>
+  <div class="foot"><span><b>FOCO</b> ADHD Household Planner</span><span>tryfoco.com</span></div>
+</div>
+
+</body>
+</html>

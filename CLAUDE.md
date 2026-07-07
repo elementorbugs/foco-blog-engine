@@ -158,7 +158,9 @@ Set in RankMath → Titles & Meta → Local SEO. The site-wide brand entity must
 - `https://www.tiktok.com/@foco.adhd`
 - `https://www.youtube.com/@FOCO-ADHDCOMPANION`
 - `https://www.pinterest.com/FOC0_ADHD_APP/` (note: handle uses a zero "FOC0", not letter O)
-(No App Store / Play listing yet — add to `sameAs` the moment one exists; app-store links are the strongest brand-entity signal.)
+- `https://play.google.com/store/apps/details?id=com.adiben.foco` (Android app, LIVE 2026-07-02 — strongest brand-entity signal)
+(iOS not live yet — add its App Store link to `sameAs` the moment it ships.)
+Entity type confirmed live as **Organization** (was Person) on 2026-07-02.
 
 ## Brand
 
