@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FOCO Carousel Studio</title>
+<style>
+  :root{ --bg:#0a0611; --panel:#120b1f; --panel2:#1a1230; --p:#7C3AED; --p2:#A78BFA; --muted:#B8B0CC; --muted2:#7d738f; --stroke:rgba(167,139,250,.18); --stroke2:rgba(167,139,250,.34); }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:#EDE9F5;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+  .topbar{height:6px;background:linear-gradient(90deg,var(--p),var(--p2),var(--p));box-shadow:0 0 18px rgba(167,139,250,.6)}
+  header{padding:20px 30px;display:flex;align-items:center;gap:14px;border-bottom:1px solid var(--stroke)}
+  header .logo{font-size:24px;font-weight:900;letter-spacing:-.02em}
+  header .logo b{color:var(--p2)}
+  header .tag{font-size:13px;color:var(--muted2);font-weight:600}
+  .wrap{display:grid;grid-template-columns:460px 1fr;min-height:calc(100vh - 72px)}
+  .left{padding:24px 26px;border-right:1px solid var(--stroke);overflow-y:auto;max-height:calc(100vh - 72px)}
+  .right{padding:26px 30px;overflow-y:auto;max-height:calc(100vh - 72px)}
+  @media(max-width:920px){.wrap{grid-template-columns:1fr}.left{border-right:0;border-bottom:1px solid var(--stroke);max-height:none}.right{max-height:none}}
+  .lbl{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin:20px 0 9px}
+  .lbl:first-child{margin-top:4px}
+  .seg{display:flex;background:var(--panel);border:1px solid var(--stroke);border-radius:12px;padding:4px;gap:4px}
+  .seg button{flex:1;border:0;background:transparent;color:var(--muted);font:inherit;font-weight:600;font-size:13.5px;padding:10px 6px;border-radius:8px;cursor:pointer}
+  .seg button.on{background:var(--p);color:#fff}
+  input,textarea,select{width:100%;background:var(--panel);border:1px solid var(--stroke);border-radius:10px;color:#EDE9F5;font:inherit;font-size:14px;padding:11px 13px;outline:none}
+  input:focus,textarea:focus{border-color:var(--stroke2)}
+  textarea{resize:vertical;line-height:1.5}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{border:1px solid var(--stroke);background:var(--panel);color:var(--muted);border-radius:999px;padding:9px 16px;font-size:13px;font-weight:600;cursor:pointer}
+  .chip.on{background:rgba(124,58,237,.22);border-color:var(--p2);color:#fff}
+  .themes{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .theme{border:2px solid transparent;border-radius:14px;padding:4px;cursor:pointer;background:var(--panel)}
+  .theme.on{border-color:var(--p2)}
+  .theme .sw{height:78px;border-radius:10px;position:relative;overflow:hidden}
+  .theme .sw .a{position:absolute;bottom:8px;left:8px;width:16px;height:16px;border-radius:50%;box-shadow:0 0 10px rgba(0,0,0,.4)}
+  .theme .nm{text-align:center;font-size:12px;font-weight:700;padding:7px 0 3px;color:#EDE9F5}
+  .btn{background:var(--p);color:#fff;border:0;border-radius:11px;font:inherit;font-weight:700;font-size:15px;padding:13px 18px;cursor:pointer;box-shadow:0 8px 22px rgba(124,58,237,.4)}
+  .btn:disabled{opacity:.5;cursor:default;box-shadow:none}
+  .btn.ghost{background:var(--panel2);box-shadow:none;border:1px solid var(--stroke2)}
+  .btn.full{width:100%;margin-top:18px}
+  .hint{font-size:12px;color:var(--muted2);margin-top:7px;line-height:1.5}
+  .status{font-size:13px;margin-top:14px;min-height:18px;color:var(--p2)}
+  .status.err{color:#F87171}
+  .card{background:var(--panel);border:1px solid var(--stroke);border-radius:14px;padding:16px;margin-top:14px}
+  .card h4{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--p2);margin:0;font-weight:700}
+  .card input,.card textarea{margin-bottom:8px}
+  .chrow{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+  .regen{background:var(--panel2);border:1px solid var(--stroke2);color:var(--p2);font:inherit;font-size:11px;font-weight:700;padding:5px 11px;border-radius:8px;cursor:pointer;white-space:nowrap}
+  .regen:disabled{opacity:.5}
+  .mini{font-size:11px;color:var(--muted2);margin-bottom:4px;font-weight:600}
+  .empty{color:var(--muted2);text-align:center;padding:80px 20px;font-size:15px;line-height:1.6}
+  .filmstrip{display:flex;gap:16px;overflow-x:auto;padding-bottom:12px}
+  .filmstrip img{height:440px;width:auto;border-radius:14px;border:1px solid var(--stroke);display:block;box-shadow:0 12px 30px rgba(0,0,0,.45)}
+  .slidewrap{position:relative;flex:0 0 auto}
+  .pctrl{position:absolute;left:8px;bottom:16px;display:flex;gap:6px}
+  .pctrl button,.pctrl label{background:rgba(10,6,20,.86);border:1px solid var(--stroke2);color:#EDE9F5;border-radius:8px;padding:6px 11px;font-size:14px;cursor:pointer;line-height:1;display:inline-block}
+  .capbox{background:var(--panel);border:1px solid var(--stroke);border-radius:14px;padding:16px;margin-top:20px}
+  .capbox .cap{white-space:pre-wrap;font-size:14px;line-height:1.55}
+  .tags{margin-top:10px;color:var(--p2);font-size:13px;line-height:1.6;word-break:break-word}
+  .bar{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+  .spin{display:inline-block;width:14px;height:14px;border:2px solid var(--stroke2);border-top-color:var(--p2);border-radius:50%;animation:s .7s linear infinite;vertical-align:-2px;margin-right:8px}
+  @keyframes s{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<div class="topbar"></div>
+<header><span class="logo">FOC<b>O</b></span><span class="tag">Carousel Studio · Instagram 1080×1350</span></header>
+
+<div class="wrap">
+  <div class="left">
+    <div class="lbl">Source</div>
+    <div class="seg">
+      <button id="s-post" class="on" onclick="setSrc('post')">Blog post</button>
+      <button id="s-url" onclick="setSrc('url')">From a link</button>
+      <button id="s-topic" onclick="setSrc('topic')">Topic</button>
+    </div>
+    <div id="src-post" style="margin-top:10px"><input id="postSearch" list="postList" placeholder="Search your posts…" autocomplete="off"><datalist id="postList"></datalist></div>
+    <div id="src-url" style="display:none;margin-top:10px"><input id="url" placeholder="Paste a link (your site or any article)…"><div class="hint">The tool reads it for inspiration and rewrites it in FOCO's voice. It never copies or promotes other apps.</div></div>
+    <div id="src-topic" style="display:none;margin-top:10px"><textarea id="topic" rows="3" placeholder="e.g. why ADHD makes starting tasks so hard"></textarea></div>
+
+    <div class="lbl">Tone / category</div>
+    <div class="chips" id="tones"></div>
+
+    <div class="lbl">Color template</div>
+    <div class="themes" id="themes"></div>
+
+    <div class="lbl">Slide layout (applies to the whole carousel)</div>
+    <div class="chips" id="layouts"></div>
+    <div id="uploadWrap" style="display:none;margin-top:12px">
+      <input id="photoQuery" placeholder="Photo search (optional), e.g. tired woman laptop" style="margin-bottom:10px">
+      <label class="btn ghost" style="display:block;text-align:center;cursor:pointer">⬆ Set main image (used on all slides)<input type="file" accept="image/*" style="display:none" onchange="onMain(event)"></label>
+      <div id="mainThumb" style="margin-top:10px"></div>
+      <div class="hint">Optional. A main image becomes the background on every slide. You can still change individual slides with 🖼 / ⬆ in the preview.</div>
+    </div>
+
+    <div class="lbl">Value slides</div>
+    <input id="count" type="number" min="3" max="8" value="5">
+    <div class="hint">Total = hook + these + a FOCO CTA slide.</div>
+
+    <button id="gen" class="btn full" onclick="generate()">✨ Generate copy</button>
+    <button class="btn ghost" style="width:100%;margin-top:8px" onclick="clearAll()">↺ Start over</button>
+    <div id="status" class="status"></div>
+    <div id="fields"></div>
+  </div>
+
+  <div class="right">
+    <div id="preview"><div class="empty">Pick a source, a tone, and a color template.<br>Generate → tweak → <b>Render</b>. Your carousel appears here, ready to post.</div></div>
+  </div>
+</div>
+
+<script>
+var src='post', tone='emotional', theme='midnight', layout='number', uploads=[], slidePhotos=[], slideQueries=[], mainImage='', photoPage=1, current=null, lastRender=null;
+function $(id){return document.getElementById(id)}
+function setSrc(s){src=s;['post','url','topic'].forEach(function(x){$('s-'+x).classList.toggle('on',x===s);$('src-'+x).style.display=x===s?'':'none';});saveState();}
+function status(m,err){var s=$('status');s.className='status'+(err?' err':'');s.innerHTML=m;}
+// ---- autosave so a refresh never loses your work ----
+var loading=false;
+function saveState(){if(loading)return;try{var st={tone:tone,theme:theme,layout:layout,src:src,count:$('count').value,postSearch:$('postSearch').value,url:$('url').value,topic:$('topic').value,lastRender:lastRender};if($('fields').getElementsByClassName('card').length)st.carousel=collect();localStorage.setItem('foco-carousel',JSON.stringify(st));}catch(e){}
+  try{localStorage.setItem('foco-carousel-photos',JSON.stringify({slidePhotos:slidePhotos,mainImage:mainImage}));}catch(e){}}
+function loadState(){var raw;try{raw=localStorage.getItem('foco-carousel')}catch(e){return}if(!raw)return;var st;try{st=JSON.parse(raw)}catch(e){return}loading=true;
+  if(st.tone){tone=st.tone;[].forEach.call($('tones').children,function(c){c.classList.toggle('on',c.getAttribute('data-t')===tone)});}
+  if(st.theme){theme=st.theme;[].forEach.call($('themes').children,function(c){c.classList.toggle('on',c.getAttribute('data-k')===theme)});}
+  if(st.layout){layout=st.layout;[].forEach.call($('layouts').children,function(c){c.classList.toggle('on',c.getAttribute('data-l')===layout)});$('uploadWrap').style.display=layout==='photo'?'':'none';}
+  if(st.src)setSrc(st.src);
+  if(st.count)$('count').value=st.count; if(st.postSearch)$('postSearch').value=st.postSearch; if(st.url)$('url').value=st.url; if(st.topic)$('topic').value=st.topic;
+  try{var ph=localStorage.getItem('foco-carousel-photos');if(ph){var po=JSON.parse(ph)||{};slidePhotos=po.slidePhotos||[];mainImage=po.mainImage||'';renderMainThumb();}}catch(e){}
+  if(st.carousel){current=st.carousel;slideQueries=(st.carousel.slides||[]).map(function(s){return s.photoQuery||''});renderFields(st.carousel);}
+  if(st.lastRender&&st.lastRender.files){lastRender=st.lastRender;showPreview(st.lastRender.files,{caption:st.lastRender.caption,hashtags:st.lastRender.hashtags},st.lastRender.zip);status('Restored your carousel + slides.');}
+  else if(st.carousel){status('Restored your last carousel. Click Render to see slides.');}
+  loading=false;
+}
+function clearAll(){if(!confirm('Clear the current carousel and start over?'))return;try{localStorage.removeItem('foco-carousel');localStorage.removeItem('foco-carousel-photos')}catch(e){}location.reload();}
+
+// tones
+var TONES=[['emotional','💜 Emotional'],['informational','📘 Informational'],['motivational','🔥 Motivational'],['story','📖 Story'],['mythbust','⚡ Myth-bust']];
+(function(){var h='';TONES.forEach(function(t){h+='<div class="chip'+(t[0]===tone?' on':'')+'" data-t="'+t[0]+'" onclick="pickTone(this)">'+t[1]+'</div>';});$('tones').innerHTML=h;})();
+function pickTone(el){tone=el.getAttribute('data-t');[].forEach.call($('tones').children,function(c){c.classList.toggle('on',c===el);});saveState();}
+
+// layout templates
+var LAYOUTS=[['number','1  Number'],['watermark','0  Big number'],['kicker','—  Kicker line'],['card','▢  Card'],['photo','▦  Photo']];
+(function(){var h='';LAYOUTS.forEach(function(l){h+='<div class="chip'+(l[0]===layout?' on':'')+'" data-l="'+l[0]+'" onclick="pickLayout(this)">'+l[1]+'</div>';});$('layouts').innerHTML=h;})();
+function pickLayout(el){layout=el.getAttribute('data-l');[].forEach.call($('layouts').children,function(c){c.classList.toggle('on',c===el);});$('uploadWrap').style.display=layout==='photo'?'':'none';saveState();}
+function onMain(e){var f=e.target.files[0];if(!f)return;var r=new FileReader();r.onload=function(){mainImage=r.result;renderMainThumb();saveState();if($('preview').getElementsByClassName('filmstrip').length)render();};r.readAsDataURL(f);e.target.value='';}
+function renderMainThumb(){var el=$('mainThumb');if(!el)return;el.innerHTML=mainImage?'<div style="position:relative;display:inline-block"><img src="'+mainImage+'" style="width:70px;height:88px;object-fit:cover;border-radius:8px;border:1px solid var(--stroke)"><span onclick="clearMain()" style="position:absolute;top:-7px;right:-7px;background:#F87171;color:#fff;border-radius:50%;width:20px;height:20px;font-size:13px;text-align:center;line-height:20px;cursor:pointer">×</span></div>':'';}
+function clearMain(){mainImage='';renderMainThumb();saveState();if($('preview').getElementsByClassName('filmstrip').length)render();}
+
+// themes
+fetch('/themes').then(r=>r.json()).then(function(map){
+  var h='';Object.keys(map).forEach(function(k){var t=map[k];h+='<div class="theme'+(k===theme?' on':'')+'" data-k="'+k+'" onclick="pickTheme(this)"><div class="sw" style="background:'+t.bg+'"><div class="a" style="background:'+t.accent+'"></div></div><div class="nm">'+t.name+'</div></div>';});
+  $('themes').innerHTML=h;
+});
+function pickTheme(el){theme=el.getAttribute('data-k');[].forEach.call($('themes').children,function(c){c.classList.toggle('on',c===el);});saveState();}
+
+// posts
+var postsBySearch={};
+fetch('/posts').then(r=>r.json()).then(function(list){var dl=$('postList');list.forEach(function(p){var o=document.createElement('option');o.value=p.title;dl.appendChild(o);postsBySearch[p.title.toLowerCase()]=p.slug;});}).catch(function(){});
+
+async function generate(){
+  var body={mode:src,tone:tone,slideCount:Math.max(3,Math.min(8,+$('count').value||5))};
+  if(src==='post'){var t=$('postSearch').value.trim();var slug=postsBySearch[t.toLowerCase()];if(!slug){status('Pick a post from the list.',true);return;}body.slug=slug;}
+  else if(src==='url'){body.url=$('url').value.trim();if(!/^https?:\/\//.test(body.url)){status('Paste a full link (https://…).',true);return;}}
+  else{body.topic=$('topic').value.trim();if(!body.topic){status('Type a topic.',true);return;}}
+  $('gen').disabled=true;status('<span class="spin"></span>Writing your carousel…');
+  try{var r=await fetch('/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});var d=await r.json();if(d.error)throw new Error(d.error);current=d;slidePhotos=[];slideQueries=(d.slides||[]).map(function(s){return s.photoQuery||''});renderFields(d);saveState();status('Copy ready. Tweak anything, then render. Tip: wrap a word in *stars* to highlight it.');}
+  catch(e){status('Error: '+e.message,true);}
+  $('gen').disabled=false;
+}
+function ta(l,v,r){return '<div class="mini">'+l+'</div><textarea rows="'+(r||2)+'">'+(v||'').replace(/</g,'&lt;')+'</textarea>';}
+function chead(title,onclick){return '<div class="chrow"><h4>'+title+'</h4>'+(onclick?'<button class="regen" onclick="'+onclick+'">🔄 New text</button>':'')+'</div>';}
+function vhead(title,i){
+  var b='<button class="regen" onclick="regenOne(\'value\','+i+',this)">🔄 Text</button>';
+  if(layout==='photo')b+='<button class="regen" onclick="cardPhoto('+i+')" title="Different photo">🖼 Photo</button><label class="regen" style="cursor:pointer" title="Upload a photo for this slide">⬆<input type="file" accept="image/*" style="display:none" onchange="cardUpload('+i+',event)"></label>';
+  return '<div class="chrow"><h4>'+title+'</h4><div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end">'+b+'</div></div>';
+}
+function cardPhoto(i){swapPhoto(i);}
+function cardUpload(i,e){uploadPhoto(i,e);}
+function renderFields(d){
+  var h='<div class="card">'+chead('Eyebrow + Hook (slide 1)',"regenOne('hook',0,this)")+'<input id="f-eyebrow" value="'+(d.topicLabel||'').replace(/"/g,'&quot;')+'">'+ta('Hook headline',d.hook.headline,2)+ta('Subline',d.hook.subline,2)+'</div>';
+  d.slides.forEach(function(s,i){h+='<div class="card">'+vhead('Slide '+(i+2),i)+ta('Headline',s.headline,2)+ta('Body',s.body,3)+'</div>';});
+  h+='<div class="card">'+chead('CTA (last slide)',"regenOne('cta',0,this)")+ta('CTA headline',d.cta.headline,2)+ta('CTA body',d.cta.body,2)+'</div>';
+  h+='<div class="card">'+chead('Caption + hashtags',null)+ta('Caption',d.caption,4)+ta('Hashtags',(d.hashtags||[]).join(' '),2)+'</div>';
+  h+='<button class="btn full" onclick="render()">🎨 Render slides</button>';
+  $('fields').innerHTML=h;
+}
+function collectCarousel(){var f=collect();return {topicLabel:f.topicLabel,hook:f.hook,slides:f.slides,cta:f.cta};}
+async function regenOne(kind,idx,btn){
+  var carousel=collectCarousel();var old=btn.textContent;btn.disabled=true;btn.textContent='…';
+  try{var r=await fetch('/regen-slide',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({kind:kind,index:idx,tone:tone,carousel:carousel})});var d=await r.json();if(d.error)throw new Error(d.error);if(kind==='value'&&d.photoQuery)slideQueries[idx]=d.photoQuery;applySlide(kind,idx,d);saveState();btn.disabled=false;btn.textContent=old;if($('preview').getElementsByClassName('filmstrip').length)render();return;}
+  catch(e){status('Regen error: '+e.message,true);}
+  btn.disabled=false;btn.textContent=old;
+}
+function applySlide(kind,idx,d){
+  var cards=$('fields').getElementsByClassName('card');
+  var card=kind==='hook'?cards[0]:kind==='cta'?cards[cards.length-2]:cards[idx+1];
+  var t=card.getElementsByTagName('textarea');
+  if(kind==='hook'){if(d.headline!=null)t[0].value=d.headline;if(d.subline!=null)t[1].value=d.subline;}
+  else{if(d.headline!=null)t[0].value=d.headline;if(d.body!=null)t[1].value=d.body;}
+}
+function collect(){
+  var cards=$('fields').getElementsByClassName('card');var tas=function(c){return c.getElementsByTagName('textarea');};
+  var hook={headline:tas(cards[0])[0].value,subline:tas(cards[0])[1].value};
+  var slides=[];for(var i=1;i<cards.length-2;i++){var t=tas(cards[i]);slides.push({headline:t[0].value,body:t[1].value,photoQuery:slideQueries[i-1]||''});}
+  var cta={headline:tas(cards[cards.length-2])[0].value,body:tas(cards[cards.length-2])[1].value};
+  var cap=cards[cards.length-1];
+  return {theme:theme,layout:layout,topicLabel:$('f-eyebrow').value,hook:hook,slides:slides,cta:cta,caption:tas(cap)[0].value,hashtags:tas(cap)[1].value.split(/\s+/).filter(Boolean)};
+}
+async function render(){
+  var f=collect();f.uploads=uploads;f.slidePhotos=slidePhotos;f.mainImage=mainImage;f.photoQuery=($('photoQuery')||{}).value||'';f.photoPage=photoPage;status('<span class="spin"></span>Rendering '+(f.slides.length+2)+' slides'+(layout==='photo'?' + fetching photos':'')+'…');
+  try{var r=await fetch('/render',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(f)});var o=await r.json();if(o.error)throw new Error(o.error);if(o.photos)slidePhotos=o.photos;lastRender={files:o.files,zip:o.zip,caption:f.caption,hashtags:f.hashtags};showPreview(o.files,f,o.zip);saveState();status('Done. '+o.files.length+' slides.');}
+  catch(e){status('Render error: '+e.message,true);}
+}
+function showPreview(files,f,zip){
+  var h='<div class="lbl">Preview · tap a slide to save it'+(layout==='photo'?' · use 🔄 / ⬆ under a slide to change its photo':'')+'</div><div class="filmstrip">';
+  files.forEach(function(x,pi){var isPV=(layout==='photo'&&pi>=1&&pi<=files.length-2),k=pi-1;
+    h+='<div class="slidewrap"><a href="'+x+'" download="'+x.split('/').pop()+'"><img src="'+x+'?t='+Date.now()+'"></a>';
+    if(isPV)h+='<div class="pctrl"><button onclick="swapPhoto('+k+')" title="Different photo for this slide">🔄</button><label title="Upload for this slide">⬆<input type="file" accept="image/*" style="display:none" onchange="uploadPhoto('+k+',event)"></label></div>';
+    h+='</div>';});h+='</div>';
+  var tags=(f.hashtags||[]).join(' ');
+  h+='<div class="capbox"><h4 style="font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--p2);margin-bottom:10px;font-weight:700">Caption</h4><div class="cap">'+(f.caption||'').replace(/</g,'&lt;')+'</div><div class="tags">'+tags+'</div></div>';
+  h+='<div class="bar"><button class="btn" onclick=\'downloadZip('+JSON.stringify(zip)+')\'>⬇ Download all (zip)</button>'+(layout==='photo'?'<button class="btn ghost" onclick="newPhotos()">🔄 New photos</button>':'')+'<button class="btn ghost" onclick=\'copyCap('+JSON.stringify((f.caption||"")+"\\n\\n"+tags)+')\'>📋 Copy caption + tags</button></div>';
+  $('preview').innerHTML=h;
+}
+function newPhotos(){slidePhotos=[];photoPage++;render();}
+function swapPhoto(k){slidePhotos[k]=null;photoPage++;render();}
+function uploadPhoto(k,e){var f=e.target.files[0];if(!f)return;var r=new FileReader();r.onload=function(){slidePhotos[k]=r.result;render();};r.readAsDataURL(f);e.target.value='';}
+function downloadZip(zip){var a=document.createElement('a');a.href=zip;a.download='foco-carousel.zip';document.body.appendChild(a);a.click();a.remove();}
+function copyCap(t){navigator.clipboard.writeText(t).then(function(){status('Caption + hashtags copied.');});}
+document.addEventListener('input',saveState);
+loadState();
+</script>
+</body>
+</html>
