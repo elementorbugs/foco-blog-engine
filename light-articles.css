@@ -61,3 +61,9 @@
 .blog-single article .foco-bd-dump-tool h2, .blog-single article .foco-bd-dump-tool h3, .blog-single article .foco-bd-dump-tool h4, .blog-single article .foco-bd-dump-tool strong{ color:#F5F1FC !important; }
 .blog-single article .foco-bd-dump-tool p, .blog-single article .foco-bd-dump-tool li, .blog-single article .foco-bd-dump-tool span, .blog-single article .foco-bd-dump-tool label, .blog-single article .foco-bd-dump-tool small, .blog-single article .foco-bd-dump-tool div{ color:#C4BCD6 !important; }
 .blog-single article .foco-bd-dump-tool textarea{ color:#EDE9F5 !important; }
+
+/* ---- Charts stay dark cards on light articles: keep caption/text readable ---- */
+.blog-single article [class*="foco-chart"] p,
+.blog-single article [class*="foco-chart"] li { color:#CFC7E0 !important; }
+.blog-single article figure[class*="foco-chart"] > figcaption { color:#FFFFFF !important; }
+.blog-single article [class*="foco-chart"] figcaption { color:#ECE6FA !important; }

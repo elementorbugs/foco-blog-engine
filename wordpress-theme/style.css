@@ -4,7 +4,7 @@ Theme URI: https://focoapp.com/
 Author: FOCO
 Author URI: https://focoapp.com/
 Description: Custom landing-page theme for FOCO — the ADHD focus companion. Pixel-matched to the design prototype, fully editable via ACF, dynamic menu via WP, dynamic logo via Customizer, scoped CSS.
-Version: 1.0.3
+Version: 1.0.4
 Requires at least: 6.0
 Tested up to: 6.5
 Requires PHP: 7.4
@@ -1338,3 +1338,9 @@ body.page:not(.foco-page) .foco-app h3 {
   .foco-app .topic-tile-name { font-size: 14px; }
   .foco-app .topic-tile-body { padding: 11px 12px; }
 }
+
+/* ---- Charts stay dark cards on light articles: keep caption/text readable ---- */
+.blog-single article [class*="foco-chart"] p,
+.blog-single article [class*="foco-chart"] li { color:#CFC7E0 !important; }
+.blog-single article figure[class*="foco-chart"] > figcaption { color:#FFFFFF !important; }
+.blog-single article [class*="foco-chart"] figcaption { color:#ECE6FA !important; }
