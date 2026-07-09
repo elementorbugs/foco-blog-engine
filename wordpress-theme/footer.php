@@ -18,7 +18,11 @@
 						if ( has_custom_logo() ) {
 							the_custom_logo();
 						} else {
-							echo '<span class="logo-mark"></span><span>' . esc_html( get_bloginfo( 'name' ) ) . '</span>';
+							printf(
+								'<img class="logo-mark" src="%s" alt="" width="36" height="36" decoding="async" /><span>%s</span>',
+								esc_url( get_template_directory_uri() . '/assets/images/foco-logo-mark.png' ),
+								esc_html( get_bloginfo( 'name' ) )
+							);
 						}
 						?>
 					</a>
@@ -42,43 +46,38 @@
 						<?php
 					endwhile;
 				else :
-					// Fallback hard-coded columns when no ACF data is configured.
-					// Matches the IA built out via the SEO sprint:
-					//   Product / Resources / Company / Connect.
-					$home = home_url( '/' );
+					// Fallback hard-coded columns when no ACF data
 					?>
 					<div class="foot-col">
 						<h4>Product</h4>
 						<ul>
-							<li><a href="<?php echo esc_url( $home . 'features/' ); ?>">Features</a></li>
-							<li><a href="<?php echo esc_url( $home . 'pricing/' ); ?>">Pricing</a></li>
-							<li><a href="<?php echo esc_url( $home . 'get-foco/' ); ?>">Get FOCO</a></li>
-						</ul>
-					</div>
-					<div class="foot-col">
-						<h4>Resources</h4>
-						<ul>
-							<li><a href="<?php echo esc_url( $home . 'adhd-resources/' ); ?>">ADHD Resources</a></li>
-							<li><a href="<?php echo esc_url( $home . 'adhd-tools/' ); ?>">Free Tools</a></li>
-							<li><a href="<?php echo esc_url( $home . 'best-adhd-app/' ); ?>">Best ADHD Apps</a></li>
-							<li><a href="<?php echo esc_url( get_post_type_archive_link( 'post' ) ?: $home . 'blog/' ); ?>">Blog</a></li>
+							<li><a href="#features">Features</a></li>
+							<li><a href="#how">How it works</a></li>
+							<li><a href="#pricing">Pricing</a></li>
+							<li><a href="#">Download</a></li>
 						</ul>
 					</div>
 					<div class="foot-col">
 						<h4>Company</h4>
 						<ul>
-							<li><a href="<?php echo esc_url( $home . 'about/' ); ?>">About</a></li>
-							<li><a href="<?php echo esc_url( $home . 'founders/' ); ?>">Founders</a></li>
-							<li><a href="<?php echo esc_url( $home . 'contact/' ); ?>">Contact</a></li>
-							<li><a href="<?php echo esc_url( $home . 'editorial-policy/' ); ?>">Editorial Policy</a></li>
+							<li><a href="#">About</a></li>
+							<li><a href="<?php echo esc_url( get_post_type_archive_link( 'post' ) ); ?>">Blog</a></li>
+							<li><a href="#">Contact</a></li>
 						</ul>
 					</div>
 					<div class="foot-col">
-						<h4>Connect</h4>
+						<h4>Resources</h4>
 						<ul>
-							<li><a href="https://www.instagram.com/foco.adhd/" target="_blank" rel="noopener">Instagram</a></li>
-							<li><a href="https://www.tiktok.com/@foco.adhd" target="_blank" rel="noopener">TikTok</a></li>
-							<li><a href="https://www.youtube.com/@FOCO-ADHDCOMPANION" target="_blank" rel="noopener">YouTube</a></li>
+							<li><a href="#why-adhd">Why ADHD</a></li>
+							<li><a href="#">ADHD Guide</a></li>
+							<li><a href="#">Support</a></li>
+						</ul>
+					</div>
+					<div class="foot-col">
+						<h4>Legal</h4>
+						<ul>
+							<li><a href="#">Privacy</a></li>
+							<li><a href="#">Terms</a></li>
 						</ul>
 					</div>
 					<?php
@@ -87,11 +86,6 @@
 			</div>
 			<div class="foot-bottom">
 				<span><?php echo wp_kses_post( foco_field( 'footer_copy', '© ' . date( 'Y' ) . ' FOCO. Built for ADHD minds.' ) ); ?></span>
-				<span class="foot-legal">
-					<a href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>">Privacy</a>
-					<span style="opacity:0.4;margin:0 8px">·</span>
-					<a href="<?php echo esc_url( home_url( '/term-and-use/' ) ); ?>">Terms</a>
-				</span>
 				<span><?php echo wp_kses_post( foco_field( 'footer_made', 'Made with care 💜' ) ); ?></span>
 			</div>
 		</div>
