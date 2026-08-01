@@ -35,7 +35,9 @@ const DEFAULT_IDS = [699, 723, 728, 737, 742, 747]; // all 6 timer pages
 
   const liveUrls = [];
   for (const id of ids) {
-    const r = await req('GET', `/wp-json/wp/v2/posts/${id}?_fields=status,link,slug`);
+    // posts first, then pages — page edits (titles, meta, CTAs) need re-crawling too
+    let r = await req('GET', `/wp-json/wp/v2/posts/${id}?_fields=status,link,slug`);
+    if (r.s !== 200) r = await req('GET', `/wp-json/wp/v2/pages/${id}?_fields=status,link,slug`);
     if (r.s !== 200) { console.log(`${id}: fetch fail ${r.s}`); continue; }
     const p = r.b;
     if (p.status !== 'publish') {

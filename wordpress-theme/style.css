@@ -742,6 +742,20 @@ body.foco-page {
   border-top: 1px solid rgba(255,255,255,0.06);
 }
 
+.foco-app .research-card { padding: 26px 20px 20px; display: flex; flex-direction: column; }
+.foco-app .research-num {
+  font-size: 40px; font-weight: 800; letter-spacing: -0.03em; line-height: 1;
+  background: linear-gradient(135deg, #fff, var(--primary-2));
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  margin-bottom: 12px;
+}
+.foco-app .research-body { font-size: 14px; line-height: 1.55; color: var(--text); flex: 1; }
+.foco-app .research-src {
+  display: block; font-size: 11.5px; color: var(--muted); text-decoration: none;
+  margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);
+}
+.foco-app .research-src:hover { color: var(--primary-2); }
+
 .foco-app .big-stat-card {
   margin-top: 36px; padding: 56px 32px; text-align: center;
   background:

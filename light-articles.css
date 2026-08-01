@@ -1,5 +1,5 @@
 /* ============================================================
-   FOCO — LIGHT ARTICLES  (v2, 2026-07-04)
+   FOCO — LIGHT ARTICLES  (v3, 2026-07-25)
    Dark brand chrome (nav, hero, landing pages, app) stays dark.
    Only .blog-single (blog POST reading area) becomes light.
 
@@ -7,9 +7,12 @@
    <!-- wp:html --><style>…</style> block (marked
    <!--foco-light-start/end-->) at the end of every blog POST's
    content, because Customizer custom_css is not REST-writable and
-   the theme is classic. Re-run scripts/inject-light.mjs (reads +
-   minifies this file) to update all posts after any edit here.
-   Verified 0 contrast issues across 10 posts + full-width desktop.
+   the theme is classic.
+
+   EDITING THIS FILE CHANGES NOTHING LIVE. Push it with:
+     node scripts/inject-light.mjs [slug] --live     (dry-run default)
+   Then prove it:
+     node scripts/audit-contrast.js <url|local.html> (fails <4.5:1)
 
    MAINTENANCE: new posts don't inherit this. Add the block to the
    daily generator when it un-pauses. Long-term home = theme CSS.
@@ -20,6 +23,11 @@
 /* full-bleed light: fill the width, text stays a readable measure */
 .blog-single{ background:#FAF8FD !important; max-width:100% !important; width:100% !important; }
 .blog-single .wrap{ max-width:820px !important; margin-left:auto !important; margin-right:auto !important; padding-top:10px; padding-bottom:48px; }
+
+/* base ink for the WHOLE reading column, not just <article>. The theme
+   paints .blog-single white (it was designed dark), which left the
+   comment form and the prev/next nav invisible on the light card. */
+.blog-single{ color:#26203A !important; }
 
 .blog-single h1{ color:#160F22 !important; }
 .blog-single .post-meta, .blog-single .post-meta span{ color:#6E6684 !important; }
@@ -55,15 +63,138 @@
 /* comparison widget cards (alternative / vs posts) */
 .blog-single article .foco-cmp-wrap, .blog-single article .foco-cmp-wrap *{ color:#26203A !important; }
 .blog-single article .foco-cmp-wrap [style*="color:#A78BFA"]{ color:#5B21B6 !important; }
+/* ...but its header row keeps a #7C3AED -> #A78BFA gradient, so dark ink
+   there is 2.7:1. Used by 73 posts. */
+.blog-single article .foco-cmp th, .blog-single article .foco-cmp-wrap th{ color:#FFFFFF !important; }
+
+/* ---- brand-coloured surfaces with no class to hook -------------------
+   A few components carry their background as an INLINE style baked into
+   post content. Matched on the exact strings used in the content
+   (`background:#7C3AED`, `background:#0a0410`); no post uses an inline
+   `color:#7C3AED`, so this cannot hit purple text on a light card.
+   Prefer adding `foco-dark` to new components over extending this list.
+   -------------------------------------------------------------------- */
+.blog-single article [style*="background:#7C3AED"], .blog-single article [style*="background:#7C3AED"] *,
+.blog-single article [style*="background:#6D28D9"], .blog-single article [style*="background:#6D28D9"] *{ color:#FFFFFF !important; }
+
+.blog-single article [style*="background:#0a0410"], .blog-single article [style*="background:#040208"]{ color:#ECE6FA !important; }
+.blog-single article [style*="background:#0a0410"] td, .blog-single article [style*="background:#040208"] td{ color:#CFC7E0 !important; }
+.blog-single article [style*="background:#0a0410"] th, .blog-single article [style*="background:#040208"] th{ color:#FFFFFF !important; }
+
+/* ============================================================
+   DARK ISLANDS  (added 2026-07-25)
+   Components that stay dark cards inside a light post.
+
+   The global ink rules above (p/li/h2-h4/strong/a/td/th) are
+   `!important` and element-level, so they paint near-black text
+   onto a near-black card unless every dark component re-asserts
+   light ink here. This block is the ONE place that happens.
+
+   Adding a new dark component? Give it class `foco-dark` and it
+   is covered automatically. Do not hand-patch a single widget.
+
+   Verified with scripts/audit-contrast.js: 0 pairs under 4.5:1.
+   ============================================================ */
+
+/* headings + bold -> full white */
+.blog-single article .foco-dark h2, .blog-single article .foco-dark h3, .blog-single article .foco-dark h4, .blog-single article .foco-dark strong,
+.blog-single article .foco-bd-tool h2, .blog-single article .foco-bd-tool h3, .blog-single article .foco-bd-tool h4, .blog-single article .foco-bd-tool strong,
+.blog-single article [class*="foco-chart"] h2, .blog-single article [class*="foco-chart"] h3, .blog-single article [class*="foco-chart"] h4, .blog-single article [class*="foco-chart"] strong{ color:#FFFFFF !important; }
+
+/* body copy + table cells -> light lavender */
+.blog-single article .foco-dark p, .blog-single article .foco-dark li, .blog-single article .foco-dark td, .blog-single article .foco-dark th,
+.blog-single article .foco-bd-tool p, .blog-single article .foco-bd-tool li, .blog-single article .foco-bd-tool td, .blog-single article .foco-bd-tool th,
+.blog-single article [class*="foco-chart"] p, .blog-single article [class*="foco-chart"] li, .blog-single article [class*="foco-chart"] td, .blog-single article [class*="foco-chart"] th{ color:#CFC7E0 !important; }
+.blog-single article .foco-dark blockquote, .blog-single article .foco-bd-tool blockquote,
+.blog-single article [class*="foco-chart"] blockquote{ color:#CFC7E0 !important; }
+
+/* links -> lilac, never the light-mode deep purple */
+.blog-single article .foco-dark a, .blog-single article .foco-bd-tool a,
+.blog-single article .foco-bd-dump-tool a, .blog-single article [class*="foco-chart"] a{ color:#A78BFA !important; }
+
+/* captions */
+.blog-single article .foco-dark figcaption, .blog-single article [class*="foco-chart"] figcaption{ color:#ECE6FA !important; }
+.blog-single article figure[class*="foco-chart"] > figcaption{ color:#FFFFFF !important; }
+
+/* the island container itself: the theme's `.blog-single article > *`
+   sets var(--muted) at higher specificity than any component class, so
+   buttons and other inheriting children come out grey on the dark card */
+.blog-single article > .foco-dark, .blog-single article > .foco-bd-tool,
+.blog-single article .foco-dark, .blog-single article .foco-bd-tool{ color:#F1EDFA !important; }
+.blog-single article .foco-dark button, .blog-single article .foco-bd-tool button{ color:#FFFFFF !important; }
+
+/* keep designed accents that the white-bold rule above would flatten */
+.blog-single article .foco-bd-tool .foco-bd-status strong{ color:#FB923C !important; }
 
 /* brain-dump interactive tool: keep it a dark card so its native light text stays readable */
 .blog-single article .foco-bd-dump-tool{ background:#140D22 !important; border:1px solid rgba(167,139,250,.2) !important; border-radius:16px !important; padding:18px !important; }
 .blog-single article .foco-bd-dump-tool h2, .blog-single article .foco-bd-dump-tool h3, .blog-single article .foco-bd-dump-tool h4, .blog-single article .foco-bd-dump-tool strong{ color:#F5F1FC !important; }
 .blog-single article .foco-bd-dump-tool p, .blog-single article .foco-bd-dump-tool li, .blog-single article .foco-bd-dump-tool span, .blog-single article .foco-bd-dump-tool label, .blog-single article .foco-bd-dump-tool small, .blog-single article .foco-bd-dump-tool div{ color:#C4BCD6 !important; }
 .blog-single article .foco-bd-dump-tool textarea{ color:#EDE9F5 !important; }
+.blog-single article .foco-bd-dump-tool button{ color:#FFFFFF !important; }
 
-/* ---- Charts stay dark cards on light articles: keep caption/text readable ---- */
-.blog-single article [class*="foco-chart"] p,
-.blog-single article [class*="foco-chart"] li { color:#CFC7E0 !important; }
-.blog-single article figure[class*="foco-chart"] > figcaption { color:#FFFFFF !important; }
-.blog-single article [class*="foco-chart"] figcaption { color:#ECE6FA !important; }
+/* “example card”: an inline white-3.5% lift that only reads on a dark page.
+   On the light card it becomes near-white with washed grey text, so it is
+   re-skinned as a light card. Scoped to the inline background so the same
+   token inside charts/comparison tables (set via <style>) is untouched. */
+.blog-single article [style*="background:rgba(255,255,255,0.035)"]{ background:#F4F0FB !important; border-color:#E7DFF7 !important; }
+.blog-single article [style*="background:rgba(255,255,255,0.035)"],
+.blog-single article [style*="background:rgba(255,255,255,0.035)"] div,
+.blog-single article [style*="background:rgba(255,255,255,0.035)"] span{ color:#3A3352 !important; }
+
+/* inline `color:#B8B0CC` (--muted) is written straight into post bodies in
+   70 posts. On the dark card it was written for it reads fine; on the light
+   page it is 1.97:1. Darkened here, restored inside dark islands below.
+   Checked: no post uses inline background-color/border-color, so the
+   substring match can only ever hit a `color:` declaration. Only this one
+   token is flipped, the other inline colours (#fff, #A78BFA, #FB923C) all
+   sit on dark surfaces already and still pass. */
+.blog-single article [style*="color:#B8B0CC"]{ color:#4A4266 !important; }
+.blog-single article [style*="color:#7d738f"]{ color:#565068 !important; }
+.blog-single article .foco-dark [style*="color:#B8B0CC"],
+.blog-single article .foco-bd-tool [style*="color:#B8B0CC"],
+.blog-single article .foco-bd-dump-tool [style*="color:#B8B0CC"],
+.blog-single article [class*="foco-chart"] [style*="color:#B8B0CC"],
+.blog-single article [style*="background:#0a0410"] [style*="color:#B8B0CC"],
+.blog-single article [style*="background:#7C3AED"] [style*="color:#B8B0CC"]{ color:#B8B0CC !important; }
+.blog-single article .foco-dark [style*="color:#7d738f"],
+.blog-single article .foco-bd-tool [style*="color:#7d738f"],
+.blog-single article .foco-bd-dump-tool [style*="color:#7d738f"],
+.blog-single article [class*="foco-chart"] [style*="color:#7d738f"]{ color:#7d738f !important; }
+
+/* blockquotes inherit the theme's muted grey (no rule above matched them) */
+.blog-single article blockquote, .blog-single article blockquote p, .blog-single article blockquote cite{ color:#26203A !important; }
+
+/* one-off infographic bits still carrying dark-theme values.
+   The `-num` badges on an ORANGE gradient were 2.3:1 in white (bad on the
+   dark theme too); the purple ones pass and are deliberately left alone. */
+.blog-single article .mf-num,
+.blog-single article .foco-loopfig .lf-step:last-child .lf-num{ color:#26203A !important; }
+.blog-single article .tf-ic{ color:#26203A !important; }
+.blog-single article .lf-loop, .blog-single article .lf-loop b{ color:#8F3F12 !important; }
+
+/* ============================================================
+   CHROME OUTSIDE <article>  (added 2026-07-25)
+   The comment form and the prev/next nav are siblings of <article>,
+   so none of the ink rules above reached them and they inherited the
+   theme's white text onto the light card.
+   ============================================================ */
+
+.blog-single .comment-reply-title, .blog-single .comments-title,
+.blog-single .comment-author, .blog-single .comment-author a{ color:#160F22 !important; }
+.blog-single .comment-form label, .blog-single .comment-notes, .blog-single .comment-form p,
+.blog-single .comment-body, .blog-single .comment-body p, .blog-single .comment-metadata,
+.blog-single .comment-awaiting-moderation, .blog-single .logged-in-as{ color:#26203A !important; }
+.blog-single .comment-form input[type="text"], .blog-single .comment-form input[type="email"],
+.blog-single .comment-form input[type="url"], .blog-single .comment-form textarea{ color:#160F22 !important; background:#FFFFFF !important; border:1px solid #E7DFF7 !important; border-radius:10px !important; padding:10px 12px !important; }
+.blog-single .comment-form .submit{ color:#FFFFFF !important; background:#5B21B6 !important; border:0 !important; border-radius:10px !important; padding:11px 20px !important; cursor:pointer; }
+.blog-single #respond a, .blog-single .comment-body a, .blog-single .comment-metadata a{ color:#5B21B6 !important; }
+
+/* prev/next post nav: theme sets var(--primary-2) lilac inline, which is
+   2.6:1 on the light card. Scoped to siblings of <article> so it can
+   never touch a lilac accent inside a dark island. */
+.blog-single article ~ div [style*="--primary-2"],
+.blog-single article ~ div [style*="--primary-2"] a{ color:#5B21B6 !important; }
+
+/* charts are handled by the DARK ISLANDS block above (was a separate
+   /*foco-chart-fix*\/ <style> appended to each post; folded in 2026-07-25) */

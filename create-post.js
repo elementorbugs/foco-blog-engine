@@ -568,7 +568,7 @@ async function injectPexelsFromPlans(content, slug, plans) {
     used.add(photo.id);
     const url = photo.src.large2x || photo.src.large;
     const desc = (photo.alt || query).replace(/[—|]/g, '-').trim();
-    const altText = `${query.split(' ').slice(0, 4).join(' ')} — ${desc}`.slice(0, 125);
+    const altText = `${query.split(' ').slice(0, 4).join(' ')}: ${desc}`.slice(0, 125);
     const photographer = photo.photographer || 'Pexels';
     const localPath = path.join(TMP, `${slug}-${photo.id}.jpg`);
     if (!await downloadToFile(url, localPath)) continue;
@@ -636,7 +636,7 @@ async function injectPexelsImages(content, kw, slug) {
     used.add(photo.id);
     const url = photo.src.large2x || photo.src.large;
     const desc = (photo.alt || 'editorial illustration').replace(/[—|]/g, '-').trim();
-    const altText = `${kw} — ${desc}`.slice(0, 125);
+    const altText = `${kw}: ${desc}`.slice(0, 125);
     const photographer = photo.photographer || 'Pexels';
     const localPath = path.join(TMP, `${slug}-${photo.id}.jpg`);
     if (!await downloadToFile(url, localPath)) continue;
@@ -655,10 +655,14 @@ function buildFaqSchema(content) {
   if (!faqMatch) return null;
   const block = faqMatch[0];
   const pairs = [];
+  // Sanitize at the schema boundary: strip ALL markup and collapse every kind of
+  // whitespace. Raw newlines or leaked </p><p> inside a JSON string literal produce
+  // a "Bad control character" parse error, which silently kills the FAQ rich result.
+  const sane = s => s.replace(/<[^>]+>/g, ' ').replace(/[\r\n\t]+/g, ' ').replace(/\s+/g, ' ').trim();
   for (const m of block.matchAll(/<h3[^>]*>([\s\S]*?)<\/h3>([\s\S]*?)(?=<h3[\s>]|$)/gi)) {
-    const q = m[1].replace(/<[^>]+>/g, '').trim();
-    const ps = [...m[2].matchAll(/<p[^>]*>([\s\S]*?)<\/p>/gi)].map(x => x[1].replace(/<[^>]+>/g, '').trim());
-    const a = ps.join(' ').trim();
+    const q = sane(m[1]);
+    const ps = [...m[2].matchAll(/<p[^>]*>([\s\S]*?)<\/p>/gi)].map(x => sane(x[1])).filter(Boolean);
+    const a = sane(ps.join(' '));
     if (q && a) pairs.push({ q, a });
   }
   if (pairs.length === 0) return null;
@@ -705,15 +709,55 @@ function injectLightArticles(content) {
 }
 
 // ─── STEP 8: COVER GENERATION (mascot left + title right) ────────────────────
+// Keep the WHOLE pre-colon title and shrink the type to fit. The old version
+// hard-sliced to 4 words, which silently produced meaningless covers like
+// "How to Focus With" from "How to Focus With ADHD Without Medication".
 function deriveCoverTitle(h1) {
-  const before = (h1.split(':')[0] || h1).trim();
-  const words = before.split(/\s+/).slice(0, 4);
+  // A colon or a dash both mark the start of a subtitle, and the cover only wants
+  // the headline half. Splitting on the dash too keeps banned em dashes off covers
+  // and stops long page H1s being crammed in at unreadable sizes.
+  const before = (h1.split(/\s*[:—–]\s*|\s+-\s+/)[0] || h1)
+    .replace(/\s*\([^)]*\)\s*$/, '')  // trailing parenthetical is subtitle, not headline
+    .trim();
+  const words = before.split(/\s+/);
   if (words.length <= 2) return words.join(' ');
-  const half = Math.ceil(words.length / 2);
-  return words.slice(0, half).join(' ') + '\n' + words.slice(half).join(' ');
+
+  // Balanced wrap: use the fewest lines (up to 4) that keeps every line short
+  // enough to stay legible at thumbnail size.
+  for (const n of [2, 3, 4]) {
+    const target = Math.ceil(before.length / n);
+    // Widen the tolerance until the greedy pack actually fits in n lines. Without
+    // this, "ADHD Diagnostic Codes" overflows a tight target and falls through to
+    // 3 lines of one word each.
+    for (let slack = 0; slack <= 10; slack++) {
+      const lines = [];
+      let cur = '';
+      for (const w of words) {
+        if (!cur) { cur = w; }
+        else if ((cur + ' ' + w).length <= target + slack) { cur += ' ' + w; }
+        else { lines.push(cur); cur = w; }
+      }
+      if (cur) lines.push(cur);
+      if (lines.length <= n) return lines.join('\n');
+    }
+  }
+  return words.join(' ');
+}
+
+// The title column is ~700px wide. At Inter 900 a glyph averages ~0.61em, so the
+// widest line that fits at size S is about 700/(0.61*S) chars. Invert that, clamp,
+// and step down further when there are many lines so the block stays inside 630px.
+function coverFontSize(title) {
+  const lines = title.replace(/\\n/g, '\n').split('\n');
+  const longest = Math.max(...lines.map(l => l.length));
+  let size = Math.floor(1148 / Math.max(longest, 1));
+  if (lines.length >= 4) size = Math.min(size, 50);
+  else if (lines.length === 3) size = Math.min(size, 64);
+  return Math.max(36, Math.min(80, size));
 }
 
 function coverHtml(title, mascotPath) {
+  const fontSize = coverFontSize(title);
   const mascotUri = 'file:///' + mascotPath.replace(/\\/g, '/');
   // Normalize a literal backslash-n (e.g. from --cover-title="A\nB" on the shell,
   // where the shell passes two chars, not a newline) into a real newline so the
@@ -729,7 +773,7 @@ body{width:1200px;height:630px;overflow:hidden;font-family:'Inter',-apple-system
 .mascot-wrap{flex:0 0 35%;display:flex;align-items:center;justify-content:center;padding:0 20px 0 60px;position:relative;z-index:2}
 .mascot-wrap img{width:100%;max-width:340px;filter:drop-shadow(0 30px 50px rgba(124,58,237,0.5))}
 .title-wrap{flex:1;padding:0 60px 0 20px;position:relative;z-index:2}
-.title{font-size:80px;font-weight:900;color:#fff;line-height:1.05;letter-spacing:-1.6px;text-shadow:0 4px 40px rgba(0,0,0,0.4)}
+.title{font-size:${fontSize}px;font-weight:900;color:#fff;line-height:1.05;letter-spacing:-1.6px;text-shadow:0 4px 40px rgba(0,0,0,0.4)}
 .title span{display:inline-block}
 .brand{position:absolute;bottom:32px;right:48px;display:flex;align-items:center;gap:10px;z-index:3}
 .logo-mark{width:34px;height:34px;background:linear-gradient(135deg,${C.primary},${C.primary2});border-radius:9px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:18px;box-shadow:0 0 24px rgba(124,58,237,0.5)}
@@ -812,7 +856,20 @@ async function generateCover(slug, h1, coverTitleArg) {
     if (ex.data && ex.data.featured_media) { mediaId = ex.data.featured_media; log.ok(`--skip-cover: reusing media #${mediaId}`); }
     else log.warn('--skip-cover but no existing featured_media');
   } else if (!dryRun) {
+    // A post with no in-body visual at all reads as unfinished next to the rest of
+    // the site. Nothing used to flag it, so --skip-pexels silently shipped bare walls
+    // of text. The cover does not count, it never appears inside the article.
+    const bodyImgs = (content.match(/<img /g) || []).length;
+    const customFigs = [...new Set([...content.matchAll(/class="(foco-[a-z]*fig)"/g)].map(m => m[1]))];
+    if (bodyImgs === 0 && customFigs.length === 0) {
+      log.warn('NO in-body visuals (0 images, 0 custom infographics). Add a light-native figure or drop --skip-pexels.');
+    }
+
     const cov = await generateCover(slug, v.h1, coverTitleArg);
+    // Covers have to stay legible as a thumbnail on the blog index. Below ~46px
+    // the title is too long for the format and wants a hand-written short version.
+    const covSize = coverFontSize(cov.coverTitle);
+    if (covSize < 46) log.warn(`Cover type is only ${covSize}px (title too long for the format). Consider --cover-title="Short\\nVersion".`);
     log.ok(`Cover rendered: ${(fs.statSync(cov.pngPath).size / 1024).toFixed(0)}KB | mascot: ${cov.mascotName} | title: "${cov.coverTitle.replace(/\n/g, ' / ')}"`);
     const up = await wpUpload(cov.pngPath, `cover-${slug}.png`, 'image/png');
     if (up.status === 201) { mediaId = up.data.id; log.ok(`Uploaded: media #${mediaId}`); }
@@ -932,8 +989,21 @@ async function generateCover(slug, h1, coverTitleArg) {
     alternateName: 'FOCO ADHD Focus Companion',
     url: `https://${WP_HOST}`,
     logo: FOCO_LOGO,
-    description: 'FOCO is an ADHD app built around task initiation and AI body doubling (an on-screen focus companion), helping people start tasks rather than just plan them.',
-    sameAs: ['https://www.youtube.com/@FOCO-ADHDCOMPANION'],
+    // Canonical positioning, kept identical to the 22 pages standardized on
+    // 2026-08-01. Primary category: ADHD focus companion. Secondary: ADHD planner
+    // app. Problem: task paralysis. Differentiator: one subtask at a time.
+    // Do not reword per-post; AI engines cross-check this string between pages.
+    description: 'FOCO is an AI-powered ADHD focus companion that helps adults overcome task paralysis by breaking overwhelming tasks into small, actionable steps and guiding them through focused work, one subtask at a time.',
+    // Store listings first: they are the strongest brand-entity signals Google has.
+    // Keep in sync with RankMath -> Social Meta -> Additional Profiles.
+    sameAs: [
+      'https://apps.apple.com/us/app/foco-adhd-task-planner/id6762489184',
+      'https://play.google.com/store/apps/details?id=com.adiben.foco',
+      'https://www.instagram.com/foco.adhd/',
+      'https://www.tiktok.com/@foco.adhd',
+      'https://www.youtube.com/@FOCO-ADHDCOMPANION',
+      'https://www.pinterest.com/FOC0_ADHD_APP/',
+    ],
   };
   content = injectSchema(content, orgSchema, 'Organization');
 
@@ -1055,7 +1125,7 @@ async function generateCover(slug, h1, coverTitleArg) {
   // STEP 14: Featured image alt text
   log.step('STEP 14/15: Featured image alt text');
   if (!dryRun && mediaId) {
-    const altText = `${keyword} — ${v.h1}`.slice(0, 125);
+    const altText = `${keyword}: ${v.h1}`.slice(0, 125);
     const r = await wpReq('POST', '/wp-json/wp/v2/media/' + mediaId, { alt_text: altText });
     log.ok(`Alt text: "${altText}"`);
   } else log.ok('[skip]');

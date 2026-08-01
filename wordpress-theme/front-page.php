@@ -38,8 +38,8 @@ $tdir = get_template_directory_uri();
 			</div>
 
 			<div class="trust-row">
-				<span class="stars">★★★★★</span>
-				<span><?php echo wp_kses_post( foco_field( 'hero_trust', 'Trusted by <strong style="color:#fff">100,000+</strong> ADHD minds' ) ); ?></span>
+				<span class="stars">★</span>
+				<span><?php echo wp_kses_post( foco_field( 'hero_trust_v2', 'Rated <strong style="color:#fff">4.6</strong> on Google Play' ) ); ?></span>
 			</div>
 		</div>
 
@@ -103,8 +103,8 @@ $tdir = get_template_directory_uri();
 				$default_vignettes = array(
 					array( '01', '20 minutes.',     '<strong>You sit there.</strong> Staring at the screen. Thinking. <strong>Not starting.</strong>' ),
 					array( '02', 'Anything else.',  '<strong>You switch tasks.</strong> Anything else suddenly <strong>feels easier</strong> than the thing you should do.' ),
-					array( '03', 'An hour gone.',   '<strong>"Just a second"</strong> on your phone. You look up — and the morning is gone.' ),
-					array( '04', 'Later.',          '<strong>Tomorrow.</strong> Next week. And eventually — <strong>never.</strong>' ),
+					array( '03', 'An hour gone.',   '<strong>"Just a second"</strong> on your phone. You look up, and the morning is gone.' ),
+					array( '04', 'Later.',          '<strong>Tomorrow.</strong> Next week. And eventually, <strong>never.</strong>' ),
 				);
 				foreach ( $default_vignettes as $v ) : ?>
 					<div class="vignette" data-num="<?php echo esc_attr( $v[0] ); ?>">
@@ -163,7 +163,7 @@ $tdir = get_template_directory_uri();
 			<span style="margin-top:16px;display:block"><?php echo esc_html( foco_field( 'shift_lead', 'You need:' ) ); ?></span>
 			<span class="shift-key"><?php echo esc_html( foco_field( 'shift_key', 'A smaller starting line.' ) ); ?></span>
 		</div>
-		<p class="shift-coda"><?php echo wp_kses_post( foco_field( 'shift_coda', 'FOCO removes the hardest part — by giving you <strong>the first tiny step</strong>.' ) ); ?></p>
+		<p class="shift-coda"><?php echo wp_kses_post( foco_field( 'shift_coda', 'FOCO removes the hardest part, by giving you <strong>the first tiny step</strong>.' ) ); ?></p>
 	</div>
 </section>
 
@@ -211,7 +211,7 @@ $tdir = get_template_directory_uri();
 						'phone' => $tdir . '/assets/images/foco_aso_06.png',
 						'head'  => 'Get instant clarity',
 						'chips' => array(),
-						'body'  => 'FOCO turns it into <strong style="color:#fff">5 tiny steps</strong> you can actually do — with realistic time estimates.<br>No thinking. No overwhelm.',
+						'body'  => 'FOCO turns it into <strong style="color:#fff">5 tiny steps</strong> you can actually do, with realistic time estimates.<br>No thinking. No overwhelm.',
 					),
 					array(
 						'num'   => '3',
@@ -251,7 +251,7 @@ $tdir = get_template_directory_uri();
 				<?php echo esc_html( foco_field( 'features_h_1', 'Built for' ) ); ?>
 				<span class="grad"><?php echo esc_html( foco_field( 'features_h_2', 'how your brain works.' ) ); ?></span>
 			</h2>
-			<p class="section-sub" style="margin-left:auto;margin-right:auto"><?php echo wp_kses_post( foco_field( 'features_sub', 'Every part of FOCO is designed around task initiation — not productivity theater.' ) ); ?></p>
+			<p class="section-sub" style="margin-left:auto;margin-right:auto"><?php echo wp_kses_post( foco_field( 'features_sub', 'Every part of FOCO is designed around task initiation, not productivity theater.' ) ); ?></p>
 		</div>
 
 		<?php
@@ -279,9 +279,9 @@ $tdir = get_template_directory_uri();
 		else :
 			$default_spots = array(
 				array( '✨ AI Task Breakdown',   'Turn overwhelm',   'into action.',     'Type any task. FOCO instantly breaks it into <strong style="color:#fff">5 tiny steps</strong> with realistic time estimates. No thinking. No overwhelm.', $tdir . '/assets/images/foco_aso_05.png' ),
-				array( '☀️ Your Daily Start',   'No decisions.',    'Just: begin here.','FOCO picks the one highest-impact task each morning. You skip decision fatigue and start with confidence — every single day.', $tdir . '/assets/images/foco_aso_06.png' ),
-				array( '🎯 Focus Mode',         'Stay',             'in the moment.',   'A calm timer + the FOCO mascot keeps you anchored to one step at a time. Drift happens — and FOCO gently brings you back.', $tdir . '/assets/images/foco_aso_07.png' ),
-				array( '📈 Momentum Tracking',  'See proof',        "you're moving.",   'Streaks, focus minutes, finished tasks. Real evidence that small actions compound — even on the hard days.', $tdir . '/assets/images/foco_aso_09.png' ),
+				array( '☀️ Your Daily Start',   'No decisions.',    'Just: begin here.','FOCO picks the one highest-impact task each morning. You skip decision fatigue and start with confidence, every single day.', $tdir . '/assets/images/foco_aso_06.png' ),
+				array( '🎯 Focus Mode',         'Stay',             'in the moment.',   'A calm timer + the FOCO mascot keeps you anchored to one step at a time. Drift happens, and FOCO gently brings you back.', $tdir . '/assets/images/foco_aso_07.png' ),
+				array( '📈 Momentum Tracking',  'See proof',        "you're moving.",   'Streaks, focus minutes, finished tasks. Real evidence that small actions compound, even on the hard days.', $tdir . '/assets/images/foco_aso_09.png' ),
 			);
 			foreach ( $default_spots as $i => $sp ) :
 				$reverse = ( $i % 2 === 1 );
@@ -307,10 +307,10 @@ $tdir = get_template_directory_uri();
 <!-- ================ SOCIAL PROOF ================ -->
 <section class="proof">
 	<div class="wrap">
-		<div class="section-eyebrow"><?php echo esc_html( foco_field( 'proof_eyebrow', 'Real results' ) ); ?></div>
+		<div class="section-eyebrow"><?php echo esc_html( foco_field( 'proof_eyebrow_v2', 'What we actually know' ) ); ?></div>
 		<h2>
-			<span class="grad"><?php echo esc_html( foco_field( 'proof_h_1', '100,000+ people' ) ); ?></span><br>
-			<?php echo esc_html( foco_field( 'proof_h_2', 'are breaking task paralysis with FOCO.' ) ); ?>
+			<span class="grad"><?php echo esc_html( foco_field( 'proof_h_1_v2', '194 adults with ADHD' ) ); ?></span><br>
+			<?php echo esc_html( foco_field( 'proof_h_2_v2', 'told us where starting actually breaks down.' ) ); ?>
 		</h2>
 
 		<div class="testi-cards">
@@ -349,30 +349,19 @@ $tdir = get_template_directory_uri();
 					</div>
 				<?php endwhile;
 			else :
-				// Default placeholder testimonials
-				$default_testimonials = array(
-					array( 'Maya R.',  'US',  'USA',          'I had a 3-week assignment I couldn\'t start. FOCO got me to begin in 2 minutes.',     'Designer · Diagnosed at 31',  'https://i.pravatar.cc/400?img=49' ),
-					array( 'Jordan K.','UK',  'London',       'For the first time in years, I started something without spiraling.',                  'PhD student · Neuroscience',  'https://i.pravatar.cc/400?img=12' ),
-					array( 'Sam P.',   'CA',  'Toronto',      'The mascot sounds silly… but it completely changed how I focus.',                       'Software Engineer',           'https://i.pravatar.cc/400?img=33' ),
-					array( 'Aisha N.', 'DE',  'Berlin',       'Other apps yelled at me. FOCO just helped me begin. That\'s the whole difference.',     'Master\'s student',           'https://i.pravatar.cc/400?img=5'  ),
-					array( 'Marcus T.','US',  'NYC',          'First productivity app that doesn\'t make me feel like a failure for needing it.',      'Writer · ADHD since 2018',    'https://i.pravatar.cc/400?img=60' ),
-					array( 'Chloé M.', 'FR',  'Paris',        'I recommend FOCO to most of my ADHD clients now. It just works.',                        'ADHD coach',                  'https://i.pravatar.cc/400?img=25' ),
-					array( 'Diego R.', 'MX',  'Mexico City',  'Went from 0 finished tasks last week to 18 this week. Same brain. Different app.',      'Founder · Late-diagnosed',    'https://i.pravatar.cc/400?img=8'  ),
-					array( 'Lena Ø.',  'DK',  'Copenhagen',   'Mom of three with late-diagnosis ADHD. FOCO finally fits how my brain works.',          'Parent · Designer',           'https://i.pravatar.cc/400?img=32' ),
+				// No testimonials entered yet. Rather than invent them, this shows findings
+				// from FOCO's own published survey (n=194), each linked to the source data.
+				$findings = array(
+					array( '80%', 'freeze in front of a task they know they need to do, five or more times a day' ),
+					array( '73%', 'say the first thing they feel is simply not knowing where to start' ),
+					array( '87%', 'rate working alongside someone as helpful or life-changing' ),
+					array( '76%', 'say the help they want most is breaking down the first step' ),
 				);
-				foreach ( $default_testimonials as $t ) : ?>
-					<div class="testi-card">
-						<div class="testi-photo" style="background-image: url('<?php echo esc_url( $t[5] ); ?>')">
-							<div class="testi-photo-overlay">
-								<div class="name"><?php echo esc_html( $t[0] ); ?></div>
-								<div class="meta"><span class="flag"><?php echo esc_html( $t[1] ); ?></span><span><?php echo esc_html( $t[2] ); ?></span></div>
-							</div>
-						</div>
-						<div class="testi-quote-block">
-							<div class="stars">★★★★★</div>
-							<p>"<?php echo esc_html( $t[3] ); ?>"</p>
-							<span class="role"><?php echo esc_html( $t[4] ); ?></span>
-						</div>
+				foreach ( $findings as $fi ) : ?>
+					<div class="testi-card research-card">
+						<div class="research-num"><?php echo esc_html( $fi[0] ); ?></div>
+						<p class="research-body"><?php echo esc_html( $fi[1] ); ?></p>
+						<a class="research-src" href="<?php echo esc_url( 'https://www.tryfoco.com/adhd-execution-paralysis-survey/' ); ?>">FOCO Research, n=194 &rarr;</a>
 					</div>
 				<?php endforeach;
 			endif;
@@ -380,8 +369,8 @@ $tdir = get_template_directory_uri();
 		</div>
 
 		<div class="big-stat-card">
-			<div class="big-stat-num"><?php echo esc_html( foco_field( 'big_stat_num', '2,400,000+' ) ); ?></div>
-			<div class="big-stat-label"><?php echo wp_kses_post( foco_field( 'big_stat_label', 'tasks finally <strong>started</strong> with FOCO' ) ); ?></div>
+			<div class="big-stat-num"><?php echo esc_html( foco_field( 'big_stat_num_v2', '4.6' ) ); ?></div>
+			<div class="big-stat-label"><?php echo wp_kses_post( foco_field( 'big_stat_label_v2', 'average rating on <strong>Google Play</strong>' ) ); ?></div>
 		</div>
 	</div>
 </section>
@@ -414,7 +403,7 @@ $tdir = get_template_directory_uri();
 <section id="pricing">
 	<div class="wrap" style="text-align:center">
 		<div class="section-eyebrow"><?php echo esc_html( foco_field( 'pr_eyebrow', 'Pricing' ) ); ?></div>
-		<span class="risk-hook"><?php echo wp_kses_post( foco_field( 'pr_risk', "💪 Try it. If it doesn't help you start — don't pay." ) ); ?></span>
+		<span class="risk-hook"><?php echo wp_kses_post( foco_field( 'pr_risk', "💪 Try it. If it doesn't help you start, don't pay." ) ); ?></span>
 		<h2>
 			<?php echo esc_html( foco_field( 'pr_h_1', 'Unlock' ) ); ?>
 			<span class="grad"><?php echo esc_html( foco_field( 'pr_h_2', 'full focus.' ) ); ?></span>
@@ -503,7 +492,7 @@ $tdir = get_template_directory_uri();
 				<span class="sep">·</span>
 				<span class="item">No charge during trial</span>
 				<span class="sep">·</span>
-				<span class="item"><span class="stars">★★★★★</span> Join thousands building better focus</span>
+				<span class="item"><span class="stars">★</span> Rated 4.6 on Google Play</span>
 			</div>
 		</div>
 	</div>
@@ -534,10 +523,10 @@ $tdir = get_template_directory_uri();
 				<?php endwhile;
 			else :
 				$default_faqs = array(
-					array( 'Is this just another to-do app?', '<p>No. To-do apps assume you can start. <strong style="color:#fff">FOCO assumes you can\'t — and solves that.</strong></p>' ),
+					array( 'Is this just another to-do app?', '<p>No. To-do apps assume you can start. <strong style="color:#fff">FOCO assumes you can\'t, and solves that.</strong></p>' ),
 					array( "What if I've tried everything already?", '<p>That\'s exactly who FOCO is for. Most tools fail because they expect motivation. <strong style="color:#fff">FOCO removes the need for it.</strong></p>' ),
-					array( 'Do I need ADHD?', '<p>No. If you struggle to start — FOCO helps. Diagnosed or not.</p>' ),
-					array( 'What if I lose focus again?', '<p>You will. That\'s normal. <strong style="color:#fff">FOCO is built for that.</strong> It gently brings you back — without guilt.</p>' ),
+					array( 'Do I need ADHD?', '<p>No. If you struggle to start, FOCO helps. Diagnosed or not.</p>' ),
+					array( 'What if I lose focus again?', '<p>You will. That\'s normal. <strong style="color:#fff">FOCO is built for that.</strong> It gently brings you back, without guilt.</p>' ),
 					array( 'Can I cancel anytime?', '<p>Yes. No commitment. No tricks.</p>' ),
 				);
 				foreach ( $default_faqs as $f ) : ?>
@@ -564,8 +553,8 @@ $tdir = get_template_directory_uri();
 		<p style="font-size:clamp(20px,2.2vw,26px);font-weight:600;color:#A78BFA;margin:-16px auto 40px;letter-spacing:-0.01em"><?php echo esc_html( foco_field( 'fc_punch', 'FOCO gives you one.' ) ); ?></p>
 		<div class="store-badges"><?php echo foco_store_buttons(); ?></div>
 		<div class="trust-row">
-			<span class="stars">★★★★★</span>
-			<span><?php echo wp_kses_post( foco_field( 'hero_trust', 'Trusted by <strong style="color:#fff">100,000+</strong> ADHD minds' ) ); ?></span>
+			<span class="stars">★</span>
+			<span><?php echo wp_kses_post( foco_field( 'hero_trust_v2', 'Rated <strong style="color:#fff">4.6</strong> on Google Play' ) ); ?></span>
 		</div>
 	</div>
 </section>

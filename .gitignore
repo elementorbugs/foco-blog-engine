@@ -26,3 +26,6 @@ Thumbs.db
 .idea/
 
 carousel-out/
+
+# Scratch
+scratch*.html

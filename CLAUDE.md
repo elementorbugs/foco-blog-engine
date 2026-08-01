@@ -159,7 +159,9 @@ Set in RankMath → Titles & Meta → Local SEO. The site-wide brand entity must
 - `https://www.youtube.com/@FOCO-ADHDCOMPANION`
 - `https://www.pinterest.com/FOC0_ADHD_APP/` (note: handle uses a zero "FOC0", not letter O)
 - `https://play.google.com/store/apps/details?id=com.adiben.foco` (Android app, LIVE 2026-07-02 — strongest brand-entity signal)
-(iOS not live yet — add its App Store link to `sameAs` the moment it ships.)
+- `https://apps.apple.com/us/app/foco-adhd-task-planner/id6762489184` (iOS app "FOCO - ADHD Task Planner", LIVE 2026-07-26, free, iOS 13+, iPhone + iPad)
+
+**Store links: which URL form to use where.** In page copy and buttons use the storefront-neutral `https://apps.apple.com/app/id6762489184`, which routes each visitor to their own country's App Store. Never paste a country-prefixed URL (`/sk/`, `/il/`) into the site: it pins international visitors to one storefront. In `sameAs` and other schema use Apple's canonical `https://apps.apple.com/us/app/foco-adhd-task-planner/id6762489184`. The same list is hardcoded in `create-post.js` (Organization schema) so every new post carries it; keep the two in sync.
 Entity type confirmed live as **Organization** (was Person) on 2026-07-02.
 
 ## Brand

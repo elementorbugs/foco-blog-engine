@@ -1,5 +1,2890 @@
 {
-  "startDate": "2026-05-07",
-  "endDate": "2026-06-03",
-  "rows": []
+  "startDate": "2026-07-01",
+  "endDate": "2026-07-28",
+  "rows": [
+    {
+      "query": "foco app",
+      "clicks": 17,
+      "impressions": 143,
+      "ctr": 0.11888111888111888,
+      "position": 5.909090909090909
+    },
+    {
+      "query": "foco ai",
+      "clicks": 3,
+      "impressions": 198,
+      "ctr": 0.015151515151515152,
+      "position": 5.767676767676767
+    },
+    {
+      "query": "digital",
+      "clicks": 1,
+      "impressions": 1,
+      "ctr": 1,
+      "position": 10
+    },
+    {
+      "query": "foco",
+      "clicks": 1,
+      "impressions": 259,
+      "ctr": 0.003861003861003861,
+      "position": 17.42084942084942
+    },
+    {
+      "query": "inflow adhd review",
+      "clicks": 1,
+      "impressions": 4,
+      "ctr": 0.25,
+      "position": 12.25
+    },
+    {
+      "query": "inflow app review",
+      "clicks": 1,
+      "impressions": 17,
+      "ctr": 0.058823529411764705,
+      "position": 16.411764705882355
+    },
+    {
+      "query": "\"adhd app\" -site:reddit.com -site:twitter.com -site:x.com -site:wykop.pl -site:tripadvisor.com -site:youtube.com -site:yelp.com -site:booking.com -site:facebook.com -site:instagram.com -site:tiktok.com",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 3
+    },
+    {
+      "query": "2025 adhd planner",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 53
+    },
+    {
+      "query": "2025 planner adhd",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 55.5
+    },
+    {
+      "query": "a foco",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 20
+    },
+    {
+      "query": "aah top apps",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 42
+    },
+    {
+      "query": "add and focus",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 76
+    },
+    {
+      "query": "add vs ashd",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 87
+    },
+    {
+      "query": "adhd",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 3
+    },
+    {
+      "query": "adhd activation",
+      "clicks": 0,
+      "impressions": 32,
+      "ctr": 0,
+      "position": 64.90625
+    },
+    {
+      "query": "adhd and starting tasks",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 45
+    },
+    {
+      "query": "adhd and task initiation",
+      "clicks": 0,
+      "impressions": 27,
+      "ctr": 0,
+      "position": 76.62962962962963
+    },
+    {
+      "query": "adhd app",
+      "clicks": 0,
+      "impressions": 113,
+      "ctr": 0,
+      "position": 63.5929203539823
+    },
+    {
+      "query": "adhd app for adults",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 38.5
+    },
+    {
+      "query": "adhd application",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 57
+    },
+    {
+      "query": "adhd applications",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 58.5
+    },
+    {
+      "query": "adhd apps",
+      "clicks": 0,
+      "impressions": 85,
+      "ctr": 0,
+      "position": 66.10588235294118
+    },
+    {
+      "query": "adhd apps for adults",
+      "clicks": 0,
+      "impressions": 19,
+      "ctr": 0,
+      "position": 47
+    },
+    {
+      "query": "adhd apps free",
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 71
+    },
+    {
+      "query": "adhd apps market",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 22.714285714285715
+    },
+    {
+      "query": "adhd coach app",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 58.666666666666664
+    },
+    {
+      "query": "adhd coaching app",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 44
+    },
+    {
+      "query": "adhd coaching apps",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 44
+    },
+    {
+      "query": "adhd concentration",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 91
+    },
+    {
+      "query": "adhd concentration tips",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 88
+    },
+    {
+      "query": "adhd digital planner",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 46
+    },
+    {
+      "query": "adhd digital planner app",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 69.4
+    },
+    {
+      "query": "adhd digital planners",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 39
+    },
+    {
+      "query": "adhd focus",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 63.07692307692308
+    },
+    {
+      "query": "adhd focus issues",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 85
+    },
+    {
+      "query": "adhd focus techniques",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 81
+    },
+    {
+      "query": "adhd focus tips",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 85.33333333333333
+    },
+    {
+      "query": "adhd forget to eat",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 15
+    },
+    {
+      "query": "adhd forgetting to eat",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 16
+    },
+    {
+      "query": "adhd friendly apps",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 69
+    },
+    {
+      "query": "adhd gadgets comparison",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 63
+    },
+    {
+      "query": "adhd how to focus",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 77.25
+    },
+    {
+      "query": "adhd initiating tasks",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 47
+    },
+    {
+      "query": "adhd jobs",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 67
+    },
+    {
+      "query": "adhd management app",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 66.8
+    },
+    {
+      "query": "adhd management apps",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 76
+    },
+    {
+      "query": "adhd motivation app",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 12
+    },
+    {
+      "query": "adhd networking app",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 78
+    },
+    {
+      "query": "adhd organization app",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 67
+    },
+    {
+      "query": "adhd planner 2025",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 53
+    },
+    {
+      "query": "adhd planners 2025",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 61
+    },
+    {
+      "query": "adhd productivity app",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 53.285714285714285
+    },
+    {
+      "query": "adhd productivity apps",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 32.5
+    },
+    {
+      "query": "adhd productivity tools",
+      "clicks": 0,
+      "impressions": 15,
+      "ctr": 0,
+      "position": 61.53333333333333
+    },
+    {
+      "query": "adhd routine apps",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 38
+    },
+    {
+      "query": "adhd starting tasks",
+      "clicks": 0,
+      "impressions": 28,
+      "ctr": 0,
+      "position": 78.21428571428571
+    },
+    {
+      "query": "adhd support app",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 57
+    },
+    {
+      "query": "adhd support apps",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 71
+    },
+    {
+      "query": "adhd task initiation",
+      "clicks": 0,
+      "impressions": 28,
+      "ctr": 0,
+      "position": 79.07142857142857
+    },
+    {
+      "query": "adhd task initiation executive dysfunction review pmc",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "query": "adhd task initiation strategies",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 79.81818181818181
+    },
+    {
+      "query": "adhd task management app",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 65.5
+    },
+    {
+      "query": "adhd task management app free",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 73
+    },
+    {
+      "query": "adhd techniques to focus",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 72
+    },
+    {
+      "query": "adhd time management apps",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 64.3076923076923
+    },
+    {
+      "query": "adhd tools for women",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 59
+    },
+    {
+      "query": "adhd tools reviews",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 58
+    },
+    {
+      "query": "adhd treatment app",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 47
+    },
+    {
+      "query": "adhdvision app",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2
+    },
+    {
+      "query": "adult adhd app",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 58
+    },
+    {
+      "query": "adult adhd executive dysfunction task initiation review pmc",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 7
+    },
+    {
+      "query": "ai body doubling",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "query": "aligned app adhd",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 4
+    },
+    {
+      "query": "aligned app review",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 3
+    },
+    {
+      "query": "amanda perry adhd app",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 5
+    },
+    {
+      "query": "app foco",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 12
+    },
+    {
+      "query": "app for add",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 65.84615384615384
+    },
+    {
+      "query": "app for adhd",
+      "clicks": 0,
+      "impressions": 24,
+      "ctr": 0,
+      "position": 60.416666666666664
+    },
+    {
+      "query": "app for adhd adults",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 74.85714285714286
+    },
+    {
+      "query": "app for people with adhd",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 79
+    },
+    {
+      "query": "app inxplusabta - foco",
+      "clicks": 0,
+      "impressions": 14,
+      "ctr": 0,
+      "position": 3.4285714285714284
+    },
+    {
+      "query": "app unitvabta - foco",
+      "clicks": 0,
+      "impressions": 31,
+      "ctr": 0,
+      "position": 2.3870967741935485
+    },
+    {
+      "query": "apps for add",
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 65
+    },
+    {
+      "query": "apps for add adults",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 73
+    },
+    {
+      "query": "apps for adhd",
+      "clicks": 0,
+      "impressions": 70,
+      "ctr": 0,
+      "position": 66.2
+    },
+    {
+      "query": "apps for adhd adults",
+      "clicks": 0,
+      "impressions": 35,
+      "ctr": 0,
+      "position": 64.37142857142857
+    },
+    {
+      "query": "apps for adhd kids",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 4
+    },
+    {
+      "query": "apps for adhd productivity",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 14
+    },
+    {
+      "query": "apps for adhd students",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 72
+    },
+    {
+      "query": "apps for adults with adhd",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 66.85714285714286
+    },
+    {
+      "query": "apps for attention deficit disorder",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 85
+    },
+    {
+      "query": "apps for people with add",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 76
+    },
+    {
+      "query": "apps for people with adhd",
+      "clicks": 0,
+      "impressions": 37,
+      "ctr": 0,
+      "position": 80.27027027027027
+    },
+    {
+      "query": "apps for women with adhd",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 54.333333333333336
+    },
+    {
+      "query": "apps good for adhd",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 65
+    },
+    {
+      "query": "apps that help with adhd",
+      "clicks": 0,
+      "impressions": 56,
+      "ctr": 0,
+      "position": 74.21428571428571
+    },
+    {
+      "query": "apps to help manage adhd",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 81.75
+    },
+    {
+      "query": "apps to help with adhd",
+      "clicks": 0,
+      "impressions": 28,
+      "ctr": 0,
+      "position": 71.03571428571429
+    },
+    {
+      "query": "are fidget cubes for adhd?",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 35
+    },
+    {
+      "query": "attention deficit disorder apps",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 69.4
+    },
+    {
+      "query": "attention deficit disorder jobs",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 64
+    },
+    {
+      "query": "avoro adhd reviews",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 44.6
+    },
+    {
+      "query": "baixar.bizabta - foco",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "query": "barkley model of adhd",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 67
+    },
+    {
+      "query": "bbb.fmabta - foco",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 28
+    },
+    {
+      "query": "best adhd",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 66
+    },
+    {
+      "query": "best adhd app for adults",
+      "clicks": 0,
+      "impressions": 30,
+      "ctr": 0,
+      "position": 80.36666666666666
+    },
+    {
+      "query": "best adhd apps",
+      "clicks": 0,
+      "impressions": 40,
+      "ctr": 0,
+      "position": 70.7
+    },
+    {
+      "query": "best adhd apps 2026",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 9.5
+    },
+    {
+      "query": "best adhd apps for adult women",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 34.2
+    },
+    {
+      "query": "best adhd apps for adult women free",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "query": "best adhd apps for adults",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 76
+    },
+    {
+      "query": "best adhd apps for adults 2026",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 14
+    },
+    {
+      "query": "best adhd calendar",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 62
+    },
+    {
+      "query": "best adhd planner",
+      "clicks": 0,
+      "impressions": 44,
+      "ctr": 0,
+      "position": 55.61363636363637
+    },
+    {
+      "query": "best adhd planner 2026",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11
+    },
+    {
+      "query": "best adhd planner for adults",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 80
+    },
+    {
+      "query": "best adhd planner for teens",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 75.4
+    },
+    {
+      "query": "best adhd planners",
+      "clicks": 0,
+      "impressions": 38,
+      "ctr": 0,
+      "position": 56.526315789473685
+    },
+    {
+      "query": "best adhd productivity apps",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 14
+    },
+    {
+      "query": "best app for add",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 56.333333333333336
+    },
+    {
+      "query": "best app for adhd",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 75
+    },
+    {
+      "query": "best app for adhd adults",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 71
+    },
+    {
+      "query": "best app for adhd women",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 9
+    },
+    {
+      "query": "best apps adhd",
+      "clicks": 0,
+      "impressions": 46,
+      "ctr": 0,
+      "position": 71.08695652173913
+    },
+    {
+      "query": "best apps for add",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 39.5
+    },
+    {
+      "query": "best apps for adhd",
+      "clicks": 0,
+      "impressions": 107,
+      "ctr": 0,
+      "position": 73.85981308411215
+    },
+    {
+      "query": "best apps for adhd 2026",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 20
+    },
+    {
+      "query": "best apps for adhd adults",
+      "clicks": 0,
+      "impressions": 25,
+      "ctr": 0,
+      "position": 84.24
+    },
+    {
+      "query": "best apps for adhd time management",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 77.5
+    },
+    {
+      "query": "best apps for adults with adhd",
+      "clicks": 0,
+      "impressions": 25,
+      "ctr": 0,
+      "position": 77.16
+    },
+    {
+      "query": "best apps for attention deficit disorder",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 98
+    },
+    {
+      "query": "best apps for people with adhd",
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 81.875
+    },
+    {
+      "query": "best body doubling apps",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 57
+    },
+    {
+      "query": "best calendar for adhd",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 65
+    },
+    {
+      "query": "best calendars for adhd",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 65
+    },
+    {
+      "query": "best cbt app for adhd",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 33.5
+    },
+    {
+      "query": "best daily planners for adhd",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 98
+    },
+    {
+      "query": "best day planner for adhd",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 79.5
+    },
+    {
+      "query": "best digital planner adhd",
+      "clicks": 0,
+      "impressions": 50,
+      "ctr": 0,
+      "position": 60.84
+    },
+    {
+      "query": "best digital planner for adhd",
+      "clicks": 0,
+      "impressions": 19,
+      "ctr": 0,
+      "position": 60.73684210526316
+    },
+    {
+      "query": "best digital planner for adhd adults",
+      "clicks": 0,
+      "impressions": 39,
+      "ctr": 0,
+      "position": 60.23076923076923
+    },
+    {
+      "query": "best digital planners",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 3
+    },
+    {
+      "query": "best focus app for adhd 2026",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 39
+    },
+    {
+      "query": "best neurodivergent planner",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 49.2
+    },
+    {
+      "query": "best online planner for adhd",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 94
+    },
+    {
+      "query": "best paper planners for adhd",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 54.8
+    },
+    {
+      "query": "best planner adhd",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 58.166666666666664
+    },
+    {
+      "query": "best planner for add",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 56
+    },
+    {
+      "query": "best planner for add adults",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 94
+    },
+    {
+      "query": "best planner for adhd",
+      "clicks": 0,
+      "impressions": 56,
+      "ctr": 0,
+      "position": 57.642857142857146
+    },
+    {
+      "query": "best planner for adhd adult",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 94
+    },
+    {
+      "query": "best planner for adhd adults",
+      "clicks": 0,
+      "impressions": 32,
+      "ctr": 0,
+      "position": 77.21875
+    },
+    {
+      "query": "best planner for adhd women",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 76
+    },
+    {
+      "query": "best planner for adult adhd",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 86.66666666666667
+    },
+    {
+      "query": "best planner for neurodivergent",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 62
+    },
+    {
+      "query": "best planner for someone with adhd",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 90
+    },
+    {
+      "query": "best planners 2024 adhd",
+      "clicks": 0,
+      "impressions": 45,
+      "ctr": 0,
+      "position": 54.15555555555556
+    },
+    {
+      "query": "best planners 2026 adhd",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 43
+    },
+    {
+      "query": "best planners adhd",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 58
+    },
+    {
+      "query": "best planners for add adults",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 95
+    },
+    {
+      "query": "best planners for adhd",
+      "clicks": 0,
+      "impressions": 55,
+      "ctr": 0,
+      "position": 59.67272727272727
+    },
+    {
+      "query": "best planners for adhd adults",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 100
+    },
+    {
+      "query": "best planners for adhd women",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 74.5
+    },
+    {
+      "query": "best planners for adults with adhd",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 99
+    },
+    {
+      "query": "best planners for people with adhd",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 83.33333333333333
+    },
+    {
+      "query": "best productivity apps for adhd",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 67.5
+    },
+    {
+      "query": "best way to focus with adhd",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 82
+    },
+    {
+      "query": "both",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "query": "breakdown tasks",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 55.69230769230769
+    },
+    {
+      "query": "breaking down tasks into steps",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 49
+    },
+    {
+      "query": "career adhd",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 56
+    },
+    {
+      "query": "cdc adhd executive function adults task initiation",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 9
+    },
+    {
+      "query": "cdc adhd executive function task initiation",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "query": "cdc adhd executive function task initiation adults",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 8.5
+    },
+    {
+      "query": "cdc adhd executive function task initiation official",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 6
+    },
+    {
+      "query": "chadd adhd executive dysfunction task initiation adults",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 6
+    },
+    {
+      "query": "chadd adhd executive function task initiation",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 5.6
+    },
+    {
+      "query": "chadd adhd executive function task initiation adults",
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 6.75
+    },
+    {
+      "query": "chadd adhd executive function task initiation procrastination",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 3.5
+    },
+    {
+      "query": "chadd adhd executive function task initiation procrastination adults",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 6.5
+    },
+    {
+      "query": "chadd adhd procrastination task initiation executive function",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 7.5
+    },
+    {
+      "query": "chadd adhd task initiation executive dysfunction adults",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 5
+    },
+    {
+      "query": "chadd adhd task initiation executive function",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "query": "chadd adhd task initiation executive function adults",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 5.333333333333333
+    },
+    {
+      "query": "chadd adult adhd executive function procrastination task initiation",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 9.666666666666666
+    },
+    {
+      "query": "chadd adult adhd executive function task initiation",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 5.75
+    },
+    {
+      "query": "chadd executive function adhd task initiation",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 7
+    },
+    {
+      "query": "chadd task initiation adhd executive function",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 7
+    },
+    {
+      "query": "chillio app legit",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 3
+    },
+    {
+      "query": "chillo app review",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 3
+    },
+    {
+      "query": "com foco",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "query": "comfoco",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "query": "digital adhd planner",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 48.142857142857146
+    },
+    {
+      "query": "digital or paper planner for adhd",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 39
+    },
+    {
+      "query": "digital planner adhd",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 53.53846153846154
+    },
+    {
+      "query": "digital planner for adhd",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 53.75
+    },
+    {
+      "query": "digital planner for adhd adults",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 84
+    },
+    {
+      "query": "digital planners for adhd",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 66.66666666666667
+    },
+    {
+      "query": "do adhd meds help with task initiation",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 49
+    },
+    {
+      "query": "do adhd people forget to eat",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "query": "does inflow work",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11
+    },
+    {
+      "query": "downloadlivreabta - foco",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 5
+    },
+    {
+      "query": "dubbii app review",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 3
+    },
+    {
+      "query": "eai tvabta - foco",
+      "clicks": 0,
+      "impressions": 33,
+      "ctr": 0,
+      "position": 6.181818181818182
+    },
+    {
+      "query": "eaitvabta - foco",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 17
+    },
+    {
+      "query": "echo tvabta - foco",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 15
+    },
+    {
+      "query": "eppiabta - foco",
+      "clicks": 0,
+      "impressions": 9,
+      "ctr": 0,
+      "position": 4.666666666666666
+    },
+    {
+      "query": "execution paralysis",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 10.4
+    },
+    {
+      "query": "f onlineabta - foco",
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 12.833333333333334
+    },
+    {
+      "query": "f-onlineabta - foco",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 13.23076923076923
+    },
+    {
+      "query": "fo co",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 4
+    },
+    {
+      "query": "foc0",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 9
+    },
+    {
+      "query": "focgo",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11
+    },
+    {
+      "query": "foco 3d",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 40
+    },
+    {
+      "query": "foco 4",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 45
+    },
+    {
+      "query": "foco _com",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 10.7
+    },
+    {
+      "query": "foco a",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 4.75
+    },
+    {
+      "query": "foco and fofo",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 22
+    },
+    {
+      "query": "foco caps",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 48
+    },
+    {
+      "query": "foco cashback",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 44
+    },
+    {
+      "query": "foco con",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "query": "foco credit card",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 62.75
+    },
+    {
+      "query": "foco d",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 27
+    },
+    {
+      "query": "foco dashboard",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 22
+    },
+    {
+      "query": "foco dimeable",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 32
+    },
+    {
+      "query": "foco doco",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 19
+    },
+    {
+      "query": "foco f4",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 45
+    },
+    {
+      "query": "foco foco",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 5.666666666666667
+    },
+    {
+      "query": "foco google",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 27
+    },
+    {
+      "query": "foco horizontal",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 32
+    },
+    {
+      "query": "foco ia",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 3
+    },
+    {
+      "query": "foco ideas",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 13
+    },
+    {
+      "query": "foco immersive video",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2
+    },
+    {
+      "query": "foco individual",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 20
+    },
+    {
+      "query": "foco infinito",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 44
+    },
+    {
+      "query": "foco intake",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 20
+    },
+    {
+      "query": "foco log",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 19
+    },
+    {
+      "query": "foco mate",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 7
+    },
+    {
+      "query": "foco mix",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 36
+    },
+    {
+      "query": "foco next",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 26
+    },
+    {
+      "query": "foco pet",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 48
+    },
+    {
+      "query": "foco phone",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11
+    },
+    {
+      "query": "foco play app",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "query": "foco player",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "query": "foco point",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 5.333333333333333
+    },
+    {
+      "query": "foco replay",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "query": "foco review",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 31
+    },
+    {
+      "query": "foco stop",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 30
+    },
+    {
+      "query": "foco swap",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 38
+    },
+    {
+      "query": "foco us",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 50
+    },
+    {
+      "query": "foco vertical",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 24
+    },
+    {
+      "query": "foco website",
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 5.375
+    },
+    {
+      "query": "foco works",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 41
+    },
+    {
+      "query": "foco ww.",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "query": "foco www.",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 5
+    },
+    {
+      "query": "foco.com",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 32
+    },
+    {
+      "query": "foco1",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "query": "foco]",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 26
+    },
+    {
+      "query": "fococ",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2
+    },
+    {
+      "query": "fococs",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 32
+    },
+    {
+      "query": "focoe",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "query": "focof",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 42
+    },
+    {
+      "query": "focok",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "query": "focomo",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "query": "focoo",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 13.166666666666666
+    },
+    {
+      "query": "focoos ai",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 83
+    },
+    {
+      "query": "focor ai",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 4
+    },
+    {
+      "query": "focos",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 34
+    },
+    {
+      "query": "focos ase",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 29
+    },
+    {
+      "query": "focos caridacos",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 15
+    },
+    {
+      "query": "focos dimeables",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 25
+    },
+    {
+      "query": "focos nm",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 18
+    },
+    {
+      "query": "focos-cl",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 22
+    },
+    {
+      "query": "focot",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 7
+    },
+    {
+      "query": "focoz",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 30
+    },
+    {
+      "query": "focu",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 42.5
+    },
+    {
+      "query": "focus adhd",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 66
+    },
+    {
+      "query": "focus genie app review",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 3
+    },
+    {
+      "query": "focus with adhd",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 72.4
+    },
+    {
+      "query": "focusing techniques for adhd",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 78.83333333333333
+    },
+    {
+      "query": "foeco",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 8.5
+    },
+    {
+      "query": "foko",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "query": "foko app",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 5
+    },
+    {
+      "query": "formula do foco",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 15
+    },
+    {
+      "query": "fočo",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 9
+    },
+    {
+      "query": "free adhd app",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 64
+    },
+    {
+      "query": "free adhd apps",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 71.8
+    },
+    {
+      "query": "free adhd apps for adult women",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "query": "free adhd apps for adults",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 71.5
+    },
+    {
+      "query": "free apps for adhd",
+      "clicks": 0,
+      "impressions": 9,
+      "ctr": 0,
+      "position": 74.22222222222223
+    },
+    {
+      "query": "free apps for adhd adults",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 90.33333333333333
+    },
+    {
+      "query": "future adhd planner",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 36
+    },
+    {
+      "query": "get chillio app review",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 3
+    },
+    {
+      "query": "get foco",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 18.25
+    },
+    {
+      "query": "goblin tools alternative",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 5.2
+    },
+    {
+      "query": "goblin.tools (highly recommended for software engineers with adhd)",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 27
+    },
+    {
+      "query": "good planners for adhd",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 59.857142857142854
+    },
+    {
+      "query": "google trends adhd planner 2026",
+      "clicks": 0,
+      "impressions": 16,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "query": "harvard app for adhd",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 3
+    },
+    {
+      "query": "hdonline abta - foco",
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 19.083333333333332
+    },
+    {
+      "query": "hiper foco",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 6
+    },
+    {
+      "query": "how much?",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2
+    },
+    {
+      "query": "how to break down tasks adhd",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 65
+    },
+    {
+      "query": "how to concentrate with adhd",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 88
+    },
+    {
+      "query": "how to focus better with adhd",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 91
+    },
+    {
+      "query": "how to focus with add",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 85.42857142857143
+    },
+    {
+      "query": "how to focus with adhd",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 84
+    },
+    {
+      "query": "htvabta - foco",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 12.5
+    },
+    {
+      "query": "implementation intentions adhd adults study task initiation",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 9
+    },
+    {
+      "query": "implementation intentions adhd adults task initiation study",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 9.666666666666666
+    },
+    {
+      "query": "implementation intentions adhd task initiation study",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "query": "in flow app reviews",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11
+    },
+    {
+      "query": "inflow adhd",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 25.142857142857142
+    },
+    {
+      "query": "inflow adhd alternatives",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 54
+    },
+    {
+      "query": "inflow adhd app pricing official 2026",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 10.5
+    },
+    {
+      "query": "inflow adhd app review",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 15.666666666666666
+    },
+    {
+      "query": "inflow adhd app review 2026",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 4
+    },
+    {
+      "query": "inflow adhd app reviews",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11
+    },
+    {
+      "query": "inflow adhd reddit",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 12
+    },
+    {
+      "query": "inflow adhd reviews",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 18
+    },
+    {
+      "query": "inflow app",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 22
+    },
+    {
+      "query": "inflow app adhd review",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 14.75
+    },
+    {
+      "query": "inflow app cost",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 31
+    },
+    {
+      "query": "inflow app reddit",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "query": "inflow app review reddit",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 19.5
+    },
+    {
+      "query": "inflow app reviews",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 27.75
+    },
+    {
+      "query": "inflow reddit",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "query": "inflow review",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 14.272727272727273
+    },
+    {
+      "query": "inflow reviews",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 19
+    },
+    {
+      "query": "inflow reviews adhd",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11
+    },
+    {
+      "query": "is foco a legit company",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 30
+    },
+    {
+      "query": "is foco a legit site",
+      "clicks": 0,
+      "impressions": 9,
+      "ctr": 0,
+      "position": 27.444444444444443
+    },
+    {
+      "query": "is inflow good",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 23
+    },
+    {
+      "query": "is inflow legit",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 9
+    },
+    {
+      "query": "is inflow worth it",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 8.666666666666668
+    },
+    {
+      "query": "jobs for adhd",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 59
+    },
+    {
+      "query": "list the task you are breaking down into parts:",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 43
+    },
+    {
+      "query": "liven app",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 3
+    },
+    {
+      "query": "mellowflow app reviews",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2
+    },
+    {
+      "query": "mfcabta - foco",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 18.5
+    },
+    {
+      "query": "mind flow ai app",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 3
+    },
+    {
+      "query": "mindflow ai app review",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 3
+    },
+    {
+      "query": "most addictive mobile apps 2025",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 82
+    },
+    {
+      "query": "multi foco",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 13
+    },
+    {
+      "query": "my foco",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 44
+    },
+    {
+      "query": "neurolist",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 2
+    },
+    {
+      "query": "neurolist app",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 5
+    },
+    {
+      "query": "nih adhd dopamine executive function review",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "query": "nimh adhd adults executive function difficulty starting tasks",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "query": "nimh adhd adults executive function task initiation",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 6
+    },
+    {
+      "query": "nimh adhd executive dysfunction task initiation",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 7
+    },
+    {
+      "query": "nimh adhd executive function adults task initiation",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "query": "nimh adhd executive function difficulty starting tasks official",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 9
+    },
+    {
+      "query": "nimh adhd executive function initiation tasks",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 9
+    },
+    {
+      "query": "nimh adhd executive function task initiation",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 6
+    },
+    {
+      "query": "nimh adhd executive function task initiation adults",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 6.166666666666667
+    },
+    {
+      "query": "nimh adhd executive function task initiation official",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 6.333333333333333
+    },
+    {
+      "query": "nimh adhd executive functioning task initiation",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 7
+    },
+    {
+      "query": "no foco",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "query": "ondebaixaabta - foco",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 2
+    },
+    {
+      "query": "onflowabta - foco",
+      "clicks": 0,
+      "impressions": 18,
+      "ctr": 0,
+      "position": 8.944444444444445
+    },
+    {
+      "query": "organization app for adhd",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 69
+    },
+    {
+      "query": "oriko app adhs",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 23
+    },
+    {
+      "query": "p2prime.comabta - foco",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 6
+    },
+    {
+      "query": "planner for adhd and focus management",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 61
+    },
+    {
+      "query": "planners for adhd",
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 44
+    },
+    {
+      "query": "play-series.online abta - foco",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 24.75
+    },
+    {
+      "query": "primeuhdabta - foco",
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 9.583333333333334
+    },
+    {
+      "query": "pro shareabta - foco",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 7
+    },
+    {
+      "query": "productivity app adhd",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 26.666666666666668
+    },
+    {
+      "query": "productivity app for adhd",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 14
+    },
+    {
+      "query": "productivity apps for adhd",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 32
+    },
+    {
+      "query": "savvy parent app review",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 3
+    },
+    {
+      "query": "series onlineabta - foco",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 9.25
+    },
+    {
+      "query": "seuseriadoabta - foco",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 12.76923076923077
+    },
+    {
+      "query": "social foco",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 4
+    },
+    {
+      "query": "structured adhd app",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 15
+    },
+    {
+      "query": "structured app adhd official",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11
+    },
+    {
+      "query": "structured app for adhd",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 13
+    },
+    {
+      "query": "structured app review",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 4
+    },
+    {
+      "query": "structured vs ticktick",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 7
+    },
+    {
+      "query": "task breakdown",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 60.5
+    },
+    {
+      "query": "task initiation",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 15.5
+    },
+    {
+      "query": "task initiation adhd",
+      "clicks": 0,
+      "impressions": 30,
+      "ctr": 0,
+      "position": 78.53333333333333
+    },
+    {
+      "query": "task initiation deficit",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "query": "task initiation executive dysfunction",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 18.5
+    },
+    {
+      "query": "task management app for adhd",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 77
+    },
+    {
+      "query": "the best planners for adhd",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 72
+    },
+    {
+      "query": "ticktick vs tiimo",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 18.5
+    },
+    {
+      "query": "tienen costo ?",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 7
+    },
+    {
+      "query": "tiimo alternative",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 30.333333333333332
+    },
+    {
+      "query": "tiimo vs structured",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 21
+    },
+    {
+      "query": "time management apps for adhd",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 75
+    },
+    {
+      "query": "tudohdabta - foco",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 5.333333333333333
+    },
+    {
+      "query": "tv onlineabta - foco",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 22
+    },
+    {
+      "query": "ultraflix.topabta - foco",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 18.2
+    },
+    {
+      "query": "visual planner for adhd",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 49
+    },
+    {
+      "query": "what does foco stand for",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 51.666666666666664
+    },
+    {
+      "query": "what fidget toy is best for adhd?",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 46
+    },
+    {
+      "query": "what helps adhd focus",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 77
+    },
+    {
+      "query": "what is adhd digital planner",
+      "clicks": 0,
+      "impressions": 21,
+      "ctr": 0,
+      "position": 62.285714285714285
+    },
+    {
+      "query": "what is foco",
+      "clicks": 0,
+      "impressions": 9,
+      "ctr": 0,
+      "position": 33.44444444444444
+    },
+    {
+      "query": "what is foco drug",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 3.142857142857143
+    },
+    {
+      "query": "what is focos",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 43
+    },
+    {
+      "query": "what is inflow app",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 14
+    },
+    {
+      "query": "what is the best adhd app for adults",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 93
+    },
+    {
+      "query": "www.foco",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 47
+    },
+    {
+      "query": "www.foco.com",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 49
+    },
+    {
+      "query": "x plusabta - foco",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10
+    },
+    {
+      "query": "xplusabta - foco",
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 13.375
+    },
+    {
+      "query": "yes please",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 18
+    }
+  ]
 }
