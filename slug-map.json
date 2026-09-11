@@ -165,8 +165,8 @@
       "pillar": "adhd-at-work"
     },
     "adhd-remote-work": {
-      "id": null,
-      "status": "planned",
+      "id": 4336,
+      "status": "published",
       "pillar": "adhd-at-work"
     },
     "adhd-job-interview-tips": {
@@ -204,9 +204,14 @@
       "status": "planned",
       "pillar": "adhd-task-breakdown-apps"
     },
-    "best-task-breakdown-apps-for-adhd": {
-      "id": null,
-      "status": "planned",
+    "best-apps-for-adhd-task-paralysis": {
+      "id": 4315,
+      "status": "publish",
+      "pillar": "adhd-task-breakdown-apps"
+    },
+    "adhd-task-apps-for-freelancers": {
+      "id": 4340,
+      "status": "published",
       "pillar": "adhd-task-breakdown-apps"
     },
     "best-free-adhd-apps": {
@@ -214,9 +219,9 @@
       "status": "planned",
       "pillar": "adhd-task-breakdown-apps"
     },
-    "best-adhd-apps-for-moms": {
-      "id": null,
-      "status": "planned",
+    "family-calendar-apps-for-adhd-moms": {
+      "id": 4307,
+      "status": "publish",
       "pillar": "adhd-task-breakdown-apps"
     },
     "best-productivity-apps-for-adhd": {

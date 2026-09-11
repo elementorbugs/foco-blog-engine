@@ -3,6 +3,8 @@
 .env.local
 .pexels-key
 .gsc-cache/
+*service-account*.json
+ga4-*.json
 
 # Node
 node_modules/
