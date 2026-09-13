@@ -21,10 +21,6 @@ while ( have_posts() ) : the_post(); ?>
 			<?php endif; ?>
 		</div>
 
-		<?php if ( has_post_thumbnail() ) : ?>
-			<div style="margin-bottom:32px"><?php the_post_thumbnail( 'large', array( 'style' => 'border-radius:var(--r-lg);width:100%;' ) ); ?></div>
-		<?php endif; ?>
-
 		<article>
 			<?php the_content(); ?>
 		</article>
