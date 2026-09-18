@@ -382,7 +382,7 @@ async function validateInternalLinks(content) {
 // Outbound links to these get rel="nofollow" so we never pass equity to a competitor.
 // NOT competitors (stay dofollow as authority citations): *.gov, *.edu, nih.gov, cdc.gov,
 // chadd.org, pubmed, nature.com, russellbarkley.org, who.int, etc.
-const COMPETITOR_RE = /(?:additudemag|healthline|verywellmind|psychcentral|choosingtherapy|webmd|psychologytoday|getinflow|focusmate|flowclub|tiimoapp|goblin\.tools|sunsama|brili|llamalife|routinery|saner\.ai|usemotion|todoist|structured\.app)/i;
+const COMPETITOR_RE = /(?:additudemag|healthline|verywellmind|psychcentral|choosingtherapy|webmd|psychologytoday|getinflow|focusmate|flowclub|tiimoapp|goblin\.tools|sunsama|brili|llamalife|routinery|saner\.ai|usemotion|todoist|structured\.app|amazingmarvin)/i;
 
 function autoFixExternalLinks(content) {
   let fixed = 0;
