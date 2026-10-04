@@ -1,7 +1,7 @@
 // FOCO TikTok carousel builder. One spec file per carousel: carousels/<slug>.json
 //
 //   node carousel/build.js <slug> photos   fetch 6 Pexels candidates per slide (slide.query)
-//                                          -> carousel/work/<slug>/sheet.jpg (row = slide, col = pick 1-6)
+//                                          -> carousel/work/<slug>/sheet.jpg (each slide = 6x2 block, picks 1-12)
 //   node carousel/build.js <slug> render   copy each slide's chosen photo (slide.pick, or slide.photo = another
 //                                          slide's id), render 1080x1920 PNGs + preview.jpg + caption.txt
 //                                          -> out/tiktok-<slug>/
@@ -56,17 +56,18 @@ async function photos() {
     if (!s.query) continue;
     // One narrator per carousel: slides that show a person (or their hands/body) search for the same look
     const q = s.person && spec.narrator ? `${spec.narrator} ${s.query}` : s.query;
-    const res = await fetch(`https://api.pexels.com/v1/search?query=${encodeURIComponent(q)}&orientation=portrait&per_page=6`, { headers: { Authorization: key } });
+    const res = await fetch(`https://api.pexels.com/v1/search?query=${encodeURIComponent(q)}&orientation=portrait&per_page=12`, { headers: { Authorization: key } });
     const { photos: found } = await res.json();
     for (let i = 0; i < found.length; i++) {
       const img = await fetch(found[i].src.large2x);
       fs.writeFileSync(path.join(work, `${s.id}-${i + 1}.jpg`), Buffer.from(await img.arrayBuffer()));
     }
-    // row of thumbnails, padded to 6 columns
+    // 12 candidates per slide as a 6x2 grid (picks numbered left-to-right, top row first), padded when fewer
     const inputs = found.flatMap((_, i) => ["-i", path.join(work, `${s.id}-${i + 1}.jpg`)]);
     const scale = found.map((_, i) => `[${i}]scale=170:250:force_original_aspect_ratio=increase,crop=170:250,setsar=1[v${i}]`).join(";");
-    const stack = found.length > 1 ? `${found.map((_, i) => `[v${i}]`).join("")}hstack=inputs=${found.length},pad=1020:250:0:0:black` : "[v0]pad=1020:250:0:0:black";
-    ff([...inputs, "-filter_complex", `${scale};${stack}`, path.join(work, `row-${s.id}.jpg`)]);
+    const layout = found.map((_, i) => `${(i % 6) * 170}_${Math.floor(i / 6) * 250}`).join("|");
+    const grid = found.length > 1 ? `${found.map((_, i) => `[v${i}]`).join("")}xstack=inputs=${found.length}:layout=${layout}:fill=black,pad=1020:500:0:0:black` : "[v0]pad=1020:500:0:0:black";
+    ff([...inputs, "-filter_complex", `${scale};${grid}`, path.join(work, `row-${s.id}.jpg`)]);
     rows.push(path.join(work, `row-${s.id}.jpg`));
     console.log(`${s.id}: ${found.length} candidates ("${q}")`);
   }

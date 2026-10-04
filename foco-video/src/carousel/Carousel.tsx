@@ -65,8 +65,21 @@ export const FocoCard: React.FC<{ title: string; steps: Step[] }> = ({ title, st
   );
 };
 
+// "Phone photo" look: slightly warm, softer saturation/contrast, film grain and a light vignette, so stock photos
+// read like casual iPhone shots and the slides share one look.
 export const Photo: React.FC<{ name: string; blur?: boolean }> = ({ name, blur }) => (
-  <Img src={staticFile(`carousel/${name}.jpg`)} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", filter: blur ? "blur(18px) brightness(0.85)" : "none", transform: blur ? "scale(1.1)" : "none" }} />
+  <>
+    <Img src={staticFile(`carousel/${name}.jpg`)} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", filter: blur ? "blur(18px) brightness(0.85)" : "saturate(0.88) contrast(0.94) sepia(0.12) brightness(1.03)", transform: blur ? "scale(1.1)" : "none" }} />
+    {blur ? null : (
+      <>
+        <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.16, mixBlendMode: "overlay" }}>
+          <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" /></filter>
+          <rect width="100%" height="100%" filter="url(#grain)" />
+        </svg>
+        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.22) 100%)" }} />
+      </>
+    )}
+  </>
 );
 
 const FinalSlide: React.FC<{ slide: Slide }> = ({ slide }) => (

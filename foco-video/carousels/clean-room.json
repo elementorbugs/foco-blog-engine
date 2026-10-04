@@ -4,29 +4,28 @@
     {
       "layout": "hook",
       "id": "hook",
-      "query": "messy bedroom clothes everywhere",
+      "query": "lying on bed surrounded by clothes",
       "lines": [
         "My room was a mess for 3 weeks",
         "until I tried this 3-step trick 🫠"
       ],
       "tag": "(ADHD edition)",
       "person": true,
-      "pick": 1,
-      "textTop": 1060
+      "pick": 12
     },
     {
       "layout": "caption",
       "id": "reframe",
-      "query": "sitting on bed messy room",
+      "query": "sitting on floor of messy bedroom",
       "label": "first: \"clean my room\" isn't ONE task",
       "comment": "it's 40 tasks in a trench coat 🧥",
       "person": true,
-      "pick": 4
+      "pick": 2
     },
     {
       "layout": "card",
       "id": "breakdown",
-      "query": "hands holding trash bag",
+      "query": "hands picking up clothes from floor",
       "label": "trick 1: break it into tiny steps",
       "comment": "so small my brain can't say no",
       "title": "Clean my room",
@@ -50,12 +49,12 @@
       ],
       "result": "step 1 is only 3 min ✅",
       "person": true,
-      "pick": 3
+      "pick": 5
     },
     {
       "layout": "focus",
       "id": "focus",
-      "query": "making the bed",
+      "query": "folding laundry on bed natural light",
       "label": "trick 2: ONE step on screen",
       "comment": "timer on, rainy sounds on",
       "stepNo": 1,
@@ -65,25 +64,25 @@
       "sound": "Rainy",
       "result": "the clothes can wait ✅",
       "person": true,
-      "pick": 2
+      "pick": 9
     },
     {
       "layout": "caption",
       "id": "stop",
-      "query": "smiling resting on couch at home",
+      "query": "relaxing with tea at home window light",
       "label": "trick 3: when the timer ends, I'm allowed to stop",
       "comment": "spoiler: I almost never stop 😌",
       "person": true,
-      "pick": 1
+      "pick": 4
     },
     {
       "layout": "caption",
       "id": "after",
-      "query": "clean tidy bedroom morning light",
+      "query": "cozy tidy bedroom morning sunlight",
       "label": "22 minutes later:",
       "comment": "the room I avoided for weeks ✨",
       "person": false,
-      "pick": 5
+      "pick": 4
     },
     {
       "layout": "final-phone",
@@ -117,5 +116,5 @@
     ],
     "altText": "Carousel of 7 photos showing a messy bedroom getting cleaned, with text explaining a 3-step ADHD cleaning method: break the task into tiny steps, focus on one step with a timer and calm sounds, then stop or keep going. The last slide shows the FOCO app."
   },
-  "narrator": "young blonde woman"
+  "narrator": "blonde woman"
 }

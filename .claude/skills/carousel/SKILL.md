@@ -15,7 +15,7 @@ an in-app FOCO card, and FOCO revealed only at the end as a casual "btw". Engine
 2. **Write the spec** `foco-video/carousels/<slug>.json` (schema below). Every non-final slide needs a Pexels `query`
    (portrait lifestyle shot, describe the scene, not the emotion).
 3. `cd foco-video && node carousel/build.js <slug> photos`, then **Read** `carousel/work/<slug>/sheet.jpg`
-   (row = slide in order, column = pick 1-6). Choose photos: real/candid, room for text at top and bottom,
+   (each slide = a 6x2 block in order, picks 1-12 left-to-right, top row first). Choose photos: real/candid, room for text at top and bottom,
    no visible brand logos, no near-duplicates across slides. Write `"pick": N` into each slide.
 4. `node carousel/build.js <slug> render`, then **Read** `out/tiktok-<slug>/preview.jpg` and
    `carousel/work/<slug>/safezones.jpg`. Check: no text in a red zone, text isn't covering a face, nothing overflows,
@@ -192,6 +192,15 @@ Slide 1 decides swipe vs scroll; spend the most effort here. Before rendering, *
 - Photo: a person or a strong scene with clear space in the middle third for the bubbles.
 
 ## Quality rules (what makes it look native, not "produced")
+- **Photos must not look like stock (Adi's standing rule, 2026-10-04).** build.js fetches 12 candidates per slide
+  and every slide gets a "phone photo" grade (warmer, softer saturation, grain, light vignette) in `Photo`.
+  **Queries:** concrete scene + light + mood, e.g. "lying on bed surrounded by clothes", "relaxing with tea at home
+  window light", "cozy tidy bedroom morning sunlight". Words that pull authentic results: natural light, window light,
+  candid, cozy, morning, overhead, close-up, POV, real home. Avoid generic queries ("woman cleaning", "messy room").
+  **Pick:** natural/window light, real homes, imperfect angles, candid moments, details (a mug, hands, fabric), warm
+  or moody tones. **Reject:** studio/plain-wall backdrops, posed smiles or kissy faces at the camera, uniforms
+  (maids, hazmat), perfect hotel rooms, obvious stock gestures, flat over-lit images, and two near-identical shots
+  from the same shoot on consecutive slides.
 - **One narrator per carousel (Adi's standing rule, 2026-10-04).** Carousels are first-person ("my room"), so a
   different person on every slide reads as stock and kills authenticity. Default: **no faces at all** (hands,
   objects, rooms, overhead/flat-lay, POV-from-the-eyes shots), like the Flowfy original. Write Pexels queries for that
