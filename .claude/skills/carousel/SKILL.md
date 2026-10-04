@@ -20,7 +20,14 @@ an in-app FOCO card, and FOCO revealed only at the end as a casual "btw". Engine
 4. `node carousel/build.js <slug> render`, then **Read** `out/tiktok-<slug>/preview.jpg` and
    `carousel/work/<slug>/safezones.jpg`. Check: no text in a red zone, text isn't covering a face, nothing overflows,
    bubbles readable on the photo. Fix and re-render.
-5. Open the folder (`explorer.exe` on `out\tiktok-<slug>`) and reply in Hebrew: concept, slide list, caption, posting tip.
+5. **Deliver by email:** `node carousel/send.js <slug>` emails the slides (JPEG, in order) + caption to Adi.
+   Needs `GMAIL_USER` + `GMAIL_APP_PASSWORD` (env vars in the cloud, `.env` locally). On Adi's PC also open the folder
+   (`explorer.exe` on `out\tiktok-<slug>`). Reply in Hebrew: concept, slide list, caption, posting tip.
+
+**Running in a cloud session** (Adi's phone, PC off): first `cd foco-video && npm ci` if `node_modules` is missing.
+`PEXELS_KEY`, `GMAIL_USER`, `GMAIL_APP_PASSWORD` come from the environment's env vars. Rendered files live only in
+the session, so step 5 (email) is how Adi gets them. If a step fails on network (Pexels, Chrome download, SMTP),
+say exactly which host was blocked so Adi can allow it in the environment's network settings.
 
 ## Spec schema
 ```json

@@ -4,7 +4,10 @@
       "Bash(node carousel/build.js:*)",
       "Bash(cd foco-video && node carousel/build.js:*)",
       "Bash(npx tsc --noEmit:*)",
-      "Bash(explorer.exe:*)"
+      "Bash(explorer.exe:*)",
+      "Bash(node carousel/send.js:*)",
+      "Bash(cd foco-video && node carousel/send.js:*)",
+      "Bash(cd foco-video && npm ci:*)"
     ]
   }
 }
