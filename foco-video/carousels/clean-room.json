@@ -6,28 +6,30 @@
       "id": "hook",
       "query": "lying on bed surrounded by clothes",
       "lines": [
-        "My room was a mess for 3 weeks",
-        "until I tried this 3-step trick 🫠"
+        "My room was a mess for 3 weeks 😵‍💫",
+        "until I tried this 3-step trick 🫠✨"
       ],
       "tag": "(ADHD edition)",
       "person": true,
-      "pick": 1
+      "pick": 1,
+      "sticker": "🧺"
     },
     {
       "layout": "caption",
       "id": "reframe",
       "query": "sitting on floor of messy bedroom",
-      "label": "first: \"clean my room\" isn't ONE task",
-      "comment": "it's 40 tasks in a trench coat 🧥",
+      "label": "first: \"clean my room\" isn't ONE task 🙅‍♀️",
+      "comment": "it's 40 tasks in a trench coat 🧥👀",
       "person": true,
-      "pick": 1
+      "pick": 1,
+      "sticker": "🤯"
     },
     {
       "layout": "card",
       "id": "breakdown",
       "query": "hands picking up clothes from floor",
-      "label": "trick 1: break it into tiny steps",
-      "comment": "so small my brain can't say no",
+      "label": "trick 1: break it into tiny steps ✂️",
+      "comment": "so small my brain can't say no 🧠",
       "title": "Clean my room",
       "steps": [
         {
@@ -49,14 +51,15 @@
       ],
       "result": "step 1 is only 3 min ✅",
       "person": true,
-      "pick": 4
+      "pick": 4,
+      "sticker": "📝"
     },
     {
       "layout": "focus",
       "id": "focus",
       "query": "folding laundry on bed natural light",
-      "label": "trick 2: ONE step on screen",
-      "comment": "timer on, rainy sounds on",
+      "label": "trick 2: ONE step on screen 🎯",
+      "comment": "timer on, rainy sounds on 🌧️🎧",
       "stepNo": 1,
       "stepTotal": 4,
       "step": "Trash into one bag",
@@ -64,25 +67,28 @@
       "sound": "Rainy",
       "result": "the clothes can wait ✅",
       "person": true,
-      "pick": 10
+      "pick": 10,
+      "sticker": "⏱️"
     },
     {
       "layout": "caption",
       "id": "stop",
       "query": "relaxing with tea at home window light",
-      "label": "trick 3: when the timer ends, I'm allowed to stop",
-      "comment": "spoiler: I almost never stop 😌",
+      "label": "trick 3: when the timer ends, I'm allowed to stop ⏰",
+      "comment": "spoiler: I almost never stop 😌💪",
       "person": true,
-      "pick": 11
+      "pick": 11,
+      "sticker": "🛋️"
     },
     {
       "layout": "caption",
       "id": "after",
       "query": "cozy tidy bedroom morning sunlight",
-      "label": "22 minutes later:",
-      "comment": "the room I avoided for weeks ✨",
+      "label": "22 minutes later: 🕐",
+      "comment": "the room I avoided for weeks ✨🧹",
       "person": false,
-      "pick": 4
+      "pick": 4,
+      "sticker": "🎉"
     },
     {
       "layout": "final-phone",
@@ -92,7 +98,8 @@
         "the app I use for the steps + timer 💜"
       ],
       "screenshot": 6,
-      "ask": "what's YOUR 3-week task? 👇"
+      "ask": "what's YOUR 3-week task? 👇",
+      "sticker": "💜"
     }
   ],
   "tiktok": {

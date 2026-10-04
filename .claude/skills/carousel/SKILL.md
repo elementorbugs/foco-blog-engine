@@ -129,12 +129,16 @@ no readable text in red. Photos can run under the zones, text can't.
 - Keep reveal lines short (1 line ideal, ~34 chars per line); the layout reflows below them, but more lines = smaller phone.
 - No need to write "(purple blob icon)" anymore: the icon is in the download panel. Never write "free" (AI is paid).
 
-**Emoji**
-- Max 1 emoji per bubble, at the end, never mid-sentence. Hook line 1: no emoji (line 2 may have one).
-- Pick emoji that read at thumbnail size and carry tone: 🫠 😭 💀 🙃 😵‍💫 (relatable), ✅ 💜 📌 👇 (payoff/CTA).
-  💜 is FOCO's emoji: use it on the reveal slide.
-- Never emoji in tags/labels or inside the FOCO card.
-- Known issue: renders use Windows emoji (backlog #1), so keep emoji few and simple until fixed.
+**Emoji** (Adi wants more emoji: they make slides lively; updated 2026-10-04)
+- Rendered with the bundled **Noto Color Emoji** font (`public/fonts/NotoColorEmoji.woff2`), identical on Adi's PC
+  and in the cloud. Runs of emoji are auto-glued so they never wrap onto a line alone.
+- **1-2 emoji per bubble**, at the end (a run like "🌧️🎧" counts as 2). Hook line 1 may end with one.
+- **Sticker:** add `"sticker": "🧺"` to most slides: one big tilted emoji (130px, shadow) like a TikTok sticker,
+  at a safe default spot per layout; override with `"stickerPos": [x, y]`. Check it doesn't cover a face, the step
+  chip or text; keep it inside the safe band.
+- Pick emoji that carry the slide's object or feeling: objects (🧺 📝 ⏱️ 🧹 📚) for stickers, feelings
+  (🫠 😵‍💫 🤯 😌 💀 🙃) in bubbles, ✅ for wins, 💜 for FOCO, 👇 📌 for CTAs.
+- Never emoji in tags/labels or inside the FOCO card UI.
 
 **FOCO mascot** (`foco-video/public/mascots/foco_state_<n>_<name>.png`)
 - Mascot appears **only on the final reveal slide** (built in: `5_completion` sticker next to the phone / on the card's
@@ -234,7 +238,7 @@ Slide 1 decides swipe vs scroll; spend the most effort here. Before rendering, *
 - After posting, ask Adi for views/saves/comments and log them (backlog #7), so the next concepts follow what works.
 
 ## Backlog (agreed with Adi 2026-10-04, NOT built yet; never claim these exist)
-1. iPhone-style emoji font in slides.
+1. ~~Consistent emoji font~~ (done 2026-10-04: Noto Color Emoji bundled; Apple emoji can't be licensed).
 2. Per-slide text position: hook has `textTop` (done 2026-10-04); other layouts still fixed.
 3. Generate 3 hook variants as rendered slide-1 options.
 4. Own-photo input: a folder Adi drops photos into, used instead of Pexels (best fix for one-narrator consistency).
