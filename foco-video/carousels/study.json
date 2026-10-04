@@ -76,6 +76,19 @@
       "pick": 6
     },
     {
+      "layout": "focus",
+      "id": "focusing",
+      "photo": "exam",
+      "label": "then I do ONE step at a time",
+      "comment": "timer on, rainy sounds on, phone face down",
+      "stepNo": 1,
+      "stepTotal": 3,
+      "step": "List the chapters",
+      "min": 3,
+      "sound": "Rainy",
+      "result": "no thinking about step 2 yet ✅"
+    },
+    {
       "layout": "final-phone",
       "id": "final",
       "photo": "hook",

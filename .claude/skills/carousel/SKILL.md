@@ -33,6 +33,7 @@ an in-app FOCO card, and FOCO revealed only at the end as a casual "btw". Engine
     { "layout": "pair", "id": "a", "query": "...", "topLabel": "THEY SAY", "top": "...", "bottomLabel": "MY BRAIN HEARS", "bottom": "..." },
     { "layout": "caption", "id": "b", "query": "...", "label": "...", "comment": "...", "time": "10:15 am (optional clock chip)" },
     { "layout": "step", "id": "c", "query": "...", "label": "Can't start X?", "step": "tiny first step", "min": 1 },
+    { "layout": "focus", "id": "f", "query": "...", "label": "then ONE step at a time", "comment": "...", "stepNo": 1, "stepTotal": 3, "step": "List the chapters", "min": 3, "sound": "Rainy", "result": "no thinking about step 2 yet ✅" },
     { "layout": "card", "id": "d", "query": "...", "label": "...", "comment": "...", "title": "Task name", "steps": [{ "text": "...", "min": 2 }], "result": "actually took: 4 min ✅" },
     { "layout": "final-card", "id": "end", "photo": "hook", "lines": ["...FOCO 💜"], "title": "Task", "steps": [{ "text": "...", "min": 1 }], "ask": "question 👇" },
     { "layout": "final-phone", "id": "end", "photo": "hook", "lines": ["btw the app I use is FOCO 💜"], "screenshot": 3, "ask": "question 👇" }
@@ -101,6 +102,36 @@ no readable text in red. Photos can run under the zones, text can't.
   slide is about being frozen).
 - The purple blob icon (`public/apps/foco-icon.png`) is the app icon: it's what "(purple blob icon)" refers to, and it
   already sits in every FOCO card header.
+
+## Value + FOCO messaging (Adi's standing rule: creatives must teach something AND sell FOCO's benefits clearly)
+
+**Value first.** Every carousel must leave the viewer with something usable even if they never download FOCO:
+a reframe ("it's a starting problem, not laziness"), a concrete tiny first step, or a method (one step at a time).
+Rough split: ~80% value/relatable, ~20% FOCO. A carousel that is only jokes or only an ad fails the bar.
+
+**FOCO's benefits, in the order they happen** (the story to tell, in plain feelings, not feature names):
+1. **Tell it the stuck task** by typing, talking or snapping a photo → "you don't have to plan it yourself".
+2. **It breaks it into tiny first steps with time estimates** → "step 1 is so small you can't say no to it".
+3. **Focus mode, one step at a time:** a timer for just that step + calm background sounds (Silence, Study, Jazzy,
+   Chill, Rainy) → "you only think about this one step; the rest can wait".
+4. **Feels like someone working next to you** (AI companion presence, never "real people") → "you're not alone in it".
+5. Built-in calendar + reminders for saved tasks (secondary; don't lead with it).
+
+**Show, don't claim.** Prove each benefit with the matching visual:
+| benefit | layout / asset |
+|---|---|
+| breakdown into steps | `card` (FOCO "Let's break it down" card) or `final-phone` screenshot 3 |
+| one step + timer + music | `focus` layout (step N of M, timer, mascot, "<Sound> sounds playing") |
+| a single tiny first step | `step` layout |
+| chat / photo input | real screenshot 2 (`final-phone` with `"screenshot": 2`) |
+| timer screen | real screenshot 4; sound picker: screenshot 6 |
+A strong FOCO-forward carousel walks the method: stuck task → `card` breakdown → `focus` on step 1 → `result` win.
+
+**Benefit copy that works** (lowercase, first person, outcome-first):
+"I just tell it the task and it gives me step 1" · "rainy sounds on, ONE step on screen, that's all I look at" ·
+"no thinking about step 2 yet" · "it's like someone's working next to me".
+**Avoid:** feature lists, "AI-powered productivity", "best app", "free" (AI breakdown is paid), any medical promise
+("fixes ADHD", "boosts dopamine"), and "not a calendar" (it has one).
 
 ## The hook (slide 1): ALWAYS strong. Adi's standing rule.
 Slide 1 decides swipe vs scroll; spend the most effort here. Before rendering, **always show Adi 3 hook options**

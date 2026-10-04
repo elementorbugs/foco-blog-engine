@@ -14,6 +14,7 @@ export type SpecSlide =
   | { layout: "card"; id: string; label: string; comment?: string; title: string; steps: Step[]; result?: string }
   | { layout: "step"; id: string; label: string; step: string; min: number }
   | { layout: "caption"; id: string; label: string; comment?: string; time?: string }
+  | { layout: "focus"; id: string; label: string; comment?: string; stepNo: number; stepTotal: number; step: string; min: number; sound: string; result?: string }
   | { layout: "final-card"; id: string; lines: string[]; title: string; steps: Step[]; ask: string }
   | { layout: "final-phone"; id: string; lines: string[]; screenshot?: number; ask: string };
 
@@ -51,6 +52,35 @@ const DownloadCTA: React.FC = () => (
     </div>
   </div>
   </>
+);
+
+// Mimics FOCO's focus mode: one step on screen, a timer, and the ambient sound playing (real sound names:
+// Silence, Study, Jazzy, Chill, Rainy). Shows the "one step at a time, with music" benefit instead of claiming it.
+const FocusCard: React.FC<{ stepNo: number; stepTotal: number; step: string; min: number; sound: string }> = ({ stepNo, stepTotal, step, min, sound }) => (
+  <div style={{ width: 780, borderRadius: 40, padding: "30px 36px 34px", background: "#130A22", border: "2px solid rgba(167,139,250,0.35)", boxShadow: "0 30px 80px rgba(0,0,0,0.45)", textAlign: "center" }}>
+    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+        <Img src={staticFile("apps/foco-icon.png")} style={{ width: 46, height: 46, borderRadius: 12 }} />
+        <div style={{ fontFamily: BODY, fontWeight: 700, fontSize: 24, letterSpacing: 3, color: "#A78BFA" }}>FOCUS MODE</div>
+      </div>
+      <div style={{ fontFamily: BODY, fontWeight: 700, fontSize: 26, color: "#D6D0E4", padding: "6px 16px", borderRadius: 999, border: "2px solid rgba(167,139,250,0.35)" }}>step {stepNo} of {stepTotal}</div>
+    </div>
+    <div style={{ marginTop: 26, fontFamily: HEAD, fontWeight: 800, fontSize: 46, lineHeight: 1.15, color: "#FFFFFF" }}>{step}</div>
+    <div style={{ position: "relative", width: 250, height: 250, margin: "28px auto 0" }}>
+      <svg width="250" height="250" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="44" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="6" />
+        <circle cx="50" cy="50" r="44" fill="none" stroke="#7C3AED" strokeWidth="6" strokeLinecap="round" strokeDasharray="190 276" transform="rotate(-90 50 50)" />
+      </svg>
+      <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <Img src={staticFile("mascots/foco_state_3_focus.png")} style={{ height: 150 }} />
+      </div>
+    </div>
+    <div style={{ marginTop: 10, fontFamily: HEAD, fontWeight: 800, fontSize: 60, color: "#FFFFFF" }}>{String(min).padStart(2, "0")}:00</div>
+    <div style={{ marginTop: 18, display: "inline-flex", alignItems: "center", gap: 14, padding: "12px 26px", borderRadius: 999, background: "rgba(124,58,237,0.25)", border: "2px solid #A78BFA" }}>
+      <svg width="30" height="30" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13" fill="none" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" /><circle cx="6" cy="18" r="3" fill="#fff" /><circle cx="18" cy="16" r="3" fill="#fff" /></svg>
+      <span style={{ fontFamily: BODY, fontWeight: 700, fontSize: 32, color: "#FFFFFF" }}>{sound} sounds playing</span>
+    </div>
+  </div>
 );
 
 export const SpecSlideView: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => {
@@ -138,6 +168,32 @@ export const SpecSlideView: React.FC<{ spec: Spec; index: number }> = ({ spec, i
           </div>
         </AbsoluteFill>
       );
+    case "focus": {
+      // card starts below however many lines the label + comment wrap to (~30 / ~36 chars per line)
+      const cardTop = 220 + Math.ceil(s.label.length / 30) * 84 + (s.comment ? 12 + Math.ceil(s.comment.length / 36) * 72 : 0) + 34;
+      return (
+        <AbsoluteFill style={{ background: "#000" }}>
+          <Photo name={photo} />
+          <div style={{ position: "absolute", top: 220, left: 60, right: 60 }}>
+            <Bubble size={54}>{s.label}</Bubble>
+            {s.comment ? (
+              <>
+                <div style={{ height: 12 }} />
+                <Bubble size={44}>{s.comment}</Bubble>
+              </>
+            ) : null}
+          </div>
+          <div style={{ position: "absolute", top: cardTop, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
+            <FocusCard stepNo={s.stepNo} stepTotal={s.stepTotal} step={s.step} min={s.min} sound={s.sound} />
+          </div>
+          {s.result ? (
+            <div style={{ position: "absolute", top: 1380, left: SAFE.left, right: SAFE.rightLow }}>
+              <Bubble bg="#DCFCE7" color="#15803D" size={48}>{s.result}</Bubble>
+            </div>
+          ) : null}
+        </AbsoluteFill>
+      );
+    }
     case "final-card":
     case "final-phone": {
       // Everything below the headline bubbles flows from where they end; the ask + CTA stay pinned above TikTok's bottom overlay
