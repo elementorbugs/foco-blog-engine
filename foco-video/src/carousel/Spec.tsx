@@ -9,7 +9,7 @@ import { Tag } from "./MoreCarousels2";
 
 type Step = { text: string; min: number };
 export type SpecSlide =
-  | { layout: "hook"; id: string; lines: string[]; tag?: string }
+  | { layout: "hook"; id: string; lines: string[]; tag?: string; textTop?: number }
   | { layout: "pair"; id: string; topLabel: string; top: string; bottomLabel: string; bottom: string }
   | { layout: "card"; id: string; label: string; comment?: string; title: string; steps: Step[]; result?: string }
   | { layout: "step"; id: string; label: string; step: string; min: number }
@@ -93,7 +93,8 @@ export const SpecSlideView: React.FC<{ spec: Spec; index: number }> = ({ spec, i
       return (
         <AbsoluteFill style={{ background: "#000" }}>
           <Photo name={photo} />
-          <div style={{ position: "absolute", top: 640, left: 60, right: 60 }}>
+          {/* textTop moves the hook bubbles off a face (keep the block above SAFE.bottom) */}
+          <div style={{ position: "absolute", top: s.textTop ?? 640, left: 60, right: 60 }}>
             {s.lines.map((l, i) => (
               <div key={l} style={{ marginBottom: 14 }}>
                 <Bubble size={i === 0 ? 64 : 54}>{l}</Bubble>

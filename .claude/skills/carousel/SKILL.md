@@ -198,6 +198,12 @@ Slide 1 decides swipe vs scroll; spend the most effort here. Before rendering, *
   ("hands folding laundry overhead", "POV laptop on bed", "messy desk top view"). If any slide shows a person, every
   other visible person must be the **same person from the same shoot** (same photographer/series), otherwise no faces.
   Reject candidates that break this, even if the photo is better. Adi's own photos (backlog #4) beat both.
+  **How (built in):** set `"narrator": "young blonde woman"` at the spec's top level and `"person": true` on every
+  slide that shows a person, hands or body; build.js prefixes their Pexels query with the narrator. When picking,
+  match **gender, skin tone, approximate age and hair** across all person slides (hands too: same skin tone),
+  rejecting any candidate that doesn't, even if it's a better photo. Slides with `"person": false` show only
+  objects/rooms. If the hook photo has a face in the middle third, set `"textTop"` (e.g. 1060) so the bubbles sit
+  below the face (keep the block above y 1500).
 - **Text never covers a face** or the interesting part of the photo. If it does, pick another photo
   (per-slide text position is not built yet, see backlog).
 - **Prefer Adi's own phone photos** over Pexels when he provides them: real and imperfect beats polished stock,
@@ -210,7 +216,7 @@ Slide 1 decides swipe vs scroll; spend the most effort here. Before rendering, *
 
 ## Backlog (agreed with Adi 2026-10-04, NOT built yet; never claim these exist)
 1. iPhone-style emoji font in slides.
-2. Per-slide text position (`"textPos": "top" | "middle" | "bottom"`).
+2. Per-slide text position: hook has `textTop` (done 2026-10-04); other layouts still fixed.
 3. Generate 3 hook variants as rendered slide-1 options.
 4. Own-photo input: a folder Adi drops photos into, used instead of Pexels (best fix for one-narrator consistency).
 11. Same-shoot mode: fetch more candidates and group by photographer so one model/series covers the whole carousel.

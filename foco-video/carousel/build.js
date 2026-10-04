@@ -54,7 +54,9 @@ async function photos() {
   const rows = [];
   for (const s of spec.slides) {
     if (!s.query) continue;
-    const res = await fetch(`https://api.pexels.com/v1/search?query=${encodeURIComponent(s.query)}&orientation=portrait&per_page=6`, { headers: { Authorization: key } });
+    // One narrator per carousel: slides that show a person (or their hands/body) search for the same look
+    const q = s.person && spec.narrator ? `${spec.narrator} ${s.query}` : s.query;
+    const res = await fetch(`https://api.pexels.com/v1/search?query=${encodeURIComponent(q)}&orientation=portrait&per_page=6`, { headers: { Authorization: key } });
     const { photos: found } = await res.json();
     for (let i = 0; i < found.length; i++) {
       const img = await fetch(found[i].src.large2x);
@@ -66,7 +68,7 @@ async function photos() {
     const stack = found.length > 1 ? `${found.map((_, i) => `[v${i}]`).join("")}hstack=inputs=${found.length},pad=1020:250:0:0:black` : "[v0]pad=1020:250:0:0:black";
     ff([...inputs, "-filter_complex", `${scale};${stack}`, path.join(work, `row-${s.id}.jpg`)]);
     rows.push(path.join(work, `row-${s.id}.jpg`));
-    console.log(`${s.id}: ${found.length} candidates ("${s.query}")`);
+    console.log(`${s.id}: ${found.length} candidates ("${q}")`);
   }
   ff([...rows.flatMap((r) => ["-i", r]), "-filter_complex", rows.length > 1 ? `vstack=inputs=${rows.length}` : "null", path.join(work, "sheet.jpg")]);
   console.log("contact sheet:", path.join(work, "sheet.jpg"));
