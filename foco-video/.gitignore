@@ -10,7 +10,8 @@ out
 public/source.mp4
 public/*.wav
 public/vo/
-public/apps/
+public/apps/*
+!public/apps/foco-*.png
 public/carousel/
 input/
 work/

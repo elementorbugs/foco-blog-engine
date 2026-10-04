@@ -11,6 +11,8 @@
 const fs = require("fs");
 const path = require("path");
 const { execFileSync } = require("child_process");
+// bundled ffmpeg, so this also runs in cloud sessions that have no system ffmpeg
+const FFMPEG = require("ffmpeg-static");
 
 const ROOT = path.join(__dirname, "..");
 const [slug, cmd] = process.argv.slice(2);
@@ -23,7 +25,7 @@ const spec = JSON.parse(fs.readFileSync(specPath, "utf8"));
 const work = path.join(__dirname, "work", slug);
 fs.mkdirSync(work, { recursive: true });
 
-const ff = (args) => execFileSync("ffmpeg", ["-y", "-loglevel", "error", ...args]);
+const ff = (args) => execFileSync(FFMPEG, ["-y", "-loglevel", "error", ...args]);
 
 // House rules that are easy to break by accident
 function lint() {
