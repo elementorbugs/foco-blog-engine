@@ -28,6 +28,8 @@ an in-app FOCO card, and FOCO revealed only at the end as a casual "btw". Engine
 `PEXELS_KEY`, `GMAIL_USER`, `GMAIL_APP_PASSWORD` come from the environment's env vars. Rendered files live only in
 the session, so step 5 (email) is how Adi gets them. If a step fails on network (Pexels, Chrome download, SMTP),
 say exactly which host was blocked so Adi can allow it in the environment's network settings.
+Cloud sandboxes block SMTP, so cloud delivery needs `RESEND_API_KEY` (send.js switches to Resend automatically;
+verified working 2026-10-04). Always `git pull` first in a reused session so the latest scripts run.
 
 ## Spec schema
 ```json
