@@ -35,8 +35,8 @@ verified working 2026-10-04). Always `git pull` first in a reused session so the
 ```json
 {
   "slug": "study",
-  "caption": "one casual hook line + a question 👇",
-  "hashtags": ["#adhd", "#adhdtiktok", "#foco"],
+  "tiktok": { "caption": "...", "hashtags": ["#adhd", "#adhdcleaning", "#adhdtiktok"] },
+  "instagram": { "caption": "...", "hashtags": ["#adhd", "#adhdtips", "#adhdcleaning"], "altText": "..." },
   "slides": [
     { "layout": "hook", "id": "hook", "query": "...", "lines": ["Big hook line", "second line"], "tag": "(small white tag)" },
     { "layout": "pair", "id": "a", "query": "...", "topLabel": "THEY SAY", "top": "...", "bottomLabel": "MY BRAIN HEARS", "bottom": "..." },
@@ -53,6 +53,31 @@ verified working 2026-10-04). Always `git pull` first in a reused session so the
 - `card` mimics FOCO's real "Let's break it down" screen (steps + minutes); `step` shows one first step.
 - `final-phone` shows a real FOCO App Store screenshot (`public/apps/foco-<n>.png`, 3 = Break It Down).
 - Keep each bubble under ~45 characters; slides look best with one idea each.
+
+## Captions (organic reach; Adi's standing rule: every carousel ships a TikTok AND an Instagram caption)
+Spec fields (build lints them; no `caption`/`hashtags` at top level anymore):
+`"tiktok": { "caption": "...", "hashtags": [3-5] }`,
+`"instagram": { "caption": "...", "hashtags": [3-5], "altText": "..." }` → `caption-tiktok.txt` / `caption-instagram.txt`.
+
+**Both platforms are search engines now: write for search.** Put the phrase people actually type in the first line
+("how to clean your room with ADHD", "ADHD study tips", "task paralysis"), in natural words, not a keyword list.
+
+**TikTok** (lowercase, casual, ~300-600 chars)
+1. Line 1 = search phrase + the slide topic ("how to clean your room with ADHD when you can't start 🧹").
+2. 1-3 lines summarizing the value from the slides (the method/tips in plain words), so the caption stands alone.
+3. Engagement: one specific comment question ("what task have you been avoiding for weeks? 👇") + "save this for ...📌".
+4. Soft FOCO line last: "the app on the last slide is FOCO, link in bio 💜".
+
+**Instagram** (sentence case, can be longer, line breaks)
+1. First ~125 chars (shown before "more") = searchable hook headline.
+2. A short reframe line, then the takeaways as a numbered list (mirrors the slides).
+3. One result/proof line ("22 minutes later...").
+4. CTA: save + send to a friend (shares/saves drive IG reach), then "💜 The app I use ... is FOCO, link in bio."
+5. `altText`: one plain sentence describing the slides + topic keywords (accessibility and IG search).
+
+**Hashtags: 3-5 per platform**, never 20: 1 broad (#adhd), 2-3 topic-specific (#adhdcleaning #taskparalysis
+#adhdstudent ...), 1 community (#adhdtiktok on TikTok, #adhdtips on IG). Put them at the end.
+Brand/benefit rules apply: no "free", no medical promises, no em dashes, no photo credits.
 
 ## Design system (canvas 1080x1920; a phone shows it ~2.8x smaller, so 1 phone pt ≈ 2.8 px here)
 

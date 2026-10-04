@@ -51,7 +51,10 @@ const attachments = slides.map((f) => {
   return { filename: path.basename(jpg), path: jpg };
 });
 
-const caption = fs.existsSync(path.join(out, "caption.txt")) ? fs.readFileSync(path.join(out, "caption.txt"), "utf8") : "";
+const read = (f) => (fs.existsSync(path.join(out, f)) ? fs.readFileSync(path.join(out, f), "utf8") : "");
+const caption = read("caption-tiktok.txt")
+  ? `=== TIKTOK ===\n${read("caption-tiktok.txt")}\n=== INSTAGRAM ===\n${read("caption-instagram.txt")}`
+  : read("caption.txt");
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
 
 async function viaResend(mail) {
@@ -94,10 +97,10 @@ async function viaGmail(mail) {
     subject: `FOCO Social: carousel "${slug}" (${slides.length} slides)`,
     text: `Your carousel is ready. Slides are attached in order (slide-1 = hook).
 
-Caption to paste:
+Captions to paste:
 
 ${caption}`,
-    html: `<p>Your carousel is ready. Slides are attached in order (slide-1 = hook).</p><p><b>Caption to paste:</b></p><pre style="white-space:pre-wrap;font-family:inherit">${esc(caption)}</pre>`,
+    html: `<p>Your carousel is ready. Slides are attached in order (slide-1 = hook).</p><p><b>Captions to paste:</b></p><pre style="white-space:pre-wrap;font-family:inherit">${esc(caption)}</pre>`,
     attachments,
   };
   // Prefer HTTPS (works in cloud sandboxes); fall back to Gmail SMTP

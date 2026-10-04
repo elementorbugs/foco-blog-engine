@@ -29,10 +29,17 @@ const ff = (args) => execFileSync(FFMPEG, ["-y", "-loglevel", "error", ...args])
 
 // House rules that are easy to break by accident
 function lint() {
-  const text = JSON.stringify(spec) + (spec.caption || "");
+  const text = JSON.stringify(spec);
+  const captions = ["tiktok", "instagram"].map((p) => (spec[p] && spec[p].caption) || "").join("\n");
   const problems = [];
   if (/—/.test(text)) problems.push("em dash (—) found");
-  if (/pexels|photos?:/i.test(spec.caption || "")) problems.push("caption contains a photo credit");
+  if (/pexels|photos?:/i.test(captions)) problems.push("caption contains a photo credit");
+  if (/\bfree\b/i.test(captions)) problems.push('caption says "free" (FOCO AI breakdown is paid)');
+  if (!spec.tiktok || !spec.instagram) problems.push("spec needs tiktok + instagram caption blocks (see SKILL.md > Captions)");
+  for (const p of ["tiktok", "instagram"]) {
+    const tags = (spec[p] && spec[p].hashtags) || [];
+    if (tags.length < 3 || tags.length > 5) problems.push(`${p}: use 3-5 hashtags (has ${tags.length})`);
+  }
   if (/not a calendar/i.test(text)) problems.push("FOCO HAS a built-in calendar");
   const last = spec.slides[spec.slides.length - 1];
   if (!last.layout.startsWith("final")) problems.push("last slide must be final-card or final-phone");
@@ -98,7 +105,12 @@ async function render() {
   const scaleSafe = spec.slides.map((_, i) => `[${i}]${shade},scale=270:480[v${i}]`).join(";");
   ff([...spec.slides.flatMap((_, i) => ["-i", path.join(out, `slide-${i + 1}.png`)]), "-filter_complex", `${scaleSafe};${spec.slides.map((_, i) => `[v${i}]`).join("")}xstack=inputs=${n}:layout=${layout}:fill=black`, path.join(ROOT, "carousel", "work", slug, "safezones.jpg")]);
 
-  fs.writeFileSync(path.join(out, "caption.txt"), `${spec.caption}\n\n${spec.hashtags.join(" ")}\n`);
+  // One ready-to-paste caption per platform (TikTok: search keywords up front; Instagram: hook in first 125 chars + alt text)
+  const block = (p) => `${spec[p].caption.trim()}\n\n${spec[p].hashtags.join(" ")}\n`;
+  fs.writeFileSync(path.join(out, "caption-tiktok.txt"), block("tiktok"));
+  const alt = spec.instagram.altText ? `\nALT TEXT (Instagram > Advanced settings > Accessibility):\n${spec.instagram.altText}\n` : "";
+  fs.writeFileSync(path.join(out, "caption-instagram.txt"), block("instagram") + alt);
+  fs.rmSync(path.join(out, "caption.txt"), { force: true });
   console.log("done:", out);
 }
 
