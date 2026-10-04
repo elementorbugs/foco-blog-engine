@@ -1,0 +1,90 @@
+{
+  "slug": "one-email",
+  "caption": "the fridge has never been cleaner though 🧽 what's YOUR one email? 👇",
+  "hashtags": [
+    "#adhd",
+    "#adhdtiktok",
+    "#adhdtips",
+    "#procrastination",
+    "#taskparalysis",
+    "#adhdlife",
+    "#foco"
+  ],
+  "slides": [
+    {
+      "layout": "hook",
+      "id": "hook",
+      "query": "woman on couch with laptop at night",
+      "lines": [
+        "I avoided ONE email from 6pm to 11pm",
+        "it took 4 minutes 💀"
+      ],
+      "tag": "(here's what happened in between)",
+      "pick": 6
+    },
+    {
+      "layout": "caption",
+      "id": "dinner",
+      "query": "woman cooking dinner in kitchen evening",
+      "label": "\"I'll send it after dinner\"",
+      "comment": "it's ONE email. easy.",
+      "time": "6:00 pm",
+      "pick": 2
+    },
+    {
+      "layout": "caption",
+      "id": "desk",
+      "query": "person organizing desk at home",
+      "label": "opened it. closed it.",
+      "comment": "cleaned my whole desk instead 🙃",
+      "time": "8:15 pm",
+      "pick": 1
+    },
+    {
+      "layout": "caption",
+      "id": "fridge",
+      "query": "woman cleaning refrigerator",
+      "label": "deep cleaned the fridge",
+      "comment": "the email is still there",
+      "time": "9:40 pm",
+      "pick": 6
+    },
+    {
+      "layout": "caption",
+      "id": "reframe",
+      "query": "woman lying on sofa looking at ceiling",
+      "label": "it was never laziness",
+      "comment": "my brain just couldn't find step 1",
+      "time": "10:50 pm",
+      "pick": 3
+    },
+    {
+      "layout": "step",
+      "id": "step",
+      "query": "hands typing on laptop at night",
+      "label": "so I made step 1 tiny:",
+      "step": "Type just the greeting",
+      "min": 1,
+      "pick": 3
+    },
+    {
+      "layout": "caption",
+      "id": "sent",
+      "query": "woman smiling at laptop at night",
+      "label": "sent. ✅",
+      "comment": "4 minutes, start to finish 💀",
+      "time": "11:04 pm",
+      "pick": 5
+    },
+    {
+      "layout": "final-phone",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "the app that finds my step 1 💜"
+      ],
+      "screenshot": 3,
+      "ask": "what's YOUR one email? 👇"
+    }
+  ]
+}
