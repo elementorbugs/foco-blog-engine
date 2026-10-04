@@ -5,6 +5,9 @@
 //   GMAIL_USER          the Gmail address that sends (e.g. adibenelyahu@gmail.com)
 //   GMAIL_APP_PASSWORD  a Google "app password" (myaccount.google.com/apppasswords), NOT the account password
 //   MAIL_TO             optional, defaults to GMAIL_USER
+//   RESEND_API_KEY      optional: send over HTTPS via resend.com instead of SMTP. Cloud sandboxes often block SMTP
+//                       (port 465) but allow HTTPS. Without a verified domain, Resend only delivers to the
+//                       Resend account's own email address.
 const fs = require("fs");
 const path = require("path");
 const { execFileSync } = require("child_process");
@@ -30,9 +33,10 @@ if (fs.existsSync(envFile)) {
 const E = (k) => process.env[k] || fileEnv[k];
 const user = E("GMAIL_USER");
 const pass = E("GMAIL_APP_PASSWORD");
+const resendKey = E("RESEND_API_KEY");
 const to = E("MAIL_TO") || user;
-if (!user || !pass) {
-  console.error("missing GMAIL_USER / GMAIL_APP_PASSWORD (env vars or .env)");
+if (!to || (!resendKey && !pass)) {
+  console.error("need MAIL_TO or GMAIL_USER, plus GMAIL_APP_PASSWORD or RESEND_API_KEY (env vars or .env)");
   process.exit(1);
 }
 
@@ -50,17 +54,45 @@ const attachments = slides.map((f) => {
 const caption = fs.existsSync(path.join(out, "caption.txt")) ? fs.readFileSync(path.join(out, "caption.txt"), "utf8") : "";
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
 
+async function viaResend(mail) {
+  const res = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: { Authorization: `Bearer ${resendKey}`, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      from: "FOCO Social <onboarding@resend.dev>",
+      to: [mail.to],
+      subject: mail.subject,
+      text: mail.text,
+      html: mail.html,
+      attachments: mail.attachments.map((a) => ({ filename: a.filename, content: fs.readFileSync(a.path).toString("base64") })),
+    }),
+  });
+  const body = await res.json();
+  if (!res.ok) throw new Error(`Resend ${res.status}: ${JSON.stringify(body)}`);
+  return body.id;
+}
+
+async function viaGmail(mail) {
+  const transport = nodemailer.createTransport({ host: "smtp.gmail.com", port: 465, secure: true, auth: { user, pass }, connectionTimeout: 20000 });
+  const info = await transport.sendMail({ ...mail, from: `FOCO Social <${user}>` });
+  return info.messageId;
+}
+
 (async () => {
-  const transport = nodemailer.createTransport({ host: "smtp.gmail.com", port: 465, secure: true, auth: { user, pass } });
-  const info = await transport.sendMail({
-    from: `FOCO Social <${user}>`,
+  const mail = {
     to,
     subject: `FOCO Social: carousel "${slug}" (${slides.length} slides)`,
-    text: `Your carousel is ready. Slides are attached in order (slide-1 = hook).\n\nCaption to paste:\n\n${caption}`,
+    text: `Your carousel is ready. Slides are attached in order (slide-1 = hook).
+
+Caption to paste:
+
+${caption}`,
     html: `<p>Your carousel is ready. Slides are attached in order (slide-1 = hook).</p><p><b>Caption to paste:</b></p><pre style="white-space:pre-wrap;font-family:inherit">${esc(caption)}</pre>`,
     attachments,
-  });
-  console.log("sent to", to, info.messageId);
+  };
+  // Prefer HTTPS (works in cloud sandboxes); fall back to Gmail SMTP
+  const id = resendKey ? await viaResend(mail) : await viaGmail(mail);
+  console.log(`sent to ${to} via ${resendKey ? "Resend" : "Gmail"}`, id);
 })().catch((e) => {
   console.error("send failed:", e.message);
   process.exit(1);
