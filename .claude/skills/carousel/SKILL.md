@@ -64,6 +64,9 @@ no readable text in red. Photos can run under the zones, text can't.
   | FOCO card step text | 34 | 12 |
   | decorative UI labels only ("YOUR PLAN", "min") | 18-30 | not meant to be read |
 - **Floor: 40px for anything the viewer must read** (34 only inside the FOCO card, where it mimics real UI).
+- Bubbles below the middle are narrower (they stay clear of the right rail): keep them ≤ ~30 characters.
+  The last two words of every bubble are auto-glued (no lone emoji/word on a line); force other breaks with ` `
+  (e.g. "for 3 weeks"). Caption-layout text is bottom-anchored and grows upward.
 - Bubble text: max ~45 characters, max 2 lines, sentence case/lowercase (TikTok voice), CAPS only for 1-2 stressed
   words ("ONE email", "WEEKS"). Labels in tags (THE PLAN, REALITY) are all-caps, letter-spaced, 30px.
 - Hook slide: 2-3 bubbles stacked in the middle third (y ~640); content slides: label top (y 230-260),

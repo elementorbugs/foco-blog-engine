@@ -1,0 +1,103 @@
+{
+  "slug": "clean-room",
+  "caption": "\"40 tasks wearing a trench coat\" is exactly how it feels 🧥 what's YOUR 3-week task?",
+  "hashtags": [
+    "#adhd",
+    "#adhdtiktok",
+    "#adhdtips",
+    "#cleaningmotivation",
+    "#messyroom",
+    "#taskparalysis",
+    "#adhdcleaning",
+    "#foco"
+  ],
+  "slides": [
+    {
+      "layout": "hook",
+      "id": "hook",
+      "query": "messy bedroom clothes on floor",
+      "lines": [
+        "My room was a mess for 3 weeks",
+        "until I tried this 3-step trick 🫠"
+      ],
+      "tag": "(ADHD edition)",
+      "pick": 3
+    },
+    {
+      "layout": "caption",
+      "id": "reframe",
+      "query": "woman sitting on bed in messy room",
+      "label": "first: \"clean my room\" isn't ONE task",
+      "comment": "it's 40 tasks in a trench coat 🧥",
+      "pick": 2
+    },
+    {
+      "layout": "card",
+      "id": "breakdown",
+      "query": "trash bag on bedroom floor",
+      "label": "trick 1: break it into tiny steps",
+      "comment": "so small my brain can't say no",
+      "title": "Clean my room",
+      "steps": [
+        {
+          "text": "Trash into one bag",
+          "min": 3
+        },
+        {
+          "text": "Cups to the kitchen",
+          "min": 4
+        },
+        {
+          "text": "Clothes into the hamper",
+          "min": 10
+        },
+        {
+          "text": "Make the bed",
+          "min": 5
+        }
+      ],
+      "result": "step 1 is only 3 min ✅",
+      "pick": 5
+    },
+    {
+      "layout": "focus",
+      "id": "focus",
+      "query": "person cleaning bedroom",
+      "label": "trick 2: ONE step on screen",
+      "comment": "timer on, rainy sounds on",
+      "stepNo": 1,
+      "stepTotal": 4,
+      "step": "Trash into one bag",
+      "min": 3,
+      "sound": "Rainy",
+      "result": "the clothes can wait ✅",
+      "pick": 3
+    },
+    {
+      "layout": "caption",
+      "id": "stop",
+      "query": "woman resting after cleaning",
+      "label": "trick 3: when the timer ends, I'm allowed to stop",
+      "comment": "spoiler: I almost never stop 😌",
+      "pick": 4
+    },
+    {
+      "layout": "caption",
+      "id": "after",
+      "query": "clean tidy bedroom morning light",
+      "label": "22 minutes later:",
+      "comment": "the room I avoided for weeks ✨",
+      "pick": 5
+    },
+    {
+      "layout": "final-phone",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "the app I use for the steps + timer 💜"
+      ],
+      "screenshot": 6,
+      "ask": "what's YOUR 3-week task? 👇"
+    }
+  ]
+}

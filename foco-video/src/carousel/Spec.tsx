@@ -157,7 +157,8 @@ export const SpecSlideView: React.FC<{ spec: Spec; index: number }> = ({ spec, i
         <AbsoluteFill style={{ background: "#000" }}>
           <Photo name={photo} />
           {s.time ? <TimeChip time={s.time} /> : null}
-          <div style={{ position: "absolute", top: 1180, left: SAFE.left, right: SAFE.rightLow }}>
+          {/* anchored from the bottom so wrapped lines grow upward, never into TikTok's bottom overlay */}
+          <div style={{ position: "absolute", bottom: 1920 - SAFE.bottom + 20, left: SAFE.left, right: SAFE.rightLow }}>
             <Bubble size={56}>{s.label}</Bubble>
             {s.comment ? (
               <>

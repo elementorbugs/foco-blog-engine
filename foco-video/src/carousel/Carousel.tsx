@@ -27,10 +27,13 @@ export const SLIDES: Slide[] = [
 export const Bubble: React.FC<{ children: React.ReactNode; bg?: string; color?: string; size?: number }> = ({ children, bg = LILAC_BG, color = LILAC_TEXT, size = 50 }) => (
   <div style={{ textAlign: "center", lineHeight: 1.55 }}>
     <span style={{ fontFamily: BODY, fontWeight: 700, fontSize: size, color, background: bg, padding: "6px 22px", borderRadius: 18, boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone" }}>
-      {children}
+      {typeof children === "string" ? noOrphan(children) : children}
     </span>
   </div>
 );
+
+// Glue the last two words (e.g. "real 😌", "3 weeks") so a wrapped bubble never ends with a lone word or emoji
+const noOrphan = (t: string) => t.replace(/ (\S+ \S+)$/, (_, tail: string) => " " + tail.replace(" ", " "));
 
 // Mimics FOCO's real "Let's break it down" screen
 export const FocoCard: React.FC<{ title: string; steps: Step[] }> = ({ title, steps }) => {
