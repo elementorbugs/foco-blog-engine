@@ -1,0 +1,23 @@
+node_modules
+dist
+.DS_Store
+.env
+
+# Ignore the output video from Git but not videos you import into src/.
+out
+
+# Large / regenerable media (fetch scripts recreate them)
+public/source.mp4
+public/*.wav
+public/vo/
+public/apps/
+public/carousel/
+input/
+work/
+carousel/photos/
+carousel/work/
+carousel/sheet-*.jpg
+carousel/sh-*.jpg
+carousel/sp-*.jpg
+tts/node_modules/
+tts/*.wav

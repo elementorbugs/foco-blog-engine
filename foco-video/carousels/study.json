@@ -1,0 +1,89 @@
+{
+  "slug": "study",
+  "caption": "the cleaning-the-whole-house-instead one is a little too real 🧽 what are you studying for rn?",
+  "hashtags": [
+    "#adhd",
+    "#adhdtiktok",
+    "#studytok",
+    "#adhdstudent",
+    "#studytips",
+    "#adhdtips",
+    "#taskparalysis",
+    "#foco"
+  ],
+  "slides": [
+    {
+      "layout": "hook",
+      "id": "hook",
+      "query": "student stressed studying books",
+      "lines": [
+        "How I actually study with ADHD",
+        "(after failing at it for years 📚)"
+      ],
+      "tag": "save this before finals",
+      "pick": 3
+    },
+    {
+      "layout": "caption",
+      "id": "clean",
+      "query": "cleaning spray kitchen counter",
+      "time": "Saturday 9:00 am",
+      "label": "the old me: \"I'll study ALL day Saturday\"",
+      "comment": "studied 0 minutes. cleaned the whole house 🧽",
+      "pick": 2
+    },
+    {
+      "layout": "pair",
+      "id": "read",
+      "query": "open book reading close up",
+      "topLabel": "THE OLD WAY",
+      "top": "read the whole chapter",
+      "bottomLabel": "WHAT WORKS NOW",
+      "bottom": "one page. then decide if I want another 📖",
+      "pick": 6
+    },
+    {
+      "layout": "step",
+      "id": "essay",
+      "query": "blank notebook pen desk",
+      "label": "Can't start the essay?",
+      "step": "Write the worst first sentence possible.",
+      "min": 2,
+      "pick": 6
+    },
+    {
+      "layout": "card",
+      "id": "exam",
+      "query": "calendar exam date desk",
+      "label": "Big exam in 5 days?",
+      "comment": "make day 1 almost too easy",
+      "title": "Prep for the bio exam",
+      "steps": [
+        {
+          "text": "List the chapters",
+          "min": 3
+        },
+        {
+          "text": "Pick the shortest one",
+          "min": 1
+        },
+        {
+          "text": "Read only its summary",
+          "min": 10
+        }
+      ],
+      "result": "day 1 done in 14 min ✅",
+      "pick": 6
+    },
+    {
+      "layout": "final-phone",
+      "id": "final",
+      "photo": "hook",
+      "lines": [
+        "the app I use to break it all down: FOCO 💜",
+        "(purple blob icon)"
+      ],
+      "ask": "what are you studying for rn? 👇"
+    }
+  ]
+}

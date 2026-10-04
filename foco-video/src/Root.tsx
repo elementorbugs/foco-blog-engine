@@ -1,0 +1,61 @@
+import { Composition, Still } from "remotion";
+import { BestPlannerApps, TOTAL } from "./Composition";
+import { AppReview, FPS, REVIEW_TOTAL } from "./Review";
+import { Explainer, EXPLAINER_TOTAL } from "./explainer/Explainer";
+import { Thumbnail } from "./explainer/Thumbnail";
+import { CarouselSlide, SLIDES } from "./carousel/Carousel";
+import { INSTEAD, InsteadSlideView, TINY, TinySlideView } from "./carousel/MoreCarousels";
+import { PairSlideView, SETS as PAIR_SETS } from "./carousel/MoreCarousels2";
+import { SpecSlideView, type Spec } from "./carousel/Spec";
+
+// Placeholder; carousel/build.js always passes a real spec via inputProps
+const SAMPLE_SPEC: Spec = { slug: "sample", slides: [{ layout: "final-phone", id: "x", photo: "../hook", lines: ["sample"], ask: "sample" }] };
+
+export const RemotionRoot: React.FC = () => {
+  return (
+    <>
+      <Composition
+        id="BestAdhdPlannerApps"
+        component={BestPlannerApps}
+        durationInFrames={TOTAL}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="AppReview"
+        component={AppReview}
+        durationInFrames={REVIEW_TOTAL}
+        fps={FPS}
+        width={1920}
+        height={1080}
+      />
+      <Composition
+        id="Explainer"
+        component={Explainer}
+        durationInFrames={EXPLAINER_TOTAL}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+      {(["A", "B", "C"] as const).map((v) => (
+        <Still key={v} id={`Thumb${v}`} component={Thumbnail} defaultProps={{ variant: v }} width={1280} height={720} />
+      ))}
+      {SLIDES.map((_, i) => (
+        <Still key={`slide${i}`} id={`TikTokSlide${i + 1}`} component={CarouselSlide} defaultProps={{ index: i }} width={1080} height={1920} />
+      ))}
+      {[...INSTEAD, null].map((_, i) => (
+        <Still key={`instead${i}`} id={`InsteadSlide${i + 1}`} component={InsteadSlideView} defaultProps={{ index: i }} width={1080} height={1920} />
+      ))}
+      {[...TINY, null].map((_, i) => (
+        <Still key={`tiny${i}`} id={`TinySlide${i + 1}`} component={TinySlideView} defaultProps={{ index: i }} width={1080} height={1920} />
+      ))}
+      {(["morning", "lazy", "say", "tax"] as const).flatMap((set) =>
+        Array.from({ length: PAIR_SETS[set].slides.length + 2 }).map((_, i) => (
+          <Still key={`${set}${i}`} id={`${set}Slide${i + 1}`} component={PairSlideView} defaultProps={{ set, index: i }} width={1080} height={1920} />
+        )),
+      )}
+      <Still id="SpecSlide" component={SpecSlideView} defaultProps={{ spec: SAMPLE_SPEC, index: 0 }} width={1080} height={1920} />
+    </>
+  );
+};
