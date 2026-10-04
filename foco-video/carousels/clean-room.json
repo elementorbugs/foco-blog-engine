@@ -11,7 +11,7 @@
       ],
       "tag": "(ADHD edition)",
       "person": true,
-      "pick": 12
+      "pick": 1
     },
     {
       "layout": "caption",
@@ -20,7 +20,7 @@
       "label": "first: \"clean my room\" isn't ONE task",
       "comment": "it's 40 tasks in a trench coat 🧥",
       "person": true,
-      "pick": 2
+      "pick": 1
     },
     {
       "layout": "card",
@@ -49,7 +49,7 @@
       ],
       "result": "step 1 is only 3 min ✅",
       "person": true,
-      "pick": 5
+      "pick": 4
     },
     {
       "layout": "focus",
@@ -64,7 +64,7 @@
       "sound": "Rainy",
       "result": "the clothes can wait ✅",
       "person": true,
-      "pick": 9
+      "pick": 10
     },
     {
       "layout": "caption",
@@ -73,7 +73,7 @@
       "label": "trick 3: when the timer ends, I'm allowed to stop",
       "comment": "spoiler: I almost never stop 😌",
       "person": true,
-      "pick": 4
+      "pick": 11
     },
     {
       "layout": "caption",
@@ -116,5 +116,7 @@
     ],
     "altText": "Carousel of 7 photos showing a messy bedroom getting cleaned, with text explaining a 3-step ADHD cleaning method: break the task into tiny steps, focus on one step with a timer and calm sounds, then stop or keep going. The last slide shows the FOCO app."
   },
-  "narrator": "blonde woman"
+  "narrator": "woman",
+  "sameShoot": true,
+  "shootGap": 60
 }

@@ -49,15 +49,60 @@ function lint() {
   }
 }
 
+const pexels = async (key, query, page = 1, perPage = 12) => {
+  const res = await fetch(`https://api.pexels.com/v1/search?query=${encodeURIComponent(query)}&orientation=portrait&per_page=${perPage}&page=${page}`, { headers: { Authorization: key } });
+  return (await res.json()).photos || [];
+};
+
+// Same-shoot mode: Pexels has no "same model" search, but photographers upload whole shoots (one model, one home,
+// many scenes). Search every person slide deep, then keep the one photographer who covers the most person slides.
+async function sameShootPool(key) {
+  const personSlides = spec.slides.filter((s) => s.query && s.person);
+  const extra = (spec.shootQueries || ["at home", "bedroom", "apartment morning"]).map((x) => `${spec.narrator} ${x}`);
+  const byPhotog = new Map();
+  const add = (p, slideId) => {
+    const e = byPhotog.get(p.photographer_id) || { name: p.photographer, slides: new Set(), photos: new Map() };
+    if (slideId) e.slides.add(slideId);
+    if (!e.photos.has(p.id)) e.photos.set(p.id, { ...p, slideId });
+    byPhotog.set(p.photographer_id, e);
+  };
+  for (const s of personSlides) for (let page = 1; page <= 3; page++) (await pexels(key, `${spec.narrator} ${s.query}`, page, 80)).forEach((p) => add(p, s.id));
+  for (const q of extra) for (let page = 1; page <= 2; page++) (await pexels(key, q, page, 80)).forEach((p) => add(p, null));
+  // A big studio shoots many models, so narrow to one shoot: a shoot is uploaded in one batch, so its photo IDs sit
+  // close together. Split each photographer's photos at ID gaps > SHOOT_GAP and rank those shoots instead.
+  const SHOOT_GAP = spec.shootGap || 3000;
+  const shoots = [];
+  for (const e of byPhotog.values()) {
+    const sorted = [...e.photos.values()].sort((a, b) => a.id - b.id);
+    let cur = [];
+    for (const p of sorted) {
+      if (cur.length && p.id - cur[cur.length - 1].id > SHOOT_GAP) (shoots.push({ name: e.name, photos: cur }), (cur = []));
+      cur.push(p);
+    }
+    if (cur.length) shoots.push({ name: e.name, photos: cur });
+  }
+  shoots.forEach((sh) => (sh.slides = new Set(sh.photos.map((p) => p.slideId).filter(Boolean))));
+  shoots.sort((a, b) => b.slides.size - a.slides.size || b.photos.length - a.photos.length);
+  console.log("shoots covering the most person slides:");
+  shoots.slice(0, 6).forEach((sh, i) => console.log(`  #${i} ${sh.name} ids ${sh.photos[0].id}-${sh.photos[sh.photos.length - 1].id}: ${sh.slides.size}/${personSlides.length} slides, ${sh.photos.length} photos`));
+  const chosen = shoots[spec.shootIndex || 0];
+  console.log(`using shoot #${spec.shootIndex || 0} (${chosen.name}); set "shootIndex" in the spec to pick another`);
+  return chosen.photos;
+}
+
 async function photos() {
   const key = process.env.PEXELS_KEY || fs.readFileSync("C:/Users/USER/remindher-blog/.pexels-key", "utf8").trim();
+  const shoot = spec.sameShoot && spec.narrator ? await sameShootPool(key) : null;
   const rows = [];
   for (const s of spec.slides) {
     if (!s.query) continue;
     // One narrator per carousel: slides that show a person (or their hands/body) search for the same look
     const q = s.person && spec.narrator ? `${spec.narrator} ${s.query}` : s.query;
-    const res = await fetch(`https://api.pexels.com/v1/search?query=${encodeURIComponent(q)}&orientation=portrait&per_page=12`, { headers: { Authorization: key } });
-    const { photos: found } = await res.json();
+    // In same-shoot mode person slides pick only from the chosen photographer: their hits for this slide first,
+    // then the rest of the shoot (any scene of the same model can work)
+    const found = s.person && shoot
+      ? [...shoot.filter((p) => p.slideId === s.id), ...shoot.filter((p) => p.slideId !== s.id)].slice(0, 12)
+      : await pexels(key, q);
     for (let i = 0; i < found.length; i++) {
       const img = await fetch(found[i].src.large2x);
       fs.writeFileSync(path.join(work, `${s.id}-${i + 1}.jpg`), Buffer.from(await img.arrayBuffer()));

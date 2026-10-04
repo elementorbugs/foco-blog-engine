@@ -213,6 +213,12 @@ Slide 1 decides swipe vs scroll; spend the most effort here. Before rendering, *
   rejecting any candidate that doesn't, even if it's a better photo. Slides with `"person": false` show only
   objects/rooms. If the hook photo has a face in the middle third, set `"textTop"` (e.g. 1060) so the bubbles sit
   below the face (keep the block above y 1500).
+  **Same-shoot mode (default whenever slides show a person):** set `"sameShoot": true` (+ `"narrator"`, e.g. "woman").
+  build.js searches every person slide deep, splits each photographer's results into shoots (photo IDs uploaded
+  together, `shootGap` default 3000; **use 60** to get one model, one home), ranks shoots by slides covered, and
+  person slides pick ONLY from that shoot (prints the top shoots; `"shootIndex": N` picks another). Matching hair
+  color alone is NOT enough (Adi rejected a blonde/curly/older mix): same model, same home, every person slide.
+  Adapt the copy to what the shoot actually shows if needed; object/room slides (`person: false`) stay free.
 - **Text never covers a face** or the interesting part of the photo. If it does, pick another photo
   (per-slide text position is not built yet, see backlog).
 - **Prefer Adi's own phone photos** over Pexels when he provides them: real and imperfect beats polished stock,
@@ -228,7 +234,7 @@ Slide 1 decides swipe vs scroll; spend the most effort here. Before rendering, *
 2. Per-slide text position: hook has `textTop` (done 2026-10-04); other layouts still fixed.
 3. Generate 3 hook variants as rendered slide-1 options.
 4. Own-photo input: a folder Adi drops photos into, used instead of Pexels (best fix for one-narrator consistency).
-11. Same-shoot mode: fetch more candidates and group by photographer so one model/series covers the whole carousel.
+11. ~~Same-shoot mode~~ (done 2026-10-04: `sameShoot`, `shootGap`, `shootIndex`).
 5. Instagram 4:5 (1080x1350) export alongside 9:16.
 6. New layouts: iPhone Notes screenshot, iMessage chat, check/cross list.
 7. Performance log: carousel, date, views, saves, comments, to steer future angles.
