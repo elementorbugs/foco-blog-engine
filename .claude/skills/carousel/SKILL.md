@@ -192,6 +192,12 @@ Slide 1 decides swipe vs scroll; spend the most effort here. Before rendering, *
 - Photo: a person or a strong scene with clear space in the middle third for the bubbles.
 
 ## Quality rules (what makes it look native, not "produced")
+- **One narrator per carousel (Adi's standing rule, 2026-10-04).** Carousels are first-person ("my room"), so a
+  different person on every slide reads as stock and kills authenticity. Default: **no faces at all** (hands,
+  objects, rooms, overhead/flat-lay, POV-from-the-eyes shots), like the Flowfy original. Write Pexels queries for that
+  ("hands folding laundry overhead", "POV laptop on bed", "messy desk top view"). If any slide shows a person, every
+  other visible person must be the **same person from the same shoot** (same photographer/series), otherwise no faces.
+  Reject candidates that break this, even if the photo is better. Adi's own photos (backlog #4) beat both.
 - **Text never covers a face** or the interesting part of the photo. If it does, pick another photo
   (per-slide text position is not built yet, see backlog).
 - **Prefer Adi's own phone photos** over Pexels when he provides them: real and imperfect beats polished stock,
@@ -206,7 +212,8 @@ Slide 1 decides swipe vs scroll; spend the most effort here. Before rendering, *
 1. iPhone-style emoji font in slides.
 2. Per-slide text position (`"textPos": "top" | "middle" | "bottom"`).
 3. Generate 3 hook variants as rendered slide-1 options.
-4. Own-photo input: a folder Adi drops photos into, used instead of Pexels.
+4. Own-photo input: a folder Adi drops photos into, used instead of Pexels (best fix for one-narrator consistency).
+11. Same-shoot mode: fetch more candidates and group by photographer so one model/series covers the whole carousel.
 5. Instagram 4:5 (1080x1350) export alongside 9:16.
 6. New layouts: iPhone Notes screenshot, iMessage chat, check/cross list.
 7. Performance log: carousel, date, views, saves, comments, to steer future angles.
