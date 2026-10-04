@@ -34,7 +34,7 @@ an in-app FOCO card, and FOCO revealed only at the end as a casual "btw". Engine
     { "layout": "step", "id": "c", "query": "...", "label": "Can't start X?", "step": "tiny first step", "min": 1 },
     { "layout": "card", "id": "d", "query": "...", "label": "...", "comment": "...", "title": "Task name", "steps": [{ "text": "...", "min": 2 }], "result": "actually took: 4 min ✅" },
     { "layout": "final-card", "id": "end", "photo": "hook", "lines": ["...FOCO 💜"], "title": "Task", "steps": [{ "text": "...", "min": 1 }], "ask": "question 👇" },
-    { "layout": "final-phone", "id": "end", "photo": "hook", "lines": ["btw the app is called FOCO 💜", "(purple blob icon)"], "screenshot": 3, "ask": "question 👇" }
+    { "layout": "final-phone", "id": "end", "photo": "hook", "lines": ["btw the app I use is FOCO 💜"], "screenshot": 3, "ask": "question 👇" }
   ]
 }
 ```
@@ -79,6 +79,13 @@ no readable text in red. Photos can run under the zones, text can't.
 - Max 3 bubble colors per slide. Purple = voice, white = punchline/question, green = result only, orange = contrast label only.
 - If a photo is busy behind a bubble, swap the photo (don't add dark overlays except on final slides).
 
+**Final slide = conversion slide** (both `final-*` layouts render this automatically)
+- Order top to bottom: reveal line(s) → FOCO proof (real screenshot or breakdown card) + mascot → ask question →
+  white **"DOWNLOAD / FOCO PLANNER"** panel with the official **App Store + Google Play badges**
+  (`public/badges/`, downloaded from Apple/Google; never redraw or recolor them, keep them black, same height).
+- Keep reveal lines short (1 line ideal, ~34 chars per line); the layout reflows below them, but more lines = smaller phone.
+- No need to write "(purple blob icon)" anymore: the icon is in the download panel. Never write "free" (AI is paid).
+
 **Emoji**
 - Max 1 emoji per bubble, at the end, never mid-sentence. Hook line 1: no emoji (line 2 may have one).
 - Pick emoji that read at thumbnail size and carry tone: 🫠 😭 💀 🙃 😵‍💫 (relatable), ✅ 💜 📌 👇 (payoff/CTA).
@@ -87,10 +94,10 @@ no readable text in red. Photos can run under the zones, text can't.
 - Known issue: renders use Windows emoji (backlog #1), so keep emoji few and simple until fixed.
 
 **FOCO mascot** (`foco-video/public/mascots/foco_state_<n>_<name>.png`)
-- Mascot appears **only on the final reveal slide**, as a small sticker (~220-300px tall) next to the ask or the phone,
-  never over a lifestyle photo on content slides (it breaks the "real person's post" feel that makes the format work).
-- Pick the state by mood: `5_completion` (celebrating) or `2_alignment` (smiling) for the reveal; `6_pause` (stuck)
-  only if the final slide is about being frozen. Not built into Spec.tsx yet (backlog #10).
+- Mascot appears **only on the final reveal slide** (built in: `5_completion` sticker next to the phone / on the card's
+  corner), never over a lifestyle photo on content slides (it breaks the "real person's post" feel the format relies on).
+- For a different mood, change `Mascot` in Spec.tsx: `2_alignment` (smiling) or `6_pause` (stuck, only if the final
+  slide is about being frozen).
 - The purple blob icon (`public/apps/foco-icon.png`) is the app icon: it's what "(purple blob icon)" refers to, and it
   already sits in every FOCO card header.
 
@@ -116,7 +123,7 @@ no readable text in red. Photos can run under the zones, text can't.
 7. Performance log: carousel, date, views, saves, comments, to steer future angles.
 8. Video version (slides + transitions + music) for Reels/Shorts.
 9. Phone preview page with download buttons when Adi works from the phone.
-10. Mascot sticker option on final slides (see Design system > FOCO mascot).
+10. ~~Mascot sticker on final slides~~ (done 2026-10-04).
 Priority order Adi saw: 1-4 first.
 
 ## Rules (the build lints the first three)
