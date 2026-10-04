@@ -81,6 +81,10 @@ Brand/benefit rules apply: no "free", no medical promises, no em dashes, no phot
 
 ## Design system (canvas 1080x1920; a phone shows it ~2.8x smaller, so 1 phone pt ≈ 2.8 px here)
 
+**Instagram:** IG crops 9:16 carousel images to 4:5, cutting top text. render also writes `ig-slide-N.png`
+(1080x1350 = the y 140-1490 band of each slide, `SpecSlideIG`). Tell Adi to upload the ig-slide files to Instagram.
+This only works because all text stays inside the safe band below, so the safe-zone rule protects IG too.
+
 **Safe zones (TikTok UI covers these; approx.):** top 0-180 (tabs + photo dots), bottom 1500-1920
 (username, caption, sound), right rail x 950-1080 at y 850-1500 (like/comment/share). Spec.tsx exports them as
 `SAFE`. Every render writes `carousel/work/<slug>/safezones.jpg` with the zones shaded red: **Read it every time**;
@@ -235,7 +239,7 @@ Slide 1 decides swipe vs scroll; spend the most effort here. Before rendering, *
 3. Generate 3 hook variants as rendered slide-1 options.
 4. Own-photo input: a folder Adi drops photos into, used instead of Pexels (best fix for one-narrator consistency).
 11. ~~Same-shoot mode~~ (done 2026-10-04: `sameShoot`, `shootGap`, `shootIndex`).
-5. Instagram 4:5 (1080x1350) export alongside 9:16.
+5. ~~Instagram 4:5 export~~ (done 2026-10-04: `ig-slide-N.png`, emailed with the TikTok slides).
 6. New layouts: iPhone Notes screenshot, iMessage chat, check/cross list.
 7. Performance log: carousel, date, views, saves, comments, to steer future angles.
 8. Video version (slides + transitions + music) for Reels/Shorts.

@@ -238,3 +238,14 @@ export const SpecSlideView: React.FC<{ spec: Spec; index: number }> = ({ spec, i
     }
   }
 };
+
+// Instagram 4:5 (1080x1350): IG crops 9:16 carousel images, cutting the top text. Every readable element already
+// sits inside TikTok's safe band (y 180-1500), so render the same 1920px slide and show exactly that band.
+export const IG_OFFSET = 140;
+export const SpecSlideIG: React.FC<{ spec: Spec; index: number }> = (props) => (
+  <AbsoluteFill style={{ overflow: "hidden", background: "#000" }}>
+    <div style={{ position: "absolute", left: 0, top: -IG_OFFSET, width: 1080, height: 1920 }}>
+      <SpecSlideView {...props} />
+    </div>
+  </AbsoluteFill>
+);

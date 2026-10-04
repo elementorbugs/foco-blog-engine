@@ -3,7 +3,7 @@
 //   node carousel/build.js <slug> photos   fetch 6 Pexels candidates per slide (slide.query)
 //                                          -> carousel/work/<slug>/sheet.jpg (each slide = 6x2 block, picks 1-12)
 //   node carousel/build.js <slug> render   copy each slide's chosen photo (slide.pick, or slide.photo = another
-//                                          slide's id), render 1080x1920 PNGs + preview.jpg + caption.txt
+//                                          slide's id), render 1080x1920 PNGs (TikTok) + 1080x1350 ig-slide PNGs (Instagram) + preview.jpg + caption.txt
 //                                          -> out/tiktok-<slug>/
 //
 // Pexels key: $PEXELS_KEY, else C:/Users/USER/remindher-blog/.pexels-key. (Not stored in the FOCO repo on
@@ -139,6 +139,8 @@ async function render() {
     const inputProps = { spec, index };
     const composition = await selectComposition({ serveUrl, id: "SpecSlide", inputProps });
     await renderStill({ composition, serveUrl, output: path.join(out, `slide-${index + 1}.png`), inputProps });
+    const igComp = await selectComposition({ serveUrl, id: "SpecSlideIG", inputProps });
+    await renderStill({ composition: igComp, serveUrl, output: path.join(out, `ig-slide-${index + 1}.png`), inputProps });
     console.log(`slide ${index + 1}/${spec.slides.length}`);
   }
 
