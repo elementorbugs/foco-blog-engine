@@ -9,7 +9,8 @@ Format copied from a viral app carousel (Flowfy): real lifestyle photo per slide
 an in-app FOCO card, and FOCO revealed only at the end as a casual "btw". Engine lives in `foco-video/`.
 
 ## Steps
-1. **Concept.** Pick an angle for the topic Adi gave (relatable/funny, validating, or practical-tips). 6-8 slides:
+1. **Concept + hook.** Write 3 hook options (see "The hook") and get Adi's pick first.
+   **Concept.** Pick an angle for the topic Adi gave (relatable/funny, validating, or practical-tips). 6-8 slides:
    slide 1 = hook, last slide = FOCO reveal + a question that invites comments. If Adi gave no topic, propose 3 angles.
 2. **Write the spec** `foco-video/carousels/<slug>.json` (schema below). Every non-final slide needs a Pexels `query`
    (portrait lifestyle shot, describe the scene, not the emotion).
@@ -81,7 +82,7 @@ no readable text in red. Photos can run under the zones, text can't.
 
 **Final slide = conversion slide** (both `final-*` layouts render this automatically)
 - Order top to bottom: reveal line(s) → FOCO proof (real screenshot or breakdown card) + mascot → ask question →
-  white **"DOWNLOAD / FOCO PLANNER"** panel with the official **App Store + Google Play badges**
+  orange **"🔗 LINK IN BIO"** pill on top of a white **"DOWNLOAD / FOCO PLANNER"** panel with the official **App Store + Google Play badges**
   (`public/badges/`, downloaded from Apple/Google; never redraw or recolor them, keep them black, same height).
 - Keep reveal lines short (1 line ideal, ~34 chars per line); the layout reflows below them, but more lines = smaller phone.
 - No need to write "(purple blob icon)" anymore: the icon is in the download panel. Never write "free" (AI is paid).
@@ -101,8 +102,28 @@ no readable text in red. Photos can run under the zones, text can't.
 - The purple blob icon (`public/apps/foco-icon.png`) is the app icon: it's what "(purple blob icon)" refers to, and it
   already sits in every FOCO card header.
 
+## The hook (slide 1): ALWAYS strong. Adi's standing rule.
+Slide 1 decides swipe vs scroll; spend the most effort here. Before rendering, **always show Adi 3 hook options**
+(different formulas) with a one-line "why it stops the scroll", and render the one he picks.
+
+**Formulas that work for this audience**
+- **Specific confession:** "I avoided ONE email for 3 weeks" (number + tiny task + shame-free honesty)
+- **Contrast / gap:** "Tasks I avoided for WEEKS vs how long they actually took"
+- **Call-out:** "If you've ever cleaned the whole house instead of the ONE task..."
+- **Myth-flip:** "It was never laziness" / "Things that look lazy but aren't"
+- **List with stakes:** "5-minute tasks that cost me $300 (ADHD tax)"
+- **POV / scene:** "POV: it's 11pm and you still haven't sent the invoice"
+- **Insider label:** "ADHD edition", "only ADHD people will get slide 4"
+
+**Hook checklist** (all must pass)
+- Line 1 ≤ 8 words, readable in 1 second; the rest goes in line 2 / the white tag.
+- Concrete, not abstract: a real task, number, time or object ("3 weeks", "ONE email", "$40"), never "productivity tips".
+- Creates an open loop the next slides close (vs, list, "slide 4", a question).
+- Relatable pain or tension in the viewer's own words (lowercase TikTok voice), zero shame.
+- **No brand and no app in the hook.** FOCO only on the last slide.
+- Photo: a person or a strong scene with clear space in the middle third for the bubbles.
+
 ## Quality rules (what makes it look native, not "produced")
-- **Hook first.** Write 3 hook options for slide 1 and let Adi pick before rendering. It decides scroll vs stop.
 - **Text never covers a face** or the interesting part of the photo. If it does, pick another photo
   (per-slide text position is not built yet, see backlog).
 - **Prefer Adi's own phone photos** over Pexels when he provides them: real and imperfect beats polished stock,

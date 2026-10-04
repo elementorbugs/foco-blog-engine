@@ -30,9 +30,14 @@ const Mascot: React.FC<{ style: React.CSSProperties }> = ({ style }) => (
   <Img src={staticFile("mascots/foco_state_5_completion.png")} style={{ position: "absolute", filter: "drop-shadow(0 16px 30px rgba(0,0,0,0.45))", ...style }} />
 );
 
-// "Download FOCO PLANNER" panel with the official store badges; sits between the ask and TikTok's bottom overlay
+// "Download FOCO PLANNER" panel with the official store badges; sits between the ask and TikTok's bottom overlay.
+// The "LINK IN BIO" pill straddles its top edge (TikTok bios hold the store link; captions can't).
 const DownloadCTA: React.FC = () => (
-  <div style={{ position: "absolute", top: 1255, left: SAFE.left, width: SAFE.railX - SAFE.left - 10, padding: "22px 30px", borderRadius: 34, background: "#FFFFFF", boxShadow: "0 24px 60px rgba(0,0,0,0.45)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+  <>
+  <div style={{ position: "absolute", top: 1212, left: SAFE.left, width: SAFE.railX - SAFE.left - 10, display: "flex", justifyContent: "center", zIndex: 2 }}>
+    <div style={{ fontFamily: BODY, fontWeight: 800, fontSize: 32, letterSpacing: 3, color: "#FFFFFF", background: "#FB923C", padding: "8px 28px", borderRadius: 999, boxShadow: "0 8px 20px rgba(0,0,0,0.3)" }}>🔗 LINK IN BIO</div>
+  </div>
+  <div style={{ position: "absolute", top: 1255, left: SAFE.left, width: SAFE.railX - SAFE.left - 10, padding: "34px 30px 22px", borderRadius: 34, background: "#FFFFFF", boxShadow: "0 24px 60px rgba(0,0,0,0.45)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
     <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
       <Img src={staticFile("apps/foco-icon.png")} style={{ width: 92, height: 92, borderRadius: 22 }} />
       <div>
@@ -45,6 +50,7 @@ const DownloadCTA: React.FC = () => (
       <Img src={staticFile("badges/google-play-cropped.png")} style={{ height: 70 }} />
     </div>
   </div>
+  </>
 );
 
 export const SpecSlideView: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => {
@@ -138,7 +144,7 @@ export const SpecSlideView: React.FC<{ spec: Spec; index: number }> = ({ spec, i
       // ~34 chars fit on one 48px bubble line; count wrapped lines, not array items
       const rows = s.lines.reduce((n, l) => n + Math.ceil(l.length / 34), 0);
       const below = 200 + rows * 82 + 24;
-      const phoneH = 1110 - below;
+      const phoneH = 1080 - below;
       return (
         <AbsoluteFill style={{ background: "#000" }}>
           <Photo name={photo} blur />
@@ -165,7 +171,7 @@ export const SpecSlideView: React.FC<{ spec: Spec; index: number }> = ({ spec, i
               <Mascot style={{ left: 170 + Math.round(phoneH / 2.17) + 50, top: below + phoneH * 0.32, height: 330 }} />
             </>
           )}
-          <div style={{ position: "absolute", top: 1140, left: SAFE.left, right: SAFE.rightLow }}>
+          <div style={{ position: "absolute", top: 1105, left: SAFE.left, right: SAFE.rightLow }}>
             <Bubble bg="#FFFFFF" color={DARK} size={46}>{s.ask}</Bubble>
           </div>
           <DownloadCTA />
