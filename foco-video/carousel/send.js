@@ -72,10 +72,20 @@ async function viaResend(mail) {
   return body.id;
 }
 
+// Some sandboxes block port 465 but allow 587 (STARTTLS), so try both before giving up
 async function viaGmail(mail) {
-  const transport = nodemailer.createTransport({ host: "smtp.gmail.com", port: 465, secure: true, auth: { user, pass }, connectionTimeout: 20000 });
-  const info = await transport.sendMail({ ...mail, from: `FOCO Social <${user}>` });
-  return info.messageId;
+  let lastErr;
+  for (const [port, secure] of [[465, true], [587, false]]) {
+    try {
+      const transport = nodemailer.createTransport({ host: "smtp.gmail.com", port, secure, auth: { user, pass }, connectionTimeout: 15000 });
+      const info = await transport.sendMail({ ...mail, from: `FOCO Social <${user}>` });
+      return `${info.messageId} (port ${port})`;
+    } catch (e) {
+      console.error(`gmail port ${port} failed: ${e.message}`);
+      lastErr = e;
+    }
+  }
+  throw lastErr;
 }
 
 (async () => {
