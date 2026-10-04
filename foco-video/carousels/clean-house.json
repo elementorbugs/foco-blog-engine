@@ -1,0 +1,99 @@
+{
+  "slug": "clean-house",
+  "caption": "the kitchen always wins 🫠 be honest, how long did YOUR last clean take? 👇",
+  "hashtags": [
+    "#adhd",
+    "#adhdtiktok",
+    "#adhdtips",
+    "#adhdcleaning",
+    "#cleaningmotivation",
+    "#cleaninghacks",
+    "#foco"
+  ],
+  "slides": [
+    {
+      "layout": "hook",
+      "id": "hook",
+      "query": "tired woman sitting on living room floor with cleaning supplies",
+      "lines": [
+        "Cleaned for 3 hours, house looks the same?",
+        "it's not you, it's the method 💀"
+      ],
+      "pick": 5
+    },
+    {
+      "layout": "pair",
+      "id": "kitchen",
+      "query": "woman scrubbing kitchen counter",
+      "topLabel": "THE TIPS SAY",
+      "top": "clean one room at a time",
+      "bottomLabel": "WHAT HAPPENS TO ME",
+      "bottom": "3 hours. still in the kitchen 🫠",
+      "pick": 3
+    },
+    {
+      "layout": "caption",
+      "id": "category",
+      "query": "person carrying laundry basket through hallway at home",
+      "label": "so I clean by category, not by room",
+      "comment": "one type of mess, whole house",
+      "pick": 2
+    },
+    {
+      "layout": "card",
+      "id": "rounds",
+      "query": "trash bag on floor in apartment hallway",
+      "label": "the whole house, in short rounds",
+      "comment": "each round is small on purpose",
+      "title": "Clean the house",
+      "steps": [
+        {
+          "text": "Trash from every room",
+          "min": 5
+        },
+        {
+          "text": "All dishes to the sink",
+          "min": 5
+        },
+        {
+          "text": "All clothes to the hamper",
+          "min": 8
+        },
+        {
+          "text": "Clear every surface",
+          "min": 10
+        }
+      ],
+      "result": "round 1 is only 5 min ✅",
+      "pick": 3
+    },
+    {
+      "layout": "pair",
+      "id": "surface",
+      "query": "woman wiping coffee table in living room",
+      "topLabel": "THE TIPS SAY",
+      "top": "deep clean everything",
+      "bottomLabel": "WHAT WORKS FOR ME",
+      "bottom": "the \"looks clean\" pass first ✨",
+      "pick": 1
+    },
+    {
+      "layout": "caption",
+      "id": "after",
+      "query": "tidy bright living room with sunlight",
+      "label": "after round 1 the WHOLE house looks better",
+      "comment": "that's my push for round 2 ✅",
+      "pick": 4
+    },
+    {
+      "layout": "final-phone",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "I snap the mess, FOCO splits it 💜"
+      ],
+      "screenshot": 2,
+      "ask": "how long did yours take? 👇"
+    }
+  ]
+}
