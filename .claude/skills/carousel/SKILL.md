@@ -105,7 +105,7 @@ Spec fields (build lints them; no `caption`/`hashtags` at top level anymore):
 **Both platforms are search engines now: write for search.** Put the phrase people actually type in the first line
 ("how to clean your room with ADHD", "ADHD study tips", "task paralysis"), in natural words, not a keyword list.
 
-**TikTok** (lowercase, casual, ~300-600 chars)
+**TikTok** (sentence case, casual, ~300-600 chars; see CREATIVE LANGUAGE RULE)
 1. Line 1 = search phrase + the slide topic ("how to clean your room with ADHD when you can't start 🧹").
 2. 1-3 lines summarizing the value from the slides (the method/tips in plain words), so the caption stands alone.
 3. Engagement: one specific comment question ("what task have you been avoiding for weeks? 👇") + "save this for ...📌".
@@ -148,7 +148,7 @@ no readable text in red. Photos can run under the zones, text can't.
 - Bubbles below the middle are narrower (they stay clear of the right rail): keep them ≤ ~30 characters.
   The last two words of every bubble are auto-glued (no lone emoji/word on a line); force other breaks with ` `
   (e.g. "for 3 weeks"). Caption-layout text is bottom-anchored and grows upward.
-- Bubble text: max ~45 characters, max 2 lines, sentence case/lowercase (TikTok voice), CAPS only for 1-2 stressed
+- Bubble text: max ~45 characters, max 2 lines, sentence case (CREATIVE LANGUAGE RULE), CAPS only for 1-2 stressed
   words ("ONE email", "WEEKS"). Labels in tags (THE PLAN, REALITY) are all-caps, letter-spaced, 30px.
 - Hook slide: 2-3 bubbles stacked in the middle third (y ~640); content slides: label top (y 230-260),
   payoff bottom (y 1180-1330).
@@ -233,11 +233,39 @@ the full flow: task pops into your head → capture it (`phone` screenshot 2: sa
 it lands in the calendar with a reminder (`phone` screenshot 5) → `card` breakdown → `focus` with timer + sound → win.
 Number the steps on the slides ("step 1: ..."). Example: `carousels/head-to-done.json`.
 
-**Benefit copy that works** (lowercase, first person, outcome-first):
+**Benefit copy that works** (sentence case, first person, outcome-first):
 "I just tell it the task and it gives me step 1" · "rainy sounds on, ONE step on screen, that's all I look at" ·
 "no thinking about step 2 yet" · "it's like someone's working next to me".
 **Avoid:** feature lists, "AI-powered productivity", "best app", "free" (AI breakdown is paid), any medical promise
 ("fixes ADHD", "boosts dopamine"), and "not a calendar" (it has one).
+
+## CREATIVE LANGUAGE RULE (Adi, 2026-10-05, hard rule for ALL copy: slides AND captions)
+All creative copy must sound like natural, conversational American English written by a real person with ADHD -
+never like translated text, advertising copy, or AI-generated language.
+
+1. Write in the first person and from the avatar's point of view.
+2. Use short, simple sentences that are easy to read on a phone.
+3. Each slide should communicate only one thought.
+4. Prefer everyday spoken language and contractions: "I'm" not "I am", "can't" not "cannot", "I've" not "I have".
+5. Use the exact language people use to describe task paralysis: "I know what I need to do. I just can't start." /
+   "I've been staring at this task for hours." / "I don't know where to begin." / "Once I start, I'm usually fine." /
+   "Everything feels urgent, so I do nothing."
+6. Do not use corporate, clinical, motivational, or overly polished language.
+7. Do not translate Hebrew sentence structures literally into English.
+8. Avoid awkward phrases such as: "Today I send the proposal" / "Tiny steps, if I want" / "What work task is stuck for you?"
+9. Use natural alternatives: "Today I'm finally sending the proposal." / "FOCO broke it into four tiny steps." /
+   "What task have you been avoiding?"
+10. Keep most text blocks between 3 and 10 words.
+11. Use sentence case. Avoid unnecessary capitalization.
+12. Emojis should support the emotion, not replace the message. No more than one emoji per text block.
+13. Keep the timeline, task details and outcome logically consistent across all slides.
+14. Never promise an outcome FOCO cannot control. FOCO can help the user start and complete a task - it cannot
+    guarantee that a client will say yes.
+15. Before finalizing, read every sentence aloud. If a native American speaker would not naturally say it in
+    conversation, rewrite it.
+
+Voice: relatable, specific, slightly self-aware, emotionally honest, calm, human, never salesy.
+Core message behind every creative: **"You don't need another to-do list. You need help starting."**
 
 ## Primary audience (Adi's decision + research, 2026-10-05) - every carousel starts here
 **READ `audience-research.md` (same folder) BEFORE EVERY CAROUSEL**: phrase bank in the audience's own words,
@@ -306,7 +334,7 @@ Slide 1 decides swipe vs scroll; spend the most effort here. Before rendering, *
 - Line 1 ≤ 8 words, readable in 1 second; the rest goes in line 2 / the white tag.
 - Concrete, not abstract: a real task, number, time or object ("3 weeks", "ONE email", "$40"), never "productivity tips".
 - Creates an open loop the next slides close (vs, list, "slide 4", a question).
-- Relatable pain or tension in the viewer's own words (lowercase TikTok voice), zero shame.
+- Relatable pain or tension in the viewer's own words (natural spoken English, sentence case), zero shame.
 - **No brand and no app in the hook.** FOCO can appear from slide 2 on (process carousels show the app throughout).
 - Photo: a person or a strong scene with clear space in the middle third for the bubbles.
 

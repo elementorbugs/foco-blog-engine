@@ -1,7 +1,7 @@
 {
   "slug": "angle-list-not-enough",
   "tiktok": {
-    "caption": "ADHD to-do list not working, still can't start 🫠\n\nmy to-do list was color-coded, prioritized and beautiful, and I still wasn't moving. I didn't need another list. FOCO gave me ONE step (open last issue as a template), a 2 min timer and rainy sounds.\n\nhow many lists do YOU have? 👇\nsave this for the next time you're stuck 📌\n\nyou don't need another list, you need help starting. the app on the slides is FOCO, link in bio 💜",
+    "caption": "My to-do list is perfectly organized. I'm still not moving. 🫠\n\nColor-coded. Prioritized. Beautiful. I know exactly what to do. I don't need another list. I just need to start.\n\nFOCO gave me one step instead of a list: open last week's issue as a template. A 2-minute timer, rain sounds on. The newsletter's started.\n\nHow many lists do you have right now? 👇\nSave this for the next time you're stuck 📌\n\nYou don't need another to-do list. You need help starting. The app on the slides is FOCO, link in bio 💜",
     "hashtags": [
       "#adhd",
       "#adhdfreelancer",
@@ -11,7 +11,7 @@
     ]
   },
   "instagram": {
-    "caption": "ADHD to-do list not working, still can't start 🫠\n\nMy to-do list was color-coded, prioritized and beautiful, and I still wasn't moving. I didn't need another list. FOCO gave me ONE step (open last issue as a template), a 2 min timer and rainy sounds.\n\nYou don't need another list. You need help starting.\n\n📌 Save this for the next time you're stuck, and send it to a freelancer friend who gets it.\n💜 Try FOCO, link in bio.",
+    "caption": "My to-do list is perfectly organized. I'm still not moving. 🫠\n\nColor-coded. Prioritized. Beautiful. I know exactly what to do. I don't need another list. I just need to start.\n\nFOCO gave me one step instead of a list: open last week's issue as a template. A 2-minute timer, rain sounds on. The newsletter's started.\n\nYou don't need another to-do list. You need help starting.\n\n📌 Save this for the next time you're stuck, and send it to a freelancer friend who gets it.\n💜 Try FOCO, link in bio.",
     "hashtags": [
       "#adhd",
       "#adhdfreelancer",
@@ -19,7 +19,7 @@
       "#taskparalysis",
       "#procrastination"
     ],
-    "altText": "Carousel of 6 slides about a freelance woman with ADHD stuck starting a work task (Write the newsletter), who breaks it into tiny steps in the FOCO app and starts step 1 with a short timer and rainy sounds."
+    "altText": "Carousel of 6 slides about a freelance woman with ADHD who can't start a work task (Write the newsletter). FOCO breaks it into four tiny steps and she starts step 1 with a short timer and rainy sounds."
   },
   "slides": [
     {
@@ -36,21 +36,21 @@
       "layout": "caption",
       "id": "pain1",
       "own": "carousels/own/maya/notion-2.jpg",
-      "label": "color-coded. prioritized. beautiful.",
-      "comment": "I already know what to do"
+      "label": "Color-coded. Prioritized. Beautiful.",
+      "comment": "I know exactly what to do."
     },
     {
       "layout": "caption",
       "id": "pain2",
       "own": "carousels/own/maya/email-3.jpg",
-      "label": "I don't need another list",
-      "comment": "I need to START 😵‍💫"
+      "label": "I don't need another list.",
+      "comment": "I just need to start 😵‍💫"
     },
     {
       "layout": "step",
       "id": "turn",
       "own": "carousels/own/maya/breakdown-4.jpg",
-      "label": "FOCO gave me ONE step, not a list",
+      "label": "FOCO gave me one step.",
       "step": "Open last issue as template",
       "min": 2
     },
@@ -58,21 +58,21 @@
       "layout": "focus",
       "id": "focus",
       "own": "carousels/own/maya/focus-3.jpg",
-      "label": "2 min timer + rainy sounds",
-      "comment": "that's the whole plan",
+      "label": "A 2-minute timer. Rain sounds on.",
+      "comment": "That's the whole plan.",
       "stepNo": 1,
       "stepTotal": 4,
       "step": "Open last issue as template",
       "min": 2,
       "sound": "Rainy",
-      "result": "newsletter: started ✅"
+      "result": "The newsletter's started ✅"
     },
     {
       "layout": "final-card",
       "id": "end",
       "photo": "hook",
       "lines": [
-        "You don't need another list.",
+        "You don't need another to-do list.",
         "You need help starting 💜"
       ],
       "title": "Write the newsletter",
@@ -94,7 +94,7 @@
           "min": 5
         }
       ],
-      "ask": "how many lists do YOU have? 👇"
+      "ask": "How many lists do you have right now? 👇"
     }
   ]
 }

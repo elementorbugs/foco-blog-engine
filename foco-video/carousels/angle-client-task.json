@@ -1,7 +1,7 @@
 {
   "slug": "angle-client-task",
   "tiktok": {
-    "caption": "ADHD freelancer avoiding a client email for days 🫠\n\na 30 minute client task, avoided for 3 days, and the guilt grew every day. what worked: tiny steps with one tap, then only step 1 (open her email, read once) with a 3 min timer and chill sounds. 30 minutes, not 3 days.\n\nwhat's YOUR 3-day task? 👇\nsave this for the next time you're stuck 📌\n\nyou don't need another list, you need help starting. the app on the slides is FOCO, link in bio 💜",
+    "caption": "This task takes 30 minutes. I've avoided it for three days. 🫠\n\nDay 1: I'll do it after lunch. Day 2: I opened it, then closed it. Day 3: the guilt is worse than the task. And it's client feedback.\n\nSo I told FOCO about it. It broke it into four tiny steps. Step 1 was just reading her email once. Three minutes, something chill on, and I was actually doing it.\n\nWhat task have you been avoiding? 👇\nSave this for the next time you're stuck 📌\n\nYou don't need another to-do list. You need help starting. The app on the slides is FOCO, link in bio 💜",
     "hashtags": [
       "#adhd",
       "#adhdfreelancer",
@@ -11,7 +11,7 @@
     ]
   },
   "instagram": {
-    "caption": "ADHD freelancer avoiding a client email for days 🫠\n\nA 30 minute client task, avoided for 3 days, and the guilt grew every day. what worked: tiny steps with one tap, then only step 1 (open her email, read once) with a 3 min timer and chill sounds. 30 minutes, not 3 days.\n\nYou don't need another list. You need help starting.\n\n📌 Save this for the next time you're stuck, and send it to a freelancer friend who gets it.\n💜 Try FOCO, link in bio.",
+    "caption": "This task takes 30 minutes. I've avoided it for three days. 🫠\n\nDay 1: I'll do it after lunch. Day 2: I opened it, then closed it. Day 3: the guilt is worse than the task. And it's client feedback.\n\nSo I told FOCO about it. It broke it into four tiny steps. Step 1 was just reading her email once. Three minutes, something chill on, and I was actually doing it.\n\nYou don't need another to-do list. You need help starting.\n\n📌 Save this for the next time you're stuck, and send it to a freelancer friend who gets it.\n💜 Try FOCO, link in bio.",
     "hashtags": [
       "#adhd",
       "#adhdfreelancer",
@@ -19,7 +19,7 @@
       "#taskparalysis",
       "#procrastination"
     ],
-    "altText": "Carousel of 6 slides about a freelance woman with ADHD stuck starting a work task (Reply to client feedback), who breaks it into tiny steps in the FOCO app and starts step 1 with a short timer and chill sounds."
+    "altText": "Carousel of 6 slides about a freelance woman with ADHD who can't start a work task (Reply to client feedback). FOCO breaks it into four tiny steps and she starts step 1 with a short timer and chill sounds."
   },
   "slides": [
     {
@@ -27,8 +27,8 @@
       "id": "hook",
       "own": "carousels/own/maya/email-10.jpg",
       "lines": [
-        "A 30 min task. I avoided it 3 days",
-        "(it was client feedback 💀)"
+        "This task takes 30 minutes.",
+        "I've avoided it for 3 days 💀"
       ],
       "textTop": 1060
     },
@@ -36,22 +36,22 @@
       "layout": "caption",
       "id": "pain1",
       "own": "carousels/own/maya/email-12.jpg",
-      "label": "day 1: \"I'll do it after lunch\"",
-      "comment": "day 2: opened it. closed it."
+      "label": "Day 1: \"I'll do it after lunch.\"",
+      "comment": "Day 2: I opened it. Then closed it."
     },
     {
       "layout": "caption",
       "id": "pain2",
       "own": "carousels/own/maya/email-6.jpg",
-      "label": "day 3: the guilt is louder",
-      "comment": "than the task ever was 🫠"
+      "label": "Day 3: the guilt is worse than the task.",
+      "comment": "And it's client feedback 🫠"
     },
     {
       "layout": "card",
       "id": "turn",
       "own": "carousels/own/maya/breakdown-2.jpg",
-      "label": "so I told FOCO the task",
-      "comment": "one tap: tiny steps, if I want",
+      "label": "So I told FOCO about it.",
+      "comment": "It broke it into four tiny steps.",
       "title": "Reply to client feedback",
       "steps": [
         {
@@ -71,27 +71,27 @@
           "min": 2
         }
       ],
-      "result": "step 1 is only 3 min ✅"
+      "result": "Step 1 takes 3 minutes ✅"
     },
     {
       "layout": "focus",
       "id": "focus",
       "own": "carousels/own/maya/focus-2.jpg",
-      "label": "just step 1 + chill sounds",
-      "comment": "3 min timer, nothing else",
+      "label": "Just step 1. Something chill on.",
+      "comment": "A 3-minute timer. Nothing else.",
       "stepNo": 1,
       "stepTotal": 4,
       "step": "Open her email, read once",
       "min": 3,
       "sound": "Chill",
-      "result": "already moving ✅"
+      "result": "Okay. I'm actually doing it ✅"
     },
     {
       "layout": "final-card",
       "id": "end",
       "photo": "hook",
       "lines": [
-        "You don't need another list.",
+        "You don't need another to-do list.",
         "You need help starting 💜"
       ],
       "title": "Reply to client feedback",
@@ -113,7 +113,7 @@
           "min": 2
         }
       ],
-      "ask": "what's YOUR 3-day task? 👇"
+      "ask": "What task have you been avoiding? 👇"
     }
   ]
 }

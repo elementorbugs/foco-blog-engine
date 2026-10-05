@@ -4,7 +4,7 @@
   "sameShoot": true,
   "shootGap": 60,
   "tiktok": {
-    "caption": "ADHD freelancer procrastination: when you know exactly what to do but can't start 🫠\n\n9am: today I send the proposal. 10:30: checked email instead. 1pm: reorganized my Notion, twice. 3pm: I know EXACTLY what to write, I just can't start. what finally worked: one tiny first step (open last proposal as a template), a 3 min timer and jazzy music. sent at 4:10. she said yes.\n\nwhat work task is stuck for you? 👇\nsave this for your next proposal day 📌\n\nthe app on the slides is FOCO, link in bio 💜",
+    "caption": "When you're a freelancer with ADHD and the client is waiting 🫠\n\n9am: today I'm finally sending the proposal. 10:30: I opened the doc, then checked my email instead. 1pm: I reorganized my Notion. Twice. 3pm: I know exactly what to write. I just can't start.\n\nSo I told FOCO about it. It broke it into four tiny steps. Step 1 was just opening my last proposal as a template. Three minutes, jazz on. Sent at 4:10.\n\nWhat task have you been avoiding? 👇\nSave this for your next proposal day 📌\n\nYou don't need another to-do list. You need help starting. The app on the slides is FOCO, link in bio 💜",
     "hashtags": [
       "#adhd",
       "#adhdfreelancer",
@@ -14,7 +14,7 @@
     ]
   },
   "instagram": {
-    "caption": "ADHD and freelancing: when you know exactly what to do, but can't start 🫠\n\nOne Monday, one client proposal:\n\n1. 9:00 \"Today I send the proposal.\"\n2. 10:30 Opened the doc. Checked my email instead.\n3. 1:00 Reorganized my whole Notion. Twice.\n4. 3:00 I knew exactly what to write. I just couldn't start.\n\nWhat worked: I told FOCO the task, broke it into tiny steps with one tap, and started ONLY step 1 (open last proposal as a template) with a 3 min timer and jazzy music.\n\n4:10 Sent. She said yes.\n\n📌 Save this for your next proposal day, and send it to a freelancer friend who gets it.\n💜 Try FOCO, link in bio.",
+    "caption": "When you're a freelancer with ADHD and the client is waiting 🫠\n\n9:00 Today I'm finally sending the proposal.\n10:30 I opened the doc. Then I checked my email instead.\n1:00 I reorganized my Notion. Twice.\n3:00 I know exactly what to write. I just can't start.\n\nSo I told FOCO about it. It broke it into four tiny steps. Step 1 was just opening my last proposal as a template. Three minutes, jazz on.\n\n4:10 Sent.\n\nYou don't need another to-do list. You need help starting.\n\n📌 Save this for your next proposal day, and send it to a freelancer friend who gets it.\n💜 Try FOCO, link in bio.",
     "hashtags": [
       "#adhd",
       "#adhdfreelancer",
@@ -22,7 +22,7 @@
       "#procrastination",
       "#taskparalysis"
     ],
-    "altText": "Carousel of 8 slides following one freelancer with ADHD through a Monday: she plans to send a client proposal at 9am, avoids it all day, then breaks it into tiny steps in the FOCO app, starts step 1 with a timer and jazzy music, and sends it at 4:10pm."
+    "altText": "Carousel of 8 slides following one freelancer with ADHD through a Monday: she plans to send a client proposal at 9am, avoids it all day, then FOCO breaks it into four tiny steps, she starts step 1 with a timer and jazz, and sends it at 4:10pm."
   },
   "slides": [
     {
@@ -42,8 +42,8 @@
       "id": "nine",
       "person": true,
       "query": "drinking coffee in the morning at home",
-      "label": "today I send the proposal",
-      "comment": "the new client I've been waiting for",
+      "label": "Today I'm finally sending the proposal.",
+      "comment": "It's for the client I've been waiting for.",
       "time": "9:00 am",
       "pick": 1
     },
@@ -52,8 +52,8 @@
       "id": "email",
       "person": true,
       "query": "looking at laptop on couch",
-      "label": "opened the doc.",
-      "comment": "checked my email instead 🙃",
+      "label": "I opened the doc.",
+      "comment": "Then I checked my email instead 🙃",
       "time": "10:30 am",
       "pick": 4
     },
@@ -62,8 +62,8 @@
       "id": "notion",
       "person": true,
       "query": "writing in notebook at table",
-      "label": "reorganized my Notion. twice.",
-      "comment": "it looks amazing tho 💀",
+      "label": "I reorganized my Notion. Twice.",
+      "comment": "It looks amazing, though 💀",
       "time": "1:00 pm",
       "pick": 3
     },
@@ -72,7 +72,7 @@
       "id": "stuck",
       "person": true,
       "query": "sitting thoughtful by window at home",
-      "label": "I know EXACTLY what to write",
+      "label": "I know exactly what to write.",
       "comment": "I just can't start 😵‍💫",
       "time": "3:00 pm",
       "pick": 5
@@ -82,8 +82,8 @@
       "id": "breakdown",
       "person": false,
       "query": "laptop and coffee on desk top view",
-      "label": "so I told FOCO the task",
-      "comment": "one tap: tiny steps, if I want",
+      "label": "So I told FOCO about it.",
+      "comment": "It broke it into four tiny steps.",
       "title": "Send client proposal",
       "steps": [
         {
@@ -103,7 +103,7 @@
           "min": 5
         }
       ],
-      "result": "step 1 is only 3 min ✅",
+      "result": "Step 1 takes 3 minutes ✅",
       "pick": 3
     },
     {
@@ -111,14 +111,14 @@
       "id": "focus",
       "person": false,
       "query": "headphones next to laptop on desk",
-      "label": "just step 1 + jazzy music",
-      "comment": "nothing else on screen",
+      "label": "Just step 1. Jazz on.",
+      "comment": "Nothing else on my screen.",
       "stepNo": 1,
       "stepTotal": 4,
       "step": "Open last proposal as template",
       "min": 3,
       "sound": "Jazzy",
-      "result": "not thinking about price yet ✅",
+      "result": "Pricing can wait ✅",
       "pick": 4
     },
     {
@@ -126,8 +126,8 @@
       "id": "end",
       "photo": "hook",
       "lines": [
-        "sent. she said yes ✅",
-        "You don't need another list.",
+        "4:10 pm. Sent ✅",
+        "You don't need another to-do list.",
         "You need help starting 💜"
       ],
       "title": "Send client proposal",
@@ -149,7 +149,7 @@
           "min": 5
         }
       ],
-      "ask": "what work task is stuck? 👇"
+      "ask": "What task have you been avoiding? 👇"
     }
   ]
 }
