@@ -2,7 +2,7 @@
 // carousel/build.js renders each slide through this component. Layouts reuse the hand-built carousels' pieces.
 import React from "react";
 import { AbsoluteFill, Img, staticFile } from "remotion";
-import { BODY, EMOJI, HEAD } from "../Composition";
+import { BODY, EMOJI, HAND, HEAD } from "../Composition";
 import { Bubble, FocoCard, Photo } from "./Carousel";
 import { StepCard, TimeChip } from "./MoreCarousels";
 import { Tag } from "./MoreCarousels2";
@@ -22,6 +22,7 @@ export type SpecSlide =
   | { layout: "caption"; id: string; label: string; comment?: string; time?: string }
   | { layout: "focus"; id: string; label: string; comment?: string; stepNo: number; stepTotal: number; step: string; min: number; sound: string; result?: string }
   | { layout: "life"; id: string; label: string; comment?: string; chip?: string; side?: "left" | "right"; inset: Inset }
+  | { layout: "scan"; id: string; label: string; comment?: string; items: string[]; result?: string }
   | { layout: "calendar"; id: string; label: string; comment?: string; title: string; min: number; category: string; result?: string }
   | { layout: "inputs"; id: string; label: string; comment?: string; result?: string }
   | { layout: "phone"; id: string; label: string; comment?: string; screenshot?: number; image?: string; result?: string; crop?: [number, number]; aspect?: number }
@@ -66,6 +67,46 @@ const DownloadCTA: React.FC = () => (
   </>
 );
 
+
+// A phone camera mid-scan of a handwritten paper to-do list (the "Scan it" capture), drawn so the list matches the
+// carousel's tasks exactly. Paper + spiral + Caveat handwriting inside a viewfinder with purple scan corners.
+const ScanPhone: React.FC<{ items: string[] }> = ({ items }) => {
+  const corner = (pos: React.CSSProperties, rot: number) => (
+    <div style={{ position: "absolute", width: 70, height: 70, borderTop: "8px solid #A78BFA", borderLeft: "8px solid #A78BFA", borderTopLeftRadius: 22, transform: `rotate(${rot}deg)`, filter: "drop-shadow(0 0 10px #7C3AED)", ...pos }} />
+  );
+  return (
+    <div style={{ width: 560, height: 1060, borderRadius: 70, background: "#0d0a14", padding: 16, boxShadow: "0 40px 100px rgba(0,0,0,0.55)" }}>
+      <div style={{ position: "relative", width: "100%", height: "100%", borderRadius: 56, overflow: "hidden", background: "linear-gradient(160deg, #6b4a2f, #4a321f)" }}>
+        <div style={{ position: "absolute", top: 34, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
+          <div style={{ fontFamily: BODY, fontWeight: 800, fontSize: 30, color: "#FFFFFF", background: "rgba(245,158,11,0.95)", padding: "8px 26px", borderRadius: 999 }}><span style={{ fontFamily: `"${EMOJI}"` }}>📷</span> Scan it</div>
+        </div>
+        {/* the paper */}
+        <div style={{ position: "absolute", top: 140, left: 60, width: 410, height: 640, background: "#F6EEDD", borderRadius: 14, transform: "rotate(-3deg)", boxShadow: "0 18px 40px rgba(0,0,0,0.45)", backgroundImage: "repeating-linear-gradient(transparent 0 58px, rgba(120,140,180,0.35) 58px 60px)", backgroundPosition: "0 40px" }}>
+          {Array.from({ length: 11 }).map((_, i) => (
+            <div key={i} style={{ position: "absolute", left: -14, top: 40 + i * 56, width: 30, height: 14, borderRadius: 8, border: "4px solid #C9A24A" }} />
+          ))}
+          <div style={{ position: "absolute", top: 50, left: 54, fontFamily: HAND, fontWeight: 600, fontSize: 64, color: "#1d1b2a", textDecoration: "underline" }}>To do:</div>
+          {items.map((t, i) => (
+            <div key={t} style={{ position: "absolute", top: 170 + i * 118, left: 50, display: "flex", alignItems: "center", gap: 18 }}>
+              <div style={{ width: 40, height: 40, border: "4px solid #1d1b2a", borderRadius: 4, flexShrink: 0 }} />
+              <div style={{ fontFamily: HAND, fontWeight: 600, fontSize: 58, color: "#1d1b2a", whiteSpace: "nowrap" }}>{t}</div>
+            </div>
+          ))}
+        </div>
+        {corner({ top: 110, left: 30 }, 0)}
+        {corner({ top: 110, right: 30 }, 90)}
+        {corner({ top: 760, right: 30 }, 180)}
+        {corner({ top: 760, left: 30 }, 270)}
+        {/* shutter */}
+        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 190, background: "rgba(0,0,0,0.75)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ width: 120, height: 120, borderRadius: 999, border: "8px solid #FFFFFF", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ width: 90, height: 90, borderRadius: 999, background: "#FFFFFF" }} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 // FOCO's Sessions (calendar) day view with ONE task, drawn so the task name/minutes match the rest of the carousel
 // exactly, plus the optional one-tap AI breakdown button (it is a choice, never automatic).
@@ -153,7 +194,7 @@ const FocusCard: React.FC<{ stepNo: number; stepTotal: number; step: string; min
 // Defaults keep the sticker inside the safe band and clear of the bubbles/cards for each layout
 const STICKER_POS: Record<string, [number, number]> = {
   hook: [800, 470], pair: [790, 880], caption: [790, 880], step: [800, 880], card: [820, 470],
-  focus: [40, 430], phone: [800, 900], inputs: [820, 300], calendar: [820, 300], life: [800, 1150], "final-card": [80, 330], "final-phone": [700, 1000],
+  focus: [40, 430], phone: [800, 900], inputs: [820, 300], calendar: [820, 300], scan: [800, 900], life: [800, 1150], "final-card": [80, 330], "final-phone": [700, 1000],
 };
 const Sticker: React.FC<{ emoji: string; pos: [number, number] }> = ({ emoji, pos }) => (
   <div style={{ position: "absolute", left: pos[0], top: pos[1], fontFamily: `"${EMOJI}"`, fontSize: 130, lineHeight: 1, transform: "rotate(12deg)", filter: "drop-shadow(0 10px 18px rgba(0,0,0,0.35))", zIndex: 5 }}>
@@ -284,6 +325,29 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
         </AbsoluteFill>
       );
     }
+    case "scan":
+      return (
+        <AbsoluteFill style={{ background: "#000" }}>
+          <Photo name={photo} blur />
+          <div style={{ position: "absolute", top: 220, left: 60, right: 60 }}>
+            <Bubble size={54}>{s.label}</Bubble>
+            {s.comment ? (
+              <>
+                <div style={{ height: 12 }} />
+                <Bubble size={44}>{s.comment}</Bubble>
+              </>
+            ) : null}
+          </div>
+          <div style={{ position: "absolute", top: 420, left: 0, right: 0, display: "flex", justifyContent: "center", transform: "rotate(2deg)" }}>
+            <ScanPhone items={s.items} />
+          </div>
+          {s.result ? (
+            <div style={{ position: "absolute", top: 1400, left: SAFE.left, right: SAFE.rightLow }}>
+              <Bubble bg="#DCFCE7" color="#15803D" size={46}>{s.result}</Bubble>
+            </div>
+          ) : null}
+        </AbsoluteFill>
+      );
     case "life": {
       // A real-life moment (full-bleed photo) + how FOCO handles it (screenshot or drawn screen inset beside it)
       const top = 220 + Math.ceil(s.label.length / 30) * 84 + (s.comment ? 12 + Math.ceil(s.comment.length / 36) * 72 : 0) + 30;

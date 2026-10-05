@@ -90,6 +90,10 @@ verified working 2026-10-04). Always `git pull` first in a reused session so the
   I = `{ "image": "creatives/...", "crop": [y0, y1], "aspect": n }` or `{ "ui": "breakdown", "title", "steps" }` /
   `{ "ui": "focus", "stepNo", "stepTotal", "step", "min", "sound" }` / `{ "ui": "calendar", "title", "min", "category" }`.
   Must-land message: you can SAY a task or SNAP a paper list and it goes into the calendar. Example: `carousels/life-moments.json`.
+- `scan` = a phone camera mid-scan of a handwritten paper list (Caveat handwriting font, purple scan corners,
+  shutter), drawn so the list matches the carousel's tasks: `{ "layout": "scan", "id", "photo"|"query", "label",
+  "comment"?, "items": ["Email my boss", ...], "result"? }` (background photo is blurred). Use it instead of stock
+  "phone photographing something" photos, which never show a to-do list (Adi rejected a book being photographed).
 - `"own": "carousels/own/<file>.jpg"` on a slide uses Adi's own phone photo instead of Pexels (no `query`/`pick`).
 - Keep each bubble under ~45 characters; slides look best with one idea each.
 

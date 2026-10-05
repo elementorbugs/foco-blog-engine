@@ -43,13 +43,16 @@
       "pick": 8
     },
     {
-      "layout": "caption",
+      "layout": "scan",
       "id": "snap",
-      "person": false,
-      "query": "hand holding phone taking photo of notebook",
+      "photo": "lands",
       "label": "now I just snap the list",
       "comment": "one photo, that's it 📸",
-      "pick": 8
+      "items": [
+        "Email my boss",
+        "Book dentist",
+        "Buy groceries"
+      ]
     },
     {
       "layout": "life",

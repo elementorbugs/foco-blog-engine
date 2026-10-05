@@ -32,6 +32,8 @@ export const BODY = "Poppins";
 // Bundled color emoji so slides look the same on Adi's PC and in cloud sessions (system emoji differ per OS)
 export const EMOJI = "Noto Color Emoji";
 export const BODY_STACK = `${BODY}, "${EMOJI}"`;
+// Handwriting (Caveat, OFL) for paper to-do lists drawn in carousels
+export const HAND = "Caveat";
 
 // Load local brand fonts before the first frame renders
 const fontHandle = delayRender("fonts");
@@ -40,6 +42,7 @@ Promise.all([
   new FontFace(BODY, `url(${staticFile("fonts/Poppins-Bold.ttf")})`, { weight: "700" }).load(),
   new FontFace(BODY, `url(${staticFile("fonts/Poppins-ExtraBold.ttf")})`, { weight: "800" }).load(),
   new FontFace(EMOJI, `url(${staticFile("fonts/NotoColorEmoji.woff2")})`).load(),
+  new FontFace(HAND, `url(${staticFile("fonts/Caveat.ttf")})`, { weight: "400 700" }).load(),
 ]).then((faces) => {
   faces.forEach((f) => document.fonts.add(f));
   continueRender(fontHandle);
