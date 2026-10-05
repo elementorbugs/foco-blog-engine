@@ -133,8 +133,20 @@ This only works because all text stays inside the safe band below, so the safe-z
 `SAFE`. Every render writes `carousel/work/<slug>/safezones.jpg` with the zones shaded red: **Read it every time**;
 no readable text in red. Photos can run under the zones, text can't.
 
+**THE DESIGN (Adi, 2026-10-05): "duo" = two fonts with clear hierarchy, on EVERY slide (default in Spec.tsx)**
+Each slide has a story line and an inner-voice line, and they must look different:
+- **Story line** (what happens: `label`, setup lines): Poppins bold, lilac bubble (`#EFE7FF` / `#6D28D9`).
+- **Inner-voice line** (the punch, the feeling: `comment`, hook punchline, last final line): white bubble, dark text,
+  **handwriting (Caveat)**, ~1.3x the size. It reads like her own note to herself.
+- **Hook with an audience call-out (3 lines):** small solid purple label for the audience ("Freelancer with ADHD:") ->
+  lilac Poppins setup ("Task: update one page.") -> big white handwritten punchline ("Me: redesigns it all 🙃").
+  Keep the punchline short enough to fit ONE line (~22 chars), and keep the block above y 1500 and off the face.
+- **Final slide:** "You don't need another to-do list." in Poppins, "You need help starting 💜" in handwriting.
+- Green results, labels/tags, FOCO UI cards and the download panel stay Poppins/Sora.
+- The old all-lilac look is `"design": "classic"` at the spec's top level; use it only to re-render old carousels.
+
 **Typography**
-- Body/bubbles: **Poppins** 700 (800 for emphasis). Headings inside FOCO UI cards: **Sora** 800. No other fonts.
+- Body/bubbles: **Poppins** 700 (800 for emphasis) for story lines; **Caveat** (handwriting) for inner-voice lines (see THE DESIGN). Headings inside FOCO UI cards: **Sora** 800. No other fonts.
 - Sizes (px on the 1080 canvas):
   | role | size | ≈ phone pt |
   |---|---|---|

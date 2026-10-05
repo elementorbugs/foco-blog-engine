@@ -32,7 +32,9 @@ export type SpecSlide =
 
 // sticker: one big emoji per slide, TikTok-sticker style; stickerPos overrides the per-layout default [x, y]
 type SlideExtras = { query?: string; pick?: number; photo?: string; sticker?: string; stickerPos?: [number, number] };
-export type Spec = { slug: string; slides: (SpecSlide & SlideExtras)[] };
+// design: "duo" (default) = Poppins for the story line + white handwriting (Caveat) for the inner-voice line;
+// "classic" = the old all-lilac Poppins bubbles
+export type Spec = { slug: string; design?: "duo" | "classic"; slides: (SpecSlide & SlideExtras)[] };
 
 const DARK = "#160F22";
 
@@ -223,8 +225,13 @@ export const SpecSlideView: React.FC<{ spec: Spec; index: number }> = (props) =>
   );
 };
 
+// The "inner voice" line of a slide (comment / punchline). Duo design: white bubble, handwriting, ~1.3x size.
+const Voice: React.FC<{ duo: boolean; size: number; children: string }> = ({ duo, size, children }) =>
+  duo ? <Bubble size={Math.round(size * 1.3)} bg="#FFFFFF" color={DARK} font={HAND}>{children}</Bubble> : <Bubble size={size}>{children}</Bubble>;
+
 const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => {
   const s = spec.slides[index];
+  const duo = spec.design !== "classic";
   // finals may reuse another slide's photo (blurred)
   const photo = `${spec.slug}/${("photo" in s && s.photo) || s.id}`;
 
@@ -236,7 +243,7 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
           {/* textTop moves the hook bubbles off a face (keep the block above SAFE.bottom) */}
           {/* below y 850 the like/comment rail sits on the right, so low hook text gets the narrower right margin */}
           <div style={{ position: "absolute", top: s.textTop ?? 640, left: 60, right: (s.textTop ?? 640) >= 700 ? SAFE.rightLow : 60 }}>
-            {s.hookStyle === "callout"
+            {s.hookStyle === "callout" || (duo && s.lines.length >= 3)
               ? // hierarchy for audience call-out hooks: purple label (who it's for) -> lilac setup -> big white punchline
                 s.lines.map((l, i) => (
                   <div key={l} style={{ marginBottom: 14 }}>
@@ -244,7 +251,7 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
                       <Bubble size={44} bg="#7C3AED" color="#FFFFFF">{l}</Bubble>
                     ) : i === s.lines.length - 1 ? (
                       // punchFont "hand": the "me" punchline in handwriting (Caveat) so it reads like her own voice
-                      s.punchFont === "hand" ? <Bubble size={84} bg="#FFFFFF" color={DARK} font={HAND}>{l}</Bubble> : <Bubble size={66} bg="#FFFFFF" color={DARK}>{l}</Bubble>
+                      s.punchFont === "hand" || duo ? <Bubble size={84} bg="#FFFFFF" color={DARK} font={HAND}>{l}</Bubble> : <Bubble size={66} bg="#FFFFFF" color={DARK}>{l}</Bubble>
                     ) : (
                       <Bubble size={54}>{l}</Bubble>
                     )}
@@ -252,7 +259,7 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
                 ))
               : s.lines.map((l, i) => (
                   <div key={l} style={{ marginBottom: 14 }}>
-                    <Bubble size={i === 0 ? 64 : 54}>{l}</Bubble>
+                    {duo && i === s.lines.length - 1 && i > 0 ? <Voice duo size={60}>{l}</Voice> : <Bubble size={i === 0 ? 64 : 54}>{l}</Bubble>}
                   </div>
                 ))}
             {s.tag ? <Bubble size={40} bg="#FFFFFF" color={DARK}>{s.tag}</Bubble> : null}
@@ -282,7 +289,7 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
             {s.comment ? (
               <>
                 <div style={{ height: 12 }} />
-                <Bubble size={44}>{s.comment}</Bubble>
+                <Voice duo={duo} size={44}>{s.comment}</Voice>
               </>
             ) : null}
           </div>
@@ -319,7 +326,7 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
             {s.comment ? (
               <>
                 <div style={{ height: 14 }} />
-                <Bubble size={46}>{s.comment}</Bubble>
+                <Voice duo={duo} size={46}>{s.comment}</Voice>
               </>
             ) : null}
           </div>
@@ -336,7 +343,7 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
             {s.comment ? (
               <>
                 <div style={{ height: 12 }} />
-                <Bubble size={44}>{s.comment}</Bubble>
+                <Voice duo={duo} size={44}>{s.comment}</Voice>
               </>
             ) : null}
           </div>
@@ -360,7 +367,7 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
             {s.comment ? (
               <>
                 <div style={{ height: 12 }} />
-                <Bubble size={44}>{s.comment}</Bubble>
+                <Voice duo={duo} size={44}>{s.comment}</Voice>
               </>
             ) : null}
           </div>
@@ -406,7 +413,7 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
             {s.comment ? (
               <>
                 <div style={{ height: 12 }} />
-                <Bubble size={44}>{s.comment}</Bubble>
+                <Voice duo={duo} size={44}>{s.comment}</Voice>
               </>
             ) : null}
           </div>
@@ -431,7 +438,7 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
             {s.comment ? (
               <>
                 <div style={{ height: 12 }} />
-                <Bubble size={44}>{s.comment}</Bubble>
+                <Voice duo={duo} size={44}>{s.comment}</Voice>
               </>
             ) : null}
           </div>
@@ -456,7 +463,7 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
             {s.comment ? (
               <>
                 <div style={{ height: 12 }} />
-                <Bubble size={44}>{s.comment}</Bubble>
+                <Voice duo={duo} size={44}>{s.comment}</Voice>
               </>
             ) : null}
           </div>
@@ -484,7 +491,7 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
             {s.comment ? (
               <>
                 <div style={{ height: 12 }} />
-                <Bubble size={44}>{s.comment}</Bubble>
+                <Voice duo={duo} size={44}>{s.comment}</Voice>
               </>
             ) : null}
           </div>
@@ -528,9 +535,9 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
           <Photo name={photo} blur />
           <AbsoluteFill style={{ background: "rgba(20,10,34,0.25)" }} />
           <div style={{ position: "absolute", top: 200, left: 60, right: 60 }}>
-            {s.lines.map((l) => (
+            {s.lines.map((l, i) => (
               <div key={l} style={{ marginBottom: 10 }}>
-                <Bubble size={48}>{l}</Bubble>
+                {duo && i === s.lines.length - 1 && s.lines.length > 1 ? <Voice duo size={48}>{l}</Voice> : <Bubble size={48}>{l}</Bubble>}
               </div>
             ))}
           </div>

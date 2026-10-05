@@ -29,11 +29,9 @@
       "lines": [
         "Freelancer with ADHD:",
         "Task: update one page.",
-        "Me: redesigns everything 🙃"
+        "Me: redesigns it all 🙃"
       ],
-      "textTop": 1130,
-      "hookStyle": "callout",
-      "punchFont": "hand"
+      "textTop": 1130
     },
     {
       "layout": "caption",
