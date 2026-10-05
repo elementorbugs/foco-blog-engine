@@ -23,7 +23,7 @@ export type SpecSlide =
   | { layout: "focus"; id: string; label: string; comment?: string; stepNo: number; stepTotal: number; step: string; min: number; sound: string; result?: string }
   | { layout: "life"; id: string; label: string; comment?: string; chip?: string; side?: "left" | "right"; inset: Inset }
   | { layout: "scan"; id: string; label: string; comment?: string; items: string[]; result?: string }
-  | { layout: "calendar"; id: string; label: string; comment?: string; title: string; min: number; category: string; result?: string }
+  | { layout: "calendar"; id: string; label: string; comment?: string; title: string; min: number; category: string; result?: string; breakdownButton?: boolean }
   | { layout: "inputs"; id: string; label: string; comment?: string; result?: string }
   | { layout: "phone"; id: string; label: string; comment?: string; screenshot?: number; image?: string; result?: string; crop?: [number, number]; aspect?: number }
   | { layout: "final-card"; id: string; lines: string[]; title: string; steps: Step[]; ask: string }
@@ -110,7 +110,8 @@ const ScanPhone: React.FC<{ items: string[] }> = ({ items }) => {
 
 // FOCO's Sessions (calendar) day view with ONE task, drawn so the task name/minutes match the rest of the carousel
 // exactly, plus the optional one-tap AI breakdown button (it is a choice, never automatic).
-const CalendarCard: React.FC<{ title: string; min: number; category: string }> = ({ title, min, category }) => (
+// breakdownButton=false hides the AI button (single-feature carousels that test capture only)
+const CalendarCard: React.FC<{ title: string; min: number; category: string; breakdownButton?: boolean }> = ({ title, min, category, breakdownButton = true }) => (
   <div style={{ width: 860, borderRadius: 40, padding: "32px 32px 36px", background: "#0B0A16", border: "2px solid rgba(167,139,250,0.35)", boxShadow: "0 30px 80px rgba(0,0,0,0.45)" }}>
     <div style={{ fontFamily: BODY, fontWeight: 600, fontSize: 64, color: "#FFFFFF", lineHeight: 1 }}>Sunday</div>
     <div style={{ fontFamily: BODY, fontWeight: 600, fontSize: 24, letterSpacing: 3, color: "#B8B0CC", marginTop: 8 }}>JUN 2026</div>
@@ -130,10 +131,12 @@ const CalendarCard: React.FC<{ title: string; min: number; category: string }> =
         <div style={{ fontFamily: BODY, fontWeight: 600, fontSize: 30, color: "#B8B0CC", marginTop: 6 }}>{min} min · {category}</div>
       </div>
     </div>
+    {breakdownButton ? (<>
     <div style={{ marginTop: 22, padding: "24px 20px", borderRadius: 24, border: "3px dashed #A78BFA", textAlign: "center", fontFamily: BODY, fontWeight: 800, fontSize: 32, letterSpacing: 2, color: "#C4B5FD", background: "rgba(124,58,237,0.15)" }}>
       <span style={{ fontFamily: `"${EMOJI}"` }}>✨</span> MAKE SUBTASKS USING FOCO <span style={{ fontFamily: `"${EMOJI}"` }}>👆</span>
     </div>
     <div style={{ marginTop: 12, textAlign: "center", fontFamily: BODY, fontWeight: 600, fontSize: 28, color: "#7d738f" }}>optional: only if you tap it</div>
+    </>) : null}
   </div>
 );
 
@@ -410,7 +413,7 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
             ) : null}
           </div>
           <div style={{ position: "absolute", top, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
-            <CalendarCard title={s.title} min={s.min} category={s.category} />
+            <CalendarCard title={s.title} min={s.min} category={s.category} breakdownButton={s.breakdownButton} />
           </div>
           {s.result ? (
             <div style={{ position: "absolute", top: 1380, left: SAFE.left, right: SAFE.rightLow }}>

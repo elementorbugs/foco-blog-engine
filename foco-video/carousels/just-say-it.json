@@ -1,0 +1,97 @@
+{
+  "slug": "just-say-it",
+  "tiktok": {
+    "caption": "how to remember tasks that pop into your head at the worst time (ADHD) 🎙️\n\nmid-walk, hands full, no pen, and suddenly \"I need to email my boss\". now I just say it out loud and it turns into a task in my day. I don't have to hold it in my head anymore.\n\nwhat pops into YOUR head at the worst time? 👇\nsave this for the next shower thought 📌\n\nthe app on the slides is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#adhdtips",
+      "#adhdbrain",
+      "#adhdforgetfulness",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "How to remember the tasks that pop into your head at the worst time (ADHD) 🎙️\n\nMid-walk, hands full, no pen, and suddenly: \"I need to email my boss.\" By the time I'm home, it's gone.\n\n1. Say it out loud, the second it shows up\n2. It turns into a task: \"Email my boss\"\n3. It's waiting in my day when I'm ready\n\nMy brain doesn't have to hold it anymore, and I actually remember it.\n\n📌 Save this for the next shower thought, and send it to someone who forgets everything between the car and the front door.\n💜 Try FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdtips",
+      "#adhdbrain",
+      "#adhdforgetfulness",
+      "#adhdmom"
+    ],
+    "altText": "Carousel of 6 slides: a task pops into a mom's head on a walk with the stroller, she says it out loud, and the FOCO app turns it into the task Email my boss, waiting in her calendar for the day."
+  },
+  "slides": [
+    {
+      "layout": "hook",
+      "id": "hook",
+      "person": false,
+      "query": "hands on steering wheel driving car",
+      "lines": [
+        "Tasks pop into my head at the worst times",
+        "so now I just say them out loud 🎙️"
+      ],
+      "pick": 8
+    },
+    {
+      "layout": "caption",
+      "id": "walk",
+      "person": false,
+      "own": "carousels/own/stroller-walk.jpg",
+      "label": "mid-walk: \"I need to email my boss\"",
+      "comment": "no free hands, no pen 🫠"
+    },
+    {
+      "layout": "life",
+      "id": "say",
+      "person": false,
+      "query": "hand holding phone outdoors on street",
+      "label": "so I just say it out loud",
+      "comment": "FOCO turns it into a task",
+      "side": "right",
+      "inset": {
+        "image": "creatives/speak-email-boss-crop.png",
+        "crop": [
+          0.335,
+          0.88
+        ],
+        "aspect": 1.756
+      },
+      "chip": "added to my sessions ✅",
+      "pick": 5
+    },
+    {
+      "layout": "calendar",
+      "id": "day",
+      "person": false,
+      "query": "coffee and notebook on desk morning light",
+      "label": "it's waiting in my day",
+      "comment": "I don't have to hold it in my head",
+      "title": "Email my boss",
+      "min": 25,
+      "category": "Work",
+      "breakdownButton": false,
+      "pick": 1
+    },
+    {
+      "layout": "caption",
+      "id": "letgo",
+      "person": false,
+      "query": "cup of tea on windowsill",
+      "label": "my brain can finally let go",
+      "comment": "and I actually remember it ✅",
+      "pick": 6
+    },
+    {
+      "layout": "final-phone",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "Try FOCO - link in bio 💜"
+      ],
+      "image": "creatives/speak-email-boss-crop.png",
+      "aspect": 1.756,
+      "ask": "what pops into YOUR head at the worst time? 👇"
+    }
+  ]
+}
