@@ -8,6 +8,12 @@ import { StepCard, TimeChip } from "./MoreCarousels";
 import { Tag } from "./MoreCarousels2";
 
 type Step = { text: string; min: number };
+// "life" slide inset: a real screenshot/creative (image + optional crop) or a drawn FOCO screen with this carousel's task
+type Inset =
+  | { image: string; crop?: [number, number]; aspect: number }
+  | { ui: "breakdown"; title: string; steps: Step[] }
+  | { ui: "focus"; stepNo: number; stepTotal: number; step: string; min: number; sound: string }
+  | { ui: "calendar"; title: string; min: number; category: string };
 export type SpecSlide =
   | { layout: "hook"; id: string; lines: string[]; tag?: string; textTop?: number }
   | { layout: "pair"; id: string; topLabel: string; top: string; bottomLabel: string; bottom: string }
@@ -15,6 +21,7 @@ export type SpecSlide =
   | { layout: "step"; id: string; label: string; step: string; min: number }
   | { layout: "caption"; id: string; label: string; comment?: string; time?: string }
   | { layout: "focus"; id: string; label: string; comment?: string; stepNo: number; stepTotal: number; step: string; min: number; sound: string; result?: string }
+  | { layout: "life"; id: string; label: string; comment?: string; chip?: string; side?: "left" | "right"; inset: Inset }
   | { layout: "calendar"; id: string; label: string; comment?: string; title: string; min: number; category: string; result?: string }
   | { layout: "inputs"; id: string; label: string; comment?: string; result?: string }
   | { layout: "phone"; id: string; label: string; comment?: string; screenshot?: number; image?: string; result?: string; crop?: [number, number]; aspect?: number }
@@ -146,7 +153,7 @@ const FocusCard: React.FC<{ stepNo: number; stepTotal: number; step: string; min
 // Defaults keep the sticker inside the safe band and clear of the bubbles/cards for each layout
 const STICKER_POS: Record<string, [number, number]> = {
   hook: [800, 470], pair: [790, 880], caption: [790, 880], step: [800, 880], card: [820, 470],
-  focus: [40, 430], phone: [800, 900], inputs: [820, 300], calendar: [820, 300], "final-card": [80, 330], "final-phone": [700, 1000],
+  focus: [40, 430], phone: [800, 900], inputs: [820, 300], calendar: [820, 300], life: [800, 1150], "final-card": [80, 330], "final-phone": [700, 1000],
 };
 const Sticker: React.FC<{ emoji: string; pos: [number, number] }> = ({ emoji, pos }) => (
   <div style={{ position: "absolute", left: pos[0], top: pos[1], fontFamily: `"${EMOJI}"`, fontSize: 130, lineHeight: 1, transform: "rotate(12deg)", filter: "drop-shadow(0 10px 18px rgba(0,0,0,0.35))", zIndex: 5 }}>
@@ -274,6 +281,53 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
               <Bubble bg="#DCFCE7" color="#15803D" size={48}>{s.result}</Bubble>
             </div>
           ) : null}
+        </AbsoluteFill>
+      );
+    }
+    case "life": {
+      // A real-life moment (full-bleed photo) + how FOCO handles it (screenshot or drawn screen inset beside it)
+      const top = 220 + Math.ceil(s.label.length / 30) * 84 + (s.comment ? 12 + Math.ceil(s.comment.length / 36) * 72 : 0) + 30;
+      const maxH = 1440 - top - (s.chip ? 90 : 0);
+      const ins = s.inset;
+      const side = s.side ?? "left";
+      let box: React.ReactNode;
+      let w = 560;
+      let h = 0;
+      if ("image" in ins) {
+        const [y0, y1] = ins.crop ?? [0, 1];
+        w = Math.min(700, Math.round(maxH / (ins.aspect * (y1 - y0))));
+        h = Math.round(w * ins.aspect * (y1 - y0));
+        box = <Img src={staticFile(ins.image)} style={{ position: "absolute", left: 0, top: -Math.round(w * ins.aspect * y0), width: w, height: Math.round(w * ins.aspect) }} />;
+      } else {
+        // drawn screens are 780-860 wide; scale them into the inset width
+        const inner = ins.ui === "breakdown" ? <FocoCard title={ins.title} steps={ins.steps} /> : ins.ui === "focus" ? <FocusCard stepNo={ins.stepNo} stepTotal={ins.stepTotal} step={ins.step} min={ins.min} sound={ins.sound} /> : <CalendarCard title={ins.title} min={ins.min} category={ins.category} />;
+        const base = ins.ui === "calendar" ? 860 : 780;
+        w = 720;
+        // zoom (not transform) so the scaled screen also shrinks its layout box; Remotion renders in Chromium
+        box = <div style={{ zoom: w / base, width: base }}>{inner}</div>;
+      }
+      // right-side insets stop at x 950 so the screen's text stays clear of TikTok's like/comment rail
+      const left = side === "left" ? 60 : 1080 - 130 - w;
+      return (
+        <AbsoluteFill style={{ background: "#000" }}>
+          <Photo name={photo} />
+          <div style={{ position: "absolute", top: 220, left: 60, right: 60 }}>
+            <Bubble size={54}>{s.label}</Bubble>
+            {s.comment ? (
+              <>
+                <div style={{ height: 12 }} />
+                <Bubble size={44}>{s.comment}</Bubble>
+              </>
+            ) : null}
+          </div>
+          <div style={{ position: "absolute", top, left, width: w, transform: `rotate(${side === "left" ? -2 : 2}deg)` }}>
+            <div style={{ position: "relative", width: w, height: h || undefined, borderRadius: 34, overflow: "hidden", border: "6px solid #FFFFFF", boxShadow: "0 30px 70px rgba(0,0,0,0.5)", background: "#0B0A16" }}>{box}</div>
+            {s.chip ? (
+              <div style={{ marginTop: 18, display: "flex", justifyContent: "center" }}>
+                <Bubble bg="#DCFCE7" color="#15803D" size={40}>{s.chip}</Bubble>
+              </div>
+            ) : null}
+          </div>
         </AbsoluteFill>
       );
     }

@@ -1,0 +1,164 @@
+{
+  "slug": "life-moments",
+  "tiktok": {
+    "caption": "how I stopped keeping my to-do list in my head (ADHD) 🧠\n\non a walk and a task pops up? I just say it out loud and it goes into my calendar. that paper list you keep losing? I snap a photo and it's all in my day. if a task feels too big, one tap and AI breaks it into steps (only if I want). then I pick one step, start a timer and put on my music.\n\nwhat would you say out loud first? 👇\nsave this for the next time your brain feels full 📌\n\nthe app on the slides is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#adhdtips",
+      "#adhdorganization",
+      "#braindump",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "How I stopped keeping my to-do list in my head (ADHD edition) 🧠\n\nMy brain kept holding everything, all day. Now tasks leave my head the second they show up:\n\n1. On a walk and a task pops up? Say it out loud. It goes straight into my calendar.\n2. That paper list you keep losing? Snap a photo. Every task lands in my day.\n3. Task feels too big? One tap and AI breaks it into small steps. Only if I want it.\n4. Pick ONE step, start a timer, put on my music.\n5. Done? On to the next one, or not. My call.\n\n📌 Save this for the next time your brain feels full, and send it to someone who keeps everything in their head.\n💜 Try FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdtips",
+      "#adhdorganization",
+      "#braindump",
+      "#adhdmom"
+    ],
+    "altText": "Carousel of 7 everyday moments, each with a FOCO app screen beside it: saying a task out loud on a walk, photographing a paper to-do list so it lands in the calendar, optionally breaking a task into steps with one tap, and focusing on one step with a timer and music."
+  },
+  "slides": [
+    {
+      "layout": "hook",
+      "id": "hook",
+      "person": false,
+      "query": "sticky notes on kitchen counter with coffee",
+      "lines": [
+        "I stopped carrying tasks in my head",
+        "here's what I do instead 🫠"
+      ],
+      "pick": 2
+    },
+    {
+      "layout": "life",
+      "id": "walk",
+      "person": false,
+      "own": "carousels/own/stroller-walk.jpg",
+      "label": "on a walk, \"email my boss\" pops up",
+      "comment": "so I just say it out loud",
+      "side": "right",
+      "inset": {
+        "image": "creatives/speak-email-boss-crop.png",
+        "crop": [
+          0.335,
+          0.88
+        ],
+        "aspect": 1.756
+      },
+      "chip": "it's in my calendar ✅"
+    },
+    {
+      "layout": "life",
+      "id": "fridge",
+      "person": false,
+      "query": "handwritten to do list on paper",
+      "label": "that paper list I keep losing?",
+      "comment": "I snap ONE photo of it",
+      "side": "right",
+      "inset": {
+        "image": "creatives/snap-list-to-day-crop.png",
+        "crop": [
+          0.3,
+          0.92
+        ],
+        "aspect": 1.756
+      },
+      "chip": "every task lands in my day ✅",
+      "pick": 2
+    },
+    {
+      "layout": "life",
+      "id": "big",
+      "person": false,
+      "query": "laptop and notebook on messy desk",
+      "label": "\"email my boss\" feels too big?",
+      "comment": "ONE tap, AI breaks it down (if I want)",
+      "side": "left",
+      "inset": {
+        "ui": "breakdown",
+        "title": "Email my boss",
+        "steps": [
+          {
+            "text": "Open a new email",
+            "min": 3
+          },
+          {
+            "text": "Write the subject line",
+            "min": 4
+          },
+          {
+            "text": "Write 3 short points",
+            "min": 13
+          },
+          {
+            "text": "Read once, hit send",
+            "min": 5
+          }
+        ]
+      },
+      "chip": "my choice, never automatic",
+      "pick": 1
+    },
+    {
+      "layout": "life",
+      "id": "focus",
+      "person": false,
+      "query": "headphones and coffee on desk",
+      "label": "I pick ONE step + my music",
+      "comment": "rainy sounds, 3 min timer",
+      "side": "left",
+      "inset": {
+        "ui": "focus",
+        "stepNo": 1,
+        "stepTotal": 4,
+        "step": "Open a new email",
+        "min": 3,
+        "sound": "Rainy"
+      },
+      "chip": "nothing else on screen ✅",
+      "pick": 6
+    },
+    {
+      "layout": "caption",
+      "id": "done",
+      "person": false,
+      "query": "closing laptop with cup of tea at home",
+      "label": "done ✅ next step?",
+      "comment": "only if I want to. my call 💜",
+      "sticker": "✅",
+      "pick": 4
+    },
+    {
+      "layout": "final-card",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "Try FOCO - link in bio 💜"
+      ],
+      "title": "Email my boss",
+      "steps": [
+        {
+          "text": "Open a new email",
+          "min": 3
+        },
+        {
+          "text": "Write the subject line",
+          "min": 4
+        },
+        {
+          "text": "Write 3 short points",
+          "min": 13
+        },
+        {
+          "text": "Read once, hit send",
+          "min": 5
+        }
+      ],
+      "ask": "what would you say out loud first? 👇"
+    }
+  ]
+}

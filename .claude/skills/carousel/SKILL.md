@@ -83,6 +83,13 @@ verified working 2026-10-04). Always `git pull` first in a reused session so the
     procrastinating on" + input bar (camera, mic). Landscape: use for a zoomed "this is all you see" detail.
   Creative ideas these support: "voice note to tasks" (say one messy sentence, get a clean list), "photo of my paper
   list -> app", "the only screen you need: one input box", before/after messy thoughts -> clear tasks.
+- `life` = a real-life moment (full-bleed photo) + how FOCO handles it (app screen inset beside it) + green chip.
+  Adi (2026-10-05): "real situations from life AND the exact process, not too technical": short life-first text
+  ("on a walk, \"email my boss\" pops up" / "so I just say it out loud"), the screen does the explaining.
+  `{ "layout": "life", "id", "query"|"own", "label", "comment"?, "side": "left"|"right", "chip"?, "inset": I }`,
+  I = `{ "image": "creatives/...", "crop": [y0, y1], "aspect": n }` or `{ "ui": "breakdown", "title", "steps" }` /
+  `{ "ui": "focus", "stepNo", "stepTotal", "step", "min", "sound" }` / `{ "ui": "calendar", "title", "min", "category" }`.
+  Must-land message: you can SAY a task or SNAP a paper list and it goes into the calendar. Example: `carousels/life-moments.json`.
 - `"own": "carousels/own/<file>.jpg"` on a slide uses Adi's own phone photo instead of Pexels (no `query`/`pick`).
 - Keep each bubble under ~45 characters; slides look best with one idea each.
 
