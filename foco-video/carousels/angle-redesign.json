@@ -31,7 +31,8 @@
         "Task: update one page.",
         "Me: redesigns everything 🙃"
       ],
-      "textTop": 1130
+      "textTop": 1130,
+      "hookStyle": "callout"
     },
     {
       "layout": "caption",

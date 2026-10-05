@@ -16,7 +16,7 @@ type Inset =
   | { ui: "focus"; stepNo: number; stepTotal: number; step: string; min: number; sound: string }
   | { ui: "calendar"; title: string; min: number; category: string };
 export type SpecSlide =
-  | { layout: "hook"; id: string; lines: string[]; tag?: string; textTop?: number }
+  | { layout: "hook"; id: string; lines: string[]; tag?: string; textTop?: number; hookStyle?: "callout" }
   | { layout: "pair"; id: string; topLabel: string; top: string; bottomLabel: string; bottom: string }
   | { layout: "card"; id: string; label: string; comment?: string; title: string; steps: Step[]; result?: string }
   | { layout: "step"; id: string; label: string; step: string; min: number }
@@ -236,11 +236,24 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
           {/* textTop moves the hook bubbles off a face (keep the block above SAFE.bottom) */}
           {/* below y 850 the like/comment rail sits on the right, so low hook text gets the narrower right margin */}
           <div style={{ position: "absolute", top: s.textTop ?? 640, left: 60, right: (s.textTop ?? 640) >= 700 ? SAFE.rightLow : 60 }}>
-            {s.lines.map((l, i) => (
-              <div key={l} style={{ marginBottom: 14 }}>
-                <Bubble size={i === 0 ? 64 : 54}>{l}</Bubble>
-              </div>
-            ))}
+            {s.hookStyle === "callout"
+              ? // hierarchy for audience call-out hooks: purple label (who it's for) -> lilac setup -> big white punchline
+                s.lines.map((l, i) => (
+                  <div key={l} style={{ marginBottom: 14 }}>
+                    {i === 0 ? (
+                      <Bubble size={44} bg="#7C3AED" color="#FFFFFF">{l}</Bubble>
+                    ) : i === s.lines.length - 1 ? (
+                      <Bubble size={66} bg="#FFFFFF" color={DARK}>{l}</Bubble>
+                    ) : (
+                      <Bubble size={54}>{l}</Bubble>
+                    )}
+                  </div>
+                ))
+              : s.lines.map((l, i) => (
+                  <div key={l} style={{ marginBottom: 14 }}>
+                    <Bubble size={i === 0 ? 64 : 54}>{l}</Bubble>
+                  </div>
+                ))}
             {s.tag ? <Bubble size={40} bg="#FFFFFF" color={DARK}>{s.tag}</Bubble> : null}
           </div>
         </AbsoluteFill>
