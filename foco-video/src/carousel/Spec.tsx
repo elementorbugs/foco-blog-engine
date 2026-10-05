@@ -15,7 +15,7 @@ export type SpecSlide =
   | { layout: "step"; id: string; label: string; step: string; min: number }
   | { layout: "caption"; id: string; label: string; comment?: string; time?: string }
   | { layout: "focus"; id: string; label: string; comment?: string; stepNo: number; stepTotal: number; step: string; min: number; sound: string; result?: string }
-  | { layout: "phone"; id: string; label: string; comment?: string; screenshot: number; result?: string }
+  | { layout: "phone"; id: string; label: string; comment?: string; screenshot: number; result?: string; crop?: [number, number]; aspect?: number }
   | { layout: "final-card"; id: string; lines: string[]; title: string; steps: Step[]; ask: string }
   | { layout: "final-phone"; id: string; lines: string[]; screenshot?: number; ask: string };
 
@@ -237,9 +237,24 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
               </>
             ) : null}
           </div>
+          {s.crop ? (
+            // crop: [y0, y1] = the vertical slice of a raw phone screen (0-1) to show large, so its text stays readable
+            (() => {
+              const [y0, y1] = s.crop;
+              const aspect = s.aspect ?? 2.167;
+              const w = Math.min(880, Math.round(phoneH / ((y1 - y0) * aspect)));
+              const h = Math.round(w * aspect * (y1 - y0));
+              return (
+                <div style={{ position: "absolute", top, left: (1080 - w) / 2, width: w, height: h, borderRadius: 36, overflow: "hidden", border: "2px solid rgba(167,139,250,0.35)", boxShadow: "0 30px 80px rgba(0,0,0,0.5)" }}>
+                  <Img src={staticFile(`apps/foco-${s.screenshot}.png`)} style={{ position: "absolute", left: 0, top: -Math.round(w * aspect * y0), width: w, height: Math.round(w * aspect) }} />
+                </div>
+              );
+            })()
+          ) : (
           <div style={{ position: "absolute", top, left: (1080 - Math.round(phoneH / 2.17)) / 2, transform: "rotate(-2deg)", width: Math.round(phoneH / 2.17), height: phoneH, borderRadius: 54, overflow: "hidden", border: "11px solid #0d0a14", boxShadow: "0 40px 100px rgba(0,0,0,0.55)" }}>
             <Img src={staticFile(`apps/foco-${s.screenshot}.png`)} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }} />
           </div>
+          )}
           {s.result ? (
             <div style={{ position: "absolute", top: 1380, left: SAFE.left, right: SAFE.rightLow }}>
               <Bubble bg="#DCFCE7" color="#15803D" size={48}>{s.result}</Bubble>

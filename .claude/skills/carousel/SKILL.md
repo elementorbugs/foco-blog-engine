@@ -54,7 +54,12 @@ verified working 2026-10-04). Always `git pull` first in a reused session so the
 - `final-phone` shows a real FOCO App Store screenshot (`public/apps/foco-<n>.png`, 3 = Break It Down).
 - `phone` shows a real screenshot MID-carousel: `{ "layout": "phone", "id", "query", "label", "comment"?, "screenshot": N, "result"? }`
   (label/comment top, screenshot centered, optional green result). Screenshots: 1 = home/Start Focus,
-  2 = Chat it / Speak it / Scan it input, 3 = Break It Down, 4 = focus timer, 5 = Add task with date + reminder, 6 = sounds.
+  2 = Chat it / Speak it / Scan it input, 3 = Break It Down, 4 = focus timer, 5 = Add task with date + reminder, 6 = sounds,
+  7 = REAL calendar (Sessions) view: "Write mail" 4 steps 5/8/5/2 min, 8 = REAL focus-mode start screen (soundscape, Rainy),
+  9 = "Stuck? Tell FOCO" chat/speak/scan (dark, newer). 7 and 8 are raw phone screens: add `"crop": [y0, y1]` (0-1 slice
+  of the screen, e.g. 7: [0.06, 0.8], 8: [0.535, 0.86]) so they render large and readable instead of a tiny phone.
+  Keep the example task consistent with the screenshots (7 and 8 are the "Write mail" task).
+- `"own": "carousels/own/<file>.jpg"` on a slide uses Adi's own phone photo instead of Pexels (no `query`/`pick`).
 - Keep each bubble under ~45 characters; slides look best with one idea each.
 
 ## Captions (organic reach; Adi's standing rule: every carousel ships a TikTok AND an Instagram caption)
@@ -248,7 +253,7 @@ Slide 1 decides swipe vs scroll; spend the most effort here. Before rendering, *
 1. ~~Consistent emoji font~~ (done 2026-10-04: Noto Color Emoji bundled; Apple emoji can't be licensed).
 2. Per-slide text position: hook has `textTop` (done 2026-10-04); other layouts still fixed.
 3. Generate 3 hook variants as rendered slide-1 options.
-4. Own-photo input: a folder Adi drops photos into, used instead of Pexels (best fix for one-narrator consistency).
+4. ~~Own-photo input~~ (done 2026-10-05: `"own"` per slide; photos live in `foco-video/carousels/own/`).
 11. ~~Same-shoot mode~~ (done 2026-10-04: `sameShoot`, `shootGap`, `shootIndex`).
 5. ~~Instagram 4:5 export~~ (done 2026-10-04: `ig-slide-N.png`, emailed with the TikTok slides).
 6. New layouts: iPhone Notes screenshot, iMessage chat, check/cross list.

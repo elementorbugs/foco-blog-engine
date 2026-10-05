@@ -4,7 +4,7 @@
   "sameShoot": true,
   "shootGap": 60,
   "tiktok": {
-    "caption": "how to get tasks out of your head with ADHD (my 4-step system) 🧠\n\na task pops into my head at the worst time, so: 1. I say it out loud, snap the list or type it. 2. it goes into my calendar with a reminder. 3. it gets broken into tiny steps. 4. ONE step at a time, timer + rainy sounds. the dentist call that lived in my head for 2 weeks took 10 minutes.\n\nwhat task would you dump first? 👇\nsave this for the next time your brain is full 📌\n\nthe app on the slides is FOCO, link in bio 💜",
+    "caption": "how to get tasks out of your head with ADHD (my 4-step system) 🧠\n\na task pops into my head at the worst time, so: 1. I say it out loud, snap the list or type it. 2. it lands in my calendar, already broken into tiny steps. 3. I pick a sound (rainy is my fave) and hit start. 4. ONE step on screen with a timer. the email that lived in my head for 2 weeks took 20 minutes.\n\nwhat task would you dump first? 👇\nsave this for the next time your brain is full 📌\n\nthe app on the slides is FOCO, link in bio 💜",
     "hashtags": [
       "#adhd",
       "#adhdtips",
@@ -14,7 +14,7 @@
     ]
   },
   "instagram": {
-    "caption": "How to get tasks out of your head with ADHD: from brain dump to DONE in 4 steps 🧠\n\nHolding every task in your head is exhausting. Here's the system that lets my brain let go:\n\n1. Capture it the second it shows up: say it out loud, snap the list, or type it\n2. Put it straight into the calendar with a reminder\n3. Break it into tiny steps, each with a time estimate\n4. Do ONE step at a time, with a timer and calm sounds\n\nThe dentist call that lived in my head for 2 weeks? Booked in 10 minutes.\n\n📌 Save this for the next time your brain feels full, and send it to someone who keeps everything in their head.\n💜 Try FOCO, link in bio.",
+    "caption": "How to get tasks out of your head with ADHD: from brain dump to DONE in 4 steps 🧠\n\nHolding every task in your head is exhausting. Here is the system that lets my brain let go:\n\n1. Capture it the second it shows up: say it out loud, snap the list, or type it\n2. It lands in the calendar, already broken into tiny steps with times\n3. Pick a calm sound (rainy, jazzy, study, chill) and hit start\n4. Do ONE step at a time with a timer\n\nThe email that lived in my head for 2 weeks? Sent in 20 minutes.\n\n📌 Save this for the next time your brain feels full, and send it to someone who keeps everything in their head.\n💜 Try FOCO, link in bio.",
     "hashtags": [
       "#adhd",
       "#adhdtips",
@@ -22,7 +22,7 @@
       "#taskparalysis",
       "#braindump"
     ],
-    "altText": "Carousel of 8 slides showing a 4-step ADHD system in the FOCO app: capture a task by voice, photo or text, add it to the calendar with a reminder, break it into tiny steps, and focus on one step with a timer and rainy sounds."
+    "altText": "Carousel of 8 slides showing a 4-step ADHD system in the FOCO app: capture a task by voice, photo or text, see it in the calendar broken into steps, pick a focus sound, and work on one step with a timer and rainy sounds."
   },
   "slides": [
     {
@@ -40,12 +40,11 @@
     {
       "layout": "caption",
       "id": "popup",
-      "person": true,
-      "query": "cooking in kitchen at home",
+      "person": false,
       "label": "a task pops into my head at the worst time",
-      "comment": "like \"book the dentist\" at dinner",
+      "comment": "like \"answer that email\" on a walk",
       "sticker": "🧠",
-      "pick": 2
+      "own": "carousels/own/stroller-walk.jpg"
     },
     {
       "layout": "phone",
@@ -54,8 +53,7 @@
       "query": "kitchen counter with phone and coffee",
       "label": "step 1: I just say it out loud",
       "comment": "or snap the list, or type it",
-      "screenshot": 2,
-      "sticker": "🎙️",
+      "screenshot": 9,
       "pick": 4
     },
     {
@@ -63,41 +61,29 @@
       "id": "calendar",
       "person": false,
       "query": "desk with paper calendar and pen",
-      "label": "step 2: it goes into my calendar",
-      "comment": "with a reminder, so I don't have to hold it",
-      "screenshot": 5,
-      "result": "my brain can let go now ✅",
-      "sticker": "📅",
-      "pick": 4
+      "label": "step 2: it lands in my calendar",
+      "comment": "already broken into tiny steps",
+      "screenshot": 7,
+      "result": "4 steps, 20 min total ✅",
+      "pick": 4,
+      "crop": [
+        0.06,
+        0.8
+      ]
     },
     {
-      "layout": "card",
+      "layout": "phone",
       "id": "breakdown",
       "person": false,
       "query": "notebook and coffee on desk top view",
-      "label": "step 3: FOCO breaks it down",
-      "comment": "tiny steps, each with a time",
-      "title": "Book the dentist",
-      "steps": [
-        {
-          "text": "Find the clinic's number",
-          "min": 2
-        },
-        {
-          "text": "Check my free days",
-          "min": 2
-        },
-        {
-          "text": "Call and pick a slot",
-          "min": 5
-        },
-        {
-          "text": "Add it with a reminder",
-          "min": 1
-        }
-      ],
-      "result": "step 1 is only 2 min ✅",
-      "pick": 4
+      "label": "step 3: pick a sound, hit start",
+      "comment": "rainy, jazzy, study or chill",
+      "pick": 4,
+      "screenshot": 8,
+      "crop": [
+        0.535,
+        0.86
+      ]
     },
     {
       "layout": "focus",
@@ -106,12 +92,12 @@
       "query": "sitting on couch with headphones and phone",
       "label": "step 4: ONE step, timer, music",
       "comment": "rainy sounds on, nothing else on screen",
-      "stepNo": 1,
+      "stepNo": 2,
       "stepTotal": 4,
-      "step": "Find the clinic's number",
-      "min": 2,
+      "step": "Write the subject line + body",
+      "min": 8,
       "sound": "Rainy",
-      "result": "no thinking about step 2 yet ✅",
+      "result": "no thinking about step 3 yet ✅",
       "pick": 2
     },
     {
@@ -119,20 +105,38 @@
       "id": "done",
       "person": true,
       "query": "smiling while talking on phone at home",
-      "label": "booked. in 10 minutes.",
+      "label": "sent. 20 minutes, done.",
       "comment": "it lived in my head for 2 weeks 💀",
       "sticker": "✅",
       "pick": 10
     },
     {
-      "layout": "final-phone",
+      "layout": "final-card",
       "id": "end",
       "photo": "hook",
       "lines": [
         "Try FOCO - link in bio 💜"
       ],
-      "screenshot": 1,
-      "ask": "what task would you dump first? 👇"
+      "ask": "what task would you dump first? 👇",
+      "title": "Write mail",
+      "steps": [
+        {
+          "text": "Open email, start a draft",
+          "min": 5
+        },
+        {
+          "text": "Write subject line + body",
+          "min": 8
+        },
+        {
+          "text": "Review for typos",
+          "min": 5
+        },
+        {
+          "text": "Send it",
+          "min": 2
+        }
+      ]
     }
   ]
 }

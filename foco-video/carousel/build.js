@@ -126,6 +126,8 @@ async function render() {
   fs.mkdirSync(pub, { recursive: true });
   for (const s of spec.slides) {
     if (s.photo) continue; // reuses another slide's photo
+    // Adi's own phone photo (path relative to foco-video/), used instead of a Pexels pick
+    if (s.own) { fs.copyFileSync(path.join(ROOT, s.own), path.join(pub, `${s.id}.jpg`)); continue; }
     if (!s.pick) throw new Error(`slide ${s.id} has no "pick"`);
     fs.copyFileSync(path.join(work, `${s.id}-${s.pick}.jpg`), path.join(pub, `${s.id}.jpg`));
   }
