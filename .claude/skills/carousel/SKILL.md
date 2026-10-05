@@ -330,6 +330,12 @@ Slide 1 decides swipe vs scroll; spend the most effort here. Before rendering, *
 - **POV / scene:** "POV: it's 11pm and you still haven't sent the invoice"
 - **Insider label:** "ADHD edition", "only ADHD people will get slide 4"
 
+**Audience call-out first (Adi, 2026-10-05):** the viewer must get WHO it's for and THE POINT in one second.
+A story-style hook ("I needed to update one page. So I redesigned everything") was too slow. Default format:
+line 1 names the audience ("Freelancer with ADHD:"), then a setup/punchline contrast ("Task: update one page." /
+"Me: redesigns everything 🙃"). Other call-outs: "POV: you're a freelancer with ADHD", "ADHD freelancers:".
+Keep hook text off the face (`textTop` below the chin) and out of the right rail.
+
 **Hook checklist** (all must pass)
 - Line 1 ≤ 8 words, readable in 1 second; the rest goes in line 2 / the white tag.
 - Concrete, not abstract: a real task, number, time or object ("3 weeks", "ONE email", "$40"), never "productivity tips".
