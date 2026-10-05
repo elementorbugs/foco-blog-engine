@@ -26,7 +26,7 @@ export type SpecSlide =
   | { layout: "inputs"; id: string; label: string; comment?: string; result?: string }
   | { layout: "phone"; id: string; label: string; comment?: string; screenshot?: number; image?: string; result?: string; crop?: [number, number]; aspect?: number }
   | { layout: "final-card"; id: string; lines: string[]; title: string; steps: Step[]; ask: string }
-  | { layout: "final-phone"; id: string; lines: string[]; screenshot?: number; ask: string };
+  | { layout: "final-phone"; id: string; lines: string[]; screenshot?: number; image?: string; aspect?: number; ask: string };
 
 // sticker: one big emoji per slide, TikTok-sticker style; stickerPos overrides the per-layout default [x, y]
 type SlideExtras = { query?: string; pick?: number; photo?: string; sticker?: string; stickerPos?: [number, number] };
@@ -453,10 +453,17 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
             </>
           ) : (
             <>
+              {s.image ? (
+                // a creative (e.g. snap-list-to-day) shown whole as a white-framed card, keeping its own aspect
+                <div style={{ position: "absolute", top: below, left: 110, transform: "rotate(-3deg)", width: Math.round(phoneH / (s.aspect ?? 1.756)), height: phoneH, borderRadius: 34, overflow: "hidden", border: "6px solid #FFFFFF", boxShadow: "0 40px 100px rgba(0,0,0,0.55)" }}>
+                  <Img src={staticFile(s.image)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                </div>
+              ) : (
               <div style={{ position: "absolute", top: below, left: 170, transform: "rotate(-3deg)", width: Math.round(phoneH / 2.17), height: phoneH, borderRadius: 54, overflow: "hidden", border: "11px solid #0d0a14", boxShadow: "0 40px 100px rgba(0,0,0,0.55)" }}>
                 <Img src={staticFile(`apps/foco-${s.screenshot ?? 3}.png`)} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }} />
               </div>
-              <Mascot style={{ left: 170 + Math.round(phoneH / 2.17) + 50, top: below + phoneH * 0.32, height: 330 }} />
+              )}
+              <Mascot style={{ left: (s.image ? 110 + Math.round(phoneH / (s.aspect ?? 1.756)) : 170 + Math.round(phoneH / 2.17)) + 50, top: below + phoneH * 0.32, height: 330 }} />
             </>
           )}
           <div style={{ position: "absolute", bottom: 1920 - 1190, left: SAFE.left, right: SAFE.rightLow }}>
