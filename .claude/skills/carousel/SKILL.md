@@ -239,6 +239,21 @@ Number the steps on the slides ("step 1: ..."). Example: `carousels/head-to-done
 **Avoid:** feature lists, "AI-powered productivity", "best app", "free" (AI breakdown is paid), any medical promise
 ("fixes ADHD", "boosts dopamine"), and "not a calendar" (it has one).
 
+## Primary audience (Adi's decision, 2026-10-05) - every carousel starts here
+**Women 28-45 with ADHD who work independently: freelancers, solopreneurs, creators, remote workers. They know
+exactly what they need to do, but get stuck STARTING work tasks.** Not "everyone with ADHD", not "all moms".
+- Their pain: no boss, no office, no external structure, so every start depends on them alone, and not starting
+  costs money and clients. The stuck task is a WORK task: send the proposal, the invoice, reply to the client,
+  write the pitch, edit the video, post the content, do the taxes.
+- Scenes: home desk, couch with laptop, café, coworking, DMs from clients, the Notion/inbox rabbit hole. Kids/home
+  can appear as context but never lead (moms are a subset, not the target).
+- Every carousel = a STORY of ONE character on ONE day: who she is (one line), the stuck work task, what she does
+  instead, the turn (FOCO), the win (sent / paid / posted). Give her a concrete job ("freelance designer").
+- Competitors' jobs differ: Tiimo = see and plan the whole day (visual timeline); FOCO = unstick the ONE work task
+  right now. Same features, different job: never pitch FOCO as a day planner.
+- `just-say-it`, `snap-your-list` and `life-moments` were built for a working-mom persona BEFORE this decision:
+  treat them as mom-persona tests, not the primary-audience tests.
+
 ## Testing framework (Adi, 2026-10-05): one carousel = one hypothesis
 A carousel that shows every feature (voice, photo, calendar, AI breakdown, timer, music) is a test of the OVERALL
 message only: if it wins we don't know which feature pulled, if it loses we don't know what failed.
