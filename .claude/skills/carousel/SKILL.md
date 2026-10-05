@@ -235,6 +235,22 @@ Number the steps on the slides ("step 1: ..."). Example: `carousels/head-to-done
 **Avoid:** feature lists, "AI-powered productivity", "best app", "free" (AI breakdown is paid), any medical promise
 ("fixes ADHD", "boosts dopamine"), and "not a calendar" (it has one).
 
+## Testing framework (Adi, 2026-10-05): one carousel = one hypothesis
+A carousel that shows every feature (voice, photo, calendar, AI breakdown, timer, music) is a test of the OVERALL
+message only: if it wins we don't know which feature pulled, if it loses we don't know what failed.
+- `life-moments` = the **master-message test**: "do working women/moms with ADHD connect with: from a thought that
+  pops into my head to a small step I actually start?" (product idea 9/10, audience 8/10, clean test 5/10).
+- Then test ONE feature per carousel, same audience, same format, so results compare:
+  1. **Just say it**: a task pops up at the wrong moment, say it out loud, it's in your day.
+  2. **Snap your list**: photo of the paper list, every task lands in today's list.
+  3. **Big task? Start tiny**: one optional AI tap breaks it into steps.
+  4. **Just one step**: timer + your music to start.
+  A single-feature carousel shows only its feature's screen; other features at most one line on the final slide.
+- Audience: stroller/home/"Email my boss" = working woman, likely a mom. That's a choice; for a broad
+  all-adults-with-ADHD test, use neutral scenes (desk, commute, kitchen) and no parent cues.
+- Before building, write the hypothesis in one line in the reply ("tests: ..."). Log results per carousel
+  (views, saves, shares, comments, link clicks) to pick the winning feature message.
+
 ## The hook (slide 1): ALWAYS strong. Adi's standing rule.
 Slide 1 decides swipe vs scroll; spend the most effort here. Before rendering, **always show Adi 3 hook options**
 (different formulas) with a one-line "why it stops the scroll", and render the one he picks.
