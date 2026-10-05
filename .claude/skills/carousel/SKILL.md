@@ -239,9 +239,17 @@ Number the steps on the slides ("step 1: ..."). Example: `carousels/head-to-done
 **Avoid:** feature lists, "AI-powered productivity", "best app", "free" (AI breakdown is paid), any medical promise
 ("fixes ADHD", "boosts dopamine"), and "not a calendar" (it has one).
 
-## Primary audience (Adi's decision, 2026-10-05) - every carousel starts here
-**Women 28-45 with ADHD who work independently: freelancers, solopreneurs, creators, remote workers. They know
-exactly what they need to do, but get stuck STARTING work tasks.** Not "everyone with ADHD", not "all moms".
+## Primary audience (Adi's decision + research, 2026-10-05) - every carousel starts here
+**READ `audience-research.md` (same folder) BEFORE EVERY CAROUSEL**: phrase bank in the audience's own words,
+research summary, angles to test, what not to do. Build hooks and bubbles from those phrases.
+**Audience: people 25-40 with ADHD / executive-function struggles who work alone in digital independent or remote
+work. First, most focused avatar: a freelance woman 28-38 with ADHD** (designer, marketer, content creator,
+copywriter, consultant, small business owner). She has lists, notes and apps; the lists don't make her start.
+Not "everyone with ADHD", not "all moms".
+**Core message: "FOCO is not another to-do list. FOCO helps you start."** The value is "I was frozen. FOCO helped me
+start." Voice, photo-of-list and AI breakdown are the MECHANISM, never the headline value.
+Positioning: Tiimo = planning and structure; FOCO = task initiation and action. One-liner: "FOCO is the ADHD
+execution app that turns overwhelming tasks into one small step you can start now."
 - Their pain: no boss, no office, no external structure, so every start depends on them alone, and not starting
   costs money and clients. The stuck task is a WORK task: send the proposal, the invoice, reply to the client,
   write the pitch, edit the video, post the content, do the taxes.
