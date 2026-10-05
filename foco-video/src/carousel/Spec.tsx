@@ -15,6 +15,7 @@ export type SpecSlide =
   | { layout: "step"; id: string; label: string; step: string; min: number }
   | { layout: "caption"; id: string; label: string; comment?: string; time?: string }
   | { layout: "focus"; id: string; label: string; comment?: string; stepNo: number; stepTotal: number; step: string; min: number; sound: string; result?: string }
+  | { layout: "calendar"; id: string; label: string; comment?: string; title: string; min: number; category: string; result?: string }
   | { layout: "inputs"; id: string; label: string; comment?: string; result?: string }
   | { layout: "phone"; id: string; label: string; comment?: string; screenshot?: number; image?: string; result?: string; crop?: [number, number]; aspect?: number }
   | { layout: "final-card"; id: string; lines: string[]; title: string; steps: Step[]; ask: string }
@@ -58,6 +59,35 @@ const DownloadCTA: React.FC = () => (
   </>
 );
 
+
+// FOCO's Sessions (calendar) day view with ONE task, drawn so the task name/minutes match the rest of the carousel
+// exactly, plus the optional one-tap AI breakdown button (it is a choice, never automatic).
+const CalendarCard: React.FC<{ title: string; min: number; category: string }> = ({ title, min, category }) => (
+  <div style={{ width: 860, borderRadius: 40, padding: "32px 32px 36px", background: "#0B0A16", border: "2px solid rgba(167,139,250,0.35)", boxShadow: "0 30px 80px rgba(0,0,0,0.45)" }}>
+    <div style={{ fontFamily: BODY, fontWeight: 600, fontSize: 64, color: "#FFFFFF", lineHeight: 1 }}>Sunday</div>
+    <div style={{ fontFamily: BODY, fontWeight: 600, fontSize: 24, letterSpacing: 3, color: "#B8B0CC", marginTop: 8 }}>JUN 2026</div>
+    <div style={{ display: "flex", justifyContent: "space-between", marginTop: 26 }}>
+      {["M 22", "T 23", "W 24", "T 25", "F 26", "S 27", "S 28"].map((d, i) => (
+        <div key={d + i} style={{ width: 96, padding: "12px 0", borderRadius: 20, textAlign: "center", background: i === 6 ? "#7C3AED" : "transparent", fontFamily: BODY, color: i === 6 ? "#FFFFFF" : "#7d738f" }}>
+          <div style={{ fontSize: 22, fontWeight: 600 }}>{d.split(" ")[0]}</div>
+          <div style={{ fontSize: 34, fontWeight: 700 }}>{d.split(" ")[1]}</div>
+        </div>
+      ))}
+    </div>
+    <div style={{ marginTop: 26, padding: "14px 24px", borderRadius: 999, border: "2px solid rgba(255,255,255,0.12)", fontFamily: BODY, fontWeight: 700, fontSize: 24, letterSpacing: 3, color: "#D6D0E4" }}>ANYTIME (1)</div>
+    <div style={{ marginTop: 18, padding: "26px 26px", borderRadius: 28, background: "rgba(255,255,255,0.05)", border: "2px solid rgba(167,139,250,0.25)", display: "flex", alignItems: "center", gap: 24 }}>
+      <div style={{ width: 54, height: 54, borderRadius: 999, border: "4px solid #7C3AED", flexShrink: 0 }} />
+      <div>
+        <div style={{ fontFamily: BODY, fontWeight: 700, fontSize: 48, color: "#FFFFFF", lineHeight: 1.1 }}>{title}</div>
+        <div style={{ fontFamily: BODY, fontWeight: 600, fontSize: 30, color: "#B8B0CC", marginTop: 6 }}>{min} min · {category}</div>
+      </div>
+    </div>
+    <div style={{ marginTop: 22, padding: "24px 20px", borderRadius: 24, border: "3px dashed #A78BFA", textAlign: "center", fontFamily: BODY, fontWeight: 800, fontSize: 32, letterSpacing: 2, color: "#C4B5FD", background: "rgba(124,58,237,0.15)" }}>
+      <span style={{ fontFamily: `"${EMOJI}"` }}>✨</span> MAKE SUBTASKS USING FOCO <span style={{ fontFamily: `"${EMOJI}"` }}>👆</span>
+    </div>
+    <div style={{ marginTop: 12, textAlign: "center", fontFamily: BODY, fontWeight: 600, fontSize: 28, color: "#7d738f" }}>optional: only if you tap it</div>
+  </div>
+);
 
 // FOCO's three ways to capture a task (the app's "Chat it / Speak it / Scan it" cards, same colors), drawn large
 // so the input options read on a phone instead of shrinking a full screenshot.
@@ -116,7 +146,7 @@ const FocusCard: React.FC<{ stepNo: number; stepTotal: number; step: string; min
 // Defaults keep the sticker inside the safe band and clear of the bubbles/cards for each layout
 const STICKER_POS: Record<string, [number, number]> = {
   hook: [800, 470], pair: [790, 880], caption: [790, 880], step: [800, 880], card: [820, 470],
-  focus: [40, 430], phone: [800, 900], inputs: [820, 300], "final-card": [80, 330], "final-phone": [700, 1000],
+  focus: [40, 430], phone: [800, 900], inputs: [820, 300], calendar: [820, 300], "final-card": [80, 330], "final-phone": [700, 1000],
 };
 const Sticker: React.FC<{ emoji: string; pos: [number, number] }> = ({ emoji, pos }) => (
   <div style={{ position: "absolute", left: pos[0], top: pos[1], fontFamily: `"${EMOJI}"`, fontSize: 130, lineHeight: 1, transform: "rotate(12deg)", filter: "drop-shadow(0 10px 18px rgba(0,0,0,0.35))", zIndex: 5 }}>
@@ -238,6 +268,31 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
           </div>
           <div style={{ position: "absolute", top: cardTop, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
             <FocusCard stepNo={s.stepNo} stepTotal={s.stepTotal} step={s.step} min={s.min} sound={s.sound} />
+          </div>
+          {s.result ? (
+            <div style={{ position: "absolute", top: 1380, left: SAFE.left, right: SAFE.rightLow }}>
+              <Bubble bg="#DCFCE7" color="#15803D" size={48}>{s.result}</Bubble>
+            </div>
+          ) : null}
+        </AbsoluteFill>
+      );
+    }
+    case "calendar": {
+      const top = 220 + Math.ceil(s.label.length / 30) * 84 + (s.comment ? 12 + Math.ceil(s.comment.length / 36) * 72 : 0) + 40;
+      return (
+        <AbsoluteFill style={{ background: "#000" }}>
+          <Photo name={photo} />
+          <div style={{ position: "absolute", top: 220, left: 60, right: 60 }}>
+            <Bubble size={54}>{s.label}</Bubble>
+            {s.comment ? (
+              <>
+                <div style={{ height: 12 }} />
+                <Bubble size={44}>{s.comment}</Bubble>
+              </>
+            ) : null}
+          </div>
+          <div style={{ position: "absolute", top, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
+            <CalendarCard title={s.title} min={s.min} category={s.category} />
           </div>
           {s.result ? (
             <div style={{ position: "absolute", top: 1380, left: SAFE.left, right: SAFE.rightLow }}>

@@ -206,6 +206,17 @@ Rough split: ~80% value/relatable, ~20% FOCO. A carousel that is only jokes or o
 | chat / photo input | real screenshot 2 (`final-phone` with `"screenshot": 2`) |
 | timer screen | real screenshot 4; sound picker: screenshot 6 |
 A strong FOCO-forward carousel walks the method: stuck task → `card` breakdown → `focus` on step 1 → `result` win.
+**ONE task end to end (Adi, 2026-10-05, hard rule):** a process carousel follows ONE task with ONE name, ONE total
+time and ONE step list on every slide (capture, calendar, breakdown, focus, final). Never mix screenshots of
+different tasks ("Email my boss" 25 min next to "Write mail" 20 min is wrong). If no real screenshot shows that exact
+task, draw the screen (`calendar`, `card`, `focus`, `inputs`, `final-card`) with the same name/minutes; step minutes
+must add up to the total. Before rendering, list task name + total + steps per slide and check they match.
+**The FOCO process, in this order (Adi's words):** 1. say it / snap the list / type it -> it lands in the calendar.
+2. OPTIONAL: if you want, ONE tap and FOCO's AI breaks the big task into steps (never automatic, say "if I want").
+3. pick a step, start a timer with music YOU choose. 4. finish it, move on to the next one if you want.
+`calendar` layout = Sessions day view with the task + the optional "MAKE SUBTASKS USING FOCO" button:
+`{ "layout": "calendar", "id", "query", "label", "comment"?, "title", "min", "category", "result"? }`.
+Example: `carousels/head-to-done.json` (Email my boss, 25 min, 3/4/13/5).
 **Show the whole in-app process (Adi, 2026-10-05):** "I want them to see a process." Default FOCO-forward structure is
 the full flow: task pops into your head → capture it (`phone` screenshot 2: say it / snap the list / type it) →
 it lands in the calendar with a reminder (`phone` screenshot 5) → `card` breakdown → `focus` with timer + sound → win.

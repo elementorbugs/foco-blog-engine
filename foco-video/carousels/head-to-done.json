@@ -4,7 +4,7 @@
   "sameShoot": true,
   "shootGap": 60,
   "tiktok": {
-    "caption": "how to get tasks out of your head with ADHD (my 4-step system) 🧠\n\na task pops into my head at the worst time, so: 1. I say it out loud, snap the list or type it. 2. it lands in my calendar, and one tap breaks it into tiny steps. 3. I pick a sound (rainy is my fave) and hit start. 4. ONE step on screen with a timer. the email that lived in my head for 2 weeks took 20 minutes.\n\nwhat task would you dump first? 👇\nsave this for the next time your brain is full 📌\n\nthe app on the slides is FOCO, link in bio 💜",
+    "caption": "how to get tasks out of your head with ADHD (my 4-step system) 🧠\n\na task pops into my head at the worst time, so: 1. I say it out loud or snap my list, and it lands in my calendar. 2. if it feels big, ONE tap and AI breaks it into tiny steps (only if I want). 3. I pick a step, start a timer and choose my music. 4. done, then on to the next step if I feel like it.\n\nwhat task would you dump first? 👇\nsave this for the next time your brain is full 📌\n\nthe app on the slides is FOCO, link in bio 💜",
     "hashtags": [
       "#adhd",
       "#adhdtips",
@@ -14,7 +14,7 @@
     ]
   },
   "instagram": {
-    "caption": "How to get tasks out of your head with ADHD: from brain dump to DONE in 4 steps 🧠\n\nHolding every task in your head is exhausting. Here is the system that lets my brain let go:\n\n1. Capture it the second it shows up: say it out loud, snap the list, or type it\n2. It lands in the calendar, and one tap has AI break it into tiny steps with times\n3. Pick a calm sound (rainy, jazzy, study, chill) and hit start\n4. Do ONE step at a time with a timer\n\nThe email that lived in my head for 2 weeks? Sent in 20 minutes.\n\n📌 Save this for the next time your brain feels full, and send it to someone who keeps everything in their head.\n💜 Try FOCO, link in bio.",
+    "caption": "How to get tasks out of your head with ADHD: from brain dump to DONE in 4 steps 🧠\n\nHolding every task in your head is exhausting. Here is the system that lets my brain let go:\n\n1. Say it out loud or snap a photo of your list. It lands in your calendar.\n2. Feels too big? One tap and AI breaks it into tiny steps. Only if you want it.\n3. Pick a step, start a timer and choose your music.\n4. Finish it, then move to the next step if you feel like it.\n\n📌 Save this for the next time your brain feels full, and send it to someone who keeps everything in their head.\n💜 Try FOCO, link in bio.",
     "hashtags": [
       "#adhd",
       "#adhdtips",
@@ -22,7 +22,7 @@
       "#taskparalysis",
       "#braindump"
     ],
-    "altText": "Carousel of 8 slides showing a 4-step ADHD system in the FOCO app: capture a task by voice, photo or text, see it in the calendar broken into steps, pick a focus sound, and work on one step with a timer and rainy sounds."
+    "altText": "Carousel of 8 slides following one task, Email my boss, through the FOCO app: say it out loud so it lands in the calendar, optionally break it into steps with one AI tap, focus on one step with a timer and chosen music, then finish and move on."
   },
   "slides": [
     {
@@ -42,7 +42,7 @@
       "id": "popup",
       "person": false,
       "label": "a task pops into my head at the worst time",
-      "comment": "like \"answer that email\" on a walk",
+      "comment": "like \"email my boss\" on a walk",
       "sticker": "🧠",
       "own": "carousels/own/stroller-walk.jpg"
     },
@@ -52,9 +52,9 @@
       "person": false,
       "query": "kitchen counter with phone and coffee",
       "label": "step 1: I just say it out loud",
-      "comment": "or upload a photo of my list",
+      "comment": "or snap a photo of my list",
       "pick": 4,
-      "result": "added to my sessions ✅",
+      "result": "\"Email my boss\" is in my calendar ✅",
       "image": "creatives/speak-email-boss-crop.png",
       "crop": [
         0.335,
@@ -63,47 +63,59 @@
       "aspect": 1.756
     },
     {
-      "layout": "phone",
+      "layout": "calendar",
       "id": "calendar",
       "person": false,
       "query": "desk with paper calendar and pen",
-      "label": "step 2: it lands in my calendar",
-      "comment": "then ONE tap: AI breaks it into steps",
-      "screenshot": 7,
-      "result": "4 tiny steps, 20 min ✅",
       "pick": 4,
-      "crop": [
-        0.06,
-        0.8
-      ]
+      "label": "step 2: big task? ONE tap",
+      "comment": "AI breaks it into steps, if I want",
+      "title": "Email my boss",
+      "min": 25,
+      "category": "Work"
     },
     {
-      "layout": "phone",
+      "layout": "card",
       "id": "breakdown",
       "person": false,
       "query": "notebook and coffee on desk top view",
-      "label": "step 3: pick a sound, hit start",
-      "comment": "rainy, jazzy, study or chill",
       "pick": 4,
-      "screenshot": 8,
-      "crop": [
-        0.535,
-        0.86
-      ]
+      "label": "tap: FOCO splits it into tiny steps",
+      "comment": "my choice, never automatic",
+      "title": "Email my boss",
+      "steps": [
+        {
+          "text": "Open a new email",
+          "min": 3
+        },
+        {
+          "text": "Write the subject line",
+          "min": 4
+        },
+        {
+          "text": "Write 3 short points",
+          "min": 13
+        },
+        {
+          "text": "Read once, hit send",
+          "min": 5
+        }
+      ],
+      "result": "step 1 is only 3 min ✅"
     },
     {
       "layout": "focus",
       "id": "focus",
       "person": true,
       "query": "sitting on couch with headphones and phone",
-      "label": "step 4: ONE step, timer, music",
-      "comment": "rainy sounds on, nothing else on screen",
-      "stepNo": 2,
+      "label": "step 3: pick a step + my music",
+      "comment": "timer on, rainy sounds today",
+      "stepNo": 1,
       "stepTotal": 4,
-      "step": "Write the subject line + body",
-      "min": 8,
+      "step": "Open a new email",
+      "min": 3,
       "sound": "Rainy",
-      "result": "no thinking about step 3 yet ✅",
+      "result": "just this one step ✅",
       "pick": 2
     },
     {
@@ -111,8 +123,8 @@
       "id": "done",
       "person": true,
       "query": "smiling while talking on phone at home",
-      "label": "sent. 20 minutes, done.",
-      "comment": "it lived in my head for 2 weeks 💀",
+      "label": "step 4: done ✅ next one?",
+      "comment": "only if I want to",
       "sticker": "✅",
       "pick": 10
     },
@@ -123,26 +135,26 @@
       "lines": [
         "Try FOCO - link in bio 💜"
       ],
-      "ask": "what task would you dump first? 👇",
-      "title": "Write mail",
+      "title": "Email my boss",
       "steps": [
         {
-          "text": "Open email, start a draft",
+          "text": "Open a new email",
+          "min": 3
+        },
+        {
+          "text": "Write the subject line",
+          "min": 4
+        },
+        {
+          "text": "Write 3 short points",
+          "min": 13
+        },
+        {
+          "text": "Read once, hit send",
           "min": 5
-        },
-        {
-          "text": "Write subject line + body",
-          "min": 8
-        },
-        {
-          "text": "Review for typos",
-          "min": 5
-        },
-        {
-          "text": "Send it",
-          "min": 2
         }
-      ]
+      ],
+      "ask": "what task would you dump first? 👇"
     }
   ]
 }
