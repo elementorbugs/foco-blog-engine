@@ -51,10 +51,16 @@
       "id": "capture",
       "person": false,
       "query": "kitchen counter with phone and coffee",
-      "label": "step 1: I just say it out loud",
-      "comment": "or snap the list, or type it",
-      "screenshot": 9,
-      "pick": 4
+      "label": "step 1: I just tell it the task",
+      "comment": "type it, say it, or snap the list",
+      "screenshot": 12,
+      "pick": 4,
+      "crop": [
+        0,
+        0.68
+      ],
+      "aspect": 2.085,
+      "result": "added to my sessions ✅"
     },
     {
       "layout": "phone",

@@ -58,7 +58,10 @@ verified working 2026-10-04). Always `git pull` first in a reused session so the
   7 = REAL calendar (Sessions) view: "Write mail" 4 steps 5/8/5/2 min, 8 = REAL focus-mode start screen (soundscape, Rainy),
   9 = "Stuck? Tell FOCO" chat/speak/scan (dark, newer). 7 and 8 are raw phone screens: add `"crop": [y0, y1]` (0-1 slice
   of the screen, e.g. 7: [0.06, 0.8], 8: [0.535, 0.86]) so they render large and readable instead of a tiny phone.
-  Keep the example task consistent with the screenshots (7 and 8 are the "Write mail" task).
+  10 = "Your Day, Simplified" calendar (banana cake), 11 = "Build Momentum" stats (shows "FREE AI 2/3 uses": avoid,
+  we never say free), 12 = "Feeling Stuck? Let FOCO Guide You" chat: "i want to write mail to my boss" -> "Added to
+  your sessions" (use `"crop": [0, 0.68], "aspect": 2.085`). 10-12 are App Store cards with the white frame cropped off.
+  Keep the example task consistent with the screenshots (7, 8 and 12 are the "Write mail" task).
 - `"own": "carousels/own/<file>.jpg"` on a slide uses Adi's own phone photo instead of Pexels (no `query`/`pick`).
 - Keep each bubble under ~45 characters; slides look best with one idea each.
 
