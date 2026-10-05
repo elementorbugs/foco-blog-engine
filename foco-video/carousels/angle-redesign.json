@@ -32,7 +32,8 @@
         "Me: redesigns everything 🙃"
       ],
       "textTop": 1130,
-      "hookStyle": "callout"
+      "hookStyle": "callout",
+      "punchFont": "hand"
     },
     {
       "layout": "caption",

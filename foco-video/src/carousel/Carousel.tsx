@@ -2,7 +2,7 @@
 // Format modeled on the Flowfy budget-app carousel: lifestyle photo + TikTok-style text bubbles + an in-app card.
 import React from "react";
 import { AbsoluteFill, Img, staticFile } from "remotion";
-import { BODY, BODY_STACK, HEAD } from "../Composition";
+import { BODY, BODY_STACK, EMOJI, HEAD } from "../Composition";
 
 const LILAC_BG = "#EFE7FF";
 const LILAC_TEXT = "#6D28D9";
@@ -24,9 +24,10 @@ export const SLIDES: Slide[] = [
 ];
 
 // TikTok "classic" text style: each line hugs its own rounded background
-export const Bubble: React.FC<{ children: React.ReactNode; bg?: string; color?: string; size?: number }> = ({ children, bg = LILAC_BG, color = LILAC_TEXT, size = 50 }) => (
+// font: optional family override (e.g. the handwriting font for a hook punchline)
+export const Bubble: React.FC<{ children: React.ReactNode; bg?: string; color?: string; size?: number; font?: string }> = ({ children, bg = LILAC_BG, color = LILAC_TEXT, size = 50, font }) => (
   <div style={{ textAlign: "center", lineHeight: 1.55 }}>
-    <span style={{ fontFamily: BODY_STACK, fontWeight: 700, fontSize: size, color, background: bg, padding: "6px 22px", borderRadius: 18, boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone" }}>
+    <span style={{ fontFamily: font ? `"${font}", "${EMOJI}"` : BODY_STACK, fontWeight: 700, fontSize: size, color, background: bg, padding: "6px 22px", borderRadius: 18, boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone" }}>
       {typeof children === "string" ? noOrphan(children) : children}
     </span>
   </div>

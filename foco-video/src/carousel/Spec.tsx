@@ -16,7 +16,7 @@ type Inset =
   | { ui: "focus"; stepNo: number; stepTotal: number; step: string; min: number; sound: string }
   | { ui: "calendar"; title: string; min: number; category: string };
 export type SpecSlide =
-  | { layout: "hook"; id: string; lines: string[]; tag?: string; textTop?: number; hookStyle?: "callout" }
+  | { layout: "hook"; id: string; lines: string[]; tag?: string; textTop?: number; hookStyle?: "callout"; punchFont?: "hand" }
   | { layout: "pair"; id: string; topLabel: string; top: string; bottomLabel: string; bottom: string }
   | { layout: "card"; id: string; label: string; comment?: string; title: string; steps: Step[]; result?: string }
   | { layout: "step"; id: string; label: string; step: string; min: number }
@@ -243,7 +243,8 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
                     {i === 0 ? (
                       <Bubble size={44} bg="#7C3AED" color="#FFFFFF">{l}</Bubble>
                     ) : i === s.lines.length - 1 ? (
-                      <Bubble size={66} bg="#FFFFFF" color={DARK}>{l}</Bubble>
+                      // punchFont "hand": the "me" punchline in handwriting (Caveat) so it reads like her own voice
+                      s.punchFont === "hand" ? <Bubble size={84} bg="#FFFFFF" color={DARK} font={HAND}>{l}</Bubble> : <Bubble size={66} bg="#FFFFFF" color={DARK}>{l}</Bubble>
                     ) : (
                       <Bubble size={54}>{l}</Bubble>
                     )}
