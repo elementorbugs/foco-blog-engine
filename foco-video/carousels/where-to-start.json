@@ -1,15 +1,26 @@
 {
   "slug": "where-to-start",
-  "caption": "if one more person tells me to \"just start\" 🙃 what's one task you wish felt easier to start? 👇",
-  "hashtags": [
-    "#adhd",
-    "#adhdtiktok",
-    "#adhdtips",
-    "#adhdstudent",
-    "#taskparalysis",
-    "#procrastination",
-    "#foco"
-  ],
+  "tiktok": {
+    "caption": "what to do when you have a whole assignment and no idea where to start (ADHD) 📚\n\n\"just start\" doesn't work when the task has no visible step 1. make step 1 tiny and physical (\"open the doc, type the title\"), break the rest into steps of 10 min or less, and only look at step 1. starting is the hard part.\n\nwhat's one task you wish felt easier to start? 👇\nsave this for your next assignment 📌\n\nthe app on the last slide is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#adhdstudent",
+      "#taskparalysis",
+      "#procrastination",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "Whole assignment and no idea where to start? Why \"just start\" fails with ADHD 📚\n\nI wasn't lazy. I couldn't see step 1. Here's what actually works:\n\n1. Make step 1 tiny and physical: \"open the doc, type the title\"\n2. Break the whole assignment into steps of 10 min or less\n3. Put ONLY step 1 on screen, with a short timer and calm sounds\n\nTurns out starting was the hard part. I did 3 steps without noticing.\n\n📌 Save this for your next assignment, and send it to a friend who's stuck on one.\n💜 Try FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdtips",
+      "#adhdstudent",
+      "#taskparalysis",
+      "#procrastination"
+    ],
+    "altText": "Carousel of 8 photos of a student and a desk, with text explaining why \"just start\" fails with ADHD and a method for starting an assignment: a tiny physical first step, steps of 10 minutes or less, and one step at a time. The last slide shows the FOCO app."
+  },
   "slides": [
     {
       "layout": "hook",
