@@ -1,0 +1,126 @@
+{
+  "slug": "where-to-start",
+  "caption": "if one more person tells me to \"just start\" 🙃 what's the assignment you're avoiding right now? 👇",
+  "hashtags": [
+    "#adhd",
+    "#adhdtiktok",
+    "#adhdtips",
+    "#adhdstudent",
+    "#taskparalysis",
+    "#procrastination",
+    "#foco"
+  ],
+  "slides": [
+    {
+      "layout": "hook",
+      "id": "hook",
+      "query": "woman at desk staring at laptop with notebooks",
+      "lines": [
+        "\"Just start\" is the worst advice",
+        "here's what actually works 📌"
+      ],
+      "tag": "(for ADHD brains)",
+      "pick": 6
+    },
+    {
+      "layout": "pair",
+      "id": "they-say",
+      "query": "student at desk with books head in hands",
+      "topLabel": "THEY SAY",
+      "top": "just start, it's not that hard",
+      "bottomLabel": "MY BRAIN HEARS",
+      "bottom": "start WHERE though? 😵‍💫",
+      "pick": 2
+    },
+    {
+      "layout": "caption",
+      "id": "blob",
+      "query": "person looking at blank notebook page",
+      "label": "it was never laziness",
+      "comment": "the task has no visible step 1",
+      "pick": 6
+    },
+    {
+      "layout": "caption",
+      "id": "rule",
+      "query": "hands opening laptop on wooden desk",
+      "label": "rule: step 1 = tiny + physical",
+      "comment": "\"open the doc, type the title\"",
+      "pick": 2
+    },
+    {
+      "layout": "card",
+      "id": "breakdown",
+      "query": "notebook and laptop on desk from above",
+      "label": "so I break the WHOLE thing down",
+      "comment": "every step under 10 min",
+      "title": "History assignment",
+      "steps": [
+        {
+          "text": "Open doc, type the title",
+          "min": 2
+        },
+        {
+          "text": "Paste the instructions in",
+          "min": 2
+        },
+        {
+          "text": "List 3 points to cover",
+          "min": 5
+        },
+        {
+          "text": "Find 1 source per point",
+          "min": 10
+        }
+      ],
+      "result": "step 1 is only 2 min ✅",
+      "pick": 3
+    },
+    {
+      "layout": "focus",
+      "id": "focus",
+      "query": "headphones and laptop on desk",
+      "label": "then ONLY step 1 on screen",
+      "comment": "rainy sounds, 2 min timer",
+      "stepNo": 1,
+      "stepTotal": 4,
+      "step": "Open doc, type the title",
+      "min": 2,
+      "sound": "Rainy",
+      "result": "no thinking about step 4 yet ✅",
+      "pick": 4
+    },
+    {
+      "layout": "caption",
+      "id": "started",
+      "query": "student smiling while writing at desk",
+      "label": "turns out starting was the hard part",
+      "comment": "did 3 steps without noticing ✅",
+      "pick": 6
+    },
+    {
+      "layout": "final-card",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "the app I use for this is FOCO 💜"
+      ],
+      "title": "History assignment",
+      "steps": [
+        {
+          "text": "Open doc, type the title",
+          "min": 2
+        },
+        {
+          "text": "Paste the instructions in",
+          "min": 2
+        },
+        {
+          "text": "List 3 points to cover",
+          "min": 5
+        }
+      ],
+      "ask": "what are you avoiding rn? 👇"
+    }
+  ]
+}
