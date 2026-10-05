@@ -25,12 +25,13 @@
     {
       "layout": "hook",
       "id": "hook",
-      "own": "carousels/own/maya/nine-4.jpg",
+      "own": "carousels/own/maya/nine-8.jpg",
       "lines": [
-        "I didn't need to finish the project",
-        "I just needed step one ✅"
+        "ADHD freelancers:",
+        "Task: build a whole website.",
+        "Me: can't even open it 🫠"
       ],
-      "textTop": 1060
+      "textTop": 1100
     },
     {
       "layout": "caption",

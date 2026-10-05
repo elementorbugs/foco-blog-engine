@@ -27,10 +27,11 @@
       "id": "hook",
       "own": "carousels/own/maya/nine-7.jpg",
       "lines": [
-        "I've been staring at this task for hours",
-        "ADHD freelancer life 🫠"
+        "Freelancer with ADHD:",
+        "Task: design one logo.",
+        "Me: 2 hours of staring 😵‍💫"
       ],
-      "textTop": 1060
+      "textTop": 1100
     },
     {
       "layout": "caption",

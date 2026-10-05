@@ -27,10 +27,11 @@
       "id": "hook",
       "own": "carousels/own/maya/email-2.jpg",
       "lines": [
-        "I'm not lazy. I'm stuck at the start",
-        "Freelancing with ADHD 🫠"
+        "Freelancer with ADHD:",
+        "Not lazy. Not tired.",
+        "Still can't start 😵‍💫"
       ],
-      "textTop": 1060
+      "textTop": 1100
     },
     {
       "layout": "caption",

@@ -333,7 +333,9 @@ Slide 1 decides swipe vs scroll; spend the most effort here. Before rendering, *
 **Audience call-out first (Adi, 2026-10-05):** the viewer must get WHO it's for and THE POINT in one second.
 A story-style hook ("I needed to update one page. So I redesigned everything") was too slow. Default format:
 line 1 names the audience ("Freelancer with ADHD:"), then a setup/punchline contrast ("Task: update one page." /
-"Me: redesigns everything 🙃"). Other call-outs: "POV: you're a freelancer with ADHD", "ADHD freelancers:".
+"Me: redesigns everything 🙃"). ALWAYS name the audience in line 1, but ROTATE the wording so a feed of posts doesn't
+repeat: "Freelancer with ADHD:", "POV: you freelance with ADHD", "ADHD freelancers, be honest:", "ADHD freelancers:",
+"If you freelance with ADHD:". Never reuse a near-identical hook photo across carousels posted together.
 Keep hook text off the face (`textTop` below the chin) and out of the right rail.
 
 **Hook checklist** (all must pass)
