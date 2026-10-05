@@ -1,0 +1,100 @@
+{
+  "slug": "angle-list-not-enough",
+  "tiktok": {
+    "caption": "ADHD to-do list not working, still can't start 🫠\n\nmy to-do list was color-coded, prioritized and beautiful, and I still wasn't moving. I didn't need another list. FOCO gave me ONE step (open last issue as a template), a 2 min timer and rainy sounds.\n\nhow many lists do YOU have? 👇\nsave this for the next time you're stuck 📌\n\nyou don't need another list, you need help starting. the app on the slides is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#taskparalysis",
+      "#procrastination",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "ADHD to-do list not working, still can't start 🫠\n\nMy to-do list was color-coded, prioritized and beautiful, and I still wasn't moving. I didn't need another list. FOCO gave me ONE step (open last issue as a template), a 2 min timer and rainy sounds.\n\nYou don't need another list. You need help starting.\n\n📌 Save this for the next time you're stuck, and send it to a freelancer friend who gets it.\n💜 Try FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#adhdwomen",
+      "#taskparalysis",
+      "#procrastination"
+    ],
+    "altText": "Carousel of 6 slides about a freelance woman with ADHD stuck starting a work task (Write the newsletter), who breaks it into tiny steps in the FOCO app and starts step 1 with a short timer and rainy sounds."
+  },
+  "slides": [
+    {
+      "layout": "hook",
+      "id": "hook",
+      "own": "carousels/own/maya/notion-5.jpg",
+      "lines": [
+        "My to-do list is perfectly organized",
+        "I'm still not moving 🙃"
+      ],
+      "textTop": 1060
+    },
+    {
+      "layout": "caption",
+      "id": "pain1",
+      "own": "carousels/own/maya/notion-2.jpg",
+      "label": "color-coded. prioritized. beautiful.",
+      "comment": "I already know what to do"
+    },
+    {
+      "layout": "caption",
+      "id": "pain2",
+      "own": "carousels/own/maya/email-3.jpg",
+      "label": "I don't need another list",
+      "comment": "I need to START 😵‍💫"
+    },
+    {
+      "layout": "step",
+      "id": "turn",
+      "own": "carousels/own/maya/breakdown-4.jpg",
+      "label": "FOCO gave me ONE step, not a list",
+      "step": "Open last issue as template",
+      "min": 2
+    },
+    {
+      "layout": "focus",
+      "id": "focus",
+      "own": "carousels/own/maya/focus-3.jpg",
+      "label": "2 min timer + rainy sounds",
+      "comment": "that's the whole plan",
+      "stepNo": 1,
+      "stepTotal": 4,
+      "step": "Open last issue as template",
+      "min": 2,
+      "sound": "Rainy",
+      "result": "newsletter: started ✅"
+    },
+    {
+      "layout": "final-card",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "You don't need another list.",
+        "You need help starting 💜"
+      ],
+      "title": "Write the newsletter",
+      "steps": [
+        {
+          "text": "Open last issue as template",
+          "min": 2
+        },
+        {
+          "text": "Write the subject line",
+          "min": 5
+        },
+        {
+          "text": "3 bullet points",
+          "min": 10
+        },
+        {
+          "text": "Read once, schedule it",
+          "min": 5
+        }
+      ],
+      "ask": "how many lists do YOU have? 👇"
+    }
+  ]
+}

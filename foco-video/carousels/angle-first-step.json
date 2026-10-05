@@ -1,0 +1,119 @@
+{
+  "slug": "angle-first-step",
+  "tiktok": {
+    "caption": "ADHD big project overwhelm, how to start 🫠\n\na whole client website felt like 40 hours, so I didn't open it for a week. I didn't need to finish it. I only needed step 1 (open last site as a template), a 3 min timer and study sounds. then step 2 felt easy.\n\nwhat project needs YOUR step one? 👇\nsave this for the next time you're stuck 📌\n\nyou don't need another list, you need help starting. the app on the slides is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#taskparalysis",
+      "#procrastination",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "ADHD big project overwhelm, how to start 🫠\n\nA whole client website felt like 40 hours, so I didn't open it for a week. I didn't need to finish it. I only needed step 1 (open last site as a template), a 3 min timer and study sounds. then step 2 felt easy.\n\nYou don't need another list. You need help starting.\n\n📌 Save this for the next time you're stuck, and send it to a freelancer friend who gets it.\n💜 Try FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#adhdwomen",
+      "#taskparalysis",
+      "#procrastination"
+    ],
+    "altText": "Carousel of 6 slides about a freelance woman with ADHD stuck starting a work task (Build client website), who breaks it into tiny steps in the FOCO app and starts step 1 with a short timer and study sounds."
+  },
+  "slides": [
+    {
+      "layout": "hook",
+      "id": "hook",
+      "own": "carousels/own/maya/nine-4.jpg",
+      "lines": [
+        "I didn't need to finish the project",
+        "I only needed step one ✅"
+      ],
+      "textTop": 1060
+    },
+    {
+      "layout": "caption",
+      "id": "pain1",
+      "own": "carousels/own/maya/email-1.jpg",
+      "label": "a whole website for a new client",
+      "comment": "my brain: \"that's 40 hours\" 😵‍💫"
+    },
+    {
+      "layout": "caption",
+      "id": "pain2",
+      "own": "carousels/own/maya/email-7.jpg",
+      "label": "so I didn't even open it",
+      "comment": "for a whole week"
+    },
+    {
+      "layout": "card",
+      "id": "turn",
+      "own": "carousels/own/maya/breakdown-6.jpg",
+      "label": "so I told FOCO the task",
+      "comment": "one tap: tiny steps, if I want",
+      "title": "Build client website",
+      "steps": [
+        {
+          "text": "Open last site as template",
+          "min": 3
+        },
+        {
+          "text": "Swap logo + colors",
+          "min": 10
+        },
+        {
+          "text": "Write the home page",
+          "min": 25
+        },
+        {
+          "text": "Send preview link",
+          "min": 2
+        }
+      ],
+      "result": "step 1 is only 3 min ✅"
+    },
+    {
+      "layout": "focus",
+      "id": "focus",
+      "own": "carousels/own/maya/focus-6.jpg",
+      "label": "just step 1, 3 min timer",
+      "comment": "study sounds on",
+      "stepNo": 1,
+      "stepTotal": 4,
+      "step": "Open last site as template",
+      "min": 3,
+      "sound": "Study",
+      "result": "then step 2 felt easy ✅"
+    },
+    {
+      "layout": "final-card",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "You don't need another list.",
+        "You need help starting 💜"
+      ],
+      "title": "Build client website",
+      "steps": [
+        {
+          "text": "Open last site as template",
+          "min": 3
+        },
+        {
+          "text": "Swap logo + colors",
+          "min": 10
+        },
+        {
+          "text": "Write the home page",
+          "min": 25
+        },
+        {
+          "text": "Send preview link",
+          "min": 2
+        }
+      ],
+      "ask": "what project needs YOUR step one? 👇"
+    }
+  ]
+}

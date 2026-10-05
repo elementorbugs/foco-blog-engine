@@ -262,6 +262,12 @@ execution app that turns overwhelming tasks into one small step you can start no
 - `just-say-it`, `snap-your-list` and `life-moments` were built for a working-mom persona BEFORE this decision:
   treat them as mom-persona tests, not the primary-audience tests.
 
+**Narrator "Maya"** (freelance designer, curly hair, white tee / grey cardigan, one home): her photos live in
+`foco-video/carousels/own/maya/` (use `"own"`). Reuse them so every primary-audience carousel shows the same person.
+**Angle tests built 2026-10-05** (6 slides each, same narrator, one angle each, core message on the final slide):
+`angle-screen-stare`, `angle-client-task`, `angle-list-not-enough`, `angle-too-many`, `angle-first-step`,
+`angle-not-lazy`. Post them under the same conditions and compare.
+
 ## Testing framework (Adi, 2026-10-05): one carousel = one hypothesis
 A carousel that shows every feature (voice, photo, calendar, AI breakdown, timer, music) is a test of the OVERALL
 message only: if it wins we don't know which feature pulled, if it loses we don't know what failed.

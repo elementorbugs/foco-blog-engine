@@ -234,7 +234,8 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
         <AbsoluteFill style={{ background: "#000" }}>
           <Photo name={photo} />
           {/* textTop moves the hook bubbles off a face (keep the block above SAFE.bottom) */}
-          <div style={{ position: "absolute", top: s.textTop ?? 640, left: 60, right: 60 }}>
+          {/* below y 850 the like/comment rail sits on the right, so low hook text gets the narrower right margin */}
+          <div style={{ position: "absolute", top: s.textTop ?? 640, left: 60, right: (s.textTop ?? 640) >= 700 ? SAFE.rightLow : 60 }}>
             {s.lines.map((l, i) => (
               <div key={l} style={{ marginBottom: 14 }}>
                 <Bubble size={i === 0 ? 64 : 54}>{l}</Bubble>

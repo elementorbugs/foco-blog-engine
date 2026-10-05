@@ -1,0 +1,119 @@
+{
+  "slug": "angle-client-task",
+  "tiktok": {
+    "caption": "ADHD freelancer avoiding a client email for days 🫠\n\na 30 minute client task, avoided for 3 days, and the guilt grew every day. what worked: tiny steps with one tap, then only step 1 (open her email, read once) with a 3 min timer and chill sounds. 30 minutes, not 3 days.\n\nwhat's YOUR 3-day task? 👇\nsave this for the next time you're stuck 📌\n\nyou don't need another list, you need help starting. the app on the slides is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#taskparalysis",
+      "#procrastination",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "ADHD freelancer avoiding a client email for days 🫠\n\nA 30 minute client task, avoided for 3 days, and the guilt grew every day. what worked: tiny steps with one tap, then only step 1 (open her email, read once) with a 3 min timer and chill sounds. 30 minutes, not 3 days.\n\nYou don't need another list. You need help starting.\n\n📌 Save this for the next time you're stuck, and send it to a freelancer friend who gets it.\n💜 Try FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#adhdwomen",
+      "#taskparalysis",
+      "#procrastination"
+    ],
+    "altText": "Carousel of 6 slides about a freelance woman with ADHD stuck starting a work task (Reply to client feedback), who breaks it into tiny steps in the FOCO app and starts step 1 with a short timer and chill sounds."
+  },
+  "slides": [
+    {
+      "layout": "hook",
+      "id": "hook",
+      "own": "carousels/own/maya/email-10.jpg",
+      "lines": [
+        "A 30 min task. I avoided it 3 days",
+        "(it was client feedback 💀)"
+      ],
+      "textTop": 1060
+    },
+    {
+      "layout": "caption",
+      "id": "pain1",
+      "own": "carousels/own/maya/email-12.jpg",
+      "label": "day 1: \"I'll do it after lunch\"",
+      "comment": "day 2: opened it. closed it."
+    },
+    {
+      "layout": "caption",
+      "id": "pain2",
+      "own": "carousels/own/maya/email-6.jpg",
+      "label": "day 3: the guilt is louder",
+      "comment": "than the task ever was 🫠"
+    },
+    {
+      "layout": "card",
+      "id": "turn",
+      "own": "carousels/own/maya/breakdown-2.jpg",
+      "label": "so I told FOCO the task",
+      "comment": "one tap: tiny steps, if I want",
+      "title": "Reply to client feedback",
+      "steps": [
+        {
+          "text": "Open her email, read once",
+          "min": 3
+        },
+        {
+          "text": "List her 3 changes",
+          "min": 5
+        },
+        {
+          "text": "Make the changes",
+          "min": 20
+        },
+        {
+          "text": "Reply \"done!\", hit send",
+          "min": 2
+        }
+      ],
+      "result": "step 1 is only 3 min ✅"
+    },
+    {
+      "layout": "focus",
+      "id": "focus",
+      "own": "carousels/own/maya/focus-2.jpg",
+      "label": "just step 1 + chill sounds",
+      "comment": "3 min timer, nothing else",
+      "stepNo": 1,
+      "stepTotal": 4,
+      "step": "Open her email, read once",
+      "min": 3,
+      "sound": "Chill",
+      "result": "already moving ✅"
+    },
+    {
+      "layout": "final-card",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "You don't need another list.",
+        "You need help starting 💜"
+      ],
+      "title": "Reply to client feedback",
+      "steps": [
+        {
+          "text": "Open her email, read once",
+          "min": 3
+        },
+        {
+          "text": "List her 3 changes",
+          "min": 5
+        },
+        {
+          "text": "Make the changes",
+          "min": 20
+        },
+        {
+          "text": "Reply \"done!\", hit send",
+          "min": 2
+        }
+      ],
+      "ask": "what's YOUR 3-day task? 👇"
+    }
+  ]
+}
