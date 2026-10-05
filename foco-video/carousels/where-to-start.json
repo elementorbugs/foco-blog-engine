@@ -1,6 +1,6 @@
 {
   "slug": "where-to-start",
-  "caption": "if one more person tells me to \"just start\" 🙃 what's the assignment you're avoiding right now? 👇",
+  "caption": "if one more person tells me to \"just start\" 🙃 what's one task you wish felt easier to start? 👇",
   "hashtags": [
     "#adhd",
     "#adhdtiktok",
@@ -36,8 +36,8 @@
       "layout": "caption",
       "id": "blob",
       "query": "person looking at blank notebook page",
-      "label": "it was never laziness",
-      "comment": "the task has no visible step 1",
+      "label": "I wasn't lazy.",
+      "comment": "I couldn't see step 1.",
       "pick": 6
     },
     {
@@ -52,8 +52,8 @@
       "layout": "card",
       "id": "breakdown",
       "query": "notebook and laptop on desk from above",
-      "label": "so I break the WHOLE thing down",
-      "comment": "every step under 10 min",
+      "label": "so I put the assignment into FOCO",
+      "comment": "it broke it into steps I could start",
       "title": "History assignment",
       "steps": [
         {
@@ -73,7 +73,7 @@
           "min": 10
         }
       ],
-      "result": "step 1 is only 2 min ✅",
+      "result": "each step 10 min or less ✅",
       "pick": 3
     },
     {
@@ -103,7 +103,7 @@
       "id": "end",
       "photo": "hook",
       "lines": [
-        "the app I use for this is FOCO 💜"
+        "Try FOCO - link in bio 💜"
       ],
       "title": "History assignment",
       "steps": [
@@ -118,9 +118,13 @@
         {
           "text": "List 3 points to cover",
           "min": 5
+        },
+        {
+          "text": "Find 1 source per point",
+          "min": 10
         }
       ],
-      "ask": "what are you avoiding rn? 👇"
+      "ask": "what's one task you wish felt easier to start? 👇"
     }
   ]
 }

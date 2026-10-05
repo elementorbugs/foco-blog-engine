@@ -201,7 +201,9 @@ export const SpecSlideView: React.FC<{ spec: Spec; index: number }> = ({ spec, i
       // ~34 chars fit on one 48px bubble line; count wrapped lines, not array items
       const rows = s.lines.reduce((n, l) => n + Math.ceil(l.length / 34), 0);
       const below = 200 + rows * 82 + 24;
-      const phoneH = 1080 - below;
+      // the ask is bottom-anchored and grows upward, so a 2-line ask shrinks the proof above it
+      const askExtra = (Math.ceil(s.ask.length / 30) - 1) * 70;
+      const phoneH = 1080 - below - askExtra;
       return (
         <AbsoluteFill style={{ background: "#000" }}>
           <Photo name={photo} blur />
@@ -215,7 +217,7 @@ export const SpecSlideView: React.FC<{ spec: Spec; index: number }> = ({ spec, i
           </div>
           {s.layout === "final-card" ? (
             <>
-              <div style={{ position: "absolute", top: Math.max(400, below), left: 0, right: 0, display: "flex", justifyContent: "center", transform: "scale(0.86)", transformOrigin: "top center" }}>
+              <div style={{ position: "absolute", top: Math.max(400, below), left: 0, right: 0, display: "flex", justifyContent: "center", transform: `scale(${askExtra ? 0.8 : 0.86})`, transformOrigin: "top center" }}>
                 <FocoCard title={s.title} steps={s.steps} />
               </div>
               <Mascot style={{ left: 770, top: Math.max(400, below) - 70, height: 210 }} />
@@ -228,7 +230,7 @@ export const SpecSlideView: React.FC<{ spec: Spec; index: number }> = ({ spec, i
               <Mascot style={{ left: 170 + Math.round(phoneH / 2.17) + 50, top: below + phoneH * 0.32, height: 330 }} />
             </>
           )}
-          <div style={{ position: "absolute", top: 1105, left: SAFE.left, right: SAFE.rightLow }}>
+          <div style={{ position: "absolute", bottom: 1920 - 1190, left: SAFE.left, right: SAFE.rightLow }}>
             <Bubble bg="#FFFFFF" color={DARK} size={46}>{s.ask}</Bubble>
           </div>
           <DownloadCTA />
