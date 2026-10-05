@@ -52,6 +52,9 @@ verified working 2026-10-04). Always `git pull` first in a reused session so the
 - `id` = photo file name; `pick` = chosen candidate (1-6); `photo` = reuse another slide's photo (finals use it, blurred).
 - `card` mimics FOCO's real "Let's break it down" screen (steps + minutes); `step` shows one first step.
 - `final-phone` shows a real FOCO App Store screenshot (`public/apps/foco-<n>.png`, 3 = Break It Down).
+- `phone` shows a real screenshot MID-carousel: `{ "layout": "phone", "id", "query", "label", "comment"?, "screenshot": N, "result"? }`
+  (label/comment top, screenshot centered, optional green result). Screenshots: 1 = home/Start Focus,
+  2 = Chat it / Speak it / Scan it input, 3 = Break It Down, 4 = focus timer, 5 = Add task with date + reminder, 6 = sounds.
 - Keep each bubble under ~45 characters; slides look best with one idea each.
 
 ## Captions (organic reach; Adi's standing rule: every carousel ships a TikTok AND an Instagram caption)
@@ -171,6 +174,10 @@ Rough split: ~80% value/relatable, ~20% FOCO. A carousel that is only jokes or o
 | chat / photo input | real screenshot 2 (`final-phone` with `"screenshot": 2`) |
 | timer screen | real screenshot 4; sound picker: screenshot 6 |
 A strong FOCO-forward carousel walks the method: stuck task → `card` breakdown → `focus` on step 1 → `result` win.
+**Show the whole in-app process (Adi, 2026-10-05):** "I want them to see a process." Default FOCO-forward structure is
+the full flow: task pops into your head → capture it (`phone` screenshot 2: say it / snap the list / type it) →
+it lands in the calendar with a reminder (`phone` screenshot 5) → `card` breakdown → `focus` with timer + sound → win.
+Number the steps on the slides ("step 1: ..."). Example: `carousels/head-to-done.json`.
 
 **Benefit copy that works** (lowercase, first person, outcome-first):
 "I just tell it the task and it gives me step 1" · "rainy sounds on, ONE step on screen, that's all I look at" ·
@@ -196,7 +203,7 @@ Slide 1 decides swipe vs scroll; spend the most effort here. Before rendering, *
 - Concrete, not abstract: a real task, number, time or object ("3 weeks", "ONE email", "$40"), never "productivity tips".
 - Creates an open loop the next slides close (vs, list, "slide 4", a question).
 - Relatable pain or tension in the viewer's own words (lowercase TikTok voice), zero shame.
-- **No brand and no app in the hook.** FOCO only on the last slide.
+- **No brand and no app in the hook.** FOCO can appear from slide 2 on (process carousels show the app throughout).
 - Photo: a person or a strong scene with clear space in the middle third for the bubbles.
 
 ## Quality rules (what makes it look native, not "produced")
@@ -256,5 +263,5 @@ Priority order Adi saw: 1-4 first.
 - FOCO facts only from Adi / memory (`project_foco_pricing_facts`): AI breakdown + AI chat are paid ($9/mo, $59/yr),
   manual tasks free, iOS + Android only, focus mode with ambient sounds. Don't say "free app".
 - No medical claims or invented stats. Personal-story framing ("cost me $40") is fine; "X% of ADHDers" is not.
-- Validating, zero shame, slightly dry humor. FOCO appears only on the last slide (plus `card`/`step` UI).
+- Validating, zero shame, slightly dry humor. No FOCO in the hook; after that, show the app wherever it proves the process.
 - Don't recommend competitor apps.

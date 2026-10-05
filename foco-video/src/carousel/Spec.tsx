@@ -15,6 +15,7 @@ export type SpecSlide =
   | { layout: "step"; id: string; label: string; step: string; min: number }
   | { layout: "caption"; id: string; label: string; comment?: string; time?: string }
   | { layout: "focus"; id: string; label: string; comment?: string; stepNo: number; stepTotal: number; step: string; min: number; sound: string; result?: string }
+  | { layout: "phone"; id: string; label: string; comment?: string; screenshot: number; result?: string }
   | { layout: "final-card"; id: string; lines: string[]; title: string; steps: Step[]; ask: string }
   | { layout: "final-phone"; id: string; lines: string[]; screenshot?: number; ask: string };
 
@@ -88,7 +89,7 @@ const FocusCard: React.FC<{ stepNo: number; stepTotal: number; step: string; min
 // Defaults keep the sticker inside the safe band and clear of the bubbles/cards for each layout
 const STICKER_POS: Record<string, [number, number]> = {
   hook: [800, 470], pair: [790, 880], caption: [790, 880], step: [800, 880], card: [820, 470],
-  focus: [40, 430], "final-card": [80, 330], "final-phone": [700, 1000],
+  focus: [40, 430], phone: [800, 900], "final-card": [80, 330], "final-phone": [700, 1000],
 };
 const Sticker: React.FC<{ emoji: string; pos: [number, number] }> = ({ emoji, pos }) => (
   <div style={{ position: "absolute", left: pos[0], top: pos[1], fontFamily: `"${EMOJI}"`, fontSize: 130, lineHeight: 1, transform: "rotate(12deg)", filter: "drop-shadow(0 10px 18px rgba(0,0,0,0.35))", zIndex: 5 }}>
@@ -210,6 +211,34 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
           </div>
           <div style={{ position: "absolute", top: cardTop, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
             <FocusCard stepNo={s.stepNo} stepTotal={s.stepTotal} step={s.step} min={s.min} sound={s.sound} />
+          </div>
+          {s.result ? (
+            <div style={{ position: "absolute", top: 1380, left: SAFE.left, right: SAFE.rightLow }}>
+              <Bubble bg="#DCFCE7" color="#15803D" size={48}>{s.result}</Bubble>
+            </div>
+          ) : null}
+        </AbsoluteFill>
+      );
+    }
+    case "phone": {
+      // a real FOCO App Store screenshot mid-carousel, so the in-app process (capture, calendar, sounds) is shown, not claimed
+      const top = 220 + Math.ceil(s.label.length / 30) * 84 + (s.comment ? 12 + Math.ceil(s.comment.length / 36) * 72 : 0) + 30;
+      const phoneH = (s.result ? 1350 : 1460) - top;
+      return (
+        <AbsoluteFill style={{ background: "#000" }}>
+          <Photo name={photo} />
+          <AbsoluteFill style={{ background: "rgba(20,10,34,0.18)" }} />
+          <div style={{ position: "absolute", top: 220, left: 60, right: 60 }}>
+            <Bubble size={54}>{s.label}</Bubble>
+            {s.comment ? (
+              <>
+                <div style={{ height: 12 }} />
+                <Bubble size={44}>{s.comment}</Bubble>
+              </>
+            ) : null}
+          </div>
+          <div style={{ position: "absolute", top, left: (1080 - Math.round(phoneH / 2.17)) / 2, transform: "rotate(-2deg)", width: Math.round(phoneH / 2.17), height: phoneH, borderRadius: 54, overflow: "hidden", border: "11px solid #0d0a14", boxShadow: "0 40px 100px rgba(0,0,0,0.55)" }}>
+            <Img src={staticFile(`apps/foco-${s.screenshot}.png`)} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }} />
           </div>
           {s.result ? (
             <div style={{ position: "absolute", top: 1380, left: SAFE.left, right: SAFE.rightLow }}>
