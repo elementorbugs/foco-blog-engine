@@ -62,6 +62,9 @@ verified working 2026-10-04). Always `git pull` first in a reused session so the
   we never say free), 12 = "Feeling Stuck? Let FOCO Guide You" chat: "i want to write mail to my boss" -> "Added to
   your sessions" (use `"crop": [0, 0.68], "aspect": 2.085`). 10-12 are App Store cards with the white frame cropped off.
   Keep the example task consistent with the screenshots (7, 8 and 12 are the "Write mail" task).
+- `inputs` = the capture step drawn LARGE (Speak it / Scan it / Chat it cards in the app's colors):
+  `{ "layout": "inputs", "id", "query", "label", "comment"?, "result"? }`. Adi (2026-10-05): show features up close;
+  a full screenshot shrunk into a slide is "noise, not the point". Prefer `inputs`/`crop` over whole screenshots.
 - `"own": "carousels/own/<file>.jpg"` on a slide uses Adi's own phone photo instead of Pexels (no `query`/`pick`).
 - Keep each bubble under ~45 characters; slides look best with one idea each.
 

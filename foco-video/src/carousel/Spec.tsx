@@ -15,6 +15,7 @@ export type SpecSlide =
   | { layout: "step"; id: string; label: string; step: string; min: number }
   | { layout: "caption"; id: string; label: string; comment?: string; time?: string }
   | { layout: "focus"; id: string; label: string; comment?: string; stepNo: number; stepTotal: number; step: string; min: number; sound: string; result?: string }
+  | { layout: "inputs"; id: string; label: string; comment?: string; result?: string }
   | { layout: "phone"; id: string; label: string; comment?: string; screenshot: number; result?: string; crop?: [number, number]; aspect?: number }
   | { layout: "final-card"; id: string; lines: string[]; title: string; steps: Step[]; ask: string }
   | { layout: "final-phone"; id: string; lines: string[]; screenshot?: number; ask: string };
@@ -57,6 +58,32 @@ const DownloadCTA: React.FC = () => (
   </>
 );
 
+
+// FOCO's three ways to capture a task (the app's "Chat it / Speak it / Scan it" cards, same colors), drawn large
+// so the input options read on a phone instead of shrinking a full screenshot.
+const INPUTS = [
+  { icon: "🎙️", title: "Speak it", sub: "say it out loud, FOCO gets it", bg: "#2563EB" },
+  { icon: "📷", title: "Scan it", sub: "snap a note or a list", bg: "#F59E0B" },
+  { icon: "💬", title: "Chat it", sub: "type your task or idea", bg: "#7C3AED" },
+];
+const InputOptions: React.FC = () => (
+  <div style={{ width: 860, borderRadius: 40, padding: "30px 30px 34px", background: "#130A22", border: "2px solid rgba(167,139,250,0.35)", boxShadow: "0 30px 80px rgba(0,0,0,0.45)" }}>
+    <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 22 }}>
+      <Img src={staticFile("apps/foco-icon.png")} style={{ width: 46, height: 46, borderRadius: 12 }} />
+      <div style={{ fontFamily: BODY, fontWeight: 700, fontSize: 24, letterSpacing: 3, color: "#A78BFA" }}>WHAT'S ON YOUR MIND?</div>
+    </div>
+    {INPUTS.map((o) => (
+      <div key={o.title} style={{ display: "flex", alignItems: "center", gap: 28, padding: "22px 24px", marginTop: 14, borderRadius: 28, background: "rgba(255,255,255,0.05)", border: "2px solid rgba(167,139,250,0.18)" }}>
+        <div style={{ width: 110, height: 110, borderRadius: 999, background: o.bg, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: `"${EMOJI}"`, fontSize: 58, flexShrink: 0, boxShadow: `0 0 30px ${o.bg}88` }}>{o.icon}</div>
+        <div>
+          <div style={{ fontFamily: HEAD, fontWeight: 800, fontSize: 52, color: "#FFFFFF", lineHeight: 1.1 }}>{o.title}</div>
+          <div style={{ fontFamily: BODY, fontWeight: 600, fontSize: 34, color: "#D6D0E4", marginTop: 4 }}>{o.sub}</div>
+        </div>
+      </div>
+    ))}
+  </div>
+);
+
 // Mimics FOCO's focus mode: one step on screen, a timer, and the ambient sound playing (real sound names:
 // Silence, Study, Jazzy, Chill, Rainy). Shows the "one step at a time, with music" benefit instead of claiming it.
 const FocusCard: React.FC<{ stepNo: number; stepTotal: number; step: string; min: number; sound: string }> = ({ stepNo, stepTotal, step, min, sound }) => (
@@ -89,7 +116,7 @@ const FocusCard: React.FC<{ stepNo: number; stepTotal: number; step: string; min
 // Defaults keep the sticker inside the safe band and clear of the bubbles/cards for each layout
 const STICKER_POS: Record<string, [number, number]> = {
   hook: [800, 470], pair: [790, 880], caption: [790, 880], step: [800, 880], card: [820, 470],
-  focus: [40, 430], phone: [800, 900], "final-card": [80, 330], "final-phone": [700, 1000],
+  focus: [40, 430], phone: [800, 900], inputs: [820, 300], "final-card": [80, 330], "final-phone": [700, 1000],
 };
 const Sticker: React.FC<{ emoji: string; pos: [number, number] }> = ({ emoji, pos }) => (
   <div style={{ position: "absolute", left: pos[0], top: pos[1], fontFamily: `"${EMOJI}"`, fontSize: 130, lineHeight: 1, transform: "rotate(12deg)", filter: "drop-shadow(0 10px 18px rgba(0,0,0,0.35))", zIndex: 5 }}>
@@ -211,6 +238,31 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
           </div>
           <div style={{ position: "absolute", top: cardTop, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
             <FocusCard stepNo={s.stepNo} stepTotal={s.stepTotal} step={s.step} min={s.min} sound={s.sound} />
+          </div>
+          {s.result ? (
+            <div style={{ position: "absolute", top: 1380, left: SAFE.left, right: SAFE.rightLow }}>
+              <Bubble bg="#DCFCE7" color="#15803D" size={48}>{s.result}</Bubble>
+            </div>
+          ) : null}
+        </AbsoluteFill>
+      );
+    }
+    case "inputs": {
+      const top = 220 + Math.ceil(s.label.length / 30) * 84 + (s.comment ? 12 + Math.ceil(s.comment.length / 36) * 72 : 0) + 40;
+      return (
+        <AbsoluteFill style={{ background: "#000" }}>
+          <Photo name={photo} />
+          <div style={{ position: "absolute", top: 220, left: 60, right: 60 }}>
+            <Bubble size={54}>{s.label}</Bubble>
+            {s.comment ? (
+              <>
+                <div style={{ height: 12 }} />
+                <Bubble size={44}>{s.comment}</Bubble>
+              </>
+            ) : null}
+          </div>
+          <div style={{ position: "absolute", top, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
+            <InputOptions />
           </div>
           {s.result ? (
             <div style={{ position: "absolute", top: 1380, left: SAFE.left, right: SAFE.rightLow }}>
