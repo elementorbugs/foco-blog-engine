@@ -170,7 +170,10 @@ Rough split: ~80% value/relatable, ~20% FOCO. A carousel that is only jokes or o
 
 **FOCO's benefits, in the order they happen** (the story to tell, in plain feelings, not feature names):
 1. **Tell it the stuck task** by typing, talking or snapping a photo → "you don't have to plan it yourself".
-2. **It breaks it into tiny first steps with time estimates** → "step 1 is so small you can't say no to it".
+2. **One tap to break it down (AI):** after the task is in the calendar/sessions, the user CHOOSES whether to split it
+   into small steps, with one tap ("Make subtasks using FOCO"); it is not automatic (Adi, 2026-10-05). Copy: "one tap
+   and it breaks it into tiny steps", never "it lands already broken down".
+   **It breaks it into tiny first steps with time estimates** → "step 1 is so small you can't say no to it".
 3. **Focus mode, one step at a time:** a timer for just that step + calm background sounds (Silence, Study, Jazzy,
    Chill, Rainy) → "you only think about this one step; the rest can wait".
 4. **Feels like someone working next to you** (AI companion presence, never "real people") → "you're not alone in it".
