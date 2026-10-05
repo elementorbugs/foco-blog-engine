@@ -75,6 +75,10 @@ verified working 2026-10-04). Always `git pull` first in a reused session so the
   - `speak-it-dark-1.png` / `speak-it-dark-2.png`: dark poster style, mic + mascot, "I need to plan my week and finish
     the report" -> "FOCO turned this into tasks" list, plus a hand snapping a handwritten to-do list -> tasks.
     Illustrated marketing art (not exact UI): good for a hook/reveal or as inspiration, not as "proof" screens.
+  - `snap-list-to-day.png` (+ `-crop.png`, frame removed, aspect 1.756): "SNAP YOUR LIST. FIND IT IN YOUR DAY."
+    handwritten to-do (Email my boss, Book dentist, Buy groceries) -> arrow -> Sunday calendar with the same 3 tasks.
+    The clearest "photo of a paper list -> my day" visual; perfect for a scan-it carousel.
+  - `speak-email-boss-crop.png`: frame removed (aspect 1.756). Used in head-to-done step 1 with crop [0.335, 0.88].
   - `chat-input-closeup.jpg`: close-up of the real chat empty state "Hi, it's FOCO. Name the task you're
     procrastinating on" + input bar (camera, mic). Landscape: use for a zoomed "this is all you see" detail.
   Creative ideas these support: "voice note to tasks" (say one messy sentence, get a clean list), "photo of my paper

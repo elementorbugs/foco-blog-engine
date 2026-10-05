@@ -47,14 +47,20 @@
       "own": "carousels/own/stroller-walk.jpg"
     },
     {
-      "layout": "inputs",
+      "layout": "phone",
       "id": "capture",
       "person": false,
       "query": "kitchen counter with phone and coffee",
-      "label": "step 1: I just tell it the task",
-      "comment": "no typing needed if I can't",
+      "label": "step 1: I just say it out loud",
+      "comment": "or upload a photo of my list",
       "pick": 4,
-      "result": "added to my sessions ✅"
+      "result": "added to my sessions ✅",
+      "image": "creatives/speak-email-boss-crop.png",
+      "crop": [
+        0.335,
+        0.88
+      ],
+      "aspect": 1.756
     },
     {
       "layout": "phone",
