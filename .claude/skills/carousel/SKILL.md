@@ -252,6 +252,11 @@ message only: if it wins we don't know which feature pulled, if it loses we don'
   A single-feature carousel shows only its feature's screen; other features at most one line on the final slide.
 - Audience: stroller/home/"Email my boss" = working woman, likely a mom. That's a choice; for a broad
   all-adults-with-ADHD test, use neutral scenes (desk, commute, kitchen) and no parent cues.
+- **Interesting real-life situations, not props (Adi, 2026-10-05):** a cup of tea or a desk is filler. Show the
+  specific moments the pain happens: the shower, a supermarket line, a walk with the stroller, 11pm when the kids
+  are asleep, driving. Each moment carries its own concrete task ("book the dentist", "pay the electricity bill",
+  "sign the school form"), and the payoff slide collects them all (`calendar` with `"tasks": [...]`).
+  Example: `carousels/just-say-it.json`.
 - Before building, write the hypothesis in one line in the reply ("tests: ..."). Log results per carousel
   (views, saves, shares, comments, link clicks) to pick the winning feature message.
 

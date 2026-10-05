@@ -8,6 +8,7 @@ import { StepCard, TimeChip } from "./MoreCarousels";
 import { Tag } from "./MoreCarousels2";
 
 type Step = { text: string; min: number };
+type CalTask = { title: string; min: number; category: string };
 // "life" slide inset: a real screenshot/creative (image + optional crop) or a drawn FOCO screen with this carousel's task
 type Inset =
   | { image: string; crop?: [number, number]; aspect: number }
@@ -23,7 +24,7 @@ export type SpecSlide =
   | { layout: "focus"; id: string; label: string; comment?: string; stepNo: number; stepTotal: number; step: string; min: number; sound: string; result?: string }
   | { layout: "life"; id: string; label: string; comment?: string; chip?: string; side?: "left" | "right"; inset: Inset }
   | { layout: "scan"; id: string; label: string; comment?: string; items: string[]; result?: string }
-  | { layout: "calendar"; id: string; label: string; comment?: string; title: string; min: number; category: string; result?: string; breakdownButton?: boolean }
+  | { layout: "calendar"; id: string; label: string; comment?: string; title?: string; min?: number; category?: string; tasks?: CalTask[]; result?: string; breakdownButton?: boolean }
   | { layout: "inputs"; id: string; label: string; comment?: string; result?: string }
   | { layout: "phone"; id: string; label: string; comment?: string; screenshot?: number; image?: string; result?: string; crop?: [number, number]; aspect?: number }
   | { layout: "final-card"; id: string; lines: string[]; title: string; steps: Step[]; ask: string }
@@ -111,7 +112,11 @@ const ScanPhone: React.FC<{ items: string[] }> = ({ items }) => {
 // FOCO's Sessions (calendar) day view with ONE task, drawn so the task name/minutes match the rest of the carousel
 // exactly, plus the optional one-tap AI breakdown button (it is a choice, never automatic).
 // breakdownButton=false hides the AI button (single-feature carousels that test capture only)
-const CalendarCard: React.FC<{ title: string; min: number; category: string; breakdownButton?: boolean }> = ({ title, min, category, breakdownButton = true }) => (
+// tasks = several tasks in the day (e.g. everything captured by voice); otherwise the single title/min/category
+const CalendarCard: React.FC<{ title?: string; min?: number; category?: string; tasks?: CalTask[]; breakdownButton?: boolean }> = ({ title, min, category, tasks, breakdownButton = true }) => {
+  const list: CalTask[] = tasks ?? [{ title: title ?? "", min: min ?? 0, category: category ?? "" }];
+  const many = list.length > 1;
+  return (
   <div style={{ width: 860, borderRadius: 40, padding: "32px 32px 36px", background: "#0B0A16", border: "2px solid rgba(167,139,250,0.35)", boxShadow: "0 30px 80px rgba(0,0,0,0.45)" }}>
     <div style={{ fontFamily: BODY, fontWeight: 600, fontSize: 64, color: "#FFFFFF", lineHeight: 1 }}>Sunday</div>
     <div style={{ fontFamily: BODY, fontWeight: 600, fontSize: 24, letterSpacing: 3, color: "#B8B0CC", marginTop: 8 }}>JUN 2026</div>
@@ -123,14 +128,16 @@ const CalendarCard: React.FC<{ title: string; min: number; category: string; bre
         </div>
       ))}
     </div>
-    <div style={{ marginTop: 26, padding: "14px 24px", borderRadius: 999, border: "2px solid rgba(255,255,255,0.12)", fontFamily: BODY, fontWeight: 700, fontSize: 24, letterSpacing: 3, color: "#D6D0E4" }}>ANYTIME (1)</div>
-    <div style={{ marginTop: 18, padding: "26px 26px", borderRadius: 28, background: "rgba(255,255,255,0.05)", border: "2px solid rgba(167,139,250,0.25)", display: "flex", alignItems: "center", gap: 24 }}>
-      <div style={{ width: 54, height: 54, borderRadius: 999, border: "4px solid #7C3AED", flexShrink: 0 }} />
+    <div style={{ marginTop: 26, padding: "14px 24px", borderRadius: 999, border: "2px solid rgba(255,255,255,0.12)", fontFamily: BODY, fontWeight: 700, fontSize: 24, letterSpacing: 3, color: "#D6D0E4" }}>ANYTIME ({list.length})</div>
+    {list.map((t) => (
+    <div key={t.title} style={{ marginTop: many ? 12 : 18, padding: many ? "18px 24px" : "26px 26px", borderRadius: 28, background: "rgba(255,255,255,0.05)", border: "2px solid rgba(167,139,250,0.25)", display: "flex", alignItems: "center", gap: 24 }}>
+      <div style={{ width: many ? 44 : 54, height: many ? 44 : 54, borderRadius: 999, border: "4px solid #7C3AED", flexShrink: 0 }} />
       <div>
-        <div style={{ fontFamily: BODY, fontWeight: 700, fontSize: 48, color: "#FFFFFF", lineHeight: 1.1 }}>{title}</div>
-        <div style={{ fontFamily: BODY, fontWeight: 600, fontSize: 30, color: "#B8B0CC", marginTop: 6 }}>{min} min · {category}</div>
+        <div style={{ fontFamily: BODY, fontWeight: 700, fontSize: many ? 40 : 48, color: "#FFFFFF", lineHeight: 1.1 }}>{t.title}</div>
+        <div style={{ fontFamily: BODY, fontWeight: 600, fontSize: many ? 26 : 30, color: "#B8B0CC", marginTop: 4 }}>{t.min} min · {t.category}</div>
       </div>
     </div>
+    ))}
     {breakdownButton ? (<>
     <div style={{ marginTop: 22, padding: "24px 20px", borderRadius: 24, border: "3px dashed #A78BFA", textAlign: "center", fontFamily: BODY, fontWeight: 800, fontSize: 32, letterSpacing: 2, color: "#C4B5FD", background: "rgba(124,58,237,0.15)" }}>
       <span style={{ fontFamily: `"${EMOJI}"` }}>✨</span> MAKE SUBTASKS USING FOCO <span style={{ fontFamily: `"${EMOJI}"` }}>👆</span>
@@ -138,7 +145,8 @@ const CalendarCard: React.FC<{ title: string; min: number; category: string; bre
     <div style={{ marginTop: 12, textAlign: "center", fontFamily: BODY, fontWeight: 600, fontSize: 28, color: "#7d738f" }}>optional: only if you tap it</div>
     </>) : null}
   </div>
-);
+  );
+};
 
 // FOCO's three ways to capture a task (the app's "Chat it / Speak it / Scan it" cards, same colors), drawn large
 // so the input options read on a phone instead of shrinking a full screenshot.
@@ -413,7 +421,7 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
             ) : null}
           </div>
           <div style={{ position: "absolute", top, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
-            <CalendarCard title={s.title} min={s.min} category={s.category} breakdownButton={s.breakdownButton} />
+            <CalendarCard title={s.title} min={s.min} category={s.category} tasks={s.tasks} breakdownButton={s.breakdownButton} />
           </div>
           {s.result ? (
             <div style={{ position: "absolute", top: 1380, left: SAFE.left, right: SAFE.rightLow }}>
