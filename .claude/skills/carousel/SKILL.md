@@ -65,6 +65,20 @@ verified working 2026-10-04). Always `git pull` first in a reused session so the
 - `inputs` = the capture step drawn LARGE (Speak it / Scan it / Chat it cards in the app's colors):
   `{ "layout": "inputs", "id", "query", "label", "comment"?, "result"? }`. Adi (2026-10-05): show features up close;
   a full screenshot shrunk into a slide is "noise, not the point". Prefer `inputs`/`crop` over whole screenshots.
+- **Creative library** (`foco-video/public/creatives/`, from Adi 2026-10-05; use as ideas AND as slide visuals via
+  `phone` + `"image": "creatives/<file>"` instead of `screenshot`, add `crop`/`aspect` to zoom). Aspect 941x1672 = 1.777.
+  - `speak-email-boss.png`: "JUST SPEAK IT." real chat: "I need to email my boss." -> "Email my boss, 25 min, Added to
+    your Sessions" + mic button + inset "Or upload a photo of your task list". Best capture-step visual for the
+    email story (matches screenshots 7/8/12).
+  - `speak-snap-split.png`: "JUST SPEAK IT. Name the task you're procrastinating on" phone + a to-do notebook in scan
+    corners ("OR SNAP YOUR LIST"). Has a white rounded frame: crop it.
+  - `speak-it-dark-1.png` / `speak-it-dark-2.png`: dark poster style, mic + mascot, "I need to plan my week and finish
+    the report" -> "FOCO turned this into tasks" list, plus a hand snapping a handwritten to-do list -> tasks.
+    Illustrated marketing art (not exact UI): good for a hook/reveal or as inspiration, not as "proof" screens.
+  - `chat-input-closeup.jpg`: close-up of the real chat empty state "Hi, it's FOCO. Name the task you're
+    procrastinating on" + input bar (camera, mic). Landscape: use for a zoomed "this is all you see" detail.
+  Creative ideas these support: "voice note to tasks" (say one messy sentence, get a clean list), "photo of my paper
+  list -> app", "the only screen you need: one input box", before/after messy thoughts -> clear tasks.
 - `"own": "carousels/own/<file>.jpg"` on a slide uses Adi's own phone photo instead of Pexels (no `query`/`pick`).
 - Keep each bubble under ~45 characters; slides look best with one idea each.
 
