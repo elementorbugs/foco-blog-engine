@@ -96,7 +96,8 @@ async function viaGmail(mail) {
 (async () => {
   const mail = {
     to,
-    subject: `FOCO Social: carousel "${slug}" (${slides.length} slides)`,
+    // time in the subject so each send is its own email (same subject = Gmail stacks it into the old thread)
+    subject: `FOCO Social: carousel "${slug}" (${slides.length} slides) ${new Date().toLocaleString("en-GB", { timeZone: "Asia/Jerusalem", day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" })}`,
     text: `Your carousel is ready. TikTok: slide-1..N (9:16). Instagram: ig-slide-1..N (4:5, use these on IG so nothing gets cut). Both in order, 1 = hook.
 
 Captions to paste:
