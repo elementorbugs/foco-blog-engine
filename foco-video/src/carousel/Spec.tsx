@@ -521,7 +521,8 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
           </div>
           {s.layout === "final-card" ? (
             <>
-              <div style={{ position: "absolute", top: Math.max(400, below), left: 0, right: 0, display: "flex", justifyContent: "center", transform: `scale(${askExtra ? 0.8 : 0.86})`, transformOrigin: "top center" }}>
+              {/* shrink the card to fit between the headline bubbles and the (bottom-anchored) ask; ~270px + 120px/step unscaled */}
+              <div style={{ position: "absolute", top: Math.max(400, below), left: 0, right: 0, display: "flex", justifyContent: "center", transform: `scale(${Math.min(askExtra ? 0.8 : 0.86, (1190 - 100 - askExtra - 20 - Math.max(400, below)) / (270 + s.steps.length * 120))})`, transformOrigin: "top center" }}>
                 <FocoCard title={s.title} steps={s.steps} />
               </div>
               <Mascot style={{ left: 770, top: Math.max(400, below) - 70, height: 210 }} />

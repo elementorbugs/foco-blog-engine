@@ -126,8 +126,9 @@
       "id": "end",
       "photo": "hook",
       "lines": [
-        "4:10 pm: sent. she said yes ✅",
-        "Try FOCO - link in bio 💜"
+        "sent. she said yes ✅",
+        "You don't need another list.",
+        "You need help starting 💜"
       ],
       "title": "Send client proposal",
       "steps": [
@@ -148,7 +149,7 @@
           "min": 5
         }
       ],
-      "ask": "what work task is stuck for you? 👇"
+      "ask": "what work task is stuck? 👇"
     }
   ]
 }
