@@ -45,13 +45,18 @@ const slides = fs.readdirSync(out).filter((f) => /^slide-\d+\.png$/.test(f)).sor
 if (!slides.length) throw new Error(`no rendered slides in ${out}; run build.js ${slug} render first`);
 
 // PNGs are ~1-2 MB each; JPEG q2 keeps them sharp on a phone and the email well under Gmail's 25 MB limit
-const attachments = slides.map((f) => {
+// TikTok 9:16 slides, then Instagram 4:5 versions (IG crops 9:16 and cuts the text)
+const igSlides = fs.readdirSync(out).filter((f) => /^ig-slide-\d+\.png$/.test(f)).sort((a, b) => parseInt(a.slice(9)) - parseInt(b.slice(9)));
+const attachments = [...slides, ...igSlides].map((f) => {
   const jpg = path.join(out, f.replace(".png", ".jpg"));
   execFileSync(FFMPEG, ["-y", "-loglevel", "error", "-i", path.join(out, f), "-q:v", "2", jpg]);
   return { filename: path.basename(jpg), path: jpg };
 });
 
-const caption = fs.existsSync(path.join(out, "caption.txt")) ? fs.readFileSync(path.join(out, "caption.txt"), "utf8") : "";
+const read = (f) => (fs.existsSync(path.join(out, f)) ? fs.readFileSync(path.join(out, f), "utf8") : "");
+const caption = read("caption-tiktok.txt")
+  ? `=== TIKTOK ===\n${read("caption-tiktok.txt")}\n=== INSTAGRAM ===\n${read("caption-instagram.txt")}`
+  : read("caption.txt");
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
 
 async function viaResend(mail) {
@@ -92,12 +97,12 @@ async function viaGmail(mail) {
   const mail = {
     to,
     subject: `FOCO Social: carousel "${slug}" (${slides.length} slides)`,
-    text: `Your carousel is ready. Slides are attached in order (slide-1 = hook).
+    text: `Your carousel is ready. TikTok: slide-1..N (9:16). Instagram: ig-slide-1..N (4:5, use these on IG so nothing gets cut). Both in order, 1 = hook.
 
-Caption to paste:
+Captions to paste:
 
 ${caption}`,
-    html: `<p>Your carousel is ready. Slides are attached in order (slide-1 = hook).</p><p><b>Caption to paste:</b></p><pre style="white-space:pre-wrap;font-family:inherit">${esc(caption)}</pre>`,
+    html: `<p>Your carousel is ready. TikTok: slide-1..N (9:16). Instagram: ig-slide-1..N (4:5, use these on IG so nothing gets cut). Both in order, 1 = hook.</p><p><b>Captions to paste:</b></p><pre style="white-space:pre-wrap;font-family:inherit">${esc(caption)}</pre>`,
     attachments,
   };
   // Prefer HTTPS (works in cloud sandboxes); fall back to Gmail SMTP

@@ -2,14 +2,14 @@
 // carousel/build.js renders each slide through this component. Layouts reuse the hand-built carousels' pieces.
 import React from "react";
 import { AbsoluteFill, Img, staticFile } from "remotion";
-import { BODY, HEAD } from "../Composition";
+import { BODY, EMOJI, HEAD } from "../Composition";
 import { Bubble, FocoCard, Photo } from "./Carousel";
 import { StepCard, TimeChip } from "./MoreCarousels";
 import { Tag } from "./MoreCarousels2";
 
 type Step = { text: string; min: number };
 export type SpecSlide =
-  | { layout: "hook"; id: string; lines: string[]; tag?: string }
+  | { layout: "hook"; id: string; lines: string[]; tag?: string; textTop?: number }
   | { layout: "pair"; id: string; topLabel: string; top: string; bottomLabel: string; bottom: string }
   | { layout: "card"; id: string; label: string; comment?: string; title: string; steps: Step[]; result?: string }
   | { layout: "step"; id: string; label: string; step: string; min: number }
@@ -18,7 +18,9 @@ export type SpecSlide =
   | { layout: "final-card"; id: string; lines: string[]; title: string; steps: Step[]; ask: string }
   | { layout: "final-phone"; id: string; lines: string[]; screenshot?: number; ask: string };
 
-export type Spec = { slug: string; slides: (SpecSlide & { query?: string; pick?: number; photo?: string })[] };
+// sticker: one big emoji per slide, TikTok-sticker style; stickerPos overrides the per-layout default [x, y]
+type SlideExtras = { query?: string; pick?: number; photo?: string; sticker?: string; stickerPos?: [number, number] };
+export type Spec = { slug: string; slides: (SpecSlide & SlideExtras)[] };
 
 const DARK = "#160F22";
 
@@ -83,7 +85,28 @@ const FocusCard: React.FC<{ stepNo: number; stepTotal: number; step: string; min
   </div>
 );
 
-export const SpecSlideView: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => {
+// Defaults keep the sticker inside the safe band and clear of the bubbles/cards for each layout
+const STICKER_POS: Record<string, [number, number]> = {
+  hook: [800, 470], pair: [790, 880], caption: [790, 880], step: [800, 880], card: [820, 470],
+  focus: [40, 430], "final-card": [80, 330], "final-phone": [700, 1000],
+};
+const Sticker: React.FC<{ emoji: string; pos: [number, number] }> = ({ emoji, pos }) => (
+  <div style={{ position: "absolute", left: pos[0], top: pos[1], fontFamily: `"${EMOJI}"`, fontSize: 130, lineHeight: 1, transform: "rotate(12deg)", filter: "drop-shadow(0 10px 18px rgba(0,0,0,0.35))", zIndex: 5 }}>
+    {emoji}
+  </div>
+);
+
+export const SpecSlideView: React.FC<{ spec: Spec; index: number }> = (props) => {
+  const s = props.spec.slides[props.index];
+  return (
+    <AbsoluteFill>
+      <SlideBody {...props} />
+      {s.sticker ? <Sticker emoji={s.sticker} pos={s.stickerPos ?? STICKER_POS[s.layout]} /> : null}
+    </AbsoluteFill>
+  );
+};
+
+const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => {
   const s = spec.slides[index];
   // finals may reuse another slide's photo (blurred)
   const photo = `${spec.slug}/${("photo" in s && s.photo) || s.id}`;
@@ -93,7 +116,8 @@ export const SpecSlideView: React.FC<{ spec: Spec; index: number }> = ({ spec, i
       return (
         <AbsoluteFill style={{ background: "#000" }}>
           <Photo name={photo} />
-          <div style={{ position: "absolute", top: 640, left: 60, right: 60 }}>
+          {/* textTop moves the hook bubbles off a face (keep the block above SAFE.bottom) */}
+          <div style={{ position: "absolute", top: s.textTop ?? 640, left: 60, right: 60 }}>
             {s.lines.map((l, i) => (
               <div key={l} style={{ marginBottom: 14 }}>
                 <Bubble size={i === 0 ? 64 : 54}>{l}</Bubble>
@@ -239,3 +263,14 @@ export const SpecSlideView: React.FC<{ spec: Spec; index: number }> = ({ spec, i
     }
   }
 };
+
+// Instagram 4:5 (1080x1350): IG crops 9:16 carousel images, cutting the top text. Every readable element already
+// sits inside TikTok's safe band (y 180-1500), so render the same 1920px slide and show exactly that band.
+export const IG_OFFSET = 140;
+export const SpecSlideIG: React.FC<{ spec: Spec; index: number }> = (props) => (
+  <AbsoluteFill style={{ overflow: "hidden", background: "#000" }}>
+    <div style={{ position: "absolute", left: 0, top: -IG_OFFSET, width: 1080, height: 1920 }}>
+      <SpecSlideView {...props} />
+    </div>
+  </AbsoluteFill>
+);

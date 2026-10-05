@@ -2,7 +2,7 @@
 // Format modeled on the Flowfy budget-app carousel: lifestyle photo + TikTok-style text bubbles + an in-app card.
 import React from "react";
 import { AbsoluteFill, Img, staticFile } from "remotion";
-import { BODY, HEAD } from "../Composition";
+import { BODY, BODY_STACK, HEAD } from "../Composition";
 
 const LILAC_BG = "#EFE7FF";
 const LILAC_TEXT = "#6D28D9";
@@ -26,14 +26,18 @@ export const SLIDES: Slide[] = [
 // TikTok "classic" text style: each line hugs its own rounded background
 export const Bubble: React.FC<{ children: React.ReactNode; bg?: string; color?: string; size?: number }> = ({ children, bg = LILAC_BG, color = LILAC_TEXT, size = 50 }) => (
   <div style={{ textAlign: "center", lineHeight: 1.55 }}>
-    <span style={{ fontFamily: BODY, fontWeight: 700, fontSize: size, color, background: bg, padding: "6px 22px", borderRadius: 18, boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone" }}>
+    <span style={{ fontFamily: BODY_STACK, fontWeight: 700, fontSize: size, color, background: bg, padding: "6px 22px", borderRadius: 18, boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone" }}>
       {typeof children === "string" ? noOrphan(children) : children}
     </span>
   </div>
 );
 
 // Glue the last two words (e.g. "real 😌", "3 weeks") so a wrapped bubble never ends with a lone word or emoji
-const noOrphan = (t: string) => t.replace(/ (\S+ \S+)$/, (_, tail: string) => " " + tail.replace(" ", " "));
+const noOrphan = (t: string) =>
+  t
+    // keep emoji runs ("✨🧹") together: word joiner between consecutive emoji
+    .replace(/(\p{Extended_Pictographic}️?)(?=\p{Extended_Pictographic})/gu, "$1⁠")
+    .replace(/ (\S+ \S+)$/, (_, tail: string) => " " + tail.replace(" ", " "));
 
 // Mimics FOCO's real "Let's break it down" screen
 export const FocoCard: React.FC<{ title: string; steps: Step[] }> = ({ title, steps }) => {
@@ -65,8 +69,21 @@ export const FocoCard: React.FC<{ title: string; steps: Step[] }> = ({ title, st
   );
 };
 
+// "Phone photo" look: slightly warm, softer saturation/contrast, film grain and a light vignette, so stock photos
+// read like casual iPhone shots and the slides share one look.
 export const Photo: React.FC<{ name: string; blur?: boolean }> = ({ name, blur }) => (
-  <Img src={staticFile(`carousel/${name}.jpg`)} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", filter: blur ? "blur(18px) brightness(0.85)" : "none", transform: blur ? "scale(1.1)" : "none" }} />
+  <>
+    <Img src={staticFile(`carousel/${name}.jpg`)} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", filter: blur ? "blur(18px) brightness(0.85)" : "saturate(0.88) contrast(0.94) sepia(0.12) brightness(1.03)", transform: blur ? "scale(1.1)" : "none" }} />
+    {blur ? null : (
+      <>
+        <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.16, mixBlendMode: "overlay" }}>
+          <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" /></filter>
+          <rect width="100%" height="100%" filter="url(#grain)" />
+        </svg>
+        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.22) 100%)" }} />
+      </>
+    )}
+  </>
 );
 
 const FinalSlide: React.FC<{ slide: Slide }> = ({ slide }) => (

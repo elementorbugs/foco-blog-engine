@@ -15,7 +15,7 @@ an in-app FOCO card, and FOCO revealed only at the end as a casual "btw". Engine
 2. **Write the spec** `foco-video/carousels/<slug>.json` (schema below). Every non-final slide needs a Pexels `query`
    (portrait lifestyle shot, describe the scene, not the emotion).
 3. `cd foco-video && node carousel/build.js <slug> photos`, then **Read** `carousel/work/<slug>/sheet.jpg`
-   (row = slide in order, column = pick 1-6). Choose photos: real/candid, room for text at top and bottom,
+   (each slide = a 6x2 block in order, picks 1-12 left-to-right, top row first). Choose photos: real/candid, room for text at top and bottom,
    no visible brand logos, no near-duplicates across slides. Write `"pick": N` into each slide.
 4. `node carousel/build.js <slug> render`, then **Read** `out/tiktok-<slug>/preview.jpg` and
    `carousel/work/<slug>/safezones.jpg`. Check: no text in a red zone, text isn't covering a face, nothing overflows,
@@ -28,13 +28,15 @@ an in-app FOCO card, and FOCO revealed only at the end as a casual "btw". Engine
 `PEXELS_KEY`, `GMAIL_USER`, `GMAIL_APP_PASSWORD` come from the environment's env vars. Rendered files live only in
 the session, so step 5 (email) is how Adi gets them. If a step fails on network (Pexels, Chrome download, SMTP),
 say exactly which host was blocked so Adi can allow it in the environment's network settings.
+Cloud sandboxes block SMTP, so cloud delivery needs `RESEND_API_KEY` (send.js switches to Resend automatically;
+verified working 2026-10-04). Always `git pull` first in a reused session so the latest scripts run.
 
 ## Spec schema
 ```json
 {
   "slug": "study",
-  "caption": "one casual hook line + a question 👇",
-  "hashtags": ["#adhd", "#adhdtiktok", "#foco"],
+  "tiktok": { "caption": "...", "hashtags": ["#adhd", "#adhdcleaning", "#adhdtiktok"] },
+  "instagram": { "caption": "...", "hashtags": ["#adhd", "#adhdtips", "#adhdcleaning"], "altText": "..." },
   "slides": [
     { "layout": "hook", "id": "hook", "query": "...", "lines": ["Big hook line", "second line"], "tag": "(small white tag)" },
     { "layout": "pair", "id": "a", "query": "...", "topLabel": "THEY SAY", "top": "...", "bottomLabel": "MY BRAIN HEARS", "bottom": "..." },
@@ -52,7 +54,36 @@ say exactly which host was blocked so Adi can allow it in the environment's netw
 - `final-phone` shows a real FOCO App Store screenshot (`public/apps/foco-<n>.png`, 3 = Break It Down).
 - Keep each bubble under ~45 characters; slides look best with one idea each.
 
+## Captions (organic reach; Adi's standing rule: every carousel ships a TikTok AND an Instagram caption)
+Spec fields (build lints them; no `caption`/`hashtags` at top level anymore):
+`"tiktok": { "caption": "...", "hashtags": [3-5] }`,
+`"instagram": { "caption": "...", "hashtags": [3-5], "altText": "..." }` → `caption-tiktok.txt` / `caption-instagram.txt`.
+
+**Both platforms are search engines now: write for search.** Put the phrase people actually type in the first line
+("how to clean your room with ADHD", "ADHD study tips", "task paralysis"), in natural words, not a keyword list.
+
+**TikTok** (lowercase, casual, ~300-600 chars)
+1. Line 1 = search phrase + the slide topic ("how to clean your room with ADHD when you can't start 🧹").
+2. 1-3 lines summarizing the value from the slides (the method/tips in plain words), so the caption stands alone.
+3. Engagement: one specific comment question ("what task have you been avoiding for weeks? 👇") + "save this for ...📌".
+4. Soft FOCO line last: "the app on the last slide is FOCO, link in bio 💜".
+
+**Instagram** (sentence case, can be longer, line breaks)
+1. First ~125 chars (shown before "more") = searchable hook headline.
+2. A short reframe line, then the takeaways as a numbered list (mirrors the slides).
+3. One result/proof line ("22 minutes later...").
+4. CTA: save + send to a friend (shares/saves drive IG reach), then "💜 The app I use ... is FOCO, link in bio."
+5. `altText`: one plain sentence describing the slides + topic keywords (accessibility and IG search).
+
+**Hashtags: 3-5 per platform**, never 20: 1 broad (#adhd), 2-3 topic-specific (#adhdcleaning #taskparalysis
+#adhdstudent ...), 1 community (#adhdtiktok on TikTok, #adhdtips on IG). Put them at the end.
+Brand/benefit rules apply: no "free", no medical promises, no em dashes, no photo credits.
+
 ## Design system (canvas 1080x1920; a phone shows it ~2.8x smaller, so 1 phone pt ≈ 2.8 px here)
+
+**Instagram:** IG crops 9:16 carousel images to 4:5, cutting top text. render also writes `ig-slide-N.png`
+(1080x1350 = the y 140-1490 band of each slide, `SpecSlideIG`). Tell Adi to upload the ig-slide files to Instagram.
+This only works because all text stays inside the safe band below, so the safe-zone rule protects IG too.
 
 **Safe zones (TikTok UI covers these; approx.):** top 0-180 (tabs + photo dots), bottom 1500-1920
 (username, caption, sound), right rail x 950-1080 at y 850-1500 (like/comment/share). Spec.tsx exports them as
@@ -98,12 +129,16 @@ no readable text in red. Photos can run under the zones, text can't.
 - Keep reveal lines short (1 line ideal, ~34 chars per line); the layout reflows below them, but more lines = smaller phone.
 - No need to write "(purple blob icon)" anymore: the icon is in the download panel. Never write "free" (AI is paid).
 
-**Emoji**
-- Max 1 emoji per bubble, at the end, never mid-sentence. Hook line 1: no emoji (line 2 may have one).
-- Pick emoji that read at thumbnail size and carry tone: 🫠 😭 💀 🙃 😵‍💫 (relatable), ✅ 💜 📌 👇 (payoff/CTA).
-  💜 is FOCO's emoji: use it on the reveal slide.
-- Never emoji in tags/labels or inside the FOCO card.
-- Known issue: renders use Windows emoji (backlog #1), so keep emoji few and simple until fixed.
+**Emoji** (Adi wants more emoji: they make slides lively; updated 2026-10-04)
+- Rendered with the bundled **Noto Color Emoji** font (`public/fonts/NotoColorEmoji.woff2`), identical on Adi's PC
+  and in the cloud. Runs of emoji are auto-glued so they never wrap onto a line alone.
+- **1-2 emoji per bubble**, at the end (a run like "🌧️🎧" counts as 2). Hook line 1 may end with one.
+- **Sticker:** add `"sticker": "🧺"` to most slides: one big tilted emoji (130px, shadow) like a TikTok sticker,
+  at a safe default spot per layout; override with `"stickerPos": [x, y]`. Check it doesn't cover a face, the step
+  chip or text; keep it inside the safe band.
+- Pick emoji that carry the slide's object or feeling: objects (🧺 📝 ⏱️ 🧹 📚) for stickers, feelings
+  (🫠 😵‍💫 🤯 😌 💀 🙃) in bubbles, ✅ for wins, 💜 for FOCO, 👇 📌 for CTAs.
+- Never emoji in tags/labels or inside the FOCO card UI.
 
 **FOCO mascot** (`foco-video/public/mascots/foco_state_<n>_<name>.png`)
 - Mascot appears **only on the final reveal slide** (built in: `5_completion` sticker next to the phone / on the card's
@@ -165,6 +200,33 @@ Slide 1 decides swipe vs scroll; spend the most effort here. Before rendering, *
 - Photo: a person or a strong scene with clear space in the middle third for the bubbles.
 
 ## Quality rules (what makes it look native, not "produced")
+- **Photos must not look like stock (Adi's standing rule, 2026-10-04).** build.js fetches 12 candidates per slide
+  and every slide gets a "phone photo" grade (warmer, softer saturation, grain, light vignette) in `Photo`.
+  **Queries:** concrete scene + light + mood, e.g. "lying on bed surrounded by clothes", "relaxing with tea at home
+  window light", "cozy tidy bedroom morning sunlight". Words that pull authentic results: natural light, window light,
+  candid, cozy, morning, overhead, close-up, POV, real home. Avoid generic queries ("woman cleaning", "messy room").
+  **Pick:** natural/window light, real homes, imperfect angles, candid moments, details (a mug, hands, fabric), warm
+  or moody tones. **Reject:** studio/plain-wall backdrops, posed smiles or kissy faces at the camera, uniforms
+  (maids, hazmat), perfect hotel rooms, obvious stock gestures, flat over-lit images, and two near-identical shots
+  from the same shoot on consecutive slides.
+- **One narrator per carousel (Adi's standing rule, 2026-10-04).** Carousels are first-person ("my room"), so a
+  different person on every slide reads as stock and kills authenticity. Default: **no faces at all** (hands,
+  objects, rooms, overhead/flat-lay, POV-from-the-eyes shots), like the Flowfy original. Write Pexels queries for that
+  ("hands folding laundry overhead", "POV laptop on bed", "messy desk top view"). If any slide shows a person, every
+  other visible person must be the **same person from the same shoot** (same photographer/series), otherwise no faces.
+  Reject candidates that break this, even if the photo is better. Adi's own photos (backlog #4) beat both.
+  **How (built in):** set `"narrator": "young blonde woman"` at the spec's top level and `"person": true` on every
+  slide that shows a person, hands or body; build.js prefixes their Pexels query with the narrator. When picking,
+  match **gender, skin tone, approximate age and hair** across all person slides (hands too: same skin tone),
+  rejecting any candidate that doesn't, even if it's a better photo. Slides with `"person": false` show only
+  objects/rooms. If the hook photo has a face in the middle third, set `"textTop"` (e.g. 1060) so the bubbles sit
+  below the face (keep the block above y 1500).
+  **Same-shoot mode (default whenever slides show a person):** set `"sameShoot": true` (+ `"narrator"`, e.g. "woman").
+  build.js searches every person slide deep, splits each photographer's results into shoots (photo IDs uploaded
+  together, `shootGap` default 3000; **use 60** to get one model, one home), ranks shoots by slides covered, and
+  person slides pick ONLY from that shoot (prints the top shoots; `"shootIndex": N` picks another). Matching hair
+  color alone is NOT enough (Adi rejected a blonde/curly/older mix): same model, same home, every person slide.
+  Adapt the copy to what the shoot actually shows if needed; object/room slides (`person: false`) stay free.
 - **Text never covers a face** or the interesting part of the photo. If it does, pick another photo
   (per-slide text position is not built yet, see backlog).
 - **Prefer Adi's own phone photos** over Pexels when he provides them: real and imperfect beats polished stock,
@@ -176,11 +238,12 @@ Slide 1 decides swipe vs scroll; spend the most effort here. Before rendering, *
 - After posting, ask Adi for views/saves/comments and log them (backlog #7), so the next concepts follow what works.
 
 ## Backlog (agreed with Adi 2026-10-04, NOT built yet; never claim these exist)
-1. iPhone-style emoji font in slides.
-2. Per-slide text position (`"textPos": "top" | "middle" | "bottom"`).
+1. ~~Consistent emoji font~~ (done 2026-10-04: Noto Color Emoji bundled; Apple emoji can't be licensed).
+2. Per-slide text position: hook has `textTop` (done 2026-10-04); other layouts still fixed.
 3. Generate 3 hook variants as rendered slide-1 options.
-4. Own-photo input: a folder Adi drops photos into, used instead of Pexels.
-5. Instagram 4:5 (1080x1350) export alongside 9:16.
+4. Own-photo input: a folder Adi drops photos into, used instead of Pexels (best fix for one-narrator consistency).
+11. ~~Same-shoot mode~~ (done 2026-10-04: `sameShoot`, `shootGap`, `shootIndex`).
+5. ~~Instagram 4:5 export~~ (done 2026-10-04: `ig-slide-N.png`, emailed with the TikTok slides).
 6. New layouts: iPhone Notes screenshot, iMessage chat, check/cross list.
 7. Performance log: carousel, date, views, saves, comments, to steer future angles.
 8. Video version (slides + transitions + music) for Reels/Shorts.

@@ -6,7 +6,7 @@ import { Thumbnail } from "./explainer/Thumbnail";
 import { CarouselSlide, SLIDES } from "./carousel/Carousel";
 import { INSTEAD, InsteadSlideView, TINY, TinySlideView } from "./carousel/MoreCarousels";
 import { PairSlideView, SETS as PAIR_SETS } from "./carousel/MoreCarousels2";
-import { SpecSlideView, type Spec } from "./carousel/Spec";
+import { SpecSlideIG, SpecSlideView, type Spec } from "./carousel/Spec";
 
 // Placeholder; carousel/build.js always passes a real spec via inputProps
 const SAMPLE_SPEC: Spec = { slug: "sample", slides: [{ layout: "final-phone", id: "x", photo: "../hook", lines: ["sample"], ask: "sample" }] };
@@ -56,6 +56,7 @@ export const RemotionRoot: React.FC = () => {
         )),
       )}
       <Still id="SpecSlide" component={SpecSlideView} defaultProps={{ spec: SAMPLE_SPEC, index: 0 }} width={1080} height={1920} />
+      <Still id="SpecSlideIG" component={SpecSlideIG} defaultProps={{ spec: SAMPLE_SPEC, index: 0 }} width={1080} height={1350} />
     </>
   );
 };
