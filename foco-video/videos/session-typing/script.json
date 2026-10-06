@@ -9,19 +9,19 @@
       "text": "",
       "visual": {
         "type": "broll",
-        "query": "typing on laptop cozy evening",
+        "query": "woman hands typing laptop desk",
         "candidates": [
-          6279143,
-          6279145,
-          39425743,
-          39425744,
-          6586282,
-          6598395,
-          5983648,
-          5704046
+          9218144,
+          9218138,
+          7393132,
+          5893710,
+          7392981,
+          8255948,
+          18019224,
+          7710423
         ],
-        "pick": 3,
-        "clipSec": 16
+        "pick": 1,
+        "clipSec": 13
       }
     },
     {
@@ -30,19 +30,19 @@
       "text": "",
       "visual": {
         "type": "broll",
-        "query": "typing on laptop cozy evening",
+        "query": "woman hands typing laptop desk",
         "candidates": [
-          6279143,
-          6279145,
-          39425743,
-          39425744,
-          6586282,
-          6598395,
-          5983648,
-          5704046
+          9218144,
+          9218138,
+          7393132,
+          5893710,
+          7392981,
+          8255948,
+          18019224,
+          7710423
         ],
-        "pick": 4,
-        "clipSec": 17
+        "pick": 2,
+        "clipSec": 15
       }
     }
   ]
