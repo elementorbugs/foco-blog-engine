@@ -5,16 +5,19 @@ import numpy as np, soundfile as sf
 from faster_whisper import WhisperModel
 
 FPS = 30
-script = json.load(open("script.json", encoding="utf8"))
+import os
+V = os.environ.get("VIDEO")  # long-video mode: ../videos/<slug>/script.json -> ../videos/<slug>/vo.json
+script = json.load(open(f"../videos/{V}/script.json" if V else "script.json", encoding="utf8"))
+VO_DIR = f"../public/video/{V}/vo" if V else "../public/vo"
 model = WhisperModel("small.en", device="cpu", compute_type="int8")
-PROMPT = "Foco, Habitica, Finch, Inflow, Goblin Tools, Magic To Do, ADHD, CBT."
+PROMPT = "Foco, ADHD, body doubling, Habitica, Finch, Inflow, Goblin Tools, CBT, freelancer."
 
 def norm(w):
     return re.sub(r"[^a-z0-9]", "", w.lower())
 
 out = []
 for s in script["scenes"]:
-    path = f"../public/vo/{s['id']}.wav"
+    path = f"{VO_DIR}/{s['id']}.wav"
     audio, sr = sf.read(path)
     if audio.ndim > 1:
         audio = audio.mean(axis=1)
@@ -45,5 +48,5 @@ for s in script["scenes"]:
     out.append({"id": s["id"], "mascot": s["mascot"], "duration": round(dur, 3), "words": timed, "env": env})
     print(s["id"], round(dur, 1), "s", len(words), "words,", len(heard), "heard")
 
-json.dump(out, open("../src/explainer/vo.json", "w", encoding="utf8"))
+json.dump(out, open(f"../videos/{V}/vo.json" if V else "../src/explainer/vo.json", "w", encoding="utf8"))
 print("total", round(sum(o["duration"] for o in out), 1), "s")

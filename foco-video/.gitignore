@@ -22,3 +22,8 @@ carousel/sh-*.jpg
 carousel/sp-*.jpg
 tts/node_modules/
 tts/*.wav
+
+# long videos: generated media (re-creatable via tts/ + videos/broll.js)
+public/video/
+videos/*/work/
+videos/*/broll-sheet.jpg
