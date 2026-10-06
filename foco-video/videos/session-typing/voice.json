@@ -1,0 +1,9 @@
+{
+  "voice": "af_heart",
+  "lines": {
+    "intro": "Hi, I'm Foco. I'll be working right here with you. Before we start, write down just the first step of your task. Not the whole thing. Just step one. Ready? Let's focus together.",
+    "work": "Okay, back to it. Pick up exactly where you left off. One small step.",
+    "break": "Nice work. That's one session done. Take five. Drink some water, stretch, and look away from the screen. I'll be right here.",
+    "outro": "And that's a wrap. We did it together. Whatever you got done today counts. See you next session."
+  }
+}

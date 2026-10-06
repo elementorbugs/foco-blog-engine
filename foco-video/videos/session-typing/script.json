@@ -1,0 +1,49 @@
+{
+  "slug": "session-typing",
+  "title": "ADHD Body Double: Work With Me (25 min sessions, rain, gentle check-ins)",
+  "voice": "af_heart",
+  "scenes": [
+    {
+      "id": "a",
+      "mascot": 1,
+      "text": "",
+      "visual": {
+        "type": "broll",
+        "query": "typing on laptop cozy evening",
+        "candidates": [
+          6279143,
+          6279145,
+          39425743,
+          39425744,
+          6586282,
+          6598395,
+          5983648,
+          5704046
+        ],
+        "pick": 3,
+        "clipSec": 16
+      }
+    },
+    {
+      "id": "b",
+      "mascot": 1,
+      "text": "",
+      "visual": {
+        "type": "broll",
+        "query": "typing on laptop cozy evening",
+        "candidates": [
+          6279143,
+          6279145,
+          39425743,
+          39425744,
+          6586282,
+          6598395,
+          5983648,
+          5704046
+        ],
+        "pick": 4,
+        "clipSec": 17
+      }
+    }
+  ]
+}
