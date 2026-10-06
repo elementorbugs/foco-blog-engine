@@ -48,8 +48,10 @@ for (let i = 0; i < N; i++) {
   b = (b + (rnd() * 2 - 1) * 0.02) * 0.995;
   pl += a * (L[i] - pl);
   pr += a * (R[i] - pr);
-  L[i] = pl + b * 0.25;
-  R[i] = pr + b * 0.25;
+  // Adi wants clean music with no noise: the brown-noise floor is off unless NOISE=1
+  const nf = process.env.NOISE === "1" ? 0.25 : 0;
+  L[i] = pl + b * nf;
+  R[i] = pr + b * nf;
 }
 
 const buf = Buffer.alloc(44 + N * 4);
