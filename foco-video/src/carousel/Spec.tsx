@@ -11,6 +11,8 @@ type Step = { text: string; min: number };
 type CalTask = { title: string; min: number; category: string };
 // chat message: "me" = blue right, "brain" = grey left, "foco" = a FOCO step card dropped into the chat
 type ChatMsg = { from: "me" | "brain" | "foco"; text: string; min?: number };
+// iPhone Notes checklist row: done = filled yellow circle; hl = the one real task (purple, bold)
+type NoteItem = { text: string; done?: boolean; hl?: boolean };
 // "life" slide inset: a real screenshot/creative (image + optional crop) or a drawn FOCO screen with this carousel's task
 type Inset =
   | { image: string; crop?: [number, number]; aspect: number }
@@ -26,6 +28,8 @@ export type SpecSlide =
   | { layout: "focus"; id: string; label: string; comment?: string; stepNo: number; stepTotal: number; step: string; min: number; sound: string; result?: string }
   | { layout: "life"; id: string; label: string; comment?: string; chip?: string; side?: "left" | "right"; inset: Inset }
   | { layout: "chat"; id: string; contact?: string; time?: string; messages: ChatMsg[]; title?: string[] }
+  | { layout: "notes"; id: string; noteTitle: string; date?: string; items: NoteItem[]; scribble?: string; foco?: Step; title?: string[] }
+  | { layout: "versus"; id: string; time: string; plan: string; reality?: string; foco?: Step; title?: string[] }
   | { layout: "scan"; id: string; label: string; comment?: string; items: string[]; result?: string }
   | { layout: "calendar"; id: string; label: string; comment?: string; title?: string; min?: number; category?: string; tasks?: CalTask[]; result?: string; breakdownButton?: boolean }
   | { layout: "inputs"; id: string; label: string; comment?: string; result?: string }
@@ -115,6 +119,66 @@ const ScanPhone: React.FC<{ items: string[] }> = ({ items }) => {
 };
 
 // iMessage-style thread between "me" and "my brain" (the voice of ADHD). Light panel on a blurred photo.
+// the dark "FOCO · STEP 1" card used inside chat / notes / versus slides (one per carousel, at the turn)
+const FocoStep: React.FC<{ text: string; min?: number; width?: number }> = ({ text, min, width = 700 }) => (
+  <div style={{ width, borderRadius: 28, padding: "20px 24px", background: "#130A22", border: "2px solid rgba(167,139,250,0.4)", display: "flex", alignItems: "center", gap: 18 }}>
+    <Img src={staticFile("apps/foco-icon.png")} style={{ width: 64, height: 64, borderRadius: 16 }} />
+    <div style={{ flex: 1 }}>
+      <div style={{ fontFamily: BODY, fontWeight: 700, fontSize: 22, letterSpacing: 3, color: "#A78BFA" }}>FOCO · STEP 1</div>
+      <div style={{ fontFamily: BODY, fontWeight: 700, fontSize: 36, color: "#FFFFFF", lineHeight: 1.2 }}>{text}</div>
+    </div>
+    {min ? <div style={{ fontFamily: BODY, fontWeight: 800, fontSize: 30, color: "#FFFFFF", border: "2px solid rgba(167,139,250,0.6)", borderRadius: 14, padding: "6px 12px" }}>{min} min</div> : null}
+  </div>
+);
+
+const NOTES_YELLOW = "#E3A008";
+// iPhone Notes page (checklist) + optional purple handwritten scribble + optional FOCO step under the note
+const NotesPage: React.FC<{ noteTitle: string; date?: string; items: NoteItem[]; scribble?: string; foco?: Step }> = ({ noteTitle, date, items, scribble, foco }) => (
+  <div style={{ width: 880, borderRadius: 44, background: "#FFFFFF", boxShadow: "0 30px 80px rgba(0,0,0,0.35)", overflow: "hidden", padding: "26px 40px 36px" }}>
+    <div style={{ display: "flex", justifyContent: "space-between", fontFamily: BODY, fontWeight: 600, fontSize: 32, color: NOTES_YELLOW }}>
+      <span>‹ Notes</span>
+      <span style={{ fontWeight: 700 }}>Done</span>
+    </div>
+    {date ? <div style={{ textAlign: "center", fontFamily: BODY, fontWeight: 500, fontSize: 24, color: "#8E8E93", marginTop: 14 }}>{date}</div> : null}
+    <div style={{ fontFamily: `${BODY}, "${EMOJI}"`, fontWeight: 800, fontSize: 54, color: DARK, marginTop: 14, lineHeight: 1.15 }}>{noteTitle}</div>
+    <div style={{ marginTop: 18 }}>
+      {items.map((it, i) => (
+        <div key={i} style={{ display: "flex", alignItems: "center", gap: 22, padding: "10px 0" }}>
+          <div style={{ flex: "none", width: 46, height: 46, borderRadius: 999, border: it.done ? "none" : "3px solid #C7C7CC", background: it.done ? NOTES_YELLOW : "transparent", color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: BODY, fontWeight: 800, fontSize: 28 }}>{it.done ? "✓" : ""}</div>
+          <div style={{ fontFamily: `${BODY}, "${EMOJI}"`, fontWeight: it.hl ? 800 : 500, fontSize: 40, lineHeight: 1.25, color: it.hl ? "#7C3AED" : DARK }}>{it.text}</div>
+        </div>
+      ))}
+    </div>
+    {scribble ? <div style={{ fontFamily: `"${HAND}", "${EMOJI}"`, fontSize: 58, color: "#7C3AED", marginTop: 10, transform: "rotate(-2deg)", lineHeight: 1.1 }}>{scribble}</div> : null}
+    {foco ? <div style={{ marginTop: 22, display: "flex", justifyContent: "center" }}><FocoStep text={foco.text} min={foco.min} width={800} /></div> : null}
+  </div>
+);
+
+// "plan vs reality" card: lilac PLAN row, then orange REALITY row (or a FOCO step when reality finally beats the plan)
+const VersusCard: React.FC<{ time: string; plan: string; reality?: string; foco?: Step }> = ({ time, plan, reality, foco }) => (
+  <div style={{ width: 880, borderRadius: 44, background: "rgba(11,10,22,0.94)", border: "2px solid rgba(167,139,250,0.35)", boxShadow: "0 30px 80px rgba(0,0,0,0.45)", padding: "30px 36px 36px" }}>
+    <div style={{ display: "inline-block", fontFamily: BODY, fontWeight: 800, fontSize: 30, color: "#FFFFFF", background: "#7C3AED", borderRadius: 14, padding: "6px 18px" }}>{time}</div>
+    <div style={{ marginTop: 22, fontFamily: BODY, fontWeight: 800, fontSize: 26, letterSpacing: 4, color: "#A78BFA" }}>THE PLAN</div>
+    <div style={{ fontFamily: `${BODY}, "${EMOJI}"`, fontWeight: 600, fontSize: 44, lineHeight: 1.25, color: "#B8B0CC", marginTop: 6 }}>{plan}</div>
+    <div style={{ height: 2, background: "rgba(167,139,250,0.25)", margin: "26px 0 22px" }} />
+    <div style={{ fontFamily: BODY, fontWeight: 800, fontSize: 26, letterSpacing: 4, color: foco ? "#A78BFA" : "#FB923C" }}>{foco ? "WHAT ACTUALLY HAPPENED" : "REALITY"}</div>
+    {reality ? <div style={{ fontFamily: `"${HAND}", "${EMOJI}"`, fontSize: 70, lineHeight: 1.1, color: "#FFFFFF", marginTop: 8 }}>{reality}</div> : null}
+    {foco ? <div style={{ marginTop: 16 }}><FocoStep text={foco.text} min={foco.min} width={808} /></div> : null}
+  </div>
+);
+
+// hook title for chat / notes / versus: purple audience label + white handwritten punchline
+const TopTitle: React.FC<{ lines?: string[]; duo: boolean }> = ({ lines, duo }) =>
+  lines ? (
+    <div style={{ position: "absolute", top: 210, left: 60, right: 60 }}>
+      {lines.map((l, i) => (
+        <div key={l} style={{ marginBottom: 12 }}>
+          {i === 0 ? <Bubble size={44} bg="#7C3AED" color="#FFFFFF">{l}</Bubble> : <Voice duo={duo} size={58}>{l}</Voice>}
+        </div>
+      ))}
+    </div>
+  ) : null;
+
 const ChatThread: React.FC<{ contact: string; time?: string; messages: ChatMsg[] }> = ({ contact, time, messages }) => (
   <div style={{ width: 880, borderRadius: 44, background: "rgba(255,255,255,0.97)", boxShadow: "0 30px 80px rgba(0,0,0,0.35)", overflow: "hidden" }}>
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", padding: "22px 0 16px", background: "#F6F6F8", borderBottom: "2px solid #E5E5EA" }}>
@@ -126,14 +190,7 @@ const ChatThread: React.FC<{ contact: string; time?: string; messages: ChatMsg[]
       {messages.map((m, i) =>
         m.from === "foco" ? (
           <div key={i} style={{ margin: "14px 0", display: "flex", justifyContent: "center" }}>
-            <div style={{ width: 700, borderRadius: 28, padding: "20px 24px", background: "#130A22", border: "2px solid rgba(167,139,250,0.4)", display: "flex", alignItems: "center", gap: 18 }}>
-              <Img src={staticFile("apps/foco-icon.png")} style={{ width: 64, height: 64, borderRadius: 16 }} />
-              <div style={{ flex: 1 }}>
-                <div style={{ fontFamily: BODY, fontWeight: 700, fontSize: 22, letterSpacing: 3, color: "#A78BFA" }}>FOCO · STEP 1</div>
-                <div style={{ fontFamily: BODY, fontWeight: 700, fontSize: 36, color: "#FFFFFF", lineHeight: 1.2 }}>{m.text}</div>
-              </div>
-              {m.min ? <div style={{ fontFamily: BODY, fontWeight: 800, fontSize: 30, color: "#FFFFFF", border: "2px solid rgba(167,139,250,0.6)", borderRadius: 14, padding: "6px 12px" }}>{m.min} min</div> : null}
-            </div>
+            <FocoStep text={m.text} min={m.min} />
           </div>
         ) : (
           <div key={i} style={{ display: "flex", justifyContent: m.from === "me" ? "flex-end" : "flex-start", margin: "8px 0" }}>
@@ -241,7 +298,9 @@ const FocusCard: React.FC<{ stepNo: number; stepTotal: number; step: string; min
 // Defaults keep the sticker inside the safe band and clear of the bubbles/cards for each layout
 const STICKER_POS: Record<string, [number, number]> = {
   hook: [800, 470], pair: [790, 880], caption: [790, 880], step: [800, 880], card: [820, 470],
-  focus: [40, 430], phone: [800, 900], inputs: [820, 300], calendar: [820, 300], scan: [800, 900], chat: [800, 1250], life: [800, 1150], "final-card": [80, 330], "final-phone": [700, 1000],
+  focus: [40, 430], phone: [800, 900], inputs: [820, 300], calendar: [820, 300], scan: [800, 900], chat: [800, 1250],
+  notes: [800, 1250],
+  versus: [800, 1250], life: [800, 1150], "final-card": [80, 330], "final-phone": [700, 1000],
 };
 const Sticker: React.FC<{ emoji: string; pos: [number, number] }> = ({ emoji, pos }) => (
   <div style={{ position: "absolute", left: pos[0], top: pos[1], fontFamily: `"${EMOJI}"`, fontSize: 130, lineHeight: 1, transform: "rotate(12deg)", filter: "drop-shadow(0 10px 18px rgba(0,0,0,0.35))", zIndex: 5 }}>
@@ -393,22 +452,18 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
       );
     }
     case "chat":
-      // title (hook only): audience label + handwritten punchline above the thread
+    case "notes":
+    case "versus":
+      // sharp narrator photo, card bottom-anchored at y 1470 so her face shows above it; title only on the hook
       return (
         <AbsoluteFill style={{ background: "#000" }}>
           <Photo name={photo} />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(10,4,16,0.45) 0%, transparent 25%, transparent 55%, rgba(10,4,16,0.35) 100%)" }} />
-          {s.title ? (
-            <div style={{ position: "absolute", top: 210, left: 60, right: 60 }}>
-              {s.title.map((l, i) => (
-                <div key={l} style={{ marginBottom: 12 }}>
-                  {i === 0 ? <Bubble size={44} bg="#7C3AED" color="#FFFFFF">{l}</Bubble> : <Voice duo={duo} size={58}>{l}</Voice>}
-                </div>
-              ))}
-            </div>
-          ) : null}
+          <TopTitle lines={s.title} duo={duo} />
           <div style={{ position: "absolute", bottom: 1920 - 1470, left: 70 }}>
-            <ChatThread contact={s.contact ?? "My brain"} time={s.time} messages={s.messages} />
+            {s.layout === "chat" ? <ChatThread contact={s.contact ?? "My brain"} time={s.time} messages={s.messages} /> : null}
+            {s.layout === "notes" ? <NotesPage noteTitle={s.noteTitle} date={s.date} items={s.items} scribble={s.scribble} foco={s.foco} /> : null}
+            {s.layout === "versus" ? <VersusCard time={s.time} plan={s.plan} reality={s.reality} foco={s.foco} /> : null}
           </div>
         </AbsoluteFill>
       );

@@ -101,6 +101,18 @@ verified working 2026-10-04). Always `git pull` first in a reused session so the
   "contact"? }`. `title` only on the hook (purple label + Caveat punchline). A "foco" message renders as a dark
   "FOCO · STEP 1" card with a min chip: use it once, at the turn. Max 3 messages per slide; the brain is the funny one
   (sabotage, fake-productive excuses), the narrator is plain. Example: `texting-my-brain.json`.
+- `notes` = FORMAT "iPhone Notes" (2026-10-07): an iPhone Notes checklist page over the sharp narrator photo (same
+  bottom-anchored card as `chat`). `{ "layout": "notes", "id", "own", "noteTitle", "date"?, "items": [{ "text",
+  "done"?, "hl"? }], "scribble"?: "purple handwritten aside", "foco"?: { "text", "min" }, "title"?: [label, punchline] }`.
+  Story shape: the ONE real task (hl) stays unchecked while avoidance tasks pile up checked, then FOCO step, then the
+  real task checked. Example: `notes-instead.json`.
+- `versus` = FORMAT "Plan vs reality" (2026-10-07): dark card, time chip, THE PLAN (muted) vs REALITY (white
+  handwriting). `{ "layout": "versus", "id", "own", "time", "plan", "reality"?, "foco"?: Step, "title"? }`. On the turn
+  slide pass `foco` instead of `reality` ("WHAT ACTUALLY HAPPENED" + FOCO step): reality finally beats the plan.
+  Example: `plan-vs-reality.json`.
+- chat/notes/versus photos: the card covers y ~1000-1470, so pick Maya shots with her face in the TOP half and check
+  every slide in safezones.jpg (swap any where the face is hidden). More chat examples: chat-all-urgent,
+  chat-not-lazy, chat-off-at-5, chat-redesign.
 - `"own": "carousels/own/<file>.jpg"` on a slide uses Adi's own phone photo instead of Pexels (no `query`/`pick`).
 - Keep each bubble under ~45 characters; slides look best with one idea each.
 
