@@ -9,6 +9,8 @@ import { Tag } from "./MoreCarousels2";
 
 type Step = { text: string; min: number };
 type CalTask = { title: string; min: number; category: string };
+// chat message: "me" = blue right, "brain" = grey left, "foco" = a FOCO step card dropped into the chat
+type ChatMsg = { from: "me" | "brain" | "foco"; text: string; min?: number };
 // "life" slide inset: a real screenshot/creative (image + optional crop) or a drawn FOCO screen with this carousel's task
 type Inset =
   | { image: string; crop?: [number, number]; aspect: number }
@@ -23,6 +25,7 @@ export type SpecSlide =
   | { layout: "caption"; id: string; label: string; comment?: string; time?: string }
   | { layout: "focus"; id: string; label: string; comment?: string; stepNo: number; stepTotal: number; step: string; min: number; sound: string; result?: string }
   | { layout: "life"; id: string; label: string; comment?: string; chip?: string; side?: "left" | "right"; inset: Inset }
+  | { layout: "chat"; id: string; contact?: string; time?: string; messages: ChatMsg[]; title?: string[] }
   | { layout: "scan"; id: string; label: string; comment?: string; items: string[]; result?: string }
   | { layout: "calendar"; id: string; label: string; comment?: string; title?: string; min?: number; category?: string; tasks?: CalTask[]; result?: string; breakdownButton?: boolean }
   | { layout: "inputs"; id: string; label: string; comment?: string; result?: string }
@@ -110,6 +113,37 @@ const ScanPhone: React.FC<{ items: string[] }> = ({ items }) => {
     </div>
   );
 };
+
+// iMessage-style thread between "me" and "my brain" (the voice of ADHD). Light panel on a blurred photo.
+const ChatThread: React.FC<{ contact: string; time?: string; messages: ChatMsg[] }> = ({ contact, time, messages }) => (
+  <div style={{ width: 880, borderRadius: 44, background: "rgba(255,255,255,0.97)", boxShadow: "0 30px 80px rgba(0,0,0,0.35)", overflow: "hidden" }}>
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", padding: "22px 0 16px", background: "#F6F6F8", borderBottom: "2px solid #E5E5EA" }}>
+      <div style={{ width: 84, height: 84, borderRadius: 999, background: "linear-gradient(135deg, #A78BFA, #7C3AED)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: `"${EMOJI}"`, fontSize: 46 }}>🧠</div>
+      <div style={{ marginTop: 8, fontFamily: BODY, fontWeight: 700, fontSize: 30, color: DARK }}>{contact}</div>
+    </div>
+    <div style={{ padding: "18px 26px 30px" }}>
+      {time ? <div style={{ textAlign: "center", fontFamily: BODY, fontWeight: 600, fontSize: 24, color: "#8E8E93", marginBottom: 14 }}>{time}</div> : null}
+      {messages.map((m, i) =>
+        m.from === "foco" ? (
+          <div key={i} style={{ margin: "14px 0", display: "flex", justifyContent: "center" }}>
+            <div style={{ width: 700, borderRadius: 28, padding: "20px 24px", background: "#130A22", border: "2px solid rgba(167,139,250,0.4)", display: "flex", alignItems: "center", gap: 18 }}>
+              <Img src={staticFile("apps/foco-icon.png")} style={{ width: 64, height: 64, borderRadius: 16 }} />
+              <div style={{ flex: 1 }}>
+                <div style={{ fontFamily: BODY, fontWeight: 700, fontSize: 22, letterSpacing: 3, color: "#A78BFA" }}>FOCO · STEP 1</div>
+                <div style={{ fontFamily: BODY, fontWeight: 700, fontSize: 36, color: "#FFFFFF", lineHeight: 1.2 }}>{m.text}</div>
+              </div>
+              {m.min ? <div style={{ fontFamily: BODY, fontWeight: 800, fontSize: 30, color: "#FFFFFF", border: "2px solid rgba(167,139,250,0.6)", borderRadius: 14, padding: "6px 12px" }}>{m.min} min</div> : null}
+            </div>
+          </div>
+        ) : (
+          <div key={i} style={{ display: "flex", justifyContent: m.from === "me" ? "flex-end" : "flex-start", margin: "8px 0" }}>
+            <div style={{ maxWidth: 620, padding: "16px 26px", borderRadius: 36, background: m.from === "me" ? "#0A84FF" : "#E9E9EB", color: m.from === "me" ? "#FFFFFF" : DARK, fontFamily: `${BODY}, "${EMOJI}"`, fontWeight: 600, fontSize: 40, lineHeight: 1.25 }}>{m.text}</div>
+          </div>
+        ),
+      )}
+    </div>
+  </div>
+);
 
 // FOCO's Sessions (calendar) day view with ONE task, drawn so the task name/minutes match the rest of the carousel
 // exactly, plus the optional one-tap AI breakdown button (it is a choice, never automatic).
@@ -207,7 +241,7 @@ const FocusCard: React.FC<{ stepNo: number; stepTotal: number; step: string; min
 // Defaults keep the sticker inside the safe band and clear of the bubbles/cards for each layout
 const STICKER_POS: Record<string, [number, number]> = {
   hook: [800, 470], pair: [790, 880], caption: [790, 880], step: [800, 880], card: [820, 470],
-  focus: [40, 430], phone: [800, 900], inputs: [820, 300], calendar: [820, 300], scan: [800, 900], life: [800, 1150], "final-card": [80, 330], "final-phone": [700, 1000],
+  focus: [40, 430], phone: [800, 900], inputs: [820, 300], calendar: [820, 300], scan: [800, 900], chat: [800, 1250], life: [800, 1150], "final-card": [80, 330], "final-phone": [700, 1000],
 };
 const Sticker: React.FC<{ emoji: string; pos: [number, number] }> = ({ emoji, pos }) => (
   <div style={{ position: "absolute", left: pos[0], top: pos[1], fontFamily: `"${EMOJI}"`, fontSize: 130, lineHeight: 1, transform: "rotate(12deg)", filter: "drop-shadow(0 10px 18px rgba(0,0,0,0.35))", zIndex: 5 }}>
@@ -358,6 +392,26 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
         </AbsoluteFill>
       );
     }
+    case "chat":
+      // title (hook only): audience label + handwritten punchline above the thread
+      return (
+        <AbsoluteFill style={{ background: "#000" }}>
+          <Photo name={photo} />
+          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(10,4,16,0.45) 0%, transparent 25%, transparent 55%, rgba(10,4,16,0.35) 100%)" }} />
+          {s.title ? (
+            <div style={{ position: "absolute", top: 210, left: 60, right: 60 }}>
+              {s.title.map((l, i) => (
+                <div key={l} style={{ marginBottom: 12 }}>
+                  {i === 0 ? <Bubble size={44} bg="#7C3AED" color="#FFFFFF">{l}</Bubble> : <Voice duo={duo} size={58}>{l}</Voice>}
+                </div>
+              ))}
+            </div>
+          ) : null}
+          <div style={{ position: "absolute", bottom: 1920 - 1470, left: 70 }}>
+            <ChatThread contact={s.contact ?? "My brain"} time={s.time} messages={s.messages} />
+          </div>
+        </AbsoluteFill>
+      );
     case "scan":
       return (
         <AbsoluteFill style={{ background: "#000" }}>

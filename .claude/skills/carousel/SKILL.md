@@ -94,6 +94,13 @@ verified working 2026-10-04). Always `git pull` first in a reused session so the
   shutter), drawn so the list matches the carousel's tasks: `{ "layout": "scan", "id", "photo"|"query", "label",
   "comment"?, "items": ["Email my boss", ...], "result"? }` (background photo is blurred). Use it instead of stock
   "phone photographing something" photos, which never show a to-do list (Adi rejected a book being photographed).
+- `chat` = FORMAT "Texting my ADHD brain" (2026-10-07, built because Adi said the caption/card format got boring):
+  each slide is an iMessage thread between the narrator ("me", blue right) and "My brain" (grey left), over a sharp
+  Maya photo (thread bottom-anchored at y 1470 so her face shows above it). `{ "layout": "chat", "id", "own"|"query",
+  "time": "9:05 AM", "messages": [{ "from": "me"|"brain"|"foco", "text", "min"? }], "title"?: [label, punchline],
+  "contact"? }`. `title` only on the hook (purple label + Caveat punchline). A "foco" message renders as a dark
+  "FOCO · STEP 1" card with a min chip: use it once, at the turn. Max 3 messages per slide; the brain is the funny one
+  (sabotage, fake-productive excuses), the narrator is plain. Example: `texting-my-brain.json`.
 - `"own": "carousels/own/<file>.jpg"` on a slide uses Adi's own phone photo instead of Pexels (no `query`/`pick`).
 - Keep each bubble under ~45 characters; slides look best with one idea each.
 
