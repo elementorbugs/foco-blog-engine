@@ -10,7 +10,7 @@ an in-app FOCO card, and FOCO revealed only at the end as a casual "btw". Engine
 
 ## CURRENT DEFAULTS (Adi, 2026-10-07): these win over anything older below
 1. **Format: rotate the approved formats**, never the same one twice in a row: `chat` ("Texting my ADHD brain",
-   iMessage thread me vs my brain), `notes` (iPhone Notes checklist), `versus` (plan vs reality). Adi: "loved the new
+   iMessage thread me vs my brain), `notes` (iPhone Notes checklist), `versus` (plan vs reality), `checklist` (✅/❌ things I tried). Adi: "loved the new
    designs". The older caption/card photo format felt boring: use it only when a new idea needs it. When a format
    starts to feel repetitive, invent a NEW format rather than rewording the old one.
 2. **Simple message:** 5 slides = hook (the pain in the audience's own words) -> low point -> FOCO step -> relief ->
@@ -30,7 +30,7 @@ an in-app FOCO card, and FOCO revealed only at the end as a casual "btw". Engine
 **Full format catalog (ALL kept and working; details + schema in "Spec schema" below):**
 | group | layouts | example carousel |
 |---|---|---|
-| NEW story formats (preferred) | `chat`, `notes`, `versus` | texting-my-brain, chat-*, simple-video-editor, notes-instead, plan-vs-reality |
+| NEW story formats (preferred) | `chat`, `notes`, `versus`, `checklist` | texting-my-brain, chat-*, simple-video-editor, notes-instead, plan-vs-reality, checklist-tried |
 | photo + text bubbles | `hook`, `caption`, `pair` (they say / my brain hears) | freelancer-proposal, angle-* |
 | FOCO process / proof | `card` (breakdown), `step`, `focus` (timer + sound), `calendar`, `inputs` (speak/scan/chat), `phone` (real screenshot), `scan` (paper list scan) | head-to-done, snap-your-list |
 | real life + app inset | `life` | life-moments, just-say-it |
@@ -148,7 +148,12 @@ verified working 2026-10-04). Always `git pull` first in a reused session so the
   handwriting). `{ "layout": "versus", "id", "own", "time", "plan", "reality"?, "foco"?: Step, "title"? }`. On the turn
   slide pass `foco` instead of `reality` ("WHAT ACTUALLY HAPPENED" + FOCO step): reality finally beats the plan.
   Example: `plan-vs-reality.json`.
-- chat/notes/versus photos: the card covers y ~1000-1470, so pick Maya shots with her face in the TOP half and check
+- `checklist` = FORMAT "Things I tried ✅/❌" (2026-10-07): white card, heading + rows; `ok:false` = red ✕,
+  struck-out grey text + red handwritten `note`; `ok:true` = green ✓ bold. `{ "layout": "checklist", "id", "query"|"own",
+  "heading", "items": [{ "text", "ok", "note"? }], "foco"?: Step, "title"? }`. The list grows slide by slide (2-3 ❌ per
+  slide), the last row is the ✅ "Telling FOCO the task" + FOCO step. Works faceless (objects that match each ❌: planner,
+  alarm clock, sticky notes), which also covers the faceless-POV member of the cast. Example: `checklist-tried.json`.
+- chat/notes/versus/checklist photos: the card covers y ~1000-1470, so pick Maya shots with her face in the TOP half and check
   every slide in safezones.jpg (swap any where the face is hidden). More chat examples: chat-all-urgent,
   chat-not-lazy, chat-off-at-5, chat-redesign.
 - `"own": "carousels/own/<file>.jpg"` on a slide uses Adi's own phone photo instead of Pexels (no `query`/`pick`).
@@ -459,7 +464,7 @@ Keep hook text off the face (`textTop` below the chin) and out of the right rail
 4. ~~Own-photo input~~ (done 2026-10-05: `"own"` per slide; photos live in `foco-video/carousels/own/`).
 11. ~~Same-shoot mode~~ (done 2026-10-04: `sameShoot`, `shootGap`, `shootIndex`).
 5. ~~Instagram 4:5 export~~ (done 2026-10-04: `ig-slide-N.png`, emailed with the TikTok slides).
-6. ~~New layouts: iPhone Notes, iMessage chat~~ (done 2026-10-07: `notes`, `chat`, `versus`); check/cross list still open.
+6. ~~New layouts: iPhone Notes, iMessage chat~~ (done 2026-10-07: `notes`, `chat`, `versus`); `checklist` done 2026-10-07 too.
 7. Performance log: carousel, date, views, saves, comments, to steer future angles.
 8. Video version (slides + transitions + music) for Reels/Shorts.
 9. Phone preview page with download buttons when Adi works from the phone.

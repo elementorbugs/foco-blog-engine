@@ -12,6 +12,8 @@ type CalTask = { title: string; min: number; category: string };
 // chat message: "me" = blue right, "brain" = grey left, "foco" = a FOCO step card dropped into the chat
 type ChatMsg = { from: "me" | "brain" | "foco"; text: string; min?: number };
 // iPhone Notes checklist row: done = filled yellow circle; hl = the one real task (purple, bold)
+// checklist row: ok=false = red ✗ + struck-out text + optional handwritten note; ok=true = green ✓
+type CheckItem = { text: string; ok: boolean; note?: string };
 type NoteItem = { text: string; done?: boolean; hl?: boolean };
 // "life" slide inset: a real screenshot/creative (image + optional crop) or a drawn FOCO screen with this carousel's task
 type Inset =
@@ -29,6 +31,7 @@ export type SpecSlide =
   | { layout: "life"; id: string; label: string; comment?: string; chip?: string; side?: "left" | "right"; inset: Inset }
   | { layout: "chat"; id: string; contact?: string; time?: string; messages: ChatMsg[]; title?: string[] }
   | { layout: "notes"; id: string; noteTitle: string; date?: string; items: NoteItem[]; scribble?: string; foco?: Step; title?: string[] }
+  | { layout: "checklist"; id: string; heading: string; items: CheckItem[]; foco?: Step; title?: string[] }
   | { layout: "versus"; id: string; time: string; plan: string; reality?: string; foco?: Step; title?: string[] }
   | { layout: "scan"; id: string; label: string; comment?: string; items: string[]; result?: string }
   | { layout: "calendar"; id: string; label: string; comment?: string; title?: string; min?: number; category?: string; tasks?: CalTask[]; result?: string; breakdownButton?: boolean }
@@ -151,6 +154,24 @@ const NotesPage: React.FC<{ noteTitle: string; date?: string; items: NoteItem[];
     </div>
     {scribble ? <div style={{ fontFamily: `"${HAND}", "${EMOJI}"`, fontSize: 58, color: "#7C3AED", marginTop: 10, transform: "rotate(-2deg)", lineHeight: 1.1 }}>{scribble}</div> : null}
     {foco ? <div style={{ marginTop: 22, display: "flex", justifyContent: "center" }}><FocoStep text={foco.text} min={foco.min} width={800} /></div> : null}
+  </div>
+);
+
+// ✅/❌ list: "things I tried" crossed out one by one, then the one that worked (+ optional FOCO step)
+const Checklist: React.FC<{ heading: string; items: CheckItem[]; foco?: Step }> = ({ heading, items, foco }) => (
+  <div style={{ width: 880, borderRadius: 44, background: "#FFFFFF", boxShadow: "0 30px 80px rgba(0,0,0,0.35)", padding: "32px 40px 36px" }}>
+    <div style={{ fontFamily: `${BODY}, "${EMOJI}"`, fontWeight: 800, fontSize: 44, color: DARK, lineHeight: 1.2 }}>{heading}</div>
+    <div style={{ height: 3, background: "#EFE7FF", margin: "18px 0 8px" }} />
+    {items.map((it, i) => (
+      <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 22, padding: "12px 0" }}>
+        <div style={{ flex: "none", width: 50, height: 50, borderRadius: 14, background: it.ok ? "#22C55E" : "#EF4444", color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: BODY, fontWeight: 800, fontSize: 32 }}>{it.ok ? "✓" : "✕"}</div>
+        <div>
+          <div style={{ fontFamily: `${BODY}, "${EMOJI}"`, fontWeight: it.ok ? 800 : 600, fontSize: 40, lineHeight: 1.25, color: it.ok ? "#15803D" : "#8E8E93", textDecoration: it.ok ? "none" : "line-through", textDecorationThickness: 3 }}>{it.text}</div>
+          {it.note ? <div style={{ fontFamily: `"${HAND}", "${EMOJI}"`, fontSize: 50, lineHeight: 1.05, color: it.ok ? "#15803D" : "#DC2626" }}>{it.note}</div> : null}
+        </div>
+      </div>
+    ))}
+    {foco ? <div style={{ marginTop: 14, display: "flex", justifyContent: "center" }}><FocoStep text={foco.text} min={foco.min} width={800} /></div> : null}
   </div>
 );
 
@@ -300,7 +321,8 @@ const STICKER_POS: Record<string, [number, number]> = {
   hook: [800, 470], pair: [790, 880], caption: [790, 880], step: [800, 880], card: [820, 470],
   focus: [40, 430], phone: [800, 900], inputs: [820, 300], calendar: [820, 300], scan: [800, 900], chat: [800, 1250],
   notes: [800, 1250],
-  versus: [800, 1250], life: [800, 1150], "final-card": [80, 330], "final-phone": [700, 1000],
+  versus: [800, 1250],
+  checklist: [800, 1250], life: [800, 1150], "final-card": [80, 330], "final-phone": [700, 1000],
 };
 const Sticker: React.FC<{ emoji: string; pos: [number, number] }> = ({ emoji, pos }) => (
   <div style={{ position: "absolute", left: pos[0], top: pos[1], fontFamily: `"${EMOJI}"`, fontSize: 130, lineHeight: 1, transform: "rotate(12deg)", filter: "drop-shadow(0 10px 18px rgba(0,0,0,0.35))", zIndex: 5 }}>
@@ -454,6 +476,7 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
     case "chat":
     case "notes":
     case "versus":
+    case "checklist":
       // sharp narrator photo, card bottom-anchored at y 1470 so her face shows above it; title only on the hook
       return (
         <AbsoluteFill style={{ background: "#000" }}>
@@ -463,6 +486,7 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
           <div style={{ position: "absolute", bottom: 1920 - 1470, left: 70 }}>
             {s.layout === "chat" ? <ChatThread contact={s.contact ?? "My brain"} time={s.time} messages={s.messages} /> : null}
             {s.layout === "notes" ? <NotesPage noteTitle={s.noteTitle} date={s.date} items={s.items} scribble={s.scribble} foco={s.foco} /> : null}
+            {s.layout === "checklist" ? <Checklist heading={s.heading} items={s.items} foco={s.foco} /> : null}
             {s.layout === "versus" ? <VersusCard time={s.time} plan={s.plan} reality={s.reality} foco={s.foco} /> : null}
           </div>
         </AbsoluteFill>
