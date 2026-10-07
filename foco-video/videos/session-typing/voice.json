@@ -1,0 +1,10 @@
+{
+  "voice": "af_heart",
+  "lines": {
+    "intro": "Hi, I'm Foco. Let's work together for one hour. Halfway through, we'll take a five minute break. Before we start, write down just the first tiny step of your task. Ready? Let's go.",
+    "cheer": "Hey. You're still here, and you're still working. That's huge. Keep going.",
+    "break": "Great job. That's thirty minutes. Time for a five minute break. I paused the timer. Drink some water, and stretch.",
+    "back": "Break's over. The timer is running again. Let's continue, right where you left off.",
+    "outro": "That's a full hour. You did it. Whatever you got done today counts. See you next session."
+  }
+}

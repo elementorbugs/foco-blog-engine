@@ -1,0 +1,209 @@
+{
+  "slug": "body-doubling",
+  "title": "ADHD Body Doubling: What It Is + How to Do It When You Work Alone",
+  "voice": "af_heart",
+  "scenes": [
+    {
+      "id": "hook",
+      "mascot": 6,
+      "text": "Have you ever noticed that you can finally do the thing you've been avoiding for days, the second someone else is in the room? They don't help. They don't even talk. They're just there. That has a name. It's called body doubling. And if you work alone, it might be the missing piece.",
+      "visual": {
+        "type": "broll",
+        "query": "woman working on laptop at home desk",
+        "overlay": [
+          {
+            "at": "That has a name",
+            "text": "Body doubling"
+          }
+        ],
+        "candidates": [
+          8279288,
+          9908982,
+          7204570,
+          7681386,
+          7204572,
+          8145095,
+          8037824,
+          8435483
+        ],
+        "pick": 5,
+        "clipSec": 15
+      }
+    },
+    {
+      "id": "what",
+      "mascot": 1,
+      "text": "Body doubling means doing a task while another person is present. In person, on a video call, or even in a recorded video. The other person isn't your teacher or your boss. They're working on their own stuff. Their only job is to be there.",
+      "visual": {
+        "type": "bullets",
+        "title": "What is body doubling?",
+        "items": [
+          {
+            "at": "In person",
+            "text": "In person 🧑‍🤝‍🧑"
+          },
+          {
+            "at": "on a video call",
+            "text": "On a video call 💻"
+          },
+          {
+            "at": "in a recorded video",
+            "text": "In a recorded video ▶️"
+          },
+          {
+            "at": "Their only job",
+            "text": "Their only job: be there"
+          }
+        ]
+      }
+    },
+    {
+      "id": "why",
+      "mascot": 3,
+      "text": "Why would that help? Researchers are still studying it, so nobody can promise it works for everyone. But people with A D H D describe a few things. Someone else being there turns a vague, someday task into a now task. It adds a little gentle accountability, without pressure. And it makes the hardest part, starting, feel less lonely.",
+      "visual": {
+        "type": "bullets",
+        "title": "Why people say it helps",
+        "note": "Still being researched. Works for many, not all.",
+        "items": [
+          {
+            "at": "turns a vague",
+            "text": "\"Someday\" becomes \"now\""
+          },
+          {
+            "at": "gentle accountability",
+            "text": "Gentle accountability, no pressure"
+          },
+          {
+            "at": "feel less lonely",
+            "text": "Starting feels less lonely"
+          }
+        ]
+      }
+    },
+    {
+      "id": "alone",
+      "mascot": 4,
+      "text": "Here's the problem. If you're a freelancer, or you work from home, there's no office. No coworker at the next desk. Nobody notices if the proposal sits unsent for a week. So every single start depends on you alone. That's exactly where body doubling helps the most.",
+      "visual": {
+        "type": "broll",
+        "query": "woman alone at home office window",
+        "overlay": [
+          {
+            "at": "Nobody notices",
+            "text": "proposal_final_v3.pdf, unsent for 7 days"
+          }
+        ],
+        "candidates": [
+          7593617,
+          7617180,
+          6951942,
+          5085489,
+          6589094,
+          10839351,
+          9057560,
+          6270067
+        ],
+        "pick": 6,
+        "clipSec": 13
+      }
+    },
+    {
+      "id": "types",
+      "mascot": 3,
+      "text": "So where do you find a body double when you work alone? A friend on a video call, both working quietly. A coffee shop or a coworking space, where everyone around you is working. Body double with me videos on YouTube, with a timer running. Or an app that sits with you while you work.",
+      "visual": {
+        "type": "bullets",
+        "title": "Body doubles when you work alone",
+        "items": [
+          {
+            "at": "A friend on a video call",
+            "text": "A friend on a quiet video call"
+          },
+          {
+            "at": "A coffee shop",
+            "text": "A café or coworking space ☕"
+          },
+          {
+            "at": "Body double with me videos",
+            "text": "\"Body double with me\" videos ⏱️"
+          },
+          {
+            "at": "Or an app",
+            "text": "An app that works next to you 📱"
+          }
+        ]
+      }
+    },
+    {
+      "id": "steps",
+      "mascot": 3,
+      "text": "Here's how to make it actually work. Step one. Pick one task, not your whole list. Step two. Make the first step tiny. Not write the proposal. Open the document. Step three. Set a timer for twenty five minutes. Step four. Start your body double, and say out loud what you're about to do. Step five. When the timer ends, you're allowed to stop. Most of the time, you won't want to.",
+      "visual": {
+        "type": "steps",
+        "title": "How to body double when you work alone",
+        "steps": [
+          {
+            "at": "Pick one task",
+            "text": "Pick ONE task"
+          },
+          {
+            "at": "Make the first step tiny",
+            "text": "Make step 1 tiny: \"open the doc\""
+          },
+          {
+            "at": "Set a timer",
+            "text": "Set a 25-minute timer"
+          },
+          {
+            "at": "Start your body double",
+            "text": "Start your body double + say the task out loud"
+          },
+          {
+            "at": "When the timer ends",
+            "text": "Timer ends? You're allowed to stop"
+          }
+        ]
+      }
+    },
+    {
+      "id": "foco",
+      "mascot": 5,
+      "text": "This is exactly why we built Foco. You tell it the task you're stuck on, by typing, talking, or snapping a photo. It breaks it into tiny first steps. Then focus mode starts a timer and calm background sounds, and I stay on screen with you. Like a body double in your pocket, whenever you need one.",
+      "visual": {
+        "type": "phones",
+        "items": [
+          {
+            "at": "You tell it the task",
+            "shot": 2
+          },
+          {
+            "at": "It breaks it into",
+            "shot": 3
+          },
+          {
+            "at": "Then focus mode",
+            "shot": 4
+          },
+          {
+            "at": "calm background sounds",
+            "shot": 6
+          }
+        ]
+      }
+    },
+    {
+      "id": "outro",
+      "mascot": 2,
+      "text": "So here's your challenge for today. Pick one task you've been avoiding. Make the first step tiny. And don't do it alone. If you want a body double that's always there, Foco is on iPhone and Android. Link in the description. Now go do step one.",
+      "visual": {
+        "type": "cta",
+        "lines": [
+          "Pick ONE task",
+          "Make step 1 tiny",
+          "Don't do it alone 💜"
+        ]
+      }
+    }
+  ]
+}

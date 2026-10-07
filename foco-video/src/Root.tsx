@@ -4,6 +4,9 @@ import { AppReview, FPS, REVIEW_TOTAL } from "./Review";
 import { Explainer, EXPLAINER_TOTAL } from "./explainer/Explainer";
 import { Thumbnail } from "./explainer/Thumbnail";
 import { CarouselSlide, SLIDES } from "./carousel/Carousel";
+import { VideoThumb } from "./video/Thumb";
+import { SessionThumb } from "./video/SessionThumb";
+import { FPS as LV_FPS, LongVideo, totalFrames, type VideoProps } from "./video/LongVideo";
 import { INSTEAD, InsteadSlideView, TINY, TinySlideView } from "./carousel/MoreCarousels";
 import { PairSlideView, SETS as PAIR_SETS } from "./carousel/MoreCarousels2";
 import { SpecSlideIG, SpecSlideView, type Spec } from "./carousel/Spec";
@@ -57,6 +60,21 @@ export const RemotionRoot: React.FC = () => {
       )}
       <Still id="SpecSlide" component={SpecSlideView} defaultProps={{ spec: SAMPLE_SPEC, index: 0 }} width={1080} height={1920} />
       <Still id="SpecSlideIG" component={SpecSlideIG} defaultProps={{ spec: SAMPLE_SPEC, index: 0 }} width={1080} height={1350} />
+      {(["A", "B"] as const).map((v) => (
+        <Still key={`st${v}`} id={`SessionThumb${v}`} component={SessionThumb} defaultProps={{ slug: "session-typing", variant: v }} width={1280} height={720} />
+      ))}
+      {(["A", "B"] as const).map((v) => (
+        <Still key={`vt${v}`} id={`VideoThumb${v}`} component={VideoThumb} defaultProps={{ slug: "body-doubling", variant: v }} width={1280} height={720} />
+      ))}
+      <Composition
+        id="LongVideo"
+        component={LongVideo}
+        fps={LV_FPS}
+        width={1920}
+        height={1080}
+        defaultProps={{ script: { slug: "", title: "", scenes: [] }, vo: [] } as VideoProps}
+        calculateMetadata={({ props }) => ({ durationInFrames: Math.max(30, totalFrames(props.vo)) })}
+      />
     </>
   );
 };

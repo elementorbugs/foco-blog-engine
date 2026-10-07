@@ -19,8 +19,8 @@ export const FPS = 30;
 const GAP = 0.6; // seconds of breath between scenes
 const END_HOLD = 90;
 
-type Word = { text: string; start: number; end: number };
-type Scene = { id: string; mascot: number; duration: number; words: Word[]; env: number[] };
+export type Word = { text: string; start: number; end: number };
+export type Scene = { id: string; mascot: number; duration: number; words: Word[]; env: number[] };
 const SCENES = VO as Scene[];
 
 // Scene start (seconds) on the global timeline
@@ -72,7 +72,7 @@ const pagesOf = (words: Word[]): Page[] => {
   return pages;
 };
 
-const Captions: React.FC<{ scene: Scene }> = ({ scene }) => {
+export const Captions: React.FC<{ scene: Scene }> = ({ scene }) => {
   const frame = useCurrentFrame();
   const t = frame / FPS;
   const page = pagesOf(scene.words).find((p) => t >= p.start && t < p.end);
@@ -86,7 +86,7 @@ const Captions: React.FC<{ scene: Scene }> = ({ scene }) => {
           const active = t >= w.start && t < (next ? next.start : w.end + 0.3);
           const said = t >= w.start;
           return (
-            <span key={i} style={{ color: active ? ORANGE : said ? "#FFFFFF" : "rgba(255,255,255,0.55)", display: "inline-block", transform: active ? "scale(1.08)" : "none" }}>
+            <span key={i} style={{ color: active ? ORANGE : said ? "#FFFFFF" : "rgba(255,255,255,0.55)", display: "inline-block", textShadow: active ? "0 0 18px rgba(251,146,60,0.55)" : "none" }}>
               {w.text.replace(/^Foco/, "FOCO")}
             </span>
           );
@@ -97,8 +97,8 @@ const Captions: React.FC<{ scene: Scene }> = ({ scene }) => {
 };
 
 // ───────────────────────── Mascot host ─────────────────────────
-type Spot = { x: number; y: number; h: number };
-const Mascot: React.FC<{ scene: Scene; spot: Spot; state?: number }> = ({ scene, spot, state }) => {
+export type Spot = { x: number; y: number; h: number };
+export const Mascot: React.FC<{ scene: Scene; spot: Spot; state?: number }> = ({ scene, spot, state }) => {
   const frame = useCurrentFrame();
   // Smoothed loudness (~1/3 s window) so the mascot sways with the voice instead of jittering per frame
   const win = 5;
@@ -124,7 +124,7 @@ const Mascot: React.FC<{ scene: Scene; spot: Spot; state?: number }> = ({ scene,
 };
 
 // ───────────────────────── Shared bits ─────────────────────────
-const Chip: React.FC<{ color: string; children: React.ReactNode; size?: number }> = ({ color, children, size = 26 }) => (
+export const Chip: React.FC<{ color: string; children: React.ReactNode; size?: number }> = ({ color, children, size = 26 }) => (
   <div style={{ display: "inline-block", fontFamily: BODY, fontWeight: 800, fontSize: size, letterSpacing: 3, color, padding: "10px 24px", borderRadius: 999, background: `${color}22`, border: `2px solid ${color}88` }}>
     {children}
   </div>
@@ -139,7 +139,7 @@ const Statements: React.FC<{ items: { from: number; node: React.ReactNode }[]; s
   return <div style={{ ...style, opacity: s, transform: `translateY(${(1 - s) * 50}px) scale(${0.94 + s * 0.06})` }}>{items[idx].node}</div>;
 };
 
-const Big: React.FC<{ children: React.ReactNode; size?: number }> = ({ children, size = 120 }) => (
+export const Big: React.FC<{ children: React.ReactNode; size?: number }> = ({ children, size = 120 }) => (
   <div style={{ fontFamily: HEAD, fontWeight: 800, fontSize: size, lineHeight: 1.04, color: C.text }}>{children}</div>
 );
 
