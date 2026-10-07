@@ -94,7 +94,7 @@ verified working 2026-10-04). Always `git pull` first in a reused session so the
   shutter), drawn so the list matches the carousel's tasks: `{ "layout": "scan", "id", "photo"|"query", "label",
   "comment"?, "items": ["Email my boss", ...], "result"? }` (background photo is blurred). Use it instead of stock
   "phone photographing something" photos, which never show a to-do list (Adi rejected a book being photographed).
-- `chat` = FORMAT "Texting my ADHD brain" (2026-10-07, built because Adi said the caption/card format got boring):
+- `chat` = FORMAT "Texting my ADHD brain" (2026-10-07, APPROVED by Adi: "excellent direction, loved the design". Built because the caption/card format got boring. Prefer it and other fresh formats over repeating caption/card):
   each slide is an iMessage thread between the narrator ("me", blue right) and "My brain" (grey left), over a sharp
   Maya photo (thread bottom-anchored at y 1470 so her face shows above it). `{ "layout": "chat", "id", "own"|"query",
   "time": "9:05 AM", "messages": [{ "from": "me"|"brain"|"foco", "text", "min"? }], "title"?: [label, punchline],
