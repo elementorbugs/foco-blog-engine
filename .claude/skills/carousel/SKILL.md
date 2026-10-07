@@ -8,9 +8,28 @@ description: Make a FOCO TikTok photo carousel (1080x1920 slides + caption) on a
 Format copied from a viral app carousel (Flowfy): real lifestyle photo per slide, TikTok-style lilac text bubbles,
 an in-app FOCO card, and FOCO revealed only at the end as a casual "btw". Engine lives in `foco-video/`.
 
+## CURRENT DEFAULTS (Adi, 2026-10-07): these win over anything older below
+1. **Format: rotate the approved formats**, never the same one twice in a row: `chat` ("Texting my ADHD brain",
+   iMessage thread me vs my brain), `notes` (iPhone Notes checklist), `versus` (plan vs reality). Adi: "loved the new
+   designs". The older caption/card photo format felt boring: use it only when a new idea needs it. When a format
+   starts to feel repetitive, invent a NEW format rather than rewording the old one.
+2. **Simple message:** 5 slides = hook (the pain in the audience's own words) -> low point -> FOCO step -> relief ->
+   final. One thought per slide, max 2 short messages (~6 words each). Final = ONE FOCO step card + the two core lines
+   ("You don't need another to-do list." / "You need help starting 💜") + a 1-2 word ask ("Same? 👇"). The 8-slide
+   versions are the comparison test, not the default.
+3. **Cast, not one girl:** one narrator per carousel, but a DIFFERENT narrator across carousels: men and women
+   25-40, different ages/jobs, plus faceless POV (hands/desk/screen). Maya is one of the cast, not the default.
+4. **Faces visible:** narrator photo sharp, card bottom-anchored (y ~1000-1470), face in the top half. Check every
+   slide in safezones.jpg and swap any photo where the card hides the face.
+5. **FOCO appears once, at the turn** (one dark "FOCO · STEP 1" card), never in the hook. The breakdown is optional,
+   never "automatic".
+6. **Hook names the audience** in line 1 (rotate the wording) + the pain/punchline in handwriting.
+7. Every carousel: one task end to end, CREATIVE LANGUAGE RULE, TikTok + Instagram captions (3-5 hashtags each),
+   no "free", no em dashes, email with `send.js`, commit + push to `carousel-tool`.
+
 ## Steps
 1. **Concept + hook.** Write 3 hook options (see "The hook") and get Adi's pick first.
-   **Concept.** Pick an angle for the topic Adi gave (relatable/funny, validating, or practical-tips). 6-8 slides:
+   **Concept.** Pick an angle for the topic Adi gave (relatable/funny, validating, or practical-tips). 5 slides by default (SIMPLE MODE), 6-8 only for a deliberate comparison test:
    slide 1 = hook, last slide = FOCO reveal + a question that invites comments. If Adi gave no topic, propose 3 angles.
 2. **Write the spec** `foco-video/carousels/<slug>.json` (schema below). Every non-final slide needs a Pexels `query`
    (portrait lifestyle shot, describe the scene, not the emotion).
@@ -330,7 +349,8 @@ execution app that turns overwhelming tasks into one small step you can start no
   treat them as mom-persona tests, not the primary-audience tests.
 
 **Narrator "Maya"** (freelance designer, curly hair, white tee / grey cardigan, one home): her photos live in
-`foco-video/carousels/own/maya/` (use `"own"`). Reuse them so every primary-audience carousel shows the same person.
+`foco-video/carousels/own/maya/` (use `"own"`). She is ONE member of the cast (see CURRENT DEFAULTS #3): keep the
+same person within a carousel, but rotate narrators across carousels (Adi, 2026-10-07: "why always the same girls?").
 **Angle tests built 2026-10-05** (6 slides each, same narrator, one angle each, core message on the final slide):
 `angle-screen-stare`, `angle-client-task`, `angle-list-not-enough`, `angle-too-many`, `angle-first-step`,
 `angle-not-lazy`. Post them under the same conditions and compare.
@@ -417,10 +437,8 @@ Keep hook text off the face (`textTop` below the chin) and out of the right rail
   (per-slide text position is not built yet, see backlog).
 - **Prefer Adi's own phone photos** over Pexels when he provides them: real and imperfect beats polished stock,
   and stock images also show up in other creators' posts. Pexels is the fallback.
-- **Vary the format.** Check `foco-video/carousels/` and don't repeat the last carousel's main layout or angle
-  (relatable/funny, validating, practical tips: rotate).
-- **Emoji caveat:** slides render with Windows emoji, which look off next to iPhone UI. Use few emoji in slide text
-  until the emoji font is fixed (backlog #1).
+- **Vary the format.** Check `foco-video/carousels/` and don't repeat the last carousel's main layout, angle or
+  narrator (chat / notes / versus / new; relatable/funny, validating, practical tips: rotate).
 - After posting, ask Adi for views/saves/comments and log them (backlog #7), so the next concepts follow what works.
 
 ## Backlog (agreed with Adi 2026-10-04, NOT built yet; never claim these exist)
@@ -430,7 +448,7 @@ Keep hook text off the face (`textTop` below the chin) and out of the right rail
 4. ~~Own-photo input~~ (done 2026-10-05: `"own"` per slide; photos live in `foco-video/carousels/own/`).
 11. ~~Same-shoot mode~~ (done 2026-10-04: `sameShoot`, `shootGap`, `shootIndex`).
 5. ~~Instagram 4:5 export~~ (done 2026-10-04: `ig-slide-N.png`, emailed with the TikTok slides).
-6. New layouts: iPhone Notes screenshot, iMessage chat, check/cross list.
+6. ~~New layouts: iPhone Notes, iMessage chat~~ (done 2026-10-07: `notes`, `chat`, `versus`); check/cross list still open.
 7. Performance log: carousel, date, views, saves, comments, to steer future angles.
 8. Video version (slides + transitions + music) for Reels/Shorts.
 9. Phone preview page with download buttons when Adi works from the phone.
