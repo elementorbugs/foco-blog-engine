@@ -650,7 +650,15 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
               </div>
             ))}
           </div>
-          {s.layout === "final-card" ? (
+          {s.layout === "final-card" && s.steps.length === 1 ? (
+            // simple ending: just the ONE first step, big, with the mascot (no 4-step plan)
+            <>
+              <div style={{ position: "absolute", top: Math.max(520, below + 120), left: 0, right: 0, display: "flex", justifyContent: "center" }}>
+                <FocoStep text={s.steps[0].text} min={s.steps[0].min} width={900} />
+              </div>
+              <Mascot style={{ left: 420, top: Math.max(520, below + 120) + 190, height: 260 }} />
+            </>
+          ) : s.layout === "final-card" ? (
             <>
               {/* shrink the card to fit between the headline bubbles and the (bottom-anchored) ask; ~270px + 120px/step unscaled */}
               <div style={{ position: "absolute", top: Math.max(400, below), left: 0, right: 0, display: "flex", justifyContent: "center", transform: `scale(${Math.min(askExtra ? 0.8 : 0.86, (1190 - 100 - askExtra - 20 - Math.max(400, below)) / (270 + s.steps.length * 120))})`, transformOrigin: "top center" }}>

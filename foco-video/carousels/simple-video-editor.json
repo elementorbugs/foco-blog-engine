@@ -1,0 +1,123 @@
+{
+  "slug": "simple-video-editor",
+  "narrator": "man",
+  "sameShoot": true,
+  "shootGap": 60,
+  "tiktok": {
+    "caption": "I know what to do. I just can't start (ADHD) 🧠\n\n9am: edit the client video today. My brain: sure, after YouTube. 6pm: deadline is tomorrow. So I told FOCO. Step 1: import the clips. 2 minutes. Now I'm on clip 3.\n\nSame? 👇\nSave this for your next deadline 📌\n\nYou don't need another to-do list. You need help starting. The app on the slides is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#videoeditor",
+      "#procrastination",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "I know what to do. I just can't start (ADHD) 🧠\n\n9am: edit the client video today.\nMy brain: sure, after YouTube.\n6pm: the deadline is tomorrow.\n\nSo I told FOCO. Step 1: import the clips. 2 minutes. Now I'm on clip 3.\n\nYou don't need another to-do list. You need help starting.\n\n📌 Save this for your next deadline, and send it to a freelancer friend who gets it.\n💜 Try FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#videoeditor",
+      "#procrastination",
+      "#adhdbrain"
+    ],
+    "altText": "Carousel of 5 slides styled as text messages between a freelance video editor with ADHD and his brain: he can't start a client video all day, then FOCO gives him a 2-minute first step and he gets going."
+  },
+  "slides": [
+    {
+      "layout": "chat",
+      "id": "hook",
+      "person": true,
+      "query": "working on laptop at home",
+      "title": [
+        "Freelancer with ADHD:",
+        "I know what to do. I can't start."
+      ],
+      "time": "9:00 AM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "Editing the client video today."
+        },
+        {
+          "from": "brain",
+          "text": "Sure. After YouTube 📺"
+        }
+      ],
+      "pick": 1
+    },
+    {
+      "layout": "chat",
+      "id": "late",
+      "person": true,
+      "query": "tired man at desk evening",
+      "time": "6:00 PM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "Deadline is tomorrow."
+        },
+        {
+          "from": "brain",
+          "text": "One more video? 🙃"
+        }
+      ],
+      "pick": 1
+    },
+    {
+      "layout": "chat",
+      "id": "foco",
+      "person": false,
+      "query": "video editing timeline on computer screen",
+      "time": "6:05 PM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "Telling FOCO."
+        },
+        {
+          "from": "foco",
+          "text": "Import the clips",
+          "min": 2
+        }
+      ],
+      "pick": 3
+    },
+    {
+      "layout": "chat",
+      "id": "go",
+      "person": true,
+      "query": "focused man with headphones at computer",
+      "time": "6:30 PM",
+      "messages": [
+        {
+          "from": "brain",
+          "text": "Wait. That's it?"
+        },
+        {
+          "from": "me",
+          "text": "Already on clip 3 🎬"
+        }
+      ],
+      "pick": 2
+    },
+    {
+      "layout": "final-card",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "You don't need another to-do list.",
+        "You need help starting 💜"
+      ],
+      "title": "Edit client video",
+      "steps": [
+        {
+          "text": "Import the clips",
+          "min": 2
+        }
+      ],
+      "ask": "Same? 👇"
+    }
+  ]
+}

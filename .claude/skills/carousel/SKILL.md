@@ -101,6 +101,14 @@ verified working 2026-10-04). Always `git pull` first in a reused session so the
   "contact"? }`. `title` only on the hook (purple label + Caveat punchline). A "foco" message renders as a dark
   "FOCO · STEP 1" card with a min chip: use it once, at the turn. Max 3 messages per slide; the brain is the funny one
   (sabotage, fake-productive excuses), the narrator is plain. Example: `texting-my-brain.json`.
+- SIMPLE MODE (2026-10-07, Adi: "how do we pass the message more simply?"; test vs the 8-slide versions):
+  5 slides = hook (the pain in the audience's words) -> low point -> FOCO step -> relief -> final. Max 2 messages
+  per slide, ~6 words each. Final = `final-card` with ONE step (renders just the big FOCO step + mascot, no 4-step
+  plan) + the same two core lines every time + a 1-2 word ask ("Same? 👇"). Example: `simple-video-editor.json`.
+- CAST, not one girl (2026-10-07, Adi asked why always the same photos of women): rotate narrators per carousel,
+  one narrator per carousel. Maya = designer (`own/maya`); a male freelancer via `"narrator": "man", "sameShoot":
+  true` (simple-video-editor = bearded video editor, kaboompics shoot); also try an older copywriter (~40) and a
+  faceless POV (hands/desk/screen). Audience is men AND women 25-40.
 - `notes` = FORMAT "iPhone Notes" (2026-10-07): an iPhone Notes checklist page over the sharp narrator photo (same
   bottom-anchored card as `chat`). `{ "layout": "notes", "id", "own", "noteTitle", "date"?, "items": [{ "text",
   "done"?, "hl"? }], "scribble"?: "purple handwritten aside", "foco"?: { "text", "min" }, "title"?: [label, punchline] }`.
