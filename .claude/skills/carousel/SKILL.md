@@ -27,6 +27,17 @@ an in-app FOCO card, and FOCO revealed only at the end as a casual "btw". Engine
 7. Every carousel: one task end to end, CREATIVE LANGUAGE RULE, TikTok + Instagram captions (3-5 hashtags each),
    no "free", no em dashes, email with `send.js`, commit + push to `carousel-tool`.
 
+**Full format catalog (ALL kept and working; details + schema in "Spec schema" below):**
+| group | layouts | example carousel |
+|---|---|---|
+| NEW story formats (preferred) | `chat`, `notes`, `versus` | texting-my-brain, chat-*, simple-video-editor, notes-instead, plan-vs-reality |
+| photo + text bubbles | `hook`, `caption`, `pair` (they say / my brain hears) | freelancer-proposal, angle-* |
+| FOCO process / proof | `card` (breakdown), `step`, `focus` (timer + sound), `calendar`, `inputs` (speak/scan/chat), `phone` (real screenshot), `scan` (paper list scan) | head-to-done, snap-your-list |
+| real life + app inset | `life` | life-moments, just-say-it |
+| endings | `final-card` (1 step = simple ending, 2+ = full plan), `final-phone` (screenshot/creative) | all |
+The older layouts are not retired: mix them into the new formats when they prove a point (e.g. `focus` after a
+chat turn), and use them for feature tests (Just say it / Snap your list / Big task / Just one step).
+
 ## Steps
 1. **Concept + hook.** Write 3 hook options (see "The hook") and get Adi's pick first.
    **Concept.** Pick an angle for the topic Adi gave (relatable/funny, validating, or practical-tips). 5 slides by default (SIMPLE MODE), 6-8 only for a deliberate comparison test:
