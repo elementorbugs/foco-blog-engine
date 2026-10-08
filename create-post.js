@@ -87,7 +87,7 @@ function flag(n) { return args.includes('--' + n); }
 function arg(n)  { const m = args.find(a => a.startsWith('--' + n + '=')); return m ? m.slice(n.length + 3) : null; }
 const file = args.find(a => !a.startsWith('--'));
 if (!file) {
-  console.error('Usage: node create-post.js <file.html> --keyword="..." [--pillar] [--howto] [--publish] [--title="..."] [--cover-title="Two\\nLines"] [--skip-cover] [--skip-pexels] [--dry-run]');
+  console.error('Usage: node create-post.js <file.html> --keyword="..." [--pillar] [--howto] [--publish] [--title="..."] [--cover-title="Two\\nLines"] [--skip-cover] [--skip-pexels] [--directory=<category|none>] [--directory-desc="..."] [--dry-run]');
   process.exit(1);
 }
 const isPillar       = flag('pillar');
@@ -99,6 +99,8 @@ const coverTitleArg  = arg('cover-title');
 const dryRun         = flag('dry-run');
 const skipCover      = flag('skip-cover');
 const skipPexels     = flag('skip-pexels');
+const directoryArg   = arg('directory');       // app-directory category, or "none"
+const directoryDesc  = arg('directory-desc');  // one-line card text (default: first TL;DR sentence)
 
 const PEXELS_KEY_PATH = path.join(__dirname, '.pexels-key');
 const PEXELS_KEY = (!skipPexels && fs.existsSync(PEXELS_KEY_PATH)) ? fs.readFileSync(PEXELS_KEY_PATH, 'utf8').trim() : null;
@@ -686,7 +688,9 @@ function classifyCategory(slug) {
   if (/timer/.test(slug)) return 10;
   if (/music|lofi|lo-fi|noise|binaural|asmr|\baudio\b|\bsound/.test(slug)) return 9;
   if (/planner|workbook|printable|checklist|template/.test(slug)) return 8;
-  if (/alternative|review|inflow|tiimo|goblin|sunsama|todoist|notion|forest|coaches|best-[a-z-]*app/.test(slug)) return 11;
+  // App posts: alternatives, reviews, and anything naming an app (incl. "foco-vs-x", "ticktick-vs-structured").
+  // A bare "-vs-" is NOT enough: "procrastination-vs-paralysis" is a concept post, not an app comparison.
+  if (/alternative|review|^foco-|inflow|tiimo|goblin|sunsama|todoist|ticktick|structured|motion-app|habitica|marvin|aligned|mindflow|notion|forest|coaches|best-[a-z-]*app/.test(slug)) return 11;
   if (/body-doubling|2-minute-rule|two-minute|task-breakdown|how-to-focus|start-method|pomodoro|\bmotivation\b|routine|hyperfocus/.test(slug)) return 7;
   return 6; // Understanding ADHD (explainer/conceptual fallback)
 }
@@ -1145,6 +1149,34 @@ async function generateCover(slug, h1, coverTitleArg) {
     } else {
       log.ok(`Skipped — post is ${final.data && final.data.status || 'unknown'} (IndexNow only fires on publish)`);
     }
+  } else log.ok('[skip]');
+
+  // STEP 16: App directory on /best-adhd-app/ (app posts only; see app-directory.json)
+  log.step('STEP 16/16: App directory');
+  if (!dryRun && postId) {
+    try {
+      const appDir = require('./rebuild-app-directory');
+      // Auto-detect only for posts the classifier files as app posts (category 11), so concept
+      // posts like "adhd-shutdown-vs-paralysis" never land in the app directory.
+      const cat = directoryArg === 'none' ? null
+        : (directoryArg || (classifyCategory(slug) === 11 ? appDir.autoCategory(slug, wpTitle) : null));
+      if (!cat) {
+        log.ok('Not added: not an app post, or no --directory=<category> for a non vs/alternative/review app post');
+      } else {
+        const tldr = (content.match(/<div class="foco-tldr">([\s\S]*?)<\/div>/) || [])[1] || '';
+        const first = tldr.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().split(/(?<=[.!?])\s/)[0] || '';
+        const desc = directoryDesc || (first.length > 95 ? first.slice(0, 95).replace(/\s\S*$/, '') + '...' : first);
+        const card = appDir.addCard({ slug, cat, title: wpTitle.replace(/\s*\((19|20)\d\d\)\s*/, ' ').trim(), desc });
+        log.ok(`Card saved: ${card.slug} -> ${card.cat}`);
+        const st = await wpReq('GET', `/wp-json/wp/v2/posts/${postId}?_fields=status`);
+        if (st.data && st.data.status === 'publish') {
+          const r = await appDir.rebuild({ live: true, quiet: true });
+          log.ok(`Directory rebuilt: ${r.rendered} card(s)${r.pushed ? '' : ' (no change)'}`);
+        } else {
+          log.ok('Post is a draft: the card appears after publishing (node rebuild-app-directory.js --live)');
+        }
+      }
+    } catch (e) { log.warn('App directory not updated: ' + e.message); }
   } else log.ok('[skip]');
 
   // FINAL REPORT

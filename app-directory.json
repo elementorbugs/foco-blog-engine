@@ -1,0 +1,165 @@
+{
+  "hostPostId": 1080,
+  "hostSlug": "best-adhd-app",
+  "note": "Source of truth for the app directory on /best-adhd-app/. Only posts ABOUT APPS belong here (no printables, guides or coaches). One category per card. Rebuild: node rebuild-app-directory.js --live",
+  "categories": {
+    "reviews": "Reviews",
+    "compare": "Comparisons",
+    "paralysis": "Task Paralysis",
+    "focus": "Focus and Productivity",
+    "women": "Women and Moms",
+    "alternatives": "Alternatives"
+  },
+  "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
+  "cards": [
+    {
+      "slug": "aligned-app-review",
+      "title": "Aligned App Review",
+      "desc": "The AI coach you talk to: what it does well, where it stops.",
+      "cat": "reviews"
+    },
+    {
+      "slug": "inflow-review",
+      "title": "Inflow Review",
+      "desc": "CBT-based lessons and coaching for ADHD, reviewed.",
+      "cat": "reviews"
+    },
+    {
+      "slug": "tiimo-vs-structured",
+      "title": "Tiimo vs Structured",
+      "desc": "Two visual day planners compared for ADHD.",
+      "cat": "compare"
+    },
+    {
+      "slug": "foco-vs-tiimo",
+      "title": "FOCO vs Tiimo",
+      "desc": "Visual day planning vs starting one stuck task.",
+      "cat": "compare"
+    },
+    {
+      "slug": "foco-vs-goblin-tools",
+      "title": "FOCO vs Goblin Tools",
+      "desc": "Two task breakdown apps, head to head.",
+      "cat": "compare"
+    },
+    {
+      "slug": "goblin-tools-vs-tiimo",
+      "title": "Goblin Tools vs Tiimo",
+      "desc": "Free breakdown tool vs visual planner.",
+      "cat": "compare"
+    },
+    {
+      "slug": "foco-vs-inflow",
+      "title": "FOCO vs Inflow",
+      "desc": "Learning about ADHD vs getting a task started.",
+      "cat": "compare"
+    },
+    {
+      "slug": "foco-vs-amazing-marvin",
+      "title": "FOCO vs Amazing Marvin",
+      "desc": "A deep custom system vs a fast way to start.",
+      "cat": "compare"
+    },
+    {
+      "slug": "best-apps-for-adhd-task-paralysis",
+      "title": "10 Best Apps for ADHD Task Paralysis",
+      "desc": "The apps that help most when you know what to do and still can't start.",
+      "cat": "paralysis"
+    },
+    {
+      "slug": "ai-task-breakdown",
+      "title": "AI Task Breakdown",
+      "desc": "How AI shrinks a task you're dreading into first steps.",
+      "cat": "paralysis"
+    },
+    {
+      "slug": "best-adhd-planner",
+      "title": "7 Best ADHD Planner Apps",
+      "desc": "Tiimo, Structured, TickTick and more, with real prices.",
+      "cat": "focus"
+    },
+    {
+      "slug": "best-productivity-apps-for-adhd",
+      "title": "Best Productivity Apps for ADHD",
+      "desc": "8 work and focus tools that suit ADHD brains.",
+      "cat": "focus"
+    },
+    {
+      "slug": "why-you-keep-abandoning-adhd-planner-apps",
+      "title": "Why You Keep Abandoning Planner Apps",
+      "desc": "The novelty loop, and what makes an app actually stick.",
+      "cat": "focus"
+    },
+    {
+      "slug": "adhd-task-apps-for-freelancers",
+      "title": "ADHD Task Apps for Freelancers",
+      "desc": "Setups that work without a boss or fixed hours.",
+      "cat": "focus"
+    },
+    {
+      "slug": "best-adhd-apps-for-adult-women",
+      "title": "Best ADHD Apps for Women",
+      "desc": "Apps for mental load and late-diagnosis ADHD.",
+      "cat": "women"
+    },
+    {
+      "slug": "family-calendar-apps-for-adhd-moms",
+      "title": "Family Calendar Apps for ADHD Moms",
+      "desc": "10 shared calendars that carry the family load.",
+      "cat": "women"
+    },
+    {
+      "slug": "structured-app-alternative",
+      "title": "Structured Alternatives",
+      "desc": "7 alternatives to Structured, including free ones.",
+      "cat": "alternatives"
+    },
+    {
+      "slug": "tiimo-alternative",
+      "title": "Tiimo Alternative",
+      "desc": "An ADHD app built for starting, not just scheduling.",
+      "cat": "alternatives"
+    },
+    {
+      "slug": "goblin-tools-alternative",
+      "title": "Goblin Tools Alternatives",
+      "desc": "6 task breakdown apps compared, with screenshots.",
+      "cat": "alternatives"
+    },
+    {
+      "slug": "todoist-alternatives",
+      "title": "Todoist Alternatives",
+      "desc": "When a plain to-do list keeps failing you.",
+      "cat": "alternatives"
+    },
+    {
+      "slug": "ticktick-alternative",
+      "title": "TickTick Alternative",
+      "desc": "An ADHD app for actually starting the task.",
+      "cat": "alternatives"
+    },
+    {
+      "slug": "motion-app-alternative",
+      "title": "Motion Alternative",
+      "desc": "When auto-scheduling still leaves you stuck.",
+      "cat": "alternatives"
+    },
+    {
+      "slug": "sunsama-alternative",
+      "title": "Sunsama Alternatives",
+      "desc": "9 daily-planning apps compared for ADHD.",
+      "cat": "alternatives"
+    },
+    {
+      "slug": "habitica-alternative",
+      "title": "Habitica Alternative",
+      "desc": "An ADHD app without the penalty for missed days.",
+      "cat": "alternatives"
+    }
+  ],
+  "discoverCategory": "app-reviews-comparisons",
+  "ignore": [
+    "todoist-alternative-for-adhd",
+    "best-apps-for-adults-with-adhd"
+  ]
+}
