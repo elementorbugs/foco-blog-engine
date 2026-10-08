@@ -1,7 +1,7 @@
 {
   "hostPostId": 1080,
   "hostSlug": "best-adhd-app",
-  "note": "Source of truth for the app directory on /best-adhd-app/. Only posts ABOUT APPS belong here (no printables, guides or coaches). One category per card. Rebuild: node rebuild-app-directory.js --live",
+  "note": "Source of truth for the app directory on /best-adhd-app/. Only posts ABOUT APPS belong here (no printables, guides or coaches). One category per card. Rebuild: node rebuild-app-directory.js --live Icons: \"apps\" maps a key to its name + official App Store icon (uploaded to WP media). A card shows card.apps, or the apps named in its title.",
   "categories": {
     "reviews": "Reviews",
     "compare": "Comparisons",
@@ -9,6 +9,56 @@
     "focus": "Focus and Productivity",
     "women": "Women and Moms",
     "alternatives": "Alternatives"
+  },
+  "apps": {
+    "aligned": {
+      "name": "Aligned",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-aligned.png"
+    },
+    "amazing-marvin": {
+      "name": "Amazing Marvin",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-amazing-marvin.png"
+    },
+    "foco": {
+      "name": "FOCO",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-foco.png"
+    },
+    "goblin-tools": {
+      "name": "Goblin Tools",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-goblin-tools.png"
+    },
+    "habitica": {
+      "name": "Habitica",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-habitica.png"
+    },
+    "inflow": {
+      "name": "Inflow",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-inflow.png"
+    },
+    "motion": {
+      "name": "Motion",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-motion.png"
+    },
+    "structured": {
+      "name": "Structured",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-structured.png"
+    },
+    "sunsama": {
+      "name": "Sunsama",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-sunsama.png"
+    },
+    "ticktick": {
+      "name": "TickTick",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-ticktick.png"
+    },
+    "tiimo": {
+      "name": "Tiimo",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-tiimo.png"
+    },
+    "todoist": {
+      "name": "Todoist",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-todoist.png"
+    }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
   "cards": [
@@ -64,7 +114,18 @@
       "slug": "best-apps-for-adhd-task-paralysis",
       "title": "10 Best Apps for ADHD Task Paralysis",
       "desc": "The apps that help most when you know what to do and still can't start.",
-      "cat": "paralysis"
+      "cat": "paralysis",
+      "apps": [
+        "foco",
+        "goblin-tools",
+        "tiimo",
+        "structured",
+        "inflow",
+        "motion",
+        "sunsama",
+        "todoist",
+        "habitica"
+      ]
     },
     {
       "slug": "ai-task-breakdown",
@@ -76,13 +137,29 @@
       "slug": "best-adhd-planner",
       "title": "7 Best ADHD Planner Apps",
       "desc": "Tiimo, Structured, TickTick and more, with real prices.",
-      "cat": "focus"
+      "cat": "focus",
+      "apps": [
+        "foco",
+        "tiimo",
+        "structured",
+        "motion",
+        "sunsama",
+        "ticktick",
+        "todoist"
+      ]
     },
     {
       "slug": "best-productivity-apps-for-adhd",
       "title": "Best Productivity Apps for ADHD",
       "desc": "8 work and focus tools that suit ADHD brains.",
-      "cat": "focus"
+      "cat": "focus",
+      "apps": [
+        "foco",
+        "goblin-tools",
+        "tiimo",
+        "sunsama",
+        "ticktick"
+      ]
     },
     {
       "slug": "why-you-keep-abandoning-adhd-planner-apps",
@@ -100,7 +177,14 @@
       "slug": "best-adhd-apps-for-adult-women",
       "title": "Best ADHD Apps for Women",
       "desc": "Apps for mental load and late-diagnosis ADHD.",
-      "cat": "women"
+      "cat": "women",
+      "apps": [
+        "foco",
+        "goblin-tools",
+        "inflow",
+        "habitica",
+        "todoist"
+      ]
     },
     {
       "slug": "family-calendar-apps-for-adhd-moms",
