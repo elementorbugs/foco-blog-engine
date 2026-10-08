@@ -114,10 +114,14 @@ async function rebuild({ live = false, quiet = false } = {}) {
     rendered.push({ ...card, img });
   }
 
+  // The directory spans 1160px. Widen the title, meta line and TL;DR of the host post to match,
+  // so the top of the page shares one left edge. Scoped to the host post only; body text keeps its reading width.
+  const p = `body.postid-${dir.hostPostId}`;
+  const HERO_CSS = `${p} .blog-single .wrap>h1,${p} .blog-single .wrap>.post-meta,${p} .blog-single .foco-tldr{width:min(1160px,calc(100vw - 48px));max-width:none;position:relative;left:50%;transform:translateX(-50%);box-sizing:border-box}`;
   const cats = Object.entries(dir.categories);
   const tabs = [['all', 'All'], ...cats].map(([k, l], i) => `<button type="button" class="fa-tab" role="tab" data-cat="${k}" aria-selected="${i === 0}">${l}</button>`).join('');
   const cards = rendered.map(c => `<a class="fa-card" href="${SITE}/${c.slug}/" data-cats="${c.cat}"><img class="fa-img" src="${c.img}" alt="${esc(c.title)}" loading="lazy" width="768" height="403"/><span class="fa-body"><span class="fa-tag">${dir.categories[c.cat]}</span><span class="fa-title">${esc(c.title)}</span><span class="fa-desc">${esc(c.desc)}</span><span class="fa-more">Read the guide →</span></span></a>`).join('');
-  const block = `${START}<style>${CSS}</style><h2 id="adhd-app-index" class="fa-h">Browse every ADHD app guide</h2><p class="fa-intro">Reviews, comparisons and alternatives, plus guides by problem. Each card opens the full guide.</p><div class="fa-tabs" role="tablist" aria-label="Filter ADHD app guides">${tabs}</div><p class="fa-count">${rendered.length} guides</p><div class="fa-grid">${cards}</div><script>${JS}</script></div>`;
+  const block = `${START}<style>${CSS}${HERO_CSS}</style><h2 id="adhd-app-index" class="fa-h">Browse every ADHD app guide</h2><p class="fa-intro">Reviews, comparisons and alternatives, plus guides by problem. Each card opens the full guide.</p><div class="fa-tabs" role="tablist" aria-label="Filter ADHD app guides">${tabs}</div><p class="fa-count">${rendered.length} guides</p><div class="fa-grid">${cards}</div><script>${JS}</script></div>`;
   if (/&&/.test(block)) throw new Error('"&&" in block would break on WordPress');
 
   const counts = {}; rendered.forEach(c => counts[c.cat] = (counts[c.cat] || 0) + 1);
