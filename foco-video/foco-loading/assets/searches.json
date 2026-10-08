@@ -1,0 +1,173 @@
+[
+  {
+    "q": "driving punchy product launch electronic, 120 BPM, builds to drop",
+    "kind": "music",
+    "at": "2026-10-07T18:35:07.224Z",
+    "top": [
+      {
+        "id": "music-glossy-showreel",
+        "match": 0.69
+      },
+      {
+        "id": "music-viral-dance-pop",
+        "match": 0.46
+      },
+      {
+        "id": "music-retro-synthwave",
+        "match": 0.4
+      }
+    ]
+  },
+  {
+    "q": "glitch",
+    "kind": "sfx",
+    "at": "2026-10-07T18:35:11.985Z",
+    "top": [
+      {
+        "id": "cinematic-glitches-glitch",
+        "match": 0.83
+      },
+      {
+        "id": "invention-glitch-glitch-error",
+        "match": 0.7
+      },
+      {
+        "id": "cinematic-glitches-glitch-in",
+        "match": 0.7
+      }
+    ]
+  },
+  {
+    "q": "reverse whoosh",
+    "kind": "sfx",
+    "at": "2026-10-07T18:35:18.115Z",
+    "top": [
+      {
+        "id": "quantum-motion-whooshes-flow-whoosh-reverse",
+        "match": 0.87
+      },
+      {
+        "id": "quantum-motion-whooshes-flow-whoosh-reverse-transition",
+        "match": 0.6
+      },
+      {
+        "id": "quantum-motion-whooshes-flow-whoosh-reverse-sky",
+        "match": 0.6
+      }
+    ]
+  },
+  {
+    "q": "riser building up",
+    "kind": "sfx",
+    "at": "2026-10-07T18:35:21.609Z",
+    "top": [
+      {
+        "id": "invention-riser-riser-building-up",
+        "match": 0.92
+      },
+      {
+        "id": "cinematic-risers-riser-tension",
+        "match": 0.6
+      },
+      {
+        "id": "invention-riser-riser-tension",
+        "match": 0.59
+      }
+    ]
+  },
+  {
+    "q": "soft impact",
+    "kind": "sfx",
+    "at": "2026-10-07T18:35:25.757Z",
+    "top": [
+      {
+        "id": "sfx-ui-soft-impact",
+        "match": 0.89
+      },
+      {
+        "id": "hollywood-essentials-short-foley-short-foley-hit-soft",
+        "match": 0.81
+      },
+      {
+        "id": "cinematic-short-foley-short-foley-hit-soft",
+        "match": 0.79
+      }
+    ]
+  },
+  {
+    "q": "mouse click",
+    "kind": "sfx",
+    "at": "2026-10-07T18:35:29.370Z",
+    "top": [
+      {
+        "id": "youtube-picks-interface-mouse-click",
+        "match": 0.85
+      },
+      {
+        "id": "ultimate-social-content-foley-click",
+        "match": 0.56
+      },
+      {
+        "id": "cinematic-short-foley-short-foley-click",
+        "match": 0.53
+      }
+    ]
+  },
+  {
+    "q": "success chime",
+    "kind": "sfx",
+    "at": "2026-10-07T18:35:32.511Z",
+    "top": [
+      {
+        "id": "sfx-ui-success-chime",
+        "match": 0.95
+      },
+      {
+        "id": "ultimate-social-content-foley-ding",
+        "match": 0.33
+      },
+      {
+        "id": "sfx-ui-notification-ping",
+        "match": 0.28
+      }
+    ]
+  },
+  {
+    "q": "bubble pop",
+    "kind": "sfx",
+    "at": "2026-10-07T18:35:36.103Z",
+    "top": [
+      {
+        "id": "sfx-ui-bubble-pop",
+        "match": 0.95
+      },
+      {
+        "id": "hollywood-essentials-fantasy-fantasy-water-bubbling",
+        "match": 0.18
+      },
+      {
+        "id": "cinematic-hits-hits-boom",
+        "match": 0.13
+      }
+    ]
+  },
+  {
+    "q": "sub drop",
+    "kind": "sfx",
+    "at": "2026-10-07T18:35:39.370Z",
+    "top": [
+      {
+        "id": "sfx-ui-bass-drop",
+        "match": 0.89
+      },
+      {
+        "id": "hollywood-essentials-science-fiction-bass-bass-down",
+        "match": 0.4
+      },
+      {
+        "id": "invention-impact-impact-drop",
+        "match": 0.33
+      }
+    ]
+  }
+]

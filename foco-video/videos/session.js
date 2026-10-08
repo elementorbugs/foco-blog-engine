@@ -99,12 +99,16 @@ const mascots = [
 ];
 
 // ── 3. audio: soft music + FOCO's few lines + a soft chime at the break and when focus ends ──
-// Adi picked option C: calm ambient pads (scripts/make-ambient.js), generated for the full length so it never loops
-execFileSync("node", [path.join(ROOT, "scripts", "make-ambient.js"), String(Math.ceil(TOTAL) + 2)], { cwd: ROOT, env: { ...process.env, OUT: `video/${slug}/music.wav` }, stdio: "ignore" });
+// A real royalty-free track sounds far better than synthesized pads: MUSIC=public/music/<file>.mp3 loops it under
+// the session (mastered tracks are ~-10 LUFS, so MUSIC_VOL defaults to 0.12, about 10 dB under FOCO's voice). Without MUSIC, fall back to the
+// generated ambient bed (scripts/make-ambient.js), made for the full length so it never loops.
+const MUSIC = process.env.MUSIC;
+if (!MUSIC) execFileSync("node", [path.join(ROOT, "scripts", "make-ambient.js"), String(Math.ceil(TOTAL) + 2)], { cwd: ROOT, env: { ...process.env, OUT: `video/${slug}/music.wav` }, stdio: "ignore" });
+const musicVol = MUSIC ? Number(process.env.MUSIC_VOL || 0.12) : 0.9;
 const inputs = ["-stream_loop", "-1", "-i", path.join(work, "bg-loop.mp4")];
 mascots.forEach(([, png]) => inputs.push("-i", `public/mascots/${png}`));
 const nIn = () => inputs.filter((x) => x === "-i").length;
-inputs.push("-stream_loop", "-1", "-i", `${pub}/music.wav`);
+inputs.push("-stream_loop", "-1", "-i", MUSIC || `${pub}/music.wav`);
 const musicIdx = nIn() - 1;
 cues.forEach((c) => (inputs.push("-i", `${pub}/vo/${c.line}.wav`), (c.idx = nIn() - 1)));
 const chimes = [brk.start, work2.start, outro.start];
@@ -134,7 +138,7 @@ ctaCards.forEach((p, c) => {
   v = `[cv${c}]`;
 });
 g.push(`${v}null[vout]`);
-g.push(`[${musicIdx}:a]volume=0.9,atrim=0:${TOTAL},afade=t=in:d=3,afade=t=out:st=${TOTAL - 5}:d=5[mus]`);
+g.push(`[${musicIdx}:a]volume=${musicVol},atrim=0:${TOTAL},afade=t=in:d=3,afade=t=out:st=${TOTAL - 5}:d=5[mus]`);
 const mix = ["[mus]"];
 cues.forEach((c, i) => {
   const ms = Math.round(c.at * 1000);
@@ -146,7 +150,8 @@ chimes.forEach((at, i) => {
   g.push(`[${chimeStart + i}:a]adelay=${ms}|${ms},volume=0.20[ch${i}]`);
   mix.push(`[ch${i}]`);
 });
-g.push(`${mix.join("")}amix=inputs=${mix.length}:normalize=0:duration=longest,atrim=0:${TOTAL},loudnorm=I=-16:TP=-1.5:LRA=11[aout]`);
+// Fixed gain + peak limiter, not loudnorm: single-pass loudnorm rode the music up whenever FOCO was silent (pumping).
+g.push(`${mix.join("")}amix=inputs=${mix.length}:normalize=0:duration=longest,atrim=0:${TOTAL},volume=3dB,alimiter=limit=0.84:level=false[aout]`);
 
 const graph = path.join(work, "graph.txt");
 fs.writeFileSync(graph, g.join(";\n"));

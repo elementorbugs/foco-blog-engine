@@ -27,21 +27,26 @@ get_header(); ?>
 		</h1>
 
 		<?php if ( have_posts() ) : ?>
+			<div class="post-grid">
 			<?php while ( have_posts() ) : the_post(); ?>
+				<?php $foco_cats = get_the_category(); ?>
 				<a class="post-card<?php echo has_post_thumbnail() ? ' has-thumb' : ''; ?>" href="<?php the_permalink(); ?>">
-					<?php if ( has_post_thumbnail() ) : ?>
-						<div class="post-card-thumb">
+					<div class="post-card-thumb">
+						<?php if ( has_post_thumbnail() ) : ?>
 							<?php the_post_thumbnail( 'medium_large', array( 'loading' => 'lazy', 'alt' => esc_attr( get_the_title() ) ) ); ?>
-						</div>
-					<?php endif; ?>
-					<div class="post-card-body">
-						<div class="post-date"><?php echo esc_html( get_the_date() ); ?></div>
-						<h2><?php the_title(); ?></h2>
-						<div class="excerpt"><?php the_excerpt(); ?></div>
-						<span class="read-more">Read more →</span>
+						<?php else : ?>
+							<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/topics/understanding-adhd.jpg' ); ?>" alt="" loading="lazy" />
+						<?php endif; ?>
 					</div>
+					<?php if ( ! empty( $foco_cats ) ) : ?>
+						<div class="eyebrow"><?php echo esc_html( $foco_cats[0]->name ); ?></div>
+					<?php endif; ?>
+					<h2><?php the_title(); ?></h2>
+					<div class="excerpt"><?php the_excerpt(); ?></div>
+					<div class="post-card-meta">FOCO &nbsp;&bull;&nbsp; <?php echo esc_html( get_the_date() ); ?></div>
 				</a>
 			<?php endwhile; ?>
+			</div>
 			<div style="margin-top:40px"><?php the_posts_pagination(); ?></div>
 		<?php else : ?>
 			<p style="color:var(--muted)">No posts found.</p>

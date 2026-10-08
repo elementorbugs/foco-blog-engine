@@ -21,7 +21,9 @@ for (let c = 0; c * SEG < DUR + SEG; c++) {
   const chord = CHORDS[c % CHORDS.length];
   const t0 = c * SEG - FADE / 2;
   const len = SEG + FADE;
-  const detune = chord.map(() => [0.997 + rnd() * 0.002, 1.001 + rnd() * 0.002]);
+  // No per-chord or L/R detune: the same note in two crossfading chords (or folded to mono on a phone) beat against
+  // each other and wobbled audibly. Width comes from a fixed pan per voice instead.
+  const pan = chord.map((_, j) => 0.35 + 0.1 * j);
   for (let k = 0; k < len * SR; k++) {
     const i = Math.floor(t0 * SR) + k;
     if (i < 0 || i >= N) continue;
@@ -33,8 +35,9 @@ for (let c = 0; c * SEG < DUR + SEG; c++) {
     chord.forEach((m, j) => {
       const fq = midi(m);
       // soft tone: fundamental + a little 2nd harmonic, no bright partials
-      l += Math.sin(2 * Math.PI * fq * detune[j][0] * tt) + 0.18 * Math.sin(4 * Math.PI * fq * detune[j][0] * tt);
-      r += Math.sin(2 * Math.PI * fq * detune[j][1] * tt) + 0.18 * Math.sin(4 * Math.PI * fq * detune[j][1] * tt);
+      const v = Math.sin(2 * Math.PI * fq * tt) + 0.18 * Math.sin(4 * Math.PI * fq * tt);
+      l += v * (1 - pan[j]);
+      r += v * pan[j];
     });
     L[i] += l * 0.045 * env * breathe;
     R[i] += r * 0.045 * env * breathe;
@@ -59,10 +62,15 @@ buf.write("RIFF", 0); buf.writeUInt32LE(36 + N * 4, 4); buf.write("WAVE", 8);
 buf.write("fmt ", 12); buf.writeUInt32LE(16, 16); buf.writeUInt16LE(1, 20); buf.writeUInt16LE(2, 22);
 buf.writeUInt32LE(SR, 24); buf.writeUInt32LE(SR * 4, 28); buf.writeUInt16LE(4, 32); buf.writeUInt16LE(16, 34);
 buf.write("data", 36); buf.writeUInt32LE(N * 4, 40);
+// Linear peak-normalize to -6 dBFS. The old tanh drive (x2.2) saturated stacked chords and produced
+// intermodulation rumble below the lowest note plus a gritty edge.
+let peak = 1e-9;
+for (let i = 0; i < N; i++) peak = Math.max(peak, Math.abs(L[i]), Math.abs(R[i]));
+const k = 0.5 / peak;
 for (let i = 0; i < N; i++) {
-  const g = Math.min(1, i / SR / 3) * Math.min(1, (DUR - i / SR) / 3);
-  buf.writeInt16LE(Math.round(Math.tanh(L[i] * g * 2.2) * 30000), 44 + i * 4);
-  buf.writeInt16LE(Math.round(Math.tanh(R[i] * g * 2.2) * 30000), 46 + i * 4);
+  const g = Math.min(1, i / SR / 3) * Math.min(1, (DUR - i / SR) / 3) * k;
+  buf.writeInt16LE(Math.round(L[i] * g * 32767), 44 + i * 4);
+  buf.writeInt16LE(Math.round(R[i] * g * 32767), 46 + i * 4);
 }
 const out = path.join(__dirname, "..", "public", process.env.OUT || "ambient.wav");
 fs.mkdirSync(path.dirname(out), { recursive: true });

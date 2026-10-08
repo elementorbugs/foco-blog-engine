@@ -1,0 +1,144 @@
+{
+  "title": "FOCO - The start button",
+  "aspect": "9:16",
+  "mode": "motion",
+  "voiceId": "bIHbv24MWmeRgasZH58o",
+  "pace": "normal",
+  "gap": "normal",
+  "captions": "phrase",
+  "scenes": [
+    {
+      "id": "hook",
+      "narration": "Eleven forty seven. I haven't started. Again.",
+      "treatment": "motion-graphic",
+      "onScreenText": [
+        "Freelancer. 11:47 AM.",
+        "Hasn't started."
+      ],
+      "imagePrompt": null,
+      "clipPrompt": null,
+      "shareable": false,
+      "imageTags": [],
+      "userAssetIds": [
+        "a-3bf89c14"
+      ],
+      "notes": "Look: cinematic live-action b-roll + magical motion graphics. Ground for graphics: near-black #040208. Accent: FOCO purple #A78BFA (the magic light), orange #FB923C for done/checks only. Visual thread: FROST. The real world freezes (desaturated, icy blue frost creeping in from the edges, only the clock moves) and FOCO's purple light melts it back to warm colour. One character: the same young man in an orange sweater in every shot (one Pexels shoot by olia danilevich). ~30s. Hook: clip plays, a big clock reads 11:47, text 'Freelancer. 11:47 AM. Hasn't started.'"
+    },
+    {
+      "id": "frozen",
+      "narration": "I know exactly what to do. I just can't start.",
+      "treatment": "motion-graphic",
+      "onScreenText": [
+        "Brain: frozen."
+      ],
+      "imagePrompt": null,
+      "clipPrompt": null,
+      "shareable": false,
+      "imageTags": [],
+      "userAssetIds": [],
+      "notes": "The hook clip holds on one frame; frost spreads from the edges, colour drains, floating thoughts drift and freeze: 47 unread emails / client is waiting / 5 more minutes on my phone. Only the clock keeps ticking."
+    },
+    {
+      "id": "ask",
+      "narration": "So I asked Foco.",
+      "treatment": "motion-graphic",
+      "onScreenText": [
+        "So he asked FOCO."
+      ],
+      "imagePrompt": null,
+      "clipPrompt": null,
+      "shareable": false,
+      "imageTags": [],
+      "userAssetIds": [
+        "a-65f121f7"
+      ],
+      "notes": "A phone rises out of the frost with the real FOCO list; he taps Reply to important emails, Suggest AI splitting. The phone glows purple, the only warm thing in a frozen frame."
+    },
+    {
+      "id": "magic",
+      "narration": "It took the big scary task, and broke it into tiny steps.",
+      "treatment": "motion-graphic",
+      "onScreenText": [
+        "Reply to important emails",
+        "5 tiny steps"
+      ],
+      "imagePrompt": null,
+      "clipPrompt": null,
+      "shareable": false,
+      "imageTags": [],
+      "userAssetIds": [],
+      "notes": "MAGIC: purple light bursts from the phone; a big card 'Reply to important emails' cracks and shatters into five small glowing step chips that float in the air: Open your email and check titles / Flag the 3 most urgent / Draft the first reply / Send quick responses / Close the email tab. Sparkles."
+    },
+    {
+      "id": "one",
+      "narration": "Step one. Open my inbox. Two minutes. Okay. Just this one.",
+      "treatment": "motion-graphic",
+      "onScreenText": [
+        "Step 1 · 2 min",
+        "Just this one."
+      ],
+      "imagePrompt": null,
+      "clipPrompt": null,
+      "shareable": false,
+      "imageTags": [],
+      "userAssetIds": [
+        "a-105fcb78"
+      ],
+      "notes": "The first chip glows, the others dim. The real focus screen: Open your email and check title, 2 min, Start Focus. On the press, a ring of purple light sweeps out and MELTS the frost: colour floods back."
+    },
+    {
+      "id": "started",
+      "narration": "And then, I was just doing it.",
+      "treatment": "motion-graphic",
+      "onScreenText": [
+        "Started."
+      ],
+      "imagePrompt": null,
+      "clipPrompt": null,
+      "shareable": false,
+      "imageTags": [],
+      "userAssetIds": [
+        "a-bbfc49a0",
+        "a-a502ae99"
+      ],
+      "notes": "Warm, unfrozen. A floating FOCO focus timer beside the hands; step chips tick off with sparks."
+    },
+    {
+      "id": "relief",
+      "narration": "First step, done. The rest followed.",
+      "treatment": "motion-graphic",
+      "onScreenText": [
+        "First step done.",
+        "The rest follows."
+      ],
+      "imagePrompt": null,
+      "clipPrompt": null,
+      "shareable": false,
+      "imageTags": [],
+      "userAssetIds": [
+        "a-488a7ccf",
+        "a-fdfca650"
+      ],
+      "notes": "Relief. A small FOCO 'You did it' card pops in the corner."
+    },
+    {
+      "id": "cta",
+      "narration": "Foco. The start button your brain is missing.",
+      "treatment": "motion-graphic",
+      "onScreenText": [
+        "FOCO",
+        "The start button your brain is missing."
+      ],
+      "imagePrompt": null,
+      "clipPrompt": null,
+      "shareable": false,
+      "imageTags": [],
+      "userAssetIds": [
+        "a-39740cca",
+        "a-f3753e44",
+        "a-e3c4c0a3"
+      ],
+      "notes": "A glowing START button made of purple light, the FOCO icon and wordmark, the line, store badges."
+    }
+  ]
+}

@@ -1,0 +1,434 @@
+{
+  "hook": {
+    "key": "assets/vo-hook.mp3",
+    "durationSec": 4.4,
+    "words": [
+      {
+        "word": "Nap",
+        "startSec": 0,
+        "endSec": 0.32
+      },
+      {
+        "word": "time.",
+        "startSec": 0.4,
+        "endSec": 0.8
+      },
+      {
+        "word": "Forty",
+        "startSec": 1.2,
+        "endSec": 1.44
+      },
+      {
+        "word": "minutes",
+        "startSec": 1.52,
+        "endSec": 1.76
+      },
+      {
+        "word": "to",
+        "startSec": 1.84,
+        "endSec": 1.92
+      },
+      {
+        "word": "work.",
+        "startSec": 2,
+        "endSec": 2.4
+      },
+      {
+        "word": "And",
+        "startSec": 2.8,
+        "endSec": 2.88
+      },
+      {
+        "word": "I",
+        "startSec": 2.96,
+        "endSec": 3.04
+      },
+      {
+        "word": "haven't",
+        "startSec": 3.12,
+        "endSec": 3.36
+      },
+      {
+        "word": "started.",
+        "startSec": 3.52,
+        "endSec": 4.4
+      }
+    ],
+    "text": "Nap time. Forty minutes to work. And I haven't started.",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "speed": 1
+  },
+  "frozen": {
+    "key": "assets/vo-frozen.mp3",
+    "durationSec": 4.08,
+    "words": [
+      {
+        "word": "I",
+        "startSec": 0,
+        "endSec": 0.16
+      },
+      {
+        "word": "know",
+        "startSec": 0.24,
+        "endSec": 0.32
+      },
+      {
+        "word": "exactly",
+        "startSec": 0.48,
+        "endSec": 1.12
+      },
+      {
+        "word": "what",
+        "startSec": 1.2,
+        "endSec": 1.28
+      },
+      {
+        "word": "to",
+        "startSec": 1.36,
+        "endSec": 1.44
+      },
+      {
+        "word": "do.",
+        "startSec": 1.52,
+        "endSec": 2.16
+      },
+      {
+        "word": "My",
+        "startSec": 2.28,
+        "endSec": 2.4
+      },
+      {
+        "word": "brain",
+        "startSec": 2.56,
+        "endSec": 2.72
+      },
+      {
+        "word": "just",
+        "startSec": 2.8,
+        "endSec": 2.96
+      },
+      {
+        "word": "won't",
+        "startSec": 3,
+        "endSec": 3.2
+      },
+      {
+        "word": "start.",
+        "startSec": 3.28,
+        "endSec": 4.08
+      }
+    ],
+    "text": "I know exactly what to do. My brain just won't start.",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "speed": 1
+  },
+  "ask": {
+    "key": "assets/vo-ask.mp3",
+    "durationSec": 1.84,
+    "words": [
+      {
+        "word": "So",
+        "startSec": 0,
+        "endSec": 0.32
+      },
+      {
+        "word": "I",
+        "startSec": 0.64,
+        "endSec": 0.8
+      },
+      {
+        "word": "asked",
+        "startSec": 0.88,
+        "endSec": 1.04
+      },
+      {
+        "word": "Foco.",
+        "startSec": 1.12,
+        "endSec": 1.84
+      }
+    ],
+    "text": "So I asked Foco.",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "speed": 1
+  },
+  "magic": {
+    "key": "assets/vo-magic.mp3",
+    "durationSec": 4.64,
+    "words": [
+      {
+        "word": "It",
+        "startSec": 0,
+        "endSec": 0.16
+      },
+      {
+        "word": "took",
+        "startSec": 0.28,
+        "endSec": 0.4
+      },
+      {
+        "word": "the",
+        "startSec": 0.52,
+        "endSec": 0.64
+      },
+      {
+        "word": "big",
+        "startSec": 0.76,
+        "endSec": 0.88
+      },
+      {
+        "word": "scary",
+        "startSec": 1.04,
+        "endSec": 1.52
+      },
+      {
+        "word": "task,",
+        "startSec": 1.8,
+        "endSec": 2.24
+      },
+      {
+        "word": "and",
+        "startSec": 2.36,
+        "endSec": 2.48
+      },
+      {
+        "word": "broke",
+        "startSec": 2.56,
+        "endSec": 2.72
+      },
+      {
+        "word": "it",
+        "startSec": 2.8,
+        "endSec": 2.96
+      },
+      {
+        "word": "into",
+        "startSec": 3.04,
+        "endSec": 3.28
+      },
+      {
+        "word": "tiny",
+        "startSec": 3.36,
+        "endSec": 3.68
+      },
+      {
+        "word": "steps.",
+        "startSec": 3.84,
+        "endSec": 4.64
+      }
+    ],
+    "text": "It took the big scary task, and broke it into tiny steps.",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "speed": 1
+  },
+  "one": {
+    "key": "assets/vo-one.mp3",
+    "durationSec": 5.68,
+    "words": [
+      {
+        "word": "Step",
+        "startSec": 0,
+        "endSec": 0.32
+      },
+      {
+        "word": "one.",
+        "startSec": 0.4,
+        "endSec": 0.8
+      },
+      {
+        "word": "Open",
+        "startSec": 1.2,
+        "endSec": 1.44
+      },
+      {
+        "word": "my",
+        "startSec": 1.52,
+        "endSec": 1.6
+      },
+      {
+        "word": "inbox.",
+        "startSec": 1.68,
+        "endSec": 2.44
+      },
+      {
+        "word": "Two",
+        "startSec": 2.64,
+        "endSec": 2.8
+      },
+      {
+        "word": "minutes.",
+        "startSec": 2.88,
+        "endSec": 3.36
+      },
+      {
+        "word": "Okay.",
+        "startSec": 3.84,
+        "endSec": 4.44
+      },
+      {
+        "word": "Just",
+        "startSec": 4.64,
+        "endSec": 4.8
+      },
+      {
+        "word": "this",
+        "startSec": 4.88,
+        "endSec": 5.04
+      },
+      {
+        "word": "one.",
+        "startSec": 5.12,
+        "endSec": 5.68
+      }
+    ],
+    "text": "Step one. Open my inbox. Two minutes. Okay. Just this one.",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "speed": 1
+  },
+  "started": {
+    "key": "assets/vo-started.mp3",
+    "durationSec": 2.4,
+    "words": [
+      {
+        "word": "And",
+        "startSec": 0,
+        "endSec": 0.16
+      },
+      {
+        "word": "then,",
+        "startSec": 0.24,
+        "endSec": 0.88
+      },
+      {
+        "word": "I",
+        "startSec": 0.96,
+        "endSec": 1.04
+      },
+      {
+        "word": "was",
+        "startSec": 1.16,
+        "endSec": 1.28
+      },
+      {
+        "word": "just",
+        "startSec": 1.4,
+        "endSec": 1.52
+      },
+      {
+        "word": "doing",
+        "startSec": 1.68,
+        "endSec": 1.84
+      },
+      {
+        "word": "it.",
+        "startSec": 1.92,
+        "endSec": 2.4
+      }
+    ],
+    "text": "And then, I was just doing it.",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "speed": 1
+  },
+  "relief": {
+    "key": "assets/vo-relief.mp3",
+    "durationSec": 3.76,
+    "words": [
+      {
+        "word": "First",
+        "startSec": 0,
+        "endSec": 0.32
+      },
+      {
+        "word": "step,",
+        "startSec": 0.48,
+        "endSec": 0.96
+      },
+      {
+        "word": "done.",
+        "startSec": 1.12,
+        "endSec": 1.68
+      },
+      {
+        "word": "Before",
+        "startSec": 1.84,
+        "endSec": 2.16
+      },
+      {
+        "word": "the",
+        "startSec": 2.2,
+        "endSec": 2.24
+      },
+      {
+        "word": "baby",
+        "startSec": 2.32,
+        "endSec": 2.64
+      },
+      {
+        "word": "even",
+        "startSec": 2.72,
+        "endSec": 2.96
+      },
+      {
+        "word": "woke",
+        "startSec": 3.08,
+        "endSec": 3.2
+      },
+      {
+        "word": "up.",
+        "startSec": 3.28,
+        "endSec": 3.76
+      }
+    ],
+    "text": "First step, done. Before the baby even woke up.",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "speed": 1
+  },
+  "cta": {
+    "key": "assets/vo-cta.mp3",
+    "durationSec": 3.68,
+    "words": [
+      {
+        "word": "Foco.",
+        "startSec": 0,
+        "endSec": 0.96
+      },
+      {
+        "word": "The",
+        "startSec": 1.04,
+        "endSec": 1.12
+      },
+      {
+        "word": "start",
+        "startSec": 1.2,
+        "endSec": 1.52
+      },
+      {
+        "word": "button",
+        "startSec": 1.6,
+        "endSec": 1.92
+      },
+      {
+        "word": "your",
+        "startSec": 2,
+        "endSec": 2.16
+      },
+      {
+        "word": "brain",
+        "startSec": 2.24,
+        "endSec": 2.56
+      },
+      {
+        "word": "is",
+        "startSec": 2.64,
+        "endSec": 2.8
+      },
+      {
+        "word": "missing.",
+        "startSec": 2.88,
+        "endSec": 3.68
+      }
+    ],
+    "text": "Foco. The start button your brain is missing.",
+    "voiceId": "EXAVITQu4vr4xnSDxMaL",
+    "speed": 1
+  }
+}

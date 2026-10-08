@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-06-06T10:13:37.737Z",
+  "generated_at": "2026-09-22T15:36:14.778Z",
   "window": {
-    "startDate": "2026-05-07",
-    "endDate": "2026-06-03"
+    "startDate": "2026-08-23",
+    "endDate": "2026-09-19"
   },
   "totals": {
-    "queries": 0,
-    "pages": 0,
-    "clicks": 0,
-    "impressions": 0
+    "queries": 544,
+    "pages": 140,
+    "clicks": 82,
+    "impressions": 4358
   },
   "settings": {
     "strikingPos": [
@@ -22,14 +22,4402 @@
     "transactionalMultiplier": 1.5
   },
   "counts": {
-    "boosts": 0,
-    "gscOnlyCandidates": 0,
-    "ctrOpportunities": 0,
-    "cannibalization": 0,
-    "transactionalBoosts": 0
+    "boosts": 187,
+    "gscOnlyCandidates": 141,
+    "ctrOpportunities": 21,
+    "cannibalization": 23,
+    "transactionalBoosts": 73
   },
-  "boosts": {},
-  "gscOnlyCandidates": [],
-  "ctrOpportunities": [],
-  "cannibalization": []
+  "boosts": {
+    "foco search ai": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "foco search ai",
+      "slug": "foco-search-ai",
+      "impressions": 33,
+      "clicks": 22,
+      "position": 1,
+      "currentPage": "https://www.tryfoco.com/"
+    },
+    "foco app": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "foco app",
+      "slug": "foco-app",
+      "impressions": 235,
+      "clicks": 21,
+      "position": 4.5,
+      "currentPage": "https://www.tryfoco.com/"
+    },
+    "foco ai": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "foco ai",
+      "slug": "foco-ai",
+      "impressions": 193,
+      "clicks": 9,
+      "position": 3.1,
+      "currentPage": "https://www.tryfoco.com/"
+    },
+    "foco": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "foco",
+      "slug": "foco",
+      "impressions": 571,
+      "clicks": 5,
+      "position": 7.1,
+      "currentPage": "https://www.tryfoco.com/"
+    },
+    "adhd weekly planner printable free": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "adhd weekly planner printable free",
+      "slug": "adhd-weekly-planner-printable",
+      "impressions": 9,
+      "clicks": 3,
+      "position": 3.7,
+      "currentPage": "https://www.tryfoco.com/adhd-weekly-planner/"
+    },
+    "inflow review": {
+      "multiplier": 7.5,
+      "reason": "striking-distance+transactional-review",
+      "position": 11,
+      "impressions": 33,
+      "clicks": 3,
+      "currentPage": "https://www.tryfoco.com/inflow-review/",
+      "intent": "review"
+    },
+    "ticktick vs structured": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-comparison",
+      "keyword": "ticktick vs structured",
+      "slug": "ticktick-vs-structured",
+      "impressions": 8,
+      "clicks": 2,
+      "position": 6.3,
+      "currentPage": "https://www.tryfoco.com/structured-app-alternative/",
+      "intent": "comparison"
+    },
+    "adenia foco app": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "adenia foco app",
+      "slug": "adenia-foco-app",
+      "impressions": 48,
+      "clicks": 1,
+      "position": 2.5,
+      "currentPage": "https://www.tryfoco.com/"
+    },
+    "adhd planner system": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "adhd planner system",
+      "slug": "adhd-planner-system",
+      "impressions": 31,
+      "clicks": 1,
+      "position": 41,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/"
+    },
+    "apps like structured": {
+      "multiplier": 5,
+      "reason": "striking-distance",
+      "position": 8.9,
+      "impressions": 8,
+      "clicks": 1,
+      "currentPage": "https://www.tryfoco.com/structured-app-alternative/"
+    },
+    "best adhd apps for adult women": {
+      "multiplier": 7.5,
+      "reason": "striking-distance+transactional-best-top",
+      "position": 16.4,
+      "impressions": 8,
+      "clicks": 1,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "intent": "best-top"
+    },
+    "foco website": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "foco website",
+      "slug": "foco-website",
+      "impressions": 28,
+      "clicks": 1,
+      "position": 6.1,
+      "currentPage": "https://www.tryfoco.com/"
+    },
+    "goblin tools alternative": {
+      "multiplier": 7.5,
+      "reason": "striking-distance+transactional-comparison",
+      "position": 12.7,
+      "impressions": 20,
+      "clicks": 1,
+      "currentPage": "https://www.tryfoco.com/goblin-tools-alternative/",
+      "intent": "comparison"
+    },
+    "inflow app review": {
+      "multiplier": 7.5,
+      "reason": "striking-distance+transactional-review",
+      "position": 10.1,
+      "impressions": 45,
+      "clicks": 1,
+      "currentPage": "https://www.tryfoco.com/inflow-review/",
+      "intent": "review"
+    },
+    "miracle adhd app": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "miracle adhd app",
+      "slug": "miracle-adhd-app",
+      "impressions": 3,
+      "clicks": 1,
+      "position": 5,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/"
+    },
+    "structured app alternative": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-comparison",
+      "keyword": "structured app alternative",
+      "slug": "structured-app-alternative",
+      "impressions": 9,
+      "clicks": 1,
+      "position": 5.1,
+      "currentPage": "https://www.tryfoco.com/structured-app-alternative/",
+      "intent": "comparison"
+    },
+    "structured vs ticktick": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-comparison",
+      "keyword": "structured vs ticktick",
+      "slug": "structured-vs-ticktick",
+      "impressions": 9,
+      "clicks": 1,
+      "position": 7.2,
+      "currentPage": "https://www.tryfoco.com/structured-app-alternative/",
+      "intent": "comparison"
+    },
+    "tiimo vs structured": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-comparison",
+      "keyword": "tiimo vs structured",
+      "slug": "tiimo-vs-structured",
+      "impressions": 4,
+      "clicks": 1,
+      "position": 22.3,
+      "currentPage": "https://www.tryfoco.com/structured-app-alternative/",
+      "intent": "comparison"
+    },
+    "yes": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "yes",
+      "slug": "yes",
+      "impressions": 11,
+      "clicks": 1,
+      "position": 5.1,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/"
+    },
+    "2025 adhd planner": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "2025 adhd planner",
+      "slug": "2025-adhd-planner",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 42.5,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/"
+    },
+    "adhd activation": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "adhd activation",
+      "slug": "adhd-activation",
+      "impressions": 22,
+      "clicks": 0,
+      "position": 63.6,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/"
+    },
+    "adhd and task initiation": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "adhd and task initiation",
+      "slug": "adhd-and-task-initiation",
+      "impressions": 23,
+      "clicks": 0,
+      "position": 77.3,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/"
+    },
+    "adhd applications": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "adhd applications",
+      "slug": "adhd-applications",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 56.8,
+      "currentPage": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/"
+    },
+    "adhd apps": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "adhd apps",
+      "slug": "adhd-apps",
+      "impressions": 46,
+      "clicks": 0,
+      "position": 57.5,
+      "currentPage": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/"
+    },
+    "adhd apps for adults": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "adhd apps for adults",
+      "slug": "adhd-apps-for-adults",
+      "impressions": 12,
+      "clicks": 0,
+      "position": 58.1,
+      "currentPage": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/"
+    },
+    "adhd careers": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "adhd careers",
+      "slug": "adhd-careers",
+      "impressions": 9,
+      "clicks": 0,
+      "position": 52.3,
+      "currentPage": "https://www.tryfoco.com/best-career-for-people-with-adhd/"
+    },
+    "adhd coach app": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "adhd coach app",
+      "slug": "adhd-coach-app",
+      "impressions": 10,
+      "clicks": 0,
+      "position": 38.6,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/"
+    },
+    "adhd coaching app": {
+      "multiplier": 5,
+      "reason": "striking-distance",
+      "position": 8,
+      "impressions": 11,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/"
+    },
+    "adhd founder.com starter kit reviews": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-review",
+      "keyword": "adhd founder.com starter kit reviews",
+      "slug": "adhd-foundercom-starter-kit-re",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 19.3,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "intent": "review"
+    },
+    "adhd friendly apps": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "adhd friendly apps",
+      "slug": "adhd-friendly-apps",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 58.3,
+      "currentPage": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/"
+    },
+    "adhd motivation app": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "adhd motivation app",
+      "slug": "adhd-motivation-app",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 7.2,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/"
+    },
+    "adhd networking app": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "adhd networking app",
+      "slug": "adhd-networking-app",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 76,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/"
+    },
+    "adhd planner 2025": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "adhd planner 2025",
+      "slug": "adhd-planner-2025",
+      "impressions": 10,
+      "clicks": 0,
+      "position": 42,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/"
+    },
+    "adhd planner alternative": {
+      "multiplier": 7.5,
+      "reason": "striking-distance+transactional-comparison",
+      "position": 19.4,
+      "impressions": 5,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "intent": "comparison"
+    },
+    "adhd planners 2025": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "adhd planners 2025",
+      "slug": "adhd-planners-2025",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 45.5,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/"
+    },
+    "adhd planning app": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "adhd planning app",
+      "slug": "adhd-planning-app",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 67.3,
+      "currentPage": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/"
+    },
+    "adhd starting tasks": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "adhd starting tasks",
+      "slug": "adhd-starting-tasks",
+      "impressions": 12,
+      "clicks": 0,
+      "position": 74,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/"
+    },
+    "adhd support apps": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "adhd support apps",
+      "slug": "adhd-support-apps",
+      "impressions": 10,
+      "clicks": 0,
+      "position": 66.2,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/"
+    },
+    "adhd task initiation strategies": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "adhd task initiation strategies",
+      "slug": "adhd-task-initiation-strategie",
+      "impressions": 14,
+      "clicks": 0,
+      "position": 78.5,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/"
+    },
+    "adhd task paralysis": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "adhd task paralysis",
+      "slug": "adhd-task-paralysis",
+      "impressions": 18,
+      "clicks": 0,
+      "position": 65.5,
+      "currentPage": "https://www.tryfoco.com/adhd-task-paralysis/"
+    },
+    "adhd time management apps": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "adhd time management apps",
+      "slug": "adhd-time-management-apps",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 59,
+      "currentPage": "https://www.tryfoco.com/best-productivity-apps-for-adhd/"
+    },
+    "adhd weekly planner template free": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "adhd weekly planner template free",
+      "slug": "adhd-weekly-planner-template-f",
+      "impressions": 47,
+      "clicks": 0,
+      "position": 22.1,
+      "currentPage": "https://www.tryfoco.com/adhd-weekly-planner/"
+    },
+    "adhd weekly planner template free pdf": {
+      "multiplier": 5,
+      "reason": "striking-distance",
+      "position": 16.8,
+      "impressions": 6,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/adhd-weekly-planner/"
+    },
+    "adi ben elyahu": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "adi ben elyahu",
+      "slug": "adi-ben-elyahu",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 2.3,
+      "currentPage": "https://www.tryfoco.com/author/adi/page/8/"
+    },
+    "adult adhd executive dysfunction task initiation review pmc": {
+      "multiplier": 7.5,
+      "reason": "striking-distance+transactional-review",
+      "position": 8.7,
+      "impressions": 7,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/",
+      "intent": "review"
+    },
+    "adult adhd task initiation executive dysfunction review pmc": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-review",
+      "keyword": "adult adhd task initiation executive dysfunction review pmc",
+      "slug": "adult-adhd-task-initiation-exe",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 9,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/",
+      "intent": "review"
+    },
+    "aligned adhd app": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "aligned adhd app",
+      "slug": "aligned-adhd-app",
+      "impressions": 8,
+      "clicks": 0,
+      "position": 7.9,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/"
+    },
+    "aligned app adhd": {
+      "multiplier": 5,
+      "reason": "striking-distance",
+      "position": 10.2,
+      "impressions": 23,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/"
+    },
+    "aligned app adhd review": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-review",
+      "keyword": "aligned app adhd review",
+      "slug": "aligned-app-adhd-review",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 9.8,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "intent": "review"
+    },
+    "aligned app for adhd": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "aligned app for adhd",
+      "slug": "aligned-app-for-adhd",
+      "impressions": 10,
+      "clicks": 0,
+      "position": 7.4,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/"
+    },
+    "alternatives to inflow?": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-comparison",
+      "keyword": "alternatives to inflow?",
+      "slug": "alternatives-to-inflow",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 7.8,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "intent": "comparison"
+    },
+    "alternatives to todoist for executive dysfunction": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-comparison",
+      "keyword": "alternatives to todoist for executive dysfunction",
+      "slug": "alternatives-to-todoist-for-ex",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 20.7,
+      "currentPage": "https://www.tryfoco.com/todoist-alternative-for-adhd/",
+      "intent": "comparison"
+    },
+    "american psychiatric association adhd executive function deficits initiation": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "american psychiatric association adhd executive function deficits initiation",
+      "slug": "american-psychiatric-associati",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 11.3,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/"
+    },
+    "aplicativo foco": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "aplicativo foco",
+      "slug": "aplicativo-foco",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 12.3,
+      "currentPage": "https://www.tryfoco.com/"
+    },
+    "app adenia foco": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "app adenia foco",
+      "slug": "app-adenia-foco",
+      "impressions": 15,
+      "clicks": 0,
+      "position": 3.6,
+      "currentPage": "https://www.tryfoco.com/"
+    },
+    "app foco": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "app foco",
+      "slug": "app-foco",
+      "impressions": 6,
+      "clicks": 0,
+      "position": 4.3,
+      "currentPage": "https://www.tryfoco.com/"
+    },
+    "app for add": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "app for add",
+      "slug": "app-for-add",
+      "impressions": 13,
+      "clicks": 0,
+      "position": 58.8,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/"
+    },
+    "app for adhd": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "app for adhd",
+      "slug": "app-for-adhd",
+      "impressions": 22,
+      "clicks": 0,
+      "position": 60.9,
+      "currentPage": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/"
+    },
+    "app for adhd adults": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "app for adhd adults",
+      "slug": "app-for-adhd-adults",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 63.3,
+      "currentPage": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/"
+    },
+    "apps for add": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "apps for add",
+      "slug": "apps-for-add",
+      "impressions": 18,
+      "clicks": 0,
+      "position": 59.3,
+      "currentPage": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/"
+    },
+    "apps for adhd": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "apps for adhd",
+      "slug": "apps-for-adhd",
+      "impressions": 70,
+      "clicks": 0,
+      "position": 61.6,
+      "currentPage": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/"
+    },
+    "apps for adhd adults": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "apps for adhd adults",
+      "slug": "apps-for-adhd-adults",
+      "impressions": 27,
+      "clicks": 0,
+      "position": 57.6,
+      "currentPage": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/"
+    },
+    "apps for adhd productivity": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "apps for adhd productivity",
+      "slug": "apps-for-adhd-productivity",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 40.8,
+      "currentPage": "https://www.tryfoco.com/best-productivity-apps-for-adhd/"
+    },
+    "apps for women with adhd": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "apps for women with adhd",
+      "slug": "apps-for-women-with-adhd",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 47.7,
+      "currentPage": "https://www.tryfoco.com/best-adhd-apps-for-adult-women/"
+    },
+    "apps like chillio": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "apps like chillio",
+      "slug": "apps-like-chillio",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 22,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/"
+    },
+    "apps like tiimo": {
+      "multiplier": 5,
+      "reason": "striking-distance",
+      "position": 10.5,
+      "impressions": 6,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/tiimo-alternative/"
+    },
+    "apps that help with adhd": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "apps that help with adhd",
+      "slug": "apps-that-help-with-adhd",
+      "impressions": 17,
+      "clicks": 0,
+      "position": 58,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/"
+    },
+    "apps to help with add": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "apps to help with add",
+      "slug": "apps-to-help-with-add",
+      "impressions": 17,
+      "clicks": 0,
+      "position": 62.9,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/"
+    },
+    "attention deficit disorder apps": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "attention deficit disorder apps",
+      "slug": "attention-deficit-disorder-app",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 61.4,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/"
+    },
+    "avoro adhd reviews": {
+      "multiplier": 1.5,
+      "reason": "transactional-review",
+      "intent": "review",
+      "position": 23,
+      "impressions": 3,
+      "clicks": 0
+    },
+    "best adhd app": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best adhd app",
+      "slug": "best-adhd-app",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 58.7,
+      "currentPage": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+      "intent": "best-top"
+    },
+    "best adhd app for adults": {
+      "multiplier": 1.5,
+      "reason": "transactional-best-top",
+      "intent": "best-top",
+      "position": 52.9,
+      "impressions": 26,
+      "clicks": 0
+    },
+    "best adhd apps": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best adhd apps",
+      "slug": "best-adhd-apps",
+      "impressions": 39,
+      "clicks": 0,
+      "position": 51.8,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "intent": "best-top"
+    },
+    "best adhd apps for adults": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best adhd apps for adults",
+      "slug": "best-adhd-apps-for-adults",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 59,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "intent": "best-top"
+    },
+    "best adhd planner": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best adhd planner",
+      "slug": "best-adhd-planner",
+      "impressions": 57,
+      "clicks": 0,
+      "position": 46.2,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "intent": "best-top"
+    },
+    "best adhd planner app": {
+      "multiplier": 1.5,
+      "reason": "transactional-best-top",
+      "intent": "best-top",
+      "position": 76.4,
+      "impressions": 5,
+      "clicks": 0
+    },
+    "best adhd planner for teens": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best adhd planner for teens",
+      "slug": "best-adhd-planner-for-teens",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 52.7,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "intent": "best-top"
+    },
+    "best adhd planners": {
+      "multiplier": 1.5,
+      "reason": "transactional-best-top",
+      "intent": "best-top",
+      "position": 45.3,
+      "impressions": 50,
+      "clicks": 0
+    },
+    "best adhd productivity apps": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best adhd productivity apps",
+      "slug": "best-adhd-productivity-apps",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 70.6,
+      "currentPage": "https://www.tryfoco.com/best-productivity-apps-for-adhd/",
+      "intent": "best-top"
+    },
+    "best app for adhd": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best app for adhd",
+      "slug": "best-app-for-adhd",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 16.8,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "intent": "best-top"
+    },
+    "best apps adhd": {
+      "multiplier": 1.5,
+      "reason": "transactional-best-top",
+      "intent": "best-top",
+      "position": 61,
+      "impressions": 61,
+      "clicks": 0
+    },
+    "best apps for adhd": {
+      "multiplier": 1.5,
+      "reason": "transactional-best-top",
+      "intent": "best-top",
+      "position": 57.6,
+      "impressions": 103,
+      "clicks": 0
+    },
+    "best apps for adhd adults": {
+      "multiplier": 1.5,
+      "reason": "transactional-best-top",
+      "intent": "best-top",
+      "position": 55.1,
+      "impressions": 49,
+      "clicks": 0
+    },
+    "best apps for adults with adhd": {
+      "multiplier": 1.5,
+      "reason": "transactional-best-top",
+      "intent": "best-top",
+      "position": 53.6,
+      "impressions": 18,
+      "clicks": 0
+    },
+    "best apps for executive dysfunction": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best apps for executive dysfunction",
+      "slug": "best-apps-for-executive-dysfun",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 51,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "intent": "best-top"
+    },
+    "best calendar for adhd": {
+      "multiplier": 1.5,
+      "reason": "transactional-best-top",
+      "intent": "best-top",
+      "position": 55.7,
+      "impressions": 3,
+      "clicks": 0
+    },
+    "best careers for adhd": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best careers for adhd",
+      "slug": "best-careers-for-adhd",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 73.6,
+      "currentPage": "https://www.tryfoco.com/best-career-for-people-with-adhd/",
+      "intent": "best-top"
+    },
+    "best daily planners for adhd": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best daily planners for adhd",
+      "slug": "best-daily-planners-for-adhd",
+      "impressions": 7,
+      "clicks": 0,
+      "position": 59.7,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "intent": "best-top"
+    },
+    "best digital planner adhd": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best digital planner adhd",
+      "slug": "best-digital-planner-adhd",
+      "impressions": 54,
+      "clicks": 0,
+      "position": 73,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "intent": "best-top"
+    },
+    "best digital planner for adhd": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best digital planner for adhd",
+      "slug": "best-digital-planner-for-adhd",
+      "impressions": 59,
+      "clicks": 0,
+      "position": 73.6,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "intent": "best-top"
+    },
+    "best digital planner for adhd adults": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best digital planner for adhd adults",
+      "slug": "best-digital-planner-for-adhd",
+      "impressions": 64,
+      "clicks": 0,
+      "position": 65,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "intent": "best-top"
+    },
+    "best free adhd apps": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best free adhd apps",
+      "slug": "best-free-adhd-apps",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 31,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "intent": "best-top"
+    },
+    "best jobs for adhd": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best jobs for adhd",
+      "slug": "best-jobs-for-adhd",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 93.5,
+      "currentPage": "https://www.tryfoco.com/best-career-for-people-with-adhd/",
+      "intent": "best-top"
+    },
+    "best neurodivergent planner": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best neurodivergent planner",
+      "slug": "best-neurodivergent-planner",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 47.5,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "intent": "best-top"
+    },
+    "best online planner for adhd": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best online planner for adhd",
+      "slug": "best-online-planner-for-adhd",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 60.3,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "intent": "best-top"
+    },
+    "best paper planners for adhd": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best paper planners for adhd",
+      "slug": "best-paper-planners-for-adhd",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 46.6,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "intent": "best-top"
+    },
+    "best planner adhd": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best planner adhd",
+      "slug": "best-planner-adhd",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 52.5,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "intent": "best-top"
+    },
+    "best planner for add": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best planner for add",
+      "slug": "best-planner-for-add",
+      "impressions": 6,
+      "clicks": 0,
+      "position": 48,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "intent": "best-top"
+    },
+    "best planner for add adults": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best planner for add adults",
+      "slug": "best-planner-for-add-adults",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 52.4,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "intent": "best-top"
+    },
+    "best planner for adhd": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best planner for adhd",
+      "slug": "best-planner-for-adhd",
+      "impressions": 65,
+      "clicks": 0,
+      "position": 46.8,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "intent": "best-top"
+    },
+    "best planner for adhd adult": {
+      "multiplier": 1.5,
+      "reason": "transactional-best-top",
+      "intent": "best-top",
+      "position": 52.3,
+      "impressions": 3,
+      "clicks": 0
+    },
+    "best planner for adhd adults": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best planner for adhd adults",
+      "slug": "best-planner-for-adhd-adults",
+      "impressions": 54,
+      "clicks": 0,
+      "position": 47.6,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "intent": "best-top"
+    },
+    "best planner for people with adhd": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best planner for people with adhd",
+      "slug": "best-planner-for-people-with-a",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 55.4,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "intent": "best-top"
+    },
+    "best planner for someone with adhd": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best planner for someone with adhd",
+      "slug": "best-planner-for-someone-with",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 52.5,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "intent": "best-top"
+    },
+    "best planners 2024 adhd": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best planners 2024 adhd",
+      "slug": "best-planners-2024-adhd",
+      "impressions": 56,
+      "clicks": 0,
+      "position": 42.3,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "intent": "best-top"
+    },
+    "best planners 2026 adhd": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best planners 2026 adhd",
+      "slug": "best-planners-2026-adhd",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 24.3,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "intent": "best-top"
+    },
+    "best planners adhd": {
+      "multiplier": 1.5,
+      "reason": "transactional-best-top",
+      "intent": "best-top",
+      "position": 51.8,
+      "impressions": 4,
+      "clicks": 0
+    },
+    "best planners for add adults": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best planners for add adults",
+      "slug": "best-planners-for-add-adults",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 50.5,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "intent": "best-top"
+    },
+    "best planners for adhd": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best planners for adhd",
+      "slug": "best-planners-for-adhd",
+      "impressions": 62,
+      "clicks": 0,
+      "position": 51.8,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "intent": "best-top"
+    },
+    "best planners for adhd women": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best planners for adhd women",
+      "slug": "best-planners-for-adhd-women",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 53.3,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "intent": "best-top"
+    },
+    "best planners for adults with adhd": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best planners for adults with adhd",
+      "slug": "best-planners-for-adults-with",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 59.8,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "intent": "best-top"
+    },
+    "best productivity apps for adhd": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "best productivity apps for adhd",
+      "slug": "best-productivity-apps-for-adh",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 56.5,
+      "currentPage": "https://www.tryfoco.com/best-productivity-apps-for-adhd/",
+      "intent": "best-top"
+    },
+    "careers for adhd": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "careers for adhd",
+      "slug": "careers-for-adhd",
+      "impressions": 6,
+      "clicks": 0,
+      "position": 43.3,
+      "currentPage": "https://www.tryfoco.com/best-career-for-people-with-adhd/"
+    },
+    "careers for people with adhd": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "careers for people with adhd",
+      "slug": "careers-for-people-with-adhd",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 50.3,
+      "currentPage": "https://www.tryfoco.com/best-career-for-people-with-adhd/"
+    },
+    "chadd adhd task initiation executive function": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "chadd adhd task initiation executive function",
+      "slug": "chadd-adhd-task-initiation-exe",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 8,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/"
+    },
+    "chadd executive function adhd task initiation": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "chadd executive function adhd task initiation",
+      "slug": "chadd-executive-function-adhd",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 7,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/"
+    },
+    "chadd task initiation adhd executive function": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "chadd task initiation adhd executive function",
+      "slug": "chadd-task-initiation-adhd-exe",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 6.8,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/"
+    },
+    "chillio app": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "chillio app",
+      "slug": "chillio-app",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 2.3,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/"
+    },
+    "digital or paper planner for adhd": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "digital or paper planner for adhd",
+      "slug": "digital-or-paper-planner-for-a",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 36,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/"
+    },
+    "digital planner adhd": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "digital planner adhd",
+      "slug": "digital-planner-adhd",
+      "impressions": 24,
+      "clicks": 0,
+      "position": 75.4,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/"
+    },
+    "digital planner for adhd": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "digital planner for adhd",
+      "slug": "digital-planner-for-adhd",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 78,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/"
+    },
+    "digital planner for adhd adults": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "digital planner for adhd adults",
+      "slug": "digital-planner-for-adhd-adult",
+      "impressions": 8,
+      "clicks": 0,
+      "position": 34.5,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/"
+    },
+    "does inflow work": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "does inflow work",
+      "slug": "does-inflow-work",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 10.5,
+      "currentPage": "https://www.tryfoco.com/inflow-review/"
+    },
+    "foc0": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "foc0",
+      "slug": "foc0",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 7.7,
+      "currentPage": "https://www.tryfoco.com/"
+    },
+    "foco adhd": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "foco adhd",
+      "slug": "foco-adhd",
+      "impressions": 12,
+      "clicks": 0,
+      "position": 2.5,
+      "currentPage": "https://www.tryfoco.com/"
+    },
+    "foco aplicativo": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "foco aplicativo",
+      "slug": "foco-aplicativo",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 5.7,
+      "currentPage": "https://www.tryfoco.com/"
+    },
+    "foco contact": {
+      "multiplier": 5,
+      "reason": "striking-distance",
+      "position": 9.2,
+      "impressions": 9,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/contact/"
+    },
+    "foco contact number": {
+      "multiplier": 5,
+      "reason": "striking-distance",
+      "position": 8.9,
+      "impressions": 13,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/contact/"
+    },
+    "foco customer service": {
+      "multiplier": 5,
+      "reason": "striking-distance",
+      "position": 9,
+      "impressions": 40,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/contact/"
+    },
+    "foco customer service phone number": {
+      "multiplier": 5,
+      "reason": "striking-distance",
+      "position": 9.2,
+      "impressions": 71,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/contact/"
+    },
+    "foco do": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "foco do",
+      "slug": "foco-do",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 26,
+      "currentPage": "https://www.tryfoco.com/"
+    },
+    "foco mobile": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "foco mobile",
+      "slug": "foco-mobile",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 7,
+      "currentPage": "https://www.tryfoco.com/"
+    },
+    "foco phone": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "foco phone",
+      "slug": "foco-phone",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 12,
+      "currentPage": "https://www.tryfoco.com/contact/"
+    },
+    "foco phone number": {
+      "multiplier": 5,
+      "reason": "striking-distance",
+      "position": 9.8,
+      "impressions": 14,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/contact/"
+    },
+    "foco play": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "foco play",
+      "slug": "foco-play",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 5,
+      "currentPage": "https://www.tryfoco.com/"
+    },
+    "foco referral": {
+      "multiplier": 5,
+      "reason": "striking-distance",
+      "position": 10.3,
+      "impressions": 11,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/contact/"
+    },
+    "foco?": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "foco?",
+      "slug": "foco",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 4.7,
+      "currentPage": "https://www.tryfoco.com/"
+    },
+    "focos": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "focos",
+      "slug": "focos",
+      "impressions": 18,
+      "clicks": 0,
+      "position": 28.1,
+      "currentPage": "https://www.tryfoco.com/"
+    },
+    "foko app": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "foko app",
+      "slug": "foko-app",
+      "impressions": 10,
+      "clicks": 0,
+      "position": 3.2,
+      "currentPage": "https://www.tryfoco.com/"
+    },
+    "free adhd apps": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "free adhd apps",
+      "slug": "free-adhd-apps",
+      "impressions": 13,
+      "clicks": 0,
+      "position": 57.5,
+      "currentPage": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/"
+    },
+    "getfoco": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "getfoco",
+      "slug": "getfoco",
+      "impressions": 13,
+      "clicks": 0,
+      "position": 5.5,
+      "currentPage": "https://www.tryfoco.com/get-foco/"
+    },
+    "good planners for adhd": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "good planners for adhd",
+      "slug": "good-planners-for-adhd",
+      "impressions": 18,
+      "clicks": 0,
+      "position": 48.8,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/"
+    },
+    "inflow": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "inflow",
+      "slug": "inflow",
+      "impressions": 6,
+      "clicks": 0,
+      "position": 3,
+      "currentPage": "https://www.tryfoco.com/inflow-review/"
+    },
+    "inflow adhd": {
+      "multiplier": 5,
+      "reason": "striking-distance",
+      "position": 18.1,
+      "impressions": 26,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/inflow-review/"
+    },
+    "inflow adhd alternatives": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "inflow adhd alternatives",
+      "slug": "inflow-adhd-alternatives",
+      "impressions": 10,
+      "clicks": 0,
+      "position": 33.7,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/"
+    },
+    "inflow adhd app review": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-review",
+      "keyword": "inflow adhd app review",
+      "slug": "inflow-adhd-app-review",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 13.3,
+      "currentPage": "https://www.tryfoco.com/inflow-review/",
+      "intent": "review"
+    },
+    "inflow adhd app reviews": {
+      "multiplier": 7.5,
+      "reason": "striking-distance+transactional-review",
+      "position": 9.6,
+      "impressions": 7,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/inflow-review/",
+      "intent": "review"
+    },
+    "inflow adhd reddit": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "inflow adhd reddit",
+      "slug": "inflow-adhd-reddit",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 6,
+      "currentPage": "https://www.tryfoco.com/inflow-review/"
+    },
+    "inflow adhd review": {
+      "multiplier": 7.5,
+      "reason": "striking-distance+transactional-review",
+      "position": 10.9,
+      "impressions": 14,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/inflow-review/",
+      "intent": "review"
+    },
+    "inflow adhd reviews": {
+      "multiplier": 7.5,
+      "reason": "striking-distance+transactional-review",
+      "position": 9.3,
+      "impressions": 7,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/inflow-review/",
+      "intent": "review"
+    },
+    "inflow app": {
+      "multiplier": 5,
+      "reason": "striking-distance",
+      "position": 8.7,
+      "impressions": 21,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/inflow-review/"
+    },
+    "inflow app erfahrungen": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "inflow app erfahrungen",
+      "slug": "inflow-app-erfahrungen",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 12,
+      "currentPage": "https://www.tryfoco.com/inflow-review/"
+    },
+    "inflow app reddit": {
+      "multiplier": 5,
+      "reason": "striking-distance",
+      "position": 10.9,
+      "impressions": 7,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/inflow-review/"
+    },
+    "inflow app reviews": {
+      "multiplier": 7.5,
+      "reason": "striking-distance+transactional-review",
+      "position": 14.1,
+      "impressions": 10,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/inflow-review/",
+      "intent": "review"
+    },
+    "inflow for adhd": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "inflow for adhd",
+      "slug": "inflow-for-adhd",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 10.3,
+      "currentPage": "https://www.tryfoco.com/inflow-review/"
+    },
+    "inflow reddit": {
+      "multiplier": 5,
+      "reason": "striking-distance",
+      "position": 12.5,
+      "impressions": 6,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/inflow-review/"
+    },
+    "inflow reviews": {
+      "multiplier": 7.5,
+      "reason": "striking-distance+transactional-review",
+      "position": 10.4,
+      "impressions": 88,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/inflow-review/",
+      "intent": "review"
+    },
+    "is inflow good": {
+      "multiplier": 5,
+      "reason": "striking-distance",
+      "position": 8.7,
+      "impressions": 6,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/inflow-review/"
+    },
+    "is inflow legit": {
+      "multiplier": 5,
+      "reason": "striking-distance",
+      "position": 9.5,
+      "impressions": 45,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/inflow-review/"
+    },
+    "is inflow worth it": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-review",
+      "keyword": "is inflow worth it",
+      "slug": "is-inflow-worth-it",
+      "impressions": 22,
+      "clicks": 0,
+      "position": 7.8,
+      "currentPage": "https://www.tryfoco.com/inflow-review/",
+      "intent": "review"
+    },
+    "jobs for adhd": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "jobs for adhd",
+      "slug": "jobs-for-adhd",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 49,
+      "currentPage": "https://www.tryfoco.com/best-career-for-people-with-adhd/"
+    },
+    "nimh adhd executive function difficulty starting tasks official": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "nimh adhd executive function difficulty starting tasks official",
+      "slug": "nimh-adhd-executive-function-d",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 7,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/"
+    },
+    "nimh adhd executive function task initiation": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "nimh adhd executive function task initiation",
+      "slug": "nimh-adhd-executive-function-t",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 8.3,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/"
+    },
+    "nimh adhd executive function task initiation adults official": {
+      "multiplier": 5,
+      "reason": "striking-distance",
+      "position": 8.6,
+      "impressions": 5,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/"
+    },
+    "nimh adhd executive function task initiation official": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "nimh adhd executive function task initiation official",
+      "slug": "nimh-adhd-executive-function-t",
+      "impressions": 7,
+      "clicks": 0,
+      "position": 6,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/"
+    },
+    "productivity app adhd": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "productivity app adhd",
+      "slug": "productivity-app-adhd",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 61,
+      "currentPage": "https://www.tryfoco.com/best-productivity-apps-for-adhd/"
+    },
+    "structured app alternatives": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "structured app alternatives",
+      "slug": "structured-app-alternatives",
+      "impressions": 12,
+      "clicks": 0,
+      "position": 7.3,
+      "currentPage": "https://www.tryfoco.com/structured-app-alternative/"
+    },
+    "structured vs tiimo": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-comparison",
+      "keyword": "structured vs tiimo",
+      "slug": "structured-vs-tiimo",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 19.8,
+      "currentPage": "https://www.tryfoco.com/structured-app-alternative/",
+      "intent": "comparison"
+    },
+    "structured vs tiimo nederland": {
+      "multiplier": 7.5,
+      "reason": "striking-distance+transactional-comparison",
+      "position": 12.6,
+      "impressions": 5,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/structured-app-alternative/",
+      "intent": "comparison"
+    },
+    "sunsama adhd": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "sunsama adhd",
+      "slug": "sunsama-adhd",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 8,
+      "currentPage": "https://www.tryfoco.com/sunsama-alternative/"
+    },
+    "task initiation adhd": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "task initiation adhd",
+      "slug": "task-initiation-adhd",
+      "impressions": 27,
+      "clicks": 0,
+      "position": 77.1,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/"
+    },
+    "task initiation and focus coaching": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "task initiation and focus coaching",
+      "slug": "task-initiation-and-focus-coac",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 48.4,
+      "currentPage": "https://www.tryfoco.com/task-initiation-strategies-for-adults/"
+    },
+    "task initiation paralysis": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "task initiation paralysis",
+      "slug": "task-initiation-paralysis",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 48.6,
+      "currentPage": "https://www.tryfoco.com/adhd-task-paralysis/"
+    },
+    "task initiation strategies for adhd": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "task initiation strategies for adhd",
+      "slug": "task-initiation-strategies-for",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 76,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/"
+    },
+    "task paralysis": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "task paralysis",
+      "slug": "task-paralysis",
+      "impressions": 13,
+      "clicks": 0,
+      "position": 67,
+      "currentPage": "https://www.tryfoco.com/adhd-task-paralysis/"
+    },
+    "taskbuild ai": {
+      "multiplier": 5,
+      "reason": "striking-distance",
+      "position": 14,
+      "impressions": 7,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/ai-task-breakdown/"
+    },
+    "the foco": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "the foco",
+      "slug": "the-foco",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 7.3,
+      "currentPage": "https://www.tryfoco.com/"
+    },
+    "ticktick vs tiimo": {
+      "multiplier": 7.5,
+      "reason": "striking-distance+transactional-comparison",
+      "position": 8.9,
+      "impressions": 8,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/structured-app-alternative/",
+      "intent": "comparison"
+    },
+    "tiimo alternative": {
+      "multiplier": 7.5,
+      "reason": "striking-distance+transactional-comparison",
+      "position": 13.6,
+      "impressions": 9,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/tiimo-alternative/",
+      "intent": "comparison"
+    },
+    "tiimoapp alternative": {
+      "multiplier": 7.5,
+      "reason": "striking-distance+transactional-comparison",
+      "position": 13,
+      "impressions": 12,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/structured-app-alternative/",
+      "intent": "comparison"
+    },
+    "todoist alternative adhd": {
+      "multiplier": 7.5,
+      "reason": "striking-distance+transactional-comparison",
+      "position": 10.6,
+      "impressions": 17,
+      "clicks": 0,
+      "currentPage": "https://www.tryfoco.com/todoist-alternative-for-adhd/",
+      "intent": "comparison"
+    },
+    "todoist vs structured": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-comparison",
+      "keyword": "todoist vs structured",
+      "slug": "todoist-vs-structured",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 10.7,
+      "currentPage": "https://www.tryfoco.com/structured-app-alternative/",
+      "intent": "comparison"
+    },
+    "what is adhd digital planner": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "what is adhd digital planner",
+      "slug": "what-is-adhd-digital-planner",
+      "impressions": 51,
+      "clicks": 0,
+      "position": 61.9,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/"
+    },
+    "what is foco": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "what is foco",
+      "slug": "what-is-foco",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 5,
+      "currentPage": "https://www.tryfoco.com/"
+    },
+    "what is inflow adhd": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "what is inflow adhd",
+      "slug": "what-is-inflow-adhd",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 18.3,
+      "currentPage": "https://www.tryfoco.com/inflow-review/"
+    },
+    "what is the best adhd app for adults": {
+      "multiplier": 3,
+      "reason": "content-gap+transactional-best-top",
+      "keyword": "what is the best adhd app for adults",
+      "slug": "what-is-the-best-adhd-app-for",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 56.3,
+      "currentPage": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+      "intent": "best-top"
+    },
+    "yes please": {
+      "multiplier": 2,
+      "reason": "content-gap",
+      "keyword": "yes please",
+      "slug": "yes-please",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 7,
+      "currentPage": "https://www.tryfoco.com/best-apps-for-adhd-task-paralysis/"
+    }
+  },
+  "gscOnlyCandidates": [
+    {
+      "keyword": "foco",
+      "slug": "foco",
+      "impressions": 571,
+      "clicks": 5,
+      "position": 7.1,
+      "currentPage": "https://www.tryfoco.com/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "foco app",
+      "slug": "foco-app",
+      "impressions": 235,
+      "clicks": 21,
+      "position": 4.5,
+      "currentPage": "https://www.tryfoco.com/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "foco ai",
+      "slug": "foco-ai",
+      "impressions": 193,
+      "clicks": 9,
+      "position": 3.1,
+      "currentPage": "https://www.tryfoco.com/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "apps for adhd",
+      "slug": "apps-for-adhd",
+      "impressions": 70,
+      "clicks": 0,
+      "position": 61.6,
+      "currentPage": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best planner for adhd",
+      "slug": "best-planner-for-adhd",
+      "impressions": 65,
+      "clicks": 0,
+      "position": 46.8,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best digital planner for adhd adults",
+      "slug": "best-digital-planner-for-adhd",
+      "impressions": 64,
+      "clicks": 0,
+      "position": 65,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best planners for adhd",
+      "slug": "best-planners-for-adhd",
+      "impressions": 62,
+      "clicks": 0,
+      "position": 51.8,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best digital planner for adhd",
+      "slug": "best-digital-planner-for-adhd",
+      "impressions": 59,
+      "clicks": 0,
+      "position": 73.6,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best adhd planner",
+      "slug": "best-adhd-planner",
+      "impressions": 57,
+      "clicks": 0,
+      "position": 46.2,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best planners 2024 adhd",
+      "slug": "best-planners-2024-adhd",
+      "impressions": 56,
+      "clicks": 0,
+      "position": 42.3,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best digital planner adhd",
+      "slug": "best-digital-planner-adhd",
+      "impressions": 54,
+      "clicks": 0,
+      "position": 73,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best planner for adhd adults",
+      "slug": "best-planner-for-adhd-adults",
+      "impressions": 54,
+      "clicks": 0,
+      "position": 47.6,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "what is adhd digital planner",
+      "slug": "what-is-adhd-digital-planner",
+      "impressions": 51,
+      "clicks": 0,
+      "position": 61.9,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "adenia foco app",
+      "slug": "adenia-foco-app",
+      "impressions": 48,
+      "clicks": 1,
+      "position": 2.5,
+      "currentPage": "https://www.tryfoco.com/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "adhd weekly planner template free",
+      "slug": "adhd-weekly-planner-template-f",
+      "impressions": 47,
+      "clicks": 0,
+      "position": 22.1,
+      "currentPage": "https://www.tryfoco.com/adhd-weekly-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "adhd apps",
+      "slug": "adhd-apps",
+      "impressions": 46,
+      "clicks": 0,
+      "position": 57.5,
+      "currentPage": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best adhd apps",
+      "slug": "best-adhd-apps",
+      "impressions": 39,
+      "clicks": 0,
+      "position": 51.8,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "foco search ai",
+      "slug": "foco-search-ai",
+      "impressions": 33,
+      "clicks": 22,
+      "position": 1,
+      "currentPage": "https://www.tryfoco.com/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "adhd planner system",
+      "slug": "adhd-planner-system",
+      "impressions": 31,
+      "clicks": 1,
+      "position": 41,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "foco website",
+      "slug": "foco-website",
+      "impressions": 28,
+      "clicks": 1,
+      "position": 6.1,
+      "currentPage": "https://www.tryfoco.com/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "apps for adhd adults",
+      "slug": "apps-for-adhd-adults",
+      "impressions": 27,
+      "clicks": 0,
+      "position": 57.6,
+      "currentPage": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "task initiation adhd",
+      "slug": "task-initiation-adhd",
+      "impressions": 27,
+      "clicks": 0,
+      "position": 77.1,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "digital planner adhd",
+      "slug": "digital-planner-adhd",
+      "impressions": 24,
+      "clicks": 0,
+      "position": 75.4,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "adhd and task initiation",
+      "slug": "adhd-and-task-initiation",
+      "impressions": 23,
+      "clicks": 0,
+      "position": 77.3,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "adhd activation",
+      "slug": "adhd-activation",
+      "impressions": 22,
+      "clicks": 0,
+      "position": 63.6,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "app for adhd",
+      "slug": "app-for-adhd",
+      "impressions": 22,
+      "clicks": 0,
+      "position": 60.9,
+      "currentPage": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "is inflow worth it",
+      "slug": "is-inflow-worth-it",
+      "impressions": 22,
+      "clicks": 0,
+      "position": 7.8,
+      "currentPage": "https://www.tryfoco.com/inflow-review/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "adhd task paralysis",
+      "slug": "adhd-task-paralysis",
+      "impressions": 18,
+      "clicks": 0,
+      "position": 65.5,
+      "currentPage": "https://www.tryfoco.com/adhd-task-paralysis/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "apps for add",
+      "slug": "apps-for-add",
+      "impressions": 18,
+      "clicks": 0,
+      "position": 59.3,
+      "currentPage": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "focos",
+      "slug": "focos",
+      "impressions": 18,
+      "clicks": 0,
+      "position": 28.1,
+      "currentPage": "https://www.tryfoco.com/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "good planners for adhd",
+      "slug": "good-planners-for-adhd",
+      "impressions": 18,
+      "clicks": 0,
+      "position": 48.8,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "apps that help with adhd",
+      "slug": "apps-that-help-with-adhd",
+      "impressions": 17,
+      "clicks": 0,
+      "position": 58,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "apps to help with add",
+      "slug": "apps-to-help-with-add",
+      "impressions": 17,
+      "clicks": 0,
+      "position": 62.9,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "app adenia foco",
+      "slug": "app-adenia-foco",
+      "impressions": 15,
+      "clicks": 0,
+      "position": 3.6,
+      "currentPage": "https://www.tryfoco.com/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "adhd task initiation strategies",
+      "slug": "adhd-task-initiation-strategie",
+      "impressions": 14,
+      "clicks": 0,
+      "position": 78.5,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "app for add",
+      "slug": "app-for-add",
+      "impressions": 13,
+      "clicks": 0,
+      "position": 58.8,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "free adhd apps",
+      "slug": "free-adhd-apps",
+      "impressions": 13,
+      "clicks": 0,
+      "position": 57.5,
+      "currentPage": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "getfoco",
+      "slug": "getfoco",
+      "impressions": 13,
+      "clicks": 0,
+      "position": 5.5,
+      "currentPage": "https://www.tryfoco.com/get-foco/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "task paralysis",
+      "slug": "task-paralysis",
+      "impressions": 13,
+      "clicks": 0,
+      "position": 67,
+      "currentPage": "https://www.tryfoco.com/adhd-task-paralysis/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "adhd apps for adults",
+      "slug": "adhd-apps-for-adults",
+      "impressions": 12,
+      "clicks": 0,
+      "position": 58.1,
+      "currentPage": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "adhd starting tasks",
+      "slug": "adhd-starting-tasks",
+      "impressions": 12,
+      "clicks": 0,
+      "position": 74,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "foco adhd",
+      "slug": "foco-adhd",
+      "impressions": 12,
+      "clicks": 0,
+      "position": 2.5,
+      "currentPage": "https://www.tryfoco.com/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "structured app alternatives",
+      "slug": "structured-app-alternatives",
+      "impressions": 12,
+      "clicks": 0,
+      "position": 7.3,
+      "currentPage": "https://www.tryfoco.com/structured-app-alternative/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "yes",
+      "slug": "yes",
+      "impressions": 11,
+      "clicks": 1,
+      "position": 5.1,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "adhd coach app",
+      "slug": "adhd-coach-app",
+      "impressions": 10,
+      "clicks": 0,
+      "position": 38.6,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "adhd planner 2025",
+      "slug": "adhd-planner-2025",
+      "impressions": 10,
+      "clicks": 0,
+      "position": 42,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "adhd support apps",
+      "slug": "adhd-support-apps",
+      "impressions": 10,
+      "clicks": 0,
+      "position": 66.2,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "aligned app for adhd",
+      "slug": "aligned-app-for-adhd",
+      "impressions": 10,
+      "clicks": 0,
+      "position": 7.4,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "foko app",
+      "slug": "foko-app",
+      "impressions": 10,
+      "clicks": 0,
+      "position": 3.2,
+      "currentPage": "https://www.tryfoco.com/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "inflow adhd alternatives",
+      "slug": "inflow-adhd-alternatives",
+      "impressions": 10,
+      "clicks": 0,
+      "position": 33.7,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "adhd weekly planner printable free",
+      "slug": "adhd-weekly-planner-printable",
+      "impressions": 9,
+      "clicks": 3,
+      "position": 3.7,
+      "currentPage": "https://www.tryfoco.com/adhd-weekly-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "structured app alternative",
+      "slug": "structured-app-alternative",
+      "impressions": 9,
+      "clicks": 1,
+      "position": 5.1,
+      "currentPage": "https://www.tryfoco.com/structured-app-alternative/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "structured vs ticktick",
+      "slug": "structured-vs-ticktick",
+      "impressions": 9,
+      "clicks": 1,
+      "position": 7.2,
+      "currentPage": "https://www.tryfoco.com/structured-app-alternative/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "adhd careers",
+      "slug": "adhd-careers",
+      "impressions": 9,
+      "clicks": 0,
+      "position": 52.3,
+      "currentPage": "https://www.tryfoco.com/best-career-for-people-with-adhd/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "ticktick vs structured",
+      "slug": "ticktick-vs-structured",
+      "impressions": 8,
+      "clicks": 2,
+      "position": 6.3,
+      "currentPage": "https://www.tryfoco.com/structured-app-alternative/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "aligned adhd app",
+      "slug": "aligned-adhd-app",
+      "impressions": 8,
+      "clicks": 0,
+      "position": 7.9,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "digital planner for adhd adults",
+      "slug": "digital-planner-for-adhd-adult",
+      "impressions": 8,
+      "clicks": 0,
+      "position": 34.5,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best daily planners for adhd",
+      "slug": "best-daily-planners-for-adhd",
+      "impressions": 7,
+      "clicks": 0,
+      "position": 59.7,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "nimh adhd executive function task initiation official",
+      "slug": "nimh-adhd-executive-function-t",
+      "impressions": 7,
+      "clicks": 0,
+      "position": 6,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "app foco",
+      "slug": "app-foco",
+      "impressions": 6,
+      "clicks": 0,
+      "position": 4.3,
+      "currentPage": "https://www.tryfoco.com/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best planner for add",
+      "slug": "best-planner-for-add",
+      "impressions": 6,
+      "clicks": 0,
+      "position": 48,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "careers for adhd",
+      "slug": "careers-for-adhd",
+      "impressions": 6,
+      "clicks": 0,
+      "position": 43.3,
+      "currentPage": "https://www.tryfoco.com/best-career-for-people-with-adhd/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "inflow",
+      "slug": "inflow",
+      "impressions": 6,
+      "clicks": 0,
+      "position": 3,
+      "currentPage": "https://www.tryfoco.com/inflow-review/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "adhd applications",
+      "slug": "adhd-applications",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 56.8,
+      "currentPage": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "adhd motivation app",
+      "slug": "adhd-motivation-app",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 7.2,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "attention deficit disorder apps",
+      "slug": "attention-deficit-disorder-app",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 61.4,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best adhd productivity apps",
+      "slug": "best-adhd-productivity-apps",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 70.6,
+      "currentPage": "https://www.tryfoco.com/best-productivity-apps-for-adhd/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best careers for adhd",
+      "slug": "best-careers-for-adhd",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 73.6,
+      "currentPage": "https://www.tryfoco.com/best-career-for-people-with-adhd/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best paper planners for adhd",
+      "slug": "best-paper-planners-for-adhd",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 46.6,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best planner for add adults",
+      "slug": "best-planner-for-add-adults",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 52.4,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best planner for people with adhd",
+      "slug": "best-planner-for-people-with-a",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 55.4,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "chadd task initiation adhd executive function",
+      "slug": "chadd-task-initiation-adhd-exe",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 6.8,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "jobs for adhd",
+      "slug": "jobs-for-adhd",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 49,
+      "currentPage": "https://www.tryfoco.com/best-career-for-people-with-adhd/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "nimh adhd executive function difficulty starting tasks official",
+      "slug": "nimh-adhd-executive-function-d",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 7,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "task initiation and focus coaching",
+      "slug": "task-initiation-and-focus-coac",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 48.4,
+      "currentPage": "https://www.tryfoco.com/task-initiation-strategies-for-adults/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "task initiation paralysis",
+      "slug": "task-initiation-paralysis",
+      "impressions": 5,
+      "clicks": 0,
+      "position": 48.6,
+      "currentPage": "https://www.tryfoco.com/adhd-task-paralysis/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "tiimo vs structured",
+      "slug": "tiimo-vs-structured",
+      "impressions": 4,
+      "clicks": 1,
+      "position": 22.3,
+      "currentPage": "https://www.tryfoco.com/structured-app-alternative/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "2025 adhd planner",
+      "slug": "2025-adhd-planner",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 42.5,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "adhd planners 2025",
+      "slug": "adhd-planners-2025",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 45.5,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "adhd planning app",
+      "slug": "adhd-planning-app",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 67.3,
+      "currentPage": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "aligned app adhd review",
+      "slug": "aligned-app-adhd-review",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 9.8,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "alternatives to inflow?",
+      "slug": "alternatives-to-inflow",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 7.8,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "american psychiatric association adhd executive function deficits initiation",
+      "slug": "american-psychiatric-associati",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 11.3,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "apps for adhd productivity",
+      "slug": "apps-for-adhd-productivity",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 40.8,
+      "currentPage": "https://www.tryfoco.com/best-productivity-apps-for-adhd/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best app for adhd",
+      "slug": "best-app-for-adhd",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 16.8,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best free adhd apps",
+      "slug": "best-free-adhd-apps",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 31,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best jobs for adhd",
+      "slug": "best-jobs-for-adhd",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 93.5,
+      "currentPage": "https://www.tryfoco.com/best-career-for-people-with-adhd/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best neurodivergent planner",
+      "slug": "best-neurodivergent-planner",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 47.5,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best planner adhd",
+      "slug": "best-planner-adhd",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 52.5,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best planner for someone with adhd",
+      "slug": "best-planner-for-someone-with",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 52.5,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best planners for add adults",
+      "slug": "best-planners-for-add-adults",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 50.5,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best planners for adhd women",
+      "slug": "best-planners-for-adhd-women",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 53.3,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best planners for adults with adhd",
+      "slug": "best-planners-for-adults-with",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 59.8,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best productivity apps for adhd",
+      "slug": "best-productivity-apps-for-adh",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 56.5,
+      "currentPage": "https://www.tryfoco.com/best-productivity-apps-for-adhd/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "careers for people with adhd",
+      "slug": "careers-for-people-with-adhd",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 50.3,
+      "currentPage": "https://www.tryfoco.com/best-career-for-people-with-adhd/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "chadd adhd task initiation executive function",
+      "slug": "chadd-adhd-task-initiation-exe",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 8,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "chadd executive function adhd task initiation",
+      "slug": "chadd-executive-function-adhd",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 7,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "digital or paper planner for adhd",
+      "slug": "digital-or-paper-planner-for-a",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 36,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "digital planner for adhd",
+      "slug": "digital-planner-for-adhd",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 78,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "does inflow work",
+      "slug": "does-inflow-work",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 10.5,
+      "currentPage": "https://www.tryfoco.com/inflow-review/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "foco phone",
+      "slug": "foco-phone",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 12,
+      "currentPage": "https://www.tryfoco.com/contact/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "inflow adhd reddit",
+      "slug": "inflow-adhd-reddit",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 6,
+      "currentPage": "https://www.tryfoco.com/inflow-review/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "structured vs tiimo",
+      "slug": "structured-vs-tiimo",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 19.8,
+      "currentPage": "https://www.tryfoco.com/structured-app-alternative/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "task initiation strategies for adhd",
+      "slug": "task-initiation-strategies-for",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 76,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "yes please",
+      "slug": "yes-please",
+      "impressions": 4,
+      "clicks": 0,
+      "position": 7,
+      "currentPage": "https://www.tryfoco.com/best-apps-for-adhd-task-paralysis/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "miracle adhd app",
+      "slug": "miracle-adhd-app",
+      "impressions": 3,
+      "clicks": 1,
+      "position": 5,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "adhd founder.com starter kit reviews",
+      "slug": "adhd-foundercom-starter-kit-re",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 19.3,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "adhd friendly apps",
+      "slug": "adhd-friendly-apps",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 58.3,
+      "currentPage": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "adhd networking app",
+      "slug": "adhd-networking-app",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 76,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "adhd time management apps",
+      "slug": "adhd-time-management-apps",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 59,
+      "currentPage": "https://www.tryfoco.com/best-productivity-apps-for-adhd/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "adi ben elyahu",
+      "slug": "adi-ben-elyahu",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 2.3,
+      "currentPage": "https://www.tryfoco.com/author/adi/page/8/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "adult adhd task initiation executive dysfunction review pmc",
+      "slug": "adult-adhd-task-initiation-exe",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 9,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "alternatives to todoist for executive dysfunction",
+      "slug": "alternatives-to-todoist-for-ex",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 20.7,
+      "currentPage": "https://www.tryfoco.com/todoist-alternative-for-adhd/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "aplicativo foco",
+      "slug": "aplicativo-foco",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 12.3,
+      "currentPage": "https://www.tryfoco.com/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "app for adhd adults",
+      "slug": "app-for-adhd-adults",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 63.3,
+      "currentPage": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "apps for women with adhd",
+      "slug": "apps-for-women-with-adhd",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 47.7,
+      "currentPage": "https://www.tryfoco.com/best-adhd-apps-for-adult-women/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "apps like chillio",
+      "slug": "apps-like-chillio",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 22,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best adhd app",
+      "slug": "best-adhd-app",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 58.7,
+      "currentPage": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best adhd apps for adults",
+      "slug": "best-adhd-apps-for-adults",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 59,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best adhd planner for teens",
+      "slug": "best-adhd-planner-for-teens",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 52.7,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best apps for executive dysfunction",
+      "slug": "best-apps-for-executive-dysfun",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 51,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best online planner for adhd",
+      "slug": "best-online-planner-for-adhd",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 60.3,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "best planners 2026 adhd",
+      "slug": "best-planners-2026-adhd",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 24.3,
+      "currentPage": "https://www.tryfoco.com/best-adhd-planner/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "chillio app",
+      "slug": "chillio-app",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 2.3,
+      "currentPage": "https://www.tryfoco.com/best-adhd-app/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "foc0",
+      "slug": "foc0",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 7.7,
+      "currentPage": "https://www.tryfoco.com/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "foco aplicativo",
+      "slug": "foco-aplicativo",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 5.7,
+      "currentPage": "https://www.tryfoco.com/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "foco do",
+      "slug": "foco-do",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 26,
+      "currentPage": "https://www.tryfoco.com/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "foco mobile",
+      "slug": "foco-mobile",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 7,
+      "currentPage": "https://www.tryfoco.com/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "foco play",
+      "slug": "foco-play",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 5,
+      "currentPage": "https://www.tryfoco.com/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "foco?",
+      "slug": "foco",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 4.7,
+      "currentPage": "https://www.tryfoco.com/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "inflow adhd app review",
+      "slug": "inflow-adhd-app-review",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 13.3,
+      "currentPage": "https://www.tryfoco.com/inflow-review/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "inflow app erfahrungen",
+      "slug": "inflow-app-erfahrungen",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 12,
+      "currentPage": "https://www.tryfoco.com/inflow-review/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "inflow for adhd",
+      "slug": "inflow-for-adhd",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 10.3,
+      "currentPage": "https://www.tryfoco.com/inflow-review/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "nimh adhd executive function task initiation",
+      "slug": "nimh-adhd-executive-function-t",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 8.3,
+      "currentPage": "https://www.tryfoco.com/adhd-task-initiation-research/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "productivity app adhd",
+      "slug": "productivity-app-adhd",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 61,
+      "currentPage": "https://www.tryfoco.com/best-productivity-apps-for-adhd/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "sunsama adhd",
+      "slug": "sunsama-adhd",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 8,
+      "currentPage": "https://www.tryfoco.com/sunsama-alternative/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "the foco",
+      "slug": "the-foco",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 7.3,
+      "currentPage": "https://www.tryfoco.com/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "todoist vs structured",
+      "slug": "todoist-vs-structured",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 10.7,
+      "currentPage": "https://www.tryfoco.com/structured-app-alternative/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "what is foco",
+      "slug": "what-is-foco",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 5,
+      "currentPage": "https://www.tryfoco.com/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "what is inflow adhd",
+      "slug": "what-is-inflow-adhd",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 18.3,
+      "currentPage": "https://www.tryfoco.com/inflow-review/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    },
+    {
+      "keyword": "what is the best adhd app for adults",
+      "slug": "what-is-the-best-adhd-app-for",
+      "impressions": 3,
+      "clicks": 0,
+      "position": 56.3,
+      "currentPage": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+      "multiplier": 2,
+      "reason": "content-gap"
+    }
+  ],
+  "ctrOpportunities": [
+    {
+      "page": "https://www.tryfoco.com/adhd-task-initiation-research/",
+      "slug": "adhd-task-initiation-research",
+      "impressions": 5984,
+      "clicks": 7,
+      "ctr": 0.001,
+      "position": 9.4,
+      "expectedCtr": 0.022,
+      "ratio": 0.05,
+      "topQueries": [
+        {
+          "query": "task initiation adhd",
+          "impressions": 27,
+          "position": 77.1
+        },
+        {
+          "query": "adhd and task initiation",
+          "impressions": 23,
+          "position": 77.3
+        },
+        {
+          "query": "adhd activation",
+          "impressions": 22,
+          "position": 63.6
+        },
+        {
+          "query": "adhd task initiation",
+          "impressions": 21,
+          "position": 75.3
+        },
+        {
+          "query": "adhd task initiation strategies",
+          "impressions": 14,
+          "position": 78.5
+        }
+      ]
+    },
+    {
+      "page": "https://www.tryfoco.com/inflow-review/",
+      "slug": "inflow-review",
+      "impressions": 951,
+      "clicks": 5,
+      "ctr": 0.005,
+      "position": 9.3,
+      "expectedCtr": 0.022,
+      "ratio": 0.24,
+      "topQueries": [
+        {
+          "query": "inflow reviews",
+          "impressions": 88,
+          "position": 10.4
+        },
+        {
+          "query": "inflow app review",
+          "impressions": 45,
+          "position": 10.1
+        },
+        {
+          "query": "is inflow legit",
+          "impressions": 45,
+          "position": 9.5
+        },
+        {
+          "query": "inflow review",
+          "impressions": 33,
+          "position": 11
+        },
+        {
+          "query": "inflow adhd",
+          "impressions": 26,
+          "position": 18.1
+        }
+      ]
+    },
+    {
+      "page": "https://www.tryfoco.com/get-foco/",
+      "slug": "get-foco",
+      "impressions": 645,
+      "clicks": 6,
+      "ctr": 0.009,
+      "position": 6.4,
+      "expectedCtr": 0.045,
+      "ratio": 0.21,
+      "topQueries": [
+        {
+          "query": "foco app",
+          "impressions": 99,
+          "position": 5.7
+        },
+        {
+          "query": "adenia foco app",
+          "impressions": 41,
+          "position": 6.1
+        },
+        {
+          "query": "getfoco",
+          "impressions": 13,
+          "position": 5.5
+        },
+        {
+          "query": "app adenia foco",
+          "impressions": 7,
+          "position": 6.4
+        },
+        {
+          "query": "foco adhd",
+          "impressions": 5,
+          "position": 8.2
+        }
+      ]
+    },
+    {
+      "page": "https://www.tryfoco.com/contact/",
+      "slug": "contact",
+      "impressions": 460,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 9.3,
+      "expectedCtr": 0.022,
+      "ratio": 0,
+      "topQueries": [
+        {
+          "query": "foco customer service phone number",
+          "impressions": 71,
+          "position": 9.2
+        },
+        {
+          "query": "foco customer service",
+          "impressions": 40,
+          "position": 9
+        },
+        {
+          "query": "foco phone number",
+          "impressions": 14,
+          "position": 9.8
+        },
+        {
+          "query": "foco contact number",
+          "impressions": 13,
+          "position": 8.9
+        },
+        {
+          "query": "foco referral",
+          "impressions": 11,
+          "position": 10.3
+        }
+      ]
+    },
+    {
+      "page": "https://www.tryfoco.com/task-breakdown/",
+      "slug": "task-breakdown",
+      "impressions": 311,
+      "clicks": 1,
+      "ctr": 0.003,
+      "position": 7.6,
+      "expectedCtr": 0.028,
+      "ratio": 0.11,
+      "topQueries": [
+        {
+          "query": "list the task you are breaking down into parts:",
+          "impressions": 1,
+          "position": 33
+        },
+        {
+          "query": "task breakdown",
+          "impressions": 1,
+          "position": 11
+        }
+      ]
+    },
+    {
+      "page": "https://www.tryfoco.com/features/",
+      "slug": "features",
+      "impressions": 172,
+      "clicks": 1,
+      "ctr": 0.006,
+      "position": 8.2,
+      "expectedCtr": 0.028,
+      "ratio": 0.21,
+      "topQueries": [
+        {
+          "query": "foco app",
+          "impressions": 40,
+          "position": 1.3
+        },
+        {
+          "query": "foco adhd",
+          "impressions": 10,
+          "position": 5.4
+        },
+        {
+          "query": "adenia foco app",
+          "impressions": 4,
+          "position": 8.3
+        },
+        {
+          "query": "app adenia foco",
+          "impressions": 4,
+          "position": 7.3
+        },
+        {
+          "query": "foco mobile",
+          "impressions": 2,
+          "position": 10
+        }
+      ]
+    },
+    {
+      "page": "https://www.tryfoco.com/best-adhd-app/#what-makes-an-adhd-app-work",
+      "slug": "best-adhd-app/#what-makes-an-adhd-app-work",
+      "impressions": 105,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 8.1,
+      "expectedCtr": 0.028,
+      "ratio": 0,
+      "topQueries": [
+        {
+          "query": "aligned app adhd",
+          "impressions": 11,
+          "position": 10.4
+        },
+        {
+          "query": "aligned app for adhd",
+          "impressions": 5,
+          "position": 10
+        },
+        {
+          "query": "aligned adhd app",
+          "impressions": 4,
+          "position": 9.8
+        }
+      ]
+    },
+    {
+      "page": "https://www.tryfoco.com/best-adhd-app/#habitica-review",
+      "slug": "best-adhd-app/#habitica-review",
+      "impressions": 103,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 8,
+      "expectedCtr": 0.028,
+      "ratio": 0,
+      "topQueries": [
+        {
+          "query": "aligned app adhd",
+          "impressions": 10,
+          "position": 10.4
+        },
+        {
+          "query": "aligned adhd app",
+          "impressions": 3,
+          "position": 9.7
+        },
+        {
+          "query": "aligned app for adhd",
+          "impressions": 3,
+          "position": 10
+        }
+      ]
+    },
+    {
+      "page": "https://www.tryfoco.com/best-adhd-app/#which-adhd-app-is-best",
+      "slug": "best-adhd-app/#which-adhd-app-is-best",
+      "impressions": 90,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 8.2,
+      "expectedCtr": 0.028,
+      "ratio": 0,
+      "topQueries": [
+        {
+          "query": "aligned app adhd",
+          "impressions": 10,
+          "position": 10.4
+        },
+        {
+          "query": "aligned adhd app",
+          "impressions": 3,
+          "position": 9.7
+        },
+        {
+          "query": "aligned app for adhd",
+          "impressions": 3,
+          "position": 10
+        }
+      ]
+    },
+    {
+      "page": "https://www.tryfoco.com/structured-app-alternative/#list",
+      "slug": "structured-app-alternative/#list",
+      "impressions": 85,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 8.3,
+      "expectedCtr": 0.028,
+      "ratio": 0,
+      "topQueries": [
+        {
+          "query": "structured app alternatives",
+          "impressions": 12,
+          "position": 7.3
+        },
+        {
+          "query": "structured app alternative",
+          "impressions": 9,
+          "position": 7.8
+        },
+        {
+          "query": "apps like structured",
+          "impressions": 5,
+          "position": 9
+        },
+        {
+          "query": "apps like structured but free",
+          "impressions": 2,
+          "position": 8.5
+        },
+        {
+          "query": "structured alternative",
+          "impressions": 1,
+          "position": 5
+        }
+      ]
+    },
+    {
+      "page": "https://www.tryfoco.com/todoist-alternative-for-adhd/",
+      "slug": "todoist-alternative-for-adhd",
+      "impressions": 84,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 10.1,
+      "expectedCtr": 0.018,
+      "ratio": 0,
+      "topQueries": [
+        {
+          "query": "todoist alternative adhd",
+          "impressions": 17,
+          "position": 10.6
+        },
+        {
+          "query": "alternatives to todoist for executive dysfunction",
+          "impressions": 2,
+          "position": 10.5
+        }
+      ]
+    },
+    {
+      "page": "https://www.tryfoco.com/best-adhd-app/#which-adhd-app-should-you-pick-first",
+      "slug": "best-adhd-app/#which-adhd-app-should-you-pick-first",
+      "impressions": 78,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 8.2,
+      "expectedCtr": 0.028,
+      "ratio": 0,
+      "topQueries": [
+        {
+          "query": "aligned app adhd",
+          "impressions": 10,
+          "position": 10.4
+        },
+        {
+          "query": "aligned adhd app",
+          "impressions": 3,
+          "position": 9.7
+        },
+        {
+          "query": "aligned app for adhd",
+          "impressions": 3,
+          "position": 10
+        }
+      ]
+    },
+    {
+      "page": "https://www.tryfoco.com/adhd-sleep-music/",
+      "slug": "adhd-sleep-music",
+      "impressions": 77,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 8.8,
+      "expectedCtr": 0.022,
+      "ratio": 0,
+      "topQueries": []
+    },
+    {
+      "page": "https://www.tryfoco.com/structured-app-alternative/#why",
+      "slug": "structured-app-alternative/#why",
+      "impressions": 77,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 8.4,
+      "expectedCtr": 0.028,
+      "ratio": 0,
+      "topQueries": [
+        {
+          "query": "structured app alternatives",
+          "impressions": 12,
+          "position": 7.3
+        },
+        {
+          "query": "structured app alternative",
+          "impressions": 9,
+          "position": 7.8
+        },
+        {
+          "query": "apps like structured",
+          "impressions": 5,
+          "position": 9
+        },
+        {
+          "query": "apps like structured but free",
+          "impressions": 2,
+          "position": 8.5
+        },
+        {
+          "query": "structured alternative",
+          "impressions": 1,
+          "position": 5
+        }
+      ]
+    },
+    {
+      "page": "https://www.tryfoco.com/why-people-with-adhd-forget-to-eat/",
+      "slug": "why-people-with-adhd-forget-to-eat",
+      "impressions": 75,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 10.4,
+      "expectedCtr": 0.018,
+      "ratio": 0,
+      "topQueries": []
+    },
+    {
+      "page": "https://www.tryfoco.com/ai-task-breakdown/",
+      "slug": "ai-task-breakdown",
+      "impressions": 69,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 10.3,
+      "expectedCtr": 0.018,
+      "ratio": 0,
+      "topQueries": [
+        {
+          "query": "taskbuild ai",
+          "impressions": 7,
+          "position": 14
+        },
+        {
+          "query": "task simplification ai",
+          "impressions": 1,
+          "position": 30
+        }
+      ]
+    },
+    {
+      "page": "https://www.tryfoco.com/founders/",
+      "slug": "founders",
+      "impressions": 67,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 6,
+      "expectedCtr": 0.045,
+      "ratio": 0,
+      "topQueries": [
+        {
+          "query": "solo foco",
+          "impressions": 2,
+          "position": 7.5
+        },
+        {
+          "query": "who owns foco",
+          "impressions": 1,
+          "position": 25
+        }
+      ]
+    },
+    {
+      "page": "https://www.tryfoco.com/best-adhd-app/#remindher-review",
+      "slug": "best-adhd-app/#remindher-review",
+      "impressions": 57,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 7.8,
+      "expectedCtr": 0.028,
+      "ratio": 0,
+      "topQueries": [
+        {
+          "query": "aligned app for adhd",
+          "impressions": 1,
+          "position": 10
+        }
+      ]
+    },
+    {
+      "page": "https://www.tryfoco.com/best-adhd-app/#foco-review",
+      "slug": "best-adhd-app/#foco-review",
+      "impressions": 56,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 7.7,
+      "expectedCtr": 0.028,
+      "ratio": 0,
+      "topQueries": [
+        {
+          "query": "aligned app for adhd",
+          "impressions": 1,
+          "position": 10
+        }
+      ]
+    },
+    {
+      "page": "https://www.tryfoco.com/adhd-activation/",
+      "slug": "adhd-activation",
+      "impressions": 54,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 7,
+      "expectedCtr": 0.035,
+      "ratio": 0,
+      "topQueries": []
+    },
+    {
+      "page": "https://www.tryfoco.com/best-adhd-app/#goblin-tools-review",
+      "slug": "best-adhd-app/#goblin-tools-review",
+      "impressions": 52,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 7.5,
+      "expectedCtr": 0.028,
+      "ratio": 0,
+      "topQueries": [
+        {
+          "query": "aligned app for adhd",
+          "impressions": 1,
+          "position": 10
+        }
+      ]
+    }
+  ],
+  "cannibalization": [
+    {
+      "query": "foco app",
+      "pages": [
+        {
+          "page": "https://www.tryfoco.com/",
+          "impressions": 226,
+          "clicks": 18,
+          "position": 4.1
+        },
+        {
+          "page": "https://www.tryfoco.com/get-foco/",
+          "impressions": 99,
+          "clicks": 3,
+          "position": 5.7
+        },
+        {
+          "page": "https://www.tryfoco.com/features/",
+          "impressions": 40,
+          "clicks": 0,
+          "position": 1.3
+        },
+        {
+          "page": "https://www.tryfoco.com/about/",
+          "impressions": 39,
+          "clicks": 1,
+          "position": 1.3
+        },
+        {
+          "page": "https://www.tryfoco.com/blog",
+          "impressions": 39,
+          "clicks": 0,
+          "position": 1.3
+        },
+        {
+          "page": "https://www.tryfoco.com/adhd-tools/",
+          "impressions": 36,
+          "clicks": 0,
+          "position": 1.2
+        }
+      ]
+    },
+    {
+      "query": "best apps for adhd",
+      "pages": [
+        {
+          "page": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+          "impressions": 61,
+          "clicks": 0,
+          "position": 64.4
+        },
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/",
+          "impressions": 54,
+          "clicks": 0,
+          "position": 54.2
+        }
+      ]
+    },
+    {
+      "query": "aligned app adhd",
+      "pages": [
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/",
+          "impressions": 23,
+          "clicks": 0,
+          "position": 10.2
+        },
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/#are-free-adhd-apps-good",
+          "impressions": 11,
+          "clicks": 0,
+          "position": 10.4
+        },
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/#what-makes-an-adhd-app-work",
+          "impressions": 11,
+          "clicks": 0,
+          "position": 10.4
+        },
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/#best-adhd-apps-comparison",
+          "impressions": 10,
+          "clicks": 0,
+          "position": 10.4
+        },
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/#habitica-review",
+          "impressions": 10,
+          "clicks": 0,
+          "position": 10.4
+        },
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/#how-we-tested",
+          "impressions": 10,
+          "clicks": 0,
+          "position": 10.4
+        },
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/#which-adhd-app-is-best",
+          "impressions": 10,
+          "clicks": 0,
+          "position": 10.4
+        },
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/#which-adhd-app-should-you-pick-first",
+          "impressions": 10,
+          "clicks": 0,
+          "position": 10.4
+        }
+      ]
+    },
+    {
+      "query": "adhd app",
+      "pages": [
+        {
+          "page": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+          "impressions": 55,
+          "clicks": 0,
+          "position": 68.4
+        },
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/",
+          "impressions": 39,
+          "clicks": 0,
+          "position": 59.1
+        }
+      ]
+    },
+    {
+      "query": "adenia foco app",
+      "pages": [
+        {
+          "page": "https://www.tryfoco.com/",
+          "impressions": 42,
+          "clicks": 0,
+          "position": 2.3
+        },
+        {
+          "page": "https://www.tryfoco.com/get-foco/",
+          "impressions": 41,
+          "clicks": 1,
+          "position": 6.1
+        },
+        {
+          "page": "https://www.tryfoco.com/features/",
+          "impressions": 4,
+          "clicks": 0,
+          "position": 8.3
+        }
+      ]
+    },
+    {
+      "query": "apps for adhd",
+      "pages": [
+        {
+          "page": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+          "impressions": 43,
+          "clicks": 0,
+          "position": 66.4
+        },
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/",
+          "impressions": 30,
+          "clicks": 0,
+          "position": 56.1
+        }
+      ]
+    },
+    {
+      "query": "best apps adhd",
+      "pages": [
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/",
+          "impressions": 35,
+          "clicks": 0,
+          "position": 56.3
+        },
+        {
+          "page": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+          "impressions": 26,
+          "clicks": 0,
+          "position": 67.4
+        }
+      ]
+    },
+    {
+      "query": "best apps for adhd adults",
+      "pages": [
+        {
+          "page": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+          "impressions": 29,
+          "clicks": 0,
+          "position": 58.1
+        },
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/",
+          "impressions": 16,
+          "clicks": 0,
+          "position": 43.1
+        },
+        {
+          "page": "https://www.tryfoco.com/best-adhd-apps-for-adult-women/",
+          "impressions": 16,
+          "clicks": 0,
+          "position": 73.6
+        }
+      ]
+    },
+    {
+      "query": "adhd apps",
+      "pages": [
+        {
+          "page": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+          "impressions": 35,
+          "clicks": 0,
+          "position": 68.2
+        },
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/",
+          "impressions": 25,
+          "clicks": 0,
+          "position": 57
+        }
+      ]
+    },
+    {
+      "query": "best adhd apps",
+      "pages": [
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/",
+          "impressions": 31,
+          "clicks": 0,
+          "position": 51.4
+        },
+        {
+          "page": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+          "impressions": 15,
+          "clicks": 0,
+          "position": 62.5
+        }
+      ]
+    },
+    {
+      "query": "structured app alternatives",
+      "pages": [
+        {
+          "page": "https://www.tryfoco.com/structured-app-alternative/",
+          "impressions": 12,
+          "clicks": 0,
+          "position": 7.3
+        },
+        {
+          "page": "https://www.tryfoco.com/structured-app-alternative/#list",
+          "impressions": 12,
+          "clicks": 0,
+          "position": 7.3
+        },
+        {
+          "page": "https://www.tryfoco.com/structured-app-alternative/#why",
+          "impressions": 12,
+          "clicks": 0,
+          "position": 7.3
+        },
+        {
+          "page": "https://www.tryfoco.com/structured-app-alternative/#choose",
+          "impressions": 5,
+          "clicks": 0,
+          "position": 7.6
+        },
+        {
+          "page": "https://www.tryfoco.com/structured-app-alternative/#compare",
+          "impressions": 5,
+          "clicks": 0,
+          "position": 7.6
+        }
+      ]
+    },
+    {
+      "query": "best adhd app for adults",
+      "pages": [
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/",
+          "impressions": 20,
+          "clicks": 0,
+          "position": 53.4
+        },
+        {
+          "page": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+          "impressions": 15,
+          "clicks": 0,
+          "position": 59.7
+        },
+        {
+          "page": "https://www.tryfoco.com/best-adhd-apps-for-adult-women/",
+          "impressions": 7,
+          "clicks": 0,
+          "position": 70.4
+        }
+      ]
+    },
+    {
+      "query": "structured app alternative",
+      "pages": [
+        {
+          "page": "https://www.tryfoco.com/structured-app-alternative/",
+          "impressions": 9,
+          "clicks": 1,
+          "position": 5.1
+        },
+        {
+          "page": "https://www.tryfoco.com/structured-app-alternative/#list",
+          "impressions": 9,
+          "clicks": 0,
+          "position": 7.8
+        },
+        {
+          "page": "https://www.tryfoco.com/structured-app-alternative/#why",
+          "impressions": 9,
+          "clicks": 0,
+          "position": 7.8
+        },
+        {
+          "page": "https://www.tryfoco.com/structured-app-alternative/#choose",
+          "impressions": 4,
+          "clicks": 0,
+          "position": 7.8
+        },
+        {
+          "page": "https://www.tryfoco.com/structured-app-alternative/#compare",
+          "impressions": 4,
+          "clicks": 0,
+          "position": 7.8
+        }
+      ]
+    },
+    {
+      "query": "aligned adhd app",
+      "pages": [
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/",
+          "impressions": 8,
+          "clicks": 0,
+          "position": 7.9
+        },
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/#are-free-adhd-apps-good",
+          "impressions": 4,
+          "clicks": 0,
+          "position": 9.8
+        },
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/#what-makes-an-adhd-app-work",
+          "impressions": 4,
+          "clicks": 0,
+          "position": 9.8
+        },
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/#best-adhd-apps-comparison",
+          "impressions": 3,
+          "clicks": 0,
+          "position": 9.7
+        },
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/#habitica-review",
+          "impressions": 3,
+          "clicks": 0,
+          "position": 9.7
+        },
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/#how-we-tested",
+          "impressions": 3,
+          "clicks": 0,
+          "position": 9.7
+        },
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/#which-adhd-app-is-best",
+          "impressions": 3,
+          "clicks": 0,
+          "position": 9.7
+        },
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/#which-adhd-app-should-you-pick-first",
+          "impressions": 3,
+          "clicks": 0,
+          "position": 9.7
+        }
+      ]
+    },
+    {
+      "query": "aligned app for adhd",
+      "pages": [
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/",
+          "impressions": 10,
+          "clicks": 0,
+          "position": 7.4
+        },
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/#what-makes-an-adhd-app-work",
+          "impressions": 5,
+          "clicks": 0,
+          "position": 10
+        },
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/#are-free-adhd-apps-good",
+          "impressions": 4,
+          "clicks": 0,
+          "position": 10
+        },
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/#habitica-review",
+          "impressions": 3,
+          "clicks": 0,
+          "position": 10
+        },
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/#which-adhd-app-is-best",
+          "impressions": 3,
+          "clicks": 0,
+          "position": 10
+        },
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/#which-adhd-app-should-you-pick-first",
+          "impressions": 3,
+          "clicks": 0,
+          "position": 10
+        }
+      ]
+    },
+    {
+      "query": "apps like structured",
+      "pages": [
+        {
+          "page": "https://www.tryfoco.com/structured-app-alternative/",
+          "impressions": 8,
+          "clicks": 1,
+          "position": 8.9
+        },
+        {
+          "page": "https://www.tryfoco.com/structured-app-alternative/#list",
+          "impressions": 5,
+          "clicks": 0,
+          "position": 9
+        },
+        {
+          "page": "https://www.tryfoco.com/structured-app-alternative/#why",
+          "impressions": 5,
+          "clicks": 0,
+          "position": 9
+        },
+        {
+          "page": "https://www.tryfoco.com/structured-app-alternative/#choose",
+          "impressions": 4,
+          "clicks": 0,
+          "position": 9.5
+        },
+        {
+          "page": "https://www.tryfoco.com/structured-app-alternative/#compare",
+          "impressions": 4,
+          "clicks": 0,
+          "position": 9.5
+        }
+      ]
+    },
+    {
+      "query": "app adenia foco",
+      "pages": [
+        {
+          "page": "https://www.tryfoco.com/",
+          "impressions": 15,
+          "clicks": 0,
+          "position": 3.6
+        },
+        {
+          "page": "https://www.tryfoco.com/get-foco/",
+          "impressions": 7,
+          "clicks": 0,
+          "position": 6.4
+        },
+        {
+          "page": "https://www.tryfoco.com/features/",
+          "impressions": 4,
+          "clicks": 0,
+          "position": 7.3
+        }
+      ]
+    },
+    {
+      "query": "foco adhd",
+      "pages": [
+        {
+          "page": "https://www.tryfoco.com/",
+          "impressions": 11,
+          "clicks": 0,
+          "position": 1
+        },
+        {
+          "page": "https://www.tryfoco.com/features/",
+          "impressions": 10,
+          "clicks": 0,
+          "position": 5.4
+        },
+        {
+          "page": "https://www.tryfoco.com/get-foco/",
+          "impressions": 5,
+          "clicks": 0,
+          "position": 8.2
+        }
+      ]
+    },
+    {
+      "query": "apps for add",
+      "pages": [
+        {
+          "page": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+          "impressions": 12,
+          "clicks": 0,
+          "position": 66
+        },
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/",
+          "impressions": 10,
+          "clicks": 0,
+          "position": 57.7
+        }
+      ]
+    },
+    {
+      "query": "apps that help with adhd",
+      "pages": [
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/",
+          "impressions": 14,
+          "clicks": 0,
+          "position": 66
+        },
+        {
+          "page": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+          "impressions": 8,
+          "clicks": 0,
+          "position": 53.1
+        }
+      ]
+    },
+    {
+      "query": "app for add",
+      "pages": [
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/",
+          "impressions": 10,
+          "clicks": 0,
+          "position": 58.2
+        },
+        {
+          "page": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+          "impressions": 10,
+          "clicks": 0,
+          "position": 73.1
+        }
+      ]
+    },
+    {
+      "query": "best apps for adults with adhd",
+      "pages": [
+        {
+          "page": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+          "impressions": 13,
+          "clicks": 0,
+          "position": 54.8
+        },
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/",
+          "impressions": 7,
+          "clicks": 0,
+          "position": 56.1
+        }
+      ]
+    },
+    {
+      "query": "adhd support apps",
+      "pages": [
+        {
+          "page": "https://www.tryfoco.com/best-adhd-app/",
+          "impressions": 8,
+          "clicks": 0,
+          "position": 61.3
+        },
+        {
+          "page": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+          "impressions": 3,
+          "clicks": 0,
+          "position": 84.7
+        }
+      ]
+    }
+  ]
 }

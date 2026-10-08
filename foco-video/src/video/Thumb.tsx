@@ -11,23 +11,37 @@ const T: React.FC<{ size: number; color?: string; children: React.ReactNode; sty
   </div>
 );
 
-export const VideoThumb: React.FC<{ slug: string; variant: "A" | "B" }> = ({ slug, variant }) => (
+// Text defaults to the body-doubling video; other videos pass their own lines (render with inputProps).
+export type ThumbText = { aLines?: string[]; aPill?: string; bLines?: string[]; mascot?: string };
+export const VideoThumb: React.FC<{ slug: string; variant: "A" | "B" } & ThumbText> = ({
+  slug,
+  variant,
+  aLines = ["CAN'T START", "ALONE?"],
+  aPill = "BODY DOUBLING",
+  bLines = ["ADHD", "BODY", "DOUBLING"],
+  mascot = "foco_state_1_presence",
+}) => (
   <AbsoluteFill style={{ background: "#040208" }}>
     <Img src={staticFile(`video/${slug}/thumb-bg.jpg`)} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "70% 30%", filter: "saturate(0.9) brightness(0.8)" }} />
     <AbsoluteFill style={{ background: "linear-gradient(90deg, rgba(4,2,8,0.92) 0%, rgba(4,2,8,0.6) 45%, rgba(4,2,8,0) 75%)" }} />
     {variant === "A" ? (
       <div style={{ position: "absolute", left: 60, top: 90 }}>
-        <T size={84}>CAN'T START</T>
-        <T size={84}>ALONE?</T>
-        <div style={{ marginTop: 26, display: "inline-block", fontFamily: HEAD, fontWeight: 800, fontSize: 92, color: "#fff", background: C.primary, padding: "8px 30px", borderRadius: 22, transform: "rotate(-2deg)" }}>BODY DOUBLING</div>
+        {aLines.map((l) => (
+          <T key={l} size={84}>
+            {l}
+          </T>
+        ))}
+        <div style={{ marginTop: 26, display: "inline-block", fontFamily: HEAD, fontWeight: 800, fontSize: 92, color: "#fff", background: C.primary, padding: "8px 30px", borderRadius: 22, transform: "rotate(-2deg)" }}>{aPill}</div>
       </div>
     ) : (
       <div style={{ position: "absolute", left: 60, top: 110 }}>
-        <T size={120} color={ORANGE}>ADHD</T>
-        <T size={120}>BODY</T>
-        <T size={120}>DOUBLING</T>
+        {bLines.map((l, i) => (
+          <T key={l} size={120} color={i === 0 ? ORANGE : "#fff"}>
+            {l}
+          </T>
+        ))}
       </div>
     )}
-    <Img src={staticFile("mascots/foco_state_1_presence.png")} style={{ position: "absolute", right: 40, bottom: 20, height: 330, filter: "drop-shadow(0 0 40px rgba(124,58,237,0.8))" }} />
+    <Img src={staticFile(`mascots/${mascot}.png`)} style={{ position: "absolute", right: 40, bottom: 20, height: 330, filter: "drop-shadow(0 0 40px rgba(124,58,237,0.8))" }} />
   </AbsoluteFill>
 );

@@ -1,0 +1,37 @@
+{
+  "assets/user/a-77bad112-a-75c2c850-foco-icon.png": {
+    "textZone": {
+      "region": "top",
+      "luminance": 0.24,
+      "busy": 0.158
+    }
+  },
+  "assets/user/a-d1e0694c-a-3157030f-app-store.png": {
+    "textZone": {
+      "region": "top",
+      "luminance": 0.117,
+      "busy": 0.577
+    }
+  },
+  "assets/user/a-2087826d-a-20e23b4b-google-play.png": {
+    "textZone": {
+      "region": "bottom",
+      "luminance": 0.249,
+      "busy": 0.23
+    }
+  },
+  "assets/user/a-2b89082a-foco_state_6_pause.png": {
+    "textZone": {
+      "region": "top",
+      "luminance": 0.103,
+      "busy": 0.163
+    }
+  },
+  "assets/user/a-570cb0e1-foco_state_3_focus.png": {
+    "textZone": {
+      "region": "top",
+      "luminance": 0.108,
+      "busy": 0.327
+    }
+  }
+}

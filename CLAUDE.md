@@ -244,8 +244,11 @@ node create-post.js posts-new/post-{slug}.html \
   [--cover-title="Two\nLines"] \
   [--publish] \
   [--skip-cover] \
+  [--directory=<category|none>] [--directory-desc="..."] \
   [--dry-run]
 ```
+
+**App directory (`/best-adhd-app/`).** The tabbed directory is built from `app-directory.json` by `node rebuild-app-directory.js --live`. Step 16 of `create-post.js` adds the card automatically: slugs with `-vs-` → Comparisons, `alternative` → Alternatives, `-review` → Reviews; other app posts need `--directory=<paralysis|focus|women|...>`. Only posts ABOUT APPS go in (no printables, guides or coaches); one category per card.
 
 ### Steps the script runs (in order)
 1. **Validate** - H1, no editorial markers, no markdown links, FAQ section, Key Takeaways, ≥4 internal links, TL;DR box, ≥3 external citations. Aborts on errors.

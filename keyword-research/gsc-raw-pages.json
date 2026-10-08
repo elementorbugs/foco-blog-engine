@@ -1,261 +1,366 @@
 {
-  "startDate": "2026-07-01",
-  "endDate": "2026-07-28",
+  "startDate": "2026-08-23",
+  "endDate": "2026-09-19",
   "rows": [
     {
       "page": "https://www.tryfoco.com/",
-      "clicks": 46,
-      "impressions": 1608,
-      "ctr": 0.028606965174129355,
-      "position": 10.086442786069652
+      "clicks": 95,
+      "impressions": 2045,
+      "ctr": 0.04645476772616137,
+      "position": 6.130073349633252
     },
     {
       "page": "https://www.tryfoco.com/best-adhd-app/",
-      "clicks": 14,
-      "impressions": 1307,
-      "ctr": 0.010711553175210406,
-      "position": 40.91583779648049
+      "clicks": 27,
+      "impressions": 2492,
+      "ctr": 0.010834670947030497,
+      "position": 16.787319422150883
     },
     {
       "page": "https://www.tryfoco.com/goblin-tools-alternative/",
-      "clicks": 5,
-      "impressions": 174,
-      "ctr": 0.028735632183908046,
-      "position": 9.810344827586206
+      "clicks": 25,
+      "impressions": 678,
+      "ctr": 0.03687315634218289,
+      "position": 8.101769911504425
     },
     {
-      "page": "https://www.tryfoco.com/about/",
-      "clicks": 4,
-      "impressions": 99,
-      "ctr": 0.04040404040404041,
-      "position": 11.595959595959595
+      "page": "https://www.tryfoco.com/best-apps-for-adhd-task-paralysis/",
+      "clicks": 13,
+      "impressions": 139,
+      "ctr": 0.09352517985611511,
+      "position": 5.474820143884892
     },
     {
-      "page": "https://www.tryfoco.com/author/adi/page/6/",
-      "clicks": 4,
-      "impressions": 13,
-      "ctr": 0.3076923076923077,
-      "position": 3.4615384615384617
+      "page": "https://www.tryfoco.com/structured-app-alternative/",
+      "clicks": 11,
+      "impressions": 840,
+      "ctr": 0.013095238095238096,
+      "position": 8.051190476190477
     },
     {
-      "page": "https://www.tryfoco.com/household-planning-for-adhd/",
-      "clicks": 3,
-      "impressions": 5,
-      "ctr": 0.6,
-      "position": 11.2
-    },
-    {
-      "page": "https://www.tryfoco.com/author/adi/page/4/",
-      "clicks": 2,
-      "impressions": 5,
-      "ctr": 0.4,
-      "position": 2.6
-    },
-    {
-      "page": "https://www.tryfoco.com/best-adhd-apps-for-adult-women/",
-      "clicks": 2,
-      "impressions": 135,
-      "ctr": 0.014814814814814815,
-      "position": 25.533333333333335
-    },
-    {
-      "page": "https://www.tryfoco.com/best-adhd-planner/",
-      "clicks": 2,
-      "impressions": 695,
-      "ctr": 0.0028776978417266188,
-      "position": 49.329496402877695
-    },
-    {
-      "page": "https://www.tryfoco.com/features/adhd-task-breakdown/",
-      "clicks": 2,
-      "impressions": 39,
-      "ctr": 0.05128205128205128,
-      "position": 36.69230769230769
-    },
-    {
-      "page": "https://www.tryfoco.com/inflow-review/",
-      "clicks": 2,
-      "impressions": 289,
-      "ctr": 0.006920415224913495,
-      "position": 13.200692041522492
-    },
-    {
-      "page": "https://www.tryfoco.com/why-you-keep-abandoning-adhd-planner-apps/",
-      "clicks": 2,
-      "impressions": 22,
-      "ctr": 0.09090909090909091,
-      "position": 5.7272727272727275
-    },
-    {
-      "page": "https://www.tryfoco.com/adhd-cleaning-planner/",
-      "clicks": 1,
-      "impressions": 6,
-      "ctr": 0.16666666666666666,
-      "position": 7.5
-    },
-    {
-      "page": "https://www.tryfoco.com/adhd-meal-planner/",
-      "clicks": 1,
-      "impressions": 7,
-      "ctr": 0.14285714285714285,
-      "position": 5.428571428571429
+      "page": "https://www.tryfoco.com/adhd-weekly-planner/",
+      "clicks": 10,
+      "impressions": 139,
+      "ctr": 0.07194244604316546,
+      "position": 11.762589928057555
     },
     {
       "page": "https://www.tryfoco.com/adhd-task-initiation-research/",
-      "clicks": 1,
-      "impressions": 2137,
-      "ctr": 0.0004679457182966776,
-      "position": 13.218062704726252
+      "clicks": 7,
+      "impressions": 5984,
+      "ctr": 0.0011697860962566844,
+      "position": 9.350935828877006
     },
     {
-      "page": "https://www.tryfoco.com/author/adi/page/7/",
+      "page": "https://www.tryfoco.com/best-adhd-apps-for-adult-women/",
+      "clicks": 7,
+      "impressions": 301,
+      "ctr": 0.023255813953488372,
+      "position": 17.242524916943523
+    },
+    {
+      "page": "https://www.tryfoco.com/get-foco/",
+      "clicks": 6,
+      "impressions": 645,
+      "ctr": 0.009302325581395349,
+      "position": 6.3565891472868215
+    },
+    {
+      "page": "https://www.tryfoco.com/best-adhd-planner/",
+      "clicks": 5,
+      "impressions": 1119,
+      "ctr": 0.004468275245755138,
+      "position": 42.32439678284182
+    },
+    {
+      "page": "https://www.tryfoco.com/inflow-review/",
+      "clicks": 5,
+      "impressions": 951,
+      "ctr": 0.005257623554153523,
+      "position": 9.317560462670873
+    },
+    {
+      "page": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
+      "clicks": 4,
+      "impressions": 828,
+      "ctr": 0.004830917874396135,
+      "position": 50.53019323671498
+    },
+    {
+      "page": "https://www.tryfoco.com/sunsama-alternative/",
+      "clicks": 4,
+      "impressions": 99,
+      "ctr": 0.04040404040404041,
+      "position": 6.717171717171717
+    },
+    {
+      "page": "https://www.tryfoco.com/adhd-meal-planner/",
+      "clicks": 3,
+      "impressions": 19,
+      "ctr": 0.15789473684210525,
+      "position": 3.8421052631578947
+    },
+    {
+      "page": "https://www.tryfoco.com/adhd-tools/",
+      "clicks": 3,
+      "impressions": 87,
+      "ctr": 0.034482758620689655,
+      "position": 3.4022988505747125
+    },
+    {
+      "page": "https://www.tryfoco.com/russell-barkley-executive-function-model/",
+      "clicks": 3,
+      "impressions": 103,
+      "ctr": 0.02912621359223301,
+      "position": 9.601941747572816
+    },
+    {
+      "page": "https://www.tryfoco.com/family-calendar-apps-for-adhd-moms/",
+      "clicks": 2,
+      "impressions": 77,
+      "ctr": 0.025974025974025976,
+      "position": 5.818181818181818
+    },
+    {
+      "page": "https://www.tryfoco.com/15-minute-timer-adhd/",
       "clicks": 1,
-      "impressions": 1,
-      "ctr": 1,
-      "position": 1
+      "impressions": 49,
+      "ctr": 0.02040816326530612,
+      "position": 5.244897959183674
+    },
+    {
+      "page": "https://www.tryfoco.com/about/",
+      "clicks": 1,
+      "impressions": 94,
+      "ctr": 0.010638297872340425,
+      "position": 7.25531914893617
+    },
+    {
+      "page": "https://www.tryfoco.com/adhd-brain-dump/",
+      "clicks": 1,
+      "impressions": 44,
+      "ctr": 0.022727272727272728,
+      "position": 6.295454545454546
+    },
+    {
+      "page": "https://www.tryfoco.com/adhd-daily-planner/",
+      "clicks": 1,
+      "impressions": 7,
+      "ctr": 0.14285714285714285,
+      "position": 8.142857142857142
+    },
+    {
+      "page": "https://www.tryfoco.com/adhd-execution-paralysis-survey/",
+      "clicks": 1,
+      "impressions": 75,
+      "ctr": 0.013333333333333334,
+      "position": 8.893333333333334
+    },
+    {
+      "page": "https://www.tryfoco.com/author/adi/page/8/",
+      "clicks": 1,
+      "impressions": 8,
+      "ctr": 0.125,
+      "position": 2.375
     },
     {
       "page": "https://www.tryfoco.com/best-productivity-apps-for-adhd/",
       "clicks": 1,
-      "impressions": 79,
-      "ctr": 0.012658227848101266,
-      "position": 54.11392405063291
+      "impressions": 151,
+      "ctr": 0.006622516556291391,
+      "position": 33.019867549668874
     },
     {
-      "page": "https://www.tryfoco.com/privacy-policy/",
+      "page": "https://www.tryfoco.com/cant-follow-my-own-rules-adhd/",
       "clicks": 1,
-      "impressions": 47,
-      "ctr": 0.02127659574468085,
-      "position": 12.829787234042554
+      "impressions": 101,
+      "ctr": 0.009900990099009901,
+      "position": 7.712871287128713
     },
     {
-      "page": "https://www.tryfoco.com/russell-barkley-executive-function-model/",
+      "page": "https://www.tryfoco.com/features/",
       "clicks": 1,
-      "impressions": 27,
-      "ctr": 0.037037037037037035,
-      "position": 15.25925925925926
+      "impressions": 172,
+      "ctr": 0.005813953488372093,
+      "position": 8.197674418604652
+    },
+    {
+      "page": "https://www.tryfoco.com/how-to-stay-focused-at-work-with-adhd/",
+      "clicks": 1,
+      "impressions": 50,
+      "ctr": 0.02,
+      "position": 51.26
+    },
+    {
+      "page": "https://www.tryfoco.com/procrastination-vs-paralysis/",
+      "clicks": 1,
+      "impressions": 12,
+      "ctr": 0.08333333333333333,
+      "position": 23.083333333333332
     },
     {
       "page": "https://www.tryfoco.com/task-breakdown/",
       "clicks": 1,
-      "impressions": 55,
-      "ctr": 0.01818181818181818,
-      "position": 13.363636363636363
+      "impressions": 311,
+      "ctr": 0.003215434083601286,
+      "position": 7.62379421221865
+    },
+    {
+      "page": "https://www.tryfoco.com/task-initiation-strategies-for-adults/",
+      "clicks": 1,
+      "impressions": 97,
+      "ctr": 0.010309278350515464,
+      "position": 10.608247422680412
     },
     {
       "page": "https://www.tryfoco.com/term-and-use/",
       "clicks": 1,
-      "impressions": 99,
-      "ctr": 0.010101010101010102,
-      "position": 12.343434343434344
+      "impressions": 35,
+      "ctr": 0.02857142857142857,
+      "position": 6.514285714285714
     },
     {
-      "page": "https://tryfoco.com/adhd-executive-function/",
+      "page": "https://www.tryfoco.com/tiimo-alternative/",
+      "clicks": 1,
+      "impressions": 62,
+      "ctr": 0.016129032258064516,
+      "position": 10.403225806451612
+    },
+    {
+      "page": "https://www.tryfoco.com/tiimo-vs-structured/",
+      "clicks": 1,
+      "impressions": 5,
+      "ctr": 0.2,
+      "position": 6.6
+    },
+    {
+      "page": "https://www.tryfoco.com/wall-of-awful-adhd/",
+      "clicks": 1,
+      "impressions": 71,
+      "ctr": 0.014084507042253521,
+      "position": 8.323943661971832
+    },
+    {
+      "page": "https://tryfoco.com/",
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 2,
       "ctr": 0,
-      "position": 10
+      "position": 1
+    },
+    {
+      "page": "https://tryfoco.com/adhd-and-depression/",
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 48.625
     },
     {
       "page": "https://www.tryfoco.com/10-minute-timer-adhd/",
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 20,
       "ctr": 0,
-      "position": 9.333333333333334
-    },
-    {
-      "page": "https://www.tryfoco.com/15-minute-timer-adhd/",
-      "clicks": 0,
-      "impressions": 34,
-      "ctr": 0,
-      "position": 8.294117647058822
+      "position": 5.35
     },
     {
       "page": "https://www.tryfoco.com/2-minute-rule-adhd/",
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 26,
       "ctr": 0,
-      "position": 6
+      "position": 6.1923076923076925
+    },
+    {
+      "page": "https://www.tryfoco.com/25-minute-timer-adhd/",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 2.666666666666667
     },
     {
       "page": "https://www.tryfoco.com/30-minute-timer-adhd/",
       "clicks": 0,
-      "impressions": 4,
-      "ctr": 0,
-      "position": 17.25
-    },
-    {
-      "page": "https://www.tryfoco.com/5-minute-timer-adhd/",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 5.5
-    },
-    {
-      "page": "https://www.tryfoco.com/adhd-1-3-5-rule/",
-      "clicks": 0,
-      "impressions": 11,
-      "ctr": 0,
-      "position": 7.454545454545454
-    },
-    {
-      "page": "https://www.tryfoco.com/adhd-and-autism/",
-      "clicks": 0,
-      "impressions": 1,
+      "impressions": 7,
       "ctr": 0,
       "position": 9
     },
     {
-      "page": "https://www.tryfoco.com/adhd-and-ritalin/",
+      "page": "https://www.tryfoco.com/5-minute-timer-adhd/",
       "clicks": 0,
-      "impressions": 6,
+      "impressions": 17,
       "ctr": 0,
-      "position": 31.333333333333332
+      "position": 7.0588235294117645
     },
     {
-      "page": "https://www.tryfoco.com/adhd-brain-dump/",
+      "page": "https://www.tryfoco.com/adhd-1-3-5-rule/",
+      "clicks": 0,
+      "impressions": 30,
+      "ctr": 0,
+      "position": 8.3
+    },
+    {
+      "page": "https://www.tryfoco.com/adhd-activation/",
+      "clicks": 0,
+      "impressions": 54,
+      "ctr": 0,
+      "position": 6.981481481481482
+    },
+    {
+      "page": "https://www.tryfoco.com/adhd-and-depression/",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 78.8
+    },
+    {
+      "page": "https://www.tryfoco.com/adhd-and-dopamine/",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 62.5
+    },
+    {
+      "page": "https://www.tryfoco.com/adhd-and-rejection-sensitive-dysphoria/",
+      "clicks": 0,
+      "impressions": 16,
+      "ctr": 0,
+      "position": 55
+    },
+    {
+      "page": "https://www.tryfoco.com/adhd-cleaning-planner/",
       "clicks": 0,
       "impressions": 4,
       "ctr": 0,
-      "position": 10.5
-    },
-    {
-      "page": "https://www.tryfoco.com/adhd-coaches/",
-      "clicks": 0,
-      "impressions": 3,
-      "ctr": 0,
-      "position": 19.666666666666668
+      "position": 6.25
     },
     {
       "page": "https://www.tryfoco.com/adhd-diagnostic-codes/",
       "clicks": 0,
-      "impressions": 17,
+      "impressions": 126,
       "ctr": 0,
-      "position": 10.470588235294118
-    },
-    {
-      "page": "https://www.tryfoco.com/adhd-execution-paralysis-survey/",
-      "clicks": 0,
-      "impressions": 40,
-      "ctr": 0,
-      "position": 6.7
+      "position": 15.619047619047619
     },
     {
       "page": "https://www.tryfoco.com/adhd-executive-function/",
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 35,
       "ctr": 0,
-      "position": 8.666666666666668
+      "position": 50.65714285714286
     },
     {
       "page": "https://www.tryfoco.com/adhd-fidget-toys/",
       "clicks": 0,
-      "impressions": 36,
+      "impressions": 14,
       "ctr": 0,
-      "position": 42.861111111111114
+      "position": 18.571428571428573
     },
     {
       "page": "https://www.tryfoco.com/adhd-glossary/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 9.7
+    },
+    {
+      "page": "https://www.tryfoco.com/adhd-habit-tracker-printable/",
       "clicks": 0,
       "impressions": 3,
       "ctr": 0,
@@ -264,366 +369,618 @@
     {
       "page": "https://www.tryfoco.com/adhd-imposter-syndrome/",
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 7,
       "ctr": 0,
-      "position": 2
+      "position": 17.571428571428573
+    },
+    {
+      "page": "https://www.tryfoco.com/adhd-in-adult-symptoms/",
+      "clicks": 0,
+      "impressions": 9,
+      "ctr": 0,
+      "position": 61
     },
     {
       "page": "https://www.tryfoco.com/adhd-music/",
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 7,
       "ctr": 0,
-      "position": 4
-    },
-    {
-      "page": "https://www.tryfoco.com/adhd-natural-treatment/",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 6
+      "position": 8.428571428571429
     },
     {
       "page": "https://www.tryfoco.com/adhd-or-add/",
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 21,
       "ctr": 0,
-      "position": 3.5
+      "position": 53.80952380952381
     },
     {
       "page": "https://www.tryfoco.com/adhd-planner/",
       "clicks": 0,
-      "impressions": 7,
+      "impressions": 14,
       "ctr": 0,
-      "position": 6
+      "position": 6.285714285714286
+    },
+    {
+      "page": "https://www.tryfoco.com/adhd-remote-work/",
+      "clicks": 0,
+      "impressions": 18,
+      "ctr": 0,
+      "position": 14.5
     },
     {
       "page": "https://www.tryfoco.com/adhd-resources/",
       "clicks": 0,
-      "impressions": 9,
+      "impressions": 19,
       "ctr": 0,
-      "position": 13.666666666666666
+      "position": 11.631578947368421
     },
     {
       "page": "https://www.tryfoco.com/adhd-sleep-music/",
       "clicks": 0,
-      "impressions": 25,
+      "impressions": 77,
       "ctr": 0,
-      "position": 10.16
+      "position": 8.792207792207792
     },
     {
       "page": "https://www.tryfoco.com/adhd-struggles-nobody-talks-about/",
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 2,
       "ctr": 0,
-      "position": 9
+      "position": 6
     },
     {
       "page": "https://www.tryfoco.com/adhd-symptoms-women/",
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 7,
       "ctr": 0,
-      "position": 7
+      "position": 89.85714285714286
     },
     {
-      "page": "https://www.tryfoco.com/adhd-tools/",
+      "page": "https://www.tryfoco.com/adhd-task-apps-for-freelancers/",
       "clicks": 0,
-      "impressions": 21,
+      "impressions": 19,
       "ctr": 0,
-      "position": 2.4761904761904763
+      "position": 9.736842105263158
+    },
+    {
+      "page": "https://www.tryfoco.com/adhd-task-paralysis/",
+      "clicks": 0,
+      "impressions": 85,
+      "ctr": 0,
+      "position": 51.141176470588235
     },
     {
       "page": "https://www.tryfoco.com/adhd-transitions/",
       "clicks": 0,
-      "impressions": 7,
+      "impressions": 27,
       "ctr": 0,
-      "position": 14.285714285714286
+      "position": 8.074074074074074
     },
     {
-      "page": "https://www.tryfoco.com/adhd-vs-add/",
+      "page": "https://www.tryfoco.com/adhd-type/",
       "clicks": 0,
-      "impressions": 1,
+      "impressions": 10,
       "ctr": 0,
-      "position": 87
+      "position": 27.7
     },
     {
       "page": "https://www.tryfoco.com/adhd-workbook/",
       "clicks": 0,
-      "impressions": 7,
+      "impressions": 10,
       "ctr": 0,
-      "position": 7.714285714285714
+      "position": 5.9
     },
     {
       "page": "https://www.tryfoco.com/ai-task-breakdown/",
       "clicks": 0,
-      "impressions": 4,
+      "impressions": 69,
       "ctr": 0,
-      "position": 9.5
+      "position": 10.27536231884058
+    },
+    {
+      "page": "https://www.tryfoco.com/author/adi/page/2/",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 5
+    },
+    {
+      "page": "https://www.tryfoco.com/author/adi/page/3/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 6
+    },
+    {
+      "page": "https://www.tryfoco.com/author/adi/page/4/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 10
     },
     {
       "page": "https://www.tryfoco.com/author/adi/page/5/",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
-      "position": 3
-    },
-    {
-      "page": "https://www.tryfoco.com/best-adhd-app/#foco-review",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 10
-    },
-    {
-      "page": "https://www.tryfoco.com/best-adhd-app/#goblin-tools-review",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 10
-    },
-    {
-      "page": "https://www.tryfoco.com/best-adhd-app/#habitica-review",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 10
-    },
-    {
-      "page": "https://www.tryfoco.com/best-adhd-app/#remindher-review",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 10
-    },
-    {
-      "page": "https://www.tryfoco.com/best-adhd-app/#what-makes-an-adhd-app-work",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 10
-    },
-    {
-      "page": "https://www.tryfoco.com/best-adhd-app/#which-adhd-app-is-best",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 10
-    },
-    {
-      "page": "https://www.tryfoco.com/best-adhd-app/#which-adhd-app-should-you-pick-first",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 10
-    },
-    {
-      "page": "https://www.tryfoco.com/best-apps-for-adults-with-adhd/",
-      "clicks": 0,
-      "impressions": 353,
-      "ctr": 0,
-      "position": 61.42776203966006
-    },
-    {
-      "page": "https://www.tryfoco.com/best-career-for-people-with-adhd/",
-      "clicks": 0,
-      "impressions": 11,
-      "ctr": 0,
-      "position": 43.18181818181818
-    },
-    {
-      "page": "https://www.tryfoco.com/blog",
-      "clicks": 0,
-      "impressions": 40,
-      "ctr": 0,
-      "position": 3.575
-    },
-    {
-      "page": "https://www.tryfoco.com/blog/",
-      "clicks": 0,
-      "impressions": 13,
-      "ctr": 0,
-      "position": 9.538461538461538
-    },
-    {
-      "page": "https://www.tryfoco.com/blog/page/4/",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
       "position": 6
     },
     {
-      "page": "https://www.tryfoco.com/body-doubling-adhd/",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 8
-    },
-    {
-      "page": "https://www.tryfoco.com/cant-follow-my-own-rules-adhd/",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 7
-    },
-    {
-      "page": "https://www.tryfoco.com/category/uncategorized/",
-      "clicks": 0,
-      "impressions": 3,
-      "ctr": 0,
-      "position": 6.666666666666667
-    },
-    {
-      "page": "https://www.tryfoco.com/classical-music-for-adhd/",
-      "clicks": 0,
-      "impressions": 11,
-      "ctr": 0,
-      "position": 16.81818181818182
-    },
-    {
-      "page": "https://www.tryfoco.com/emotional-regulation-adhd/",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 10
-    },
-    {
-      "page": "https://www.tryfoco.com/executive-function-skills-list/",
-      "clicks": 0,
-      "impressions": 4,
-      "ctr": 0,
-      "position": 31.75
-    },
-    {
-      "page": "https://www.tryfoco.com/features/",
-      "clicks": 0,
-      "impressions": 40,
-      "ctr": 0,
-      "position": 3.575
-    },
-    {
-      "page": "https://www.tryfoco.com/features/adhd-voice-capture/",
-      "clicks": 0,
-      "impressions": 6,
-      "ctr": 0,
-      "position": 5.5
-    },
-    {
-      "page": "https://www.tryfoco.com/foco-start-method/",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 8
-    },
-    {
-      "page": "https://www.tryfoco.com/get-foco/",
-      "clicks": 0,
-      "impressions": 37,
-      "ctr": 0,
-      "position": 3.4324324324324325
-    },
-    {
-      "page": "https://www.tryfoco.com/how-to-focus-with-adhd/",
-      "clicks": 0,
-      "impressions": 76,
-      "ctr": 0,
-      "position": 75.80263157894737
-    },
-    {
-      "page": "https://www.tryfoco.com/hyperfocus-adhd/",
-      "clicks": 0,
-      "impressions": 6,
-      "ctr": 0,
-      "position": 17.333333333333332
-    },
-    {
-      "page": "https://www.tryfoco.com/lofi-music-for-adhd/",
+      "page": "https://www.tryfoco.com/author/adi/page/7/",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
       "position": 11
     },
     {
-      "page": "https://www.tryfoco.com/pomodoro-for-adhd/",
-      "clicks": 0,
-      "impressions": 7,
-      "ctr": 0,
-      "position": 22
-    },
-    {
-      "page": "https://www.tryfoco.com/procrastination-vs-paralysis/",
-      "clicks": 0,
-      "impressions": 7,
-      "ctr": 0,
-      "position": 14
-    },
-    {
-      "page": "https://www.tryfoco.com/structured-app-alternative/",
-      "clicks": 0,
-      "impressions": 82,
-      "ctr": 0,
-      "position": 11.329268292682928
-    },
-    {
-      "page": "https://www.tryfoco.com/sunsama-alternative/",
-      "clicks": 0,
-      "impressions": 17,
-      "ctr": 0,
-      "position": 13.294117647058824
-    },
-    {
-      "page": "https://www.tryfoco.com/task-initiation-deficit-explained/",
-      "clicks": 0,
-      "impressions": 8,
-      "ctr": 0,
-      "position": 8.875
-    },
-    {
-      "page": "https://www.tryfoco.com/task-initiation-strategies-for-adults/",
-      "clicks": 0,
-      "impressions": 31,
-      "ctr": 0,
-      "position": 11.64516129032258
-    },
-    {
-      "page": "https://www.tryfoco.com/tiimo-alternative/",
-      "clicks": 0,
-      "impressions": 11,
-      "ctr": 0,
-      "position": 20.454545454545453
-    },
-    {
-      "page": "https://www.tryfoco.com/time-blindness-adhd/",
-      "clicks": 0,
-      "impressions": 13,
-      "ctr": 0,
-      "position": 28.692307692307693
-    },
-    {
-      "page": "https://www.tryfoco.com/watch-how-to-add-the-foco-widget/",
+      "page": "https://www.tryfoco.com/author/adi/page/9/",
       "clicks": 0,
       "impressions": 3,
       "ctr": 0,
-      "position": 24.666666666666668
+      "position": 3
     },
     {
-      "page": "https://www.tryfoco.com/why-adhd-makes-you-forget-to-send-invoices/",
+      "page": "https://www.tryfoco.com/best-adhd-app/#are-free-adhd-apps-good",
+      "clicks": 0,
+      "impressions": 31,
+      "ctr": 0,
+      "position": 9.548387096774194
+    },
+    {
+      "page": "https://www.tryfoco.com/best-adhd-app/#best-adhd-apps-comparison",
+      "clicks": 0,
+      "impressions": 30,
+      "ctr": 0,
+      "position": 9.233333333333333
+    },
+    {
+      "page": "https://www.tryfoco.com/best-adhd-app/#foco-review",
+      "clicks": 0,
+      "impressions": 56,
+      "ctr": 0,
+      "position": 7.696428571428571
+    },
+    {
+      "page": "https://www.tryfoco.com/best-adhd-app/#goblin-tools-review",
+      "clicks": 0,
+      "impressions": 52,
+      "ctr": 0,
+      "position": 7.519230769230769
+    },
+    {
+      "page": "https://www.tryfoco.com/best-adhd-app/#habitica-review",
+      "clicks": 0,
+      "impressions": 103,
+      "ctr": 0,
+      "position": 8.029126213592233
+    },
+    {
+      "page": "https://www.tryfoco.com/best-adhd-app/#how-we-tested",
+      "clicks": 0,
+      "impressions": 24,
+      "ctr": 0,
+      "position": 9.833333333333334
+    },
+    {
+      "page": "https://www.tryfoco.com/best-adhd-app/#inflow-review",
+      "clicks": 0,
+      "impressions": 32,
+      "ctr": 0,
+      "position": 7.03125
+    },
+    {
+      "page": "https://www.tryfoco.com/best-adhd-app/#remindher-review",
+      "clicks": 0,
+      "impressions": 57,
+      "ctr": 0,
+      "position": 7.7894736842105265
+    },
+    {
+      "page": "https://www.tryfoco.com/best-adhd-app/#what-makes-an-adhd-app-work",
+      "clicks": 0,
+      "impressions": 105,
+      "ctr": 0,
+      "position": 8.095238095238095
+    },
+    {
+      "page": "https://www.tryfoco.com/best-adhd-app/#which-adhd-app-is-best",
+      "clicks": 0,
+      "impressions": 90,
+      "ctr": 0,
+      "position": 8.166666666666668
+    },
+    {
+      "page": "https://www.tryfoco.com/best-adhd-app/#which-adhd-app-should-you-pick-first",
+      "clicks": 0,
+      "impressions": 78,
+      "ctr": 0,
+      "position": 8.23076923076923
+    },
+    {
+      "page": "https://www.tryfoco.com/best-adhd-planner/#digital-options",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 2
+    },
+    {
+      "page": "https://www.tryfoco.com/best-adhd-planner/#paper-options",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "page": "https://www.tryfoco.com/best-adhd-planner/#why-fail",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 3
+    },
+    {
+      "page": "https://www.tryfoco.com/best-adhd-task-paralysis/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "page": "https://www.tryfoco.com/best-apps-for-adults-with-adhd",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "page": "https://www.tryfoco.com/best-apps-for-adults-with-adhd-honest-reviews-foco",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "page": "https://www.tryfoco.com/best-career-for-people-with-adhd/",
+      "clicks": 0,
+      "impressions": 99,
+      "ctr": 0,
+      "position": 36.101010101010104
+    },
+    {
+      "page": "https://www.tryfoco.com/blog",
+      "clicks": 0,
+      "impressions": 45,
+      "ctr": 0,
+      "position": 1.6444444444444444
+    },
+    {
+      "page": "https://www.tryfoco.com/blog/",
+      "clicks": 0,
+      "impressions": 26,
+      "ctr": 0,
+      "position": 8.692307692307693
+    },
+    {
+      "page": "https://www.tryfoco.com/blog/page/2/",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 5.4
+    },
+    {
+      "page": "https://www.tryfoco.com/blog/page/4/",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 2
+    },
+    {
+      "page": "https://www.tryfoco.com/classical-music-for-adhd/",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 12.142857142857142
+    },
+    {
+      "page": "https://www.tryfoco.com/contact/",
+      "clicks": 0,
+      "impressions": 460,
+      "ctr": 0,
+      "position": 9.269565217391305
+    },
+    {
+      "page": "https://www.tryfoco.com/emotional-regulation-adhd/",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 60.5
+    },
+    {
+      "page": "https://www.tryfoco.com/executive-function-skills-list/",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 36.53846153846154
+    },
+    {
+      "page": "https://www.tryfoco.com/features/adhd-brain-dump/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 7
+    },
+    {
+      "page": "https://www.tryfoco.com/features/adhd-focus-mode/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 3
+    },
+    {
+      "page": "https://www.tryfoco.com/features/adhd-mascot-companion/",
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 3.25
+    },
+    {
+      "page": "https://www.tryfoco.com/features/adhd-task-breakdown/",
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 5
+    },
+    {
+      "page": "https://www.tryfoco.com/features/adhd-time-estimates/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "page": "https://www.tryfoco.com/features/adhd-voice-capture/",
       "clicks": 0,
       "impressions": 3,
       "ctr": 0,
       "position": 4.666666666666666
     },
     {
+      "page": "https://www.tryfoco.com/foco-research/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 4.272727272727273
+    },
+    {
+      "page": "https://www.tryfoco.com/foco-review/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "page": "https://www.tryfoco.com/foco-start-method/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 4.727272727272727
+    },
+    {
+      "page": "https://www.tryfoco.com/foco-vs-inflow/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2
+    },
+    {
+      "page": "https://www.tryfoco.com/foco-vs-tiimo/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 3
+    },
+    {
+      "page": "https://www.tryfoco.com/founders/",
+      "clicks": 0,
+      "impressions": 67,
+      "ctr": 0,
+      "position": 6
+    },
+    {
+      "page": "https://www.tryfoco.com/gifted-and-adhd/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 9.545454545454545
+    },
+    {
+      "page": "https://www.tryfoco.com/goblin-tools-alternative/#list",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "page": "https://www.tryfoco.com/goblin-tools-alternative/#why",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8
+    },
+    {
+      "page": "https://www.tryfoco.com/household-planning-for-adhd/",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 7.5
+    },
+    {
+      "page": "https://www.tryfoco.com/how-small-should-adhd-task-steps-be/",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 5.5
+    },
+    {
+      "page": "https://www.tryfoco.com/how-to-focus-with-adhd-without-medication/",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 5
+    },
+    {
+      "page": "https://www.tryfoco.com/how-to-focus-with-adhd/",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 46.54545454545455
+    },
+    {
+      "page": "https://www.tryfoco.com/hyperfocus-adhd/",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 8.8
+    },
+    {
+      "page": "https://www.tryfoco.com/instrumental-music-for-adhd/",
+      "clicks": 0,
+      "impressions": 27,
+      "ctr": 0,
+      "position": 7.962962962962963
+    },
+    {
+      "page": "https://www.tryfoco.com/pomodoro-for-adhd/",
+      "clicks": 0,
+      "impressions": 15,
+      "ctr": 0,
+      "position": 23.933333333333334
+    },
+    {
+      "page": "https://www.tryfoco.com/privacy-policy/",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 26.833333333333332
+    },
+    {
+      "page": "https://www.tryfoco.com/structured-app-alternative/#choose",
+      "clicks": 0,
+      "impressions": 39,
+      "ctr": 0,
+      "position": 8.717948717948719
+    },
+    {
+      "page": "https://www.tryfoco.com/structured-app-alternative/#compare",
+      "clicks": 0,
+      "impressions": 45,
+      "ctr": 0,
+      "position": 8.466666666666667
+    },
+    {
+      "page": "https://www.tryfoco.com/structured-app-alternative/#list",
+      "clicks": 0,
+      "impressions": 85,
+      "ctr": 0,
+      "position": 8.28235294117647
+    },
+    {
+      "page": "https://www.tryfoco.com/structured-app-alternative/#why",
+      "clicks": 0,
+      "impressions": 77,
+      "ctr": 0,
+      "position": 8.35064935064935
+    },
+    {
+      "page": "https://www.tryfoco.com/task-initiation-deficit-explained/",
+      "clicks": 0,
+      "impressions": 36,
+      "ctr": 0,
+      "position": 26.61111111111111
+    },
+    {
+      "page": "https://www.tryfoco.com/ticktick-alternative/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11
+    },
+    {
+      "page": "https://www.tryfoco.com/time-blindness-adhd/",
+      "clicks": 0,
+      "impressions": 28,
+      "ctr": 0,
+      "position": 29.321428571428573
+    },
+    {
+      "page": "https://www.tryfoco.com/todoist-alternative-for-adhd/",
+      "clicks": 0,
+      "impressions": 84,
+      "ctr": 0,
+      "position": 10.130952380952381
+    },
+    {
+      "page": "https://www.tryfoco.com/todoist-alternatives/",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 9.9
+    },
+    {
+      "page": "https://www.tryfoco.com/tryfoco.com/-focus-companion",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "page": "https://www.tryfoco.com/tryfoco.com/family-calendar-apps-for-adhd-moms/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "page": "https://www.tryfoco.com/tryfoco.com/inflow-review/",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1
+    },
+    {
+      "page": "https://www.tryfoco.com/why-adhd-makes-you-forget-to-send-invoices/",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 5.8
+    },
+    {
       "page": "https://www.tryfoco.com/why-people-with-adhd-forget-to-eat/",
       "clicks": 0,
-      "impressions": 23,
+      "impressions": 75,
       "ctr": 0,
-      "position": 7.826086956521739
+      "position": 10.44
+    },
+    {
+      "page": "https://www.tryfoco.com/why-you-keep-abandoning-adhd-planner-apps/",
+      "clicks": 0,
+      "impressions": 16,
+      "ctr": 0,
+      "position": 7.0625
     },
     {
       "page": "https://www.tryfoco.com/working-memory-adhd/",
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 9,
       "ctr": 0,
-      "position": 14.666666666666666
+      "position": 9.555555555555555
+    },
+    {
+      "page": "https://www.tryfoco.com/wp-content/uploads/2026/06/adhd-daily-planner-template-foco.pdf",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 50
     }
   ]
 }

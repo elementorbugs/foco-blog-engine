@@ -1,0 +1,136 @@
+{
+  "music-bright-startup": {
+    "path": "assets/lib/music-bright-startup/track.mp3",
+    "kind": "music",
+    "title": "Bright Startup",
+    "meta": {
+      "bpm": 118,
+      "mood": "optimistic",
+      "source": "ElevenLabs Music",
+      "licence": "Generated for Reelkit with ElevenLabs Music",
+      "durationSec": 29.99,
+      "instrumental": true
+    },
+    "gainDb": -5.7
+  },
+  "sfx-ui-soft-whoosh": {
+    "path": "assets/lib/sfx-ui-soft-whoosh/clip.mp3",
+    "kind": "sfx",
+    "title": "Soft UI Whoosh",
+    "meta": {
+      "pack": "Reelkit UI",
+      "length": "hit",
+      "source": "ElevenLabs Sound Effects",
+      "licence": "Generated for Reelkit with ElevenLabs Sound Effects",
+      "category": "Transitions",
+      "durationSec": 0.84
+    },
+    "gainDb": -2.1
+  },
+  "sfx-ui-bubble-pop": {
+    "path": "assets/lib/sfx-ui-bubble-pop/clip.mp3",
+    "kind": "sfx",
+    "title": "Bubble Pop",
+    "meta": {
+      "pack": "Reelkit UI",
+      "length": "hit",
+      "source": "ElevenLabs Sound Effects",
+      "licence": "Generated for Reelkit with ElevenLabs Sound Effects",
+      "category": "Interface",
+      "durationSec": 0.52
+    },
+    "gainDb": -2.6
+  },
+  "sfx-ui-success-chime": {
+    "path": "assets/lib/sfx-ui-success-chime/clip.mp3",
+    "kind": "sfx",
+    "title": "Success Chime",
+    "meta": {
+      "pack": "Reelkit UI",
+      "length": "hit",
+      "source": "ElevenLabs Sound Effects",
+      "licence": "Generated for Reelkit with ElevenLabs Sound Effects",
+      "category": "Interface",
+      "durationSec": 1.04
+    },
+    "gainDb": 3.1
+  },
+  "sfx-ui-sparkle-shimmer": {
+    "path": "assets/lib/sfx-ui-sparkle-shimmer/clip.mp3",
+    "kind": "sfx",
+    "title": "Sparkle Shimmer",
+    "meta": {
+      "pack": "Reelkit UI",
+      "length": "hit",
+      "source": "ElevenLabs Sound Effects",
+      "licence": "Generated for Reelkit with ElevenLabs Sound Effects",
+      "category": "Interface",
+      "durationSec": 1.23
+    },
+    "gainDb": 3.2
+  },
+  "sfx-ui-camera-shutter": {
+    "path": "assets/lib/sfx-ui-camera-shutter/clip.mp3",
+    "kind": "sfx",
+    "title": "Camera Shutter",
+    "meta": {
+      "pack": "Reelkit UI",
+      "length": "hit",
+      "source": "ElevenLabs Sound Effects",
+      "licence": "Generated for Reelkit with ElevenLabs Sound Effects",
+      "category": "Interface",
+      "durationSec": 0.52
+    },
+    "gainDb": -3
+  },
+  "sfx-ui-soft-impact": {
+    "path": "assets/lib/sfx-ui-soft-impact/clip.mp3",
+    "kind": "sfx",
+    "title": "Soft Impact",
+    "meta": {
+      "pack": "Reelkit UI",
+      "length": "hit",
+      "source": "ElevenLabs Sound Effects",
+      "licence": "Generated for Reelkit with ElevenLabs Sound Effects",
+      "category": "Impacts",
+      "durationSec": 0.73
+    },
+    "gainDb": -2.5
+  },
+  "sfx-ui-riser-short": {
+    "path": "assets/lib/sfx-ui-riser-short/clip.mp3",
+    "kind": "sfx",
+    "title": "Short Riser",
+    "meta": {
+      "pack": "Reelkit UI",
+      "length": "phrase",
+      "source": "ElevenLabs Sound Effects",
+      "licence": "Generated for Reelkit with ElevenLabs Sound Effects",
+      "category": "Transitions",
+      "durationSec": 2.04
+    },
+    "gainDb": -3
+  },
+  "sfx-ui-glass-tap": {
+    "path": "assets/lib/sfx-ui-glass-tap/clip.mp3",
+    "kind": "sfx",
+    "title": "Glass Tap",
+    "meta": {
+      "pack": "Reelkit UI",
+      "length": "hit",
+      "source": "ElevenLabs Sound Effects",
+      "licence": "Generated for Reelkit with ElevenLabs Sound Effects",
+      "category": "Interface",
+      "durationSec": 0.52
+    },
+    "gainDb": -2.9
+  },
+  "cmp-phonemockup": {
+    "path": "src/PhoneMockup.tsx",
+    "kind": "component",
+    "title": "PhoneMockup",
+    "meta": {
+      "example": "<PhoneMockup size={0.7} tilt={-6} />"
+    }
+  }
+}

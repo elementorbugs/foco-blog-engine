@@ -1,0 +1,225 @@
+{
+  "slug": "task-paralysis",
+  "title": "How to Break ADHD Task Paralysis (When You're Frozen)",
+  "voice": "af_heart",
+  "scenes": [
+    {
+      "id": "hook",
+      "mascot": 6,
+      "text": "You know exactly what you need to do. You've known for three days. And you're still sitting here, scrolling, feeling worse every hour. That's not laziness. It's called task paralysis. And there's a simple way out.",
+      "visual": {
+        "type": "broll",
+        "query": "person lying on couch scrolling phone",
+        "overlay": [
+          {
+            "at": "It's called task paralysis",
+            "text": "ADHD task paralysis"
+          }
+        ],
+        "candidates": [
+          7343025,
+          6667058,
+          7326138,
+          7392796,
+          6271456,
+          6031852,
+          5271671,
+          6667061
+        ],
+        "pick": 6,
+        "clipSec": 7
+      }
+    },
+    {
+      "id": "what",
+      "mascot": 1,
+      "text": "Task paralysis is that frozen feeling when you want to start, but you can't make yourself move. It usually isn't about not caring. Researchers connect it to executive function, the brain skills that help you plan, prioritize, and get started.",
+      "visual": {
+        "type": "bullets",
+        "title": "What is task paralysis?",
+        "items": [
+          {
+            "at": "you want to start",
+            "text": "You want to start"
+          },
+          {
+            "at": "you can't make yourself",
+            "text": "But you can't move 🧊"
+          },
+          {
+            "at": "It usually isn't",
+            "text": "It's not about not caring"
+          },
+          {
+            "at": "executive function",
+            "text": "It's an executive function thing 🧠"
+          }
+        ]
+      }
+    },
+    {
+      "id": "triggers",
+      "mascot": 4,
+      "text": "People with A D H D often describe a few things that set it off. The task is too big, so there's no clear first step. There are too many tasks, so choosing feels impossible. It's boring, so your brain can't find a reason to begin. Or it feels high stakes, and you're scared of doing it wrong.",
+      "visual": {
+        "type": "bullets",
+        "title": "What sets it off",
+        "items": [
+          {
+            "at": "too big",
+            "text": "Too big: no clear first step"
+          },
+          {
+            "at": "too many tasks",
+            "text": "Too many: can't choose"
+          },
+          {
+            "at": "It's boring",
+            "text": "Boring: no spark"
+          },
+          {
+            "at": "high stakes",
+            "text": "High stakes: scared to get it wrong"
+          }
+        ]
+      }
+    },
+    {
+      "id": "loop",
+      "mascot": 6,
+      "text": "Then the worst part kicks in. The longer you wait, the bigger it feels. You feel guilty, the guilt makes it heavier, and you freeze even harder. Willpower doesn't break that loop. Smaller steps do.",
+      "visual": {
+        "type": "broll",
+        "query": "stressed woman at desk head in hands",
+        "overlay": [
+          {
+            "at": "Willpower doesn't",
+            "text": "Smaller steps, not more willpower"
+          }
+        ],
+        "candidates": [
+          8873407,
+          8554279,
+          8631875,
+          8632780,
+          8547537,
+          8873365,
+          6290471,
+          6269164
+        ],
+        "pick": 4,
+        "clipSec": 8
+      }
+    },
+    {
+      "id": "steps",
+      "mascot": 3,
+      "text": "Here's a method you can use right now. Step one. Pick one task. Just one. Step two. Shrink the first step until it feels almost silly. Not clean the kitchen. Put one cup in the sink. Step three. Set a timer for five minutes, and promise yourself you can stop when it rings. Step four. Move your body first. Stand up and walk to where the task happens. Step five. Do the tiny step. Then pick the next one.",
+      "visual": {
+        "type": "steps",
+        "title": "How to break task paralysis",
+        "steps": [
+          {
+            "at": "Pick one task",
+            "text": "Pick ONE task"
+          },
+          {
+            "at": "Shrink the first step",
+            "text": "Shrink step 1 until it's silly"
+          },
+          {
+            "at": "Set a timer",
+            "text": "5-minute timer, then you can stop"
+          },
+          {
+            "at": "Move your body",
+            "text": "Move your body first"
+          },
+          {
+            "at": "Do the tiny step",
+            "text": "Do it, then pick the next"
+          }
+        ]
+      }
+    },
+    {
+      "id": "why",
+      "mascot": 1,
+      "text": "Why can this help? A tiny step gives your brain one clear action, so there's less to plan. The timer makes the task feel finite. And once you've started, keeping going is often easier than beginning was. It won't work every single time, and that's okay. Just try again with an even smaller step.",
+      "visual": {
+        "type": "bullets",
+        "title": "Why it can help",
+        "items": [
+          {
+            "at": "one clear action",
+            "text": "One clear action, less planning"
+          },
+          {
+            "at": "feel finite",
+            "text": "A timer makes it finite ⏱️"
+          },
+          {
+            "at": "once you've started",
+            "text": "Starting is the hardest part"
+          },
+          {
+            "at": "even smaller step",
+            "text": "Didn't work? Go smaller"
+          }
+        ]
+      }
+    },
+    {
+      "id": "foco",
+      "mascot": 5,
+      "text": "This is exactly why we built Foco. When you're frozen, just tell it the task, by typing, talking, or snapping a photo. Foco breaks it into tiny first steps, each with a time estimate. Then focus mode starts a timer and calm sounds, and I stay on screen with you while you do step one.",
+      "visual": {
+        "type": "phones",
+        "items": [
+          {
+            "at": "tell it the task",
+            "shot": 2
+          },
+          {
+            "at": "Foco breaks it",
+            "shot": 3
+          },
+          {
+            "at": "Then focus mode",
+            "shot": 4
+          },
+          {
+            "at": "calm sounds",
+            "shot": 6
+          }
+        ]
+      }
+    },
+    {
+      "id": "outro",
+      "mascot": 2,
+      "text": "So here's your challenge. Pick the task you've been avoiding the longest. Make the first step tiny. Set a five minute timer, and start. If you want help breaking it down, Foco is on iPhone and Android. Link in the description. You've got this.",
+      "visual": {
+        "type": "cta",
+        "lines": [
+          "Pick the task you're avoiding",
+          "Make step 1 tiny",
+          "5-minute timer. Go 💜"
+        ]
+      }
+    }
+  ],
+  "thumb": {
+    "aLines": [
+      "FROZEN?",
+      "CAN'T START?"
+    ],
+    "aPill": "DO THIS",
+    "bLines": [
+      "ADHD",
+      "TASK",
+      "PARALYSIS"
+    ],
+    "mascot": "foco_state_6_pause"
+  }
+}

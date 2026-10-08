@@ -1,0 +1,142 @@
+{
+  "music-cinematic-rise": {
+    "path": "assets/lib/music-cinematic-rise/track.mp3",
+    "kind": "music",
+    "title": "Cinematic Rise",
+    "meta": {
+      "bpm": 100,
+      "mood": "epic",
+      "source": "ElevenLabs Music",
+      "licence": "Generated for Reelkit with ElevenLabs Music",
+      "durationSec": 29.99,
+      "instrumental": true
+    },
+    "gainDb": -5.1
+  },
+  "hollywood-essentials-tension-builders-tension-builders-clock-ticking": {
+    "path": "assets/lib/hollywood-essentials-tension-builders-tension-builders-clock-ticking/clip.mp3",
+    "kind": "sfx",
+    "title": "Tension Builders Clock Ticking",
+    "meta": {
+      "pack": "Hollywood Essentials",
+      "length": "bed",
+      "source": "Four Editors - All Sound Effects In One Download",
+      "licence": "Four Editors License Agreement: own-work use; no redistribution or incorporation in a product",
+      "category": "Tension builders",
+      "durationSec": 16.143673
+    },
+    "gainDb": 2.2
+  },
+  "ultimate-social-content-foley-crackle": {
+    "path": "assets/lib/ultimate-social-content-foley-crackle/clip.mp3",
+    "kind": "sfx",
+    "title": "Crackle",
+    "meta": {
+      "pack": "Ultimate Social Content",
+      "length": "phrase",
+      "source": "Four Editors - All Sound Effects In One Download",
+      "licence": "Four Editors License Agreement: own-work use; no redistribution or incorporation in a product",
+      "category": "Foley",
+      "durationSec": 2.951837
+    },
+    "gainDb": 10.4
+  },
+  "hollywood-essentials-fantasy-fantasy-whoosh-light": {
+    "path": "assets/lib/hollywood-essentials-fantasy-fantasy-whoosh-light/clip.mp3",
+    "kind": "sfx",
+    "title": "Fantasy Whoosh Light",
+    "meta": {
+      "pack": "Hollywood Essentials",
+      "length": "phrase",
+      "source": "Four Editors - All Sound Effects In One Download",
+      "licence": "Four Editors License Agreement: own-work use; no redistribution or incorporation in a product",
+      "category": "Fantasy",
+      "durationSec": 4.545306
+    },
+    "gainDb": 6.2
+  },
+  "sfx-ui-sparkle-shimmer": {
+    "path": "assets/lib/sfx-ui-sparkle-shimmer/clip.mp3",
+    "kind": "sfx",
+    "title": "Sparkle Shimmer",
+    "meta": {
+      "pack": "Reelkit UI",
+      "length": "hit",
+      "source": "ElevenLabs Sound Effects",
+      "licence": "Generated for Reelkit with ElevenLabs Sound Effects",
+      "category": "Interface",
+      "durationSec": 1.23
+    },
+    "gainDb": 3.2
+  },
+  "hollywood-essentials-impacts-and-explosions-impacts-explosions-breaking-glass": {
+    "path": "assets/lib/hollywood-essentials-impacts-and-explosions-impacts-explosions-breaking-glass/clip.mp3",
+    "kind": "sfx",
+    "title": "Impacts Explosions Breaking Glass",
+    "meta": {
+      "pack": "Hollywood Essentials",
+      "length": "hit",
+      "source": "Four Editors - All Sound Effects In One Download",
+      "licence": "Four Editors License Agreement: own-work use; no redistribution or incorporation in a product",
+      "category": "Impacts & Explosions",
+      "durationSec": 1.541224
+    },
+    "gainDb": -3
+  },
+  "sfx-ui-success-chime": {
+    "path": "assets/lib/sfx-ui-success-chime/clip.mp3",
+    "kind": "sfx",
+    "title": "Success Chime",
+    "meta": {
+      "pack": "Reelkit UI",
+      "length": "hit",
+      "source": "ElevenLabs Sound Effects",
+      "licence": "Generated for Reelkit with ElevenLabs Sound Effects",
+      "category": "Interface",
+      "durationSec": 1.04
+    },
+    "gainDb": 3.1
+  },
+  "sfx-ui-soft-impact": {
+    "path": "assets/lib/sfx-ui-soft-impact/clip.mp3",
+    "kind": "sfx",
+    "title": "Soft Impact",
+    "meta": {
+      "pack": "Reelkit UI",
+      "length": "hit",
+      "source": "ElevenLabs Sound Effects",
+      "licence": "Generated for Reelkit with ElevenLabs Sound Effects",
+      "category": "Impacts",
+      "durationSec": 0.73
+    },
+    "gainDb": -2.5
+  },
+  "youtube-picks-interface-mouse-click": {
+    "path": "assets/lib/youtube-picks-interface-mouse-click/clip.mp3",
+    "kind": "sfx",
+    "title": "Mouse Click",
+    "meta": {
+      "pack": "YouTube Picks",
+      "length": "hit",
+      "source": "YouTube videos supplied by the project owner (i0DON3AjhW4, OJhWtBBJw10, 92jxKbZslUc, vAisWjP49xA, sX6JxdJZWZo)",
+      "licence": "Not verified: uploaders describe them as free or no-copyright, but no licence is stated on the videos",
+      "category": "Interface",
+      "durationSec": 0.235102
+    },
+    "gainDb": 1.5
+  },
+  "hollywood-essentials-fantasy-fantasy-shine": {
+    "path": "assets/lib/hollywood-essentials-fantasy-fantasy-shine/clip.mp3",
+    "kind": "sfx",
+    "title": "Fantasy Shine",
+    "meta": {
+      "pack": "Hollywood Essentials",
+      "length": "phrase",
+      "source": "Four Editors - All Sound Effects In One Download",
+      "licence": "Four Editors License Agreement: own-work use; no redistribution or incorporation in a product",
+      "category": "Fantasy",
+      "durationSec": 4.231837
+    },
+    "gainDb": -1.7
+  }
+}

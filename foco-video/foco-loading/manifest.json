@@ -1,0 +1,165 @@
+{
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "totalFrames": 825,
+  "captions": "none",
+  "soundGain": {
+    "assets/lib/music-viral-dance-pop/track.mp3": 0.6383,
+    "assets/lib/cinematic-glitches-glitch/clip.mp3": 0.8913,
+    "assets/lib/quantum-motion-whooshes-flow-whoosh-reverse/clip.mp3": 0.7943,
+    "assets/lib/sfx-ui-soft-impact/clip.mp3": 0.7499,
+    "assets/lib/youtube-picks-interface-mouse-click/clip.mp3": 1.1885,
+    "assets/lib/sfx-ui-success-chime/clip.mp3": 1.4289,
+    "assets/lib/sfx-ui-bubble-pop/clip.mp3": 0.7413,
+    "assets/lib/sfx-ui-bass-drop/clip.mp3": 0.7079,
+    "assets/lib/invention-riser-riser-building-up/clip.mp3": 1.0116
+  },
+  "music": {
+    "key": "assets/lib/music-viral-dance-pop/track.mp3",
+    "bpm": 62,
+    "beatFrames": [
+      12,
+      41,
+      70,
+      99,
+      128,
+      157,
+      186,
+      215,
+      244,
+      273,
+      302,
+      331,
+      360,
+      389,
+      419,
+      448,
+      477,
+      506,
+      535,
+      564,
+      593,
+      622,
+      651,
+      680,
+      709,
+      738,
+      767,
+      796
+    ]
+  },
+  "scenes": [
+    {
+      "id": "stuck",
+      "startFrame": 0,
+      "durationFrames": 70,
+      "words": [],
+      "userAssetKeys": []
+    },
+    {
+      "id": "clock",
+      "startFrame": 70,
+      "durationFrames": 44,
+      "words": [],
+      "userAssetKeys": []
+    },
+    {
+      "id": "lazy",
+      "startFrame": 114,
+      "durationFrames": 72,
+      "words": [],
+      "userAssetKeys": []
+    },
+    {
+      "id": "button",
+      "startFrame": 186,
+      "durationFrames": 58,
+      "words": [],
+      "userAssetKeys": []
+    },
+    {
+      "id": "press",
+      "startFrame": 244,
+      "durationFrames": 58,
+      "words": [],
+      "userAssetKeys": [
+        "assets/user/a-497595d5-foco_state_2_alignment.png"
+      ]
+    },
+    {
+      "id": "say",
+      "startFrame": 302,
+      "durationFrames": 87,
+      "words": [],
+      "userAssetKeys": [
+        "assets/user/a-d5b7fcae-a-fb8ee0ab-say.mp4"
+      ]
+    },
+    {
+      "id": "split",
+      "startFrame": 389,
+      "durationFrames": 88,
+      "words": [],
+      "userAssetKeys": [
+        "assets/user/a-c3869088-a-edb410a7-split.mp4"
+      ]
+    },
+    {
+      "id": "step1",
+      "startFrame": 477,
+      "durationFrames": 15,
+      "words": [],
+      "userAssetKeys": []
+    },
+    {
+      "id": "step2",
+      "startFrame": 492,
+      "durationFrames": 14,
+      "words": [],
+      "userAssetKeys": []
+    },
+    {
+      "id": "step3",
+      "startFrame": 506,
+      "durationFrames": 29,
+      "words": [],
+      "userAssetKeys": []
+    },
+    {
+      "id": "focus",
+      "startFrame": 535,
+      "durationFrames": 87,
+      "words": [],
+      "userAssetKeys": [
+        "assets/user/a-9607d46d-a-bd7cebf6-focus.mp4"
+      ]
+    },
+    {
+      "id": "rest",
+      "startFrame": 622,
+      "durationFrames": 29,
+      "words": [],
+      "userAssetKeys": []
+    },
+    {
+      "id": "started",
+      "startFrame": 651,
+      "durationFrames": 58,
+      "words": [],
+      "userAssetKeys": []
+    },
+    {
+      "id": "end",
+      "startFrame": 709,
+      "durationFrames": 116,
+      "words": [],
+      "userAssetKeys": [
+        "assets/user/a-28e11165-a-1e8a2418-foco-logo.png",
+        "assets/user/a-004a5f5d-a-75c2c850-foco-icon.png",
+        "assets/user/a-e6fd7716-a-3157030f-app-store.png",
+        "assets/user/a-c6001135-a-20e23b4b-google-play.png"
+      ]
+    }
+  ]
+}

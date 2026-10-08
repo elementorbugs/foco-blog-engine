@@ -1,0 +1,130 @@
+{
+  "title": "FOCO - Can't start? Start here",
+  "aspect": "9:16",
+  "mode": "motion",
+  "voiceId": "cgSgspJ2msm6clMCkdW9",
+  "pace": "normal",
+  "gap": "tight",
+  "captions": "phrase",
+  "scenes": [
+    {
+      "id": "hook",
+      "narration": "Your brain is full of tasks. And you still can't start a single one.",
+      "treatment": "motion-graphic",
+      "onScreenText": [
+        "Can't start?"
+      ],
+      "imagePrompt": null,
+      "clipPrompt": null,
+      "shareable": false,
+      "imageTags": [],
+      "userAssetIds": [
+        "a-18754b64"
+      ],
+      "notes": "LOOK: FOCO dark brand. Ground #040208 with slow purple aurora (#7C3AED / #A78BFA), orange #FB923C only for wins. One typeface (display). ~32s total. VISUAL THREAD: one real phone carrying FOCO's own screen recordings, carried across scenes (Carry), splitting into three phones for capture and back to one. HOOK: frame 0 is the real FOCO phone (type.mp4 held on its first frame: Good morning, Name the task you're procrastinating on) with real task chips from the recordings (Call dentist, Clean the kitchen, Reply to important emails, Pay the electricity bill, Buy groceries, Book a doctor's appointment, Finish presentation) swarm and jostle, overlapping, crowding the frame like a full head. On 'full' they pile tighter; on 'start' they freeze and 'Can't start?' headline lands, keyword start. The chips are spilling out of the phone from frame 0."
+    },
+    {
+      "id": "capture",
+      "narration": "So get it out. Snap it, say it, or type it.",
+      "treatment": "motion-graphic",
+      "onScreenText": [
+        "Snap",
+        "Say",
+        "Type"
+      ],
+      "imagePrompt": null,
+      "clipPrompt": null,
+      "shareable": false,
+      "imageTags": [],
+      "userAssetIds": [
+        "a-918c70eb",
+        "a-fb8ee0ab",
+        "a-18754b64"
+      ],
+      "notes": "The chips get sucked down into the phone on 'out'. Then three phones in a row, each one lands on its word with its label above: Snap = snap.mp4 (camera on the paper list), Say = say.mp4 (Hold to speak, listening), Type = type.mp4 (typing call dentist tomorrow 7 am). Each phone plays its recording from its landing."
+    },
+    {
+      "id": "organize",
+      "narration": "FOCO finds every task, and drops it straight into your day.",
+      "treatment": "motion-graphic",
+      "onScreenText": [
+        "5 tasks found"
+      ],
+      "imagePrompt": null,
+      "clipPrompt": null,
+      "shareable": false,
+      "imageTags": [],
+      "userAssetIds": [
+        "a-918c70eb"
+      ],
+      "notes": "Side phones fly off; Snap phone grows to hero center. snap.mp4 continues from 'Reading your image' to 'Found 5' list to Add 5 sessions to the day view, sped up to fit. '5 tasks found' pill pops on 'every' (the real count on screen)."
+    },
+    {
+      "id": "split",
+      "narration": "Still too big? One tap, and AI breaks it into tiny steps.",
+      "treatment": "motion-graphic",
+      "onScreenText": [
+        "Tiny steps"
+      ],
+      "imagePrompt": null,
+      "clipPrompt": null,
+      "shareable": false,
+      "imageTags": [],
+      "userAssetIds": [
+        "a-edb410a7"
+      ],
+      "notes": "Re-hook. Phone shows split.mp4: menu with Suggest AI splitting, FOCO is breaking this into steps, Added 5 steps. Camera punch onto the steps list on 'tiny'. Headline 'Tiny steps' keyword tiny."
+    },
+    {
+      "id": "focus",
+      "narration": "Pick step one. FOCO counts you in, and stays with you.",
+      "treatment": "motion-graphic",
+      "onScreenText": [
+        "Step one"
+      ],
+      "imagePrompt": null,
+      "clipPrompt": null,
+      "shareable": false,
+      "imageTags": [],
+      "userAssetIds": [
+        "a-bd7cebf6"
+      ],
+      "notes": "focus.mp4 sped up: Let's get this done, Start Focus, countdown, then the timer ring. Soft ring pulse around the phone while the timer runs on 'stays with you'."
+    },
+    {
+      "id": "done",
+      "narration": "Step one, done.",
+      "treatment": "motion-graphic",
+      "onScreenText": [
+        "Done."
+      ],
+      "imagePrompt": null,
+      "clipPrompt": null,
+      "shareable": false,
+      "imageTags": [],
+      "userAssetIds": [
+        "a-bac8bcf1"
+      ],
+      "notes": "Payoff hit, short. done.mp4 (You did it, glowing mascot). Orange celebration burst behind the phone on 'done', the only orange in the film."
+    },
+    {
+      "id": "cta",
+      "narration": "And suddenly, the rest feels doable. Can't start? Start with FOCO. Free on iPhone and Android.",
+      "treatment": "motion-graphic",
+      "onScreenText": [
+        "Start with FOCO",
+        "Free on iPhone & Android"
+      ],
+      "imagePrompt": null,
+      "clipPrompt": null,
+      "shareable": false,
+      "imageTags": [],
+      "userAssetIds": [
+        "a-75c2c850",
+        "a-3157030f",
+        "a-20e23b4b"
+      ],
+      "notes": "Longest scene. On 'doable': the hook's task chips return around the shrinking phone, now calm and checked off (opening image, changed). Then the phone slides away; FOCO app icon with the word FOCO in white resolves center on 'FOCO' with a chime; App Store and Google Play badges pop on 'iPhone' and 'Android'. Clear second of air at the end."
+    }
+  ]
+}

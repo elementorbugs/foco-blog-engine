@@ -1,0 +1,135 @@
+[
+  {
+    "q": "magical wonder, from tense to uplifting, cinematic light",
+    "kind": "music",
+    "at": "2026-10-07T19:29:32.083Z",
+    "top": [
+      {
+        "id": "music-cinematic-rise",
+        "match": 0.7
+      },
+      {
+        "id": "music-product-film-glide",
+        "match": 0.28
+      },
+      {
+        "id": "music-soft-future-bounce",
+        "match": 0.25
+      }
+    ]
+  },
+  {
+    "q": "magic spell",
+    "kind": "sfx",
+    "at": "2026-10-07T19:29:36.617Z",
+    "top": [
+      {
+        "id": "sfx-ui-sparkle-shimmer",
+        "match": 0.69
+      },
+      {
+        "id": "hollywood-essentials-fantasy-fantasy-mystical",
+        "match": 0.66
+      },
+      {
+        "id": "hollywood-essentials-fantasy-fantasy-whoosh-light",
+        "match": 0.65
+      }
+    ]
+  },
+  {
+    "q": "ice freeze crackle",
+    "kind": "sfx",
+    "at": "2026-10-07T19:29:39.917Z",
+    "top": [
+      {
+        "id": "ultimate-social-content-foley-crack",
+        "match": 0.48
+      },
+      {
+        "id": "ultimate-social-content-foley-crackle",
+        "match": 0.45
+      },
+      {
+        "id": "ultimate-social-content-foley-cracks",
+        "match": 0.44
+      }
+    ]
+  },
+  {
+    "q": "magic sparkle",
+    "kind": "sfx",
+    "at": "2026-10-07T19:29:42.767Z",
+    "top": [
+      {
+        "id": "sfx-ui-sparkle-shimmer",
+        "match": 0.9
+      },
+      {
+        "id": "hollywood-essentials-fantasy-fantasy-shine",
+        "match": 0.58
+      },
+      {
+        "id": "hollywood-essentials-fantasy-fantasy-tinkles",
+        "match": 0.53
+      }
+    ]
+  },
+  {
+    "q": "clock ticking",
+    "kind": "sfx",
+    "at": "2026-10-07T19:29:46.374Z",
+    "top": [
+      {
+        "id": "hollywood-essentials-tension-builders-tension-builders-clock-ticking",
+        "match": 0.89
+      },
+      {
+        "id": "hollywood-essentials-tension-builders-tension-builders-clock",
+        "match": 0.66
+      },
+      {
+        "id": "hollywood-essentials-tension-builders-tension-builders-clock-short",
+        "match": 0.6
+      }
+    ]
+  },
+  {
+    "q": "swoosh light",
+    "kind": "sfx",
+    "at": "2026-10-07T19:29:49.722Z",
+    "top": [
+      {
+        "id": "sfx-ui-send-swoosh",
+        "match": 0.76
+      },
+      {
+        "id": "hollywood-essentials-fantasy-fantasy-whoosh-light",
+        "match": 0.61
+      },
+      {
+        "id": "quantum-motion-whooshes-flow-whoosh-soft-subtle",
+        "match": 0.55
+      }
+    ]
+  },
+  {
+    "q": "glass shatter",
+    "kind": "sfx",
+    "at": "2026-10-07T19:29:53.310Z",
+    "top": [
+      {
+        "id": "hollywood-essentials-impacts-and-explosions-impacts-explosions-breaking-glass",
+        "match": 0.83
+      },
+      {
+        "id": "ultimate-social-content-impacts-glass-breaking",
+        "match": 0.81
+      },
+      {
+        "id": "life-on-planet-earth-materials-and-elements-materials-objects-breaking-wine-glass",
+        "match": 0.77
+      }
+    ]
+  }
+]

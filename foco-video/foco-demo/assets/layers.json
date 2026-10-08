@@ -1,0 +1,30 @@
+{
+  "assets/user/a-1e8a2418-foco-logo.png": {
+    "textZone": {
+      "region": "bottom",
+      "luminance": 0.048,
+      "busy": 0.218
+    }
+  },
+  "assets/user/a-3157030f-app-store.png": {
+    "textZone": {
+      "region": "top",
+      "luminance": 0.117,
+      "busy": 0.577
+    }
+  },
+  "assets/user/a-20e23b4b-google-play.png": {
+    "textZone": {
+      "region": "bottom",
+      "luminance": 0.249,
+      "busy": 0.23
+    }
+  },
+  "assets/user/a-75c2c850-foco-icon.png": {
+    "textZone": {
+      "region": "top",
+      "luminance": 0.24,
+      "busy": 0.158
+    }
+  }
+}

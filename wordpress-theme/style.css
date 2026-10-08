@@ -1000,10 +1000,13 @@ body.foco-page {
 .foco-app .insight { padding-top: 40px; }
 
 /* =========== BLOG =========== */
-.foco-app .blog-archive,
 .foco-app .blog-single {
   padding: 140px 0 80px;
   max-width: 760px; margin: 0 auto;
+}
+.foco-app .blog-archive {
+  padding: 140px 0 80px;
+  max-width: 1180px; margin: 0 auto;
 }
 .foco-app .blog-archive h1,
 .foco-app .blog-single h1 {
@@ -1011,51 +1014,54 @@ body.foco-page {
   font-weight: 800; letter-spacing: -0.03em; line-height: 1.1;
   margin-bottom: 40px;
 }
+
+/* Post grid — minimal, borderless cards, 2 columns desktop.
+   Deliberately un-boxed: image + lean text, no card background/border,
+   so it doesn't compete with the "Browse by topic" tiles above it. */
+.foco-app .post-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px 36px;
+  margin-top: 48px;
+}
 .foco-app .post-card {
   display: flex;
-  gap: 28px;
-  align-items: flex-start;
-  padding: 28px 0;
-  border-bottom: 1px solid var(--stroke);
-  transition: transform 0.2s ease, background 0.2s;
-  border-radius: 12px;
+  flex-direction: column;
+  text-decoration: none;
 }
-.foco-app .post-card:hover { transform: translateX(4px); }
 .foco-app .post-card-thumb {
-  flex: 0 0 280px;
-  border-radius: 14px;
+  width: 100%;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
-  border: 1px solid var(--stroke);
+  border-radius: var(--r);
   background: var(--bg-2);
-  aspect-ratio: 16 / 9;
-  position: relative;
+  margin-bottom: 18px;
 }
 .foco-app .post-card-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease;
+  transition: transform 0.35s ease;
 }
-.foco-app .post-card:hover .post-card-thumb img { transform: scale(1.04); }
-.foco-app .post-card-body { flex: 1; min-width: 0; }
-.foco-app .post-card .post-date {
-  font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--muted); margin-bottom: 12px;
+.foco-app .post-card:hover .post-card-thumb img { transform: scale(1.03); }
+.foco-app .post-card .eyebrow {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--primary-2); margin-bottom: 8px;
 }
 .foco-app .post-card h2 {
-  font-size: clamp(22px, 2.4vw, 30px); margin-bottom: 12px;
+  font-size: 22px; font-weight: 800; margin: 0 0 8px;
   color: var(--text);
-  line-height: 1.2;
+  line-height: 1.3;
 }
-.foco-app .post-card .excerpt { color: var(--muted); font-size: 16px; line-height: 1.6; }
-.foco-app .post-card .read-more {
-  display: inline-block; margin-top: 14px; color: var(--primary-2);
-  font-weight: 600; font-size: 14px;
+.foco-app .post-card .excerpt {
+  color: var(--muted); font-size: 15px; line-height: 1.6; margin: 0 0 12px;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
 }
-@media (max-width: 760px) {
-  .foco-app .post-card { flex-direction: column; gap: 18px; padding: 24px 0; }
-  .foco-app .post-card-thumb { flex: none; width: 100%; aspect-ratio: 16 / 9; }
+.foco-app .post-card-meta { font-size: 13px; color: var(--muted-2); }
+@media (max-width: 640px) {
+  .foco-app .post-grid { grid-template-columns: 1fr; gap: 36px; margin-top: 36px; }
+  .foco-app .blog-archive { padding: 120px 0 60px; }
 }
 
 .foco-app .blog-single article > * { margin-bottom: 18px; line-height: 1.7; color: var(--muted); }

@@ -1,0 +1,192 @@
+[
+  {
+    "q": "upbeat minimal tech pop instrumental, hopeful, 110-125 BPM",
+    "kind": "music",
+    "at": "2026-10-07T14:07:45.532Z",
+    "top": [
+      {
+        "id": "music-product-film-glide",
+        "match": 0.64
+      },
+      {
+        "id": "music-minimal-tech-pulse",
+        "match": 0.61
+      },
+      {
+        "id": "music-bright-startup",
+        "match": 0.57
+      }
+    ]
+  },
+  {
+    "q": "soft ui whoosh",
+    "kind": "sfx",
+    "at": "2026-10-07T14:07:50.733Z",
+    "top": [
+      {
+        "id": "sfx-ui-soft-whoosh",
+        "match": 0.93
+      },
+      {
+        "id": "quantum-motion-whooshes-flow-whoosh-soft-swipe",
+        "match": 0.7
+      },
+      {
+        "id": "quantum-motion-whooshes-flow-whoosh-soft-subtle",
+        "match": 0.68
+      }
+    ]
+  },
+  {
+    "q": "bubble pop",
+    "kind": "sfx",
+    "at": "2026-10-07T14:07:54.701Z",
+    "top": [
+      {
+        "id": "sfx-ui-bubble-pop",
+        "match": 0.95
+      },
+      {
+        "id": "hollywood-essentials-fantasy-fantasy-water-bubbling",
+        "match": 0.18
+      },
+      {
+        "id": "cinematic-hits-hits-boom",
+        "match": 0.13
+      }
+    ]
+  },
+  {
+    "q": "success chime",
+    "kind": "sfx",
+    "at": "2026-10-07T14:07:58.469Z",
+    "top": [
+      {
+        "id": "sfx-ui-success-chime",
+        "match": 0.95
+      },
+      {
+        "id": "ultimate-social-content-foley-ding",
+        "match": 0.34
+      },
+      {
+        "id": "sfx-ui-notification-ping",
+        "match": 0.31
+      }
+    ]
+  },
+  {
+    "q": "sparkle shimmer",
+    "kind": "sfx",
+    "at": "2026-10-07T14:08:02.567Z",
+    "top": [
+      {
+        "id": "sfx-ui-sparkle-shimmer",
+        "match": 0.94
+      },
+      {
+        "id": "ultimate-social-content-pulses-shimmering",
+        "match": 0.42
+      },
+      {
+        "id": "hollywood-essentials-fantasy-fantasy-shine",
+        "match": 0.41
+      }
+    ]
+  },
+  {
+    "q": "camera shutter",
+    "kind": "sfx",
+    "at": "2026-10-07T14:08:06.762Z",
+    "top": [
+      {
+        "id": "sfx-ui-camera-shutter",
+        "match": 0.93
+      },
+      {
+        "id": "synths-of-the-past-camera-old-camera-camera-click",
+        "match": 0.58
+      },
+      {
+        "id": "synths-of-the-past-camera-digital-digital-cam-click",
+        "match": 0.56
+      }
+    ]
+  },
+  {
+    "q": "soft impact",
+    "kind": "sfx",
+    "at": "2026-10-07T14:08:10.325Z",
+    "top": [
+      {
+        "id": "sfx-ui-soft-impact",
+        "match": 0.88
+      },
+      {
+        "id": "hollywood-essentials-short-foley-short-foley-hit-soft",
+        "match": 0.8
+      },
+      {
+        "id": "cinematic-short-foley-short-foley-hit-soft",
+        "match": 0.78
+      }
+    ]
+  },
+  {
+    "q": "short riser",
+    "kind": "sfx",
+    "at": "2026-10-07T14:08:13.961Z",
+    "top": [
+      {
+        "id": "sfx-ui-riser-short",
+        "match": 0.9
+      },
+      {
+        "id": "hollywood-essentials-fantasy-fantasy-short-riser",
+        "match": 0.6
+      },
+      {
+        "id": "invention-riser-riser-tension",
+        "match": 0.32
+      }
+    ]
+  },
+  {
+    "q": "glass tap",
+    "kind": "sfx",
+    "at": "2026-10-07T14:08:17.779Z",
+    "top": [
+      {
+        "id": "sfx-ui-glass-tap",
+        "match": 0.89
+      },
+      {
+        "id": "hollywood-essentials-short-foley-short-foley-short-tap",
+        "match": 0.49
+      },
+      {
+        "id": "life-on-planet-earth-materials-and-elements-materials-objects-tick-on-glass",
+        "match": 0.44
+      }
+    ]
+  },
+  {
+    "q": "phone mockup playing a screen recording video",
+    "kind": "component",
+    "at": "2026-10-07T14:09:07.672Z",
+    "top": [
+      {
+        "id": "cmp-phonemockup",
+        "match": 0.43
+      },
+      {
+        "id": "cmp-touchtap",
+        "match": 0.25
+      },
+      {
+        "id": "cmp-tiltcard",
+        "match": 0.18
+      }
+    ]
+  }
+]

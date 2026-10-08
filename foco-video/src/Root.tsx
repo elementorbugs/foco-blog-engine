@@ -10,6 +10,9 @@ import { FPS as LV_FPS, LongVideo, totalFrames, type VideoProps } from "./video/
 import { INSTEAD, InsteadSlideView, TINY, TinySlideView } from "./carousel/MoreCarousels";
 import { PairSlideView, SETS as PAIR_SETS } from "./carousel/MoreCarousels2";
 import { SpecSlideIG, SpecSlideView, type Spec } from "./carousel/Spec";
+import { SHIRI_FPS, SHIRI_TOTAL, ShiriPromo } from "./shiri/Shiri";
+import { AppDemo, DEMO_FPS, DEMO_TOTAL } from "./demo/AppDemo";
+import { CLIP_FPS, CUTS, ClipDemo, cutTotal } from "./demo/ClipDemo";
 
 // Placeholder; carousel/build.js always passes a real spec via inputProps
 const SAMPLE_SPEC: Spec = { slug: "sample", slides: [{ layout: "final-phone", id: "x", photo: "../hook", lines: ["sample"], ask: "sample" }] };
@@ -26,10 +29,29 @@ export const RemotionRoot: React.FC = () => {
         height={1920}
       />
       <Composition
+        id="AppDemo"
+        component={AppDemo}
+        durationInFrames={DEMO_TOTAL}
+        fps={DEMO_FPS}
+        width={1080}
+        height={1920}
+      />
+      {CUTS.map((c) => (
+        <Composition key={c.id} id={c.id} component={ClipDemo} defaultProps={{ id: c.id }} durationInFrames={cutTotal(c)} fps={CLIP_FPS} width={1080} height={1920} />
+      ))}
+      <Composition
         id="AppReview"
         component={AppReview}
         durationInFrames={REVIEW_TOTAL}
         fps={FPS}
+        width={1920}
+        height={1080}
+      />
+      <Composition
+        id="ShiriPromo"
+        component={ShiriPromo}
+        durationInFrames={SHIRI_TOTAL}
+        fps={SHIRI_FPS}
         width={1920}
         height={1080}
       />
