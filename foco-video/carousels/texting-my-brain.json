@@ -1,0 +1,196 @@
+{
+  "slug": "texting-my-brain",
+  "tiktok": {
+    "caption": "Texting my ADHD brain on a work day 🧠\n\nMe: today we're sending the proposal. Brain: love that for us. Me: opening the doc. Brain: wait, what if we check email first? By 11 we'd checked it twice. By 2 I knew exactly what to write and my brain said \"but what if we didn't\".\n\nSo I told FOCO. Step 1 was 3 minutes: open last proposal as a template. Even my brain could do that. Sent at 4:10.\n\nWhat does your brain text you at 9am? 👇\nSave this for your next proposal day 📌\n\nYou don't need another to-do list. You need help starting. The app on the slides is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#adhdbrain",
+      "#procrastination",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "Texting my ADHD brain on a work day 🧠\n\nMe: Today we're sending the proposal.\nBrain: Love that for us.\nMe: Opening the doc now.\nBrain: Wait. What if we check email first?\n\nBy 11 we'd checked it twice. By 2 I knew exactly what to write, and my brain said: but what if we didn't?\n\nSo I told FOCO. Step 1 was 3 minutes: open last proposal as a template. Even my brain could do that. Sent at 4:10.\n\nYou don't need another to-do list. You need help starting.\n\n📌 Save this for your next proposal day, and send it to a freelancer friend whose brain texts like this too.\n💜 Try FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#adhdwomen",
+      "#adhdbrain",
+      "#procrastination"
+    ],
+    "altText": "Carousel of 8 slides styled as text messages between a freelancer with ADHD and her brain: the brain keeps delaying a client proposal all day, until FOCO gives her a 3-minute first step and she sends it at 4:10pm."
+  },
+  "slides": [
+    {
+      "layout": "chat",
+      "id": "hook",
+      "own": "carousels/own/maya/nine-12.jpg",
+      "title": [
+        "Freelancer with ADHD:",
+        "Texting my brain at 9am 🧠"
+      ],
+      "time": "Today 9:02 AM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "Ok. Today we're sending the proposal."
+        },
+        {
+          "from": "brain",
+          "text": "Love that for us 💅"
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "wait",
+      "own": "carousels/own/maya/hook-7.jpg",
+      "time": "9:05 AM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "Opening the doc now."
+        },
+        {
+          "from": "brain",
+          "text": "Wait."
+        },
+        {
+          "from": "brain",
+          "text": "What if we check email first? Just in case."
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "eleven",
+      "own": "carousels/own/maya/email-9.jpg",
+      "time": "11:10 AM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "It's 11."
+        },
+        {
+          "from": "me",
+          "text": "We checked email. Twice."
+        },
+        {
+          "from": "brain",
+          "text": "Productive morning tho ✨"
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "two",
+      "own": "carousels/own/maya/email-4.jpg",
+      "time": "2:14 PM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "I know exactly what to write."
+        },
+        {
+          "from": "brain",
+          "text": "Yeah."
+        },
+        {
+          "from": "brain",
+          "text": "But what if we... didn't? 🙃"
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "foco",
+      "own": "carousels/own/maya/breakdown-1.jpg",
+      "time": "3:30 PM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "Ok. I'm telling FOCO."
+        },
+        {
+          "from": "brain",
+          "text": "Ugh. Fine."
+        },
+        {
+          "from": "foco",
+          "text": "Open last proposal as template",
+          "min": 3
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "tiny",
+      "own": "carousels/own/maya/focus-6.jpg",
+      "time": "3:31 PM",
+      "messages": [
+        {
+          "from": "brain",
+          "text": "Wait. That's it?"
+        },
+        {
+          "from": "me",
+          "text": "That's it. 3 minutes."
+        },
+        {
+          "from": "brain",
+          "text": "...ok that I can do."
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "sent",
+      "own": "carousels/own/maya/hook-8.jpg",
+      "time": "4:10 PM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "Sent ✅"
+        },
+        {
+          "from": "brain",
+          "text": "We did that 🥹"
+        },
+        {
+          "from": "me",
+          "text": "WE?"
+        }
+      ]
+    },
+    {
+      "layout": "final-card",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "You don't need another to-do list.",
+        "You need help starting 💜"
+      ],
+      "title": "Send client proposal",
+      "steps": [
+        {
+          "text": "Open last proposal as template",
+          "min": 3
+        },
+        {
+          "text": "Swap in the client's name",
+          "min": 5
+        },
+        {
+          "text": "Write the price + timeline",
+          "min": 10
+        },
+        {
+          "text": "Read once, hit send",
+          "min": 5
+        }
+      ],
+      "ask": "What does your brain text you? 👇"
+    }
+  ]
+}

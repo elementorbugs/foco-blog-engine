@@ -1,0 +1,192 @@
+{
+  "slug": "chat-not-lazy",
+  "tiktok": {
+    "caption": "My ADHD brain called me lazy at 3pm 🧠\n\nI'd been at my desk since 8, staring at a logo brief for 4 hours. My brain: see? lazy. Me: lazy people don't feel this bad about it. I knew what the client wanted. I just couldn't see step 1. So I told FOCO. Step 1: write 3 words the brand should feel. 3 minutes. By 5:15 I had 3 sketches.\n\nHas your brain called you lazy today? 👇\nSave this for the next time your brain says \"lazy\" 📌\n\nYou don't need another to-do list. You need help starting. The app on the slides is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#adhdwomen",
+      "#taskparalysis",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "My ADHD brain called me lazy at 3pm 🧠\n\nI'd been at my desk since 8, staring at a logo brief for 4 hours. My brain: see? lazy. Me: lazy people don't feel this bad about it. I knew what the client wanted. I just couldn't see step 1. So I told FOCO. Step 1: write 3 words the brand should feel. 3 minutes. By 5:15 I had 3 sketches.\n\nYou don't need another to-do list. You need help starting.\n\n📌 Save this for the next time your brain says \"lazy\", and send it to a freelancer friend whose brain texts like this too.\n💜 Try FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#adhdwomen",
+      "#taskparalysis",
+      "#procrastination"
+    ],
+    "altText": "Carousel of 8 slides styled as text messages between a freelancer with ADHD and her brain: her brain calls her lazy for staring at a logo brief, she realizes she just can't see step 1, and FOCO gives her a 3-minute first step."
+  },
+  "slides": [
+    {
+      "layout": "chat",
+      "id": "hook",
+      "own": "carousels/own/maya/email-9.jpg",
+      "title": [
+        "Freelancer with ADHD:",
+        "My brain at 3pm 🧠"
+      ],
+      "time": "3:02 PM",
+      "messages": [
+        {
+          "from": "brain",
+          "text": "Maybe we're just lazy."
+        },
+        {
+          "from": "me",
+          "text": "We've been at this desk since 8."
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "c2",
+      "own": "carousels/own/maya/email-3.jpg",
+      "time": "3:03 PM",
+      "messages": [
+        {
+          "from": "brain",
+          "text": "Doing what?"
+        },
+        {
+          "from": "me",
+          "text": "Staring at the logo brief."
+        },
+        {
+          "from": "me",
+          "text": "For 4 hours."
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "c3",
+      "own": "carousels/own/maya/nine-8.jpg",
+      "time": "3:04 PM",
+      "messages": [
+        {
+          "from": "brain",
+          "text": "See? Lazy."
+        },
+        {
+          "from": "me",
+          "text": "Lazy people don't feel this bad about it."
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "c4",
+      "own": "carousels/own/maya/email-2.jpg",
+      "time": "3:06 PM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "I know what the client wants."
+        },
+        {
+          "from": "me",
+          "text": "I just can't see step 1."
+        },
+        {
+          "from": "brain",
+          "text": "...ok that's fair 😶"
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "c5",
+      "own": "carousels/own/maya/breakdown-4.jpg",
+      "time": "3:10 PM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "So I'm telling FOCO."
+        },
+        {
+          "from": "brain",
+          "text": "Fine."
+        },
+        {
+          "from": "foco",
+          "text": "Write 3 words the brand should feel",
+          "min": 3
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "c6",
+      "own": "carousels/own/maya/focus-2.jpg",
+      "time": "3:11 PM",
+      "messages": [
+        {
+          "from": "brain",
+          "text": "3 words? I have like 40."
+        },
+        {
+          "from": "me",
+          "text": "Pick 3."
+        },
+        {
+          "from": "brain",
+          "text": "calm. bold. warm ✍️"
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "c7",
+      "own": "carousels/own/maya/email-6.jpg",
+      "time": "5:15 PM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "3 sketches done."
+        },
+        {
+          "from": "brain",
+          "text": "Not lazy, then?"
+        },
+        {
+          "from": "me",
+          "text": "Never was 💜"
+        }
+      ]
+    },
+    {
+      "layout": "final-card",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "You don't need another to-do list.",
+        "You need help starting 💜"
+      ],
+      "title": "Logo for new client",
+      "steps": [
+        {
+          "text": "Write 3 words the brand should feel",
+          "min": 3
+        },
+        {
+          "text": "Find 5 logos I like",
+          "min": 10
+        },
+        {
+          "text": "Sketch 3 rough ideas",
+          "min": 15
+        },
+        {
+          "text": "Pick one to send",
+          "min": 5
+        }
+      ],
+      "ask": "Has your brain called you lazy today? 👇"
+    }
+  ]
+}

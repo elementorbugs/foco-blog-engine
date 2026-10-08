@@ -1,0 +1,155 @@
+{
+  "slug": "checklist-tried",
+  "tiktok": {
+    "caption": "Things I tried to finally start one proposal (ADHD) ❌✅\n\nA new planner: pretty, unused. Waking up at 5am: more hours to avoid it. Yelling at myself: still didn't start. Another to-do list: it's on 4 lists now. What worked: telling FOCO the task. Step 1 was opening my last proposal. 3 minutes.\n\nWhat's on your ❌ list? 👇\nSave this for the next stuck task 📌\n\nYou don't need another to-do list. You need help starting. The app on the slides is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#taskparalysis",
+      "#procrastination",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "Things I tried to finally start one proposal (ADHD) ❌✅\n\n❌ A new planner. Pretty. Unused.\n❌ Waking up at 5am. More hours to avoid it.\n❌ Yelling at myself. Still didn't start.\n❌ Another to-do list. It's on 4 lists now.\n✅ Telling FOCO the task. Step 1: open my last proposal. 3 minutes.\n\nYou don't need another to-do list. You need help starting.\n\n📌 Save this for the next stuck task, and send it to a freelancer friend who's tried all of these.\n💜 Try FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#taskparalysis",
+      "#procrastination",
+      "#adhdtips"
+    ],
+    "altText": "Carousel of 5 slides with a checklist of things a freelancer with ADHD tried to start one proposal, crossed out one by one (new planner, waking up at 5am, yelling at herself, another to-do list), until telling FOCO the task gives a 3-minute first step."
+  },
+  "slides": [
+    {
+      "layout": "checklist",
+      "id": "hook",
+      "person": false,
+      "query": "open planner notebook and pen on desk top view",
+      "title": [
+        "ADHD freelancers, be honest:",
+        "How many of these did you try?"
+      ],
+      "heading": "Things I tried to start one proposal",
+      "items": [
+        {
+          "text": "A new planner",
+          "ok": false,
+          "note": "pretty. unused."
+        }
+      ],
+      "pick": 4
+    },
+    {
+      "layout": "checklist",
+      "id": "early",
+      "person": false,
+      "query": "alarm clock dark early morning bedside",
+      "heading": "Things I tried to start one proposal",
+      "items": [
+        {
+          "text": "A new planner",
+          "ok": false,
+          "note": "pretty. unused."
+        },
+        {
+          "text": "Waking up at 5am",
+          "ok": false,
+          "note": "more hours to avoid it"
+        },
+        {
+          "text": "Yelling at myself",
+          "ok": false,
+          "note": "still didn't start 🫠"
+        }
+      ],
+      "pick": 1
+    },
+    {
+      "layout": "checklist",
+      "id": "lists",
+      "person": false,
+      "query": "sticky notes covering laptop desk",
+      "heading": "Things I tried to start one proposal",
+      "items": [
+        {
+          "text": "A new planner",
+          "ok": false,
+          "note": "pretty. unused."
+        },
+        {
+          "text": "Waking up at 5am",
+          "ok": false,
+          "note": "more hours to avoid it"
+        },
+        {
+          "text": "Yelling at myself",
+          "ok": false,
+          "note": "still didn't start 🫠"
+        },
+        {
+          "text": "Another to-do list",
+          "ok": false,
+          "note": "it's on 4 lists now"
+        }
+      ],
+      "pick": 2
+    },
+    {
+      "layout": "checklist",
+      "id": "foco",
+      "person": false,
+      "query": "hands holding phone over laptop desk",
+      "heading": "Things I tried to start one proposal",
+      "items": [
+        {
+          "text": "A new planner",
+          "ok": false,
+          "note": "pretty. unused."
+        },
+        {
+          "text": "Waking up at 5am",
+          "ok": false,
+          "note": "more hours to avoid it"
+        },
+        {
+          "text": "Yelling at myself",
+          "ok": false,
+          "note": "still didn't start 🫠"
+        },
+        {
+          "text": "Another to-do list",
+          "ok": false,
+          "note": "it's on 4 lists now"
+        },
+        {
+          "text": "Telling FOCO the task",
+          "ok": true
+        }
+      ],
+      "foco": {
+        "text": "Open last proposal",
+        "min": 3
+      },
+      "pick": 6
+    },
+    {
+      "layout": "final-card",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "You don't need another to-do list.",
+        "You need help starting 💜"
+      ],
+      "title": "Send client proposal",
+      "steps": [
+        {
+          "text": "Open last proposal",
+          "min": 3
+        }
+      ],
+      "ask": "What's on your ❌ list? 👇"
+    }
+  ]
+}
