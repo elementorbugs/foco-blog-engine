@@ -248,7 +248,7 @@ node create-post.js posts-new/post-{slug}.html \
   [--dry-run]
 ```
 
-**App directory (`/best-adhd-app/`).** The tabbed directory is built from `app-directory.json` by `node rebuild-app-directory.js --live`. Step 16 of `create-post.js` adds the card automatically: slugs with `-vs-` → Comparisons, `alternative` → Alternatives, `-review` → Reviews; other app posts need `--directory=<paralysis|focus|women|...>`. Only posts ABOUT APPS go in (no printables, guides or coaches); one category per card.
+**App directory (`/best-adhd-app/`).** The tabbed directory is built from `app-directory.json` by `node rebuild-app-directory.js --live`. Step 16 of `create-post.js` adds the card automatically: slugs with `-vs-` → Comparisons, `alternative` → Alternatives, `-review` → Reviews; other app posts need `--directory=<paralysis|focus|women|...>`. Only posts ABOUT APPS go in (no printables, guides or coaches); one category per card. App icons: on a live rebuild, a new app named in a review/vs/alternative title gets its official App Store icon fetched, uploaded to WP media and saved in `apps` (the log names the store listing it chose; check it). List posts get icons only via a hand-set `"apps": [...]` on the card.
 
 ### Steps the script runs (in order)
 1. **Validate** - H1, no editorial markers, no markdown links, FAQ section, Key Takeaways, ≥4 internal links, TL;DR box, ≥3 external citations. Aborts on errors.

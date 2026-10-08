@@ -86,6 +86,68 @@ function addCard({ slug, cat, title, desc }) {
   return card;
 }
 
+// App names a single-app card is about, read from its title:
+// "Mindflow AI Review" -> [Mindflow AI], "Tiimo vs Structured for ADHD" -> [Tiimo, Structured].
+// List posts ("10 Best Apps for...") return [] and get icons only through card.apps.
+function appNamesFromTitle(title, cat) {
+  const clean = s => s.replace(/\s*(?:[:(|]| - | for | in | with ).*$/i, '').replace(/^\d+\s+/, '').replace(/^best\s+/i, '')
+    .replace(/\s+app$/i, '').trim();
+  let names = [];
+  if (cat === 'compare') names = title.split(/\s+(?:vs\.?|versus)\s+/i);
+  else if (cat === 'reviews') names = [title.replace(/\s+(?:app\s+)?review\b.*$/i, '')];
+  else if (cat === 'alternatives') names = [title.replace(/\s+(?:app\s+)?alternatives?\b.*$/i, '')];
+  return names.length > 1 || cat !== 'compare' ? names.map(clean).filter(n => n && n.split(/\s+/).length <= 3) : [];
+}
+
+function getJson(url) {
+  return new Promise((resolve, reject) => https.get(url, r => {
+    const chunks = []; r.on('data', d => chunks.push(d));
+    r.on('end', () => { try { resolve(JSON.parse(Buffer.concat(chunks).toString())); } catch (e) { reject(e); } });
+  }).on('error', reject));
+}
+function getBuffer(url) {
+  return new Promise((resolve, reject) => https.get(url, r => {
+    if (r.statusCode !== 200) return reject(new Error('HTTP ' + r.statusCode + ' ' + url));
+    const chunks = []; r.on('data', d => chunks.push(d)); r.on('end', () => resolve(Buffer.concat(chunks)));
+  }).on('error', reject));
+}
+
+// Finds the app on the US App Store: the result whose name starts with the app name, most ratings wins
+// (so the original beats look-alike clones). Returns null when nothing matches confidently.
+async function findStoreApp(name) {
+  const norm = s => s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+  const j = await getJson(`https://itunes.apple.com/search?term=${encodeURIComponent(name)}&entity=software&country=us&limit=15`);
+  const hits = (j.results || []).filter(r => norm(r.trackName).startsWith(norm(name)));
+  hits.sort((a, b) => (b.userRatingCount || 0) - (a.userRatingCount || 0));
+  return hits[0] || null;
+}
+
+// Makes sure every app a card is about has an icon in dir.apps: looks it up on the App Store,
+// uploads a 96px copy to the WP media library and records it. Returns the keys it added.
+async function ensureAppIcons(dir, card, { live, log }) {
+  const added = [];
+  for (const name of appNamesFromTitle(card.title, card.cat)) {
+    const key = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    const known = Object.entries(dir.apps).some(([k, a]) => k === key || a.name.toLowerCase() === name.toLowerCase());
+    if (known) continue;
+    const app = await findStoreApp(name).catch(() => null);
+    if (!app) { log(`  icon: no App Store match for "${name}" (${card.slug}); add it to "apps" in app-directory.json by hand`); continue; }
+    if (!live) { log(`  icon: would add "${name}" from "${app.trackName}" by ${app.sellerName}`); continue; }
+    const png = await getBuffer(app.artworkUrl512.replace(/\d+x\d+bb\.\w+$/, '96x96bb.png'));
+    const m = await new Promise((resolve, reject) => {
+      const req = https.request({ hostname: WP_HOST, path: '/wp-json/wp/v2/media', method: 'POST', headers: { Authorization: 'Basic ' + auth, 'Content-Type': 'image/png', 'Content-Disposition': `attachment; filename="app-icon-${key}.png"`, 'Content-Length': png.length } }, r => {
+        const chunks = []; r.on('data', d => chunks.push(d)); r.on('end', () => { try { resolve(JSON.parse(Buffer.concat(chunks).toString())); } catch (e) { reject(e); } });
+      });
+      req.on('error', reject); req.end(png);
+    });
+    if (!m.source_url) { log(`  icon: upload failed for "${name}"`); continue; }
+    dir.apps[key] = { name, icon: m.source_url, appStoreId: app.trackId };
+    added.push(key);
+    log(`  icon: added "${name}" from "${app.trackName}" by ${app.sellerName} (id ${app.trackId}); check it is the right app`);
+  }
+  return added;
+}
+
 async function featuredImage(post) {
   if (post.featured_media) {
     const m = await wpReq('GET', `/wp-json/wp/v2/media/${post.featured_media}?_fields=source_url,media_details`);
@@ -113,6 +175,12 @@ async function rebuild({ live = false, quiet = false } = {}) {
     if (!img) { skipped.push(card.slug + ' (no featured image)'); continue; }
     rendered.push({ ...card, img });
   }
+
+  // New app in a review / vs / alternative title: fetch its official icon once and save it.
+  dir.apps = dir.apps || {};
+  let newIcons = 0;
+  for (const card of rendered) newIcons += (await ensureAppIcons(dir, card, { live, log })).length;
+  if (newIcons) { const saved = readDir(); saved.apps = dir.apps; writeDir(saved); }
 
   // The directory spans 1160px. Widen the title, meta line and TL;DR of the host post to match,
   // so the top of the page shares one left edge. Scoped to the host post only; body text keeps its reading width.
@@ -190,7 +258,7 @@ async function discover({ quiet = false } = {}) {
   return added;
 }
 
-module.exports = { addCard, autoCategory, rebuild, readDir, discover };
+module.exports = { addCard, autoCategory, rebuild, readDir, discover, appNamesFromTitle, findStoreApp };
 
 if (require.main === module) {
   const args = process.argv.slice(2);
