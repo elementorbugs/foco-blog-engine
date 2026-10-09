@@ -25,6 +25,8 @@ add_action( 'wp_head', function () {
 		. 'html body .foco-app .foco-nav-toggle{background:rgba(255,255,255,.06) !important;border-color:rgba(167,139,250,.25) !important}'
 		. 'html body .foco-app .foco-nav-toggle span{background:#FFFFFF !important}'
 		. '@media (max-width:900px){' . $n . '{padding:12px 0 !important}' . $n . ' img.custom-logo{height:34px !important}}'
+		// logged-in admins: keep the header below the WordPress admin bar (32px, 46px on small screens)
+		. 'html body.admin-bar .foco-app #foco-nav{top:32px !important}@media (max-width:782px){html body.admin-bar .foco-app #foco-nav{top:46px !important}}'
 		// footer
 		. 'html body .foco-app footer{background:#040208 !important;color:#B8B0CC !important}'
 		. 'html body .foco-app footer h4{color:#FFFFFF !important}'
