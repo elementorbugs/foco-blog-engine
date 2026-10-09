@@ -1,0 +1,129 @@
+{
+  "slug": "clean-room",
+  "slides": [
+    {
+      "layout": "hook",
+      "id": "hook",
+      "query": "lying on bed surrounded by clothes",
+      "lines": [
+        "My room was a mess for 3 weeks 😵‍💫",
+        "until I tried this 3-step trick 🫠✨"
+      ],
+      "tag": "(ADHD edition)",
+      "person": true,
+      "pick": 1,
+      "sticker": "🧺"
+    },
+    {
+      "layout": "caption",
+      "id": "reframe",
+      "query": "sitting on floor of messy bedroom",
+      "label": "first: \"clean my room\" isn't ONE task 🙅‍♀️",
+      "comment": "it's 40 tasks in a trench coat 🧥👀",
+      "person": true,
+      "pick": 1,
+      "sticker": "🤯"
+    },
+    {
+      "layout": "card",
+      "id": "breakdown",
+      "query": "hands picking up clothes from floor",
+      "label": "trick 1: break it into tiny steps ✂️",
+      "comment": "so small my brain can't say no 🧠",
+      "title": "Clean my room",
+      "steps": [
+        {
+          "text": "Trash into one bag",
+          "min": 3
+        },
+        {
+          "text": "Cups to the kitchen",
+          "min": 4
+        },
+        {
+          "text": "Clothes into the hamper",
+          "min": 10
+        },
+        {
+          "text": "Make the bed",
+          "min": 5
+        }
+      ],
+      "result": "step 1 is only 3 min ✅",
+      "person": true,
+      "pick": 4,
+      "sticker": "📝"
+    },
+    {
+      "layout": "focus",
+      "id": "focus",
+      "query": "folding laundry on bed natural light",
+      "label": "trick 2: ONE step on screen 🎯",
+      "comment": "timer on, rainy sounds on 🌧️🎧",
+      "stepNo": 1,
+      "stepTotal": 4,
+      "step": "Trash into one bag",
+      "min": 3,
+      "sound": "Rainy",
+      "result": "the clothes can wait ✅",
+      "person": true,
+      "pick": 10,
+      "sticker": "⏱️"
+    },
+    {
+      "layout": "caption",
+      "id": "stop",
+      "query": "relaxing with tea at home window light",
+      "label": "trick 3: when the timer ends, I'm allowed to stop ⏰",
+      "comment": "spoiler: I almost never stop 😌💪",
+      "person": true,
+      "pick": 11,
+      "sticker": "🛋️"
+    },
+    {
+      "layout": "caption",
+      "id": "after",
+      "query": "cozy tidy bedroom morning sunlight",
+      "label": "22 minutes later: 🕐",
+      "comment": "the room I avoided for weeks ✨🧹",
+      "person": false,
+      "pick": 4,
+      "sticker": "🎉"
+    },
+    {
+      "layout": "final-phone",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "the app I use for the steps + timer 💜"
+      ],
+      "screenshot": 6,
+      "ask": "what's YOUR 3-week task? 👇",
+      "sticker": "💜"
+    }
+  ],
+  "tiktok": {
+    "caption": "how to clean your room with ADHD when you can't start 🧹\n\nmy 3-step ADHD cleaning trick: break \"clean my room\" into tiny steps, do ONE step at a time with a timer + rainy sounds, and let yourself stop when the timer ends (you won't).\n\nwhat task have you been avoiding for weeks? 👇\nsave this for your next frozen day 📌\n\nthe app on the last slide is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#adhdcleaning",
+      "#taskparalysis",
+      "#cleaningmotivation",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "How I clean my room with ADHD (when I can't even start) 🧹\n\n\"Clean my room\" isn't one task. It's 40 tasks in a trench coat. Here's the 3-step trick that finally got me unstuck:\n\n1. Break it into tiny steps (step 1 took me 3 minutes)\n2. Put ONE step on screen, start a timer, turn on calm sounds\n3. When the timer ends, you're allowed to stop. You probably won't.\n\n22 minutes later, the room I avoided for 3 weeks was done.\n\n📌 Save this for your next frozen day, and send it to someone who needs it.\n💜 The app I use for the steps + timer is FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdtips",
+      "#adhdcleaning",
+      "#taskparalysis",
+      "#cleaningmotivation"
+    ],
+    "altText": "Carousel of 7 photos showing a messy bedroom getting cleaned, with text explaining a 3-step ADHD cleaning method: break the task into tiny steps, focus on one step with a timer and calm sounds, then stop or keep going. The last slide shows the FOCO app."
+  },
+  "narrator": "woman",
+  "sameShoot": true,
+  "shootGap": 60
+}

@@ -1,0 +1,197 @@
+{
+  "title": "FOCO - Mountain vs first step",
+  "aspect": "9:16",
+  "mode": "motion",
+  "voice": "none",
+  "captions": "none",
+  "scenes": [
+    {
+      "id": "hook",
+      "seconds": 2.6,
+      "narration": "",
+      "treatment": "motion-graphic",
+      "onScreenText": [
+        "Task: clean the kitchen."
+      ],
+      "imagePrompt": null,
+      "clipPrompt": null,
+      "shareable": false,
+      "imageTags": [],
+      "userAssetIds": [],
+      "notes": "Look: voiceless launch film, ~22s. Concept: split screen contrast, TOP = 'My brain' (chaos, cold red-violet), BOTTOM = 'FOCO' (calm, purple). Ground near-black #040208; accent FOCO purple #A78BFA; orange #FB923C only for the step card label and the win. Hero object: the one task card, which becomes Step 1 and is checked at the end. Hook: a single task card lands in the centre, sound in frame 0."
+    },
+    {
+      "id": "split",
+      "seconds": 1.6,
+      "narration": "",
+      "treatment": "motion-graphic",
+      "onScreenText": [
+        "My brain",
+        "FOCO"
+      ],
+      "imagePrompt": null,
+      "clipPrompt": null,
+      "shareable": false,
+      "imageTags": [],
+      "userAssetIds": [
+        "a-2b89082a",
+        "a-77bad112"
+      ],
+      "notes": "The screen splits horizontally: top half labelled My brain with the overwhelmed mascot, bottom half labelled FOCO with the app icon. The task card slides up into the top half."
+    },
+    {
+      "id": "chaos",
+      "seconds": 4.5,
+      "narration": "",
+      "treatment": "motion-graphic",
+      "onScreenText": [
+        "dishes",
+        "the fridge smells",
+        "where do I even start?!"
+      ],
+      "imagePrompt": null,
+      "clipPrompt": null,
+      "shareable": false,
+      "imageTags": [],
+      "userAssetIds": [],
+      "notes": "Top half: kitchen sub-tasks explode out of the card faster and faster, overlapping, red and white, the mascot trembles. Bottom half stays calm and empty. Ticks speed up."
+    },
+    {
+      "id": "step",
+      "seconds": 3.0,
+      "narration": "",
+      "treatment": "motion-graphic",
+      "onScreenText": [
+        "Step 1",
+        "Clear the dishes into the sink",
+        "3 min"
+      ],
+      "imagePrompt": null,
+      "clipPrompt": null,
+      "shareable": false,
+      "imageTags": [],
+      "userAssetIds": [],
+      "notes": "Bottom half: one clean card lands: STEP 1 / Clear the dishes into the sink / 3 min. Then near silence."
+    },
+    {
+      "id": "just",
+      "seconds": 2.2,
+      "narration": "",
+      "treatment": "motion-graphic",
+      "onScreenText": [
+        "That's it. Just this."
+      ],
+      "imagePrompt": null,
+      "clipPrompt": null,
+      "shareable": false,
+      "imageTags": [],
+      "userAssetIds": [],
+      "notes": "Top half freezes, greys out and is pushed off; the bottom takes the whole screen with the step card centred. Calm music comes in."
+    },
+    {
+      "id": "focus",
+      "seconds": 5.0,
+      "narration": "",
+      "treatment": "motion-graphic",
+      "onScreenText": [
+        "FOCO sits with you."
+      ],
+      "imagePrompt": null,
+      "clipPrompt": null,
+      "shareable": false,
+      "imageTags": [],
+      "userAssetIds": [
+        "a-94612dd5"
+      ],
+      "notes": "Real recording in a phone: the step's focus screen, Start Focus, countdown, timer with the mascot. The step card docks above the phone."
+    },
+    {
+      "id": "done",
+      "seconds": 2.8,
+      "narration": "",
+      "treatment": "motion-graphic",
+      "onScreenText": [
+        "Step 1: done"
+      ],
+      "imagePrompt": null,
+      "clipPrompt": null,
+      "shareable": false,
+      "imageTags": [],
+      "userAssetIds": [
+        "a-e9e351f6"
+      ],
+      "notes": "Real recording: You did it. The docked card gets its check; a small Step 2 card slides in under it."
+    },
+    {
+      "narration": "",
+      "treatment": "motion-graphic",
+      "imagePrompt": null,
+      "clipPrompt": null,
+      "shareable": false,
+      "imageTags": [],
+      "id": "next",
+      "seconds": 3.2,
+      "onScreenText": [
+        "Step 2",
+        "Load and start the dishwasher",
+        "10 min"
+      ],
+      "userAssetIds": [],
+      "notes": "Real list: step 1 struck through and checked, step 2 next. The Step 2 card lands under the checked Step 1 card."
+    },
+    {
+      "narration": "",
+      "treatment": "motion-graphic",
+      "imagePrompt": null,
+      "clipPrompt": null,
+      "shareable": false,
+      "imageTags": [],
+      "id": "focus2",
+      "seconds": 3.0,
+      "onScreenText": [
+        "Then the next tiny step."
+      ],
+      "userAssetIds": [
+        "a-94612dd5"
+      ],
+      "notes": "Focus timer again, Step 2 card docked above the phone."
+    },
+    {
+      "narration": "",
+      "treatment": "motion-graphic",
+      "imagePrompt": null,
+      "clipPrompt": null,
+      "shareable": false,
+      "imageTags": [],
+      "id": "done2",
+      "seconds": 2.4,
+      "onScreenText": [
+        "One step at a time."
+      ],
+      "userAssetIds": [
+        "a-e9e351f6"
+      ],
+      "notes": "Step 2 card gets its check. One step at a time."
+    },
+    {
+      "id": "end",
+      "seconds": 5.2,
+      "narration": "",
+      "treatment": "motion-graphic",
+      "onScreenText": [
+        "Your brain sees a mountain.",
+        "FOCO shows you the first step."
+      ],
+      "imagePrompt": null,
+      "clipPrompt": null,
+      "shareable": false,
+      "imageTags": [],
+      "userAssetIds": [
+        "a-77bad112",
+        "a-d1e0694c",
+        "a-2087826d"
+      ],
+      "notes": "Split returns once: top a dim pile of words, bottom a short list of tiny steps with the first checked; then the two-line closing headline, FOCO icon and store badges."
+    }
+  ]
+}

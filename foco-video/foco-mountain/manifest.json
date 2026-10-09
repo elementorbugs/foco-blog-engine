@@ -1,0 +1,117 @@
+{
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "totalFrames": 1065,
+  "captions": "none",
+  "soundGain": {
+    "assets/lib/music-calm-keynote/track.mp3": 0.7762,
+    "assets/lib/hollywood-essentials-stress-stress-tightness/clip.mp3": 1.6596,
+    "assets/lib/sfx-ui-count-ticks/clip.mp3": 1.5488,
+    "assets/lib/sfx-ui-soft-impact/clip.mp3": 0.7499,
+    "assets/lib/sfx-ui-bubble-pop/clip.mp3": 0.7413,
+    "assets/lib/sfx-ui-success-chime/clip.mp3": 1.4289,
+    "assets/lib/youtube-picks-interface-mouse-click/clip.mp3": 1.1885,
+    "assets/lib/quantum-motion-whooshes-flow-whoosh-reverse/clip.mp3": 0.7943,
+    "assets/lib/cinematic-glitches-glitch/clip.mp3": 0.8913,
+    "assets/lib/sfx-ui-sparkle-shimmer/clip.mp3": 1.4454
+  },
+  "music": {
+    "key": "assets/lib/music-calm-keynote/track.mp3",
+    "beatFrames": []
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "startFrame": 0,
+      "durationFrames": 78,
+      "words": [],
+      "userAssetKeys": []
+    },
+    {
+      "id": "split",
+      "startFrame": 78,
+      "durationFrames": 48,
+      "words": [],
+      "userAssetKeys": [
+        "assets/user/a-2b89082a-foco_state_6_pause.png",
+        "assets/user/a-77bad112-a-75c2c850-foco-icon.png"
+      ]
+    },
+    {
+      "id": "chaos",
+      "startFrame": 126,
+      "durationFrames": 135,
+      "words": [],
+      "userAssetKeys": []
+    },
+    {
+      "id": "step",
+      "startFrame": 261,
+      "durationFrames": 90,
+      "words": [],
+      "userAssetKeys": []
+    },
+    {
+      "id": "just",
+      "startFrame": 351,
+      "durationFrames": 66,
+      "words": [],
+      "userAssetKeys": []
+    },
+    {
+      "id": "focus",
+      "startFrame": 417,
+      "durationFrames": 150,
+      "words": [],
+      "userAssetKeys": [
+        "assets/user/a-94612dd5-a-bd7cebf6-focus.mp4"
+      ]
+    },
+    {
+      "id": "done",
+      "startFrame": 567,
+      "durationFrames": 84,
+      "words": [],
+      "userAssetKeys": [
+        "assets/user/a-e9e351f6-a-bac8bcf1-done.mp4"
+      ]
+    },
+    {
+      "id": "next",
+      "startFrame": 651,
+      "durationFrames": 96,
+      "words": [],
+      "userAssetKeys": []
+    },
+    {
+      "id": "focus2",
+      "startFrame": 747,
+      "durationFrames": 90,
+      "words": [],
+      "userAssetKeys": [
+        "assets/user/a-94612dd5-a-bd7cebf6-focus.mp4"
+      ]
+    },
+    {
+      "id": "done2",
+      "startFrame": 837,
+      "durationFrames": 72,
+      "words": [],
+      "userAssetKeys": [
+        "assets/user/a-e9e351f6-a-bac8bcf1-done.mp4"
+      ]
+    },
+    {
+      "id": "end",
+      "startFrame": 909,
+      "durationFrames": 156,
+      "words": [],
+      "userAssetKeys": [
+        "assets/user/a-77bad112-a-75c2c850-foco-icon.png",
+        "assets/user/a-d1e0694c-a-3157030f-app-store.png",
+        "assets/user/a-2087826d-a-20e23b4b-google-play.png"
+      ]
+    }
+  ]
+}

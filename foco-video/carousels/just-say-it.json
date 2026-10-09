@@ -1,0 +1,134 @@
+{
+  "slug": "just-say-it",
+  "tiktok": {
+    "caption": "how to remember tasks that pop into your head at the worst time (ADHD) 🎙️\n\nin the shower: book the dentist. in line at the supermarket: pay the electricity bill. on a walk with the stroller: email my boss. 11pm: sign the school form. now I just say it out loud wherever I am, and it all waits in my day.\n\nwhere do YOUR tasks pop up? 👇\nsave this for the next shower thought 📌\n\nthe app on the slides is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#adhdtips",
+      "#adhdbrain",
+      "#adhdforgetfulness",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "How to remember the tasks that pop into your head at the worst time (ADHD) 🎙️\n\nMy brain hands me tasks everywhere except at my desk:\n\n1. In the shower: book the dentist\n2. In line at the supermarket: pay the electricity bill\n3. On a walk with the stroller: email my boss\n4. 11pm, kids finally asleep: sign the school form\n\nNow I just say it out loud, wherever I am. FOCO turns it into a task and it all waits in my day. Nothing left to hold in my head.\n\n📌 Save this for the next shower thought, and send it to someone whose best ideas come at the worst time.\n💜 Try FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdtips",
+      "#adhdbrain",
+      "#adhdforgetfulness",
+      "#adhdmom"
+    ],
+    "altText": "Carousel of 8 everyday moments where tasks pop up (the shower, a supermarket line, a walk with a stroller, 11pm bedtime), then saying a task out loud in the FOCO app and seeing all four tasks waiting in the calendar for the day."
+  },
+  "slides": [
+    {
+      "layout": "hook",
+      "id": "hook",
+      "person": false,
+      "query": "hands on steering wheel driving car",
+      "lines": [
+        "Tasks pop into my head at the worst times",
+        "so now I just say them out loud 🎙️"
+      ],
+      "pick": 8
+    },
+    {
+      "layout": "caption",
+      "id": "shower",
+      "person": false,
+      "query": "shower head water running bathroom",
+      "label": "in the shower: \"book the dentist\"",
+      "comment": "can't exactly write that down 🚿",
+      "pick": 4
+    },
+    {
+      "layout": "caption",
+      "id": "market",
+      "person": false,
+      "query": "shopping cart in supermarket aisle",
+      "label": "in line at the supermarket",
+      "comment": "\"pay the electricity bill\" 🙃",
+      "pick": 3
+    },
+    {
+      "layout": "caption",
+      "id": "walk",
+      "person": false,
+      "own": "carousels/own/stroller-walk.jpg",
+      "label": "mid-walk with the stroller",
+      "comment": "\"I need to email my boss\""
+    },
+    {
+      "layout": "caption",
+      "id": "bedtime",
+      "person": false,
+      "query": "dark kids bedroom with night light",
+      "label": "11pm, kids finally asleep",
+      "comment": "\"sign the school form\" 😵‍💫",
+      "pick": 8
+    },
+    {
+      "layout": "life",
+      "id": "say",
+      "person": false,
+      "query": "hand holding phone outdoors on street",
+      "label": "now I just say it out loud",
+      "comment": "wherever I am, FOCO turns it into a task",
+      "side": "right",
+      "inset": {
+        "image": "creatives/speak-email-boss-crop.png",
+        "crop": [
+          0.335,
+          0.88
+        ],
+        "aspect": 1.756
+      },
+      "chip": "added to my sessions ✅",
+      "pick": 5
+    },
+    {
+      "layout": "calendar",
+      "id": "day",
+      "person": false,
+      "query": "coffee and notebook on desk morning light",
+      "pick": 1,
+      "label": "and it's all waiting in my day",
+      "comment": "nothing left to hold in my head",
+      "tasks": [
+        {
+          "title": "Book the dentist",
+          "min": 5,
+          "category": "Personal"
+        },
+        {
+          "title": "Pay electricity bill",
+          "min": 10,
+          "category": "Home"
+        },
+        {
+          "title": "Email my boss",
+          "min": 25,
+          "category": "Work"
+        },
+        {
+          "title": "Sign the school form",
+          "min": 5,
+          "category": "Kids"
+        }
+      ],
+      "breakdownButton": false
+    },
+    {
+      "layout": "final-phone",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "Try FOCO - link in bio 💜"
+      ],
+      "image": "creatives/speak-email-boss-crop.png",
+      "aspect": 1.756,
+      "ask": "where do YOUR tasks pop up? 👇"
+    }
+  ]
+}

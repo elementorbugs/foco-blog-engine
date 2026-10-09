@@ -1,0 +1,221 @@
+{
+  "slug": "task-breakdown",
+  "title": "How to Break Down Tasks with ADHD (So You Can Start)",
+  "voice": "af_heart",
+  "scenes": [
+    {
+      "id": "hook",
+      "mascot": 6,
+      "text": "Clean the apartment. Do your taxes. Write the report. Those aren't tasks. They're projects pretending to be tasks. And for an A D H D brain, that's often why they never get started. Let's fix that, by breaking them down the right way.",
+      "visual": {
+        "type": "broll",
+        "query": "messy apartment living room clutter",
+        "overlay": [
+          {
+            "at": "projects pretending",
+            "text": "Projects pretending to be tasks"
+          }
+        ],
+        "candidates": [
+          8454994,
+          8454992,
+          8526494,
+          7703499,
+          8526489,
+          6612063,
+          7855734,
+          6612054
+        ],
+        "pick": 4,
+        "clipSec": 40
+      }
+    },
+    {
+      "id": "why",
+      "mascot": 1,
+      "text": "When a task is vague, your brain has to plan it before it can start it. Planning runs on executive function, which is often the exact thing that's harder with A D H D. So the task just sits there. Breaking it down does the planning ahead of time, so starting is the only job left.",
+      "visual": {
+        "type": "bullets",
+        "title": "Why big tasks stay stuck",
+        "items": [
+          {
+            "at": "When a task is vague",
+            "text": "Vague task = plan it first"
+          },
+          {
+            "at": "Planning runs on",
+            "text": "Planning = executive function 🧠"
+          },
+          {
+            "at": "the task just sits",
+            "text": "So it just sits there"
+          },
+          {
+            "at": "Breaking it down",
+            "text": "Breakdown: only starting is left"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rules",
+      "mascot": 3,
+      "text": "Here are three rules for a breakdown that actually works. One. Every step starts with a verb you can picture yourself doing. Open, write, pick up, send. Two. Each step takes about two to ten minutes. If it's longer, split it again. Three. The first step should be so easy it feels almost silly.",
+      "visual": {
+        "type": "bullets",
+        "title": "3 rules for a good breakdown",
+        "items": [
+          {
+            "at": "starts with a verb",
+            "text": "1. Start with a verb you can picture"
+          },
+          {
+            "at": "two to ten minutes",
+            "text": "2. Each step: 2-10 minutes"
+          },
+          {
+            "at": "The first step should",
+            "text": "3. Step 1 feels almost silly"
+          }
+        ]
+      }
+    },
+    {
+      "id": "example",
+      "mascot": 3,
+      "text": "Let's try it. Clean the kitchen becomes this. Put all the dishes in the sink. Load the dishwasher. Wipe the counters. Take out the trash. Sweep the floor. Each step is small, clear, and has an end.",
+      "visual": {
+        "type": "steps",
+        "title": "Example: clean the kitchen",
+        "steps": [
+          {
+            "at": "Put all the dishes",
+            "text": "Put all the dishes in the sink"
+          },
+          {
+            "at": "Load the dishwasher",
+            "text": "Load the dishwasher"
+          },
+          {
+            "at": "Wipe the counters",
+            "text": "Wipe the counters"
+          },
+          {
+            "at": "Take out the trash",
+            "text": "Take out the trash"
+          },
+          {
+            "at": "Sweep the floor",
+            "text": "Sweep the floor"
+          }
+        ]
+      }
+    },
+    {
+      "id": "smaller",
+      "mascot": 4,
+      "text": "But what if even the first step feels too big? Then go smaller. Put the dishes in the sink can become, pick up one cup. No step is too small. If it gets you moving, it counts.",
+      "visual": {
+        "type": "broll",
+        "query": "woman washing dishes kitchen sink",
+        "overlay": [
+          {
+            "at": "pick up one cup",
+            "text": "Step 1: pick up one cup ☕"
+          }
+        ],
+        "candidates": [
+          6195929,
+          6195936,
+          4440691,
+          6264775,
+          5592511,
+          7640937,
+          7641640,
+          7641383
+        ],
+        "pick": 4,
+        "clipSec": 10
+      }
+    },
+    {
+      "id": "tips",
+      "mascot": 2,
+      "text": "A few more tips. Write the steps down, so your working memory doesn't have to hold them. Add a rough time to each step, which can help with time blindness. Look only at the next step, and hide the rest if they feel like too much. And celebrate every step you check off.",
+      "visual": {
+        "type": "bullets",
+        "title": "Make the list easier to follow",
+        "items": [
+          {
+            "at": "Write the steps down",
+            "text": "Write the steps down ✍️"
+          },
+          {
+            "at": "Add a rough time",
+            "text": "Add a time to each step ⏱️"
+          },
+          {
+            "at": "Look only at",
+            "text": "Look only at the next step"
+          },
+          {
+            "at": "celebrate every step",
+            "text": "Celebrate every check ✅"
+          }
+        ]
+      }
+    },
+    {
+      "id": "foco",
+      "mascot": 5,
+      "text": "Doing this by hand takes energy, and when you're stuck, that energy is gone. That's why we built Foco. Type it, say it, or snap a photo of the task. Foco breaks it into tiny steps, with a time for each one. Then focus mode walks you through them one at a time, with a timer and calm sounds.",
+      "visual": {
+        "type": "phones",
+        "items": [
+          {
+            "at": "Type it",
+            "shot": 2
+          },
+          {
+            "at": "Foco breaks it",
+            "shot": 3
+          },
+          {
+            "at": "Then focus mode",
+            "shot": 7
+          },
+          {
+            "at": "with a timer",
+            "shot": 4
+          }
+        ]
+      }
+    },
+    {
+      "id": "outro",
+      "mascot": 2,
+      "text": "Your challenge for today. Pick one task that's been sitting on your list. Break it into steps you can do in under ten minutes. Then do just the first one. If you want the breakdown done for you, Foco is on iPhone and Android. Link in the description.",
+      "visual": {
+        "type": "cta",
+        "lines": [
+          "Pick one stuck task",
+          "Steps under 10 minutes",
+          "Do just step 1 💜"
+        ]
+      }
+    }
+  ],
+  "thumb": {
+    "aLines": [
+      "TOO BIG",
+      "TO START?"
+    ],
+    "aPill": "BREAK IT DOWN",
+    "bLines": [
+      "ADHD",
+      "TASK",
+      "BREAKDOWN"
+    ],
+    "mascot": "foco_state_3_focus"
+  }
+}

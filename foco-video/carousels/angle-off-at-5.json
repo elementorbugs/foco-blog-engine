@@ -1,0 +1,140 @@
+{
+  "slug": "angle-off-at-5",
+  "tiktok": {
+    "caption": "Freelancer with ADHD: old me worked till midnight. Me now? Off at 5pm 🌅\n\n9am: I didn't wait to feel ready. I told FOCO the first task, and it broke the client feedback into four tiny steps. Done by 9:30. Then the invoices, same way: one step, one timer, jazz on. 3pm: no panic, I'm actually ahead. 5pm: laptop closed. 6pm: a walk and a coffee. No guilt.\n\nWhat would you do with your evenings back? 👇\nSave this for the next time you're working at midnight 📌\n\nYou don't need another to-do list. You need help starting. The app on the slides is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#worklifebalance",
+      "#taskparalysis",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "Freelancer with ADHD: old me worked till midnight. Me now? Off at 5pm 🌅\n\n9:00 I didn't wait to feel ready. I told FOCO the first task.\n9:30 Client feedback done, in four tiny steps.\n12:00 Invoices sent. One step, one timer, jazz on.\n3:00 No panic. I'm actually ahead.\n5:00 Laptop closed. Nothing left in my head.\n6:00 A walk. A coffee. No guilt.\n\nYou don't need another to-do list. You need help starting.\n\n📌 Save this for the next time you're working at midnight, and send it to a freelancer friend who needs an evening off.\n💜 Try FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#adhdwomen",
+      "#worklifebalance",
+      "#taskparalysis"
+    ],
+    "altText": "Carousel of 8 slides: a freelance woman with ADHD who used to work until midnight starts her day with one tiny step in FOCO, finishes client feedback and invoices, closes her laptop at 5pm and goes for a walk and coffee."
+  },
+  "slides": [
+    {
+      "layout": "hook",
+      "id": "hook",
+      "own": "carousels/own/maya/stuck-10.jpg",
+      "lines": [
+        "Freelancer with ADHD:",
+        "Old me: working till midnight.",
+        "Me now: off at 5pm 🌅"
+      ],
+      "textTop": 1100
+    },
+    {
+      "layout": "caption",
+      "id": "nine",
+      "own": "carousels/own/maya/hook-7.jpg",
+      "label": "I didn't wait to feel ready.",
+      "comment": "I told FOCO the first task.",
+      "time": "9:00 am"
+    },
+    {
+      "layout": "card",
+      "id": "card",
+      "own": "carousels/own/maya/breakdown-2.jpg",
+      "label": "Client feedback, in four tiny steps.",
+      "comment": "Step 1 took three minutes.",
+      "title": "Reply to client feedback",
+      "steps": [
+        {
+          "text": "Open her email, read once",
+          "min": 3
+        },
+        {
+          "text": "List her 3 changes",
+          "min": 5
+        },
+        {
+          "text": "Make the changes",
+          "min": 20
+        },
+        {
+          "text": "Reply \"done!\", hit send",
+          "min": 2
+        }
+      ],
+      "result": "Done by 9:30 ✅"
+    },
+    {
+      "layout": "focus",
+      "id": "focus",
+      "own": "carousels/own/maya/focus-5.jpg",
+      "label": "Then invoices. Same thing.",
+      "comment": "One step, one timer, jazz on.",
+      "stepNo": 1,
+      "stepTotal": 4,
+      "step": "Open last invoice",
+      "min": 2,
+      "sound": "Jazzy",
+      "result": "Sent before lunch ✅"
+    },
+    {
+      "layout": "caption",
+      "id": "three",
+      "own": "carousels/own/maya/hook-8.jpg",
+      "label": "No 4pm panic today.",
+      "comment": "I'm actually ahead 😌",
+      "time": "3:00 pm"
+    },
+    {
+      "layout": "caption",
+      "id": "five",
+      "own": "carousels/own/maya/nine-8.jpg",
+      "label": "I closed my laptop at 5.",
+      "comment": "Nothing left in my head.",
+      "time": "5:00 pm"
+    },
+    {
+      "layout": "caption",
+      "id": "six",
+      "person": false,
+      "query": "iced coffee in hand on sunny street",
+      "label": "A walk. A coffee. No guilt.",
+      "comment": "This used to be catch-up time 🫶",
+      "time": "6:00 pm",
+      "pick": 2
+    },
+    {
+      "layout": "final-card",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "You don't need another to-do list.",
+        "You need help starting 💜"
+      ],
+      "title": "Reply to client feedback",
+      "steps": [
+        {
+          "text": "Open her email, read once",
+          "min": 3
+        },
+        {
+          "text": "List her 3 changes",
+          "min": 5
+        },
+        {
+          "text": "Make the changes",
+          "min": 20
+        },
+        {
+          "text": "Reply \"done!\", hit send",
+          "min": 2
+        }
+      ],
+      "ask": "What would you do with your evenings back? 👇"
+    }
+  ]
+}

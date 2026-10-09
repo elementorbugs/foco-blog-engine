@@ -1,0 +1,120 @@
+{
+  "slug": "angle-client-task",
+  "tiktok": {
+    "caption": "This task takes 30 minutes. I've avoided it for three days. 🫠\n\nDay 1: I'll do it after lunch. Day 2: I opened it, then closed it. Day 3: the guilt is worse than the task. And it's client feedback.\n\nSo I told FOCO about it. It broke it into four tiny steps. Step 1 was just reading her email once. Three minutes, something chill on, and I was actually doing it.\n\nWhat task have you been avoiding? 👇\nSave this for the next time you're stuck 📌\n\nYou don't need another to-do list. You need help starting. The app on the slides is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#taskparalysis",
+      "#procrastination",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "This task takes 30 minutes. I've avoided it for three days. 🫠\n\nDay 1: I'll do it after lunch. Day 2: I opened it, then closed it. Day 3: the guilt is worse than the task. And it's client feedback.\n\nSo I told FOCO about it. It broke it into four tiny steps. Step 1 was just reading her email once. Three minutes, something chill on, and I was actually doing it.\n\nYou don't need another to-do list. You need help starting.\n\n📌 Save this for the next time you're stuck, and send it to a freelancer friend who gets it.\n💜 Try FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#adhdwomen",
+      "#taskparalysis",
+      "#procrastination"
+    ],
+    "altText": "Carousel of 6 slides about a freelance woman with ADHD who can't start a work task (Reply to client feedback). FOCO breaks it into four tiny steps and she starts step 1 with a short timer and chill sounds."
+  },
+  "slides": [
+    {
+      "layout": "hook",
+      "id": "hook",
+      "own": "carousels/own/maya/email-10.jpg",
+      "lines": [
+        "POV: you freelance with ADHD",
+        "Task: 30 min of client edits.",
+        "Me: avoids it for 3 days 💀"
+      ],
+      "textTop": 1100
+    },
+    {
+      "layout": "caption",
+      "id": "pain1",
+      "own": "carousels/own/maya/email-12.jpg",
+      "label": "Day 1: \"I'll do it after lunch.\"",
+      "comment": "Day 2: I opened it. Then closed it."
+    },
+    {
+      "layout": "caption",
+      "id": "pain2",
+      "own": "carousels/own/maya/email-6.jpg",
+      "label": "Day 3: the guilt is worse than the task.",
+      "comment": "And it's client feedback 🫠"
+    },
+    {
+      "layout": "card",
+      "id": "turn",
+      "own": "carousels/own/maya/breakdown-2.jpg",
+      "label": "So I told FOCO about it.",
+      "comment": "It broke it into four tiny steps.",
+      "title": "Reply to client feedback",
+      "steps": [
+        {
+          "text": "Open her email, read once",
+          "min": 3
+        },
+        {
+          "text": "List her 3 changes",
+          "min": 5
+        },
+        {
+          "text": "Make the changes",
+          "min": 20
+        },
+        {
+          "text": "Reply \"done!\", hit send",
+          "min": 2
+        }
+      ],
+      "result": "Step 1 takes 3 minutes ✅"
+    },
+    {
+      "layout": "focus",
+      "id": "focus",
+      "own": "carousels/own/maya/focus-2.jpg",
+      "label": "Just step 1. Something chill on.",
+      "comment": "A 3-minute timer. Nothing else.",
+      "stepNo": 1,
+      "stepTotal": 4,
+      "step": "Open her email, read once",
+      "min": 3,
+      "sound": "Chill",
+      "result": "Okay. I'm actually doing it ✅"
+    },
+    {
+      "layout": "final-card",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "You don't need another to-do list.",
+        "You need help starting 💜"
+      ],
+      "title": "Reply to client feedback",
+      "steps": [
+        {
+          "text": "Open her email, read once",
+          "min": 3
+        },
+        {
+          "text": "List her 3 changes",
+          "min": 5
+        },
+        {
+          "text": "Make the changes",
+          "min": 20
+        },
+        {
+          "text": "Reply \"done!\", hit send",
+          "min": 2
+        }
+      ],
+      "ask": "What task have you been avoiding? 👇"
+    }
+  ]
+}

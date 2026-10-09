@@ -1,0 +1,120 @@
+{
+  "slug": "angle-screen-stare",
+  "tiktok": {
+    "caption": "I've been staring at this task for hours. ADHD freelancer edition. 🫠\n\nI know exactly what the client wants. The brief is right there. It still feels like there's an invisible wall between me and the first click.\n\nSo I told FOCO about it. It broke the logo into four tiny steps. Step 1 was just opening the brief and highlighting three words. Two minutes, study sounds on, and I was in.\n\nHow long have you been staring today? 👇\nSave this for the next time you're stuck 📌\n\nYou don't need another to-do list. You need help starting. The app on the slides is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#taskparalysis",
+      "#procrastination",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "I've been staring at this task for hours. ADHD freelancer edition. 🫠\n\nI know exactly what the client wants. The brief is right there. It still feels like there's an invisible wall between me and the first click.\n\nSo I told FOCO about it. It broke the logo into four tiny steps. Step 1 was just opening the brief and highlighting three words. Two minutes, study sounds on, and I was in.\n\nYou don't need another to-do list. You need help starting.\n\n📌 Save this for the next time you're stuck, and send it to a freelancer friend who gets it.\n💜 Try FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#adhdwomen",
+      "#taskparalysis",
+      "#procrastination"
+    ],
+    "altText": "Carousel of 6 slides about a freelance woman with ADHD who can't start a work task (Design client logo). FOCO breaks it into four tiny steps and she starts step 1 with a short timer and study sounds."
+  },
+  "slides": [
+    {
+      "layout": "hook",
+      "id": "hook",
+      "own": "carousels/own/maya/nine-7.jpg",
+      "lines": [
+        "Freelancer with ADHD:",
+        "Task: design one logo.",
+        "Me: 2 hours of staring 😵‍💫"
+      ],
+      "textTop": 1100
+    },
+    {
+      "layout": "caption",
+      "id": "pain1",
+      "own": "carousels/own/maya/email-9.jpg",
+      "label": "I know exactly what the client wants.",
+      "comment": "The brief is right there."
+    },
+    {
+      "layout": "caption",
+      "id": "pain2",
+      "own": "carousels/own/maya/email-4.jpg",
+      "label": "It's like there's an invisible wall.",
+      "comment": "I can't make the first click 😵‍💫"
+    },
+    {
+      "layout": "card",
+      "id": "turn",
+      "own": "carousels/own/maya/breakdown-1.jpg",
+      "label": "So I told FOCO about it.",
+      "comment": "It broke it into four tiny steps.",
+      "title": "Design client logo",
+      "steps": [
+        {
+          "text": "Open brief, highlight 3 words",
+          "min": 2
+        },
+        {
+          "text": "Sketch 3 rough ideas",
+          "min": 10
+        },
+        {
+          "text": "Pick one, open Figma",
+          "min": 5
+        },
+        {
+          "text": "Messy first draft",
+          "min": 20
+        }
+      ],
+      "result": "Step 1 takes 2 minutes ✅"
+    },
+    {
+      "layout": "focus",
+      "id": "focus",
+      "own": "carousels/own/maya/focus-1.jpg",
+      "label": "Just step 1. Study sounds on.",
+      "comment": "A 2-minute timer. That's it.",
+      "stepNo": 1,
+      "stepTotal": 4,
+      "step": "Open brief, highlight 3 words",
+      "min": 2,
+      "sound": "Study",
+      "result": "And just like that, I'm in ✅"
+    },
+    {
+      "layout": "final-card",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "You don't need another to-do list.",
+        "You need help starting 💜"
+      ],
+      "title": "Design client logo",
+      "steps": [
+        {
+          "text": "Open brief, highlight 3 words",
+          "min": 2
+        },
+        {
+          "text": "Sketch 3 rough ideas",
+          "min": 10
+        },
+        {
+          "text": "Pick one, open Figma",
+          "min": 5
+        },
+        {
+          "text": "Messy first draft",
+          "min": 20
+        }
+      ],
+      "ask": "How long have you been staring today? 👇"
+    }
+  ]
+}

@@ -1,0 +1,727 @@
+// Data-driven TikTok carousel slide. One JSON spec (carousels/<slug>.json) describes a whole carousel;
+// carousel/build.js renders each slide through this component. Layouts reuse the hand-built carousels' pieces.
+import React from "react";
+import { AbsoluteFill, Img, staticFile } from "remotion";
+import { BODY, EMOJI, HAND, HEAD } from "../Composition";
+import { Bubble, FocoCard, Photo } from "./Carousel";
+import { StepCard, TimeChip } from "./MoreCarousels";
+import { Tag } from "./MoreCarousels2";
+
+type Step = { text: string; min: number };
+type CalTask = { title: string; min: number; category: string };
+// chat message: "me" = blue right, "brain" = grey left, "foco" = a FOCO step card dropped into the chat
+type ChatMsg = { from: "me" | "brain" | "foco"; text: string; min?: number };
+// iPhone Notes checklist row: done = filled yellow circle; hl = the one real task (purple, bold)
+// checklist row: ok=false = red ✗ + struck-out text + optional handwritten note; ok=true = green ✓
+type CheckItem = { text: string; ok: boolean; note?: string };
+type NoteItem = { text: string; done?: boolean; hl?: boolean };
+// "life" slide inset: a real screenshot/creative (image + optional crop) or a drawn FOCO screen with this carousel's task
+type Inset =
+  | { image: string; crop?: [number, number]; aspect: number }
+  | { ui: "breakdown"; title: string; steps: Step[] }
+  | { ui: "focus"; stepNo: number; stepTotal: number; step: string; min: number; sound: string }
+  | { ui: "calendar"; title: string; min: number; category: string };
+export type SpecSlide =
+  | { layout: "hook"; id: string; lines: string[]; tag?: string; textTop?: number; hookStyle?: "callout"; punchFont?: "hand" }
+  | { layout: "pair"; id: string; topLabel: string; top: string; bottomLabel: string; bottom: string }
+  | { layout: "card"; id: string; label: string; comment?: string; title: string; steps: Step[]; result?: string }
+  | { layout: "step"; id: string; label: string; step: string; min: number }
+  | { layout: "caption"; id: string; label: string; comment?: string; time?: string }
+  | { layout: "focus"; id: string; label: string; comment?: string; stepNo: number; stepTotal: number; step: string; min: number; sound: string; result?: string }
+  | { layout: "life"; id: string; label: string; comment?: string; chip?: string; side?: "left" | "right"; inset: Inset }
+  | { layout: "chat"; id: string; contact?: string; time?: string; messages: ChatMsg[]; title?: string[] }
+  | { layout: "notes"; id: string; noteTitle: string; date?: string; items: NoteItem[]; scribble?: string; foco?: Step; title?: string[] }
+  | { layout: "checklist"; id: string; heading: string; items: CheckItem[]; foco?: Step; title?: string[] }
+  | { layout: "versus"; id: string; time: string; plan: string; reality?: string; foco?: Step; title?: string[] }
+  | { layout: "scan"; id: string; label: string; comment?: string; items: string[]; result?: string }
+  | { layout: "calendar"; id: string; label: string; comment?: string; title?: string; min?: number; category?: string; tasks?: CalTask[]; result?: string; breakdownButton?: boolean }
+  | { layout: "inputs"; id: string; label: string; comment?: string; result?: string }
+  | { layout: "phone"; id: string; label: string; comment?: string; screenshot?: number; image?: string; result?: string; crop?: [number, number]; aspect?: number }
+  | { layout: "final-card"; id: string; lines: string[]; title: string; steps: Step[]; ask: string }
+  | { layout: "final-phone"; id: string; lines: string[]; screenshot?: number; image?: string; aspect?: number; ask: string };
+
+// sticker: one big emoji per slide, TikTok-sticker style; stickerPos overrides the per-layout default [x, y]
+type SlideExtras = { query?: string; pick?: number; photo?: string; sticker?: string; stickerPos?: [number, number] };
+// design: "duo" (default) = Poppins for the story line + white handwriting (Caveat) for the inner-voice line;
+// "classic" = the old all-lilac Poppins bubbles
+export type Spec = { slug: string; design?: "duo" | "classic"; slides: (SpecSlide & SlideExtras)[] };
+
+const DARK = "#160F22";
+
+// TikTok overlays (approx., 1080x1920): tabs + photo dots on top (0-180), username/caption/sound at the
+// bottom (1500+), like/comment/share rail on the right (x 950+, y 850-1500). Keep readable text out of them.
+export const SAFE = { top: 180, bottom: 1500, railX: 950, railTop: 850, left: 90, rightLow: 160 };
+
+// Celebrating mascot sticker, final slide only (see SKILL.md > FOCO mascot)
+const Mascot: React.FC<{ style: React.CSSProperties }> = ({ style }) => (
+  <Img src={staticFile("mascots/foco_state_5_completion.png")} style={{ position: "absolute", filter: "drop-shadow(0 16px 30px rgba(0,0,0,0.45))", ...style }} />
+);
+
+// "Download FOCO PLANNER" panel with the official store badges; sits between the ask and TikTok's bottom overlay.
+// The "LINK IN BIO" pill straddles its top edge (TikTok bios hold the store link; captions can't).
+const DownloadCTA: React.FC = () => (
+  <>
+  <div style={{ position: "absolute", top: 1212, left: SAFE.left, width: SAFE.railX - SAFE.left - 10, display: "flex", justifyContent: "center", zIndex: 2 }}>
+    <div style={{ fontFamily: BODY, fontWeight: 800, fontSize: 32, letterSpacing: 3, color: "#FFFFFF", background: "#FB923C", padding: "8px 28px", borderRadius: 999, boxShadow: "0 8px 20px rgba(0,0,0,0.3)" }}>🔗 LINK IN BIO</div>
+  </div>
+  <div style={{ position: "absolute", top: 1255, left: SAFE.left, width: SAFE.railX - SAFE.left - 10, padding: "34px 30px 22px", borderRadius: 34, background: "#FFFFFF", boxShadow: "0 24px 60px rgba(0,0,0,0.45)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+    <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
+      <Img src={staticFile("apps/foco-icon.png")} style={{ width: 92, height: 92, borderRadius: 22 }} />
+      <div>
+        <div style={{ fontFamily: BODY, fontWeight: 800, fontSize: 24, letterSpacing: 3, color: "#7C3AED" }}>DOWNLOAD</div>
+        <div style={{ fontFamily: HEAD, fontWeight: 800, fontSize: 44, lineHeight: 1.02, color: DARK }}>FOCO<br />PLANNER</div>
+      </div>
+    </div>
+    <div style={{ display: "flex", flexDirection: "column", gap: 12, alignItems: "flex-end" }}>
+      <Img src={staticFile("badges/app-store.svg")} style={{ height: 70 }} />
+      <Img src={staticFile("badges/google-play-cropped.png")} style={{ height: 70 }} />
+    </div>
+  </div>
+  </>
+);
+
+
+// A phone camera mid-scan of a handwritten paper to-do list (the "Scan it" capture), drawn so the list matches the
+// carousel's tasks exactly. Paper + spiral + Caveat handwriting inside a viewfinder with purple scan corners.
+const ScanPhone: React.FC<{ items: string[] }> = ({ items }) => {
+  const corner = (pos: React.CSSProperties, rot: number) => (
+    <div style={{ position: "absolute", width: 70, height: 70, borderTop: "8px solid #A78BFA", borderLeft: "8px solid #A78BFA", borderTopLeftRadius: 22, transform: `rotate(${rot}deg)`, filter: "drop-shadow(0 0 10px #7C3AED)", ...pos }} />
+  );
+  return (
+    <div style={{ width: 560, height: 1060, borderRadius: 70, background: "#0d0a14", padding: 16, boxShadow: "0 40px 100px rgba(0,0,0,0.55)" }}>
+      <div style={{ position: "relative", width: "100%", height: "100%", borderRadius: 56, overflow: "hidden", background: "linear-gradient(160deg, #6b4a2f, #4a321f)" }}>
+        <div style={{ position: "absolute", top: 34, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
+          <div style={{ fontFamily: BODY, fontWeight: 800, fontSize: 30, color: "#FFFFFF", background: "rgba(245,158,11,0.95)", padding: "8px 26px", borderRadius: 999 }}><span style={{ fontFamily: `"${EMOJI}"` }}>📷</span> Scan it</div>
+        </div>
+        {/* the paper */}
+        <div style={{ position: "absolute", top: 140, left: 60, width: 410, height: 640, background: "#F6EEDD", borderRadius: 14, transform: "rotate(-3deg)", boxShadow: "0 18px 40px rgba(0,0,0,0.45)", backgroundImage: "repeating-linear-gradient(transparent 0 58px, rgba(120,140,180,0.35) 58px 60px)", backgroundPosition: "0 40px" }}>
+          {Array.from({ length: 11 }).map((_, i) => (
+            <div key={i} style={{ position: "absolute", left: -14, top: 40 + i * 56, width: 30, height: 14, borderRadius: 8, border: "4px solid #C9A24A" }} />
+          ))}
+          <div style={{ position: "absolute", top: 50, left: 54, fontFamily: HAND, fontWeight: 600, fontSize: 64, color: "#1d1b2a", textDecoration: "underline" }}>To do:</div>
+          {items.map((t, i) => (
+            <div key={t} style={{ position: "absolute", top: 170 + i * 118, left: 50, display: "flex", alignItems: "center", gap: 18 }}>
+              <div style={{ width: 40, height: 40, border: "4px solid #1d1b2a", borderRadius: 4, flexShrink: 0 }} />
+              <div style={{ fontFamily: HAND, fontWeight: 600, fontSize: 58, color: "#1d1b2a", whiteSpace: "nowrap" }}>{t}</div>
+            </div>
+          ))}
+        </div>
+        {corner({ top: 110, left: 30 }, 0)}
+        {corner({ top: 110, right: 30 }, 90)}
+        {corner({ top: 760, right: 30 }, 180)}
+        {corner({ top: 760, left: 30 }, 270)}
+        {/* shutter */}
+        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 190, background: "rgba(0,0,0,0.75)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ width: 120, height: 120, borderRadius: 999, border: "8px solid #FFFFFF", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ width: 90, height: 90, borderRadius: 999, background: "#FFFFFF" }} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// iMessage-style thread between "me" and "my brain" (the voice of ADHD). Light panel on a blurred photo.
+// the dark "FOCO · STEP 1" card used inside chat / notes / versus slides (one per carousel, at the turn)
+const FocoStep: React.FC<{ text: string; min?: number; width?: number }> = ({ text, min, width = 700 }) => (
+  <div style={{ width, borderRadius: 28, padding: "20px 24px", background: "#130A22", border: "2px solid rgba(167,139,250,0.4)", display: "flex", alignItems: "center", gap: 18 }}>
+    <Img src={staticFile("apps/foco-icon.png")} style={{ width: 64, height: 64, borderRadius: 16 }} />
+    <div style={{ flex: 1 }}>
+      <div style={{ fontFamily: BODY, fontWeight: 700, fontSize: 22, letterSpacing: 3, color: "#A78BFA" }}>FOCO · STEP 1</div>
+      <div style={{ fontFamily: BODY, fontWeight: 700, fontSize: 36, color: "#FFFFFF", lineHeight: 1.2 }}>{text}</div>
+    </div>
+    {min ? <div style={{ fontFamily: BODY, fontWeight: 800, fontSize: 30, color: "#FFFFFF", border: "2px solid rgba(167,139,250,0.6)", borderRadius: 14, padding: "6px 12px" }}>{min} min</div> : null}
+  </div>
+);
+
+const NOTES_YELLOW = "#E3A008";
+// iPhone Notes page (checklist) + optional purple handwritten scribble + optional FOCO step under the note
+const NotesPage: React.FC<{ noteTitle: string; date?: string; items: NoteItem[]; scribble?: string; foco?: Step }> = ({ noteTitle, date, items, scribble, foco }) => (
+  <div style={{ width: 880, borderRadius: 44, background: "#FFFFFF", boxShadow: "0 30px 80px rgba(0,0,0,0.35)", overflow: "hidden", padding: "26px 40px 36px" }}>
+    <div style={{ display: "flex", justifyContent: "space-between", fontFamily: BODY, fontWeight: 600, fontSize: 32, color: NOTES_YELLOW }}>
+      <span>‹ Notes</span>
+      <span style={{ fontWeight: 700 }}>Done</span>
+    </div>
+    {date ? <div style={{ textAlign: "center", fontFamily: BODY, fontWeight: 500, fontSize: 24, color: "#8E8E93", marginTop: 14 }}>{date}</div> : null}
+    <div style={{ fontFamily: `${BODY}, "${EMOJI}"`, fontWeight: 800, fontSize: 54, color: DARK, marginTop: 14, lineHeight: 1.15 }}>{noteTitle}</div>
+    <div style={{ marginTop: 18 }}>
+      {items.map((it, i) => (
+        <div key={i} style={{ display: "flex", alignItems: "center", gap: 22, padding: "10px 0" }}>
+          <div style={{ flex: "none", width: 46, height: 46, borderRadius: 999, border: it.done ? "none" : "3px solid #C7C7CC", background: it.done ? NOTES_YELLOW : "transparent", color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: BODY, fontWeight: 800, fontSize: 28 }}>{it.done ? "✓" : ""}</div>
+          <div style={{ fontFamily: `${BODY}, "${EMOJI}"`, fontWeight: it.hl ? 800 : 500, fontSize: 40, lineHeight: 1.25, color: it.hl ? "#7C3AED" : DARK }}>{it.text}</div>
+        </div>
+      ))}
+    </div>
+    {scribble ? <div style={{ fontFamily: `"${HAND}", "${EMOJI}"`, fontSize: 58, color: "#7C3AED", marginTop: 10, transform: "rotate(-2deg)", lineHeight: 1.1 }}>{scribble}</div> : null}
+    {foco ? <div style={{ marginTop: 22, display: "flex", justifyContent: "center" }}><FocoStep text={foco.text} min={foco.min} width={800} /></div> : null}
+  </div>
+);
+
+// ✅/❌ list: "things I tried" crossed out one by one, then the one that worked (+ optional FOCO step)
+const Checklist: React.FC<{ heading: string; items: CheckItem[]; foco?: Step }> = ({ heading, items, foco }) => (
+  <div style={{ width: 880, borderRadius: 44, background: "#FFFFFF", boxShadow: "0 30px 80px rgba(0,0,0,0.35)", padding: "32px 40px 36px" }}>
+    <div style={{ fontFamily: `${BODY}, "${EMOJI}"`, fontWeight: 800, fontSize: 44, color: DARK, lineHeight: 1.2 }}>{heading}</div>
+    <div style={{ height: 3, background: "#EFE7FF", margin: "18px 0 8px" }} />
+    {items.map((it, i) => (
+      <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 22, padding: "12px 0" }}>
+        <div style={{ flex: "none", width: 50, height: 50, borderRadius: 14, background: it.ok ? "#22C55E" : "#EF4444", color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: BODY, fontWeight: 800, fontSize: 32 }}>{it.ok ? "✓" : "✕"}</div>
+        <div>
+          <div style={{ fontFamily: `${BODY}, "${EMOJI}"`, fontWeight: it.ok ? 800 : 600, fontSize: 40, lineHeight: 1.25, color: it.ok ? "#15803D" : "#8E8E93", textDecoration: it.ok ? "none" : "line-through", textDecorationThickness: 3 }}>{it.text}</div>
+          {it.note ? <div style={{ fontFamily: `"${HAND}", "${EMOJI}"`, fontSize: 50, lineHeight: 1.05, color: it.ok ? "#15803D" : "#DC2626" }}>{it.note}</div> : null}
+        </div>
+      </div>
+    ))}
+    {foco ? <div style={{ marginTop: 14, display: "flex", justifyContent: "center" }}><FocoStep text={foco.text} min={foco.min} width={800} /></div> : null}
+  </div>
+);
+
+// "plan vs reality" card: lilac PLAN row, then orange REALITY row (or a FOCO step when reality finally beats the plan)
+const VersusCard: React.FC<{ time: string; plan: string; reality?: string; foco?: Step }> = ({ time, plan, reality, foco }) => (
+  <div style={{ width: 880, borderRadius: 44, background: "rgba(11,10,22,0.94)", border: "2px solid rgba(167,139,250,0.35)", boxShadow: "0 30px 80px rgba(0,0,0,0.45)", padding: "30px 36px 36px" }}>
+    <div style={{ display: "inline-block", fontFamily: BODY, fontWeight: 800, fontSize: 30, color: "#FFFFFF", background: "#7C3AED", borderRadius: 14, padding: "6px 18px" }}>{time}</div>
+    <div style={{ marginTop: 22, fontFamily: BODY, fontWeight: 800, fontSize: 26, letterSpacing: 4, color: "#A78BFA" }}>THE PLAN</div>
+    <div style={{ fontFamily: `${BODY}, "${EMOJI}"`, fontWeight: 600, fontSize: 44, lineHeight: 1.25, color: "#B8B0CC", marginTop: 6 }}>{plan}</div>
+    <div style={{ height: 2, background: "rgba(167,139,250,0.25)", margin: "26px 0 22px" }} />
+    <div style={{ fontFamily: BODY, fontWeight: 800, fontSize: 26, letterSpacing: 4, color: foco ? "#A78BFA" : "#FB923C" }}>{foco ? "WHAT ACTUALLY HAPPENED" : "REALITY"}</div>
+    {reality ? <div style={{ fontFamily: `"${HAND}", "${EMOJI}"`, fontSize: 70, lineHeight: 1.1, color: "#FFFFFF", marginTop: 8 }}>{reality}</div> : null}
+    {foco ? <div style={{ marginTop: 16 }}><FocoStep text={foco.text} min={foco.min} width={808} /></div> : null}
+  </div>
+);
+
+// hook title for chat / notes / versus: purple audience label + white handwritten punchline
+const TopTitle: React.FC<{ lines?: string[]; duo: boolean }> = ({ lines, duo }) =>
+  lines ? (
+    <div style={{ position: "absolute", top: 210, left: 60, right: 60 }}>
+      {lines.map((l, i) => (
+        <div key={l} style={{ marginBottom: 12 }}>
+          {i === 0 ? <Bubble size={44} bg="#7C3AED" color="#FFFFFF">{l}</Bubble> : <Voice duo={duo} size={58}>{l}</Voice>}
+        </div>
+      ))}
+    </div>
+  ) : null;
+
+const ChatThread: React.FC<{ contact: string; time?: string; messages: ChatMsg[] }> = ({ contact, time, messages }) => (
+  <div style={{ width: 880, borderRadius: 44, background: "rgba(255,255,255,0.97)", boxShadow: "0 30px 80px rgba(0,0,0,0.35)", overflow: "hidden" }}>
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", padding: "22px 0 16px", background: "#F6F6F8", borderBottom: "2px solid #E5E5EA" }}>
+      <div style={{ width: 84, height: 84, borderRadius: 999, background: "linear-gradient(135deg, #A78BFA, #7C3AED)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: `"${EMOJI}"`, fontSize: 46 }}>🧠</div>
+      <div style={{ marginTop: 8, fontFamily: BODY, fontWeight: 700, fontSize: 30, color: DARK }}>{contact}</div>
+    </div>
+    <div style={{ padding: "18px 26px 30px" }}>
+      {time ? <div style={{ textAlign: "center", fontFamily: BODY, fontWeight: 600, fontSize: 24, color: "#8E8E93", marginBottom: 14 }}>{time}</div> : null}
+      {messages.map((m, i) =>
+        m.from === "foco" ? (
+          <div key={i} style={{ margin: "14px 0", display: "flex", justifyContent: "center" }}>
+            <FocoStep text={m.text} min={m.min} />
+          </div>
+        ) : (
+          <div key={i} style={{ display: "flex", justifyContent: m.from === "me" ? "flex-end" : "flex-start", margin: "8px 0" }}>
+            <div style={{ maxWidth: 620, padding: "16px 26px", borderRadius: 36, background: m.from === "me" ? "#0A84FF" : "#E9E9EB", color: m.from === "me" ? "#FFFFFF" : DARK, fontFamily: `${BODY}, "${EMOJI}"`, fontWeight: 600, fontSize: 40, lineHeight: 1.25 }}>{m.text}</div>
+          </div>
+        ),
+      )}
+    </div>
+  </div>
+);
+
+// FOCO's Sessions (calendar) day view with ONE task, drawn so the task name/minutes match the rest of the carousel
+// exactly, plus the optional one-tap AI breakdown button (it is a choice, never automatic).
+// breakdownButton=false hides the AI button (single-feature carousels that test capture only)
+// tasks = several tasks in the day (e.g. everything captured by voice); otherwise the single title/min/category
+const CalendarCard: React.FC<{ title?: string; min?: number; category?: string; tasks?: CalTask[]; breakdownButton?: boolean }> = ({ title, min, category, tasks, breakdownButton = true }) => {
+  const list: CalTask[] = tasks ?? [{ title: title ?? "", min: min ?? 0, category: category ?? "" }];
+  const many = list.length > 1;
+  return (
+  <div style={{ width: 860, borderRadius: 40, padding: "32px 32px 36px", background: "#0B0A16", border: "2px solid rgba(167,139,250,0.35)", boxShadow: "0 30px 80px rgba(0,0,0,0.45)" }}>
+    <div style={{ fontFamily: BODY, fontWeight: 600, fontSize: 64, color: "#FFFFFF", lineHeight: 1 }}>Sunday</div>
+    <div style={{ fontFamily: BODY, fontWeight: 600, fontSize: 24, letterSpacing: 3, color: "#B8B0CC", marginTop: 8 }}>JUN 2026</div>
+    <div style={{ display: "flex", justifyContent: "space-between", marginTop: 26 }}>
+      {["M 22", "T 23", "W 24", "T 25", "F 26", "S 27", "S 28"].map((d, i) => (
+        <div key={d + i} style={{ width: 96, padding: "12px 0", borderRadius: 20, textAlign: "center", background: i === 6 ? "#7C3AED" : "transparent", fontFamily: BODY, color: i === 6 ? "#FFFFFF" : "#7d738f" }}>
+          <div style={{ fontSize: 22, fontWeight: 600 }}>{d.split(" ")[0]}</div>
+          <div style={{ fontSize: 34, fontWeight: 700 }}>{d.split(" ")[1]}</div>
+        </div>
+      ))}
+    </div>
+    <div style={{ marginTop: 26, padding: "14px 24px", borderRadius: 999, border: "2px solid rgba(255,255,255,0.12)", fontFamily: BODY, fontWeight: 700, fontSize: 24, letterSpacing: 3, color: "#D6D0E4" }}>ANYTIME ({list.length})</div>
+    {list.map((t) => (
+    <div key={t.title} style={{ marginTop: many ? 12 : 18, padding: many ? "18px 24px" : "26px 26px", borderRadius: 28, background: "rgba(255,255,255,0.05)", border: "2px solid rgba(167,139,250,0.25)", display: "flex", alignItems: "center", gap: 24 }}>
+      <div style={{ width: many ? 44 : 54, height: many ? 44 : 54, borderRadius: 999, border: "4px solid #7C3AED", flexShrink: 0 }} />
+      <div>
+        <div style={{ fontFamily: BODY, fontWeight: 700, fontSize: many ? 40 : 48, color: "#FFFFFF", lineHeight: 1.1 }}>{t.title}</div>
+        <div style={{ fontFamily: BODY, fontWeight: 600, fontSize: many ? 26 : 30, color: "#B8B0CC", marginTop: 4 }}>{t.min} min · {t.category}</div>
+      </div>
+    </div>
+    ))}
+    {breakdownButton ? (<>
+    <div style={{ marginTop: 22, padding: "24px 20px", borderRadius: 24, border: "3px dashed #A78BFA", textAlign: "center", fontFamily: BODY, fontWeight: 800, fontSize: 32, letterSpacing: 2, color: "#C4B5FD", background: "rgba(124,58,237,0.15)" }}>
+      <span style={{ fontFamily: `"${EMOJI}"` }}>✨</span> MAKE SUBTASKS USING FOCO <span style={{ fontFamily: `"${EMOJI}"` }}>👆</span>
+    </div>
+    <div style={{ marginTop: 12, textAlign: "center", fontFamily: BODY, fontWeight: 600, fontSize: 28, color: "#7d738f" }}>optional: only if you tap it</div>
+    </>) : null}
+  </div>
+  );
+};
+
+// FOCO's three ways to capture a task (the app's "Chat it / Speak it / Scan it" cards, same colors), drawn large
+// so the input options read on a phone instead of shrinking a full screenshot.
+const INPUTS = [
+  { icon: "🎙️", title: "Speak it", sub: "say it out loud, FOCO gets it", bg: "#2563EB" },
+  { icon: "📷", title: "Scan it", sub: "snap a note or a list", bg: "#F59E0B" },
+  { icon: "💬", title: "Chat it", sub: "type your task or idea", bg: "#7C3AED" },
+];
+const InputOptions: React.FC = () => (
+  <div style={{ width: 860, borderRadius: 40, padding: "30px 30px 34px", background: "#130A22", border: "2px solid rgba(167,139,250,0.35)", boxShadow: "0 30px 80px rgba(0,0,0,0.45)" }}>
+    <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 22 }}>
+      <Img src={staticFile("apps/foco-icon.png")} style={{ width: 46, height: 46, borderRadius: 12 }} />
+      <div style={{ fontFamily: BODY, fontWeight: 700, fontSize: 24, letterSpacing: 3, color: "#A78BFA" }}>WHAT'S ON YOUR MIND?</div>
+    </div>
+    {INPUTS.map((o) => (
+      <div key={o.title} style={{ display: "flex", alignItems: "center", gap: 28, padding: "22px 24px", marginTop: 14, borderRadius: 28, background: "rgba(255,255,255,0.05)", border: "2px solid rgba(167,139,250,0.18)" }}>
+        <div style={{ width: 110, height: 110, borderRadius: 999, background: o.bg, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: `"${EMOJI}"`, fontSize: 58, flexShrink: 0, boxShadow: `0 0 30px ${o.bg}88` }}>{o.icon}</div>
+        <div>
+          <div style={{ fontFamily: HEAD, fontWeight: 800, fontSize: 52, color: "#FFFFFF", lineHeight: 1.1 }}>{o.title}</div>
+          <div style={{ fontFamily: BODY, fontWeight: 600, fontSize: 34, color: "#D6D0E4", marginTop: 4 }}>{o.sub}</div>
+        </div>
+      </div>
+    ))}
+  </div>
+);
+
+// Mimics FOCO's focus mode: one step on screen, a timer, and the ambient sound playing (real sound names:
+// Silence, Study, Jazzy, Chill, Rainy). Shows the "one step at a time, with music" benefit instead of claiming it.
+const FocusCard: React.FC<{ stepNo: number; stepTotal: number; step: string; min: number; sound: string }> = ({ stepNo, stepTotal, step, min, sound }) => (
+  <div style={{ width: 780, borderRadius: 40, padding: "30px 36px 34px", background: "#130A22", border: "2px solid rgba(167,139,250,0.35)", boxShadow: "0 30px 80px rgba(0,0,0,0.45)", textAlign: "center" }}>
+    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+        <Img src={staticFile("apps/foco-icon.png")} style={{ width: 46, height: 46, borderRadius: 12 }} />
+        <div style={{ fontFamily: BODY, fontWeight: 700, fontSize: 24, letterSpacing: 3, color: "#A78BFA" }}>FOCUS MODE</div>
+      </div>
+      <div style={{ fontFamily: BODY, fontWeight: 700, fontSize: 26, color: "#D6D0E4", padding: "6px 16px", borderRadius: 999, border: "2px solid rgba(167,139,250,0.35)" }}>step {stepNo} of {stepTotal}</div>
+    </div>
+    <div style={{ marginTop: 26, fontFamily: HEAD, fontWeight: 800, fontSize: 46, lineHeight: 1.15, color: "#FFFFFF" }}>{step}</div>
+    <div style={{ position: "relative", width: 250, height: 250, margin: "28px auto 0" }}>
+      <svg width="250" height="250" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="44" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="6" />
+        <circle cx="50" cy="50" r="44" fill="none" stroke="#7C3AED" strokeWidth="6" strokeLinecap="round" strokeDasharray="190 276" transform="rotate(-90 50 50)" />
+      </svg>
+      <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <Img src={staticFile("mascots/foco_state_3_focus.png")} style={{ height: 150 }} />
+      </div>
+    </div>
+    <div style={{ marginTop: 10, fontFamily: HEAD, fontWeight: 800, fontSize: 60, color: "#FFFFFF" }}>{String(min).padStart(2, "0")}:00</div>
+    <div style={{ marginTop: 18, display: "inline-flex", alignItems: "center", gap: 14, padding: "12px 26px", borderRadius: 999, background: "rgba(124,58,237,0.25)", border: "2px solid #A78BFA" }}>
+      <svg width="30" height="30" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13" fill="none" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" /><circle cx="6" cy="18" r="3" fill="#fff" /><circle cx="18" cy="16" r="3" fill="#fff" /></svg>
+      <span style={{ fontFamily: BODY, fontWeight: 700, fontSize: 32, color: "#FFFFFF" }}>{sound} sounds playing</span>
+    </div>
+  </div>
+);
+
+// Defaults keep the sticker inside the safe band and clear of the bubbles/cards for each layout
+const STICKER_POS: Record<string, [number, number]> = {
+  hook: [800, 470], pair: [790, 880], caption: [790, 880], step: [800, 880], card: [820, 470],
+  focus: [40, 430], phone: [800, 900], inputs: [820, 300], calendar: [820, 300], scan: [800, 900], chat: [800, 1250],
+  notes: [800, 1250],
+  versus: [800, 1250],
+  checklist: [800, 1250], life: [800, 1150], "final-card": [80, 330], "final-phone": [700, 1000],
+};
+const Sticker: React.FC<{ emoji: string; pos: [number, number] }> = ({ emoji, pos }) => (
+  <div style={{ position: "absolute", left: pos[0], top: pos[1], fontFamily: `"${EMOJI}"`, fontSize: 130, lineHeight: 1, transform: "rotate(12deg)", filter: "drop-shadow(0 10px 18px rgba(0,0,0,0.35))", zIndex: 5 }}>
+    {emoji}
+  </div>
+);
+
+export const SpecSlideView: React.FC<{ spec: Spec; index: number }> = (props) => {
+  const s = props.spec.slides[props.index];
+  return (
+    <AbsoluteFill>
+      <SlideBody {...props} />
+      {s.sticker ? <Sticker emoji={s.sticker} pos={s.stickerPos ?? STICKER_POS[s.layout]} /> : null}
+    </AbsoluteFill>
+  );
+};
+
+// The "inner voice" line of a slide (comment / punchline). Duo design: white bubble, handwriting, ~1.3x size.
+const Voice: React.FC<{ duo: boolean; size: number; children: string }> = ({ duo, size, children }) =>
+  duo ? <Bubble size={Math.round(size * 1.3)} bg="#FFFFFF" color={DARK} font={HAND}>{children}</Bubble> : <Bubble size={size}>{children}</Bubble>;
+
+const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => {
+  const s = spec.slides[index];
+  const duo = spec.design !== "classic";
+  // finals may reuse another slide's photo (blurred)
+  const photo = `${spec.slug}/${("photo" in s && s.photo) || s.id}`;
+
+  switch (s.layout) {
+    case "hook":
+      return (
+        <AbsoluteFill style={{ background: "#000" }}>
+          <Photo name={photo} />
+          {/* textTop moves the hook bubbles off a face (keep the block above SAFE.bottom) */}
+          {/* below y 850 the like/comment rail sits on the right, so low hook text gets the narrower right margin */}
+          <div style={{ position: "absolute", top: s.textTop ?? 640, left: 60, right: (s.textTop ?? 640) >= 700 ? SAFE.rightLow : 60 }}>
+            {s.hookStyle === "callout" || (duo && s.lines.length >= 3)
+              ? // hierarchy for audience call-out hooks: purple label (who it's for) -> lilac setup -> big white punchline
+                s.lines.map((l, i) => (
+                  <div key={l} style={{ marginBottom: 14 }}>
+                    {i === 0 ? (
+                      <Bubble size={44} bg="#7C3AED" color="#FFFFFF">{l}</Bubble>
+                    ) : i === s.lines.length - 1 ? (
+                      // punchFont "hand": the "me" punchline in handwriting (Caveat) so it reads like her own voice
+                      s.punchFont === "hand" || duo ? <Bubble size={84} bg="#FFFFFF" color={DARK} font={HAND}>{l}</Bubble> : <Bubble size={66} bg="#FFFFFF" color={DARK}>{l}</Bubble>
+                    ) : (
+                      <Bubble size={54}>{l}</Bubble>
+                    )}
+                  </div>
+                ))
+              : s.lines.map((l, i) => (
+                  <div key={l} style={{ marginBottom: 14 }}>
+                    {duo && i === s.lines.length - 1 && i > 0 ? <Voice duo size={60}>{l}</Voice> : <Bubble size={i === 0 ? 64 : 54}>{l}</Bubble>}
+                  </div>
+                ))}
+            {s.tag ? <Bubble size={40} bg="#FFFFFF" color={DARK}>{s.tag}</Bubble> : null}
+          </div>
+        </AbsoluteFill>
+      );
+    case "pair":
+      return (
+        <AbsoluteFill style={{ background: "#000" }}>
+          <Photo name={photo} />
+          <div style={{ position: "absolute", top: 230, left: 60, right: 60 }}>
+            <Tag bg="#7C3AED">{s.topLabel}</Tag>
+            <Bubble size={54}>{s.top}</Bubble>
+          </div>
+          <div style={{ position: "absolute", top: 1200, left: SAFE.left, right: SAFE.rightLow }}>
+            <Tag bg="#FB923C">{s.bottomLabel}</Tag>
+            <Bubble size={48} bg="#FFFFFF" color={DARK}>{s.bottom}</Bubble>
+          </div>
+        </AbsoluteFill>
+      );
+    case "card":
+      return (
+        <AbsoluteFill style={{ background: "#000" }}>
+          <Photo name={photo} />
+          <div style={{ position: "absolute", top: 250, left: 60, right: 60 }}>
+            <Bubble size={56}>{s.label}</Bubble>
+            {s.comment ? (
+              <>
+                <div style={{ height: 12 }} />
+                <Voice duo={duo} size={44}>{s.comment}</Voice>
+              </>
+            ) : null}
+          </div>
+          <div style={{ position: "absolute", top: 560, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
+            <FocoCard title={s.title} steps={s.steps} />
+          </div>
+          {s.result ? (
+            <div style={{ position: "absolute", top: 1330, left: SAFE.left, right: SAFE.rightLow }}>
+              <Bubble bg="#DCFCE7" color="#15803D" size={52}>{s.result}</Bubble>
+            </div>
+          ) : null}
+        </AbsoluteFill>
+      );
+    case "step":
+      return (
+        <AbsoluteFill style={{ background: "#000" }}>
+          <Photo name={photo} />
+          <div style={{ position: "absolute", top: 260, left: 60, right: 60 }}>
+            <Bubble size={58}>{s.label}</Bubble>
+          </div>
+          <div style={{ position: "absolute", top: 1040, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
+            <StepCard step={s.step} min={s.min} />
+          </div>
+        </AbsoluteFill>
+      );
+    case "caption":
+      return (
+        <AbsoluteFill style={{ background: "#000" }}>
+          <Photo name={photo} />
+          {s.time ? <TimeChip time={s.time} /> : null}
+          {/* anchored from the bottom so wrapped lines grow upward, never into TikTok's bottom overlay */}
+          <div style={{ position: "absolute", bottom: 1920 - SAFE.bottom + 20, left: SAFE.left, right: SAFE.rightLow }}>
+            <Bubble size={56}>{s.label}</Bubble>
+            {s.comment ? (
+              <>
+                <div style={{ height: 14 }} />
+                <Voice duo={duo} size={46}>{s.comment}</Voice>
+              </>
+            ) : null}
+          </div>
+        </AbsoluteFill>
+      );
+    case "focus": {
+      // card starts below however many lines the label + comment wrap to (~30 / ~36 chars per line)
+      const cardTop = 220 + Math.ceil(s.label.length / 30) * 84 + (s.comment ? 12 + Math.ceil(s.comment.length / 36) * 72 : 0) + 34;
+      return (
+        <AbsoluteFill style={{ background: "#000" }}>
+          <Photo name={photo} />
+          <div style={{ position: "absolute", top: 220, left: 60, right: 60 }}>
+            <Bubble size={54}>{s.label}</Bubble>
+            {s.comment ? (
+              <>
+                <div style={{ height: 12 }} />
+                <Voice duo={duo} size={44}>{s.comment}</Voice>
+              </>
+            ) : null}
+          </div>
+          <div style={{ position: "absolute", top: cardTop, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
+            <FocusCard stepNo={s.stepNo} stepTotal={s.stepTotal} step={s.step} min={s.min} sound={s.sound} />
+          </div>
+          {s.result ? (
+            <div style={{ position: "absolute", top: 1380, left: SAFE.left, right: SAFE.rightLow }}>
+              <Bubble bg="#DCFCE7" color="#15803D" size={48}>{s.result}</Bubble>
+            </div>
+          ) : null}
+        </AbsoluteFill>
+      );
+    }
+    case "chat":
+    case "notes":
+    case "versus":
+    case "checklist":
+      // sharp narrator photo, card bottom-anchored at y 1470 so her face shows above it; title only on the hook
+      return (
+        <AbsoluteFill style={{ background: "#000" }}>
+          <Photo name={photo} />
+          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(10,4,16,0.45) 0%, transparent 25%, transparent 55%, rgba(10,4,16,0.35) 100%)" }} />
+          <TopTitle lines={s.title} duo={duo} />
+          <div style={{ position: "absolute", bottom: 1920 - 1470, left: 70 }}>
+            {s.layout === "chat" ? <ChatThread contact={s.contact ?? "My brain"} time={s.time} messages={s.messages} /> : null}
+            {s.layout === "notes" ? <NotesPage noteTitle={s.noteTitle} date={s.date} items={s.items} scribble={s.scribble} foco={s.foco} /> : null}
+            {s.layout === "checklist" ? <Checklist heading={s.heading} items={s.items} foco={s.foco} /> : null}
+            {s.layout === "versus" ? <VersusCard time={s.time} plan={s.plan} reality={s.reality} foco={s.foco} /> : null}
+          </div>
+        </AbsoluteFill>
+      );
+    case "scan":
+      return (
+        <AbsoluteFill style={{ background: "#000" }}>
+          <Photo name={photo} blur />
+          <div style={{ position: "absolute", top: 220, left: 60, right: 60 }}>
+            <Bubble size={54}>{s.label}</Bubble>
+            {s.comment ? (
+              <>
+                <div style={{ height: 12 }} />
+                <Voice duo={duo} size={44}>{s.comment}</Voice>
+              </>
+            ) : null}
+          </div>
+          <div style={{ position: "absolute", top: 420, left: 0, right: 0, display: "flex", justifyContent: "center", transform: "rotate(2deg)" }}>
+            <ScanPhone items={s.items} />
+          </div>
+          {s.result ? (
+            <div style={{ position: "absolute", top: 1400, left: SAFE.left, right: SAFE.rightLow }}>
+              <Bubble bg="#DCFCE7" color="#15803D" size={46}>{s.result}</Bubble>
+            </div>
+          ) : null}
+        </AbsoluteFill>
+      );
+    case "life": {
+      // A real-life moment (full-bleed photo) + how FOCO handles it (screenshot or drawn screen inset beside it)
+      const top = 220 + Math.ceil(s.label.length / 30) * 84 + (s.comment ? 12 + Math.ceil(s.comment.length / 36) * 72 : 0) + 30;
+      const maxH = 1440 - top - (s.chip ? 90 : 0);
+      const ins = s.inset;
+      const side = s.side ?? "left";
+      let box: React.ReactNode;
+      let w = 560;
+      let h = 0;
+      if ("image" in ins) {
+        const [y0, y1] = ins.crop ?? [0, 1];
+        w = Math.min(700, Math.round(maxH / (ins.aspect * (y1 - y0))));
+        h = Math.round(w * ins.aspect * (y1 - y0));
+        box = <Img src={staticFile(ins.image)} style={{ position: "absolute", left: 0, top: -Math.round(w * ins.aspect * y0), width: w, height: Math.round(w * ins.aspect) }} />;
+      } else {
+        // drawn screens are 780-860 wide; scale them into the inset width
+        const inner = ins.ui === "breakdown" ? <FocoCard title={ins.title} steps={ins.steps} /> : ins.ui === "focus" ? <FocusCard stepNo={ins.stepNo} stepTotal={ins.stepTotal} step={ins.step} min={ins.min} sound={ins.sound} /> : <CalendarCard title={ins.title} min={ins.min} category={ins.category} />;
+        const base = ins.ui === "calendar" ? 860 : 780;
+        w = 720;
+        // zoom (not transform) so the scaled screen also shrinks its layout box; Remotion renders in Chromium
+        box = <div style={{ zoom: w / base, width: base }}>{inner}</div>;
+      }
+      // right-side insets stop at x 950 so the screen's text stays clear of TikTok's like/comment rail
+      const left = side === "left" ? 60 : 1080 - 130 - w;
+      return (
+        <AbsoluteFill style={{ background: "#000" }}>
+          <Photo name={photo} />
+          <div style={{ position: "absolute", top: 220, left: 60, right: 60 }}>
+            <Bubble size={54}>{s.label}</Bubble>
+            {s.comment ? (
+              <>
+                <div style={{ height: 12 }} />
+                <Voice duo={duo} size={44}>{s.comment}</Voice>
+              </>
+            ) : null}
+          </div>
+          <div style={{ position: "absolute", top, left, width: w, transform: `rotate(${side === "left" ? -2 : 2}deg)` }}>
+            <div style={{ position: "relative", width: w, height: h || undefined, borderRadius: 34, overflow: "hidden", border: "6px solid #FFFFFF", boxShadow: "0 30px 70px rgba(0,0,0,0.5)", background: "#0B0A16" }}>{box}</div>
+            {s.chip ? (
+              <div style={{ marginTop: 18, display: "flex", justifyContent: "center" }}>
+                <Bubble bg="#DCFCE7" color="#15803D" size={40}>{s.chip}</Bubble>
+              </div>
+            ) : null}
+          </div>
+        </AbsoluteFill>
+      );
+    }
+    case "calendar": {
+      const top = 220 + Math.ceil(s.label.length / 30) * 84 + (s.comment ? 12 + Math.ceil(s.comment.length / 36) * 72 : 0) + 40;
+      return (
+        <AbsoluteFill style={{ background: "#000" }}>
+          <Photo name={photo} />
+          <div style={{ position: "absolute", top: 220, left: 60, right: 60 }}>
+            <Bubble size={54}>{s.label}</Bubble>
+            {s.comment ? (
+              <>
+                <div style={{ height: 12 }} />
+                <Voice duo={duo} size={44}>{s.comment}</Voice>
+              </>
+            ) : null}
+          </div>
+          <div style={{ position: "absolute", top, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
+            <CalendarCard title={s.title} min={s.min} category={s.category} tasks={s.tasks} breakdownButton={s.breakdownButton} />
+          </div>
+          {s.result ? (
+            <div style={{ position: "absolute", top: 1380, left: SAFE.left, right: SAFE.rightLow }}>
+              <Bubble bg="#DCFCE7" color="#15803D" size={48}>{s.result}</Bubble>
+            </div>
+          ) : null}
+        </AbsoluteFill>
+      );
+    }
+    case "inputs": {
+      const top = 220 + Math.ceil(s.label.length / 30) * 84 + (s.comment ? 12 + Math.ceil(s.comment.length / 36) * 72 : 0) + 40;
+      return (
+        <AbsoluteFill style={{ background: "#000" }}>
+          <Photo name={photo} />
+          <div style={{ position: "absolute", top: 220, left: 60, right: 60 }}>
+            <Bubble size={54}>{s.label}</Bubble>
+            {s.comment ? (
+              <>
+                <div style={{ height: 12 }} />
+                <Voice duo={duo} size={44}>{s.comment}</Voice>
+              </>
+            ) : null}
+          </div>
+          <div style={{ position: "absolute", top, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
+            <InputOptions />
+          </div>
+          {s.result ? (
+            <div style={{ position: "absolute", top: 1380, left: SAFE.left, right: SAFE.rightLow }}>
+              <Bubble bg="#DCFCE7" color="#15803D" size={48}>{s.result}</Bubble>
+            </div>
+          ) : null}
+        </AbsoluteFill>
+      );
+    }
+    case "phone": {
+      // a real FOCO App Store screenshot mid-carousel, so the in-app process (capture, calendar, sounds) is shown, not claimed
+      const top = 220 + Math.ceil(s.label.length / 30) * 84 + (s.comment ? 12 + Math.ceil(s.comment.length / 36) * 72 : 0) + 30;
+      const phoneH = (s.result ? 1350 : 1460) - top;
+      return (
+        <AbsoluteFill style={{ background: "#000" }}>
+          <Photo name={photo} />
+          <AbsoluteFill style={{ background: "rgba(20,10,34,0.18)" }} />
+          <div style={{ position: "absolute", top: 220, left: 60, right: 60 }}>
+            <Bubble size={54}>{s.label}</Bubble>
+            {s.comment ? (
+              <>
+                <div style={{ height: 12 }} />
+                <Voice duo={duo} size={44}>{s.comment}</Voice>
+              </>
+            ) : null}
+          </div>
+          {s.crop ? (
+            // crop: [y0, y1] = the vertical slice of a raw phone screen (0-1) to show large, so its text stays readable
+            (() => {
+              const [y0, y1] = s.crop;
+              const aspect = s.aspect ?? 2.167;
+              const w = Math.min(880, Math.round(phoneH / ((y1 - y0) * aspect)));
+              const h = Math.round(w * aspect * (y1 - y0));
+              return (
+                <div style={{ position: "absolute", top, left: (1080 - w) / 2, width: w, height: h, borderRadius: 36, overflow: "hidden", border: "2px solid rgba(167,139,250,0.35)", boxShadow: "0 30px 80px rgba(0,0,0,0.5)" }}>
+                  <Img src={staticFile(s.image ?? `apps/foco-${s.screenshot}.png`)} style={{ position: "absolute", left: 0, top: -Math.round(w * aspect * y0), width: w, height: Math.round(w * aspect) }} />
+                </div>
+              );
+            })()
+          ) : (
+          <div style={{ position: "absolute", top, left: (1080 - Math.round(phoneH / 2.17)) / 2, transform: "rotate(-2deg)", width: Math.round(phoneH / 2.17), height: phoneH, borderRadius: 54, overflow: "hidden", border: "11px solid #0d0a14", boxShadow: "0 40px 100px rgba(0,0,0,0.55)" }}>
+            <Img src={staticFile(s.image ?? `apps/foco-${s.screenshot}.png`)} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }} />
+          </div>
+          )}
+          {s.result ? (
+            <div style={{ position: "absolute", top: 1380, left: SAFE.left, right: SAFE.rightLow }}>
+              <Bubble bg="#DCFCE7" color="#15803D" size={48}>{s.result}</Bubble>
+            </div>
+          ) : null}
+        </AbsoluteFill>
+      );
+    }
+    case "final-card":
+    case "final-phone": {
+      // Everything below the headline bubbles flows from where they end; the ask + CTA stay pinned above TikTok's bottom overlay
+      // ~34 chars fit on one 48px bubble line; count wrapped lines, not array items
+      const rows = s.lines.reduce((n, l) => n + Math.ceil(l.length / 34), 0);
+      const below = 200 + rows * 82 + 24;
+      // the ask is bottom-anchored and grows upward, so a 2-line ask shrinks the proof above it
+      const askExtra = (Math.ceil(s.ask.length / 30) - 1) * 70;
+      const phoneH = 1080 - below - askExtra;
+      return (
+        <AbsoluteFill style={{ background: "#000" }}>
+          <Photo name={photo} blur />
+          <AbsoluteFill style={{ background: "rgba(20,10,34,0.25)" }} />
+          <div style={{ position: "absolute", top: 200, left: 60, right: 60 }}>
+            {s.lines.map((l, i) => (
+              <div key={l} style={{ marginBottom: 10 }}>
+                {duo && i === s.lines.length - 1 && s.lines.length > 1 ? <Voice duo size={48}>{l}</Voice> : <Bubble size={48}>{l}</Bubble>}
+              </div>
+            ))}
+          </div>
+          {s.layout === "final-card" && s.steps.length === 1 ? (
+            // simple ending: just the ONE first step, big, with the mascot (no 4-step plan)
+            <>
+              <div style={{ position: "absolute", top: Math.max(520, below + 120), left: 0, right: 0, display: "flex", justifyContent: "center" }}>
+                <FocoStep text={s.steps[0].text} min={s.steps[0].min} width={900} />
+              </div>
+              <Mascot style={{ left: 420, top: Math.max(520, below + 120) + 190, height: 260 }} />
+            </>
+          ) : s.layout === "final-card" ? (
+            <>
+              {/* shrink the card to fit between the headline bubbles and the (bottom-anchored) ask; ~270px + 120px/step unscaled */}
+              <div style={{ position: "absolute", top: Math.max(400, below), left: 0, right: 0, display: "flex", justifyContent: "center", transform: `scale(${Math.min(askExtra ? 0.8 : 0.86, (1190 - 100 - askExtra - 20 - Math.max(400, below)) / (270 + s.steps.length * 120))})`, transformOrigin: "top center" }}>
+                <FocoCard title={s.title} steps={s.steps} />
+              </div>
+              <Mascot style={{ left: 770, top: Math.max(400, below) - 70, height: 210 }} />
+            </>
+          ) : (
+            <>
+              {s.image ? (
+                // a creative (e.g. snap-list-to-day) shown whole as a white-framed card, keeping its own aspect
+                <div style={{ position: "absolute", top: below, left: 110, transform: "rotate(-3deg)", width: Math.round(phoneH / (s.aspect ?? 1.756)), height: phoneH, borderRadius: 34, overflow: "hidden", border: "6px solid #FFFFFF", boxShadow: "0 40px 100px rgba(0,0,0,0.55)" }}>
+                  <Img src={staticFile(s.image)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                </div>
+              ) : (
+              <div style={{ position: "absolute", top: below, left: 170, transform: "rotate(-3deg)", width: Math.round(phoneH / 2.17), height: phoneH, borderRadius: 54, overflow: "hidden", border: "11px solid #0d0a14", boxShadow: "0 40px 100px rgba(0,0,0,0.55)" }}>
+                <Img src={staticFile(`apps/foco-${s.screenshot ?? 3}.png`)} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }} />
+              </div>
+              )}
+              <Mascot style={{ left: (s.image ? 110 + Math.round(phoneH / (s.aspect ?? 1.756)) : 170 + Math.round(phoneH / 2.17)) + 50, top: below + phoneH * 0.32, height: 330 }} />
+            </>
+          )}
+          <div style={{ position: "absolute", bottom: 1920 - 1190, left: SAFE.left, right: SAFE.rightLow }}>
+            <Bubble bg="#FFFFFF" color={DARK} size={46}>{s.ask}</Bubble>
+          </div>
+          <DownloadCTA />
+        </AbsoluteFill>
+      );
+    }
+  }
+};
+
+// Instagram 4:5 (1080x1350): IG crops 9:16 carousel images, cutting the top text. Every readable element already
+// sits inside TikTok's safe band (y 180-1500), so render the same 1920px slide and show exactly that band.
+export const IG_OFFSET = 140;
+export const SpecSlideIG: React.FC<{ spec: Spec; index: number }> = (props) => (
+  <AbsoluteFill style={{ overflow: "hidden", background: "#000" }}>
+    <div style={{ position: "absolute", left: 0, top: -IG_OFFSET, width: 1080, height: 1920 }}>
+      <SpecSlideView {...props} />
+    </div>
+  </AbsoluteFill>
+);

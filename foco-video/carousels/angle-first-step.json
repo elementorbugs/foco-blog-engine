@@ -1,0 +1,120 @@
+{
+  "slug": "angle-first-step",
+  "tiktok": {
+    "caption": "I didn't need to finish the project. I just needed to start step one. 🫠\n\nA whole website for a new client. My brain said that's 40 hours, so I didn't even open it for a week.\n\nSo I told FOCO about it. It broke it into four tiny steps. Step 1 was opening my last site as a template. Three minutes, study sounds on. Step 2 felt easy after that.\n\nWhat project are you putting off? 👇\nSave this for the next time you're stuck 📌\n\nYou don't need another to-do list. You need help starting. The app on the slides is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#taskparalysis",
+      "#procrastination",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "I didn't need to finish the project. I just needed to start step one. 🫠\n\nA whole website for a new client. My brain said that's 40 hours, so I didn't even open it for a week.\n\nSo I told FOCO about it. It broke it into four tiny steps. Step 1 was opening my last site as a template. Three minutes, study sounds on. Step 2 felt easy after that.\n\nYou don't need another to-do list. You need help starting.\n\n📌 Save this for the next time you're stuck, and send it to a freelancer friend who gets it.\n💜 Try FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#adhdwomen",
+      "#taskparalysis",
+      "#procrastination"
+    ],
+    "altText": "Carousel of 6 slides about a freelance woman with ADHD who can't start a work task (Build client website). FOCO breaks it into four tiny steps and she starts step 1 with a short timer and study sounds."
+  },
+  "slides": [
+    {
+      "layout": "hook",
+      "id": "hook",
+      "own": "carousels/own/maya/nine-8.jpg",
+      "lines": [
+        "ADHD freelancers:",
+        "Task: build a whole website.",
+        "Me: can't even open it 🫠"
+      ],
+      "textTop": 1100
+    },
+    {
+      "layout": "caption",
+      "id": "pain1",
+      "own": "carousels/own/maya/email-1.jpg",
+      "label": "A whole website for a new client.",
+      "comment": "My brain said 40 hours 😵‍💫"
+    },
+    {
+      "layout": "caption",
+      "id": "pain2",
+      "own": "carousels/own/maya/email-7.jpg",
+      "label": "So I didn't even open it.",
+      "comment": "For a whole week."
+    },
+    {
+      "layout": "card",
+      "id": "turn",
+      "own": "carousels/own/maya/breakdown-6.jpg",
+      "label": "So I told FOCO about it.",
+      "comment": "It broke it into four tiny steps.",
+      "title": "Build client website",
+      "steps": [
+        {
+          "text": "Open last site as template",
+          "min": 3
+        },
+        {
+          "text": "Swap logo + colors",
+          "min": 10
+        },
+        {
+          "text": "Write the home page",
+          "min": 25
+        },
+        {
+          "text": "Send preview link",
+          "min": 2
+        }
+      ],
+      "result": "Step 1 takes 3 minutes ✅"
+    },
+    {
+      "layout": "focus",
+      "id": "focus",
+      "own": "carousels/own/maya/focus-6.jpg",
+      "label": "Just step 1. A 3-minute timer.",
+      "comment": "Study sounds on.",
+      "stepNo": 1,
+      "stepTotal": 4,
+      "step": "Open last site as template",
+      "min": 3,
+      "sound": "Study",
+      "result": "Step 2 felt easy after that ✅"
+    },
+    {
+      "layout": "final-card",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "You don't need another to-do list.",
+        "You need help starting 💜"
+      ],
+      "title": "Build client website",
+      "steps": [
+        {
+          "text": "Open last site as template",
+          "min": 3
+        },
+        {
+          "text": "Swap logo + colors",
+          "min": 10
+        },
+        {
+          "text": "Write the home page",
+          "min": 25
+        },
+        {
+          "text": "Send preview link",
+          "min": 2
+        }
+      ],
+      "ask": "What project are you putting off? 👇"
+    }
+  ]
+}

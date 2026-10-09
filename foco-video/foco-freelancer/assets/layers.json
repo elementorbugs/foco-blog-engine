@@ -1,0 +1,23 @@
+{
+  "assets/user/a-39740cca-a-75c2c850-foco-icon.png": {
+    "textZone": {
+      "region": "top",
+      "luminance": 0.24,
+      "busy": 0.158
+    }
+  },
+  "assets/user/a-f3753e44-a-3157030f-app-store.png": {
+    "textZone": {
+      "region": "top",
+      "luminance": 0.117,
+      "busy": 0.577
+    }
+  },
+  "assets/user/a-e3c4c0a3-a-20e23b4b-google-play.png": {
+    "textZone": {
+      "region": "bottom",
+      "luminance": 0.249,
+      "busy": 0.23
+    }
+  }
+}

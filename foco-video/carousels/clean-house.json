@@ -1,0 +1,110 @@
+{
+  "slug": "clean-house",
+  "tiktok": {
+    "caption": "how to clean the whole house with ADHD (stop cleaning room by room) 🧽\n\ncleaned for 3 hours and the house looks the same? clean by category instead: trash from every room first, then all dishes, then all clothes. short rounds, and do the \"looks clean\" pass before any deep cleaning. after round 1 the whole house looks better.\n\nhow long did YOUR last clean take? 👇\nsave this for cleaning day 📌\n\nthe app on the last slide is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#adhdcleaning",
+      "#cleaningmotivation",
+      "#cleaninghacks",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "How to clean the whole house with ADHD: clean by category, not by room 🧽\n\nIf you cleaned for 3 hours and the house looks the same, it's not you. It's the method.\n\n1. Clean by category: one type of mess, whole house\n2. Short rounds: trash, then dishes, then clothes, then surfaces\n3. Do the \"looks clean\" pass before any deep cleaning\n\nAfter round 1 (5 minutes) the WHOLE house looks better, and that's the push for round 2.\n\n📌 Save this for cleaning day, and send it to someone who always gets stuck in the kitchen.\n💜 I snap a photo of the mess and FOCO splits it into rounds, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdtips",
+      "#adhdcleaning",
+      "#cleaningmotivation",
+      "#cleaninghacks"
+    ],
+    "altText": "Carousel of 7 photos of a home being cleaned, with text explaining an ADHD cleaning method: clean by category instead of room by room, in short rounds, with a quick looks-clean pass first. The last slide shows the FOCO app."
+  },
+  "slides": [
+    {
+      "layout": "hook",
+      "id": "hook",
+      "query": "tired woman sitting on living room floor with cleaning supplies",
+      "lines": [
+        "Cleaned for 3 hours, house looks the same?",
+        "it's not you, it's the method 💀"
+      ],
+      "pick": 5
+    },
+    {
+      "layout": "pair",
+      "id": "kitchen",
+      "query": "woman scrubbing kitchen counter",
+      "topLabel": "THE TIPS SAY",
+      "top": "clean one room at a time",
+      "bottomLabel": "WHAT HAPPENS TO ME",
+      "bottom": "3 hours. still in the kitchen 🫠",
+      "pick": 3
+    },
+    {
+      "layout": "caption",
+      "id": "category",
+      "query": "person carrying laundry basket through hallway at home",
+      "label": "so I clean by category, not by room",
+      "comment": "one type of mess, whole house",
+      "pick": 2
+    },
+    {
+      "layout": "card",
+      "id": "rounds",
+      "query": "trash bag on floor in apartment hallway",
+      "label": "the whole house, in short rounds",
+      "comment": "each round is small on purpose",
+      "title": "Clean the house",
+      "steps": [
+        {
+          "text": "Trash from every room",
+          "min": 5
+        },
+        {
+          "text": "All dishes to the sink",
+          "min": 5
+        },
+        {
+          "text": "All clothes to the hamper",
+          "min": 8
+        },
+        {
+          "text": "Clear every surface",
+          "min": 10
+        }
+      ],
+      "result": "round 1 is only 5 min ✅",
+      "pick": 3
+    },
+    {
+      "layout": "pair",
+      "id": "surface",
+      "query": "woman wiping coffee table in living room",
+      "topLabel": "THE TIPS SAY",
+      "top": "deep clean everything",
+      "bottomLabel": "WHAT WORKS FOR ME",
+      "bottom": "the \"looks clean\" pass first ✨",
+      "pick": 1
+    },
+    {
+      "layout": "caption",
+      "id": "after",
+      "query": "tidy bright living room with sunlight",
+      "label": "after round 1 the WHOLE house looks better",
+      "comment": "that's my push for round 2 ✅",
+      "pick": 4
+    },
+    {
+      "layout": "final-phone",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "I snap the mess, FOCO splits it 💜"
+      ],
+      "screenshot": 2,
+      "ask": "how long did yours take? 👇"
+    }
+  ]
+}

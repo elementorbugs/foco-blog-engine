@@ -1,0 +1,196 @@
+{
+  "slug": "chat-redesign",
+  "tiktok": {
+    "caption": "1 tiny website fix vs my ADHD brain 🧠\n\n9:15: just updating the pricing page. Brain: what if we redesign the whole site? By 1:40 I had 47 font tabs open. By 4pm: pricing page untouched, homepage in pieces. So I told FOCO, ONE page. Step 1: change the 3 prices. 4 minutes. Live at 4:20.\n\nWhat did your brain turn into a huge project? 👇\nSave this for the next \"quick fix\" 📌\n\nYou don't need another to-do list. You need help starting. The app on the slides is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#webdesigner",
+      "#adhdbrain",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "1 tiny website fix vs my ADHD brain 🧠\n\n9:15: just updating the pricing page. Brain: what if we redesign the whole site? By 1:40 I had 47 font tabs open. By 4pm: pricing page untouched, homepage in pieces. So I told FOCO, ONE page. Step 1: change the 3 prices. 4 minutes. Live at 4:20.\n\nYou don't need another to-do list. You need help starting.\n\n📌 Save this for the next \"quick fix\", and send it to a freelancer friend whose brain texts like this too.\n💜 Try FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#webdesigner",
+      "#adhdbrain",
+      "#procrastination"
+    ],
+    "altText": "Carousel of 8 slides styled as text messages between a freelancer with ADHD and her brain: a small pricing-page update turns into a full redesign spiral, until FOCO gives her a 4-minute first step and the page goes live."
+  },
+  "slides": [
+    {
+      "layout": "chat",
+      "id": "hook",
+      "own": "carousels/own/maya/notion-2.jpg",
+      "title": [
+        "Freelancer with ADHD:",
+        "1 tiny website fix. My brain:"
+      ],
+      "time": "9:15 AM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "Just updating the pricing page."
+        },
+        {
+          "from": "brain",
+          "text": "Totally."
+        },
+        {
+          "from": "brain",
+          "text": "Quick question, though."
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "c2",
+      "own": "carousels/own/maya/email-8.jpg",
+      "time": "9:16 AM",
+      "messages": [
+        {
+          "from": "brain",
+          "text": "What if we redesign the whole site? ✨"
+        },
+        {
+          "from": "me",
+          "text": "No."
+        },
+        {
+          "from": "brain",
+          "text": "New fonts, at least?"
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "c3",
+      "own": "carousels/own/maya/nine-7.jpg",
+      "time": "1:40 PM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "Why do I have 47 font tabs open?"
+        },
+        {
+          "from": "brain",
+          "text": "Research 💅"
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "c4",
+      "own": "carousels/own/maya/email-4.jpg",
+      "time": "4:00 PM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "Pricing page: untouched."
+        },
+        {
+          "from": "me",
+          "text": "Homepage: in pieces."
+        },
+        {
+          "from": "brain",
+          "text": "Progress?"
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "c5",
+      "own": "carousels/own/maya/breakdown-6.jpg",
+      "time": "4:05 PM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "Telling FOCO. ONE page."
+        },
+        {
+          "from": "brain",
+          "text": "Boring."
+        },
+        {
+          "from": "foco",
+          "text": "Change the 3 prices",
+          "min": 4
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "c6",
+      "own": "carousels/own/maya/focus-5.jpg",
+      "time": "4:06 PM",
+      "messages": [
+        {
+          "from": "brain",
+          "text": "Just the numbers?"
+        },
+        {
+          "from": "me",
+          "text": "Just the numbers."
+        },
+        {
+          "from": "brain",
+          "text": "Fine. 4 minutes. GO."
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "c7",
+      "own": "carousels/own/maya/hook-8.jpg",
+      "time": "4:20 PM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "Pricing page live ✅"
+        },
+        {
+          "from": "brain",
+          "text": "Now the redesign?"
+        },
+        {
+          "from": "me",
+          "text": "Tuesday. Maybe 😌"
+        }
+      ]
+    },
+    {
+      "layout": "final-card",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "You don't need another to-do list.",
+        "You need help starting 💜"
+      ],
+      "title": "Update pricing page",
+      "steps": [
+        {
+          "text": "Change the 3 prices",
+          "min": 4
+        },
+        {
+          "text": "Update the plan names",
+          "min": 5
+        },
+        {
+          "text": "Check it on mobile",
+          "min": 3
+        },
+        {
+          "text": "Hit publish",
+          "min": 1
+        }
+      ],
+      "ask": "What did your brain turn into a huge project? 👇"
+    }
+  ]
+}

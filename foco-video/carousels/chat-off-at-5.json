@@ -1,0 +1,196 @@
+{
+  "slug": "chat-off-at-5",
+  "tiktok": {
+    "caption": "My ADHD brain at 7pm vs 5pm 🧠\n\n7pm: closing the laptop. Brain: but we didn't do the report. We'd worked 10 hours. On emails. Brain: let's stay till midnight, like every day. Next morning, new rule: report first (after coffee). I told FOCO. Step 1: paste last month's numbers. 5 minutes. Report sent, laptop closed at 5pm.\n\nWhat time did you close the laptop yesterday? 👇\nSave this for your next 10-hour \"work\" day 📌\n\nYou don't need another to-do list. You need help starting. The app on the slides is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#worklifebalance",
+      "#adhdbrain",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "My ADHD brain at 7pm vs 5pm 🧠\n\n7pm: closing the laptop. Brain: but we didn't do the report. We'd worked 10 hours. On emails. Brain: let's stay till midnight, like every day. Next morning, new rule: report first (after coffee). I told FOCO. Step 1: paste last month's numbers. 5 minutes. Report sent, laptop closed at 5pm.\n\nYou don't need another to-do list. You need help starting.\n\n📌 Save this for your next 10-hour \"work\" day, and send it to a freelancer friend whose brain texts like this too.\n💜 Try FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#worklifebalance",
+      "#adhdbrain",
+      "#procrastination"
+    ],
+    "altText": "Carousel of 8 slides styled as text messages between a freelancer with ADHD and her brain: she works until 7pm without starting the real task, then the next morning FOCO gives her a 5-minute first step and she closes the laptop at 5pm."
+  },
+  "slides": [
+    {
+      "layout": "chat",
+      "id": "hook",
+      "own": "carousels/own/maya/email-12.jpg",
+      "title": [
+        "Freelancer with ADHD:",
+        "My brain at 7pm 🧠"
+      ],
+      "time": "7:04 PM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "Closing the laptop."
+        },
+        {
+          "from": "brain",
+          "text": "But we didn't do the report."
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "c2",
+      "own": "carousels/own/maya/notion-5.jpg",
+      "time": "7:05 PM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "We worked for 10 hours."
+        },
+        {
+          "from": "brain",
+          "text": "On what, exactly?"
+        },
+        {
+          "from": "me",
+          "text": "...emails?"
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "c3",
+      "own": "carousels/own/maya/stuck-2.jpg",
+      "time": "7:06 PM",
+      "messages": [
+        {
+          "from": "brain",
+          "text": "Let's just stay till midnight."
+        },
+        {
+          "from": "me",
+          "text": "Like yesterday?"
+        },
+        {
+          "from": "brain",
+          "text": "Like every day 🙃"
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "c4",
+      "own": "carousels/own/maya/email-10.jpg",
+      "time": "Tomorrow 9:00 AM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "New rule. Report first."
+        },
+        {
+          "from": "brain",
+          "text": "Before coffee?! 😱"
+        },
+        {
+          "from": "me",
+          "text": "After coffee."
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "c5",
+      "own": "carousels/own/maya/breakdown-5.jpg",
+      "time": "9:20 AM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "Telling FOCO."
+        },
+        {
+          "from": "brain",
+          "text": "It's a 20-page report."
+        },
+        {
+          "from": "foco",
+          "text": "Paste last month's numbers",
+          "min": 5
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "c6",
+      "own": "carousels/own/maya/focus-3.jpg",
+      "time": "9:21 AM",
+      "messages": [
+        {
+          "from": "brain",
+          "text": "Just paste? No writing?"
+        },
+        {
+          "from": "me",
+          "text": "Just paste."
+        },
+        {
+          "from": "brain",
+          "text": "...I can paste."
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "c7",
+      "own": "carousels/own/maya/email-5.jpg",
+      "time": "5:00 PM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "Report sent. Laptop closed."
+        },
+        {
+          "from": "brain",
+          "text": "It's 5pm. What do we even do now?"
+        },
+        {
+          "from": "me",
+          "text": "Live 💜"
+        }
+      ]
+    },
+    {
+      "layout": "final-card",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "You don't need another to-do list.",
+        "You need help starting 💜"
+      ],
+      "title": "Monthly client report",
+      "steps": [
+        {
+          "text": "Paste last month's numbers",
+          "min": 5
+        },
+        {
+          "text": "Write 3 wins, one line each",
+          "min": 10
+        },
+        {
+          "text": "Add next month's plan",
+          "min": 10
+        },
+        {
+          "text": "Proofread + send",
+          "min": 5
+        }
+      ],
+      "ask": "What time did you close the laptop yesterday? 👇"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "slug": "snap-your-list",
+  "tiktok": {
+    "caption": "how to turn a paper to-do list into your day with ADHD 📸\n\nmy lists lived on the fridge, in my bag, on sticky notes, and I still forgot the dentist. now I take ONE photo of the paper list and every task lands in today's list. no retyping, and the paper can go in the trash.\n\nwhat's on YOUR paper list right now? 👇\nsave this for your next brain dump 📌\n\nthe app on the slides is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#adhdorganization",
+      "#todolist",
+      "#braindump",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "How to turn a paper to-do list into your day with ADHD (one photo) 📸\n\nMy lists lived everywhere: the fridge, my bag, sticky notes. And I still forgot the dentist.\n\n1. Write the list the way you always do, on paper\n2. Snap ONE photo of it\n3. Every task lands in today's list, no retyping\n\nEmail my boss, book the dentist, buy groceries: all in my day in seconds, and the paper can finally go.\n\n📌 Save this for your next brain dump, and send it to someone whose fridge is covered in lists.\n💜 Try FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdtips",
+      "#adhdorganization",
+      "#todolist",
+      "#braindump"
+    ],
+    "altText": "Carousel of 6 slides: paper to-do lists and sticky notes everywhere, then one photo of a handwritten list (Email my boss, Book dentist, Buy groceries) that turns into the same three tasks in the FOCO app's calendar for the day."
+  },
+  "slides": [
+    {
+      "layout": "hook",
+      "id": "hook",
+      "person": false,
+      "query": "sticky notes on refrigerator door",
+      "lines": [
+        "My to-do list lived on 6 sticky notes",
+        "now it takes ONE photo 📸"
+      ],
+      "pick": 11
+    },
+    {
+      "layout": "caption",
+      "id": "everywhere",
+      "person": false,
+      "query": "handwritten notes and papers on kitchen table",
+      "label": "lists on the fridge, in my bag, on my hand",
+      "comment": "and I still forgot the dentist 🫠",
+      "pick": 8
+    },
+    {
+      "layout": "scan",
+      "id": "snap",
+      "photo": "lands",
+      "label": "now I just snap the list",
+      "comment": "one photo, that's it 📸",
+      "items": [
+        "Email my boss",
+        "Book dentist",
+        "Buy groceries"
+      ]
+    },
+    {
+      "layout": "life",
+      "id": "lands",
+      "person": false,
+      "query": "handwritten to do list on paper",
+      "label": "every task lands in my day",
+      "comment": "no retyping. at all.",
+      "side": "right",
+      "inset": {
+        "image": "creatives/snap-list-to-day-crop.png",
+        "crop": [
+          0.3,
+          0.92
+        ],
+        "aspect": 1.756
+      },
+      "chip": "Email my boss, dentist, groceries ✅",
+      "pick": 2
+    },
+    {
+      "layout": "caption",
+      "id": "trash",
+      "person": false,
+      "query": "crumpled paper in trash bin",
+      "label": "and the paper can finally go",
+      "comment": "my brain can let go too 😮‍💨",
+      "pick": 4
+    },
+    {
+      "layout": "final-phone",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "Try FOCO - link in bio 💜"
+      ],
+      "image": "creatives/snap-list-to-day-crop.png",
+      "aspect": 1.756,
+      "ask": "what's on YOUR paper list? 👇"
+    }
+  ]
+}

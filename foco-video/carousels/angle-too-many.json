@@ -1,0 +1,120 @@
+{
+  "slug": "angle-too-many",
+  "tiktok": {
+    "caption": "Everything feels urgent, so I do nothing. 🫠\n\nFive things feel equally important, so I end up doing none of them. I avoid the big task by doing a million tiny ones.\n\nSo I picked one: invoices. FOCO broke it into four tiny steps. Step 1 was just opening last month's invoice. One step, one timer, jazz on. The other four can wait.\n\nHow many tabs do you have open? 👇\nSave this for the next time you're stuck 📌\n\nYou don't need another to-do list. You need help starting. The app on the slides is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#taskparalysis",
+      "#procrastination",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "Everything feels urgent, so I do nothing. 🫠\n\nFive things feel equally important, so I end up doing none of them. I avoid the big task by doing a million tiny ones.\n\nSo I picked one: invoices. FOCO broke it into four tiny steps. Step 1 was just opening last month's invoice. One step, one timer, jazz on. The other four can wait.\n\nYou don't need another to-do list. You need help starting.\n\n📌 Save this for the next time you're stuck, and send it to a freelancer friend who gets it.\n💜 Try FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#adhdwomen",
+      "#taskparalysis",
+      "#procrastination"
+    ],
+    "altText": "Carousel of 6 slides about a freelance woman with ADHD who can't start a work task (Send May invoices). FOCO breaks it into four tiny steps and she starts step 1 with a short timer and jazzy sounds."
+  },
+  "slides": [
+    {
+      "layout": "hook",
+      "id": "hook",
+      "own": "carousels/own/maya/email-11.jpg",
+      "lines": [
+        "Freelancer with ADHD:",
+        "Five urgent client tasks.",
+        "Me: does none of them 😵‍💫"
+      ],
+      "textTop": 1100
+    },
+    {
+      "layout": "caption",
+      "id": "pain1",
+      "own": "carousels/own/maya/email-5.jpg",
+      "label": "Five things feel equally important.",
+      "comment": "So I end up doing none of them."
+    },
+    {
+      "layout": "caption",
+      "id": "pain2",
+      "own": "carousels/own/maya/nine-12.jpg",
+      "label": "I avoid the big task",
+      "comment": "by doing a million tiny ones 🙃"
+    },
+    {
+      "layout": "card",
+      "id": "turn",
+      "own": "carousels/own/maya/breakdown-5.jpg",
+      "label": "So I picked one: invoices.",
+      "comment": "It broke it into four tiny steps.",
+      "title": "Send May invoices",
+      "steps": [
+        {
+          "text": "Open last invoice",
+          "min": 2
+        },
+        {
+          "text": "Fill in client 1",
+          "min": 5
+        },
+        {
+          "text": "Duplicate for clients 2-3",
+          "min": 10
+        },
+        {
+          "text": "Hit send x3",
+          "min": 3
+        }
+      ],
+      "result": "Step 1 takes 2 minutes ✅"
+    },
+    {
+      "layout": "focus",
+      "id": "focus",
+      "own": "carousels/own/maya/focus-5.jpg",
+      "label": "One step. One timer.",
+      "comment": "Jazz on. Nothing else.",
+      "stepNo": 1,
+      "stepTotal": 4,
+      "step": "Open last invoice",
+      "min": 2,
+      "sound": "Jazzy",
+      "result": "The other four can wait ✅"
+    },
+    {
+      "layout": "final-card",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "You don't need another to-do list.",
+        "You need help starting 💜"
+      ],
+      "title": "Send May invoices",
+      "steps": [
+        {
+          "text": "Open last invoice",
+          "min": 2
+        },
+        {
+          "text": "Fill in client 1",
+          "min": 5
+        },
+        {
+          "text": "Duplicate for clients 2-3",
+          "min": 10
+        },
+        {
+          "text": "Hit send x3",
+          "min": 3
+        }
+      ],
+      "ask": "How many tabs do you have open? 👇"
+    }
+  ]
+}

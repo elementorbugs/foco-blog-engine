@@ -1,0 +1,138 @@
+{
+  "slug": "angle-redesign",
+  "tiktok": {
+    "caption": "Freelancer with ADHD: the task was to update one page. I redesigned the whole site 🙃\n\n9am: just one page, my services page. Two prices and one photo. 11am: I opened the homepage and the font looked kind of off. 2pm: I was picking a new color palette for the whole site. 5pm: seven tabs of website inspo, and the services page was still untouched.\n\nSo I told FOCO about it. It broke it into four tiny steps. Step 1 was just opening the services page. Ten minutes later, it was live.\n\nWhat's your version of this? 👇\nSave this for the next time you start a whole redesign 📌\n\nYou don't need another to-do list. You need help starting. The app on the slides is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#procrastination",
+      "#taskparalysis",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "Freelancer with ADHD: the task was to update one page. I redesigned the whole site 🙃\n\n9:00 Just one page. My services page. Two prices, one photo.\n11:00 Then I opened the homepage. The font looked kind of off.\n2:00 Now I was picking a new color palette. For the whole site.\n5:00 Seven tabs of website inspo. The services page? Untouched.\n\nSo I told FOCO about it. It broke it into four tiny steps. Step 1 was just opening the services page. Ten minutes later, it was live.\n\nYou don't need another to-do list. You need help starting.\n\n📌 Save this for the next time you start a whole redesign, and send it to a freelancer friend who does this too.\n💜 Try FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#adhdwomen",
+      "#procrastination",
+      "#taskparalysis"
+    ],
+    "altText": "Carousel of 8 slides: a freelance designer with ADHD needs to update one page on her website, ends up redesigning the whole site all day, then FOCO breaks the page update into four tiny steps and it is live ten minutes later."
+  },
+  "slides": [
+    {
+      "layout": "hook",
+      "id": "hook",
+      "own": "carousels/own/maya/stuck-2.jpg",
+      "lines": [
+        "Freelancer with ADHD:",
+        "Task: update one page.",
+        "Me: redesigns it all 🙃"
+      ],
+      "textTop": 1130
+    },
+    {
+      "layout": "caption",
+      "id": "nine",
+      "own": "carousels/own/maya/hook-7.jpg",
+      "label": "Just one page. My services page.",
+      "comment": "Two prices. One photo. Easy.",
+      "time": "9:00 am"
+    },
+    {
+      "layout": "caption",
+      "id": "eleven",
+      "own": "carousels/own/maya/hook-8.jpg",
+      "label": "Then I opened the homepage.",
+      "comment": "The font looked kind of off.",
+      "time": "11:00 am"
+    },
+    {
+      "layout": "caption",
+      "id": "two",
+      "own": "carousels/own/maya/nine-11.jpg",
+      "label": "Now I'm picking a new color palette.",
+      "comment": "For the whole site 💀",
+      "time": "2:00 pm"
+    },
+    {
+      "layout": "caption",
+      "id": "five",
+      "own": "carousels/own/maya/stuck-8.jpg",
+      "label": "Seven tabs of website inspo.",
+      "comment": "The services page? Untouched.",
+      "time": "5:00 pm"
+    },
+    {
+      "layout": "card",
+      "id": "turn",
+      "own": "carousels/own/maya/breakdown-4.jpg",
+      "label": "So I told FOCO about it.",
+      "comment": "It broke it into four tiny steps.",
+      "title": "Update services page",
+      "steps": [
+        {
+          "text": "Open the services page",
+          "min": 1
+        },
+        {
+          "text": "Change the two prices",
+          "min": 3
+        },
+        {
+          "text": "Swap in the new photo",
+          "min": 5
+        },
+        {
+          "text": "Hit publish",
+          "min": 1
+        }
+      ],
+      "result": "Step 1 takes 1 minute ✅"
+    },
+    {
+      "layout": "focus",
+      "id": "focus",
+      "own": "carousels/own/maya/focus-3.jpg",
+      "label": "Just step 1. Something chill on.",
+      "comment": "A 1-minute timer. Nothing else.",
+      "stepNo": 1,
+      "stepTotal": 4,
+      "step": "Open the services page",
+      "min": 1,
+      "sound": "Chill",
+      "result": "Ten minutes later, it's live ✅"
+    },
+    {
+      "layout": "final-card",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "You don't need another to-do list.",
+        "You need help starting 💜"
+      ],
+      "title": "Update services page",
+      "steps": [
+        {
+          "text": "Open the services page",
+          "min": 1
+        },
+        {
+          "text": "Change the two prices",
+          "min": 3
+        },
+        {
+          "text": "Swap in the new photo",
+          "min": 5
+        },
+        {
+          "text": "Hit publish",
+          "min": 1
+        }
+      ],
+      "ask": "What's your version of this? 👇"
+    }
+  ]
+}

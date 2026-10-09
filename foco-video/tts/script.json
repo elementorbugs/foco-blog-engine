@@ -1,0 +1,55 @@
+{
+  "voice": "af_heart",
+  "scenes": [
+    {
+      "id": "hook",
+      "mascot": 6,
+      "text": "You know exactly what you need to do. You just can't start. Not because you're lazy. Because your brain is stuck at the starting line. And most planner apps don't help, because they solve the wrong problem."
+    },
+    {
+      "id": "problem",
+      "mascot": 4,
+      "text": "A to-do list assumes the hard part is remembering. With A D H D task paralysis, remembering was never the problem. You can have a perfect list, and still sit frozen in front of item one. That gap between knowing and starting has a name. Task initiation deficit."
+    },
+    {
+      "id": "host",
+      "mascot": 1,
+      "text": "I'm Foco. Full disclosure, I'm the mascot of one of the apps on this list. So I judged every app with one honest test."
+    },
+    {
+      "id": "criteria",
+      "mascot": 3,
+      "text": "What happens in the first sixty seconds after you open it, while you're frozen? Does it get you moving, or ask you to plan? How many taps until you do something real? And can you try the core feature without paying first? Here are the five that passed."
+    },
+    {
+      "id": "habitica",
+      "mascot": 3,
+      "text": "Number five. Habitica. It turns your recurring tasks into a role-playing game, with experience points, rewards, and your own avatar. It's genuinely fun if game mechanics motivate you, and it's strong for building routines over weeks. The catch? Setting up your avatar and party can become its own way to procrastinate. And it's not built for one stuck task, right now."
+    },
+    {
+      "id": "finch",
+      "mascot": 1,
+      "text": "Number four. Finch. A virtual pet grows as you complete small self-care check-ins. The stakes are deliberately low, and the tone is gentle, which helps on days when the freeze comes from shame or overwhelm. But Finch won't break down a big, specific task. It's made for small daily wins."
+    },
+    {
+      "id": "inflow",
+      "mascot": 3,
+      "text": "Number three. Inflow. Instead of fixing today's stuck task, it works on the pattern underneath. Short daily lessons based on C B T, plus a community for accountability. Great if the freeze keeps coming back. Just know the lessons take real time, and it's subscription only."
+    },
+    {
+      "id": "goblin",
+      "mascot": 3,
+      "text": "Number two. Goblin Tools. Type in any task, and its Magic To Do breaks it into smaller steps in seconds. The web version is free, with no account and no setup, so it passes the sixty second test easily. The downside? It doesn't stay with you. Once the steps are on screen, you're on your own."
+    },
+    {
+      "id": "foco",
+      "mascot": 5,
+      "text": "And number one. Foco. Tell it the task you're stuck on, by typing, talking, or snapping a photo. It breaks it into tiny first steps, with a time estimate for each one. Then focus mode starts a timer and calm background sounds, so it feels like someone is working right beside you. It even has a built-in calendar, so your plan and your first step live in one place. But where it really shines is the exact moment you're frozen."
+    },
+    {
+      "id": "outro",
+      "mascot": 2,
+      "text": "So which one is right for you? Can't start a task right now? Try Foco or Goblin Tools. If the freeze keeps coming back, look at Inflow. For routines, Finch or Habitica. Foco is on iPhone and Android. Link below. Now go do step one. Just step one."
+    }
+  ]
+}

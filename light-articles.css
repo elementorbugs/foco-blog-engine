@@ -38,15 +38,18 @@
 .blog-single article a, .blog-single article ol a, .blog-single article ul a{ color:#5B21B6 !important; }
 
 /* TL;DR -> branded dark answer box */
-.blog-single .foco-tldr{ background:linear-gradient(135deg,#160B26,#2d1257) !important; color:#F1EDFA !important; border:0 !important; border-radius:16px !important; padding:24px 26px !important; box-shadow:0 20px 40px -22px rgba(45,18,87,.55) !important; }
+.blog-single .foco-tldr{ background:linear-gradient(135deg,#160B26,#2d1257) !important; color:#F1EDFA !important; border:0 !important; border-radius:16px !important; padding:24px 26px !important; box-shadow:0 20px 40px -22px rgba(45,18,87,.55) !important; font-size:17px !important; line-height:1.65 !important; }
 .blog-single article .foco-tldr, .blog-single article .foco-tldr *{ color:#F1EDFA !important; }
 .blog-single article .foco-tldr strong{ color:#fff !important; }
 .blog-single article .foco-tldr a{ color:#C9B8FF !important; }
 
 /* Key Takeaways -> light lilac card */
-.blog-single .foco-key-takeaways{ background:#F1EAFC !important; border:1px solid #E7DFF7 !important; border-radius:16px !important; color:#26203A !important; }
-.blog-single .foco-key-takeaways h2{ color:#5B21B6 !important; }
+.blog-single .foco-key-takeaways{ background:#F1EAFC !important; border:1px solid #E7DFF7 !important; border-radius:16px !important; color:#26203A !important; padding:24px 28px !important; }
+.blog-single .foco-key-takeaways h2{ color:#5B21B6 !important; font-size:19px !important; margin:0 0 16px !important; }
+.blog-single .foco-key-takeaways ul{ margin:0 !important; padding-left:22px !important; }
 .blog-single .foco-key-takeaways li, .blog-single .foco-key-takeaways strong{ color:#26203A !important; }
+.blog-single .foco-key-takeaways li{ font-size:15.5px !important; line-height:1.6 !important; margin-bottom:10px !important; }
+.blog-single .foco-key-takeaways li:last-child{ margin-bottom:0 !important; }
 
 /* tables -> light (audit: no dark-bg cells anywhere, so forcing dark text is safe) */
 .blog-single article table, .blog-single article thead, .blog-single article .foco-table-wrap{ color:#26203A !important; }
@@ -198,3 +201,8 @@
 
 /* charts are handled by the DARK ISLANDS block above (was a separate
    /*foco-chart-fix*\/ <style> appended to each post; folded in 2026-07-25) */
+
+/* Lists in the post body: keep markers inside the column. With padding-left:0 the numbers sat in the
+   24px mobile gutter and two-digit TOC numbers ("10.") were clipped at the screen edge. (2026-10-08) */
+.blog-single article > ol { padding-left: 2em !important; }
+.blog-single article > ul { padding-left: 1.3em !important; }

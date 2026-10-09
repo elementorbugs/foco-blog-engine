@@ -1,0 +1,359 @@
+import React from "react";
+import { AbsoluteFill, Img, Sequence, interpolate, spring, useCurrentFrame, useVideoConfig } from "reelkit/frame";
+import { Grain, Headline, Music, SceneFrame, SoundCues, Vignette, cueBefore, fonts, sceneById, springs } from "reelkit/kit";
+import type { VideoProps } from "reelkit/kit";
+import { Burst } from "./Burst";
+import { PhoneVideo } from "./PhoneVideo";
+
+// Concept: split screen. Top = "My brain" (a task explodes into a mountain), bottom = "FOCO" (one first step). Then the step is done in the real app.
+const P = { bg: "#040208", ink: "#FFFFFF", hero: "#7C3AED", accent: "#A78BFA", dim: "#8c84a0", win: "#FB923C", winLight: "#FDE68A", chaos: "#ef4444", green: "#4ADE80" };
+const A = {
+  focus: "assets/user/a-94612dd5-a-bd7cebf6-focus.mp4",
+  done: "assets/user/a-e9e351f6-a-bac8bcf1-done.mp4",
+  icon: "assets/user/a-77bad112-a-75c2c850-foco-icon.png",
+  appStore: "assets/user/a-d1e0694c-a-3157030f-app-store.png",
+  googlePlay: "assets/user/a-2087826d-a-20e23b4b-google-play.png",
+  stressed: "assets/user/a-2b89082a-foco_state_6_pause.png",
+  list: "assets/user/a-46e12944-list-next.mp4",
+};
+const MUSIC = "assets/lib/music-calm-keynote/track.mp3";
+const SFX = {
+  stress: "assets/lib/hollywood-essentials-stress-stress-tightness/clip.mp3",
+  ticks: "assets/lib/sfx-ui-count-ticks/clip.mp3",
+  impact: "assets/lib/sfx-ui-soft-impact/clip.mp3",
+  pop: "assets/lib/sfx-ui-bubble-pop/clip.mp3",
+  chime: "assets/lib/sfx-ui-success-chime/clip.mp3",
+  click: "assets/lib/youtube-picks-interface-mouse-click/clip.mp3",
+  swell: "assets/lib/quantum-motion-whooshes-flow-whoosh-reverse/clip.mp3",
+  glitch: "assets/lib/cinematic-glitches-glitch/clip.mp3",
+  shimmer: "assets/lib/sfx-ui-sparkle-shimmer/clip.mp3",
+};
+const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
+const ph = (w: number) => w * (1080 / 1920) * 2;
+const rnd = (n: number) => {
+  const x = Math.sin(n * 127.1 + 311.7) * 43758.5453;
+  return x - Math.floor(x);
+};
+
+// Everything a kitchen turns into inside an overwhelmed head
+const CHAOS = [
+  "dishes", "the fridge smells", "counters", "trash", "where do I even start?!", "floor", "expired milk", "laundry??", "sticky stove",
+  "wipe EVERYTHING", "the sink", "groceries", "mop?", "where's the sponge", "oven", "cabinets", "this will take 3 hours", "ugh",
+  "recycling", "the microwave", "dish rack", "tupperware", "why is it like this", "towels",
+];
+
+// One task card: optional orange label, title, minutes pill, and a check that draws in at checkAt (own clock)
+const Card: React.FC<{ label?: string; title: string; minutes?: string; checkAt?: number; w: number; dimmed?: boolean }> = ({ label, title, minutes, checkAt, w, dimmed }) => {
+  const frame = useCurrentFrame();
+  const { fps, width } = useVideoConfig();
+  const c = checkAt === undefined ? 0 : spring({ frame: frame - checkAt, fps, config: springs.snappy });
+  const u = width * w;
+  return (
+    <div style={{ width: u, padding: `${u * 0.055}px ${u * 0.065}px`, borderRadius: u * 0.07, background: "rgba(18,12,32,0.94)", border: `${u * 0.008}px solid ${c > 0.5 ? P.green : "rgba(167,139,250,0.55)"}`, boxShadow: `0 ${u * 0.04}px ${u * 0.12}px rgba(0,0,0,0.55), 0 0 ${u * 0.1}px rgba(124,58,237,0.35)`, display: "flex", alignItems: "center", gap: u * 0.05, opacity: dimmed ? 0.55 : 1, fontFamily: fonts.display }}>
+      <div style={{ flex: 1 }}>
+        {label ? <div style={{ fontSize: u * 0.05, fontWeight: 800, letterSpacing: u * 0.006, color: P.win }}>{label}</div> : null}
+        <div style={{ fontSize: u * 0.078, fontWeight: 800, color: P.ink, lineHeight: 1.12, marginTop: label ? u * 0.012 : 0, textDecoration: c > 0.5 ? "line-through" : "none", textDecorationColor: "rgba(255,255,255,0.5)" }}>{title}</div>
+      </div>
+      {minutes ? <div style={{ fontSize: u * 0.05, fontWeight: 800, color: P.accent, padding: `${u * 0.015}px ${u * 0.035}px`, borderRadius: u, border: `${u * 0.005}px solid rgba(167,139,250,0.5)`, whiteSpace: "nowrap" }}>{minutes}</div> : null}
+      {checkAt !== undefined ? (
+        <div style={{ width: u * 0.13, height: u * 0.13, borderRadius: "50%", background: P.green, color: "#052e12", display: "flex", alignItems: "center", justifyContent: "center", fontSize: u * 0.085, fontWeight: 800, transform: `scale(${c})` }}>✓</div>
+      ) : null}
+    </div>
+  );
+};
+
+const HalfLabel: React.FC<{ text: string; y: number; color: string; icon?: string }> = ({ text, y, color, icon }) => {
+  const { width, height } = useVideoConfig();
+  return (
+    <div style={{ position: "absolute", left: width * 0.06, top: height * y, display: "flex", alignItems: "center", gap: width * 0.025, fontFamily: fonts.display, fontWeight: 800, fontSize: width * 0.065, color }}>
+      {icon ? <Img src={icon} style={{ width: width * 0.09, height: width * 0.09, borderRadius: width * 0.02 }} /> : null}
+      {text}
+    </div>
+  );
+};
+
+// The top half: a task exploding into a mountain of sub-tasks. freezeAt stops it.
+const Chaos: React.FC<{ startAt: number; freezeAt: number; mascot: string }> = ({ startAt, freezeAt, mascot }) => {
+  const live = useCurrentFrame();
+  const frame = Math.min(live, freezeAt);
+  const { width, height, fps } = useVideoConfig();
+  const t = frame - startAt;
+  const shake = t > 0 && live < freezeAt ? Math.sin(frame * 2.1) * width * 0.006 * Math.min(1, t / 60) : 0;
+  return (
+    <AbsoluteFill style={{ transform: `translateX(${shake}px)` }}>
+      <Img src={mascot} style={{ position: "absolute", left: width * 0.5 - width * 0.17, top: height * 0.17, width: width * 0.34, height: width * 0.34, opacity: 0.9, transform: `rotate(${Math.sin(frame / 3) * 2}deg)` }} />
+      {CHAOS.map((w, i) => {
+        // ever faster: gap shrinks from 9 to 3 frames
+        const born = Math.round(i * Math.max(3, 9 - i * 0.35));
+        if (t < born) return null;
+        const q = spring({ frame: t - born, fps, config: { damping: 10, stiffness: 220 } });
+        const long = w.length > 12;
+        const x = long ? 0.3 + rnd(i) * 0.4 : 0.15 + rnd(i) * 0.7;
+        const y = 0.08 + rnd(i + 50) * 0.36;
+        const big = i % 5 === 4;
+        return (
+          <div key={w} style={{ position: "absolute", left: width * x, top: height * y, transform: `translate(-50%,-50%) rotate(${(rnd(i + 9) - 0.5) * 30}deg) scale(${q})`, fontFamily: fonts.display, fontWeight: 800, fontSize: width * (long ? 0.045 : big ? 0.07 : 0.05), whiteSpace: "nowrap", color: i % 3 === 0 ? "#fca5a5" : i % 3 === 1 ? P.ink : P.win, textShadow: "0 4px 18px rgba(0,0,0,0.85)" }}>
+            {w}
+          </div>
+        );
+      })}
+    </AbsoluteFill>
+  );
+};
+
+export const Video: React.FC<VideoProps> = ({ manifest, urls }) => {
+  const frame = useCurrentFrame();
+  const { width, height, fps } = useVideoConfig();
+  const S = (id: string) => sceneById(manifest, id);
+  const hook = S("hook"), split = S("split"), chaos = S("chaos"), step = S("step"), just = S("just"), focus = S("focus"), done = S("done"), end = S("end");
+  const next = S("next"), focus2 = S("focus2"), done2 = S("done2");
+
+  // Divider between the halves: 1 = full screen, 0.5 = split
+  const divider = interpolate(frame, [split.startFrame, split.startFrame + 10, just.startFrame + 4, just.startFrame + 18], [1, 0.5, 0.5, 0], clamp);
+  const topShown = frame >= split.startFrame && frame < just.startFrame + 18;
+  const grey = interpolate(frame, [just.startFrame, just.startFrame + 6], [0, 1], clamp);
+  const stepLand = step.startFrame + 4;
+
+  // The step card: lands in the bottom half, centres, docks above the phone
+  const cardY = interpolate(frame, [stepLand, just.startFrame + 4, just.startFrame + 18, focus.startFrame, focus.startFrame + 12, next.startFrame, next.startFrame + 12], [0.74, 0.74, 0.46, 0.46, 0.115, 0.115, 0.06], clamp);
+  const cardScale = interpolate(frame, [just.startFrame + 4, just.startFrame + 18, focus.startFrame, focus.startFrame + 12, next.startFrame, next.startFrame + 12], [1, 1.12, 1.12, 0.92, 0.92, 0.62], clamp);
+  const cardIn = spring({ frame: frame - stepLand, fps, config: { damping: 12, stiffness: 200 } });
+  const cardOut = interpolate(frame, [end.startFrame, end.startFrame + 8], [1, 0], clamp);
+
+  // The hook task card: centre, then up into "My brain"
+  const hookIn = spring({ frame: frame - 3, fps, config: springs.snappy });
+  const hookY = interpolate(frame, [split.startFrame, split.startFrame + 12], [0.5, 0.42], clamp);
+  const hookOut = interpolate(frame, [chaos.startFrame + 6, chaos.startFrame + 18], [1, 0], clamp);
+
+  const clickAt = focus.startFrame + Math.round(((3.8 - 2.0) / 2.7) * fps);
+  const doneAt = done.startFrame + Math.round((3.0 - 2.6) * fps);
+  const headAt = end.startFrame + 50;
+  // Step 2: lands under the checked step 1, then gets its own check
+  const step2Land = next.startFrame + 22;
+  const step2In = spring({ frame: frame - step2Land, fps, config: { damping: 12, stiffness: 200 } });
+  const done2At = done2.startFrame + 8;
+
+  const cues = [
+    { at: 0, sound: "impact", volume: 0.5 },
+    { at: 3, sound: "pop", volume: 0.45 },
+    { at: cueBefore(split.startFrame + 6, 60), sound: "swell", volume: 0.3 },
+    { at: split.startFrame + 6, sound: "impact", volume: 0.55 },
+    { at: chaos.startFrame, sound: "stress", volume: 0.4 },
+    { at: chaos.startFrame, sound: "ticks", volume: 0.35 },
+    { at: chaos.startFrame + 36, sound: "ticks", volume: 0.42 },
+    { at: chaos.startFrame + 72, sound: "ticks", volume: 0.5 },
+    { at: chaos.startFrame + 100, sound: "ticks", volume: 0.55 },
+    { at: step.startFrame, sound: "glitch", volume: 0.45 },
+    { at: stepLand, sound: "pop", volume: 0.5 },
+    { at: stepLand + 4, sound: "shimmer", volume: 0.35 },
+    { at: just.startFrame + 4, sound: "impact", volume: 0.45 },
+    { at: cueBefore(focus.startFrame + 6, 60), sound: "swell", volume: 0.25 },
+    { at: clickAt, sound: "click", volume: 0.5 },
+    { at: doneAt, sound: "chime", volume: 0.5 },
+    { at: doneAt + 2, sound: "impact", volume: 0.45 },
+    { at: next.startFrame, sound: "impact", volume: 0.45 },
+    { at: step2Land, sound: "pop", volume: 0.5 },
+    { at: step2Land + 4, sound: "shimmer", volume: 0.3 },
+    { at: focus2.startFrame, sound: "click", volume: 0.45 },
+    { at: done2At, sound: "chime", volume: 0.5 },
+    { at: done2At + 2, sound: "impact", volume: 0.45 },
+    { at: end.startFrame + 4, sound: "impact", volume: 0.45 },
+    { at: headAt, sound: "impact", volume: 0.5 },
+    { at: headAt + 30, sound: "chime", volume: 0.4 },
+  ];
+
+  const W = 0.6;
+  return (
+    <AbsoluteFill style={{ backgroundColor: P.bg }}>
+      {/* Bottom (FOCO): calm purple ground, grows to the whole screen */}
+      <AbsoluteFill style={{ background: `radial-gradient(circle at 50% 70%, rgba(124,58,237,0.45), ${P.bg} 70%)` }} />
+
+      {/* Top (My brain): red-tinged half, pushed up and greyed after "just" */}
+      {topShown ? (
+        <div style={{ position: "absolute", left: 0, right: 0, top: 0, height: height * divider, overflow: "hidden", background: `linear-gradient(180deg, #1a0710, #2a0b16)`, filter: `grayscale(${grey}) brightness(${1 - grey * 0.4})` }}>
+          <div style={{ position: "absolute", left: 0, right: 0, top: 0, height: height * 0.5 }}>
+            <HalfLabel text="My brain" y={0.025} color="#fca5a5" />
+            <Chaos startAt={chaos.startFrame} freezeAt={just.startFrame} mascot={urls[A.stressed]} />
+          </div>
+        </div>
+      ) : null}
+      {topShown && divider < 0.99 ? (
+        <>
+          <div style={{ position: "absolute", left: 0, right: 0, top: height * divider - 3, height: 6, background: P.accent, boxShadow: `0 0 30px ${P.accent}` }} />
+          <div style={{ position: "absolute", left: 0, right: 0, top: height * divider }}>
+            <HalfLabel text="FOCO" y={0.02} color={P.ink} icon={urls[A.icon]} />
+          </div>
+        </>
+      ) : null}
+
+      {/* Hook card: the whole task */}
+      {frame < chaos.startFrame + 20 ? (
+        <div style={{ position: "absolute", left: width * 0.5, top: height * hookY, transform: `translate(-50%,-50%) scale(${hookIn * (1 + (1 - hookOut) * 0.4)})`, opacity: hookOut }}>
+          <Card label="TASK" title="Clean the kitchen." w={0.84} />
+        </div>
+      ) : null}
+
+      {/* Step 1: the one card FOCO shows */}
+      {frame >= stepLand && frame < end.startFrame + 10 ? (
+        <div style={{ position: "absolute", left: width * 0.5, top: height * cardY, transform: `translate(-50%,-50%) scale(${cardScale * cardIn}) rotate(${(1 - cardIn) * -5}deg)`, opacity: cardOut }}>
+          <Card label="STEP 1" title="Clear the dishes into the sink" minutes="3 min" w={0.84} checkAt={doneAt} />
+        </div>
+      ) : null}
+      {frame >= step2Land && frame < end.startFrame + 10 ? (
+        <div style={{ position: "absolute", left: width * 0.5, top: height * 0.19, transform: `translate(-50%,-50%) scale(${0.82 * step2In}) rotate(${(1 - step2In) * 5}deg)`, opacity: cardOut }}>
+          <Card label="STEP 2" title="Load and start the dishwasher" minutes="10 min" w={0.84} checkAt={done2At} />
+        </div>
+      ) : null}
+      <SceneFrame from={just.startFrame} durationInFrames={just.durationFrames} enter="cut" exit="cut">
+        <Sequence from={14}>
+          <div style={{ position: "absolute", top: height * 0.6, left: 0, right: 0, textAlign: "center", fontFamily: fonts.display, fontWeight: 800, fontSize: width * 0.085, color: P.ink }}>
+            That's it. <span style={{ color: P.accent }}>Just this.</span>
+          </div>
+        </Sequence>
+      </SceneFrame>
+
+      {/* The real app */}
+      <Sequence from={focus.startFrame} durationInFrames={focus.durationFrames + done.durationFrames}>
+        <PhoneSlot w={W} y={0.57}>
+          <Sequence durationInFrames={focus.durationFrames}>
+            <PhoneVideo src={urls[A.focus]} trimSec={2.0} rate={2.7} lengthSec={16} glow={P.hero} glowStrength={0.45} />
+          </Sequence>
+          <Sequence from={focus.durationFrames}>
+            <PhoneVideo src={urls[A.done]} trimSec={2.6} rate={1} lengthSec={5.5} glow={P.win} glowStrength={0.5} />
+          </Sequence>
+        </PhoneSlot>
+      </Sequence>
+      <SceneFrame from={focus.startFrame} durationInFrames={focus.durationFrames} enter="cut" exit="cut">
+        <BottomLine text="FOCO" rest=" sits with you." />
+      </SceneFrame>
+      <Sequence from={done.startFrame - 2} durationInFrames={done.durationFrames + 20}>
+        <Burst at={doneAt - done.startFrame + 2} x={0.5} y={0.115} color={P.win} accent={P.winLight} radius={0.5} />
+      </Sequence>
+      <SceneFrame from={done.startFrame} durationInFrames={done.durationFrames} enter="cut" exit="cut">
+        <BottomLine text="Step 1:" rest=" done ✓" color={P.green} />
+      </SceneFrame>
+
+      {/* Step 2: the real list, focus again, done again */}
+      <Sequence from={next.startFrame} durationInFrames={next.durationFrames + focus2.durationFrames + done2.durationFrames}>
+        <PhoneSlot w={0.52} y={0.63}>
+          <Sequence durationInFrames={next.durationFrames}>
+            <PhoneVideo src={urls[A.list]} rate={1} lengthSec={1.7} glow={P.hero} glowStrength={0.45} />
+          </Sequence>
+          <Sequence from={next.durationFrames} durationInFrames={focus2.durationFrames}>
+            <PhoneVideo src={urls[A.focus]} trimSec={13} rate={1} lengthSec={16} glow={P.hero} glowStrength={0.45} />
+          </Sequence>
+          <Sequence from={next.durationFrames + focus2.durationFrames}>
+            <PhoneVideo src={urls[A.done]} trimSec={3.0} rate={1} lengthSec={5.5} glow={P.win} glowStrength={0.5} />
+          </Sequence>
+        </PhoneSlot>
+      </Sequence>
+      <SceneFrame from={next.startFrame} durationInFrames={next.durationFrames} enter="cut" exit="cut">
+        <BottomLine text="Step 2" rest=" is up next." />
+      </SceneFrame>
+      <SceneFrame from={focus2.startFrame} durationInFrames={focus2.durationFrames} enter="cut" exit="cut">
+        <BottomLine text="Then" rest=" the next tiny step." />
+      </SceneFrame>
+      <Sequence from={done2.startFrame - 2} durationInFrames={done2.durationFrames + 20}>
+        <Burst at={done2At - done2.startFrame + 2} x={0.5} y={0.19} color={P.win} accent={P.winLight} radius={0.5} />
+      </Sequence>
+      <SceneFrame from={done2.startFrame} durationInFrames={done2.durationFrames} enter="cut" exit="cut">
+        <BottomLine text="One step" rest=" at a time." color={P.green} />
+      </SceneFrame>
+
+      {/* End: the contrast once more, then the line and the store */}
+      <SceneFrame from={end.startFrame} durationInFrames={end.durationFrames} enter="cut" exit="cut">
+        <EndCard headAt={headAt - end.startFrame} urls={urls} />
+      </SceneFrame>
+
+      <SoundCues cues={cues} sounds={Object.fromEntries(Object.entries(SFX).map(([k, v]) => [k, urls[v]]))} />
+      {manifest.music ? <Music src={urls[MUSIC]} volume={0.45} dips={[{ from: 0, to: just.startFrame, volume: 0.03 }]} /> : null}
+      <Grain blend="overlay" opacity={0.05} />
+      <Vignette strength={0.35} />
+    </AbsoluteFill>
+  );
+};
+
+const PhoneSlot: React.FC<{ w: number; y: number; children: React.ReactNode }> = ({ w, y, children }) => {
+  const frame = useCurrentFrame();
+  const { width, height, fps } = useVideoConfig();
+  const q = spring({ frame, fps, config: springs.smooth });
+  return (
+    <div style={{ position: "absolute", left: width * (0.5 - w / 2), top: height * (y - ph(w) / 2), width: width * w, height: height * ph(w), transform: `translateY(${(1 - q) * height * 0.25}px) scale(${0.9 + q * 0.1})`, opacity: q }}>
+      {children}
+    </div>
+  );
+};
+
+const BottomLine: React.FC<{ text: string; rest: string; color?: string }> = ({ text, rest, color = P.accent }) => {
+  const frame = useCurrentFrame();
+  const { width, height, fps } = useVideoConfig();
+  const q = spring({ frame: frame - 6, fps, config: springs.snappy });
+  return (
+    <div style={{ position: "absolute", top: height * 0.925, left: 0, right: 0, textAlign: "center", fontFamily: fonts.display, fontWeight: 800, fontSize: width * 0.075, color: P.ink, opacity: q, transform: `translateY(${(1 - q) * 30}px)` }}>
+      <span style={{ color }}>{text}</span>
+      {rest}
+    </div>
+  );
+};
+
+const EndCard: React.FC<{ headAt: number; urls: Record<string, string> }> = ({ headAt, urls }) => {
+  const frame = useCurrentFrame();
+  const { width, height, fps } = useVideoConfig();
+  const recap = interpolate(frame, [headAt - 8, headAt], [1, 0], clamp);
+  const pile = ["dishes", "fridge", "floor", "trash", "counters", "laundry??", "oven", "where do I start?!"];
+  const steps = [["Clear the dishes into the sink", true], ["Load and start the dishwasher", true], ["Wipe down the countertops", false]] as const;
+  return (
+    <AbsoluteFill>
+      {/* recap split */}
+      <AbsoluteFill style={{ opacity: recap }}>
+        <div style={{ position: "absolute", left: 0, right: 0, top: 0, height: height * 0.5, background: "linear-gradient(180deg,#140a10,#1e0d14)", filter: "grayscale(0.7)" }}>
+          <HalfLabel text="My brain" y={0.025} color="#fca5a5" />
+          {pile.map((w, i) => (
+            <div key={w} style={{ position: "absolute", left: width * (0.15 + rnd(i + 3) * 0.7), top: height * (0.12 + rnd(i + 70) * 0.32), transform: `translate(-50%,-50%) rotate(${(rnd(i) - 0.5) * 24}deg)`, fontFamily: fonts.display, fontWeight: 800, fontSize: width * 0.05, color: "rgba(255,255,255,0.45)", whiteSpace: "nowrap" }}>{w}</div>
+          ))}
+        </div>
+        <div style={{ position: "absolute", left: 0, right: 0, top: height * 0.5 - 3, height: 6, background: P.accent }} />
+        <div style={{ position: "absolute", left: 0, right: 0, top: height * 0.5 }}>
+          <HalfLabel text="FOCO" y={0.02} color={P.ink} icon={urls[A.icon]} />
+        </div>
+        {steps.map(([t, checked], i) => {
+          const q = spring({ frame: frame - 4 - i * 5, fps, config: springs.snappy });
+          return (
+            <div key={t} style={{ position: "absolute", left: width * 0.5, top: height * (0.62 + i * 0.125), transform: `translate(-50%,-50%) scale(${q})` }}>
+              <Card title={t} w={0.78} checkAt={checked ? 0 : undefined} dimmed={!checked} />
+            </div>
+          );
+        })}
+      </AbsoluteFill>
+      {/* the line */}
+      <Sequence from={headAt}>
+        <Headline text="Your brain sees a mountain." keyword="mountain" hero="#fca5a5" font={fonts.display} maxSize={0.085} y={0.2} />
+      </Sequence>
+      <Sequence from={headAt + 14}>
+        <Headline text="FOCO shows you the first step." keyword="first" hero={P.accent} font={fonts.display} maxSize={0.085} y={0.36} />
+      </Sequence>
+      <Sequence from={headAt + 30}>
+        <EndLogo urls={urls} />
+      </Sequence>
+    </AbsoluteFill>
+  );
+};
+
+const EndLogo: React.FC<{ urls: Record<string, string> }> = ({ urls }) => {
+  const frame = useCurrentFrame();
+  const { width, height, fps } = useVideoConfig();
+  const q = spring({ frame, fps, config: springs.snappy });
+  const b = spring({ frame: frame - 8, fps, config: springs.snappy });
+  return (
+    <AbsoluteFill>
+      <div style={{ position: "absolute", top: height * 0.55, left: 0, right: 0, display: "flex", justifyContent: "center", alignItems: "center", gap: width * 0.04, transform: `scale(${q})` }}>
+        <Img src={urls[A.icon]} style={{ width: width * 0.18, height: width * 0.18, borderRadius: width * 0.04, boxShadow: `0 0 ${width * 0.08}px ${P.hero}` }} />
+        <div style={{ fontFamily: fonts.display, fontWeight: 800, fontSize: width * 0.14, color: P.ink, letterSpacing: width * 0.006 }}>FOCO</div>
+      </div>
+      <div style={{ position: "absolute", top: height * 0.7, left: 0, right: 0, display: "flex", justifyContent: "center", alignItems: "center", gap: width * 0.04, opacity: b, transform: `translateY(${(1 - b) * 30}px)` }}>
+        <Img src={urls[A.appStore]} style={{ height: width * 0.13 }} />
+        <Img src={urls[A.googlePlay]} style={{ height: width * 0.16 }} />
+      </div>
+    </AbsoluteFill>
+  );
+};

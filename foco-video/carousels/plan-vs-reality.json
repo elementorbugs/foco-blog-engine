@@ -1,0 +1,110 @@
+{
+  "slug": "plan-vs-reality",
+  "tiktok": {
+    "caption": "My ADHD freelance Monday: the plan vs reality 🫠\n\n9am plan: answer client emails, 20 min. Reality: answered 1, then Instagram. 10am plan: start the brand deck. Reality: picked a new notebook for it. 2pm plan: first 5 slides. Reality: slide 1 still blank. 3pm plan: give up, try tomorrow. What actually happened: I told FOCO and step 1 was writing the 5 slide titles. 5 minutes. Then I kept going.\n\nWhich slide is your Monday? 👇\nSave this for your next Monday 📌\n\nYou don't need another to-do list. You need help starting. The app on the slides is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#adhdwomen",
+      "#adhdbrain",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "My ADHD freelance Monday: the plan vs reality 🫠\n\n9am plan: answer client emails, 20 min. Reality: answered 1, then Instagram. 10am plan: start the brand deck. Reality: picked a new notebook for it. 2pm plan: first 5 slides. Reality: slide 1 still blank. 3pm plan: give up, try tomorrow. What actually happened: I told FOCO and step 1 was writing the 5 slide titles. 5 minutes. Then I kept going.\n\nYou don't need another to-do list. You need help starting.\n\n📌 Save this for your next Monday, and send it to a freelancer friend who does this too.\n💜 Try FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#adhdwomen",
+      "#adhdbrain",
+      "#procrastination"
+    ],
+    "altText": "Carousel of 7 slides comparing a freelancer with ADHD's plan for Monday with what really happened, hour by hour, until FOCO gives her a 5-minute first step on her brand deck and she keeps going."
+  },
+  "slides": [
+    {
+      "layout": "versus",
+      "id": "hook",
+      "own": "carousels/own/maya/stuck-8.jpg",
+      "title": [
+        "Freelancer with ADHD:",
+        "My Monday: plan vs reality 🫠"
+      ],
+      "time": "9:00 AM",
+      "plan": "Answer client emails (20 min)",
+      "reality": "Answered 1. Then Instagram. 1 hour gone."
+    },
+    {
+      "layout": "versus",
+      "id": "v2",
+      "own": "carousels/own/maya/nine-4.jpg",
+      "time": "10:00 AM",
+      "plan": "Start the brand deck",
+      "reality": "Picked a new notebook for the brand deck ✍️"
+    },
+    {
+      "layout": "versus",
+      "id": "v3",
+      "own": "carousels/own/maya/nine-8.jpg",
+      "time": "12:30 PM",
+      "plan": "Lunch break, 30 min",
+      "reality": "Lunch at 3. Standing. Over the sink."
+    },
+    {
+      "layout": "versus",
+      "id": "v4",
+      "own": "carousels/own/maya/email-2.jpg",
+      "time": "2:00 PM",
+      "plan": "Deck: first 5 slides",
+      "reality": "Slide 1. Still blank. Still staring."
+    },
+    {
+      "layout": "versus",
+      "id": "v5",
+      "own": "carousels/own/maya/breakdown-1.jpg",
+      "time": "3:00 PM",
+      "plan": "Give up. Try tomorrow.",
+      "foco": {
+        "text": "Write the 5 slide titles",
+        "min": 5
+      }
+    },
+    {
+      "layout": "versus",
+      "id": "v6",
+      "own": "carousels/own/maya/email-6.jpg",
+      "time": "3:20 PM",
+      "plan": "Just the titles. Then stop.",
+      "reality": "Did the titles. Then 3 slides. Kept going 🥹"
+    },
+    {
+      "layout": "final-card",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "You don't need another to-do list.",
+        "You need help starting 💜"
+      ],
+      "title": "Brand deck for client",
+      "steps": [
+        {
+          "text": "Write the 5 slide titles",
+          "min": 5
+        },
+        {
+          "text": "Drop in the logo + colors",
+          "min": 10
+        },
+        {
+          "text": "One sentence per slide",
+          "min": 15
+        },
+        {
+          "text": "Export + send",
+          "min": 5
+        }
+      ],
+      "ask": "Which slide is your Monday? 👇"
+    }
+  ]
+}

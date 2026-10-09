@@ -1,0 +1,184 @@
+{
+  "slug": "chat-all-urgent",
+  "tiktok": {
+    "caption": "5 urgent tasks and my ADHD brain 🧠\n\n9am: 5 things due today, all equally urgent. 9:40: which one first? My brain: yes. By 1pm we'd done nothing, but we thought about everything. So I picked ONE (the invoice) and told FOCO. Step 1: open last month's invoice. 2 minutes. By 4:30 it was sent and I was on #2.\n\nHow many \"urgent\" tasks today? 👇\nSave this for your next everything-is-urgent day 📌\n\nYou don't need another to-do list. You need help starting. The app on the slides is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#adhdbrain",
+      "#overwhelm",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "5 urgent tasks and my ADHD brain 🧠\n\n9am: 5 things due today, all equally urgent. 9:40: which one first? My brain: yes. By 1pm we'd done nothing, but we thought about everything. So I picked ONE (the invoice) and told FOCO. Step 1: open last month's invoice. 2 minutes. By 4:30 it was sent and I was on #2.\n\nYou don't need another to-do list. You need help starting.\n\n📌 Save this for your next everything-is-urgent day, and send it to a freelancer friend whose brain texts like this too.\n💜 Try FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#adhdbrain",
+      "#overwhelm",
+      "#procrastination"
+    ],
+    "altText": "Carousel of 8 slides styled as text messages between a freelancer with ADHD and her brain: five tasks feel equally urgent so nothing happens, until she picks one and FOCO gives her a 2-minute first step."
+  },
+  "slides": [
+    {
+      "layout": "chat",
+      "id": "hook",
+      "own": "carousels/own/maya/nine-4.jpg",
+      "title": [
+        "Freelancer with ADHD:",
+        "5 urgent tasks. My brain:"
+      ],
+      "time": "9:01 AM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "Ok. 5 things due today."
+        },
+        {
+          "from": "brain",
+          "text": "All urgent 😳"
+        },
+        {
+          "from": "brain",
+          "text": "All EQUALLY urgent."
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "c2",
+      "own": "carousels/own/maya/nine-9.jpg",
+      "time": "9:40 AM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "So which one first?"
+        },
+        {
+          "from": "brain",
+          "text": "Yes."
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "c3",
+      "own": "carousels/own/maya/email-7.jpg",
+      "time": "11:20 AM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "We've been switching tabs for an hour."
+        },
+        {
+          "from": "brain",
+          "text": "Multitasking 💅"
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "c4",
+      "own": "carousels/own/maya/stuck-8.jpg",
+      "time": "1:05 PM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "We did nothing."
+        },
+        {
+          "from": "brain",
+          "text": "We thought about everything, though."
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "c5",
+      "own": "carousels/own/maya/breakdown-2.jpg",
+      "time": "2:00 PM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "Ok. Picking ONE. The invoice."
+        },
+        {
+          "from": "brain",
+          "text": "Why that one?"
+        },
+        {
+          "from": "foco",
+          "text": "Open last month's invoice",
+          "min": 2
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "c6",
+      "own": "carousels/own/maya/focus-1.jpg",
+      "time": "2:01 PM",
+      "messages": [
+        {
+          "from": "brain",
+          "text": "Wait. 2 minutes?"
+        },
+        {
+          "from": "me",
+          "text": "2 minutes."
+        },
+        {
+          "from": "brain",
+          "text": "...fine. Go."
+        }
+      ]
+    },
+    {
+      "layout": "chat",
+      "id": "c7",
+      "own": "carousels/own/maya/email-11.jpg",
+      "time": "4:30 PM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "Invoice sent. Starting #2."
+        },
+        {
+          "from": "brain",
+          "text": "Who ARE we 🥹"
+        }
+      ]
+    },
+    {
+      "layout": "final-card",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "You don't need another to-do list.",
+        "You need help starting 💜"
+      ],
+      "title": "Send client invoice",
+      "steps": [
+        {
+          "text": "Open last month's invoice",
+          "min": 2
+        },
+        {
+          "text": "Change the date + amount",
+          "min": 5
+        },
+        {
+          "text": "Export as PDF",
+          "min": 3
+        },
+        {
+          "text": "Email it to the client",
+          "min": 4
+        }
+      ],
+      "ask": "How many \"urgent\" tasks today? 👇"
+    }
+  ]
+}

@@ -1,0 +1,494 @@
+{
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "totalFrames": 969,
+  "captions": "phrase",
+  "soundGain": {
+    "assets/lib/music-cinematic-rise/track.mp3": 0.5559,
+    "assets/lib/hollywood-essentials-tension-builders-tension-builders-clock-ticking/clip.mp3": 1.2882,
+    "assets/lib/ultimate-social-content-foley-crackle/clip.mp3": 3.3113,
+    "assets/lib/hollywood-essentials-fantasy-fantasy-whoosh-light/clip.mp3": 2.0417,
+    "assets/lib/sfx-ui-sparkle-shimmer/clip.mp3": 1.4454,
+    "assets/lib/hollywood-essentials-impacts-and-explosions-impacts-explosions-breaking-glass/clip.mp3": 0.7079,
+    "assets/lib/sfx-ui-success-chime/clip.mp3": 1.4289,
+    "assets/lib/sfx-ui-soft-impact/clip.mp3": 0.7499,
+    "assets/lib/youtube-picks-interface-mouse-click/clip.mp3": 1.1885,
+    "assets/lib/hollywood-essentials-fantasy-fantasy-shine/clip.mp3": 0.8222
+  },
+  "music": {
+    "key": "assets/lib/music-cinematic-rise/track.mp3",
+    "bpm": 100.1,
+    "beatFrames": [
+      2,
+      20,
+      38,
+      56,
+      74,
+      92,
+      110,
+      128,
+      146,
+      164,
+      182,
+      200,
+      218,
+      236,
+      254,
+      272,
+      290,
+      308,
+      326,
+      344,
+      362,
+      380,
+      398,
+      416,
+      433,
+      451,
+      469,
+      487,
+      505,
+      523,
+      541,
+      559,
+      577,
+      595,
+      613,
+      631,
+      649,
+      667,
+      685,
+      703,
+      721,
+      739,
+      757,
+      775,
+      793,
+      811,
+      829,
+      847,
+      865,
+      883,
+      901,
+      919,
+      937,
+      955
+    ]
+  },
+  "scenes": [
+    {
+      "id": "hook",
+      "startFrame": 0,
+      "durationFrames": 146,
+      "voiceoverKey": "assets/vo-hook.mp3",
+      "words": [
+        {
+          "word": "Eleven",
+          "startSec": 0,
+          "endSec": 0.32
+        },
+        {
+          "word": "forty",
+          "startSec": 0.48,
+          "endSec": 0.72
+        },
+        {
+          "word": "seven.",
+          "startSec": 0.8,
+          "endSec": 1.76
+        },
+        {
+          "word": "I",
+          "startSec": 1.92,
+          "endSec": 2
+        },
+        {
+          "word": "haven't",
+          "startSec": 2.08,
+          "endSec": 2.32
+        },
+        {
+          "word": "started.",
+          "startSec": 2.48,
+          "endSec": 3.52
+        },
+        {
+          "word": "Again.",
+          "startSec": 3.6,
+          "endSec": 4.48
+        }
+      ],
+      "userAssetKeys": [
+        "assets/user/a-3bf89c14-stuck.mp4"
+      ]
+    },
+    {
+      "id": "frozen",
+      "startFrame": 146,
+      "durationFrames": 126,
+      "voiceoverKey": "assets/vo-frozen.mp3",
+      "words": [
+        {
+          "word": "I",
+          "startSec": 0,
+          "endSec": 0.16
+        },
+        {
+          "word": "know",
+          "startSec": 0.24,
+          "endSec": 0.32
+        },
+        {
+          "word": "exactly",
+          "startSec": 0.48,
+          "endSec": 0.96
+        },
+        {
+          "word": "what",
+          "startSec": 1.04,
+          "endSec": 1.12
+        },
+        {
+          "word": "to",
+          "startSec": 1.2,
+          "endSec": 1.28
+        },
+        {
+          "word": "do.",
+          "startSec": 1.44,
+          "endSec": 2.08
+        },
+        {
+          "word": "I",
+          "startSec": 2.16,
+          "endSec": 2.24
+        },
+        {
+          "word": "just",
+          "startSec": 2.36,
+          "endSec": 2.48
+        },
+        {
+          "word": "can't",
+          "startSec": 2.72,
+          "endSec": 3.04
+        },
+        {
+          "word": "start.",
+          "startSec": 3.12,
+          "endSec": 3.92
+        }
+      ],
+      "userAssetKeys": []
+    },
+    {
+      "id": "ask",
+      "startFrame": 272,
+      "durationFrames": 67,
+      "voiceoverKey": "assets/vo-ask.mp3",
+      "words": [
+        {
+          "word": "So",
+          "startSec": 0,
+          "endSec": 0.48
+        },
+        {
+          "word": "I",
+          "startSec": 0.72,
+          "endSec": 0.8
+        },
+        {
+          "word": "asked",
+          "startSec": 0.88,
+          "endSec": 1.12
+        },
+        {
+          "word": "Foco.",
+          "startSec": 1.16,
+          "endSec": 1.92
+        }
+      ],
+      "userAssetKeys": [
+        "assets/user/a-65f121f7-ask.mp4"
+      ]
+    },
+    {
+      "id": "magic",
+      "startFrame": 339,
+      "durationFrames": 148,
+      "voiceoverKey": "assets/vo-magic.mp3",
+      "words": [
+        {
+          "word": "It",
+          "startSec": 0,
+          "endSec": 0.16
+        },
+        {
+          "word": "took",
+          "startSec": 0.28,
+          "endSec": 0.4
+        },
+        {
+          "word": "the",
+          "startSec": 0.52,
+          "endSec": 0.64
+        },
+        {
+          "word": "big",
+          "startSec": 0.76,
+          "endSec": 0.88
+        },
+        {
+          "word": "scary",
+          "startSec": 0.96,
+          "endSec": 1.44
+        },
+        {
+          "word": "task,",
+          "startSec": 1.72,
+          "endSec": 2.16
+        },
+        {
+          "word": "and",
+          "startSec": 2.28,
+          "endSec": 2.4
+        },
+        {
+          "word": "broke",
+          "startSec": 2.48,
+          "endSec": 2.64
+        },
+        {
+          "word": "it",
+          "startSec": 2.72,
+          "endSec": 2.8
+        },
+        {
+          "word": "into",
+          "startSec": 2.88,
+          "endSec": 3.2
+        },
+        {
+          "word": "tiny",
+          "startSec": 3.4,
+          "endSec": 3.6
+        },
+        {
+          "word": "steps.",
+          "startSec": 3.68,
+          "endSec": 4.48
+        }
+      ],
+      "userAssetKeys": []
+    },
+    {
+      "id": "one",
+      "startFrame": 487,
+      "durationFrames": 180,
+      "voiceoverKey": "assets/vo-one.mp3",
+      "words": [
+        {
+          "word": "Step",
+          "startSec": 0,
+          "endSec": 0.32
+        },
+        {
+          "word": "one.",
+          "startSec": 0.4,
+          "endSec": 0.72
+        },
+        {
+          "word": "Open",
+          "startSec": 1.2,
+          "endSec": 1.44
+        },
+        {
+          "word": "my",
+          "startSec": 1.52,
+          "endSec": 1.6
+        },
+        {
+          "word": "inbox.",
+          "startSec": 1.68,
+          "endSec": 2.32
+        },
+        {
+          "word": "Two",
+          "startSec": 2.8,
+          "endSec": 2.88
+        },
+        {
+          "word": "minutes.",
+          "startSec": 2.96,
+          "endSec": 3.64
+        },
+        {
+          "word": "Okay.",
+          "startSec": 3.92,
+          "endSec": 4.52
+        },
+        {
+          "word": "Just",
+          "startSec": 4.72,
+          "endSec": 4.88
+        },
+        {
+          "word": "this",
+          "startSec": 4.96,
+          "endSec": 5.12
+        },
+        {
+          "word": "one.",
+          "startSec": 5.2,
+          "endSec": 5.68
+        }
+      ],
+      "userAssetKeys": [
+        "assets/user/a-105fcb78-start.mp4"
+      ]
+    },
+    {
+      "id": "started",
+      "startFrame": 667,
+      "durationFrames": 77,
+      "voiceoverKey": "assets/vo-started.mp3",
+      "words": [
+        {
+          "word": "And",
+          "startSec": 0,
+          "endSec": 0.16
+        },
+        {
+          "word": "then,",
+          "startSec": 0.32,
+          "endSec": 0.8
+        },
+        {
+          "word": "I",
+          "startSec": 0.88,
+          "endSec": 0.96
+        },
+        {
+          "word": "was",
+          "startSec": 1.04,
+          "endSec": 1.12
+        },
+        {
+          "word": "just",
+          "startSec": 1.2,
+          "endSec": 1.36
+        },
+        {
+          "word": "doing",
+          "startSec": 1.44,
+          "endSec": 1.68
+        },
+        {
+          "word": "it.",
+          "startSec": 1.76,
+          "endSec": 2.24
+        }
+      ],
+      "userAssetKeys": [
+        "assets/user/a-bbfc49a0-typing.mp4",
+        "assets/user/a-a502ae99-timer.mp4"
+      ]
+    },
+    {
+      "id": "relief",
+      "startFrame": 744,
+      "durationFrames": 103,
+      "voiceoverKey": "assets/vo-relief.mp3",
+      "words": [
+        {
+          "word": "First",
+          "startSec": 0,
+          "endSec": 0.24
+        },
+        {
+          "word": "step,",
+          "startSec": 0.44,
+          "endSec": 0.96
+        },
+        {
+          "word": "done.",
+          "startSec": 1.04,
+          "endSec": 1.84
+        },
+        {
+          "word": "The",
+          "startSec": 1.88,
+          "endSec": 1.92
+        },
+        {
+          "word": "rest",
+          "startSec": 2,
+          "endSec": 2.24
+        },
+        {
+          "word": "followed.",
+          "startSec": 2.32,
+          "endSec": 3.12
+        }
+      ],
+      "userAssetKeys": [
+        "assets/user/a-488a7ccf-coffee.mp4",
+        "assets/user/a-fdfca650-did.mp4"
+      ]
+    },
+    {
+      "id": "cta",
+      "startFrame": 847,
+      "durationFrames": 122,
+      "voiceoverKey": "assets/vo-cta.mp3",
+      "words": [
+        {
+          "word": "Foco.",
+          "startSec": 0,
+          "endSec": 0.8
+        },
+        {
+          "word": "The",
+          "startSec": 1.04,
+          "endSec": 1.12
+        },
+        {
+          "word": "start",
+          "startSec": 1.2,
+          "endSec": 1.44
+        },
+        {
+          "word": "button",
+          "startSec": 1.52,
+          "endSec": 1.84
+        },
+        {
+          "word": "your",
+          "startSec": 1.92,
+          "endSec": 2.08
+        },
+        {
+          "word": "brain",
+          "startSec": 2.24,
+          "endSec": 2.4
+        },
+        {
+          "word": "is",
+          "startSec": 2.48,
+          "endSec": 2.64
+        },
+        {
+          "word": "missing.",
+          "startSec": 2.72,
+          "endSec": 3.36
+        }
+      ],
+      "userAssetKeys": [
+        "assets/user/a-39740cca-a-75c2c850-foco-icon.png",
+        "assets/user/a-f3753e44-a-3157030f-app-store.png",
+        "assets/user/a-e3c4c0a3-a-20e23b4b-google-play.png"
+      ]
+    }
+  ]
+}

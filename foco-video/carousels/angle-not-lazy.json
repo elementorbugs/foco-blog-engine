@@ -1,0 +1,120 @@
+{
+  "slug": "angle-not-lazy",
+  "tiktok": {
+    "caption": "I'm not lazy. I'm stuck at the start. 🫠\n\nI'm not tired. I'm not lazy. I just can't make myself move. Once I start, I'm usually fine. Starting is the hard part.\n\nSo I told FOCO about it. It broke the video into four tiny steps. Step 1 was just importing the footage. Three minutes, something chill on, and now I'm editing.\n\nIs starting the hardest part for you too? 👇\nSave this for the next time you're stuck 📌\n\nYou don't need another to-do list. You need help starting. The app on the slides is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#taskparalysis",
+      "#procrastination",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "I'm not lazy. I'm stuck at the start. 🫠\n\nI'm not tired. I'm not lazy. I just can't make myself move. Once I start, I'm usually fine. Starting is the hard part.\n\nSo I told FOCO about it. It broke the video into four tiny steps. Step 1 was just importing the footage. Three minutes, something chill on, and now I'm editing.\n\nYou don't need another to-do list. You need help starting.\n\n📌 Save this for the next time you're stuck, and send it to a freelancer friend who gets it.\n💜 Try FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdfreelancer",
+      "#adhdwomen",
+      "#taskparalysis",
+      "#procrastination"
+    ],
+    "altText": "Carousel of 6 slides about a freelance woman with ADHD who can't start a work task (Edit client video). FOCO breaks it into four tiny steps and she starts step 1 with a short timer and chill sounds."
+  },
+  "slides": [
+    {
+      "layout": "hook",
+      "id": "hook",
+      "own": "carousels/own/maya/email-2.jpg",
+      "lines": [
+        "Freelancer with ADHD:",
+        "Not lazy. Not tired.",
+        "Still can't start 😵‍💫"
+      ],
+      "textTop": 1100
+    },
+    {
+      "layout": "caption",
+      "id": "pain1",
+      "own": "carousels/own/maya/nine-9.jpg",
+      "label": "I'm not tired. I'm not lazy.",
+      "comment": "I just can't make myself move."
+    },
+    {
+      "layout": "caption",
+      "id": "pain2",
+      "own": "carousels/own/maya/email-8.jpg",
+      "label": "Once I start, I'm usually fine.",
+      "comment": "Starting is the hard part 😵‍💫"
+    },
+    {
+      "layout": "card",
+      "id": "turn",
+      "own": "carousels/own/maya/breakdown-8.jpg",
+      "label": "So I told FOCO about it.",
+      "comment": "It broke it into four tiny steps.",
+      "title": "Edit client video",
+      "steps": [
+        {
+          "text": "Import the footage",
+          "min": 3
+        },
+        {
+          "text": "Cut the first 30 seconds",
+          "min": 10
+        },
+        {
+          "text": "Add captions",
+          "min": 15
+        },
+        {
+          "text": "Export + send",
+          "min": 5
+        }
+      ],
+      "result": "Step 1 takes 3 minutes ✅"
+    },
+    {
+      "layout": "focus",
+      "id": "focus",
+      "own": "carousels/own/maya/focus-7.jpg",
+      "label": "Just step 1. Something chill on.",
+      "comment": "A 3-minute timer. That's it.",
+      "stepNo": 1,
+      "stepTotal": 4,
+      "step": "Import the footage",
+      "min": 3,
+      "sound": "Chill",
+      "result": "And now I'm editing ✅"
+    },
+    {
+      "layout": "final-card",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "You don't need another to-do list.",
+        "You need help starting 💜"
+      ],
+      "title": "Edit client video",
+      "steps": [
+        {
+          "text": "Import the footage",
+          "min": 3
+        },
+        {
+          "text": "Cut the first 30 seconds",
+          "min": 10
+        },
+        {
+          "text": "Add captions",
+          "min": 15
+        },
+        {
+          "text": "Export + send",
+          "min": 5
+        }
+      ],
+      "ask": "Is starting the hardest part for you too? 👇"
+    }
+  ]
+}

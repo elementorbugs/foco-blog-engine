@@ -1,0 +1,14 @@
+/*
+ * FOCO homepage v2 (2026-10-08). When the page chosen as the static front page
+ * contains the v2 layout (class="fh"), render that page's content instead of the
+ * classic ACF template below. Rollback: Settings → Reading → Homepage → "home".
+ */
+$foco_front_id = (int) get_option( 'page_on_front' );
+if ( 'page' === get_option( 'show_on_front' ) && $foco_front_id && false !== strpos( (string) get_post_field( 'post_content', $foco_front_id ), 'class="fh"' ) ) {
+	get_header();
+	echo '<main class="foco-home-v2" style="padding-top:120px">' . apply_filters( 'the_content', get_post_field( 'post_content', $foco_front_id ) ) . '</main>';
+	echo '<script>(function(){var n=document.querySelector(".foco-nav");var m=document.querySelector(".foco-home-v2");if(n){if(m){m.style.paddingTop=n.offsetHeight+"px";}}})();</script>';
+	get_footer();
+	return;
+}
+

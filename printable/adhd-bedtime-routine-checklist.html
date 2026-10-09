@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  @page { size: letter; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; color: #26203A; background: #FFFFFF; }
+  .page { width: 8.5in; height: 11in; padding: 0.55in 0.6in; position: relative; display: flex; flex-direction: column; }
+
+  .header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+  .brand-name { font-weight: 800; font-size: 18px; color: #5B21B6; letter-spacing: 0.5px; }
+  .kicker { font-size: 11px; color: #8B82A3; font-weight: 600; text-transform: uppercase; letter-spacing: 1.2px; }
+
+  h1 { font-size: 30px; color: #160F22; margin: 6px 0 4px; font-weight: 800; }
+  .subtitle { font-size: 13.5px; color: #6E6684; line-height: 1.5; margin-bottom: 16px; max-width: 6.8in; }
+  .subtitle strong { color: #5B21B6; }
+
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; flex: 1; }
+  .col-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #FB923C; margin-bottom: 10px; }
+  .item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px; border: 1.5px solid #ECE5F6; border-radius: 12px; margin-bottom: 8px; background: #FBF9FE; }
+  .checkbox { width: 18px; height: 18px; border-radius: 6px; border: 2px solid #C9B8E8; flex-shrink: 0; margin-top: 1px; }
+  .item-title { font-size: 13px; font-weight: 800; color: #160F22; }
+  .item-desc { font-size: 11px; color: #6E6684; margin-top: 1px; }
+
+  .footer { margin-top: 14px; padding-top: 12px; border-top: 1px solid #EEE8F7; display: flex; justify-content: space-between; align-items: center; }
+  .footer .fine { font-size: 10px; color: #B0A8C4; }
+  .footer .url { font-size: 11px; color: #5B21B6; font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="page">
+    <div class="header">
+      <span class="brand-name">FOCO</span>
+      <span class="kicker">Free Printable</span>
+    </div>
+    <h1>ADHD Bedtime Routine Checklist</h1>
+    <p class="subtitle">14 small steps, split into <strong>wind down</strong> (calm your body and brain) and <strong>set up tomorrow</strong> (remove decisions before you're too tired to make them). Check off what you need tonight, skip the rest.</p>
+
+    <div class="cols">
+      <div>
+        <div class="col-label">Wind Down</div>
+        <div class="item"><div class="checkbox"></div><div><div class="item-title">Set a bedtime alarm</div><div class="item-desc">Signals that it's time to start winding down</div></div></div>
+        <div class="item"><div class="checkbox"></div><div><div class="item-title">Put devices away</div><div class="item-desc">Reduces stimulation before sleep</div></div></div>
+        <div class="item"><div class="checkbox"></div><div><div class="item-title">Dim the lights</div><div class="item-desc">Cues your brain that night is coming</div></div></div>
+        <div class="item"><div class="checkbox"></div><div><div class="item-title">Take meds or supplements (if relevant)</div><div class="item-desc">Consistency matters more than timing</div></div></div>
+        <div class="item"><div class="checkbox"></div><div><div class="item-title">Wash up and brush teeth</div><div class="item-desc">A physical cue that the day is ending</div></div></div>
+        <div class="item"><div class="checkbox"></div><div><div class="item-title">Light stretch or relaxation</div><div class="item-desc">Releases physical tension from the day</div></div></div>
+        <div class="item"><div class="checkbox"></div><div><div class="item-title">Brain dump on paper</div><div class="item-desc">Empties racing thoughts before bed</div></div></div>
+      </div>
+      <div>
+        <div class="col-label">Set Up Tomorrow</div>
+        <div class="item"><div class="checkbox"></div><div><div class="item-title">Lay out tomorrow's clothes</div><div class="item-desc">Removes a decision for tomorrow morning</div></div></div>
+        <div class="item"><div class="checkbox"></div><div><div class="item-title">Pack your bag</div><div class="item-desc">One less thing to think about tomorrow</div></div></div>
+        <div class="item"><div class="checkbox"></div><div><div class="item-title">Check tomorrow's calendar</div><div class="item-desc">Reduces morning surprises</div></div></div>
+        <div class="item"><div class="checkbox"></div><div><div class="item-title">Set out one visible reminder</div><div class="item-desc">Connects tonight to tomorrow's first step</div></div></div>
+        <div class="item"><div class="checkbox"></div><div><div class="item-title">Charge your phone away from bed</div><div class="item-desc">Reduces the temptation to scroll</div></div></div>
+        <div class="item"><div class="checkbox"></div><div><div class="item-title">Tidy one surface</div><div class="item-desc">A small win waiting for future you</div></div></div>
+        <div class="item"><div class="checkbox"></div><div><div class="item-title">Note one good thing about today</div><div class="item-desc">Ends the day on a steady note</div></div></div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span class="fine">Made for personal use. Not medical advice.</span>
+      <span class="url">tryfoco.com/adhd-bedtime-routine</span>
+    </div>
+  </div>
+</body>
+</html>

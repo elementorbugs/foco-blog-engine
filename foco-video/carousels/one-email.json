@@ -1,0 +1,101 @@
+{
+  "slug": "one-email",
+  "tiktok": {
+    "caption": "why I can't send one email with ADHD (task paralysis, a timeline) 🫠\n\nI avoided ONE email from 6pm to 11pm. cleaned the desk, deep cleaned the fridge. it was never laziness, my brain just couldn't find step 1. what finally worked: make step 1 tiny, like \"type just the greeting\". 4 minutes later it was sent.\n\nwhat's YOUR one email? 👇\nsave this for the next email you're avoiding 📌\n\nthe app on the last slide is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#taskparalysis",
+      "#procrastination",
+      "#adhdlife",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "Why one email can take all evening with ADHD (task paralysis, explained) 🫠\n\nI avoided ONE email from 6pm to 11pm. It wasn't laziness. My brain couldn't find step 1.\n\n1. 6pm: \"I'll send it after dinner\"\n2. 8:15pm: opened it, closed it, cleaned my desk\n3. 9:40pm: deep cleaned the fridge\n4. 10:50pm: made step 1 tiny: type just the greeting\n\n11:04pm: sent. 4 minutes, start to finish.\n\n📌 Save this for the next email you're avoiding, and send it to someone who gets it.\n💜 The app that finds my step 1 is FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdtips",
+      "#taskparalysis",
+      "#procrastination",
+      "#adhdlife"
+    ],
+    "altText": "Carousel of 8 photos showing one evening hour by hour, with text about avoiding a single email from 6pm to 11pm with ADHD task paralysis, then making step 1 tiny and sending it in 4 minutes. The last slide shows the FOCO app."
+  },
+  "slides": [
+    {
+      "layout": "hook",
+      "id": "hook",
+      "query": "woman on couch with laptop at night",
+      "lines": [
+        "I avoided ONE email from 6pm to 11pm",
+        "it took 4 minutes 💀"
+      ],
+      "tag": "(here's what happened in between)",
+      "pick": 6
+    },
+    {
+      "layout": "caption",
+      "id": "dinner",
+      "query": "woman cooking dinner in kitchen evening",
+      "label": "\"I'll send it after dinner\"",
+      "comment": "it's ONE email. easy.",
+      "time": "6:00 pm",
+      "pick": 2
+    },
+    {
+      "layout": "caption",
+      "id": "desk",
+      "query": "person organizing desk at home",
+      "label": "opened it. closed it.",
+      "comment": "cleaned my whole desk instead 🙃",
+      "time": "8:15 pm",
+      "pick": 1
+    },
+    {
+      "layout": "caption",
+      "id": "fridge",
+      "query": "woman cleaning refrigerator",
+      "label": "deep cleaned the fridge",
+      "comment": "the email is still there",
+      "time": "9:40 pm",
+      "pick": 6
+    },
+    {
+      "layout": "caption",
+      "id": "reframe",
+      "query": "woman lying on sofa looking at ceiling",
+      "label": "it was never laziness",
+      "comment": "my brain just couldn't find step 1",
+      "time": "10:50 pm",
+      "pick": 3
+    },
+    {
+      "layout": "step",
+      "id": "step",
+      "query": "hands typing on laptop at night",
+      "label": "so I made step 1 tiny:",
+      "step": "Type just the greeting",
+      "min": 1,
+      "pick": 3
+    },
+    {
+      "layout": "caption",
+      "id": "sent",
+      "query": "woman smiling at laptop at night",
+      "label": "sent. ✅",
+      "comment": "4 minutes, start to finish 💀",
+      "time": "11:04 pm",
+      "pick": 5
+    },
+    {
+      "layout": "final-phone",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "the app that finds my step 1 💜"
+      ],
+      "screenshot": 3,
+      "ask": "what's YOUR one email? 👇"
+    }
+  ]
+}
