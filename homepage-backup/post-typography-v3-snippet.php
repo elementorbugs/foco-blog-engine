@@ -70,7 +70,10 @@ add_action( 'wp_head', function () {
 		. $p . ' article .foco-cmp2 .cm-app img{width:34px !important;height:34px !important;border-radius:9px !important}'
 		. $p . ' article .foco-cmp2 .cm-app b{font-size:15px !important}'
 		. $p . ' article .foco-cmp2 tbody th{grid-column:1/-1 !important;padding:12px 12px 2px !important;border-bottom:0 !important;font-size:12px !important;letter-spacing:.06em !important;text-transform:uppercase !important;color:#625A78 !important}'
-		. $p . ' article .foco-cmp2 tbody td{padding:4px 12px 12px !important;font-size:14px !important}}'
+		. $p . ' article .foco-cmp2 tbody td{padding:4px 12px 12px !important;font-size:14px !important}'
+		. $p . ' article .foco-cmp2.one tr{grid-template-columns:1fr !important}}'
+		// single-app card (reviews): label column narrower on desktop
+		. $p . ' article .foco-cmp2.one thead th:first-child{width:32% !important}'
 		// answer box + takeaways
 		. $p . ' .foco-tldr{background:#F3EEFC !important;border:0 !important;border-left:4px solid #7C3AED !important;border-radius:14px !important;box-shadow:none !important;padding:22px 26px !important}'
 		. $p . ' article .foco-tldr,' . $p . ' article .foco-tldr *,' . $p . ' article .foco-tldr p{color:#2A2340 !important;font-size:18px !important;line-height:1.75 !important}'

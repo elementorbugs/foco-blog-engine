@@ -1,0 +1,90 @@
+{
+  "checked": "2026-10-09",
+  "source": "US App Store via iTunes lookup API",
+  "apps": {
+    "FOCO": {
+      "appStoreId": 6762489184,
+      "trackName": "FOCO: ADHD Journal Planner",
+      "seller": "adi ben elyahu",
+      "price": "Free",
+      "rating": 5,
+      "ratingCount": 15,
+      "lastUpdate": "2026-10-06",
+      "watch": false,
+      "genre": "Productivity",
+      "url": "https://apps.apple.com/us/app/id6762489184"
+    },
+    "Goblin Tools": {
+      "appStoreId": 6449003064,
+      "trackName": "Goblin Tools",
+      "seller": "Skyhook",
+      "price": "$1.99",
+      "rating": 4.8,
+      "ratingCount": 3029,
+      "lastUpdate": "2026-08-23",
+      "watch": false,
+      "genre": "Productivity",
+      "url": "https://apps.apple.com/us/app/id6449003064"
+    },
+    "Tiimo": {
+      "appStoreId": 1480220328,
+      "trackName": "Tiimo: To-Do List Planner",
+      "seller": "tiimo ApS",
+      "price": "Free",
+      "rating": 4.6,
+      "ratingCount": 20673,
+      "lastUpdate": "2026-10-05",
+      "watch": true,
+      "genre": "Productivity",
+      "url": "https://apps.apple.com/us/app/id1480220328"
+    },
+    "Structured": {
+      "appStoreId": 1499198946,
+      "trackName": "Structured: Daily Planner Todo",
+      "seller": "unorderly GmbH",
+      "price": "Free",
+      "rating": 4.8,
+      "ratingCount": 167268,
+      "lastUpdate": "2026-09-29",
+      "watch": true,
+      "genre": "Productivity",
+      "url": "https://apps.apple.com/us/app/id1499198946"
+    },
+    "Inflow": {
+      "appStoreId": 1528183849,
+      "trackName": "Inflow - Manage Your ADHD",
+      "seller": "Get Inflow Ltd.",
+      "price": "Free",
+      "rating": 4.4,
+      "ratingCount": 5625,
+      "lastUpdate": "2026-08-25",
+      "watch": false,
+      "genre": "Health & Fitness",
+      "url": "https://apps.apple.com/us/app/id1528183849"
+    },
+    "Amazing Marvin": {
+      "appStoreId": 1314511546,
+      "trackName": "Amazing Marvin: ADHD Planner",
+      "seller": "Amazing GmbH",
+      "price": "Free",
+      "rating": 4,
+      "ratingCount": 128,
+      "lastUpdate": "2026-09-24",
+      "watch": true,
+      "genre": "Productivity",
+      "url": "https://apps.apple.com/us/app/id1314511546"
+    },
+    "Aligned": {
+      "appStoreId": 6714475500,
+      "trackName": "Aligned: AI Coach & Planner",
+      "seller": "GM LAP LIMITED",
+      "price": "Free",
+      "rating": 4.3,
+      "ratingCount": 947,
+      "lastUpdate": "2026-10-03",
+      "watch": false,
+      "genre": "Health & Fitness",
+      "url": "https://apps.apple.com/us/app/id6714475500"
+    }
+  }
+}
