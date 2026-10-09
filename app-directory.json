@@ -58,6 +58,22 @@
     "todoist": {
       "name": "Todoist",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-todoist.png"
+    },
+    "finch": {
+      "name": "Finch",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-finch.png"
+    },
+    "streaks": {
+      "name": "Streaks",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-streaks.png"
+    },
+    "llama-life": {
+      "name": "Llama Life",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-llama-life.png"
+    },
+    "saner-ai": {
+      "name": "Saner.AI",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-saner-ai.png"
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",

@@ -72,6 +72,22 @@ add_action( 'wp_head', function () {
 		. $p . ' article .foco-cmp2 tbody th{grid-column:1/-1 !important;padding:12px 12px 2px !important;border-bottom:0 !important;font-size:12px !important;letter-spacing:.06em !important;text-transform:uppercase !important;color:#625A78 !important}'
 		. $p . ' article .foco-cmp2 tbody td{padding:4px 12px 12px !important;font-size:14px !important}'
 		. $p . ' article .foco-cmp2.one tr{grid-template-columns:1fr !important}}'
+		// multi-app list table (alternatives posts): one app per row, icon in the first cell
+		. $p . ' article .foco-cmp2.multi table{min-width:760px !important;table-layout:auto !important}'
+		. $p . ' article .foco-cmp2.multi thead th{font-size:11.5px !important;font-weight:700 !important;letter-spacing:.08em !important;text-transform:uppercase !important;color:#625A78 !important;padding:12px 14px !important}'
+		. $p . ' article .foco-cmp2.multi thead th:first-child{width:21% !important}'
+		. $p . ' article .foco-cmp2.multi tbody th,' . $p . ' article .foco-cmp2.multi tbody td{padding:14px !important;font-size:14.5px !important}'
+		. $p . ' article .foco-cmp2.multi tbody th{vertical-align:middle !important}'
+		. $p . ' article .foco-cmp2.multi .cm-app img{width:36px !important;height:36px !important;border-radius:9px !important}'
+		. $p . ' article .foco-cmp2.multi .cm-app b{font-size:15.5px !important}'
+		. $p . ' article .foco-cmp2.multi .cm-app small{font-size:12px !important}'
+		. $p . ' article .foco-cmp2.multi tr.cm-ours th,' . $p . ' article .foco-cmp2.multi tr.cm-ours td{background:#F6F2FD !important}'
+		. '@media (max-width:640px){' . $p . ' article .foco-cmp2.multi table{min-width:0 !important}'
+		. $p . ' article .foco-cmp2.multi thead{display:none !important}'
+		. $p . ' article .foco-cmp2.multi tr{display:block !important;border-bottom:1px solid #ECE6F7 !important;padding:6px 0 10px !important}'
+		. $p . ' article .foco-cmp2.multi tbody th{display:block !important;padding:12px 14px 6px !important;border:0 !important;text-transform:none !important;letter-spacing:0 !important;color:#2A2340 !important;font-size:15px !important}'
+		. $p . ' article .foco-cmp2.multi tbody td{display:block !important;position:relative !important;padding:4px 14px 4px 116px !important;border:0 !important;font-size:14px !important;min-height:24px !important}'
+		. $p . ' article .foco-cmp2.multi tbody td::before{content:attr(data-label);position:absolute;left:14px;top:7px;width:92px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#625A78;line-height:1.3}}'
 		// single-app card (reviews): label column narrower on desktop
 		. $p . ' article .foco-cmp2.one thead th:first-child{width:32% !important}'
 		// answer box + takeaways
