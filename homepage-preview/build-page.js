@@ -48,7 +48,7 @@ function scope(block) {
 css = scope(css);
 // .fh base: own colors + full-bleed breakout out of the 820px page column
 css += '.fh h1,.fh h2,.fh h3,.fh p,.fh li,.fh summary{color:var(--ink) !important}.fh .sub,.fh .vig p,.fh .feature p,.fh .demo-card p,.fh .stat p,.fh details p,.fh .quote .who{color:var(--muted) !important}.fh .quote p{color:var(--ink-2) !important}.fh .dark h2,.fh .dark h3,.fh .dark li{color:#fff !important}.fh .dark p,.fh .dark .sub{color:#C9C1DA !important}.fh .final h2{color:#fff !important}.fh .final .sub{color:#E7E0F5 !important}.fh .plan.best,.fh .plan.best li,.fh .plan.best div{color:#fff !important}.fh .plan.best ul li{color:#E7E0F5 !important}';
-css += '.fh{color:var(--ink) !important;background:var(--bg) !important;width:100vw !important;margin-left:calc(50% - 50vw) !important;font-family:Inter,system-ui,sans-serif !important;line-height:1.55 !important}';
+css += '.fh{color:var(--ink) !important;background:var(--bg) !important;width:100vw !important;margin-left:calc(50% - 50vw) !important;font-family:"Plus Jakarta Sans",Inter,system-ui,sans-serif !important;line-height:1.55 !important}';
 // inline styles -> !important too, so they still beat the class rules above
 body = body.replace(/style="([^"]*)"/g, (a, d) => 'style="' + important(d) + '"');
 
