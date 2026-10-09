@@ -5,7 +5,7 @@
  * Brand rule (2026-10-09): every page is light (#FAF8FD); dark is only an accent (footer, demo
  * band, final CTA). This converts /blog/, category/tag/date archives and search results:
  * - content left-aligned to the header container (1200px), like posts;
- * - "Browse by topic" photo tiles in one row (they keep their dark photo overlay);
+ * - "Browse by topic" as light pills (name + count); the dark photo tiles looked heavy here;
  * - posts as white cards in a 3-column grid (2 on tablets, 1 on phones); the dark mascot covers
  *   read as the accent.
  * Rollback: deactivate this snippet.
@@ -23,12 +23,17 @@ add_action( 'wp_head', function () {
 		. $a . ' .wrap>:not(.post-card){grid-column:1/-1 !important}'
 		. $a . ' h1{font-size:clamp(34px,4vw,48px) !important;font-weight:600 !important;letter-spacing:.005em !important;line-height:1.15 !important;color:#2A2340 !important;margin:0 0 4px !important;text-align:left !important}'
 		. $a . ' .archive-description,' . $a . ' .taxonomy-description{color:#5B5170 !important;font-size:17px !important;max-width:720px !important}'
-		// topic tiles: one row on desktop
-		. $a . ' .topic-tiles{margin:0 0 18px !important}'
-		. $a . ' .topic-tiles-title{color:#7A7290 !important;font-size:12px !important;font-weight:600 !important;letter-spacing:.1em !important;text-transform:uppercase !important;margin:0 0 14px !important}'
-		. $a . ' .topic-photo-grid{display:grid !important;grid-template-columns:repeat(6,minmax(0,1fr)) !important;gap:12px !important}'
-		. $a . ' .topic-tile{aspect-ratio:1/1 !important;border:0 !important;border-radius:14px !important;box-shadow:0 6px 18px rgba(30,23,51,.10) !important}'
-		. $a . ' .topic-tile-name{font-size:15px !important}'
+		// topics: light pills (name + count) instead of dark photo tiles, which looked heavy on the light page
+		. $a . ' .topic-tiles{margin:0 0 22px !important}'
+		. $a . ' .topic-tiles-title{color:#7A7290 !important;font-size:12px !important;font-weight:600 !important;letter-spacing:.1em !important;text-transform:uppercase !important;margin:0 0 12px !important}'
+		. $a . ' .topic-photo-grid{display:flex !important;flex-wrap:wrap !important;gap:10px !important}'
+		. $a . ' .topic-tile{display:inline-flex !important;align-items:center !important;aspect-ratio:auto !important;position:relative !important;overflow:visible !important;background:#FFFFFF !important;border:1px solid #E7E0F5 !important;border-radius:999px !important;box-shadow:none !important;padding:0 !important;transition:border-color .15s,background .15s !important}'
+		. $a . ' .topic-tile:hover{border-color:#7C3AED !important;background:#F6F2FD !important}'
+		. $a . ' .topic-tile::before,' . $a . ' .topic-tile::after,' . $a . ' .topic-tile-img{display:none !important}'
+		. $a . ' .topic-tile-body{position:static !important;display:inline-flex !important;align-items:center !important;gap:8px !important;padding:10px 12px 10px 18px !important}'
+		. $a . ' .topic-tile-name{font-size:15px !important;font-weight:600 !important;color:#2A2340 !important;text-shadow:none !important;white-space:nowrap !important;letter-spacing:0 !important}'
+		. $a . ' .topic-tile-count{background:#F3EEFC !important;border:0 !important;color:#6D28D9 !important;font-size:12px !important;font-weight:700 !important;padding:3px 9px !important;-webkit-backdrop-filter:none !important;backdrop-filter:none !important}'
+		. $a . ' .topic-tile:hover .topic-tile-name{color:#6D28D9 !important}'
 		// cards
 		. $a . ' .post-card{display:flex !important;flex-direction:column !important;background:#FFFFFF !important;border:1px solid #ECE6F7 !important;border-radius:18px !important;overflow:hidden !important;text-decoration:none !important;transition:transform .18s,box-shadow .18s !important;margin:0 !important;padding:0 !important;gap:0 !important;width:auto !important;max-width:none !important}'
 		. $a . ' .post-card:hover{transform:translateY(-3px) !important;box-shadow:0 14px 34px rgba(76,29,149,.12) !important}'
@@ -47,8 +52,8 @@ add_action( 'wp_head', function () {
 		. $a . ' .page-numbers.dots{border:0 !important;background:none !important}'
 		. $a . ' a.page-numbers:hover{border-color:#7C3AED !important;color:#6D28D9 !important}'
 		// responsive
-		. '@media (max-width:1000px){' . $a . ' .wrap{grid-template-columns:repeat(2,minmax(0,1fr)) !important}' . $a . ' .topic-photo-grid{grid-template-columns:repeat(3,minmax(0,1fr)) !important}}'
-		. '@media (max-width:640px){' . $a . '{padding:100px 0 60px !important}' . $a . ' .wrap{grid-template-columns:1fr !important;gap:20px !important}' . $a . ' .topic-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}' . $a . ' .topic-tile{aspect-ratio:4/3 !important}}'
+		. '@media (max-width:1000px){' . $a . ' .wrap{grid-template-columns:repeat(2,minmax(0,1fr)) !important}}'
+		. '@media (max-width:640px){' . $a . '{padding:100px 0 60px !important}' . $a . ' .wrap{grid-template-columns:1fr !important;gap:20px !important}' . $a . ' .topic-photo-grid{gap:8px !important}' . $a . ' .topic-tile-body{padding:8px 10px 8px 14px !important}' . $a . ' .topic-tile-name{font-size:14px !important}}'
 		. '</style>';
 }, 100 );
 
