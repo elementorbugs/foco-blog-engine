@@ -36,7 +36,7 @@ const extra = [
   `${P} article .foco-dark [style*="color:#FB923C"],${P} article .foco-bd-dump-tool [style*="color:#FB923C"],${P} article [class*="foco-chart"] [style*="color:#FB923C"]{color:#FB923C !important}`,
   `${P} article a[style*="background:rgba(124,58,237,0.08)"]{color:#2A2340 !important;background:#FFFFFF !important;border-color:#ECE6F7 !important}`,
   `${P} article a[style*="background:rgba(251,146,60,0.08)"]{color:#2A2340 !important}`,
-  `${P} article [style*="font-size:36px"]{color:#2A2340 !important}`,
+  `${P} article [style*="font-size:36px"],${P} article [style*="font-size:32px"]{color:#2A2340 !important}`,
   `${P} .foco-key-takeaways{background:#fff !important;border:1px solid #ECE6F7 !important;border-radius:16px !important}`,
   `${P} .foco-key-takeaways h2{font-size:18px !important;margin-top:0 !important;color:#5B21B6 !important}`,
   `${P} article blockquote,${P} article .wp-block-quote{border-left:4px solid #A78BFA !important;background:#F6F2FD !important;border-radius:0 12px 12px 0 !important;padding:16px 22px !important}`,
