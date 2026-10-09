@@ -212,7 +212,10 @@ async function rebuild({ live = false, quiet = false } = {}) {
 
   const host = await wpReq('GET', `/wp-json/wp/v2/posts/${dir.hostPostId}?context=edit&_fields=content`);
   const raw = host.data && host.data.content && host.data.content.raw;
-  if (!raw) throw new Error('could not read host post ' + dir.hostPostId);
+  if (!raw) {
+    const why = host.data && (host.data.code || (typeof host.data === 'string' ? host.data.slice(0, 80) : ''));
+    throw new Error(`could not read host post ${dir.hostPostId} (HTTP ${host.status}${why ? ', ' + why : ''}); check WP_USER / WP_APP_PASSWORD`);
+  }
   const s = raw.indexOf(START), e = raw.indexOf(END, s);
   if (s < 0 || e < 0) throw new Error('directory block not found in host post');
   let next = raw.slice(0, s) + block + raw.slice(e + '</div>'.length);
