@@ -40,7 +40,9 @@ add_action( 'wp_head', function () {
 		. $p . ' article h2{font-size:clamp(24px,2.4vw,29px) !important;line-height:1.3 !important;margin-top:60px !important;margin-bottom:16px !important;scroll-margin-top:96px !important}'
 		. $p . ' article h3{font-size:21px !important;line-height:1.35 !important;margin-top:36px !important}'
 		// meta row
-		. $p . ' .post-meta,' . $p . ' .post-meta span{font-size:14px !important;color:#7A7290 !important;letter-spacing:.01em !important}'
+		. $p . ' .post-meta,' . $p . ' .post-meta span{font-size:14px !important;color:#625A78 !important;letter-spacing:.01em !important}'
+		// review/comparison posts: one-line freshness + disclosure under the meta row
+		. $p . ' article p.foco-review-meta{font-size:14px !important;line-height:1.55 !important;color:#625A78 !important;letter-spacing:.01em !important;margin:0 0 18px !important}'
 		// answer box + takeaways
 		. $p . ' .foco-tldr{background:#F3EEFC !important;border:0 !important;border-left:4px solid #7C3AED !important;border-radius:14px !important;box-shadow:none !important;padding:22px 26px !important}'
 		. $p . ' article .foco-tldr,' . $p . ' article .foco-tldr *,' . $p . ' article .foco-tldr p{color:#2A2340 !important;font-size:18px !important;line-height:1.75 !important}'
@@ -52,7 +54,7 @@ add_action( 'wp_head', function () {
 		. $p . ' .foco-toc-side{display:none}'
 		. '@media (min-width:1240px){' . $p . ' .foco-toc-side{display:block;position:absolute;right:24px;width:240px}'
 		. $p . ' .foco-toc-side nav{position:sticky;top:100px;border-left:2px solid #ECE6F7;padding:4px 0 4px 18px}'
-		. $p . ' .foco-toc-side b{display:block;font:600 12px/1 Lexend,Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#7A7290;margin-bottom:14px}'
+		. $p . ' .foco-toc-side b{display:block;font:600 12px/1 Lexend,Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#625A78;margin-bottom:14px}'
 		. $p . ' .foco-toc-side a{display:block;font-size:14px;line-height:1.45;color:#5B5170 !important;text-decoration:none !important;border:0 !important;padding:6px 0;transition:color .15s}'
 		. $p . ' .foco-toc-side a:hover,' . $p . ' .foco-toc-side a.on{color:#6D28D9 !important}'
 		. $p . ' .foco-toc-side a.on{font-weight:600}}'
