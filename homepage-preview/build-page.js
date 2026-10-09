@@ -1,5 +1,8 @@
-// Builds the homepage preview as a hidden WP page (/home-preview/, noindex) from homepage-preview/index.html.
-// Usage: node hp-page.js <.env> <preview index.html> <media map json> [--push]
+// Builds the homepage from homepage-preview/index.html into a WP page.
+// Usage: node homepage-preview/build-page.js <.env> <index.html> <media-map.json> [--push] [--live]
+//   --push           -> writes the draft page /home-draft/ (noindex), for review
+//   --push --live    -> writes the live front page (page_on_front), keeps its title and indexing
+// The live homepage is page 4760, whose slug is still "home-preview": never look pages up by that slug.
 const fs = require('fs'), https = require('https');
 for (const l of fs.readFileSync(process.argv[2], 'utf8').split(/\r?\n/)) { const m = l.match(/^([A-Z_]+)=(.*)$/); if (m) process.env[m[1]] = m[2].replace(/^["']|["']$/g, ''); }
 const { WP_HOST, WP_USER, WP_APP_PASSWORD } = process.env;
@@ -50,18 +53,33 @@ css += '.fh{color:var(--ink) !important;background:var(--bg) !important;width:10
 body = body.replace(/style="([^"]*)"/g, (a, d) => 'style="' + important(d) + '"');
 
 (async () => {
-  // find or create the page (draft first, to learn its id)
-  let page = (await req('GET', '/wp-json/wp/v2/pages?slug=home-preview&status=any&_fields=id,status,link')).j[0];
-  if (!page) page = (await req('POST', '/wp-json/wp/v2/pages', { title: 'FOCO Home Preview', slug: 'home-preview', status: 'draft', content: '' })).j;
+  const live = process.argv.includes('--live');
+  const frontId = Number((await req('GET', '/wp-json/wp/v2/settings')).j.page_on_front);
+  if (!frontId) throw new Error('could not read page_on_front');
+  let page;
+  if (live) page = { id: frontId };
+  else {
+    page = (await req('GET', '/wp-json/wp/v2/pages?slug=home-draft&status=any&_fields=id,status,link')).j[0];
+    if (!page) page = (await req('POST', '/wp-json/wp/v2/pages', { title: 'FOCO Home Draft', slug: 'home-draft', status: 'draft', content: '' })).j;
+    if (page.id === frontId) throw new Error('draft target is the live front page');
+  }
   const id = page.id;
-  const pageCss = `body.page-id-${id}{overflow-x:hidden !important}body.page-id-${id} .blog-single>.wrap{max-width:none !important;padding-left:0 !important;padding-right:0 !important}body.page-id-${id} .blog-single>.wrap>h1{display:none !important}body.page-id-${id} .blog-single{background:#FAF8FD !important;padding-bottom:0 !important}body.page-id-${id} .blog-single>.wrap>article{margin:0 !important;padding:0 !important}body.page-id-${id} .foco-app .foco-nav{background:rgba(4,2,8,.94) !important;backdrop-filter:blur(14px)}.fh .hero{position:relative !important}.fh .hero::before{display:none !important}.fh .hero-visual{order:2 !important;min-height:0 !important}`;
+  const pageCss = `body.page-id-${id}{overflow-x:hidden !important}body.page-id-${id} .blog-single>.wrap{max-width:none !important;padding-left:0 !important;padding-right:0 !important}body.page-id-${id} .blog-single>.wrap>h1{display:none !important}body.page-id-${id} .foco-app,html:has(body.page-id-${id}){background:#FAF8FD !important}body.page-id-${id} .blog-single{background:#FAF8FD !important;padding-bottom:0 !important;padding-top:70px !important;max-width:none !important;width:100% !important}body.page-id-${id} .blog-single>.wrap>article{margin:0 !important;padding:0 !important}body.page-id-${id} .foco-app .foco-nav,body.page-id-${id} .foco-app .foco-nav.scrolled{background:rgba(250,248,253,.9) !important;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid #E7E0F5 !important;padding:12px 0 !important}body.page-id-${id} .foco-app .foco-nav .nav-links a{color:#3B2A63 !important}body.page-id-${id} .foco-app .foco-nav .nav-links a:hover{color:#6D28D9 !important}body.page-id-${id} .foco-app .foco-nav.open .nav-links a{color:#fff !important}body.page-id-${id} .foco-app .foco-nav-toggle{background:#fff !important;border-color:#E7E0F5 !important}body.page-id-${id} .foco-app .foco-nav-toggle span{background:#1E1733 !important}.fh .hero{position:relative !important}.fh .hero::before{display:none !important}.fh .hero-visual{order:2 !important;min-height:0 !important}`;
   const block = `<!-- wp:html --><div class="fh"><style>${(css + pageCss).replace(/\s*\n\s*/g, ' ')}</style>${body.replace(/\s*\n\s*/g, ' ')}</div><!-- /wp:html -->`;
   if (/&&/.test(block)) throw new Error('&& in block');
   fs.writeFileSync(__dirname + '/hp-page-content.html', block);
   console.log('page', id, '| content', block.length, 'chars');
   if (!process.argv.includes('--push')) return;
-  const u = await req('POST', `/wp-json/wp/v2/pages/${id}`, { content: block, status: 'publish', title: 'FOCO Home Preview' });
-  console.log('publish', u.s, u.j.link);
+  if (live) {
+    const prev = (await req('GET', `/wp-json/wp/v2/pages/${id}?context=edit&_fields=content`)).j;
+    const bk = require('path').join(__dirname, '..', '.audit-cache', 'backups');
+    if (fs.existsSync(bk) && prev.content) fs.writeFileSync(require('path').join(bk, `homepage-${id}-${Date.now()}.html`), prev.content.raw);
+    const u = await req('POST', `/wp-json/wp/v2/pages/${id}`, { content: block });
+    console.log('live homepage updated', u.s);
+    return;
+  }
+  const u = await req('POST', `/wp-json/wp/v2/pages/${id}`, { content: block, status: 'publish', title: 'FOCO Home Draft' });
+  console.log('draft page', u.s, u.j.link);
   const m = await req('POST', '/wp-json/rankmath/v1/updateMeta', { objectType: 'post', objectID: id, meta: { rank_math_robots: ['noindex', 'nofollow'] } });
   console.log('noindex', m.s);
 })();
