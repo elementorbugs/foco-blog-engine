@@ -17,6 +17,7 @@ if (!/<h2>FAQ<\/h2>/i.test(s)) errs.push('missing <h2>FAQ</h2>');
 if (!/<h2>How did we compare/i.test(s)) errs.push('missing "How did we compare" section');
 if (/table of contents/i.test(s)) errs.push('in-body table of contents');
 if (/FOCO is free|free version of FOCO|FOCO free tier|FOCO'?s free plan/i.test(txt)) errs.push('claims FOCO is free');
+if (/7-day (free )?trial,? then \$9|\$9[^.]{0,40}after a 7-day/i.test(txt)) errs.push('implies the monthly plan has a free trial (trial is yearly-only)');
 if (/we tested (tiimo|structured|inflow|aligned|amazing marvin|marvin)/i.test(txt)) errs.push('claims hands-on test of a competitor');
 const ps = [...body.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/g)].map(m => m[1].replace(/<[^>]+>/g, '').replace(/\b(e\.g|i\.e|vs|approx|Dr|St)\./gi, 'x').replace(/\$?\d+\.\d+/g, 'N'));
 ps.forEach(p => { if ((p.match(/[.!?](\s|$)/g) || []).length > 2) errs.push('paragraph >2 sentences: ' + p.trim().slice(0, 70)); });
