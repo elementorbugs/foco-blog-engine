@@ -32,3 +32,9 @@ carousel-out/
 # Scratch
 scratch*.html
 homepage-preview/hp-page-content.html
+
+# Store screenshots + video builds: scratch output and third-party source media (Pexels photos, cut-outs)
+foco-video/store-screens/work/
+foco-video/store-screens/assets/
+foco-video/store-screens/versions/
+foco-video/videos/*/work/
