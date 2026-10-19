@@ -91,6 +91,15 @@
     "routinery": {
       "name": "Routinery",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-routinery.jpg"
+    },
+    "mindflow-ai": {
+      "name": "Mindflow AI",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-mindflow-ai.png",
+      "appStoreId": 6743873832
+    },
+    "mindflow": {
+      "name": "Mindflow AI",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-mindflow.jpg"
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
@@ -129,6 +138,24 @@
       "slug": "routinery-app-review",
       "title": "Routinery App Review",
       "desc": "Routines as timed steps with a voice guide: who it fits, where it stops.",
+      "cat": "reviews"
+    },
+    {
+      "slug": "llama-life-review",
+      "title": "Llama Life Review",
+      "desc": "A countdown on every task: who it fits, where it stops.",
+      "cat": "reviews"
+    },
+    {
+      "slug": "mindflow-ai-review",
+      "title": "Mindflow AI Review",
+      "desc": "The voice-first AI coach for ADHD, reviewed.",
+      "cat": "reviews"
+    },
+    {
+      "slug": "finch-app-review",
+      "title": "Finch App Review",
+      "desc": "The self-care pet app: tiny goals, no penalty, and its limits.",
       "cat": "reviews"
     },
     {
