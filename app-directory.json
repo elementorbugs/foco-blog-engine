@@ -79,6 +79,14 @@
       "name": "Forest",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-forest.png",
       "appStoreId": 866450515
+    },
+    "ellie": {
+      "name": "Ellie Planner",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-ellie.jpg"
+    },
+    "numo": {
+      "name": "Numo",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-numo.jpg"
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
@@ -96,9 +104,21 @@
       "cat": "reviews"
     },
     {
+      "slug": "ellie-planner-review",
+      "title": "Ellie Planner Review",
+      "desc": "Brain dump, then time-block your day: who it fits, where it stops.",
+      "cat": "reviews"
+    },
+    {
       "slug": "forest-app-for-adhd",
       "title": "Forest App for ADHD",
       "desc": "Does the tree timer help you start? Plus 3 alternatives.",
+      "cat": "reviews"
+    },
+    {
+      "slug": "numo-app-review",
+      "title": "Numo App Review",
+      "desc": "The ADHD community app: Squads, points and lessons, reviewed.",
       "cat": "reviews"
     },
     {
@@ -135,6 +155,24 @@
       "slug": "foco-vs-amazing-marvin",
       "title": "FOCO vs Amazing Marvin",
       "desc": "A deep custom system vs a fast way to start.",
+      "cat": "compare"
+    },
+    {
+      "slug": "tiimo-vs-ticktick",
+      "title": "Tiimo vs TickTick for ADHD: Which One Fits Your Brain?",
+      "desc": "Short answer: In the Tiimo vs TickTick choice, TickTick is the better pick if you want one...",
+      "cat": "compare"
+    },
+    {
+      "slug": "tiimo-vs-todoist",
+      "title": "Tiimo vs Todoist for ADHD: Which One Fits Your Brain?",
+      "desc": "Short answer: In the Tiimo vs Todoist choice, Todoist is the better pick if your problem is...",
+      "cat": "compare"
+    },
+    {
+      "slug": "ticktick-vs-structured",
+      "title": "TickTick vs Structured for ADHD: Which Planner Fits?",
+      "desc": "Short answer: In the TickTick vs Structured choice, Structured is the better pick if you want...",
       "cat": "compare"
     },
     {
