@@ -27,7 +27,9 @@ internal.forEach(m => { const u = m[1].split('#')[0].replace(/\/?$/, '/'); if (u
 if (internal.length < 4) errs.push('fewer than 4 internal links (' + internal.length + ')');
 if (external.length < 3) errs.push('fewer than 3 external links (' + external.length + ')');
 const authority = /nimh\.nih\.gov|chadd\.org|russellbarkley\.org|\.gov\/|\.edu\/|pubmed|ncbi\.nlm/;
-external.forEach(m => { const tag = m[0]; const isAuth = authority.test(m[1]); if (!isAuth && !/nofollow/.test(tag)) errs.push('competitor link without nofollow: ' + m[1]); if (!/target="_blank"/.test(tag) || !/noopener/.test(tag)) warns.push('external link missing target/noopener: ' + m[1]); });
+// "Watch on YouTube" captions under embeds link to our own channel's videos (embed-ranking-videos.js), so no nofollow
+const ownVideo = /youtube\.com\/watch\?v=/;
+external.forEach(m => { const tag = m[0]; const isAuth = authority.test(m[1]); if (!isAuth && !ownVideo.test(m[1]) && !/nofollow/.test(tag)) errs.push('competitor link without nofollow: ' + m[1]); if (!/target="_blank"/.test(tag) || !/noopener/.test(tag)) warns.push('external link missing target/noopener: ' + m[1]); });
 if (!external.some(m => authority.test(m[1]))) errs.push('no authority citation (NIMH / CHADD / Barkley / .gov / .edu)');
 const ld = s.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
 if (!ld) errs.push('missing JSON-LD'); else { try { const j = JSON.parse(ld[1]); const types = JSON.stringify(j); if (!/FAQPage/.test(types)) errs.push('JSON-LD without FAQPage'); if (!/SoftwareApplication/.test(types)) errs.push('JSON-LD without SoftwareApplication'); if (/aggregateRating|reviewRating/.test(types)) errs.push('JSON-LD has rating values'); } catch (e) { errs.push('JSON-LD invalid: ' + e.message); } }
