@@ -159,6 +159,12 @@
       "cat": "reviews"
     },
     {
+      "slug": "saner-ai-review",
+      "title": "Saner.AI Review",
+      "desc": "The AI assistant for scattered notes, email and Slack: who it fits, where it stops.",
+      "cat": "reviews"
+    },
+    {
       "slug": "tiimo-vs-structured",
       "title": "Tiimo vs Structured",
       "desc": "Two visual day planners compared for ADHD.",
