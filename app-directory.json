@@ -74,6 +74,21 @@
     "saner-ai": {
       "name": "Saner.AI",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-saner-ai.png"
+    },
+    "mindflow-ai": {
+      "name": "Mindflow AI",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-mindflow-ai-1.png",
+      "appStoreId": 6743873832
+    },
+    "routinery": {
+      "name": "Routinery",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-routinery-1.png",
+      "appStoreId": 1549845424
+    },
+    "numo": {
+      "name": "Numo",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-numo-1.png",
+      "appStoreId": 1628994767
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
@@ -88,6 +103,42 @@
       "slug": "inflow-review",
       "title": "Inflow Review",
       "desc": "CBT-based lessons and coaching for ADHD, reviewed.",
+      "cat": "reviews"
+    },
+    {
+      "slug": "saner-ai-review",
+      "title": "Saner.AI Review: Is the ADHD AI Assistant Worth It?",
+      "desc": "Updated October 19, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "finch-app-review",
+      "title": "Finch App Review: Is the Self-Care Pet Good for ADHD?",
+      "desc": "Updated October 19, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "mindflow-ai-review",
+      "title": "Mindflow AI Review: Is the ADHD AI Coach Worth It?",
+      "desc": "Updated October 19, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "llama-life-review",
+      "title": "Llama Life Review: Is the ADHD Task Timer Worth It?",
+      "desc": "Updated October 19, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "routinery-app-review",
+      "title": "Routinery App Review: Is It Good for ADHD Routines?",
+      "desc": "Updated October 19, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "numo-app-review",
+      "title": "Numo App Review: Is the ADHD Community App Worth It?",
+      "desc": "Updated October 19, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
       "cat": "reviews"
     },
     {
@@ -124,6 +175,24 @@
       "slug": "foco-vs-amazing-marvin",
       "title": "FOCO vs Amazing Marvin",
       "desc": "A deep custom system vs a fast way to start.",
+      "cat": "compare"
+    },
+    {
+      "slug": "ticktick-vs-structured",
+      "title": "TickTick vs Structured for ADHD: Which Planner Fits?",
+      "desc": "Updated October 19, 2026 · Prices and ratings checked October 19, 2026 · We make FOCO, one of...",
+      "cat": "compare"
+    },
+    {
+      "slug": "tiimo-vs-todoist",
+      "title": "Tiimo vs Todoist for ADHD: Which One Fits Your Brain?",
+      "desc": "Updated October 18, 2026 · Prices and ratings checked October 18, 2026 · We make FOCO, one of...",
+      "cat": "compare"
+    },
+    {
+      "slug": "tiimo-vs-ticktick",
+      "title": "Tiimo vs TickTick for ADHD: Which One Fits Your Brain?",
+      "desc": "Updated October 18, 2026 · Prices and ratings checked October 18, 2026 · We make FOCO, one of...",
       "cat": "compare"
     },
     {
