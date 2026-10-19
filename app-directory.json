@@ -87,6 +87,10 @@
     "numo": {
       "name": "Numo",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-numo.jpg"
+    },
+    "routinery": {
+      "name": "Routinery",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-routinery.jpg"
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
@@ -119,6 +123,12 @@
       "slug": "numo-app-review",
       "title": "Numo App Review",
       "desc": "The ADHD community app: Squads, points and lessons, reviewed.",
+      "cat": "reviews"
+    },
+    {
+      "slug": "routinery-app-review",
+      "title": "Routinery App Review",
+      "desc": "Routines as timed steps with a voice guide: who it fits, where it stops.",
       "cat": "reviews"
     },
     {
