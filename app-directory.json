@@ -100,10 +100,50 @@
     "mindflow": {
       "name": "Mindflow AI",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-mindflow.jpg"
+    },
+    "flowsavvy": {
+      "name": "FlowSavvy",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-flowsavvy.png"
+    },
+    "morgen": {
+      "name": "Morgen",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-morgen.png"
+    },
+    "akiflow": {
+      "name": "Akiflow",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-akiflow.png"
+    },
+    "day-flow": {
+      "name": "Day Flow",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-day-flow.png"
+    },
+    "reclaim": {
+      "name": "Reclaim",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-reclaim.png"
+    },
+    "trevor-ai": {
+      "name": "Trevor AI",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-trevor-ai.png"
+    },
+    "chatgpt": {
+      "name": "ChatGPT",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-chatgpt-1.png",
+      "appStoreId": 6448311069
+    },
+    "routineflow": {
+      "name": "RoutineFlow",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-routineflow-1.png",
+      "appStoreId": 1639800794
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
   "cards": [
+    {
+      "slug": "routineflow-review",
+      "title": "RoutineFlow Review: Is the ADHD Routine App Worth It?",
+      "desc": "Routines as a chain of timed steps, built for ADHD mornings and evenings.",
+      "cat": "reviews"
+    },
     {
       "slug": "aligned-app-review",
       "title": "Aligned App Review",
@@ -165,6 +205,24 @@
       "cat": "reviews"
     },
     {
+      "slug": "goblin-tools-vs-chatgpt",
+      "title": "Goblin Tools vs ChatGPT for ADHD Task Breakdown",
+      "desc": "Instant steps with zero setup, or an AI assistant that knows your situation.",
+      "cat": "compare"
+    },
+    {
+      "slug": "structured-vs-todoist",
+      "title": "Structured vs Todoist for ADHD: Which Planner Fits?",
+      "desc": "A visual timeline for time blindness, or fast capture and a list for every project.",
+      "cat": "compare"
+    },
+    {
+      "slug": "finch-vs-habitica",
+      "title": "Finch vs Habitica for ADHD: Which Habit App Fits?",
+      "desc": "Gentle self-care with no penalty, or habits that play like a game with real stakes.",
+      "cat": "compare"
+    },
+    {
       "slug": "tiimo-vs-structured",
       "title": "Tiimo vs Structured",
       "desc": "Two visual day planners compared for ADHD.",
@@ -203,19 +261,19 @@
     {
       "slug": "tiimo-vs-ticktick",
       "title": "Tiimo vs TickTick for ADHD: Which One Fits Your Brain?",
-      "desc": "Short answer: In the Tiimo vs TickTick choice, TickTick is the better pick if you want one...",
+      "desc": "A calm, visual day or one system for tasks, calendar and habits.",
       "cat": "compare"
     },
     {
       "slug": "tiimo-vs-todoist",
       "title": "Tiimo vs Todoist for ADHD: Which One Fits Your Brain?",
-      "desc": "Short answer: In the Tiimo vs Todoist choice, Todoist is the better pick if your problem is...",
+      "desc": "A visual day plan or a fast, flexible task list.",
       "cat": "compare"
     },
     {
       "slug": "ticktick-vs-structured",
       "title": "TickTick vs Structured for ADHD: Which Planner Fits?",
-      "desc": "Short answer: In the TickTick vs Structured choice, Structured is the better pick if you want...",
+      "desc": "One app for everything or a simple visual timeline for your day.",
       "cat": "compare"
     },
     {
@@ -291,6 +349,12 @@
       "slug": "best-free-adhd-apps",
       "title": "Best Free ADHD Apps in 2026: 12 Picks by Need",
       "desc": "12 free ADHD apps by need, and where each free plan stops.",
+      "cat": "focus"
+    },
+    {
+      "slug": "best-ai-calendar-apps-for-adhd",
+      "title": "10 Best AI Calendar Apps for ADHD",
+      "desc": "10 AI calendars that plan and reschedule your day.",
       "cat": "focus"
     },
     {

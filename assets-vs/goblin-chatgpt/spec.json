@@ -1,0 +1,8 @@
+[
+ { "name": "goblin-tools-vs-chatgpt-goblin", "app": "Goblin Tools", "icon": "6449003064/icon.png", "line": "One job: break a task into steps, fast", "accent": "#7BBF3A",
+   "chips": ["Free on the web, no account", "Spiciness slider for step size", "Our test: 6 steps in seconds"],
+   "web": { "img": "goblin-test.jpg", "url": "goblin.tools" } },
+ { "name": "goblin-tools-vs-chatgpt-chatgpt", "app": "ChatGPT", "icon": "6448311069/icon.png", "line": "A general AI assistant you can ask for steps", "accent": "#10A37F",
+   "chips": ["Understands your context", "Voice and photo input", "You write the prompt"],
+   "shots": [ { "img": "6448311069/shot-2.jpg", "top": 0.17, "bottom": 1 }, { "img": "6448311069/shot-7.jpg", "top": 0.17, "bottom": 1 } ] }
+]

@@ -1,0 +1,5 @@
+[
+ { "name": "routineflow-review-showcase", "app": "RoutineFlow", "icon": "icon.png", "line": "Routines as a chain of timed steps", "accent": "#2F6BF2",
+   "chips": ["One step at a time, with a timer", "AI subtasks for big steps", "Streaks and habit reports"],
+   "shots": [ { "img": "1639800794/shot-2.jpg", "top": 0.3, "bottom": 1 }, { "img": "1639800794/shot-8.jpg", "top": 0.3, "bottom": 1 }, { "img": "1639800794/shot-6.jpg", "top": 0.3, "bottom": 1 } ] }
+]

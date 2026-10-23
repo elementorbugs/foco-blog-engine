@@ -69,10 +69,10 @@ const camera = () => `<div class="ui" style="background:#000">${statusBar}
 const dayView = sections => {
   const ic = (c, d) => `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
   const days = [['M', 12], ['T', 13], ['W', 14], ['T', 15], ['F', 16], ['S', 17], ['S', 18]];
-  const row = ([e, t, m, bg]) => `<div style="display:flex;align-items:center;gap:14px;padding:15px 16px;border-radius:18px;background:#1a1d33;border:1px solid rgba(255,255,255,.06);margin-bottom:9px">
+  const row = ([e, t, m, bg, done]) => `<div style="display:flex;align-items:center;gap:14px;padding:15px 16px;border-radius:18px;background:#1a1d33;border:1px solid rgba(255,255,255,.06);margin-bottom:9px${done ? ';opacity:.6' : ''}">
     <div class="emo" style="width:44px;height:44px;border-radius:50%;background:${bg};display:flex;align-items:center;justify-content:center;font-size:22px;flex:none">${e}</div>
-    <div style="flex:1"><div style="font-size:17px;font-weight:600">${t}</div><div style="font-size:13px;color:#8d8aa6;margin-top:3px">${m}</div></div>
-    <div style="width:26px;height:26px;border-radius:50%;border:2px solid #9b98b0;flex:none"></div></div>`;
+    <div style="flex:1"><div style="font-size:17px;font-weight:600${done ? ';text-decoration:line-through' : ''}">${t}</div><div style="font-size:13px;color:#8d8aa6;margin-top:3px">${m}</div></div>
+    ${done ? check('#7C3AED', '#fff', 26) : '<div style="width:26px;height:26px;border-radius:50%;border:2px solid #9b98b0;flex:none"></div>'}</div>`; // done: optional 5th field
   const tab = (l, d, on) => `<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px;letter-spacing:2px;color:${on ? '#A78BFA' : '#9b98b0'}">
     <div style="width:56px;height:40px;border-radius:13px;${on ? 'background:#262046;' : ''}display:flex;align-items:center;justify-content:center">${ic(on ? '#A78BFA' : '#cfcde0', d)}</div>${l}</div>`;
   return `<div class="ui" style="background:#090a14">${statusBar}
@@ -93,7 +93,35 @@ const dayView = sections => {
 // ---------- building blocks ----------
 const phone = (x, content, top = PY) => `<div class="phone" style="left:${x}px;top:${top}px"><div class="screen">${content}<div class="island"></div></div></div>`;
 const img = f => `<img src="${A(f)}">`;
-const head = (h, sub) => `<div class="head"><h1>${h}</h1><div class="sub">${sub}</div></div>`;
+// FOCO_LANG=es -> Spanish (Mexico) store screenshots: headlines, subs and the floating marketing chips are translated;
+// cards that mirror the app's own screens stay English, because the app itself is English-only.
+const LANG = process.env.FOCO_LANG || 'en';
+const ES = {
+  'Stuck before<br><em>you start?</em>': '¿Te cuesta<br><em>empezar?</em>',
+  'FOCO beats procrastination<br>and task paralysis.': 'FOCO te ayuda a superar la procrastinación<br>y a dar el primer paso.',
+  'Get it out<br><em>of your head.</em>': 'Sácalo de<br><em>tu cabeza.</em>',
+  'Type it, snap it or say it.<br>It goes straight into your calendar.': 'Escríbelo, hazle una foto o dilo.<br>FOCO lo agrega a tu calendario.',
+  'Snap your<br><em>paper list.</em>': 'Haz una foto<br><em>de tu lista.</em>',
+  'FOCO pulls every task off the page<br>and into your calendar.': 'FOCO detecta las tareas<br>y las agrega a tu calendario.',
+  'Or just<br><em>say it.</em>': 'O simplemente<br><em>dilo.</em>',
+  'Talk. It lands in your calendar,<br>with a reminder.': 'Habla y FOCO lo agrega a tu calendario<br>con un recordatorio.',
+  'It all lands<br><em>in your day.</em>': 'Todo en<br><em>un solo lugar.</em>',
+  'Typed, snapped or said.<br>One calendar.': 'Escribe, habla o haz una foto.<br>Todas tus tareas, organizadas<br>en tu calendario.',
+  'Big task?<br><em>Tiny steps.</em>': '¿Tarea grande?<br><em>Pasos pequeños.</em>',
+  'FOCO\'s AI breaks it into steps<br>you can actually start.': 'La IA de FOCO la divide en pasos sencillos<br>para que puedas empezar.',
+  'One task.<br><em>Full focus.</em>': 'Una tarea.<br><em>Enfoque total.</em>',
+  'A timer and calm sounds<br>to get you through it.': 'Un temporizador y sonidos relajantes<br>para ayudarte a terminar.',
+  'Watch your<br><em>momentum grow.</em>': 'Mira cuánto<br><em>has avanzado.</em>',
+  'Streaks, focus time and<br>every step you finish.': 'Tus rachas, minutos de concentración<br>y pasos completados.',
+  'Reply to emails': 'Responder correos', 'Invoice client': 'Facturar al cliente', 'New presentation': 'Nueva presentación',
+  'Type': 'Escribe', 'Snap': 'Haz una foto', 'Say': 'Habla', 'Your calendar': 'Tu calendario',
+  '✦ Found 8 tasks': '✦ 8 tareas encontradas',
+  'Groom the dog': 'Bañar al perro', 'Make dinner': 'Hacer la cena', 'Drink enough water': 'Tomar suficiente agua', 'Go shopping': 'Ir de compras',
+  'Said': 'Dicho', 'Typed': 'Escrito', 'Snapped': 'Fotografiado',
+  'WORK · 60 MIN': 'TRABAJO · 60 MIN', 'Make a new presentation': 'Hacer una nueva presentación',
+};
+const tr = s => (LANG === 'es' && ES[s]) || s;
+const head = (h, sub) => `<div class="head"><h1>${tr(h)}</h1><div class="sub">${tr(sub)}</div></div>`;
 // a person cut-out: box (x,y,w,h) on the slide, image scaled to imgW and shifted by (ix,iy) inside the box
 const person = (f, x, y, w, h, imgW, ix, iy) => `<div class="person" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px"><img src="${A(f)}" style="width:${imgW}px;left:${ix}px;top:${iy}px"></div>`;
 // a crop of a real screenshot ([sx,sy,sw,sh] px) as a pop-out card of width w
@@ -283,8 +311,8 @@ const slides = [
     <div style="position:absolute;z-index:2;left:-300px;top:700px;width:1200px;height:1100px;background:radial-gradient(circle at 50% 45%,rgba(167,139,250,.38),transparent 62%)"></div>
     <svg style="position:absolute;z-index:2;left:0;top:0" width="${W}" height="${H}"><ellipse cx="600" cy="1000" rx="440" ry="290" transform="rotate(-14 600 1000)" fill="none" stroke="#C4B5FD" stroke-opacity=".35" stroke-width="3" stroke-dasharray="14 18"/></svg>
     <div class="person" style="left:-160px;top:700px;width:1080px;height:1340px;-webkit-mask-image:radial-gradient(ellipse 56% 52% at 46% 44%,#000 66%,transparent 100%)"><img src="${A('rd-head-cut.png')}" style="width:1440px;left:-330px;top:-332px;filter:saturate(.78) hue-rotate(-8deg) brightness(.97) drop-shadow(-5px -3px 8px rgba(233,213,255,.95)) drop-shadow(0 0 60px rgba(167,139,250,.65))"></div>
-    ${[['Reply to emails', 235, 1], ['Invoice client', 280, .5], ['Finish the deck', 345, .8]].map(([t, a, d]) => { const r = a * Math.PI / 180, q = -14 * Math.PI / 180, ex = 440 * Math.cos(r), ey = 290 * Math.sin(r), x = 600 + ex * Math.cos(q) - ey * Math.sin(q), y = 1000 + ex * Math.sin(q) + ey * Math.cos(q);
-      return `<div class="chip" style="left:${Math.round(x)}px;top:${Math.round(y)}px;transform:translate(-50%,-50%) rotate(${(a - 280) / 9}deg) scale(${.8 + d * .2});opacity:${.45 + d * .55};filter:blur(${(1 - d) * 5}px);font-size:42px;z-index:6">${t}</div>`; }).join('')}
+    ${[['Reply to emails', 235, 1], ['Invoice client', 280, .5], ['New presentation', 345, .8]].map(([t, a, d]) => { const r = a * Math.PI / 180, q = -14 * Math.PI / 180, ex = 440 * Math.cos(r), ey = 290 * Math.sin(r), x = 600 + ex * Math.cos(q) - ey * Math.sin(q), y = 1000 + ex * Math.sin(q) + ey * Math.cos(q);
+      return `<div class="chip" style="left:${Math.round(x)}px;top:${Math.round(y)}px;transform:translate(-50%,-50%) rotate(${(a - 280) / 9}deg) scale(${.8 + d * .2});opacity:${.45 + d * .55};filter:blur(${(1 - d) * 5}px);font-size:42px;z-index:6">${tr(t)}</div>`; }).join('')}
     ${phone(PR, chatHome(), top)}
     <div class="glass" style="left:120px;top:${Math.round(top + 20 + 668 * k) - 26}px;width:1170px;height:${Math.round(60 * k * 1.25)}px;border-radius:999px;display:flex;align-items:center;gap:30px;padding:0 18px 0 46px;background:#111428;box-shadow:0 0 0 3px rgba(167,139,250,.75),0 0 120px rgba(124,58,237,.6),0 40px 100px rgba(0,0,0,.7)">
       ${ico.cam('#A78BFA', 62)}<div style="flex:1;font-size:50px;color:#8e8aad">I need to...<span style="display:inline-block;width:4px;height:56px;background:#C4B5FD;margin-left:4px;vertical-align:-10px"></span></div>${ico.mic('#A78BFA', 58)}
@@ -293,9 +321,9 @@ const slides = [
   () => { const k = PW / 393, top = PY;
     const turns = [['Clean the kitchen', "I've got your kitchen cleanup all set up!", 'HOME', 'Clean the kitchen', '30 min'], ['call dentist tomorrow 7 am', 'Dentist call is scheduled for tomorrow morning!', 'HEALTH', 'Call dentist', '10 min']];
     return `${head('Get it out<br><em>of your head.</em>', 'Type it, snap it or say it.<br>It goes straight into your calendar.')}
-    <div style="position:absolute;z-index:8;left:0;right:0;top:720px;display:flex;justify-content:center;align-items:center;gap:16px">${[[ico.type('#E9D5FF', 40), 'Type'], [ico.cam('#E9D5FF', 40), 'Snap'], [ico.mic('#E9D5FF', 40), 'Say']].map(([i, t]) => `<div class="chip" style="position:static;font-size:38px;padding:16px 28px">${i}${t}</div>`).join('')}
+    <div style="position:absolute;z-index:8;left:0;right:0;top:720px;display:flex;justify-content:center;align-items:center;gap:16px">${[[ico.type('#E9D5FF', 40), 'Type'], [ico.cam('#E9D5FF', 40), 'Snap'], [ico.mic('#E9D5FF', 40), 'Say']].map(([i, t]) => `<div class="chip" style="position:static;font-size:38px;padding:16px 28px">${i}${tr(t)}</div>`).join('')}
       <svg width="60" height="40" viewBox="0 0 60 40"><path d="M4 20h46M38 8l14 12-14 12" stroke="#C4B5FD" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <div class="chip" style="position:static;font-size:38px;padding:16px 30px;background:linear-gradient(90deg,#6366F1,#9333EA);border:none">${ico.cal('#fff', 40)}Your calendar</div></div>
+      <div class="chip" style="position:static;font-size:38px;padding:16px 30px;background:linear-gradient(90deg,#6366F1,#9333EA);border:none">${ico.cal('#fff', 40)}${tr('Your calendar')}</div></div>
     <div style="position:absolute;z-index:2;left:-300px;top:760px;width:1200px;height:1100px;background:radial-gradient(circle at 50% 45%,rgba(167,139,250,.38),transparent 62%)"></div>
     <div class="person" style="left:-160px;top:760px;width:1080px;height:1500px;-webkit-mask-image:radial-gradient(ellipse 56% 52% at 46% 46%,#000 66%,transparent 100%)"><img src="${A('rd-type-cut.png')}" style="width:1300px;left:-71px;top:-175px;filter:saturate(.78) hue-rotate(-8deg) brightness(.97) drop-shadow(-5px -3px 8px rgba(233,213,255,.95)) drop-shadow(0 0 60px rgba(167,139,250,.65))"></div>
     ${phone(PR, chatThread(turns), top)}
@@ -308,8 +336,8 @@ const slides = [
     return `${head('Snap your<br><em>paper list.</em>', 'FOCO pulls every task off the page<br>and into your calendar.')}
     ${phone(PC, camera())}
     ${scanner(fx, fy, fw, fh)}
-    <div style="position:absolute;z-index:8;left:${fx + fw / 2}px;top:${fy + fh + 30}px;transform:translateX(-50%);display:flex;align-items:center;gap:14px;font-size:36px;font-weight:700;padding:16px 30px;border-radius:999px;background:linear-gradient(90deg,#6366F1,#9333EA);box-shadow:0 0 50px rgba(147,51,234,.7);white-space:nowrap">✦ Found 8 tasks</div>
-    ${[['Groom the dog', 30, 870, -5, 'l'], ['Make dinner', 30, 1170, 4, 'r'], ['Drink enough water', 30, 2300, -3, 'l'], ['Go shopping', 30, 2420, 3, 'r']].map(([t, m, y, r, side]) => `<div class="chip w" style="${side === 'l' ? 'left' : 'right'}:${m}px;top:${y}px;transform:rotate(${r}deg);z-index:9">${check('#7C3AED', '#fff', 40)}${t}</div>`).join('')}`; },
+    <div style="position:absolute;z-index:8;left:${fx + fw / 2}px;top:${fy + fh + 30}px;transform:translateX(-50%);display:flex;align-items:center;gap:14px;font-size:36px;font-weight:700;padding:16px 30px;border-radius:999px;background:linear-gradient(90deg,#6366F1,#9333EA);box-shadow:0 0 50px rgba(147,51,234,.7);white-space:nowrap">${tr('✦ Found 8 tasks')}</div>
+    ${[['Groom the dog', 30, 870, -5, 'l'], ['Make dinner', 30, 1170, 4, 'r'], ['Drink enough water', 30, 2300, -3, 'l'], ['Go shopping', 30, 2420, 3, 'r']].map(([t, m, y, r, side]) => `<div class="chip w" style="${side === 'l' ? 'left' : 'right'}:${m}px;top:${y}px;transform:rotate(${r}deg);z-index:9">${check('#7C3AED', '#fff', 40)}${tr(t)}</div>`).join('')}`; },
   // 3 SAY: she stands in front of the FOCO phone, recording a voice note on hers; sound waves run up to the recorder card
   () => { const hx = 850, hy = 1960; // her phone (in hand) on the slide: source (1500,1800) at scale .6
     return `${head('Or just<br><em>say it.</em>', 'Talk. It lands in your calendar,<br>with a reminder.')}
@@ -324,14 +352,14 @@ const slides = [
   // 4 DAY: everything captured lands on the calendar
   () => `${head('It all lands<br><em>in your day.</em>', 'Typed, snapped or said.<br>One calendar.')}
     ${phone(PR, dayView([['MORNING', sun, [T[0]]], ['ANYTIME', clock, [T[1], T[2], T[3]]]]))}
-    ${[[ico.mic('#fff', 40), 'Said', 312], [ico.type('#fff', 40), 'Typed', 442], [ico.cam('#fff', 40), 'Snapped', 513], [ico.cam('#fff', 40), 'Snapped', 584]].map(([i, t, y]) => `<div class="chip" style="right:${W - PR - 40}px;top:${Math.round(oy(y)) - 46}px;font-size:38px;padding:16px 30px">${i}${t}</div>`).join('')}
+    ${[[ico.mic('#fff', 40), 'Said', 312], [ico.type('#fff', 40), 'Typed', 442], [ico.cam('#fff', 40), 'Snapped', 513], [ico.cam('#fff', 40), 'Snapped', 584]].map(([i, t, y]) => `<div class="chip" style="right:${W - PR - 40}px;top:${Math.round(oy(y)) - 46}px;font-size:38px;padding:16px 30px">${i}${tr(t)}</div>`).join('')}
     ${converge()}`,
   // 5 STEPS: the heavy 60-min task flows into a big, readable card of FOCO's 5 AI steps (step 1 highlighted)
   () => { const top = 1330, r1 = top + 150;
     return `${head('Big task?<br><em>Tiny steps.</em>', 'FOCO\'s AI breaks it into steps<br>you can actually start.')}
     <div class="glass" style="left:60px;top:700px;width:600px;padding:38px 42px;transform:rotate(-4deg);background:#151229">
-      <div style="font-size:28px;font-weight:700;letter-spacing:3px;color:#A78BFA">WORK · 60 MIN</div>
-      <div style="font-size:52px;font-weight:700;line-height:1.15;margin-top:12px">Make a new presentation</div></div>
+      <div style="font-size:28px;font-weight:700;letter-spacing:3px;color:#A78BFA">${tr('WORK · 60 MIN')}</div>
+      <div style="font-size:52px;font-weight:700;line-height:1.15;margin-top:12px">${tr('Make a new presentation')}</div></div>
     ${phone(PR, subtasksScreen())}
     <svg style="position:absolute;z-index:5;left:0;top:0" width="${W}" height="${H}"><defs><filter id="ag"><feGaussianBlur stdDeviation="5"/></filter></defs>
       <path d="M 180 1010 C 120 1180, 90 ${r1}, 32 ${r1}" stroke="#C4B5FD" stroke-width="6" fill="none" filter="url(#ag)" opacity=".8"/><path d="M 180 1010 C 120 1180, 90 ${r1}, 32 ${r1}" stroke="#E9D5FF" stroke-width="4" fill="none"/></svg>
@@ -375,8 +403,10 @@ const bgs = FW => `<div style="position:absolute;left:0;top:${H - 1100}px;width:
 
 // layouts: ios = 1320x2868 frames; android = 9:16 frames (1613x2868 -> 1080x1920): same slide in the middle, the
 // background and the stream run edge to edge, nothing is padded.
-const LAYOUTS = { ios: { FW: W, dir: 'Apple' }, android: { FW: Math.round(H * 9 / 16), dir: 'Android', size: [1080, 1920] } };
-(async () => {
+module.exports = { css, slides, bgs, stream, IDS, W, H, url, head, phone, timerScreen, chatHome, dayView, sun, clock, cropPop, ico, check, A, PW, PH, PY, PC, PR, oy, ox }; // new-slides.js reuses the helpers
+const SUFFIX = LANG === 'en' ? '' : '-' + LANG; // Spanish goes to Apple-es/ and Android-es/, never over the English set
+const LAYOUTS = { ios: { FW: W, dir: 'Apple' + SUFFIX }, android: { FW: Math.round(H * 9 / 16), dir: 'Android' + SUFFIX, size: [1080, 1920] } };
+if (require.main === module) (async () => {
   const WORK = path.join(__dirname, 'work'); fs.mkdirSync(WORK, { recursive: true }); // scratch output; out/ holds only the slides
   const { execFileSync } = require('child_process'); const FF = require(path.join(__dirname, '..', 'node_modules', 'ffmpeg-static'));
   const browser = await chromium.launch();
@@ -384,7 +414,7 @@ const LAYOUTS = { ios: { FW: W, dir: 'Apple' }, android: { FW: Math.round(H * 9 
     const off = (L.FW - W) / 2, clipCss = '.slide{overflow:visible}' // shadows/glows flow across frame edges in both layouts (no brightness step at seams);
     const html = `<!doctype html><html><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><style>${css}body{width:${L.FW * N}px}${clipCss}</style></head><body>
     ${bgs(L.FW)}${stream(L.FW)}${slides.map((s, i) => `<div class="slide" style="left:${i * L.FW + off}px">${s()}</div>`).join('')}</body></html>`;
-    const file = path.join(WORK, `panorama-${name}.html`); fs.writeFileSync(file, html);
+    const file = path.join(WORK, `panorama-${name}${SUFFIX}.html`); fs.writeFileSync(file, html);
     const page = await browser.newPage({ viewport: { width: L.FW * N, height: H }, deviceScaleFactor: 1 });
     await page.goto(url(file)); await page.waitForLoadState('networkidle'); await page.evaluate(() => document.fonts.ready);
     const outDir = path.join(__dirname, L.dir); fs.mkdirSync(outDir, { recursive: true });
