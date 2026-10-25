@@ -99,6 +99,26 @@
       "name": "ChatGPT",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-chatgpt-2.png",
       "appStoreId": 6448311069
+    },
+    "forest": {
+      "name": "Forest",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-forest-1.png",
+      "appStoreId": 866450515
+    },
+    "flora": {
+      "name": "Flora",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-flora.png",
+      "appStoreId": 1225155794
+    },
+    "trello": {
+      "name": "Trello",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-trello.png",
+      "appStoreId": 461504587
+    },
+    "notion": {
+      "name": "Notion",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-notion.png",
+      "appStoreId": 1232780281
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
@@ -233,6 +253,24 @@
       "slug": "goblin-tools-vs-chatgpt",
       "title": "Goblin Tools vs ChatGPT for ADHD Task Breakdown",
       "desc": "Updated October 22, 2026 · Prices and ratings checked October 22, 2026 · We make FOCO, one of...",
+      "cat": "compare"
+    },
+    {
+      "slug": "forest-vs-flora",
+      "title": "Forest vs Flora: Which Focus App Wins for ADHD?",
+      "desc": "Updated October 25, 2026 · Store listings checked October 25, 2026 · We make FOCO, one of the...",
+      "cat": "compare"
+    },
+    {
+      "slug": "todoist-vs-trello",
+      "title": "Todoist vs Trello for ADHD: List or Board?",
+      "desc": "Updated October 25, 2026 · Prices and ratings checked October 25, 2026 · We make FOCO, one of...",
+      "cat": "compare"
+    },
+    {
+      "slug": "todoist-vs-notion",
+      "title": "Todoist vs Notion for ADHD: Which One Should You Use?",
+      "desc": "Updated October 25, 2026 · Prices and ratings checked October 25, 2026 · We make FOCO, one of...",
       "cat": "compare"
     },
     {
