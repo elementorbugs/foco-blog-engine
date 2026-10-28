@@ -263,12 +263,21 @@ function splitLongParagraphs(content, maxSentences = 3) {
       const plain = inner.replace(/<[^>]+>/g, '');
       const sentences = plain.split(/(?<=[.!?])\s+/).filter(s => s.trim().length > 15);
       if (sentences.length <= maxSentences) return match;
+      // Only split at depth 0 (never inside <a>/<strong>/...) and never after an abbreviation like "Dr."
       const periods = [];
-      let inTag = false;
+      let depth = 0;
       for (let i = 0; i < inner.length - 1; i++) {
-        if (inner[i] === '<') inTag = true;
-        if (inner[i] === '>') { inTag = false; continue; }
-        if (!inTag && /[.!?]/.test(inner[i]) && /\s/.test(inner[i + 1])) periods.push(i);
+        if (inner[i] === '<') {
+          const end = inner.indexOf('>', i);
+          if (end < 0) break;
+          const tag = inner.slice(i, end + 1);
+          if (/^<\//.test(tag)) depth = Math.max(0, depth - 1);
+          else if (!/\/>$/.test(tag) && !/^<(br|img|hr|input|wbr)\b/i.test(tag)) depth++;
+          i = end;
+          continue;
+        }
+        if (depth === 0 && /[.!?]/.test(inner[i]) && /\s/.test(inner[i + 1])
+          && !/\b(Dr|Mr|Mrs|Ms|Prof|St|vs|etc|e\.g|i\.e|No)\.$/i.test(inner.slice(Math.max(0, i - 5), i + 1))) periods.push(i);
       }
       if (periods.length < 2) return match;
       const mid = periods[Math.floor(periods.length / 2)];

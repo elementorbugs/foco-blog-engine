@@ -1,0 +1,59 @@
+{
+  "rules": {
+    "rooms": {
+      "$room": {
+        "people": {
+          ".read": "auth != null",
+          "$uid": {
+            ".write": "auth != null && auth.uid === $uid",
+            ".validate": "!newData.exists() || newData.hasChildren(['name', 'task', 'hue', 'status', 'joinedAt'])",
+            "name": { ".validate": "newData.isString() && newData.val().length >= 1 && newData.val().length <= 20" },
+            "task": { ".validate": "newData.isString() && newData.val().length >= 1 && newData.val().length <= 60" },
+            "hue": { ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() < 360" },
+            "pic": { ".validate": "newData.isNumber() && newData.val() >= -1 && newData.val() < 45" },
+            "sound": { ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() < 10" },
+            "sessions": { ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 48" },
+            "status": { ".validate": "newData.val() === 'focus' || newData.val() === 'break'" },
+            "len": { ".validate": "newData.isNumber() && (newData.val() === 15 || newData.val() === 25 || newData.val() === 45 || newData.val() === 60 || newData.val() === 90)" },
+            "blockStart": { ".validate": "newData.isNumber() && newData.val() <= now + 60000" },
+            "joinedAt": { ".validate": "newData.isNumber() && newData.val() <= now" },
+            "$other": { ".validate": false }
+          }
+        },
+        "viewers": {
+          ".read": "auth != null",
+          "$uid": {
+            ".write": "auth != null && auth.uid === $uid",
+            ".validate": "!newData.exists() || newData.hasChildren(['at'])",
+            "at": { ".validate": "newData.isNumber() && newData.val() <= now" },
+            "$other": { ".validate": false }
+          }
+        },
+        "daily": {
+          ".read": "auth != null",
+          "$day": {
+            ".write": "auth != null && root.child('rooms').child($room).child('people').child(auth.uid).exists()",
+            ".validate": "$day.matches(/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/) && newData.isNumber() && ((!data.exists() && newData.val() === 1) || newData.val() === data.val() + 1)"
+          }
+        },
+        "chat": {
+          ".read": "auth != null",
+          ".indexOn": ["at"],
+          "$msg": {
+            ".write": "auth != null && ((!data.exists() && newData.child('from').val() === auth.uid && root.child('rooms').child($room).child('people').child(auth.uid).exists()) || (data.exists() && !newData.exists() && data.child('at').val() < now - 3600000))",
+            ".validate": "!newData.exists() || (newData.hasChildren(['from', 'name', 'hue', 'kind', 'cat', 'value', 'at']) && newData.child('at').val() === now && ((newData.child('kind').val() === 'emoji' && newData.child('cat').val() === 0 && newData.child('value').val() >= 0 && newData.child('value').val() < 8) || (newData.child('kind').val() === 'line' && newData.child('cat').val() >= 0 && newData.child('cat').val() < 3 && newData.child('value').val() >= 0 && newData.child('value').val() < 6)))",
+            "name": { ".validate": "newData.isString() && newData.val() === root.child('rooms').child($room).child('people').child(auth.uid).child('name').val()" },
+            "hue": { ".validate": "newData.isNumber()" },
+            "pic": { ".validate": "newData.isNumber() && newData.val() >= -1 && newData.val() < 45" },
+            "from": { ".validate": "newData.isString()" },
+            "kind": { ".validate": "newData.isString()" },
+            "cat": { ".validate": "newData.isNumber()" },
+            "value": { ".validate": "newData.isNumber()" },
+            "at": { ".validate": "newData.isNumber()" },
+            "$other": { ".validate": false }
+          }
+        }
+      }
+    }
+  }
+}
