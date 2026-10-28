@@ -119,6 +119,16 @@
       "name": "Notion",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-notion.png",
       "appStoreId": 1232780281
+    },
+    "opal": {
+      "name": "Opal",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-opal-2.png",
+      "appStoreId": 1497465230
+    },
+    "brick": {
+      "name": "Brick",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-brick-2.png",
+      "appStoreId": 1473232934
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
@@ -181,6 +191,18 @@
       "slug": "focus-friend-app-review",
       "title": "Focus Friend by Hank Green: Honest App Review",
       "desc": "Updated October 25, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "opal-app-review",
+      "title": "Opal App Review: Is It Worth $99.99 a Year for ADHD?",
+      "desc": "Updated October 28, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "brick-app-review",
+      "title": "Brick App Review: Does the Phone Blocker Help ADHD?",
+      "desc": "Updated October 28, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
       "cat": "reviews"
     },
     {
