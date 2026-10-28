@@ -263,12 +263,21 @@ function splitLongParagraphs(content, maxSentences = 3) {
       const plain = inner.replace(/<[^>]+>/g, '');
       const sentences = plain.split(/(?<=[.!?])\s+/).filter(s => s.trim().length > 15);
       if (sentences.length <= maxSentences) return match;
+      // Only split at depth 0 (never inside <a>/<strong>/...) and never after an abbreviation like "Dr."
       const periods = [];
-      let inTag = false;
+      let depth = 0;
       for (let i = 0; i < inner.length - 1; i++) {
-        if (inner[i] === '<') inTag = true;
-        if (inner[i] === '>') { inTag = false; continue; }
-        if (!inTag && /[.!?]/.test(inner[i]) && /\s/.test(inner[i + 1])) periods.push(i);
+        if (inner[i] === '<') {
+          const end = inner.indexOf('>', i);
+          if (end < 0) break;
+          const tag = inner.slice(i, end + 1);
+          if (/^<\//.test(tag)) depth = Math.max(0, depth - 1);
+          else if (!/\/>$/.test(tag) && !/^<(br|img|hr|input|wbr)\b/i.test(tag)) depth++;
+          i = end;
+          continue;
+        }
+        if (depth === 0 && /[.!?]/.test(inner[i]) && /\s/.test(inner[i + 1])
+          && !/\b(Dr|Mr|Mrs|Ms|Prof|St|vs|etc|e\.g|i\.e|No)\.$/i.test(inner.slice(Math.max(0, i - 5), i + 1))) periods.push(i);
       }
       if (periods.length < 2) return match;
       const mid = periods[Math.floor(periods.length / 2)];
@@ -384,7 +393,7 @@ async function validateInternalLinks(content) {
 // Outbound links to these get rel="nofollow" so we never pass equity to a competitor.
 // NOT competitors (stay dofollow as authority citations): *.gov, *.edu, nih.gov, cdc.gov,
 // chadd.org, pubmed, nature.com, russellbarkley.org, who.int, etc.
-const COMPETITOR_RE = /(?:additudemag|healthline|verywellmind|psychcentral|choosingtherapy|webmd|psychologytoday|getinflow|focusmate|flowclub|tiimoapp|goblin\.tools|sunsama|brili|llamalife|routinery|saner\.ai|usemotion|todoist|structured\.app|amazingmarvin)/i;
+const COMPETITOR_RE = /(?:additudemag|healthline|verywellmind|psychcentral|choosingtherapy|webmd|psychologytoday|getinflow|focusmate|flowclub|tiimoapp|goblin\.tools|sunsama|brili|llamalife|routinery|saner\.ai|usemotion|todoist|structured\.app|amazingmarvin|forestapp|appfinca|habitica|ticktick|finchcare|yourfocusfriend|honeybgames)/i;
 
 function autoFixExternalLinks(content) {
   let fixed = 0;
@@ -676,8 +685,20 @@ function buildFaqSchema(content) {
 
 function injectSchema(content, schema, type) {
   if (!schema) return content;
-  if (content.includes(`"@type":"${type}"`)) return content;
+  if (content.includes(`"@type":"${type}"`)) {
+    // Keep an existing Organization block in step with the current definition (e.g. the @id).
+    if (type !== 'Organization') return content;
+    return content.replace(/(<!-- wp:html -->)?<script type="application\/ld\+json">(\{"@context":"https:\/\/schema\.org","@type":"Organization"[\s\S]*?)<\/script>(<!-- \/wp:html -->)?/,
+      (m, a, json, b) => (a || '') + '<script type="application/ld+json">' + JSON.stringify(schema) + '</script>' + (b || ''));
+  }
   return content + '\n\n<!-- wp:html --><script type="application/ld+json">' + JSON.stringify(schema) + '</script><!-- /wp:html -->';
+}
+
+// Removes standalone Article JSON-LD blocks this pipeline used to inject (RankMath owns the article entity).
+function stripArticleSchema(content) {
+  return content.replace(/\n*(<!-- wp:html -->)?<script type="application\/ld\+json">(\{[\s\S]*?)<\/script>(<!-- \/wp:html -->)?/g, (m, a, json) => {
+    try { return JSON.parse(json)['@type'] === 'Article' ? '' : m; } catch (e) { return m; }
+  });
 }
 
 // Map a slug to a site category ID (taxonomy: 6=Understanding ADHD, 7=Focus & Productivity,
@@ -989,6 +1010,9 @@ async function generateCover(slug, h1, coverTitleArg) {
   const orgSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    // Same @id as RankMath's site graph node, so the two merge into ONE entity instead of
+    // a second, anonymous FOCO organization. RankMath serves www, so this stays hardcoded.
+    '@id': 'https://www.tryfoco.com/#organization',
     name: 'FOCO',
     alternateName: 'FOCO ADHD Focus Companion',
     url: `https://${WP_HOST}`,
@@ -1011,32 +1035,11 @@ async function generateCover(slug, h1, coverTitleArg) {
   };
   content = injectSchema(content, orgSchema, 'Organization');
 
-  // Article schema (always). author = Person (founder, lived-experience E-E-A-T — NOT medical).
-  const nowISO = new Date().toISOString();
-  const articleSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: wpTitle,
-    keywords: keyword,
-    datePublished: nowISO,
-    dateModified: nowISO,
-    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://${WP_HOST}/${slug}/` },
-    author: {
-      '@type': 'Person',
-      name: 'Adi Ben Elyahu',
-      description: 'Founder of FOCO. Writes about ADHD productivity from product research and lived experience.',
-      url: `https://${WP_HOST}/about/`,
-      worksFor: { '@type': 'Organization', name: 'FOCO' },
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'FOCO',
-      url: `https://${WP_HOST}`,
-      logo: { '@type': 'ImageObject', url: FOCO_LOGO, width: 128, height: 128 },
-    },
-  };
-  content = injectSchema(content, articleSchema, 'Article');
-  log.ok('Article + Organization schema added');
+  // No Article block (2026-10-20): RankMath already outputs BlogPosting + Person + Organization
+  // linked by @id, with real publish/modified dates. Our extra Article was a second article
+  // entity on every post, with a frozen date. Strip any left over from earlier runs.
+  content = stripArticleSchema(content);
+  log.ok('Organization schema added (merged into RankMath graph); Article left to RankMath');
 
   // STEP 10.5: Strip body <h1> tags.
   // WP template (single.php / page.php) already outputs an H1 via the_title().
@@ -1194,7 +1197,7 @@ async function generateCover(slug, h1, coverTitleArg) {
   console.log(`  Pillar:      ${isPillar ? 'YES' : 'no'}`);
   console.log(`  Charts:      ${ch.added}`);
   console.log(`  FAQ schema:  ${faqSchema ? `YES (${faqSchema.mainEntity.length} Q&A)` : 'no'}`);
-  console.log(`  Article schema: YES`);
+  console.log(`  Article schema: RankMath (BlogPosting)`);
   console.log(`  Featured:    ${mediaId ? `media #${mediaId}` : 'none'}`);
   if (v.warnings.length > 0) {
     console.log('\n  Warnings:');

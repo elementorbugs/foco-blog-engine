@@ -1,0 +1,13 @@
+// Wide Pexels search for a cohesive bright/cream desk look. usage: node search.js  -> work/s-<tag>.jpg sheets + work/search.json
+const fs = require('fs'), https = require('https'); const { execFileSync } = require('child_process'); const FF = require('ffmpeg-static');
+const key = fs.readFileSync('C:/Users/USER/remindher-blog/.pexels-key', 'utf8').trim();
+const Q = [['gs', 'green screen phone table'], ['gs2', 'smartphone chroma key desk'], ['mock', 'phone mockup white desk'], ['wd', 'white desk aesthetic study'], ['jr', 'journaling hands cream aesthetic'], ['ipad', 'ipad notes desk aesthetic'], ['lt', 'morning light desk minimal']];
+const getJson = u => new Promise((res, rej) => https.get(u, { headers: { Authorization: key } }, x => { let d = ''; x.on('data', c => d += c); x.on('end', () => res(JSON.parse(d))); }).on('error', rej));
+const getBuf = u => new Promise((res, rej) => https.get(u, x => { if (x.statusCode >= 300 && x.headers.location) return getBuf(x.headers.location).then(res, rej); const c = []; x.on('data', d => c.push(d)); x.on('end', () => res(Buffer.concat(c))); }).on('error', rej));
+(async () => { const meta = fs.existsSync('work/search.json') ? JSON.parse(fs.readFileSync('work/search.json')) : {};
+  for (const [t, q] of Q) { const j = await getJson(`https://api.pexels.com/videos/search?query=${encodeURIComponent(q)}&orientation=portrait&per_page=10`); meta[t] = [];
+    for (let i = 0; i < j.videos.length; i++) { const v = j.videos[i]; const img = `work/s-${t}-${i + 1}.jpg`; fs.writeFileSync(img, await getBuf(v.image));
+      const f = v.video_files.filter(f => f.height >= 1280 && f.width < f.height).sort((a, b) => Math.abs(a.height - 1920) - Math.abs(b.height - 1920))[0]; meta[t].push({ pick: i + 1, id: v.id, dur: v.duration, url: f && f.link }); }
+    const n = meta[t].length; execFileSync(FF, ['-y', '-loglevel', 'error', ...meta[t].flatMap(m => ['-i', `work/s-${t}-${m.pick}.jpg`]), '-filter_complex', meta[t].map((m, i) => `[${i}:v]scale=180:320:force_original_aspect_ratio=increase,crop=180:320,drawtext=text='${m.pick}':fontsize=28:fontcolor=yellow:box=1:boxcolor=black:x=4:y=4[v${i}]`).join(';') + ';' + meta[t].map((m, i) => `[v${i}]`).join('') + `hstack=inputs=${n}`, `work/s-${t}.jpg`]); }
+  fs.writeFileSync('work/search.json', JSON.stringify(meta, null, 1));
+  execFileSync(FF, ['-y', '-loglevel', 'error', ...Q.flatMap(([t]) => ['-i', `work/s-${t}.jpg`]), '-filter_complex', Q.map((q, i) => `[${i}:v]pad=1800:320[p${i}]`).join(';') + ';' + Q.map((q, i) => `[p${i}]`).join('') + `vstack=inputs=${Q.length}`, 'work/search.jpg']); console.log('ok'); })().catch(e => console.error(e));

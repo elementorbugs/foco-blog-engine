@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#06030c">
+<title>Free Body Doubling App for ADHD: Live Focus Room | FOCO</title>
+<meta name="description" content="Free body doubling app for ADHD, right in your browser. Join a live online focus room, pick 15 to 90 minutes and work next to real people. No camera, no sign up.">
+<!-- Link previews (WhatsApp, Facebook, X, LinkedIn, Telegram). Set the final URL here when the room goes live. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FOCO">
+<meta property="og:title" content="Come focus with me: a free body doubling room">
+<meta property="og:description" content="Sit down at one table with real people, pick 15 to 90 minutes and start. Free, live, no sign up.">
+<meta property="og:url" content="https://www.tryfoco.com/body-doubling/">
+<meta property="og:image" content="https://www.tryfoco.com/body-doubling/img/og-room.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="FOCO's body doubling room: people seated around a glowing table with FOCO in the middle">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Come focus with me: a free body doubling room">
+<meta name="twitter:description" content="Sit down at one table with real people, pick 15 to 90 minutes and start. Free, live, no sign up.">
+<meta name="twitter:image" content="https://www.tryfoco.com/body-doubling/img/og-room.png">
+<link rel="canonical" href="https://www.tryfoco.com/body-doubling/">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","@id":"https://www.tryfoco.com/body-doubling/#app","name":"FOCO Body Doubling Room","url":"https://www.tryfoco.com/body-doubling/","applicationCategory":"ProductivityApplication","operatingSystem":"Any (web browser)","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"A free, live online body doubling room for people with ADHD: sit down at a shared table, pick 15 to 90 minutes and focus next to real people. No camera, no sign up.","publisher":{"@id":"https://www.tryfoco.com/#organization"}},{"@type":"FAQPage","@id":"https://www.tryfoco.com/body-doubling/#faq","mainEntity":[{"@type":"Question","name":"What is a body doubling room?","acceptedAnswer":{"@type":"Answer","text":"A body doubling room is an online space where you work while other people work beside you. FOCO’s room is free and live: you sit down at a shared table, say what you’re working on, pick 15 to 90 minutes and focus with everyone else who is there."}},{"@type":"Question","name":"Is it free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The room is free to use, with no sign up and no account. You pick a name and a seat picture, and that’s it."}},{"@type":"Question","name":"Do I need a camera or a microphone?","acceptedAnswer":{"@type":"Answer","text":"No. Nobody sees or hears you. Other people see your seat picture, your first name and one line about your task, and you can send hearts and kind words from a fixed list."}},{"@type":"Question","name":"How long is a session?","acceptedAnswer":{"@type":"Answer","text":"You choose: 15, 25, 45, 60 or 90 minutes, followed by a short break of 5 to 15 minutes. Everyone keeps their own clock, so you can start whenever you sit down."}},{"@type":"Question","name":"How is it different from Focusmate?","acceptedAnswer":{"@type":"Answer","text":"Focusmate pairs you with one partner on video for a booked slot. FOCO’s room is a shared table you can join any time, without video, booking or an account. If you want to start right now, with no video and nothing to book, the room is built for that."}},{"@type":"Question","name":"Does body doubling help with ADHD?","acceptedAnswer":{"@type":"Answer","text":"Many people with ADHD say that working next to someone makes it easier to start and keep going. Research on body doubling itself is still limited, so treat it as a strategy to try and see how it feels for you."}},{"@type":"Question","name":"Is my information private?","acceptedAnswer":{"@type":"Answer","text":"The room only keeps the name and the task line you type while you are seated, and removes them when you leave. Kind words disappear after an hour. There are no uploads, and people can hide anyone they don’t want to see."}}]},{"@type":"Organization","@id":"https://www.tryfoco.com/#organization","name":"FOCO","url":"https://www.tryfoco.com/"}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Figtree:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Figtree:wght@400;500;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="room.css">
+</head>
+<body>
+<div class="bdr" id="bdr">
+
+  <header class="bdr-bar">
+    <a class="bdr-brand" href="https://www.tryfoco.com/" aria-label="FOCO home"><img src="img/foco-logo.png" alt="FOCO" width="96" height="32"></a>
+    <p class="bdr-live"><span class="bdr-live-dot" aria-hidden="true"></span><span id="bar-scope">Live room · open 24/7</span></p>
+    <button class="bdr-btn bdr-btn-ghost bdr-bar-share" id="share-top" type="button" aria-label="Invite and share"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg><span>Invite</span></button>
+    <a class="bdr-btn bdr-btn-ghost bdr-bar-get" href="#get-foco">Get the app</a>
+  </header>
+
+  <section class="bdr-scene" id="stage" role="main" aria-labelledby="room-h">
+
+    <div class="bdr-intro">
+      <h1 id="room-h"><span class="bdr-h1-kicker">Free body doubling room for ADHD</span> Focus is easier <em>together.</em></h1>
+      <p class="bdr-sub" id="finding">Connecting to the room…</p>
+    </div>
+
+    <!-- Left: kind words -->
+    <aside role="region" class="bdr-rail bdr-rail-left bdr-panel" id="panel-words" aria-labelledby="chat-h">
+      <div class="bdr-rail-head">
+        <h2 class="bdr-rail-h" id="chat-h">Kind words</h2>
+        <span class="bdr-meta" id="chat-count"></span>
+      </div>
+      <ol class="bdr-words" id="chat" aria-live="polite"></ol>
+      <p class="bdr-quiet" id="chat-empty">Quiet so far. Say something kind and it appears over your seat.</p>
+      <div class="bdr-composer" id="composer">
+        <div class="bdr-tabs" id="phrase-tabs" role="tablist" aria-label="Kinds of words"></div>
+        <div class="bdr-phrases" id="phrases" role="tabpanel"></div>
+        <p class="bdr-quiet" id="composer-lock">Take a seat to send kind words to the table.</p>
+      </div>
+    </aside>
+
+    <!-- Centre: the table -->
+    <div class="bdr-centre">
+      <div class="bdr-table-head">
+        <p class="bdr-onair"><span class="bdr-onair-pill"><i aria-hidden="true"></i>Live</span> <span id="together" class="num"></span></p>
+        <p class="bdr-sr"><span class="bdr-table-label">This session</span> <span id="session-range" class="num">–</span></p>
+      </div>
+      <p class="bdr-feed" id="livefeed" aria-live="polite"></p>
+      <div class="bdr-ring-wrap" id="ring-wrap">
+        <canvas class="bdr-motes" id="motes" aria-hidden="true"></canvas>
+        <div class="bdr-aura" id="aura" aria-hidden="true"></div>
+        <svg class="bdr-threads" id="threads" viewBox="0 0 400 400" aria-hidden="true"></svg>
+        <svg class="bdr-ring" viewBox="0 0 400 400" aria-hidden="true">
+          <circle class="bdr-ring-track" cx="200" cy="200" r="150"/>
+          <circle class="bdr-ring-zone" id="ring-zone" cx="200" cy="200" r="150"/>
+          <circle class="bdr-ring-arc" id="ring-arc" cx="200" cy="200" r="150"/>
+          <circle class="bdr-ring-break" id="ring-break" cx="200" cy="200" r="150"/>
+        </svg>
+        <div class="bdr-ripples" id="ripples" aria-hidden="true"></div>
+        <div class="bdr-seats" id="seats"></div>
+        <div class="bdr-core">
+          <img class="bdr-mascot" id="mascot" src="img/foco_state_3_focus.png" alt="FOCO, focusing" width="112" height="128">
+          <p class="bdr-clock num" id="clock" role="timer" aria-live="off">--:--</p>
+          <p class="bdr-phase" id="phase">left in focus</p>
+          <p class="bdr-tally num" id="tally" role="status" aria-label="Reactions this session"></p>
+        </div>
+        <p class="bdr-mascot-say" id="mascot-say" hidden></p>
+        <div class="bdr-flights" id="flights" aria-hidden="true"></div>
+      </div>
+      <p class="bdr-breath" id="breath" aria-live="off" hidden>Breathe in</p>
+      <p class="bdr-next" id="next-line">&nbsp;</p>
+      <div class="bdr-music">
+        <button class="bdr-music-btn" id="music-btn" type="button" aria-pressed="false">
+          <span class="bdr-eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span class="bdr-music-text"><span class="bdr-music-main" id="music-main">Play focus music</span><span class="bdr-music-sub" id="music-sub">FOCO brown noise, in time with the table</span></span>
+        </button>
+        <button class="bdr-music-more" id="music-more" type="button">More music</button>
+        <button class="bdr-music-more bdr-invite-inline" id="invite-inline" type="button">Invite a friend</button>
+      </div>
+      <div class="bdr-player" id="player" hidden></div>
+      <button class="bdr-btn bdr-btn-primary bdr-btn-wide bdr-sit-cta" id="sit-cta" type="button">Sit down at the table</button>
+      <button class="bdr-ticker" id="ticker" type="button" hidden aria-label="Open kind words"></button>
+      <div class="bdr-reactbar">
+        <div class="bdr-emoji-row" id="emoji-row" role="group" aria-label="Send to the whole table"></div>
+        <p class="bdr-quiet" id="reactbar-hint">Take a seat, then send love to the whole table.</p>
+      </div>
+    </div>
+
+    <!-- Phone: tabs between the panels -->
+    <nav class="bdr-mobtabs" id="mobtabs" aria-label="Room panels">
+      <button type="button" data-panel="panel-seat" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span>Seat</span></button>
+      <button type="button" data-panel="panel-words" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><span>Words</span><b class="bdr-badge" id="words-badge" hidden>0</b></button>
+      <button type="button" data-panel="panel-radio" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg><span>Music</span></button>
+      <button type="button" data-panel="panel-people" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20c1-3.5 3.5-5.5 6.5-5.5s5.5 2 6.5 5.5M15 14.5c2.5 0 4.6 1.6 5.5 4.5"/></svg><span>People</span><b class="bdr-badge bdr-badge-soft" id="people-badge" hidden>0</b></button>
+    </nav>
+
+    <!-- Right: you, the radio, the people -->
+    <div class="bdr-rail bdr-rail-right">
+      <section class="bdr-panel bdr-seat" id="panel-seat" aria-labelledby="seat-h">
+        <div class="bdr-rail-head"><h2 class="bdr-rail-h" id="seat-h">Take a seat</h2></div>
+        <form id="seat-form" class="bdr-form" autocomplete="off">
+          <div class="bdr-field">
+            <label for="f-name">Your name</label>
+            <input id="f-name" name="name" maxlength="20" required placeholder="First name or nickname">
+          </div>
+          <div class="bdr-field">
+            <label for="f-task">What are you working on?</label>
+            <input id="f-task" name="task" maxlength="60" required placeholder="Reply to two emails">
+          </div>
+          <div class="bdr-field">
+            <span class="bdr-field-label" id="len-label">How long do you want to focus?</span>
+            <div class="bdr-lens" id="len-pick" role="group" aria-labelledby="len-label"></div>
+          </div>
+          <fieldset class="bdr-field">
+            <legend>Your seat picture</legend>
+            <div class="bdr-pic-row" id="pic-row"></div>
+            <div class="bdr-hue-row" id="hue-row"></div>
+          </fieldset>
+          <button class="bdr-btn bdr-btn-primary bdr-btn-wide" type="submit" id="seat-submit">Sit down at the table</button>
+        </form>
+        <div class="bdr-seated" id="seated" hidden>
+          <div class="bdr-seated-row">
+            <span class="bdr-av bdr-av-lg" id="me-av"></span>
+            <div class="bdr-seated-text">
+              <p class="bdr-seated-name" id="me-name"></p>
+              <p class="bdr-seated-task" id="me-task"></p>
+            </div>
+            <p class="bdr-seated-sessions"><span class="num" id="me-sessions">0</span><span class="bdr-meta">today</span></p>
+          </div>
+          <div class="bdr-seated-len">
+            <span class="bdr-meta" id="len-change-label">Start a fresh block of</span>
+            <div class="bdr-lens" id="len-change" role="group" aria-labelledby="len-change-label"></div>
+          </div>
+          <div class="bdr-seated-actions">
+            <button class="bdr-btn bdr-btn-primary" type="button" id="invite">Invite &amp; share</button>
+            <button class="bdr-btn bdr-btn-ghost" type="button" id="edit-task">Change task</button>
+            <button class="bdr-btn bdr-btn-text" type="button" id="leave">Leave</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="bdr-panel bdr-radio" id="panel-radio" aria-labelledby="radio-h">
+        <div class="bdr-rail-head">
+          <h2 class="bdr-rail-h" id="radio-h">Focus radio</h2>
+          <span class="bdr-meta" id="radio-now">Off</span>
+        </div>
+        <div class="bdr-stations" id="stations" role="group" aria-label="Choose a station"></div>
+      </section>
+
+      <section class="bdr-panel bdr-people" id="panel-people" aria-labelledby="people-h">
+        <div class="bdr-rail-head">
+          <h2 class="bdr-rail-h" id="people-h">At the table</h2>
+          <span class="bdr-meta num" id="people-count"></span>
+        </div>
+        <ul class="bdr-list" id="people"></ul>
+        <p class="bdr-quiet" id="people-empty" hidden>Nobody else yet. Anyone who opens this page sits down at your table, so this is a good moment to invite a friend.</p>
+      </section>
+    </div>
+  </section>
+
+  <section class="bdr-how" aria-labelledby="how-h">
+    <h2 id="how-h">How the room works</h2>
+    <ol class="bdr-how-list">
+      <li><b>Pick your own time.</b> 15, 25, 45, 60 or 90 minutes, then a short break. Everyone keeps their own clock, side by side at one table.</li>
+      <li><b>Say one small thing you're working on.</b> &ldquo;Reply to two emails&rdquo; counts. Everyone at the table can see it.</li>
+      <li><b>Send love, get love.</b> Hearts fly to FOCO and the whole table feels them. Kind words appear over your seat.</li>
+    </ol>
+  </section>
+
+
+  <section class="bdr-faq" aria-labelledby="faq-h">
+    <h2 id="faq-h">Questions about the body doubling room</h2>
+    <div class="bdr-answer"><p><b>FOCO’s body doubling room is a free, live online room for people with ADHD.</b> You sit down at a shared table with real people, say one thing you’re working on, pick 15 to 90 minutes and focus side by side. No camera, no account, no booking. When you want the same help outside the room, the FOCO app breaks your next task into tiny steps.</p></div>
+    <details class="bdr-qa"><summary>What is a body doubling room?</summary><p>A body doubling room is an online space where you work while other people work beside you. FOCO’s room is free and live: you sit down at a shared table, say what you’re working on, pick 15 to 90 minutes and focus with everyone else who is there.</p></details>
+    <details class="bdr-qa"><summary>Is it free?</summary><p>Yes. The room is free to use, with no sign up and no account. You pick a name and a seat picture, and that’s it.</p></details>
+    <details class="bdr-qa"><summary>Do I need a camera or a microphone?</summary><p>No. Nobody sees or hears you. Other people see your seat picture, your first name and one line about your task, and you can send hearts and kind words from a fixed list.</p></details>
+    <details class="bdr-qa"><summary>How long is a session?</summary><p>You choose: 15, 25, 45, 60 or 90 minutes, followed by a short break of 5 to 15 minutes. Everyone keeps their own clock, so you can start whenever you sit down.</p></details>
+    <details class="bdr-qa"><summary>How is it different from Focusmate?</summary><p>Focusmate pairs you with one partner on video for a booked slot. FOCO’s room is a shared table you can join any time, without video, booking or an account. If you want to start right now, with no video and nothing to book, the room is built for that.</p></details>
+    <details class="bdr-qa"><summary>Does body doubling help with ADHD?</summary><p>Many people with ADHD say that working next to someone makes it easier to start and keep going. Research on body doubling itself is still limited, so treat it as a strategy to try and see how it feels for you.</p></details>
+    <details class="bdr-qa"><summary>Is my information private?</summary><p>The room only keeps the name and the task line you type while you are seated, and removes them when you leave. Kind words disappear after an hour. There are no uploads, and people can hide anyone they don’t want to see.</p></details>
+    <p class="bdr-faq-more">New to it? Read <a href="https://www.tryfoco.com/body-doubling-adhd/">what body doubling is and why it helps ADHD brains start</a>.</p>
+  </section>
+
+  <section class="bdr-get" id="get-foco" aria-labelledby="get-h">
+    <div class="bdr-get-text">
+      <h2 id="get-h">Take FOCO with you</h2>
+      <p>When the room is quiet, FOCO breaks your next task into tiny steps, puts them in your calendar and focuses with you. Free to download.</p>
+      <div class="bdr-get-btns" id="get-btns">
+        <a class="bdr-store" id="get-ios" href="https://apps.apple.com/app/id6762489184" target="_blank" rel="noopener"><span class="bdr-store-small">Download on the</span><span class="bdr-store-big">App Store</span><span class="bdr-store-small">iPhone &amp; iPad</span></a>
+        <a class="bdr-store" id="get-android" href="https://play.google.com/store/apps/details?id=com.adiben.foco" target="_blank" rel="noopener"><span class="bdr-store-small">Get it on</span><span class="bdr-store-big">Google Play</span><span class="bdr-store-small">Android phones &amp; tablets</span></a>
+      </div>
+    </div>
+    <figure class="bdr-qr" id="qr-wrap">
+      <div class="bdr-qr-code" id="qr" role="img" aria-label="QR code that opens FOCO in your phone's app store"></div>
+      <figcaption>On a computer? Scan with your phone.</figcaption>
+    </figure>
+  </section>
+
+  <div class="bdr-pop" id="pop" role="dialog" aria-modal="false" aria-labelledby="pop-h" hidden>
+    <p class="bdr-pop-h" id="pop-h"></p>
+    <p class="bdr-pop-task" id="pop-task"></p>
+    <button class="bdr-btn bdr-btn-text" type="button" id="pop-hide">Hide this person</button>
+  </div>
+
+  <div class="bdr-toasts" id="toasts" aria-live="polite"></div>
+
+  <div class="bdr-modal" id="recap" role="dialog" aria-modal="true" aria-labelledby="recap-h" hidden>
+    <div class="bdr-modal-box">
+      <img src="img/foco_state_5_completion.png" alt="" width="120" height="137" class="bdr-recap-mascot">
+      <h2 id="recap-h">Session done. <em>You stayed.</em></h2>
+      <p class="bdr-recap-line" id="recap-line"></p>
+      <div class="bdr-recap-actions">
+        <button class="bdr-btn bdr-btn-primary" type="button" id="recap-share">Share this moment</button>
+        <button class="bdr-btn bdr-btn-ghost" type="button" id="recap-close">Take the 5 minute break</button>
+      </div>
+      <p class="bdr-recap-app">Want this feeling outside the room? <a href="#get-foco" id="recap-app">Get FOCO</a></p>
+    </div>
+  </div>
+
+  <div class="bdr-modal" id="share" role="dialog" aria-modal="true" aria-labelledby="share-h" hidden>
+    <div class="bdr-modal-box bdr-share-box">
+      <div class="bdr-share-head">
+        <h2 id="share-h">Share the room</h2>
+        <button class="bdr-close" type="button" id="share-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="bdr-share-opts">
+        <div class="bdr-seg" id="share-kind" role="group" aria-label="Card">
+          <button type="button" data-kind="invite" aria-pressed="true">Invite</button>
+          <button type="button" data-kind="done" aria-pressed="false">I focused</button>
+        </div>
+        <div class="bdr-seg" id="share-format" role="group" aria-label="Format">
+          <button type="button" data-format="story" aria-pressed="true">Story</button>
+          <button type="button" data-format="post" aria-pressed="false">Post</button>
+        </div>
+      </div>
+      <div class="bdr-share-preview"><img class="bdr-share-img" id="share-img" alt="Share card for the FOCO body doubling room"></div>
+      <button class="bdr-btn bdr-btn-primary bdr-btn-wide" type="button" id="share-native">Share</button>
+      <div class="bdr-share-row">
+        <button class="bdr-chip" type="button" id="share-download">Save image</button>
+        <button class="bdr-chip" type="button" id="share-copy">Copy link</button>
+        <a class="bdr-chip" id="share-wa" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="bdr-chip" id="share-x" target="_blank" rel="noopener">X</a>
+        <a class="bdr-chip" id="share-fb" target="_blank" rel="noopener">Facebook</a>
+        <a class="bdr-chip" id="share-tg" target="_blank" rel="noopener">Telegram</a>
+      </div>
+      <p class="bdr-share-tip" id="share-tip">For Instagram or TikTok: save the Story, post it, and add a link sticker to <b id="share-url-short">tryfoco.com</b>.</p>
+    </div>
+  </div>
+
+  <p class="bdr-credits" role="contentinfo">Seat pictures are public domain (CC0) photos via <a href="https://www.rawpixel.com/" target="_blank" rel="noopener">rawpixel</a>, Wikimedia Commons and the WordPress Photo Directory. Radio stations are live streams embedded from YouTube and belong to their channels.</p>
+
+  <noscript><p class="bdr-noscript">The live room needs JavaScript. You can still body double with a friend on a video call: both of you start a 25 minute timer and say what you're working on.</p></noscript>
+</div>
+<script src="config.js"></script>
+<script src="room.js" defer></script>
+</body>
+</html>

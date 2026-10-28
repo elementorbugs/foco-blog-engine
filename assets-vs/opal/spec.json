@@ -1,0 +1,6 @@
+[{ "name": "opal-app-review-showcase", "app": "Opal", "icon": "opal-icon.png", "line": "A screen time app that blocks apps on a schedule and scores your focus", "accent": "#5B8DEF",
+   "chips": ["Block apps by schedule or limit", "Focus score and gems", "Free plan: 1 rule"],
+   "shots": [{ "img": "opal-2.jpg", "box": {"l":0.115,"t":0.235,"r":0.885,"b":0.83} }, { "img": "opal-6.jpg", "box": {"l":0.115,"t":0.235,"r":0.885,"b":0.83} }, { "img": "opal-3.jpg", "box": {"l":0.115,"t":0.235,"r":0.885,"b":0.83} }] },
+ { "name": "opal-insights-and-timer", "app": "Opal", "icon": "opal-icon.png", "line": "Bedtime insights, routines and a focus timer", "accent": "#3D5A99",
+   "chips": ["Bedtime scrolling insights", "Focus timer with Block Apps", "Routines for each part of the day"],
+   "shots": [{ "img": "opal-4.jpg", "box": {"l":0.115,"t":0.235,"r":0.885,"b":0.83} }, { "img": "opal-5.jpg", "box": {"l":0.0,"t":0.3,"r":1,"b":0.9} }] }]

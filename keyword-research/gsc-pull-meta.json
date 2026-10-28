@@ -1,10 +1,10 @@
 {
-  "lastRun": "2026-09-22T15:36:06.357Z",
-  "startDate": "2026-08-23",
-  "endDate": "2026-09-19",
+  "lastRun": "2026-10-14T18:12:45.237Z",
+  "startDate": "2026-09-14",
+  "endDate": "2026-10-11",
   "counts": {
-    "queries": 544,
-    "pages": 140,
-    "queryPage": 685
+    "queries": 778,
+    "pages": 150,
+    "queryPage": 1035
   }
 }

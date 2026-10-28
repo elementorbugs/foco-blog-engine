@@ -77,62 +77,96 @@
     },
     "mindflow-ai": {
       "name": "Mindflow AI",
-      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-mindflow-ai-1.png",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-mindflow-ai.png",
       "appStoreId": 6743873832
     },
     "routinery": {
       "name": "Routinery",
-      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-routinery-1.png",
-      "appStoreId": 1549845424
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-routinery.jpg"
     },
     "numo": {
       "name": "Numo",
-      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-numo-1.png",
-      "appStoreId": 1628994767
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-numo.jpg"
     },
     "routineflow": {
       "name": "RoutineFlow",
-      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-routineflow-2.png",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-routineflow-1.png",
       "appStoreId": 1639800794
     },
     "chatgpt": {
       "name": "ChatGPT",
-      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-chatgpt-2.png",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-chatgpt-1.png",
       "appStoreId": 6448311069
     },
     "forest": {
       "name": "Forest",
-      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-forest-1.png",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-forest.png",
       "appStoreId": 866450515
     },
     "flora": {
       "name": "Flora",
-      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-flora.png",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-flora.jpg",
       "appStoreId": 1225155794
     },
     "trello": {
       "name": "Trello",
-      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-trello.png",
-      "appStoreId": 461504587
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-trello.jpg"
     },
     "notion": {
       "name": "Notion",
-      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-notion.png",
-      "appStoreId": 1232780281
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-notion.jpg"
     },
     "opal": {
       "name": "Opal",
-      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-opal-2.png",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-opal-1.png",
       "appStoreId": 1497465230
     },
     "brick": {
       "name": "Brick",
-      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-brick-2.png",
-      "appStoreId": 1473232934
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-brick.png",
+      "appStoreId": 6448794069
+    },
+    "ellie": {
+      "name": "Ellie Planner",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-ellie.jpg"
+    },
+    "mindflow": {
+      "name": "Mindflow AI",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-mindflow.jpg"
+    },
+    "flowsavvy": {
+      "name": "FlowSavvy",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-flowsavvy.png"
+    },
+    "morgen": {
+      "name": "Morgen",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-morgen.png"
+    },
+    "akiflow": {
+      "name": "Akiflow",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-akiflow.png"
+    },
+    "day-flow": {
+      "name": "Day Flow",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-day-flow.png"
+    },
+    "reclaim": {
+      "name": "Reclaim",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-reclaim.png"
+    },
+    "trevor-ai": {
+      "name": "Trevor AI",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-trevor-ai.png"
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
   "cards": [
+    {
+      "slug": "routineflow-review",
+      "title": "RoutineFlow Review: Is the ADHD Routine App Worth It?",
+      "desc": "Routines as a chain of timed steps, built for ADHD mornings and evenings.",
+      "cat": "reviews"
+    },
     {
       "slug": "aligned-app-review",
       "title": "Aligned App Review",
@@ -146,64 +180,106 @@
       "cat": "reviews"
     },
     {
-      "slug": "saner-ai-review",
-      "title": "Saner.AI Review: Is the ADHD AI Assistant Worth It?",
-      "desc": "Updated October 19, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "slug": "ellie-planner-review",
+      "title": "Ellie Planner Review",
+      "desc": "Brain dump, then time-block your day: who it fits, where it stops.",
       "cat": "reviews"
     },
     {
-      "slug": "finch-app-review",
-      "title": "Finch App Review: Is the Self-Care Pet Good for ADHD?",
-      "desc": "Updated October 19, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
-      "cat": "reviews"
-    },
-    {
-      "slug": "mindflow-ai-review",
-      "title": "Mindflow AI Review: Is the ADHD AI Coach Worth It?",
-      "desc": "Updated October 19, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
-      "cat": "reviews"
-    },
-    {
-      "slug": "llama-life-review",
-      "title": "Llama Life Review: Is the ADHD Task Timer Worth It?",
-      "desc": "Updated October 19, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
-      "cat": "reviews"
-    },
-    {
-      "slug": "routinery-app-review",
-      "title": "Routinery App Review: Is It Good for ADHD Routines?",
-      "desc": "Updated October 19, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "slug": "forest-app-for-adhd",
+      "title": "Forest App for ADHD",
+      "desc": "Does the tree timer help you start? Plus 3 alternatives.",
       "cat": "reviews"
     },
     {
       "slug": "numo-app-review",
-      "title": "Numo App Review: Is the ADHD Community App Worth It?",
-      "desc": "Updated October 19, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "title": "Numo App Review",
+      "desc": "The ADHD community app: Squads, points and lessons, reviewed.",
       "cat": "reviews"
     },
     {
-      "slug": "routineflow-review",
-      "title": "RoutineFlow Review: Is the ADHD Routine App Worth It?",
-      "desc": "Updated October 22, 2026 · Prices and ratings checked October 22, 2026 · Not tested hands-on,...",
+      "slug": "routinery-app-review",
+      "title": "Routinery App Review",
+      "desc": "Routines as timed steps with a voice guide: who it fits, where it stops.",
+      "cat": "reviews"
+    },
+    {
+      "slug": "llama-life-review",
+      "title": "Llama Life Review",
+      "desc": "A countdown on every task: who it fits, where it stops.",
+      "cat": "reviews"
+    },
+    {
+      "slug": "mindflow-ai-review",
+      "title": "Mindflow AI Review",
+      "desc": "The voice-first AI coach for ADHD, reviewed.",
+      "cat": "reviews"
+    },
+    {
+      "slug": "finch-app-review",
+      "title": "Finch App Review",
+      "desc": "The self-care pet app: tiny goals, no penalty, and its limits.",
+      "cat": "reviews"
+    },
+    {
+      "slug": "saner-ai-review",
+      "title": "Saner.AI Review",
+      "desc": "The AI assistant for scattered notes, email and Slack: who it fits, where it stops.",
       "cat": "reviews"
     },
     {
       "slug": "focus-friend-app-review",
       "title": "Focus Friend by Hank Green: Honest App Review",
-      "desc": "Updated October 25, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
-      "cat": "reviews"
-    },
-    {
-      "slug": "opal-app-review",
-      "title": "Opal App Review: Is It Worth $99.99 a Year for ADHD?",
-      "desc": "Updated October 28, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "desc": "Short answer: Focus Friend is a cozy focus timer from Hank Green and Honey B Games.",
       "cat": "reviews"
     },
     {
       "slug": "brick-app-review",
       "title": "Brick App Review: Does the Phone Blocker Help ADHD?",
-      "desc": "Updated October 28, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "desc": "Short answer: Brick is a $59 magnetic puck that locks the apps you choose until you tap your...",
       "cat": "reviews"
+    },
+    {
+      "slug": "opal-app-review",
+      "title": "Opal App Review: Is It Worth $99.99 a Year for ADHD?",
+      "desc": "Short answer: Opal is a screen time app that blocks the apps and sites you choose on a...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "forest-vs-flora",
+      "title": "Forest vs Flora",
+      "desc": "Same grow-a-tree timer: Forest for app blocking and stats, Flora for friends, to-dos and habits.",
+      "cat": "compare"
+    },
+    {
+      "slug": "todoist-vs-notion",
+      "title": "Todoist vs Notion for ADHD",
+      "desc": "A ready-made task list with fast capture, or a blank workspace you build yourself.",
+      "cat": "compare"
+    },
+    {
+      "slug": "todoist-vs-trello",
+      "title": "Todoist vs Trello for ADHD",
+      "desc": "A fast list with reminders and repeats, or a visual board of cards you drag.",
+      "cat": "compare"
+    },
+    {
+      "slug": "goblin-tools-vs-chatgpt",
+      "title": "Goblin Tools vs ChatGPT for ADHD Task Breakdown",
+      "desc": "Instant steps with zero setup, or an AI assistant that knows your situation.",
+      "cat": "compare"
+    },
+    {
+      "slug": "structured-vs-todoist",
+      "title": "Structured vs Todoist for ADHD: Which Planner Fits?",
+      "desc": "A visual timeline for time blindness, or fast capture and a list for every project.",
+      "cat": "compare"
+    },
+    {
+      "slug": "finch-vs-habitica",
+      "title": "Finch vs Habitica for ADHD: Which Habit App Fits?",
+      "desc": "Gentle self-care with no penalty, or habits that play like a game with real stakes.",
+      "cat": "compare"
     },
     {
       "slug": "tiimo-vs-structured",
@@ -242,63 +318,27 @@
       "cat": "compare"
     },
     {
-      "slug": "ticktick-vs-structured",
-      "title": "TickTick vs Structured for ADHD: Which Planner Fits?",
-      "desc": "Updated October 19, 2026 · Prices and ratings checked October 19, 2026 · We make FOCO, one of...",
+      "slug": "tiimo-vs-ticktick",
+      "title": "Tiimo vs TickTick for ADHD: Which One Fits Your Brain?",
+      "desc": "A calm, visual day or one system for tasks, calendar and habits.",
       "cat": "compare"
     },
     {
       "slug": "tiimo-vs-todoist",
       "title": "Tiimo vs Todoist for ADHD: Which One Fits Your Brain?",
-      "desc": "Updated October 18, 2026 · Prices and ratings checked October 18, 2026 · We make FOCO, one of...",
+      "desc": "A visual day plan or a fast, flexible task list.",
       "cat": "compare"
     },
     {
-      "slug": "tiimo-vs-ticktick",
-      "title": "Tiimo vs TickTick for ADHD: Which One Fits Your Brain?",
-      "desc": "Updated October 18, 2026 · Prices and ratings checked October 18, 2026 · We make FOCO, one of...",
+      "slug": "ticktick-vs-structured",
+      "title": "TickTick vs Structured for ADHD: Which Planner Fits?",
+      "desc": "One app for everything or a simple visual timeline for your day.",
       "cat": "compare"
     },
     {
       "slug": "todoist-vs-ticktick",
-      "title": "Todoist vs TickTick for ADHD: Which One Should You Use?",
-      "desc": "Updated October 19, 2026 · Prices and ratings checked October 19, 2026 · We make FOCO, one of...",
-      "cat": "compare"
-    },
-    {
-      "slug": "structured-vs-todoist",
-      "title": "Structured vs Todoist for ADHD: Which Planner Fits?",
-      "desc": "Updated October 22, 2026 · Prices and ratings checked October 22, 2026 · We make FOCO, one of...",
-      "cat": "compare"
-    },
-    {
-      "slug": "finch-vs-habitica",
-      "title": "Finch vs Habitica for ADHD: Which Habit App Fits?",
-      "desc": "Updated October 22, 2026 · Prices and ratings checked October 22, 2026 · We make FOCO, one of...",
-      "cat": "compare"
-    },
-    {
-      "slug": "goblin-tools-vs-chatgpt",
-      "title": "Goblin Tools vs ChatGPT for ADHD Task Breakdown",
-      "desc": "Updated October 22, 2026 · Prices and ratings checked October 22, 2026 · We make FOCO, one of...",
-      "cat": "compare"
-    },
-    {
-      "slug": "forest-vs-flora",
-      "title": "Forest vs Flora: Which Focus App Wins for ADHD?",
-      "desc": "Updated October 25, 2026 · Store listings checked October 25, 2026 · We make FOCO, one of the...",
-      "cat": "compare"
-    },
-    {
-      "slug": "todoist-vs-trello",
-      "title": "Todoist vs Trello for ADHD: List or Board?",
-      "desc": "Updated October 25, 2026 · Prices and ratings checked October 25, 2026 · We make FOCO, one of...",
-      "cat": "compare"
-    },
-    {
-      "slug": "todoist-vs-notion",
-      "title": "Todoist vs Notion for ADHD: Which One Should You Use?",
-      "desc": "Updated October 25, 2026 · Prices and ratings checked October 25, 2026 · We make FOCO, one of...",
+      "title": "Todoist vs TickTick",
+      "desc": "Fast capture or an all-in-one toolkit: which fits an ADHD brain.",
       "cat": "compare"
     },
     {
@@ -362,6 +402,18 @@
       "slug": "adhd-task-apps-for-freelancers",
       "title": "ADHD Task Apps for Freelancers",
       "desc": "Setups that work without a boss or fixed hours.",
+      "cat": "focus"
+    },
+    {
+      "slug": "best-free-adhd-apps",
+      "title": "Best Free ADHD Apps in 2026: 12 Picks by Need",
+      "desc": "12 free ADHD apps by need, and where each free plan stops.",
+      "cat": "focus"
+    },
+    {
+      "slug": "best-ai-calendar-apps-for-adhd",
+      "title": "10 Best AI Calendar Apps for ADHD",
+      "desc": "10 AI calendars that plan and reschedule your day.",
       "cat": "focus"
     },
     {

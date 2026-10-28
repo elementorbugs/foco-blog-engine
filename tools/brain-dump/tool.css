@@ -1,0 +1,76 @@
+/* ADHD brain dump tool (post 1019). Light, flat, mobile first. Every rule is scoped to #fbd so the theme can't reach in. */
+#fbd{--ink:#160F22;--muted:#5B5170;--meta:#6E6585;--line:#E9E3F5;--rule:#F1ECF9;--paper:#FDFCFF;--violet:#6D28D9;--violet-2:#5B21B6;--now:#C2410C;--now-bg:#FFF7ED;--now-line:#FED7AA;box-sizing:border-box;position:relative;margin:32px 0 !important;padding:24px !important;border:1px solid var(--line) !important;border-radius:24px !important;background:#fff !important;box-shadow:none !important;color:var(--ink) !important;font:400 16px/1.5 "Plus Jakarta Sans",system-ui,-apple-system,sans-serif !important;text-align:left;scroll-margin-top:110px}
+#fbd *,#fbd *::before,#fbd *::after{box-sizing:border-box}
+#fbd [hidden]{display:none !important}
+#fbd button,#fbd select{font:inherit;color:inherit;letter-spacing:0;text-transform:none}
+
+#fbd .fbd-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:0 0 4px}
+#fbd .fbd-title{margin:0 !important;padding:0 !important;font:600 22px/1.2 "Lexend","Plus Jakarta Sans",sans-serif !important;letter-spacing:-.01em;color:var(--ink) !important;border:0 !important}
+#fbd .fbd-title::before,#fbd .fbd-title::after{content:none !important}
+#fbd .fbd-saved{flex:none;font-size:13px;color:var(--meta)}
+#fbd .fbd-sub{margin:0 0 16px !important;font-size:15px !important;line-height:1.5 !important;color:var(--muted) !important}
+
+/* the notepad: ruled lines and a margin line, one thought per line */
+#fbd .fbd-pad{position:relative;border:1px solid var(--line);border-radius:16px;background:var(--paper);overflow:hidden}
+#fbd .fbd-pad::before{content:"";position:absolute;top:0;bottom:0;left:38px;width:1px;background:rgba(251,146,60,.45);pointer-events:none}
+#fbd textarea.fbd-input{display:block;width:100% !important;max-width:none !important;min-height:256px;margin:0 !important;padding:8px 16px 8px 52px !important;border:0 !important;border-radius:0 !important;outline:none;box-shadow:none !important;background-color:transparent !important;background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 31px,var(--rule) 31px,var(--rule) 32px) !important;background-attachment:local !important;background-position:0 8px !important;color:var(--ink) !important;font:500 17px/32px "Plus Jakarta Sans",system-ui,sans-serif !important;resize:vertical;-webkit-appearance:none;appearance:none}
+#fbd textarea.fbd-input::placeholder{color:#A49BB8 !important;opacity:1}
+#fbd .fbd-pad:focus-within{border-color:#C4B5FD;box-shadow:0 0 0 3px rgba(124,58,237,.14)}
+
+#fbd .fbd-prompts{display:flex;gap:8px;margin:12px -24px 0 !important;padding:0 24px 2px !important;overflow-x:auto;scrollbar-width:none;list-style:none}
+#fbd .fbd-prompts::-webkit-scrollbar{display:none}
+#fbd .fbd-prompts-label{flex:none;align-self:center;font-size:13px;color:var(--meta)}
+#fbd .fbd-chip{flex:none;min-height:36px;padding:0 14px !important;border:1px solid var(--line) !important;border-radius:999px !important;background:#fff !important;color:var(--muted) !important;font-size:14px !important;font-weight:500;line-height:1 !important;cursor:pointer;box-shadow:none !important}
+#fbd .fbd-chip:hover{border-color:#C4B5FD !important;color:var(--ink) !important}
+
+#fbd .fbd-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px}
+#fbd .fbd-count{font-size:14px;color:var(--muted)}
+#fbd .fbd-count b{color:var(--ink);font-weight:700;font-variant-numeric:tabular-nums}
+#fbd .fbd-primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px !important;border:0 !important;border-radius:999px !important;background:var(--violet) !important;color:#fff !important;font-size:16px !important;font-weight:600;line-height:1 !important;text-decoration:none !important;cursor:pointer;box-shadow:none !important;transition:background .15s,transform .1s}
+#fbd .fbd-primary:hover{background:var(--violet-2) !important;color:#fff !important}
+#fbd .fbd-primary:active{transform:scale(.97)}
+#fbd .fbd-primary[disabled]{background:#E4DDF2 !important;color:#8E85A3 !important;cursor:default;transform:none}
+#fbd .fbd-text{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 4px !important;border:0 !important;background:none !important;color:var(--violet) !important;font-size:15px !important;font-weight:600;text-decoration:none !important;cursor:pointer;box-shadow:none !important}
+#fbd .fbd-text:hover{color:var(--violet-2) !important}
+#fbd button:focus-visible,#fbd a:focus-visible,#fbd select:focus-visible+.fbd-move-ico{outline:2px solid #8B5CF6;outline-offset:2px}
+
+/* sorted view */
+#fbd .fbd-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:-8px 0 8px}
+#fbd .fbd-start{margin:0 0 20px;padding:18px !important;border:1px solid var(--now-line);border-radius:18px;background:var(--now-bg)}
+#fbd .fbd-start-label{margin:0 0 6px !important;font-size:13px !important;font-weight:600;color:var(--now) !important}
+#fbd .fbd-start-task{margin:0 0 16px !important;font:600 21px/1.3 "Lexend","Plus Jakarta Sans",sans-serif !important;color:var(--ink) !important;overflow-wrap:anywhere}
+#fbd .fbd-start-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+#fbd .fbd-start-row .fbd-text{color:#9A3412 !important}
+
+#fbd .fbd-groups{display:grid;gap:20px}
+#fbd .fbd-group-h{display:flex;align-items:baseline;justify-content:space-between;margin:0 0 2px !important;padding:0 0 8px !important;border-bottom:1px solid var(--line);font:600 15px/1.2 "Lexend","Plus Jakarta Sans",sans-serif !important;color:var(--ink) !important}
+#fbd .fbd-group-h span{font:500 14px/1 "Plus Jakarta Sans",sans-serif;color:var(--meta);font-variant-numeric:tabular-nums}
+#fbd .fbd-group[data-b="now"] .fbd-group-h{color:var(--now) !important}
+#fbd ul.fbd-list{list-style:none !important;margin:0 !important;padding:0 !important}
+#fbd li.fbd-item{display:flex;align-items:center;gap:8px;min-height:52px;margin:0 !important;padding:4px 0 4px 2px !important;border-bottom:1px solid var(--rule);list-style:none !important;font-size:16px !important;line-height:1.4 !important;color:var(--ink) !important}
+#fbd li.fbd-item::before,#fbd li.fbd-item::marker{content:none !important;display:none !important}
+#fbd li.fbd-item:last-child{border-bottom:0}
+#fbd .fbd-item-t{flex:1;min-width:0;overflow-wrap:anywhere}
+#fbd .fbd-group[data-b="drop"] .fbd-item-t{color:var(--meta);text-decoration:line-through;text-decoration-color:#C9C1D8}
+#fbd li.fbd-empty{min-height:44px;color:var(--meta);font-size:14px}
+#fbd li.fbd-flash{animation:fbdflash 1.2s ease-out}
+@keyframes fbdflash{0%{background:#EDE6FB}100%{background:transparent}}
+#fbd .fbd-move{position:relative;flex:none;width:44px;height:44px;border-radius:12px}
+#fbd .fbd-move select{position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;border:0;opacity:0;cursor:pointer;-webkit-appearance:none;appearance:none;font-size:16px}
+#fbd .fbd-move-ico{display:grid;place-items:center;width:100%;height:100%;border-radius:12px;color:var(--meta);pointer-events:none;transition:background .15s}
+#fbd .fbd-move:hover .fbd-move-ico{background:#F4F0FB;color:var(--ink)}
+
+#fbd .fbd-tools{display:flex;flex-wrap:wrap;gap:4px 18px;margin-top:20px;padding-top:12px;border-top:1px solid var(--line)}
+#fbd .fbd-tools .fbd-text{color:var(--muted) !important;font-weight:500}
+#fbd .fbd-tools .fbd-text:hover{color:var(--ink) !important}
+#fbd .fbd-foco{margin:16px 0 0 !important;font-size:14px !important;line-height:1.5 !important;color:var(--muted) !important}
+#fbd .fbd-foco a{color:var(--violet) !important;font-weight:600;text-decoration:none !important;border:0 !important;box-shadow:none !important;background:none !important;white-space:nowrap}
+#fbd .fbd-view{margin:0 !important;padding:0 !important}
+#fbd .fbd-sr{position:absolute !important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+#fbd .fbd-view{animation:fbdin .25s ease-out}
+@keyframes fbdin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+@media (min-width:760px){#fbd{padding:32px !important}#fbd .fbd-title{font-size:26px !important}#fbd .fbd-prompts{margin:12px 0 0 !important;padding:0 !important;flex-wrap:wrap;overflow:visible}#fbd .fbd-groups{grid-template-columns:1fr 1fr;gap:24px 28px}#fbd textarea.fbd-input{min-height:320px}}
+@media (max-width:420px){#fbd{padding:20px 16px !important;border-radius:20px !important;margin:24px -4px !important}#fbd .fbd-prompts{margin:12px -16px 0 !important;padding:0 16px 2px !important}#fbd .fbd-pad::before{left:30px}#fbd textarea.fbd-input{padding-left:42px !important}#fbd .fbd-bar .fbd-primary{flex:1}}
+@media (prefers-reduced-motion:reduce){#fbd .fbd-view,#fbd li.fbd-flash{animation:none}}
+@media print{body *{visibility:hidden !important}#fbd,#fbd *{visibility:visible !important}#fbd{position:absolute;left:0;top:0;width:100%;border:0 !important;padding:0 !important;margin:0 !important}#fbd .fbd-move,#fbd .fbd-tools,#fbd .fbd-foco,#fbd .fbd-top,#fbd .fbd-start-row,#fbd .fbd-saved{display:none !important}#fbd .fbd-groups{grid-template-columns:1fr 1fr}}

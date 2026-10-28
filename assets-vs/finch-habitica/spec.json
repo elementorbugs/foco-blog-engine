@@ -1,0 +1,60 @@
+[
+ {
+  "name": "finch-vs-habitica-finch",
+  "app": "Finch",
+  "icon": "finch-icon.png",
+  "line": "Self-care pet that grows when you do small goals",
+  "accent": "#5BB8F0",
+  "chips": [
+   "No penalty for missed days",
+   "Mood check-ins",
+   "Goal buddies"
+  ],
+  "shots": [
+   {
+    "img": "finch-3.jpg",
+    "top": 0.26,
+    "bottom": 1
+   },
+   {
+    "img": "finch-1.jpg",
+    "top": 0.26,
+    "bottom": 1
+   },
+   {
+    "img": "finch-5.jpg",
+    "top": 0.26,
+    "bottom": 1
+   }
+  ]
+ },
+ {
+  "name": "finch-vs-habitica-habitica",
+  "app": "Habitica",
+  "icon": "habitica-icon.png",
+  "line": "Your to-do list as a retro RPG, with real stakes",
+  "accent": "#9B6BF2",
+  "chips": [
+   "Habits, Dailies, To-dos",
+   "Gold, gear and pets",
+   "Team up in parties"
+  ],
+  "shots": [
+   {
+    "img": "habitica-2.jpg",
+    "top": 0.17,
+    "bottom": 1
+   },
+   {
+    "img": "habitica-3.jpg",
+    "top": 0.2,
+    "bottom": 1
+   },
+   {
+    "img": "habitica-4.jpg",
+    "top": 0.19,
+    "bottom": 1
+   }
+  ]
+ }
+]

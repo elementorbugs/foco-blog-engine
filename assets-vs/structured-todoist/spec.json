@@ -1,0 +1,61 @@
+[
+ {
+  "name": "structured-vs-todoist-structured",
+  "app": "Structured",
+  "icon": "C:/Users/USER/foco website/foco-video/public/apps/structured-icon.png",
+  "line": "Your day as a visual timeline, sized by time",
+  "accent": "#F28B8B",
+  "chips": [
+   "Almost everything free",
+   "Timeline + focus timer",
+   "AI day planning (Pro)"
+  ],
+  "shots": [
+   {
+    "img": "C:/Users/USER/foco website/foco-video/public/apps/structured-2.png",
+    "top": 0.04,
+    "bottom": 0.98,
+    "x": 0.35
+   },
+   {
+    "img": "C:/Users/USER/foco website/foco-video/public/apps/structured-3.png",
+    "top": 0.27,
+    "bottom": 1
+   },
+   {
+    "img": "C:/Users/USER/foco website/foco-video/public/apps/structured-4.png",
+    "top": 0.26,
+    "bottom": 1
+   }
+  ]
+ },
+ {
+  "name": "structured-vs-todoist-todoist",
+  "app": "Todoist",
+  "icon": "C:/Users/USER/foco website/foco-video/public/apps/todoist-icon.png",
+  "line": "The fastest way to get tasks out of your head",
+  "accent": "#E44332",
+  "chips": [
+   "Quick Add + Ramble voice",
+   "Projects, filters, priorities",
+   "Syncs your calendar"
+  ],
+  "shots": [
+   {
+    "img": "C:/Users/USER/foco website/foco-video/public/apps/todoist-1.png",
+    "top": 0.3,
+    "bottom": 1
+   },
+   {
+    "img": "C:/Users/USER/foco website/foco-video/public/apps/todoist-2.png",
+    "top": 0.3,
+    "bottom": 1
+   },
+   {
+    "img": "C:/Users/USER/foco website/foco-video/public/apps/todoist-3.png",
+    "top": 0.3,
+    "bottom": 1
+   }
+  ]
+ }
+]
