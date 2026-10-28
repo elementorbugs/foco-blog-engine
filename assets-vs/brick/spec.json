@@ -1,0 +1,75 @@
+[
+ {
+  "name": "brick-app-review-showcase",
+  "app": "Brick",
+  "icon": "icon.png",
+  "line": "A $59 tap-to-lock puck that blocks your distracting apps",
+  "accent": "#7A8494",
+  "chips": [
+   "Tap the Brick to block apps",
+   "Leave it in another room",
+   "Tap again to unbrick"
+  ],
+  "shots": [
+   {
+    "img": "brick-3.jpg",
+    "box": {
+     "l": 0.118,
+     "t": 0.326,
+     "r": 0.882,
+     "b": 1
+    }
+   },
+   {
+    "img": "brick-5.jpg",
+    "box": {
+     "l": 0.118,
+     "t": 0.326,
+     "r": 0.882,
+     "b": 1
+    }
+   },
+   {
+    "img": "brick-4.jpg",
+    "box": {
+     "l": 0.118,
+     "t": 0.326,
+     "r": 0.882,
+     "b": 1
+    }
+   }
+  ]
+ },
+ {
+  "name": "brick-night-and-history",
+  "app": "Brick Night",
+  "icon": "icon.png",
+  "line": "Bluetooth bedroom blocker, plus your weekly Brick time",
+  "accent": "#3E4757",
+  "chips": [
+   "Blocks apps in your bedroom",
+   "Adjustable range",
+   "Weekly history of bricked hours"
+  ],
+  "shots": [
+   {
+    "img": "brick-6.jpg",
+    "box": {
+     "l": 0.118,
+     "t": 0.326,
+     "r": 0.882,
+     "b": 1
+    }
+   },
+   {
+    "img": "brick-7.jpg",
+    "box": {
+     "l": 0.118,
+     "t": 0.326,
+     "r": 0.882,
+     "b": 1
+    }
+   }
+  ]
+ }
+]

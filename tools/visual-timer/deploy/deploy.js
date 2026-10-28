@@ -107,7 +107,7 @@ function presetVars(p, hubVars, ogImage) {
   const intro = '<span class="vt-eyebrow">Free ADHD tool</span>\n      <h1 id="vt-h1"><span class="vt-line">' + p.m + ' minute</span> <span class="vt-line vt-accent">visual timer.</span></h1>\n      <p class="vt-lede">' + p.lede + '</p>';
   const others = PRESETS.filter((o) => o.m !== p.m).map((o) => '<a href="' + HUB + o.slug + '/">' + o.label + '</a>').join('') + '<a href="' + HUB + '">Any length</a>';
   const body = p.body.map(([h2, ps], i) => '\n    <h2 id="vt-b' + i + '">' + esc(h2) + '</h2>\n' + ps.map((t) => '    <p>' + t + '</p>').join('\n')).join('\n');
-  const dock = hubVars['{{VT:READ}}'].match(/<aside class="vt-dock"[\s\S]*?<\/aside>/)[0];
+  const dock = '';
   const read = '<section class="vt-read" aria-labelledby="vt-good-h">\n  <div class="vt-wrap vt-read-in">\n  <div class="vt-read-col">\n    <h2 id="vt-good-h">What is a ' + p.label.replace(/s$/, '') + ' timer good for?</h2>\n    <ul class="vt-uses">' + p.uses.map((u) => '<li>' + u + '</li>').join('') + '</ul>' + body
     + '\n\n    <h2 id="vt-len-h">Other visual timer lengths</h2>\n    <p class="vt-lengths">' + others + '</p>\n  </div>\n  ' + dock + '\n  </div>\n</section>';
   return { '{{VT:HEAD}}': head, '{{VT:INTRO}}': intro, '{{VT:READ}}': read, '{{VT:FAQ}}': '<div id="vt-faq-items">' + faqItems(p.faq) + '</div>', '{{VT:PRESET}}': '<script>window.VT_PRESET = ' + p.m + ';</script>' };

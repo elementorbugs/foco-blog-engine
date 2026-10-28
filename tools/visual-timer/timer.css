@@ -338,3 +338,17 @@ img { max-width: 100%; height: auto; display: block; }
 
 .vt-disc:focus { outline: none; }
 .vt-disc:focus-visible { outline: 2px solid rgba(167, 139, 250, .7); outline-offset: 6px; }
+
+.vt-read-in { grid-template-columns: minmax(0, 72ch); justify-content: center; }
+@media (max-width: 560px) {
+  .vt-hero { padding: 20px 0 44px; }
+  .vt-hero-in { gap: 18px; }
+  .vt-eyebrow { padding: 6px 12px; font-size: 11px; }
+  .vt-hero h1 { font-size: 34px; line-height: 1.08; }
+  .vt-lede { font-size: 16px; margin-top: -8px; }
+  .vt-device { padding: 16px 12px 18px; --disc: min(80vw, 330px); }
+  .vt-corner { margin-bottom: -18px; }
+}
+
+/* gradient text clips descenders (g, y, p) unless the box extends below the line */
+.vt-accent { padding-bottom: .16em; margin-bottom: -.16em; }

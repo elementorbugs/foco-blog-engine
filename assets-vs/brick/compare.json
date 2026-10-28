@@ -1,0 +1,3 @@
+[{ "name": "brick-vs-opal", "title": "Brick vs Opal: where the lock lives", "sides": [
+  { "app": "Brick", "icon": "icon.png", "img": "brick-5.jpg", "top": 0.33, "bottom": 1, "zoom": 1.3, "caption": "A physical puck: to unlock, you walk back and tap it" },
+  { "app": "Opal", "icon": "opal-icon.png", "img": "opal-2.jpg", "top": 0.235, "bottom": 0.86, "zoom": 1.12, "caption": "All software: rules, schedules and a focus score, no device to buy" } ] }]

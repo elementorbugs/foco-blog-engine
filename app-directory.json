@@ -134,6 +134,29 @@
       "name": "RoutineFlow",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-routineflow-1.png",
       "appStoreId": 1639800794
+    },
+    "notion": {
+      "name": "Notion",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-notion.jpg"
+    },
+    "trello": {
+      "name": "Trello",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-trello.jpg"
+    },
+    "flora": {
+      "name": "Flora",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-flora.jpg",
+      "appStoreId": 1225155794
+    },
+    "brick": {
+      "name": "Brick",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-brick.png",
+      "appStoreId": 6448794069
+    },
+    "opal": {
+      "name": "Opal",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-opal-1.png",
+      "appStoreId": 1497465230
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
@@ -203,6 +226,42 @@
       "title": "Saner.AI Review",
       "desc": "The AI assistant for scattered notes, email and Slack: who it fits, where it stops.",
       "cat": "reviews"
+    },
+    {
+      "slug": "focus-friend-app-review",
+      "title": "Focus Friend by Hank Green: Honest App Review",
+      "desc": "Short answer: Focus Friend is a cozy focus timer from Hank Green and Honey B Games.",
+      "cat": "reviews"
+    },
+    {
+      "slug": "brick-app-review",
+      "title": "Brick App Review: Does the Phone Blocker Help ADHD?",
+      "desc": "Short answer: Brick is a $59 magnetic puck that locks the apps you choose until you tap your...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "opal-app-review",
+      "title": "Opal App Review: Is It Worth $99.99 a Year for ADHD?",
+      "desc": "Short answer: Opal is a screen time app that blocks the apps and sites you choose on a...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "forest-vs-flora",
+      "title": "Forest vs Flora",
+      "desc": "Same grow-a-tree timer: Forest for app blocking and stats, Flora for friends, to-dos and habits.",
+      "cat": "compare"
+    },
+    {
+      "slug": "todoist-vs-notion",
+      "title": "Todoist vs Notion for ADHD",
+      "desc": "A ready-made task list with fast capture, or a blank workspace you build yourself.",
+      "cat": "compare"
+    },
+    {
+      "slug": "todoist-vs-trello",
+      "title": "Todoist vs Trello for ADHD",
+      "desc": "A fast list with reminders and repeats, or a visual board of cards you drag.",
+      "cat": "compare"
     },
     {
       "slug": "goblin-tools-vs-chatgpt",

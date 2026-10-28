@@ -280,7 +280,7 @@
 
   // ---------- events ----------
   goBtn.addEventListener('click', function () { S.running ? pause() : start(); });
-  $('vt-dock-go').addEventListener('click', function () { S.running ? pause() : start(); render(); });
+  var dockGo = $('vt-dock-go'); if (dockGo) dockGo.addEventListener('click', function () { S.running ? pause() : start(); render(); });
   $('vt-reset').addEventListener('click', reset);
   $('vt-plus5').addEventListener('click', function () { addTime(5 * MIN); });
   $('vt-more').addEventListener('click', function () { S.total = S.remaining = 5 * MIN; flags.half = flags.last = false; start(); track('timer_keep_going'); });
