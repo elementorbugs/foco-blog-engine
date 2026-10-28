@@ -346,8 +346,15 @@ img { max-width: 100%; height: auto; display: block; }
   .vt-eyebrow { padding: 6px 12px; font-size: 11px; }
   .vt-hero h1 { font-size: 34px; line-height: 1.08; }
   .vt-lede { font-size: 16px; margin-top: -8px; }
-  .vt-device { padding: 16px 12px 18px; --disc: min(80vw, 330px); }
-  .vt-corner { margin-bottom: -18px; }
+  /* the whole timer, Start included, fits one phone screen */
+  .vt-hero .vt-eyebrow { display: none; }
+  .vt-device { padding: 16px 12px 18px; gap: 14px; --disc: min(56vw, 230px, 32vh); }
+  .vt-corner { position: absolute; top: 12px; left: 12px; right: 12px; width: auto; margin: 0; z-index: 2; pointer-events: none; }
+  .vt-corner > * { pointer-events: auto; }
+  .vt-presets { flex-wrap: nowrap; gap: 6px; }
+  .vt-presets button { width: 44px; height: 44px; font-size: 14px; }
+  .vt-embed .vt-device { --disc: min(60vw, 240px); }
+  .vt-digits { font-size: calc(var(--disc) * .12); }
 }
 
 /* gradient text clips descenders (g, y, p) unless the box extends below the line */
