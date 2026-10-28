@@ -75,27 +75,60 @@
       "name": "Saner.AI",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-saner-ai.png"
     },
-    "forest": {
-      "name": "Forest",
-      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-forest.png",
-      "appStoreId": 866450515
-    },
-    "ellie": {
-      "name": "Ellie Planner",
-      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-ellie.jpg"
-    },
-    "numo": {
-      "name": "Numo",
-      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-numo.jpg"
+    "mindflow-ai": {
+      "name": "Mindflow AI",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-mindflow-ai.png",
+      "appStoreId": 6743873832
     },
     "routinery": {
       "name": "Routinery",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-routinery.jpg"
     },
-    "mindflow-ai": {
-      "name": "Mindflow AI",
-      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-mindflow-ai.png",
-      "appStoreId": 6743873832
+    "numo": {
+      "name": "Numo",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-numo.jpg"
+    },
+    "routineflow": {
+      "name": "RoutineFlow",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-routineflow-1.png",
+      "appStoreId": 1639800794
+    },
+    "chatgpt": {
+      "name": "ChatGPT",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-chatgpt-1.png",
+      "appStoreId": 6448311069
+    },
+    "forest": {
+      "name": "Forest",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-forest.png",
+      "appStoreId": 866450515
+    },
+    "flora": {
+      "name": "Flora",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-flora.jpg",
+      "appStoreId": 1225155794
+    },
+    "trello": {
+      "name": "Trello",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-trello.jpg"
+    },
+    "notion": {
+      "name": "Notion",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-notion.jpg"
+    },
+    "opal": {
+      "name": "Opal",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-opal-1.png",
+      "appStoreId": 1497465230
+    },
+    "brick": {
+      "name": "Brick",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-brick.png",
+      "appStoreId": 6448794069
+    },
+    "ellie": {
+      "name": "Ellie Planner",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-ellie.jpg"
     },
     "mindflow": {
       "name": "Mindflow AI",
@@ -124,39 +157,6 @@
     "trevor-ai": {
       "name": "Trevor AI",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-trevor-ai.png"
-    },
-    "chatgpt": {
-      "name": "ChatGPT",
-      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-chatgpt-1.png",
-      "appStoreId": 6448311069
-    },
-    "routineflow": {
-      "name": "RoutineFlow",
-      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-routineflow-1.png",
-      "appStoreId": 1639800794
-    },
-    "notion": {
-      "name": "Notion",
-      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-notion.jpg"
-    },
-    "trello": {
-      "name": "Trello",
-      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-trello.jpg"
-    },
-    "flora": {
-      "name": "Flora",
-      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-flora.jpg",
-      "appStoreId": 1225155794
-    },
-    "brick": {
-      "name": "Brick",
-      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-brick.png",
-      "appStoreId": 6448794069
-    },
-    "opal": {
-      "name": "Opal",
-      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-opal-1.png",
-      "appStoreId": 1497465230
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
