@@ -54,5 +54,61 @@
   "w": 1080,
   "h": 1920,
   "dur": 10
+ },
+ "stuck": {
+  "pexels_id": 12908964,
+  "by": "Mizuno K",
+  "w": 1080,
+  "h": 1920,
+  "dur": 10
+ },
+ "scroll": {
+  "pexels_id": 5075219,
+  "by": "cottonbro studio",
+  "w": 1080,
+  "h": 2048,
+  "dur": 54
+ },
+ "handphone": {
+  "pexels_id": 6278956,
+  "by": "Artem Podrez",
+  "w": 1080,
+  "h": 1920,
+  "dur": 9
+ },
+ "handlaptop": {
+  "pexels_id": 6375859,
+  "by": "KATRIN  BOLOVTSOVA",
+  "w": 1080,
+  "h": 2048,
+  "dur": 30
+ },
+ "standmonitor": {
+  "pexels_id": 17518183,
+  "by": "Gilmer Diaz Estela",
+  "w": 1080,
+  "h": 1920,
+  "dur": 9
+ },
+ "standwrite": {
+  "pexels_id": 7778493,
+  "by": "Mikhail Nilov",
+  "w": 1080,
+  "h": 1920,
+  "dur": 16
+ },
+ "typing": {
+  "pexels_id": 34124550,
+  "by": "MELQUIZEDEQUE ALMEIDA",
+  "w": 1080,
+  "h": 1920,
+  "dur": 15
+ },
+ "working": {
+  "pexels_id": 8513103,
+  "by": "Artem Podrez",
+  "w": 1080,
+  "h": 1920,
+  "dur": 10
  }
 }
