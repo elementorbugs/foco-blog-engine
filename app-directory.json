@@ -157,6 +157,31 @@
     "trevor-ai": {
       "name": "Trevor AI",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-trevor-ai.png"
+    },
+    "screenzen": {
+      "name": "ScreenZen",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-screenzen-1.png",
+      "appStoreId": 1541027222
+    },
+    "fabulous": {
+      "name": "Fabulous",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-fabulous-2.png",
+      "appStoreId": 1203637303
+    },
+    "endel": {
+      "name": "Endel",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-endel-2.png",
+      "appStoreId": 1346247457
+    },
+    "brainrot": {
+      "name": "Brainrot",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-brainrot-2.png",
+      "appStoreId": 6744338972
+    },
+    "brain-fm": {
+      "name": "Brain.fm",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-brain-fm-2.png",
+      "appStoreId": 1110684238
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
@@ -243,6 +268,48 @@
       "slug": "opal-app-review",
       "title": "Opal App Review: Is It Worth $99.99 a Year for ADHD?",
       "desc": "Short answer: Opal is a screen time app that blocks the apps and sites you choose on a...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "bloom-app-blocker-review",
+      "title": "Bloom App Blocker Review: Is the $39 Card Worth It?",
+      "desc": "Updated October 29, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "screenzen-review",
+      "title": "ScreenZen Review: Is the Free App Blocker Worth It?",
+      "desc": "Updated October 29, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "focusmate-review",
+      "title": "Focusmate Review: Is It Worth It for ADHD?",
+      "desc": "Updated October 29, 2026 · Prices checked today · Not tested hands-on, based on Focusmate's...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "fabulous-app-review",
+      "title": "Fabulous App Review: Is It Worth It for ADHD?",
+      "desc": "Updated October 29, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "endel-app-review",
+      "title": "Endel App Review: Is Endel Worth It for ADHD?",
+      "desc": "Updated October 29, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "brainrot-app-review",
+      "title": "Brainrot App Review: Is It Free, and Does It Work?",
+      "desc": "Updated October 29, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "brain-fm-review",
+      "title": "Brain.fm Review: Is It Worth $99.99 for ADHD?",
+      "desc": "Updated October 29, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
       "cat": "reviews"
     },
     {
