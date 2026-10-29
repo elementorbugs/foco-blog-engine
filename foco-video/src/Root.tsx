@@ -22,25 +22,6 @@ import { CHATGPT, FINCH, GOBLIN, HABITICA, STRUCTURED, TICKTICK, TIIMO, TODOIST,
 import { GC_TOTAL, GoblinVsChatGPT } from "./versus/goblin-chatgpt/GoblinVsChatGPT";
 import { STS_TOTAL, StuckToStarted } from "./reels/StuckToStarted";
 import { STORY_TOTAL, StoryReel } from "./reels/StoryReel";
-import { PL_FPS, PL_TOTAL, ParalysisReel } from "./paralysis/ParalysisReel";
-import { WAITING_TOTAL, WaitingReel } from "./listreels/waiting/Waiting";
-import { WaitingThumb } from "./listreels/waiting/WaitingScenes";
-import { BEFORE_TOTAL, BeforeStartReel } from "./listreels/beforestart/BeforeStart";
-import { TRANSLATOR_TOTAL, TranslatorReel } from "./listreels/translator/Translator";
-import { WOMEN_TOTAL, WomenReel } from "./listreels/women/Women";
-import { WINS_TOTAL, WinsReel } from "./listreels/wins/Wins";
-import { ReelThumb } from "./listreels/ReelThumb";
-import { WEIRDLY_TOTAL, WeirdlyGoodA, WeirdlyGoodB } from "./listreels/weirdlygood/WeirdlyGood";
-import { CARE_TOTAL, CareMoreA } from "./listreels/caremore/CareMore";
-import { SMART_FLOW_TOTAL, SMART_TOTAL, SmartAdhdA, SmartAdhdB, SmartFlowA, SmartFlowB } from "./listreels/smartadhd/SmartAdhd";
-import { RIG_TEST_TOTAL, RigTest } from "./foco/RigTest";
-import { TR_TOTAL, TodoReview } from "./todolists/TodoReview";
-import { PaperFrame } from "./todolists/PaperFrames";
-import { PAPER_TOTAL, PaperReview } from "./todolists/PaperReview";
-import { PaperThumb } from "./todolists/PaperThumb";
-import { HANDS_TOTAL, HandsOn } from "./handson/HandsOn";
-import { TIMERS_TOTAL, TimerTest } from "./timers/TimerTest";
-import { TimerThumb } from "./timers/TimerThumbs";
 import { SD_TOTAL, StructuredVsTodoist } from "./versus/structured-todoist/StructuredVsTodoist";
 import { FH_TOTAL, FinchVsHabitica } from "./versus/finch-habitica/FinchVsHabitica";
 import { DK_TOTAL, TodoistVsTickTick } from "./versus/todoist-ticktick/TodoistVsTickTick";
@@ -48,8 +29,6 @@ import { GT_TOTAL, GoblinVsTiimo } from "./versus/goblin-tiimo/GoblinVsTiimo";
 import { TT_TOTAL, TiimoVsTickTick } from "./versus/tiimo-ticktick/TiimoVsTickTick";
 import { TD_TOTAL, TiimoVsTodoist } from "./versus/tiimo-todoist/TiimoVsTodoist";
 import { PlannerThumb, UnstuckThumb } from "./unstuck/Thumbs";
-import { KITCHEN_TOTAL, KitchenExplainer } from "./talkinghead/kitchen/Kitchen";
-import { KITCHEN2_TOTAL, Kitchen2 } from "./talkinghead/kitchen2/Kitchen2";
 import { CafeVlog, VLOG_TOTAL } from "./vlog/CafeVlog";
 
 // Placeholder; carousel/build.js always passes a real spec via inputProps
@@ -58,6 +37,7 @@ const SAMPLE_SPEC: Spec = { slug: "sample", slides: [{ layout: "final-phone", id
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      <Composition id="CafeVlog" component={CafeVlog} durationInFrames={VLOG_TOTAL} fps={30} width={1080} height={1920} />
       <Composition
         id="BestAdhdPlannerApps"
         component={BestPlannerApps}
@@ -78,13 +58,6 @@ export const RemotionRoot: React.FC = () => {
         <Composition key={c.id} id={c.id} component={ClipDemo} defaultProps={{ id: c.id }} durationInFrames={cutTotal(c)} fps={CLIP_FPS} width={1080} height={1920} />
       ))}
       <Composition id="PlannerReview" component={PlannerReview} durationInFrames={PR_TOTAL} fps={PR_FPS} width={1920} height={1080} />
-      <Composition id="TodoReview" component={TodoReview} durationInFrames={TR_TOTAL} fps={30} width={1920} height={1080} />
-      {(["A", "B", "C", "D"] as const).map((v) => <Still key={`pt${v}`} id={`PaperThumb${v}`} component={PaperThumb} defaultProps={{ v }} width={1280} height={720} />)}
-      {(["E", "F"] as const).map((v) => <Still key={`tt${v}`} id={`TimerThumb${v}`} component={TimerThumb} defaultProps={{ v }} width={1280} height={720} />)}
-      <Composition id="TimerTest" component={TimerTest} durationInFrames={TIMERS_TOTAL} fps={30} width={1920} height={1080} />
-      <Composition id="HandsOn" component={HandsOn} durationInFrames={HANDS_TOTAL} fps={30} width={1920} height={1080} />
-      <Composition id="PaperReview" component={PaperReview} durationInFrames={PAPER_TOTAL} fps={30} width={1920} height={1080} />
-      {[0, 1, 2, 3].map((n) => <Still key={`pf${n}`} id={`PaperFrame${n}`} component={PaperFrame} defaultProps={{ n }} width={1920} height={1080} />)}
       <Composition id="UnstuckRank" component={UnstuckRank} durationInFrames={UR_TOTAL} fps={UR_FPS} width={1920} height={1080} />
       <Composition id="TiimoVsStructured" component={TiimoVsStructured} durationInFrames={VS_TOTAL} fps={VS_FPS} width={1920} height={1080} />
       <Composition id="GoblinVsTiimo" component={GoblinVsTiimo} durationInFrames={GT_TOTAL} fps={VS_FPS} width={1920} height={1080} />
@@ -95,33 +68,6 @@ export const RemotionRoot: React.FC = () => {
       <Composition id="GoblinVsChatGPT" component={GoblinVsChatGPT} durationInFrames={GC_TOTAL} fps={VS_FPS} width={1920} height={1080} />
       <Composition id="StuckToStarted" component={StuckToStarted} durationInFrames={STS_TOTAL} fps={30} width={1080} height={1920} />
       <Composition id="StoryReel" component={StoryReel} durationInFrames={STORY_TOTAL} fps={30} width={1080} height={1920} />
-      <Composition id="TalkingHeadKitchen" component={KitchenExplainer} durationInFrames={KITCHEN_TOTAL} fps={30} width={1080} height={1920} />
-      <Composition id="CafeVlog" component={CafeVlog} durationInFrames={VLOG_TOTAL} fps={30} width={1080} height={1920} />
-      <Composition id="TalkingHeadKitchen2" component={Kitchen2} durationInFrames={KITCHEN2_TOTAL} fps={30} width={1080} height={1920} />
-      <Composition id="FocoRigTest" component={RigTest} durationInFrames={RIG_TEST_TOTAL} fps={30} width={1080} height={1920} />
-      <Composition id="SmartAdhdA" component={SmartAdhdA} durationInFrames={SMART_TOTAL} fps={30} width={1080} height={1920} />
-      <Still id="WeirdlyThumbA" component={ReelThumb} width={1080} height={1920} defaultProps={{ img: "listreels/weirdlygood/A/a03", bg: "#161c37", dy: 330, kicker: "PEOPLE WITH ADHD ARE", big: "WEIRDLY", sub: "productive", tag: "be honest" }} />
-      <Still id="WeirdlyThumbB" component={ReelThumb} width={1080} height={1920} defaultProps={{ img: "listreels/weirdlygood/B/b03", bg: "#436c80", dy: 330, kicker: "PEOPLE WITH ADHD ARE", big: "WEIRDLY", sub: "productive", tag: "be honest" }} />
-      <Composition id="WeirdlyGoodA" component={WeirdlyGoodA} durationInFrames={WEIRDLY_TOTAL} fps={30} width={1080} height={1920} />
-      <Composition id="WeirdlyGoodB" component={WeirdlyGoodB} durationInFrames={WEIRDLY_TOTAL} fps={30} width={1080} height={1920} />
-      <Composition id="CareMoreA" component={CareMoreA} durationInFrames={CARE_TOTAL} fps={30} width={1080} height={1920} />
-      <Still id="CareThumbA" component={ReelThumb} width={1080} height={1920} defaultProps={{ img: "listreels/caremore/A/a02", bg: "#2b2147", dy: 120, kicker: "THE MORE YOU", big: "CARE", sub: "the harder it is to start" }} />
-      <Composition id="SmartFlowA" component={SmartFlowA} durationInFrames={SMART_FLOW_TOTAL} fps={30} width={1080} height={1920} />
-      <Composition id="SmartFlowB" component={SmartFlowB} durationInFrames={SMART_FLOW_TOTAL} fps={30} width={1080} height={1920} />
-      <Composition id="SmartAdhdB" component={SmartAdhdB} durationInFrames={SMART_TOTAL} fps={30} width={1080} height={1920} />
-      <Composition id="ParalysisReel" component={ParalysisReel} durationInFrames={PL_TOTAL} fps={PL_FPS} width={1080} height={1920} />
-      <Composition id="WaitingReel" component={WaitingReel} durationInFrames={WAITING_TOTAL} fps={PL_FPS} width={1080} height={1920} />
-      <Composition id="BeforeStartReel" component={BeforeStartReel} durationInFrames={BEFORE_TOTAL} fps={PL_FPS} width={1080} height={1920} />
-      <Composition id="TranslatorReel" component={TranslatorReel} durationInFrames={TRANSLATOR_TOTAL} fps={PL_FPS} width={1080} height={1920} />
-      <Composition id="WomenReel" component={WomenReel} durationInFrames={WOMEN_TOTAL} fps={PL_FPS} width={1080} height={1920} />
-      <Composition id="WinsReel" component={WinsReel} durationInFrames={WINS_TOTAL} fps={PL_FPS} width={1080} height={1920} />
-      <Still id="WaitingThumb" component={WaitingThumb} width={1080} height={1920} />
-      <Still id="BeforeStartThumb" component={ReelThumb} width={1080} height={1920} defaultProps={{ img: "listreels/beforestart/b2", dy: 200, kicker: "BEFORE I START 1 TASK", big: "THE RITUAL", sub: "coffee. desk. playlist.", tag: "be honest" }} />
-      <Still id="TranslatorThumb" component={ReelThumb} width={1080} height={1920} defaultProps={{ img: "listreels/translator/t1", dy: 60, kicker: "ADHD", big: "TO ENGLISH", sub: "a translation guide", tag: "which one is you?" }} />
-      <Still id="WomenThumb" component={ReelThumb} width={1080} height={1920} defaultProps={{ img: "listreels/women/q7", dy: 60, kicker: "ADHD IN WOMEN", big: "LOOKS FINE", sub: "until you look closer", tag: "tag her" }} />
-      <Still id="WinsThumb" component={ReelThumb} width={1080} height={1920} defaultProps={{ img: "listreels/wins/s1", dy: 60, kicker: "SMALL ADHD WINS", big: "THAT COUNT", sub: "starting is the win", tag: "drop yours" }} />
-      <Still id="ParalysisThumbA" component={ReelThumb} width={1080} height={1920} defaultProps={{ img: "paralysis/s3", dy: 140, scale: 1.08, kicker: "THIS ISN'T", big: "LAZY", sub: "it's ADHD paralysis", tag: "sound familiar?" }} />
-      <Still id="ParalysisThumbB" component={ReelThumb} width={1080} height={1920} defaultProps={{ img: "paralysis/s1", dy: 160, scale: 1.08, kicker: "ADHD PARALYSIS", big: "≠ LAZY", sub: "here's what it looks like" }} />
       <Composition id="TiimoVsTodoist" component={TiimoVsTodoist} durationInFrames={TD_TOTAL} fps={VS_FPS} width={1920} height={1080} />
       {(["A", "B", "C"] as const).map((v) => <Still key={`vs${v}`} id={`VsThumb${v}`} component={VsThumb} defaultProps={{ variant: v }} width={1280} height={720} />)}
       {(["A", "B", "C"] as const).map((v) => <Still key={`td${v}`} id={`TdThumb${v}`} component={VsThumb} defaultProps={{ variant: v, l: TIIMO, r: TODOIST, score: [2, 3] as [number, number], scoreText: "TIME OR TASKS?" }} width={1280} height={720} />)}
