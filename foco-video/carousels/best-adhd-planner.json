@@ -1,0 +1,80 @@
+{
+  "slug": "best-adhd-planner",
+  "tiktok": {
+    "caption": "best ADHD planner apps, ranked by what your brain actually needs 📅\n\nthere's no one best planner for ADHD. it depends on how you get stuck. calm morning plan? sunsama. meetings all day? morgen. you like a visual timeline? structured. you think in pictures? tiimo. you know what to do but can't start? that's FOCO.\n\nwhich one sounds like you? 👇 save this before you download another planner 📌\nthe #1 app is FOCO, link in bio 💜",
+    "hashtags": ["#adhd", "#adhdplanner", "#adhdapps", "#adhdtiktok"]
+  },
+  "instagram": {
+    "caption": "Best ADHD planner apps, ranked by what your brain actually needs 📅\n\nThere's no one best planner for ADHD. The right one depends on how you get stuck:\n\n5. Sunsama: you want a calm plan every morning\n4. Morgen: your day is full of meetings\n3. Structured: you like seeing your day as a timeline\n2. Tiimo: you think in pictures, not lists\n1. FOCO: you know what to do, you just can't start\n\nSave this before you download another planner 📌 and send it to the friend with 6 planner apps.\n\n💜 My #1 is FOCO, link in bio.",
+    "hashtags": ["#adhd", "#adhdplanner", "#adhdapps", "#adhdtips"],
+    "altText": "A ranked carousel of the best ADHD planner apps: Sunsama, Morgen, Structured, Tiimo and FOCO at number one, each with who it's for, three short notes and a phone screenshot."
+  },
+  "slides": [
+    {
+      "layout": "applist-cover",
+      "id": "cover",
+      "query": "cozy desk planner notebook laptop window light morning",
+      "pick": 4,
+      "title": "best ADHD planner apps",
+      "sub": "ranked by what your brain needs",
+      "icons": ["apps/sunsama-icon.png", "apps/morgen-icon.png", "apps/structured-icon.png", "apps/tiimo-icon.png"],
+      "teaser": "#1?"
+    },
+    {
+      "layout": "app",
+      "id": "sunsama",
+      "theme": "lavender",
+      "rank": 5,
+      "name": "sunsama",
+      "icon": "apps/sunsama-icon.png",
+      "question": "need a calm plan every morning?",
+      "bullets": ["review your plan every morning", "drag tasks onto your calendar", "great if your day lives on a laptop"],
+      "shot": { "src": "apps/sunsama-4.png", "size": [1000, 1778], "crop": [0.14, 0.27, 0.88, 1] }
+    },
+    {
+      "layout": "app",
+      "id": "morgen",
+      "theme": "lavender",
+      "rank": 4,
+      "name": "morgen",
+      "icon": "apps/morgen-icon.png",
+      "question": "your day is full of meetings?",
+      "bullets": ["all your calendars in one place", "fits tasks between meetings", "made for busy work weeks"],
+      "shot": { "src": "apps/morgen-2.png", "size": [1000, 1778] }
+    },
+    {
+      "layout": "app",
+      "id": "structured",
+      "theme": "lavender",
+      "rank": 3,
+      "name": "structured",
+      "icon": "apps/structured-icon.png",
+      "question": "you like seeing your day as a timeline?",
+      "bullets": ["your whole day on one visual timeline", "routines and habits built in", "AI can plan your day for you"],
+      "shot": { "src": "apps/structured-2.png", "size": [1000, 2171], "crop": [0, 0.135, 0.84, 0.83] }
+    },
+    {
+      "layout": "app",
+      "id": "tiimo",
+      "theme": "lavender",
+      "rank": 2,
+      "name": "tiimo",
+      "icon": "apps/tiimo-icon.png",
+      "question": "you think in pictures, not lists?",
+      "bullets": ["a colorful visual day plan", "a timer that shows time passing", "brain dump your plans with AI"],
+      "shot": { "src": "apps/tiimo-3.png", "size": [1000, 2173], "crop": [0.1, 0.17, 0.9, 1] }
+    },
+    {
+      "layout": "final-app",
+      "id": "foco",
+      "theme": "dark",
+      "rank": 1,
+      "name": "foco",
+      "icon": "apps/foco-icon.png",
+      "question": "you know what to do but can't start?",
+      "bullets": ["say the stuck task out loud, it lands in your calendar", "one tap and it breaks into tiny steps", "a little purple guy focuses with you (with music)"],
+      "shot": { "src": "apps/foco-8.png", "size": [1179, 2556] },
+      "ask": "which one sounds like you? 👇"
+    }
+  ]
+}

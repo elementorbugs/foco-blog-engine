@@ -41,7 +41,7 @@ export type SpecSlide =
   | { layout: "final-card"; id: string; lines: string[]; title: string; steps: Step[]; ask: string }
   | { layout: "final-phone"; id: string; lines: string[]; screenshot?: number; image?: string; aspect?: number; ask: string }
   // cozy app-list format (AppList.tsx): photo cover, one app per graph-paper slide, FOCO last with the download panel
-  | { layout: "applist-cover"; id: string; title: string; sub: string; icons: string[]; textTop?: number }
+  | { layout: "applist-cover"; id: string; title: string; sub: string; icons: string[]; textTop?: number; teaser?: string }
   | ({ layout: "app"; id: string } & AppInfo)
   | ({ layout: "final-app"; id: string; ask: string } & AppInfo);
 
@@ -660,7 +660,7 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
       );
     }
     case "applist-cover":
-      return <AppListCover photo={photo} title={s.title} sub={s.sub} icons={s.icons} top={s.textTop} />;
+      return <AppListCover photo={photo} title={s.title} sub={s.sub} icons={s.icons} top={s.textTop} teaser={s.teaser} />;
     case "app":
       return <AppSlide app={s} />;
     case "final-app":
