@@ -1,0 +1,60 @@
+{
+  "slug": "cozy-game-apps",
+  "tiktok": {
+    "caption": "apps for ADHD that feel like a game 🎮 for when your brain won't start anything boring\n\npokémon sleep turns bedtime into collecting. pikmin bloom turns a walk into a tiny quest. plant nanny turns drinking water into plant care. and for the tasks I keep avoiding, FOCO gives me one tiny step and focuses with me.\n\nwhich one would you try first? 👇 save this for your next stuck day 📌\nthe app on the last slide is FOCO, link in bio 💜",
+    "hashtags": ["#adhd", "#adhdapps", "#gamifyyourlife", "#adhdtiktok"]
+  },
+  "instagram": {
+    "caption": "Apps for ADHD that feel like a game, for when your brain won't start anything boring 🎮\n\nIf it feels like a game, my brain actually shows up. These are the ones I keep:\n\n1. Pokémon Sleep: bedtime turns into collecting Pokémon\n2. Pikmin Bloom: every walk plants flowers and finds new Pikmin\n3. Plant Nanny: drink water, grow a little plant\n4. FOCO: say the task I'm avoiding, get one tiny step, and focus with a little purple guy (and music)\n\nSave this for your next stuck day 📌 and send it to the friend who needs a nudge.\n\n💜 The app I use for the tasks I can't start is FOCO, link in bio.",
+    "hashtags": ["#adhd", "#adhdapps", "#gamifyyourlife", "#adhdtips"],
+    "altText": "A cozy carousel of apps that feel like a game for people with ADHD: Pokémon Sleep, Pikmin Bloom, Plant Nanny and FOCO, each with three short notes and a phone screenshot."
+  },
+  "slides": [
+    {
+      "layout": "applist-cover",
+      "id": "cover",
+      "query": "cozy desk by window notebook plants soft morning light",
+      "pick": 4,
+      "title": "apps that feel like a game",
+      "sub": "for an ADHD brain that can't start",
+      "icons": ["apps/pokesleep-icon.png", "apps/pikmin-icon.png", "apps/plantnanny-icon.png"]
+    },
+    {
+      "layout": "app",
+      "id": "pokesleep",
+      "name": "pokémon sleep",
+      "icon": "apps/pokesleep-icon.png",
+      "platforms": "iOS, Android",
+      "bullets": ["put your phone by your pillow and it tracks your sleep", "the more you sleep, the more pokémon show up", "going to bed finally feels like a reward"],
+      "shot": { "src": "apps/pokesleep-3.png", "size": [1000, 1778], "crop": [0, 0, 1, 0.83] }
+    },
+    {
+      "layout": "app",
+      "id": "pikmin",
+      "name": "pikmin bloom",
+      "icon": "apps/pikmin-icon.png",
+      "platforms": "iOS, Android",
+      "bullets": ["every step you walk plants flowers", "the more you walk, the more pikmin join you", "a walk to the store becomes a tiny quest"],
+      "shot": { "src": "apps/pikmin-3.png", "size": [1000, 2167], "crop": [0, 0, 1, 0.8] }
+    },
+    {
+      "layout": "app",
+      "id": "plantnanny",
+      "name": "plant nanny",
+      "icon": "apps/plantnanny-icon.png",
+      "platforms": "iOS, Android",
+      "bullets": ["log a glass of water and your plant grows", "collect cute plants as you go", "drinking water turns into plant care"],
+      "shot": { "src": "apps/plantnanny-4.png", "size": [1000, 1778], "crop": [0.09, 0.245, 0.91, 1] }
+    },
+    {
+      "layout": "final-app",
+      "id": "foco",
+      "name": "foco",
+      "icon": "apps/foco-icon.png",
+      "platforms": "iOS, Android",
+      "bullets": ["say the stuck task out loud, it lands in your day", "one tap and it breaks into tiny steps", "a little purple guy focuses with you (with music)"],
+      "shot": { "src": "apps/foco-8.png", "size": [1179, 2556] },
+      "ask": "which one would you try first? 👇"
+    }
+  ]
+}

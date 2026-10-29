@@ -6,6 +6,7 @@ import { BODY, EMOJI, HAND, HEAD } from "../Composition";
 import { Bubble, FocoCard, Photo } from "./Carousel";
 import { StepCard, TimeChip } from "./MoreCarousels";
 import { Tag } from "./MoreCarousels2";
+import { AppListCover, AppSlide, type AppInfo } from "./AppList";
 
 type Step = { text: string; min: number };
 type CalTask = { title: string; min: number; category: string };
@@ -38,7 +39,11 @@ export type SpecSlide =
   | { layout: "inputs"; id: string; label: string; comment?: string; result?: string }
   | { layout: "phone"; id: string; label: string; comment?: string; screenshot?: number; image?: string; result?: string; crop?: [number, number]; aspect?: number }
   | { layout: "final-card"; id: string; lines: string[]; title: string; steps: Step[]; ask: string }
-  | { layout: "final-phone"; id: string; lines: string[]; screenshot?: number; image?: string; aspect?: number; ask: string };
+  | { layout: "final-phone"; id: string; lines: string[]; screenshot?: number; image?: string; aspect?: number; ask: string }
+  // cozy app-list format (AppList.tsx): photo cover, one app per graph-paper slide, FOCO last with the download panel
+  | { layout: "applist-cover"; id: string; title: string; sub: string; icons: string[]; textTop?: number }
+  | ({ layout: "app"; id: string } & AppInfo)
+  | ({ layout: "final-app"; id: string; ask: string } & AppInfo);
 
 // sticker: one big emoji per slide, TikTok-sticker style; stickerPos overrides the per-layout default [x, y]
 type SlideExtras = { query?: string; pick?: number; photo?: string; sticker?: string; stickerPos?: [number, number] };
@@ -654,6 +659,17 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
         </AbsoluteFill>
       );
     }
+    case "applist-cover":
+      return <AppListCover photo={photo} title={s.title} sub={s.sub} icons={s.icons} top={s.textTop} />;
+    case "app":
+      return <AppSlide app={s} />;
+    case "final-app":
+      return (
+        <AbsoluteFill>
+          <AppSlide app={s} compact ask={s.ask} />
+          <DownloadCTA />
+        </AbsoluteFill>
+      );
     case "final-card":
     case "final-phone": {
       // Everything below the headline bubbles flows from where they end; the ask + CTA stay pinned above TikTok's bottom overlay
