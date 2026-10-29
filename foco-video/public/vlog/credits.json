@@ -1,0 +1,58 @@
+{
+ "cafe": {
+  "pexels_id": 38970268,
+  "by": "Zeynep Co\u015fkun",
+  "w": 1080,
+  "h": 1920,
+  "dur": 18
+ },
+ "rain": {
+  "pexels_id": 19315630,
+  "by": "Esra Erdem",
+  "w": 1080,
+  "h": 1920,
+  "dur": 19
+ },
+ "write": {
+  "pexels_id": 12614912,
+  "by": "Saliha B\u00fcy\u00fckkaya G\u00fclhan",
+  "w": 1080,
+  "h": 1920,
+  "dur": 25
+ },
+ "table": {
+  "pexels_id": 8473895,
+  "by": "Cup of  Couple",
+  "w": 1080,
+  "h": 1920,
+  "dur": 10
+ },
+ "latte": {
+  "pexels_id": 13737153,
+  "by": "Mizuno K",
+  "w": 1080,
+  "h": 1920,
+  "dur": 12
+ },
+ "type": {
+  "pexels_id": 5893708,
+  "by": "Anna Shvets",
+  "w": 1080,
+  "h": 1920,
+  "dur": 25
+ },
+ "topwrite": {
+  "pexels_id": 8085795,
+  "by": "Ron Lach",
+  "w": 1080,
+  "h": 2048,
+  "dur": 58
+ },
+ "pour": {
+  "pexels_id": 13736548,
+  "by": "Mizuno K",
+  "w": 1080,
+  "h": 1920,
+  "dur": 10
+ }
+}
