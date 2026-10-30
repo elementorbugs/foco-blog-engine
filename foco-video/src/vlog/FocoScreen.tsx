@@ -12,7 +12,9 @@ export const SCREEN_W = 1179, SCREEN_H = 2556;
 const STEP = "Write a clear subject line and concise body";
 const MIN = 8;
 
-const Timer: React.FC<{ elapsed: number }> = ({ elapsed }) => {
+// the timer screen in FOCO's focus look; step/min default to the "Write mail" task of the real screenshots
+export const Timer: React.FC<{ elapsed: number; step?: string; min?: number }> = ({ elapsed, step = STEP, min = MIN }) => {
+  const MIN = min, STEP = step;
   const left = Math.max(0, MIN * 60 - elapsed);
   const mm = String(Math.floor(left / 60)).padStart(2, "0"), ss = String(Math.floor(left % 60)).padStart(2, "0");
   const R = 330, L = 2 * Math.PI * R, p = elapsed / (MIN * 60);

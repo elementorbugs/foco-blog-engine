@@ -32,6 +32,7 @@ import { PlannerThumb, UnstuckThumb } from "./unstuck/Thumbs";
 import { CafeVlog, VLOG_TOTAL } from "./vlog/CafeVlog";
 import { FocoScreen, SCREEN_H, SCREEN_W } from "./vlog/FocoScreen";
 import { DESK_TOTAL, DeskVlog } from "./vlog/DeskVlog";
+import { STUDY_TOTAL, StudyVlog } from "./vlog/StudyVlog";
 
 // Placeholder; carousel/build.js always passes a real spec via inputProps
 const SAMPLE_SPEC: Spec = { slug: "sample", slides: [{ layout: "final-phone", id: "x", photo: "../hook", lines: ["sample"], ask: "sample" }] };
@@ -42,6 +43,7 @@ export const RemotionRoot: React.FC = () => {
       {(["steps", "tap", "timer"] as const).map((k) => (
         <Composition key={k} id={`FocoScreen-${k}`} component={FocoScreen} defaultProps={{ kind: k, tapAt: 1.3, elapsed: 3 }} durationInFrames={150} fps={30} width={SCREEN_W} height={SCREEN_H} />
       ))}
+      <Composition id="StudyVlog" component={StudyVlog} durationInFrames={STUDY_TOTAL} fps={30} width={1080} height={1920} />
       <Composition id="DeskVlog" component={DeskVlog} durationInFrames={DESK_TOTAL} fps={30} width={1080} height={1920} />
       <Composition id="CafeVlog" component={CafeVlog} durationInFrames={VLOG_TOTAL} fps={30} width={1080} height={1920} />
       <Composition
