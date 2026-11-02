@@ -182,6 +182,11 @@
       "name": "Brain.fm",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-brain-fm-2.png",
       "appStoreId": 1110684238
+    },
+    "chillio": {
+      "name": "Chillio",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-chillio-2.png",
+      "appStoreId": 6748603301
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
@@ -310,6 +315,12 @@
       "slug": "brain-fm-review",
       "title": "Brain.fm Review: Is It Worth $99.99 for ADHD?",
       "desc": "Updated October 29, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "chillio-app-review",
+      "title": "Chillio App Review: Is It Legit for ADHD?",
+      "desc": "Updated November 2, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
       "cat": "reviews"
     },
     {
