@@ -187,6 +187,11 @@
       "name": "Chillio",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-chillio-2.png",
       "appStoreId": 6748603301
+    },
+    "wisey": {
+      "name": "Wisey",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-wisey-2.png",
+      "appStoreId": 6747447673
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
@@ -321,6 +326,24 @@
       "slug": "chillio-app-review",
       "title": "Chillio App Review: Is It Legit for ADHD?",
       "desc": "Updated November 2, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "tiimo-app-review",
+      "title": "Tiimo App Review: Is It Worth It for ADHD?",
+      "desc": "Updated November 3, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "structured-app-review",
+      "title": "Structured App Review: Is It Worth It for ADHD?",
+      "desc": "Updated November 3, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "wisey-app-review",
+      "title": "Wisey App Review: Is It Legit or a Scam?",
+      "desc": "Updated November 3, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
       "cat": "reviews"
     },
     {
