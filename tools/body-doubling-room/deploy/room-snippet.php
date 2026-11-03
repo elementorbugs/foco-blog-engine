@@ -827,7 +827,7 @@ html.tv-fg *, html.tv-fg *::before, html.tv-fg *::after { transition: none !impo
       <p>When the room is quiet, FOCO breaks your next task into tiny steps, puts them in your calendar and focuses with you. Free to download.</p>
       <div class="bdr-get-btns" id="get-btns">
         <a class="bdr-store" id="get-ios" href="https://apps.apple.com/app/id6762489184" target="_blank" rel="noopener"><span class="bdr-store-small">Download on the</span><span class="bdr-store-big">App Store</span><span class="bdr-store-small">iPhone &amp; iPad</span></a>
-        <a class="bdr-store" id="get-android" href="https://play.google.com/store/apps/details?id=com.adiben.foco" target="_blank" rel="noopener"><span class="bdr-store-small">Get it on</span><span class="bdr-store-big">Google Play</span><span class="bdr-store-small">Android phones &amp; tablets</span></a>
+        <a class="bdr-store" id="get-android" href="https://play.google.com/store/apps/details?id=com.adiben.foco&referrer=utm_source%3Dtryfoco%26utm_medium%3Dsite%26utm_campaign%3Dbody-doubling" target="_blank" rel="noopener"><span class="bdr-store-small">Get it on</span><span class="bdr-store-big">Google Play</span><span class="bdr-store-small">Android phones &amp; tablets</span></a>
       </div>
     </div>
     <figure class="bdr-qr" id="qr-wrap">

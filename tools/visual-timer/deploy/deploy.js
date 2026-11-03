@@ -15,6 +15,7 @@ const SITE = path.resolve(TOOL, '../..');
 const MAP_FILE = path.join(__dirname, 'media-map.json');
 const SNIPPET_FILE = path.join(__dirname, 'timer-snippet.php');
 const SLUG = 'visual-timer';
+const withPlayReferrer = require('../../store-referrer.js');
 const HUB = 'https://www.tryfoco.com/visual-timer/';
 const SNIPPET_NAME = 'FOCO visual timer';
 const PRESETS = require('../presets.js');
@@ -178,7 +179,7 @@ async function pushSnippet(code) {
 
 (async () => {
   const map = BUILD_ONLY ? Object.assign({}, KNOWN, { 'img/foco-focus.png': '../img/foco-focus.png', 'img/foco-done.png': '../img/foco-done.png' }, fs.existsSync(MAP_FILE) ? JSON.parse(fs.readFileSync(MAP_FILE, 'utf8')) : {}) : await uploadMedia();
-  const { tpl, vars: hubVars } = split(buildHub(map));
+  const { tpl, vars: hubVars } = split(withPlayReferrer(buildHub(map), SLUG));
   const og = map['img/og-visual-timer.png'];
   const docs = { hub: hubVars };
   for (const p of PRESETS) docs[p.slug] = presetVars(p, hubVars, og);

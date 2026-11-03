@@ -14,6 +14,7 @@ const SITE = path.resolve(ROOM, '../..');
 const MAP_FILE = path.join(__dirname, 'media-map.json');
 const SNIPPET_FILE = path.join(__dirname, 'room-snippet.php');
 const SLUG = 'body-doubling';
+const withPlayReferrer = require('../../store-referrer.js');
 const SNIPPET_NAME = 'FOCO body doubling room';
 const args = process.argv.slice(2);
 const BUILD_ONLY = args.includes('--build');
@@ -147,13 +148,13 @@ async function pushSnippet(code) {
 (async () => {
   if (BUILD_ONLY) {
     const map = fs.existsSync(MAP_FILE) ? JSON.parse(fs.readFileSync(MAP_FILE, 'utf8')) : {};
-    fs.writeFileSync(SNIPPET_FILE, '<?php\n' + snippetCode(build(map), 0));
+    fs.writeFileSync(SNIPPET_FILE, '<?php\n' + snippetCode(withPlayReferrer(build(map), SLUG), 0));
     console.log('built ' + SNIPPET_FILE);
     return;
   }
   const map = await uploadMedia();
   const page = await ensurePage();
-  const code = snippetCode(build(map), page.id);
+  const code = snippetCode(withPlayReferrer(build(map), SLUG), page.id);
   fs.writeFileSync(SNIPPET_FILE, '<?php\n' + code);
   await pushSnippet(code);
   console.log('\nDone. ' + (page.status === 'publish' ? 'Live at ' + page.link : 'Draft preview (logged in): ' + BASE + '/?page_id=' + page.id + '&preview=true'));
