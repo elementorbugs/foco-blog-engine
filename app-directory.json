@@ -192,6 +192,21 @@
       "name": "Wisey",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-wisey-2.png",
       "appStoreId": 6747447673
+    },
+    "clarify": {
+      "name": "Clarify",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-clarify-2.png",
+      "appStoreId": 1670958524
+    },
+    "bepresent": {
+      "name": "BePresent",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-bepresent-2.png",
+      "appStoreId": 1644737181
+    },
+    "liven": {
+      "name": "Liven",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-liven-2.png",
+      "appStoreId": 6450840109
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
@@ -343,6 +358,30 @@
     {
       "slug": "wisey-app-review",
       "title": "Wisey App Review: Is It Legit or a Scam?",
+      "desc": "Updated November 3, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "habitica-review",
+      "title": "Habitica Review 2026: Is the Habit Tracker Good for ADHD?",
+      "desc": "Updated November 3, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "clarify-app-review",
+      "title": "Clarify App Review 2026: Is It Good for ADHD? Cost, Cancel",
+      "desc": "Updated November 3, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "bepresent-app-review",
+      "title": "BePresent App Review 2026: Is It Free, Safe, Worth It?",
+      "desc": "Updated November 3, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "liven-app-review",
+      "title": "Liven App Review 2026: Is It Legit? Cost, Quiz, Cancel",
       "desc": "Updated November 3, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
       "cat": "reviews"
     },
