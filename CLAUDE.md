@@ -250,6 +250,16 @@ node create-post.js posts-new/post-{slug}.html \
 
 **App directory (`/best-adhd-app/`).** The tabbed directory is built from `app-directory.json` by `node rebuild-app-directory.js --live`. Step 16 of `create-post.js` adds the card automatically: slugs with `-vs-` → Comparisons, `alternative` → Alternatives, `-review` → Reviews; other app posts need `--directory=<paralysis|focus|women|...>`. Only posts ABOUT APPS go in (no printables, guides or coaches); one category per card. App icons: on a live rebuild, a new app named in a review/vs/alternative title gets its official App Store icon fetched, uploaded to WP media and saved in `apps` (the log names the store listing it chose; check it). List posts get icons only via a hand-set `"apps": [...]` on the card.
 
+### Running from a cloud session (no `.env` on disk)
+
+Cloud sessions have no WordPress password. Don't ask Adi for it: the `Blog Post Pipeline` workflow runs `create-post.js` with the GitHub secrets.
+
+1. Commit the post to `posts-new/post-{slug}.html` and push.
+2. `gh workflow run blog-post.yml -f action=draft -f file=posts-new/post-{slug}.html -f keyword="..."`, plus `-f title=`, `-f cover_title=`, `-f directory=`, `-f pillar=true`, `-f howto=true`, `-f skip_cover=true`, `-f skip_pexels=true` as needed.
+3. Follow it with `gh run watch`, read the log with `gh run view --log`, and report the post ID and edit URL.
+
+`action` is `dry-run`, `draft` (default), `publish` or `delete-draft`. Use `publish` only when Adi explicitly asked for that post to go live. `delete-draft` refuses anything that is not a draft and also removes that post's own cover. The workflow only covers this pipeline: other scripts that need WordPress access still need a workflow of their own, or Adi's local machine. The repo is public, so post files and run logs are visible to anyone as soon as they are pushed.
+
 ### Steps the script runs (in order)
 1. **Validate** - H1, no editorial markers, no markdown links, FAQ section, Key Takeaways, ≥4 internal links, TL;DR box, ≥3 external citations. Aborts on errors.
 2. **Determine WP title** - `--title` if provided; else H1 if ≤58 chars; else aborts.

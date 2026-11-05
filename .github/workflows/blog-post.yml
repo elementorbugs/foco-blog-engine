@@ -1,0 +1,147 @@
+name: Blog Post Pipeline
+
+# Runs create-post.js from anywhere, using the WordPress credentials stored as GitHub secrets.
+# Built for cloud sessions, which have no .env on disk. Usage is documented in CLAUDE.md.
+# Default action is "draft": nothing goes live unless action=publish is chosen explicitly.
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'dry-run, draft, publish, or delete-draft (delete-draft refuses anything that is not a draft)'
+        type: choice
+        required: true
+        default: draft
+        options: [dry-run, draft, publish, delete-draft]
+      file:
+        description: 'Post file, e.g. posts-new/post-my-slug.html'
+        type: string
+        required: true
+      keyword:
+        description: 'Primary keyword (required unless delete-draft)'
+        type: string
+        default: ''
+      title:
+        description: 'WP title, max 58 characters (needed when the H1 is longer)'
+        type: string
+        default: ''
+      cover_title:
+        description: 'Cover title, lines separated by a literal \n'
+        type: string
+        default: ''
+      directory:
+        description: 'App directory category, or none'
+        type: string
+        default: ''
+      pillar:
+        description: 'Pillar post'
+        type: boolean
+        default: false
+      howto:
+        description: 'Procedural post (HowTo schema)'
+        type: boolean
+        default: false
+      skip_cover:
+        description: 'Keep the existing cover'
+        type: boolean
+        default: false
+      skip_pexels:
+        description: 'Skip Pexels images'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+# One job at a time, so two runs never race on the same post or on app-directory.json.
+concurrency:
+  group: blog-post-pipeline
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      ACTION: ${{ inputs.action }}
+      POST_FILE: ${{ inputs.file }}
+      KEYWORD: ${{ inputs.keyword }}
+      TITLE: ${{ inputs.title }}
+      COVER_TITLE: ${{ inputs.cover_title }}
+      DIRECTORY: ${{ inputs.directory }}
+      PILLAR: ${{ inputs.pillar }}
+      HOWTO: ${{ inputs.howto }}
+      SKIP_COVER: ${{ inputs.skip_cover }}
+      SKIP_PEXELS: ${{ inputs.skip_pexels }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Check inputs
+        run: |
+          if ! [[ "$POST_FILE" =~ ^posts-new/post-[a-z0-9-]+\.html$ ]]; then
+            echo "::error::file must look like posts-new/post-my-slug.html"
+            exit 1
+          fi
+          if [ "$ACTION" != "delete-draft" ] && [ -z "$KEYWORD" ]; then
+            echo "::error::keyword is required for $ACTION"
+            exit 1
+          fi
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install --silent
+
+      - name: Install Playwright Chromium (cover generation)
+        if: inputs.action == 'draft' || inputs.action == 'publish'
+        run: npx playwright install chromium --with-deps
+
+      # create-post.js only reads credentials from files. Both files are gitignored
+      # and vanish with the runner.
+      - name: Write credential files
+        env:
+          WP_HOST: ${{ secrets.WP_HOST }}
+          WP_USER: ${{ secrets.WP_USER }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+          PEXELS_KEY: ${{ secrets.PEXELS_KEY }}
+        run: |
+          umask 077
+          printf 'WP_HOST=%s\nWP_USER=%s\nWP_APP_PASSWORD=%s\n' "$WP_HOST" "$WP_USER" "$WP_APP_PASSWORD" > .env
+          if [ -n "$PEXELS_KEY" ]; then printf '%s' "$PEXELS_KEY" > .pexels-key; fi
+
+      - name: Run pipeline
+        if: inputs.action != 'delete-draft'
+        run: |
+          args=("$POST_FILE" "--keyword=$KEYWORD")
+          [ -n "$TITLE" ]       && args+=("--title=$TITLE")
+          [ -n "$COVER_TITLE" ] && args+=("--cover-title=$COVER_TITLE")
+          [ -n "$DIRECTORY" ]   && args+=("--directory=$DIRECTORY")
+          [ "$PILLAR" = "true" ]      && args+=("--pillar")
+          [ "$HOWTO" = "true" ]       && args+=("--howto")
+          [ "$SKIP_COVER" = "true" ]  && args+=("--skip-cover")
+          [ "$SKIP_PEXELS" = "true" ] && args+=("--skip-pexels")
+          [ "$ACTION" = "dry-run" ]   && args+=("--dry-run")
+          [ "$ACTION" = "publish" ]   && args+=("--publish")
+          node create-post.js "${args[@]}"
+
+      - name: Delete draft
+        if: inputs.action == 'delete-draft'
+        run: |
+          slug="$(basename "$POST_FILE" .html)"
+          node scripts/delete-draft.js "${slug#post-}"
+
+      - name: Save app directory changes
+        if: inputs.action == 'draft' || inputs.action == 'publish'
+        run: |
+          if git diff --quiet -- app-directory.json; then
+            echo "app-directory.json unchanged"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app-directory.json
+          git commit -m "App directory: card for $(basename "$POST_FILE" .html)"
+          git push
