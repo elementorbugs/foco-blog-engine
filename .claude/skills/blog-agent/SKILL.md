@@ -52,6 +52,8 @@ Record every proposal, and later Adi's answer, in `candidates.json`. Commit that
 6. **Commit and dry-run**, then upload a draft with the workflow below.
 7. **Tell Adi:** the edit link, word and image counts, what could not be verified, and `תענה "פרסם" או מה לתקן`.
 
+Fixes to a post that already exists: write `post-patches/<slug>.json`, commit, and run `action=patch`. Re-running the pipeline would discard local edits.
+
 Publishing, once Adi says "פרסם": run `action=publish` with `skip_cover=true`. Then tell him the two manual steps from CLAUDE.md: purge the Cloudways cache and request indexing in Search Console.
 
 ## Workflows

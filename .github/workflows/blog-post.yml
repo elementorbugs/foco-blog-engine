@@ -7,11 +7,11 @@ on:
   workflow_dispatch:
     inputs:
       action:
-        description: 'dry-run, draft, publish, or delete-draft (delete-draft refuses anything that is not a draft)'
+        description: 'dry-run, draft, publish, patch (edits an existing post from post-patches/<slug>.json), or delete-draft (drafts only)'
         type: choice
         required: true
         default: draft
-        options: [dry-run, draft, publish, delete-draft]
+        options: [dry-run, draft, publish, patch, delete-draft]
       file:
         description: 'Post file, e.g. posts-new/post-my-slug.html'
         type: string
@@ -82,7 +82,7 @@ jobs:
             echo "::error::file must look like posts-new/post-my-slug.html"
             exit 1
           fi
-          if [ "$ACTION" != "delete-draft" ] && [ -z "$KEYWORD" ]; then
+          if [ "$ACTION" != "delete-draft" ] && [ "$ACTION" != "patch" ] && [ -z "$KEYWORD" ]; then
             echo "::error::keyword is required for $ACTION"
             exit 1
           fi
@@ -118,7 +118,7 @@ jobs:
         run: node scripts/upload-post-media.js "$POST_FILE"
 
       - name: Run pipeline
-        if: inputs.action != 'delete-draft'
+        if: inputs.action == 'dry-run' || inputs.action == 'draft' || inputs.action == 'publish'
         run: |
           args=("$POST_FILE" "--keyword=$KEYWORD")
           [ -n "$TITLE" ]       && args+=("--title=$TITLE")
@@ -132,8 +132,14 @@ jobs:
           [ "$ACTION" = "publish" ]   && args+=("--publish")
           node create-post.js "${args[@]}"
 
+      - name: Patch existing post
+        if: inputs.action == 'patch'
+        run: |
+          slug="$(basename "$POST_FILE" .html)"
+          node scripts/patch-post.js "${slug#post-}"
+
       - name: Check the result in WordPress
-        if: inputs.action == 'draft' || inputs.action == 'publish'
+        if: inputs.action == 'draft' || inputs.action == 'publish' || inputs.action == 'patch'
         run: |
           slug="$(basename "$POST_FILE" .html)"
           node scripts/check-post.js "${slug#post-}"

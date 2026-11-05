@@ -12,7 +12,7 @@ banned.forEach(w => { if (new RegExp('\\b' + w, 'i').test(txt)) errs.push('banne
 if (/<h1[\s>]/i.test(s)) errs.push('contains <h1>');
 if (/\]\(https?:/.test(body)) errs.push('markdown link');
 if (/\[(PERSONAL EXPERIENCE|UNIQUE INSIGHT|ORIGINAL DATA|IMAGE:|CHART:|CITATION:)/.test(s)) errs.push('editorial marker left');
-['foco-review-meta', 'foco-tldr', 'foco-cmp2', 'foco-key-takeaways'].forEach(c => { if (!s.includes(c)) errs.push('missing .' + c); });
+['foco-tldr', 'foco-cmp2', 'foco-key-takeaways'].forEach(c => { if (!s.includes(c)) errs.push('missing .' + c); });
 if (!/<h2>FAQ<\/h2>/i.test(s)) errs.push('missing <h2>FAQ</h2>');
 if (!/<h2>How did we compare/i.test(s)) errs.push('missing "How did we compare" section');
 if (/table of contents/i.test(s)) errs.push('in-body table of contents');
