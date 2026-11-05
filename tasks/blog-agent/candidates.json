@@ -4,7 +4,7 @@
     {
       "name": "Recordo",
       "slug": "recordo-app-review",
-      "status": "drafted",
+      "status": "published",
       "proposed_on": "2026-11-05",
       "keywords_us": {
         "recordo app": {
@@ -17,7 +17,9 @@
         }
       },
       "note": "Asked for by Adi. Low volume, no independent review ranks. First run through the agent flow.",
-      "revisit_after": null
+      "revisit_after": null,
+      "published_on": "2026-11-05",
+      "url": "https://www.tryfoco.com/recordo-app-review/"
     },
     {
       "status": "proposed",

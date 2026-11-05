@@ -1104,7 +1104,7 @@ async function generateCover(slug, h1, coverTitleArg) {
     if (tldrMatch) {
       metaDesc = tldrMatch[0]
         .replace(/<[^>]+>/g, ' ')
-        .replace(/TL;DR\.?\s*/i, '')
+        .replace(/TL;DR\.?\s*|^\s*Short answer:\s*/gi, '')
         .replace(/\s+/g, ' ')
         .trim()
         .slice(0, 158);
@@ -1167,7 +1167,7 @@ async function generateCover(slug, h1, coverTitleArg) {
         log.ok('Not added: not an app post, or no --directory=<category> for a non vs/alternative/review app post');
       } else {
         const tldr = (content.match(/<div class="foco-tldr">([\s\S]*?)<\/div>/) || [])[1] || '';
-        const first = tldr.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().split(/(?<=[.!?])\s/)[0] || '';
+        const first = tldr.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().replace(/^Short answer:\s*/i, '').split(/(?<=[.!?])\s/)[0] || '';
         const desc = directoryDesc || (first.length > 95 ? first.slice(0, 95).replace(/\s\S*$/, '') + '...' : first);
         const card = appDir.addCard({ slug, cat, title: wpTitle.replace(/\s*\((19|20)\d\d\)\s*/, ' ').trim(), desc });
         log.ok(`Card saved: ${card.slug} -> ${card.cat}`);
