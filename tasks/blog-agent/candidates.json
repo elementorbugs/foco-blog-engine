@@ -200,6 +200,188 @@
         }
       },
       "note": "Weak SERP. Overlap with /foco-vs-amazing-marvin/ and a draft /amazing-marvin-alternative/ (#4450)."
+    },
+    {
+      "name": "Motion",
+      "status": "backlog",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "motion app review": {
+          "volume": 390,
+          "sd": 28
+        }
+      },
+      "note": "Trend falling from 880 in mid 2025. SERP and gap-scan not run. /motion-app-alternative/ exists.",
+      "revisit_after": null
+    },
+    {
+      "name": "Todoist",
+      "status": "backlog",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "todoist review": {
+          "volume": 390,
+          "sd": 25
+        }
+      },
+      "note": "SERP and gap-scan not run. Many Todoist posts already on site.",
+      "revisit_after": null
+    },
+    {
+      "name": "TickTick",
+      "status": "backlog",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "ticktick review": {
+          "volume": 210,
+          "sd": 28
+        }
+      },
+      "note": "SERP and gap-scan not run. /ticktick-alternative/ exists.",
+      "revisit_after": null
+    },
+    {
+      "name": "Reclaim",
+      "status": "backlog",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "reclaim ai review": {
+          "volume": 210,
+          "sd": 23
+        }
+      },
+      "note": "SERP and gap-scan not run. No dedicated post on site.",
+      "revisit_after": null
+    },
+    {
+      "name": "Sweepy",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "sweepy app review": {
+          "volume": 70,
+          "sd": 35
+        }
+      },
+      "note": "SD above threshold.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Time Timer",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "time timer app": {
+          "volume": 1000,
+          "sd": 46
+        }
+      },
+      "note": "SD above threshold; spiky volume.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Focus Keeper",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "focus keeper app": {
+          "volume": 140,
+          "sd": 49
+        }
+      },
+      "note": "SD above threshold.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Yoodoo",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "yoodoo app": {
+          "volume": 50,
+          "sd": 31
+        }
+      },
+      "note": "SD just above threshold; 22 US ratings.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Superlist",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "superlist review": {
+          "volume": 30,
+          "sd": 29
+        }
+      },
+      "note": "Low volume.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "NotePlan",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "noteplan review": {
+          "volume": 30,
+          "sd": 39
+        }
+      },
+      "note": "Low volume.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Lifestack",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "lifestack review": {
+          "volume": 30,
+          "sd": 18
+        }
+      },
+      "note": "Low volume on review term; lifestack app 110, SD 37.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Morgen",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "morgen calendar review": {
+          "volume": 10,
+          "sd": 15
+        }
+      },
+      "note": "Low volume.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Me+",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "me+ app review": {
+          "volume": 10,
+          "sd": 13
+        }
+      },
+      "note": "Low volume.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Comigo",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "comigo adhd": {
+          "volume": 10,
+          "sd": 18
+        }
+      },
+      "note": "Low volume.",
+      "revisit_after": "2027-02-01"
     }
   ]
 }
