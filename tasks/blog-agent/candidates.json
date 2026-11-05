@@ -242,7 +242,7 @@
     },
     {
       "name": "Reclaim",
-      "status": "drafted",
+      "status": "published",
       "proposed_on": "2026-11-05",
       "keywords_us": {
         "reclaim ai review": {
@@ -260,7 +260,9 @@
       },
       "note": "gap-scan 2026-11-05: low overlap, sections in 4 posts, no dedicated post.",
       "revisit_after": null,
-      "slug": "reclaim-ai-review"
+      "slug": "reclaim-ai-review",
+      "published_on": "2026-11-05",
+      "url": "https://www.tryfoco.com/reclaim-ai-review/"
     },
     {
       "name": "Sweepy",
