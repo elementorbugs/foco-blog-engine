@@ -393,6 +393,201 @@
       },
       "note": "Low volume.",
       "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Freedom",
+      "status": "proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "freedom app review": {
+          "volume": 110,
+          "sd": 22
+        }
+      },
+      "note": "SERP: Reddit test post, blog reviews, stores. See mentions in existing posts.",
+      "revisit_after": null
+    },
+    {
+      "name": "Streaks",
+      "status": "proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "streaks app review": {
+          "volume": 50,
+          "sd": 26
+        }
+      },
+      "note": "SERP: App Store, 2018 blog, Reddit, MacStories. iPhone-only style habit tracker.",
+      "revisit_after": null
+    },
+    {
+      "name": "Things 3",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "things 3 review": {
+          "volume": 70,
+          "sd": 31
+        }
+      },
+      "note": "SD just above threshold.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Any.do",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "any.do review": {
+          "volume": 70,
+          "sd": 33
+        }
+      },
+      "note": "SD above threshold.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Clockwise",
+      "status": "backlog",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "clockwise review": {
+          "volume": 50,
+          "sd": 29
+        }
+      },
+      "note": "Falling; not gap-scanned.",
+      "revisit_after": null
+    },
+    {
+      "name": "Cold Turkey",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "cold turkey blocker review": {
+          "volume": 40,
+          "sd": 22
+        }
+      },
+      "note": "Below 50.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Habitify",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "habitify review": {
+          "volume": 30,
+          "sd": 37
+        }
+      },
+      "note": "Low volume.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "RescueTime",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "rescuetime review": {
+          "volume": 30,
+          "sd": 42
+        }
+      },
+      "note": "Low volume.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Rize",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "rize app review": {
+          "volume": 30,
+          "sd": 14
+        }
+      },
+      "note": "Low volume.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "One Sec",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "one sec app review": {
+          "volume": 30,
+          "sd": 24
+        }
+      },
+      "note": "Low volume.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Flow Club",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "flow club review": {
+          "volume": 30,
+          "sd": 34
+        }
+      },
+      "note": "Low volume.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Flown",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "flown review": {
+          "volume": 0,
+          "sd": 17
+        }
+      },
+      "note": "No volume.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Focus@Will",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "focus@will review": {
+          "volume": 0,
+          "sd": 17
+        }
+      },
+      "note": "No volume.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Solo Focus",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "solo focus adhd": {
+          "volume": 0,
+          "sd": 12
+        }
+      },
+      "note": "No volume; new listing.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Focana",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "focana": {
+          "volume": 30,
+          "sd": 31
+        }
+      },
+      "note": "Low volume; new.",
+      "revisit_after": "2027-02-01"
     }
   ]
 }
