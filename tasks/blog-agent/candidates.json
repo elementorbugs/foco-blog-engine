@@ -74,7 +74,7 @@
       "note": "Recommended. SERP already has several dedicated reviews. Only mention on site is a section of /best-ai-calendar-apps-for-adhd/."
     },
     {
-      "status": "drafted",
+      "status": "published",
       "proposed_on": "2026-11-05",
       "revisit_after": null,
       "name": "Sunsama",
@@ -97,7 +97,9 @@
           "sd": 19
         }
       },
-      "note": "Partial overlap with /sunsama-alternative/ (H3s on cost and ADHD fit). Trim those to one line and link out if picked."
+      "note": "Partial overlap with /sunsama-alternative/ (H3s on cost and ADHD fit). Trim those to one line and link out if picked.",
+      "published_on": "2026-11-05",
+      "url": "https://www.tryfoco.com/sunsama-review/"
     },
     {
       "name": "Shimmer",

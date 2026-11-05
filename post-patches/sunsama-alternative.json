@@ -1,0 +1,26 @@
+[
+  {
+    "old": "The plan card shows $17 a month billed yearly or $22 billed monthly after a 14-day free trial with no card, while the FAQ on the same page says $20 and $25, so check the price at checkout (<a href=\"https://www.sunsama.com/pricing\" target=\"_blank\" rel=\"nofollow noopener\">Sunsama pricing</a>).",
+    "new": "Its help center lists $22 a month, or $17 a month billed as $204 a year, after a 14-day free trial (<a href=\"https://www.sunsama.com/pricing\" target=\"_blank\" rel=\"nofollow noopener\">Sunsama pricing</a>). Our <a href=\"https://www.tryfoco.com/sunsama-review/\">Sunsama review</a> covers the details."
+  },
+  {
+    "old": "<p>Its pricing page showed $17 a month billed yearly or $22 monthly on October 9, 2026, while its FAQ listed $20 and $25. Check at checkout.</p>",
+    "new": "<p>Its help center lists $22 a month, or $17 a month billed as $204 a year. Our <a href=\"https://www.tryfoco.com/sunsama-review/\">Sunsama review</a> has the details.</p>"
+  },
+  {
+    "old": "\"text\":\"Its pricing page showed $17 a month billed yearly or $22 monthly on October 9, 2026, while its FAQ listed $20 and $25. Check at checkout.\"",
+    "new": "\"text\":\"Its help center lists $22 a month, or $17 a month billed as $204 a year. Our Sunsama review has the details.\""
+  },
+  {
+    "old": "<p>It can be, if a daily planning routine helps you. If you keep skipping that routine, a tool that removes it may suit you better.</p>",
+    "new": "<p>It can be, if a daily planning routine helps you. If you keep skipping that routine, a tool that removes it may suit you better (see our <a href=\"https://www.tryfoco.com/sunsama-review/\">Sunsama review</a>).</p>"
+  },
+  {
+    "old": "\"text\":\"It can be, if a daily planning routine helps you. If you keep skipping that routine, a tool that removes it may suit you better.\"",
+    "new": "\"text\":\"It can be, if a daily planning routine helps you. If you keep skipping that routine, a tool that removes it may suit you better (see our Sunsama review).\""
+  },
+  {
+    "old": "<li>Sunsama has no free plan; its page listed $17 to $25 a month on October 9, 2026, after a 14-day trial.</li>",
+    "new": "<li>Sunsama has no free plan; its help center lists $17 to $22 a month, after a 14-day trial.</li>"
+  }
+]
