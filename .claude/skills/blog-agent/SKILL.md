@@ -12,6 +12,7 @@ Read CLAUDE.md and `tasks/lessons.md` first. They win over anything here.
 ## Hard rules
 - **Never publish without Adi's explicit "פרסם" for that specific post.** Everything else ships as a draft.
 - **One post a day unless Adi asks for more.** He paused the old daily generator because it was not mature enough. Quality beats volume.
+- **No line above the answer box.** A post opens directly with `foco-tldr`, never with an "Updated / Not tested / We make FOCO" line. Disclose FOCO inside the box: "Pick FOCO, the app we make, if ...".
 - **Never claim hands-on testing of another app.** Report only what listings and named sources state.
 - **Never invent numbers, and never guess a price.** If a page will not open, say so in the post's method section.
 - **Reddit is blocked in cloud sessions by the environment.** Do not route around it (no GitHub runner, proxy, mirror or cache). Use it only from Adi's linked computer or from links he pastes, and say when a scout ran without it.

@@ -12,7 +12,7 @@ Read `tasks/review-format/SPEC.md` first. **Everything in it applies** (hard lim
 - Any other app: use the official App Store icon URL from the iTunes API, `artworkUrl512` with the size part changed to `96x96bb.png` (e.g. `…/512x512bb.jpg` → `…/96x96bb.png`). We will re-host these before publishing; just use the mzstatic URL. Web-only apps with no store listing: omit the `<img>` and keep the name.
 
 ## Required structure
-1. `<p class="foco-review-meta">Updated October 9, 2026 · Prices and ratings checked today · <strong>We make FOCO</strong>, one of the apps on this list</p>`
+1. **No line above the answer box (Adi, 2026-11-05).** The post opens directly with `foco-tldr`. Older posts still carry a `foco-review-meta` line: do not copy it. Disclose FOCO in the box: "Pick FOCO, the app we make, if ...".
 2. `<div class="foco-tldr">`: `<p><strong>Short answer:</strong> …</p>` (40-60 words: the best alternative depends on why you are leaving X) + `<ul>` of 4-5 lines "**If X's problem is …:** App" (the reader's reason → the pick).
 3. `<h2>` "Which X alternatives are best at a glance?" + the multi table:
 ```

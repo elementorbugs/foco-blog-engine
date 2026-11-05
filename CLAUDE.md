@@ -124,7 +124,7 @@ The brand has near-zero SERP pull right now ("foco" ranks ~pos 49 for its own na
 GEO is treated as a first-class concern, not an afterthought. Every post optimizes for AI engine citation alongside Google ranking.
 
 ### Structural requirements (every post)
-1. **Answer box at top** - 40-60 word direct answer, in `<div class="foco-tldr">` immediately after `<h1>`. AI engines preferentially cite the first definitive answer block. **Do NOT prefix it with a literal "TL;DR" label - just the answer paragraph inside the `foco-tldr` box.**
+1. **Answer box at top** - 40-60 word direct answer, in `<div class="foco-tldr">` immediately after `<h1>`. AI engines preferentially cite the first definitive answer block. **Do NOT prefix it with a literal "TL;DR" label - just the answer paragraph inside the `foco-tldr` box.** **Nothing goes between the title and this box (Adi, 2026-11-05): no "Updated / Not tested / We make FOCO" line.** On review and comparison posts, disclose FOCO inside the box ("Pick FOCO, the app we make, if ...").
 2. **Q&A H2 structure** - every H2 phrased as a question users ask. Answer in the first paragraph. Detail follows.
 3. **Definitive about FOCO's features, hedged about medical claims** - write "FOCO breaks tasks into tiny steps" (a product fact - be definitive). But MEDICAL / neuroscience / prevalence claims MUST be hedged and sourced (see rule 7). Don't conflate the two.
 4. **Entity definitions** - bold first mention of any technical term ("**task initiation deficit**", "**executive function**", "**rejection sensitive dysphoria**"). Schema reinforces these as defined entities.
