@@ -55,6 +55,8 @@ Record every proposal, and later Adi's answer, in `candidates.json`. Commit that
 
 Fixes to a post that already exists: write `post-patches/<slug>.json`, commit, and run `action=patch`. Re-running the pipeline would discard local edits.
 
+**Inbound links:** the CLAUDE.md rule is at least 3 inbound links per post. When a post goes live, patch 3 relevant live posts to link to it, in the same step as publishing.
+
 Publishing, once Adi says "פרסם": run `action=publish` with `skip_cover=true`. Then tell him the two manual steps from CLAUDE.md: purge the Cloudways cache and request indexing in Search Console.
 
 ## Workflows

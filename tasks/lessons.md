@@ -99,6 +99,8 @@ Pruned quarterly. Keep under 60 lines.
 
 ## create-post.js pitfalls
 
+- **Publishing is not done until 3 live posts link in (2026-11-05).** I published the Recordo review with no inbound links apart from its directory card, against the >=3 rule, because the pipeline does not check it. Patch the inbound links as part of publishing.
+
 - **No meta line above the answer box (Adi, 2026-11-05).** "Updated ... Not tested hands-on ... We make FOCO" above `foco-tldr` read as strange ("I don't think it makes sense"). New posts open with the box and disclose FOCO inside it. To edit a post that already exists from a cloud session, use `action=patch` with `post-patches/<slug>.json`, since re-running the pipeline discards local edits.
 
 - **STEP 3 silently discards local file edits on an existing post.** It swaps your local `content` for live WP content whenever `wpContent.length > localFile.length * 0.8` — and once schema/CSS/TOC are injected, WP content is ALWAYS bigger than a raw source file, so this fires on nearly every re-run against an already-published post. Editing `posts-new/X.html` and re-running the pipeline can silently push the OLD content back while reporting success. **To edit a published post: GET the live content first, edit that fetched copy directly, then push via a direct REST POST** (or make the local file a full copy of current WP content before running the pipeline). Bit us on `amazing-marvin-alternative` (2026-09-18).
