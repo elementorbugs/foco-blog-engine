@@ -39,9 +39,13 @@
         "lunatask app": {
           "volume": 50,
           "sd": 30
+        },
+        "lunatask app review": {
+          "volume": 0,
+          "sd": 12
         }
       },
-      "note": "Recommended. Review SERP is Reddit threads, directories and weak sites. gap-scan clean."
+      "note": "Review term is 40/mo, below the 50 threshold; brand term is 880 but mostly navigational. SERP is weak. gap-scan clean."
     },
     {
       "status": "proposed",
@@ -53,6 +57,18 @@
         "akiflow review": {
           "volume": 110,
           "sd": 27
+        },
+        "akiflow": {
+          "volume": 4400,
+          "sd": 46
+        },
+        "akiflow app": {
+          "volume": 90,
+          "sd": 35
+        },
+        "akiflow app review": {
+          "volume": 0,
+          "sd": 12
         }
       },
       "note": "Recommended. SERP already has several dedicated reviews. Only mention on site is a section of /best-ai-calendar-apps-for-adhd/."
@@ -67,6 +83,18 @@
         "sunsama review": {
           "volume": 170,
           "sd": 25
+        },
+        "sunsama": {
+          "volume": 8100,
+          "sd": 44
+        },
+        "sunsama app": {
+          "volume": 480,
+          "sd": 28
+        },
+        "sunsama app review": {
+          "volume": 10,
+          "sd": 19
         }
       },
       "note": "Partial overlap with /sunsama-alternative/ (H3s on cost and ADHD fit). Trim those to one line and link out if picked."
@@ -152,6 +180,24 @@
       },
       "note": "Low volume, falling since January.",
       "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Amazing Marvin",
+      "slug": "amazing-marvin-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-05",
+      "revisit_after": null,
+      "keywords_us": {
+        "amazing marvin": {
+          "volume": 1600,
+          "sd": 33
+        },
+        "amazing marvin review": {
+          "volume": 50,
+          "sd": 22
+        }
+      },
+      "note": "Weak SERP. Overlap with /foco-vs-amazing-marvin/ and a draft /amazing-marvin-alternative/ (#4450)."
     }
   ]
 }
