@@ -207,6 +207,11 @@
       "name": "Liven",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-liven-2.png",
       "appStoreId": 6450840109
+    },
+    "recordo": {
+      "name": "Recordo",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-recordo-1.png",
+      "appStoreId": 6756238969
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
@@ -383,6 +388,12 @@
       "slug": "liven-app-review",
       "title": "Liven App Review 2026: Is It Legit? Cost, Quiz, Cancel",
       "desc": "Updated November 3, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "recordo-app-review",
+      "title": "Recordo App Review: An AI ADHD Planner With Chat Coaches",
+      "desc": "Short answer: Recordo is an ADHD planner where you talk or type your thoughts into a chat, and...",
       "cat": "reviews"
     },
     {
