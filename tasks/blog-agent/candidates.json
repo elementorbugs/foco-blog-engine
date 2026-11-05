@@ -6,9 +6,150 @@
       "slug": "recordo-app-review",
       "status": "drafted",
       "proposed_on": "2026-11-05",
-      "keywords_us": { "recordo app": { "volume": 10, "sd": 18 }, "recordo app review": { "volume": 0, "sd": 12 } },
+      "keywords_us": {
+        "recordo app": {
+          "volume": 10,
+          "sd": 18
+        },
+        "recordo app review": {
+          "volume": 0,
+          "sd": 12
+        }
+      },
       "note": "Asked for by Adi. Low volume, no independent review ranks. First run through the agent flow.",
       "revisit_after": null
+    },
+    {
+      "status": "proposed",
+      "proposed_on": "2026-11-05",
+      "revisit_after": null,
+      "name": "Lunatask",
+      "slug": "lunatask-review",
+      "keywords_us": {
+        "lunatask": {
+          "volume": 880,
+          "sd": 28
+        },
+        "lunatask review": {
+          "volume": 40,
+          "sd": 22
+        },
+        "lunatask app": {
+          "volume": 50,
+          "sd": 30
+        }
+      },
+      "note": "Recommended. Review SERP is Reddit threads, directories and weak sites. gap-scan clean."
+    },
+    {
+      "status": "proposed",
+      "proposed_on": "2026-11-05",
+      "revisit_after": null,
+      "name": "Akiflow",
+      "slug": "akiflow-review",
+      "keywords_us": {
+        "akiflow review": {
+          "volume": 110,
+          "sd": 27
+        }
+      },
+      "note": "Recommended. SERP already has several dedicated reviews. Only mention on site is a section of /best-ai-calendar-apps-for-adhd/."
+    },
+    {
+      "status": "proposed",
+      "proposed_on": "2026-11-05",
+      "revisit_after": null,
+      "name": "Sunsama",
+      "slug": "sunsama-review",
+      "keywords_us": {
+        "sunsama review": {
+          "volume": 170,
+          "sd": 25
+        }
+      },
+      "note": "Partial overlap with /sunsama-alternative/ (H3s on cost and ADHD fit). Trim those to one line and link out if picked."
+    },
+    {
+      "name": "Shimmer",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "shimmer adhd": {
+          "volume": 260,
+          "sd": 43
+        },
+        "shimmer adhd review": {
+          "volume": 0,
+          "sd": 12
+        }
+      },
+      "note": "SD above threshold on the main term.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Hypermonkey",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "hypermonkey": {
+          "volume": 90,
+          "sd": 44
+        }
+      },
+      "note": "SD above threshold.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Thruday",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "thruday": {
+          "volume": 165000,
+          "sd": 68
+        }
+      },
+      "note": "Volume looks like a misspelling of Thursday, not the app.",
+      "revisit_after": null
+    },
+    {
+      "name": "Focus One",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "focus one adhd": {
+          "volume": 0,
+          "sd": 12
+        }
+      },
+      "note": "2 US ratings, no demand.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "JustStart",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "juststart adhd": {
+          "volume": 0,
+          "sd": 17
+        }
+      },
+      "note": "0 US ratings, no demand.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Indy",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "indy adhd app": {
+          "volume": 20,
+          "sd": 13
+        }
+      },
+      "note": "Low volume, falling since January.",
+      "revisit_after": "2027-02-01"
     }
   ]
 }

@@ -22,13 +22,14 @@ State lives in `tasks/blog-agent/candidates.json`. Never re-propose anything in 
 1. **Find candidates.** Use WebSearch across new ADHD apps and tools in the App Store and Google Play, AppGoblin, Product Hunt, AlternativeTo, and blog or press mentions. Include older apps we have not covered. Vary the queries from day to day.
 2. **Drop what we already cover.** Compare against `https://www.tryfoco.com/post-sitemap.xml`, one request only, since the server has bot protection.
 3. **Check demand and difficulty in Ubersuggest (US, locId 2840).** For each survivor run `keyword_overview` on `<name> app`, `<name> review` and `<name> app review`, plus `serp_analysis` on the best one without `refresh`.
-4. **Judge the real competition.** SD alone misleads. Say who holds the top results, and whether any independent review exists.
-5. **Check cannibalization** on the top 3 with the workflow below. If an existing post already answers the query, propose updating it instead of a new post.
-6. **Score each one:**
+4. **Distrust odd numbers.** A name can collide with a common word or a typo ("thruday" shows 165,000 searches because of "Thursday"). Check that the top results are about the app.
+5. **Judge the real competition.** SD alone misleads. Say who holds the top results, and whether any independent review exists.
+6. **Check cannibalization** on the top 3 with the workflow below. If an existing post already answers the query, propose updating it instead of a new post.
+7. **Score each one:**
    - **Recommended:** at least 50 searches a month and SD up to 30.
    - **Exception:** under 50 searches, but the app has clear momentum and no independent review ranks. Label it "נפח נמוך" and state the evidence for momentum.
    - Anything else is not proposed.
-7. **Send up to 3 proposals, then stop and wait.** Fewer is fine. If nothing qualifies, say so in one line and do not pad.
+8. **Send up to 3 proposals, then stop and wait.** Fewer is fine. If nothing qualifies, say so in one line and do not pad.
 
 Proposal format:
 ```
@@ -56,11 +57,11 @@ Publishing, once Adi says "פרסם": run `action=publish` with `skip_cover=true
 ## Workflows
 ```bash
 # Cannibalization (read the result with: gh run view <id> --log)
-gh workflow run gap-scan.yml -f terms="<name>,<other term>" -f query="<target query>"
+gh workflow run gap-scan.yml --ref main -f terms="<name>,<other term>" -f query="<target query>"
 
 # Pipeline
-gh workflow run blog-post.yml -f action=dry-run -f file=posts-new/post-<slug>.html -f keyword="<keyword>" -f skip_pexels=true
-gh workflow run blog-post.yml -f action=draft -f file=posts-new/post-<slug>.html -f keyword="<keyword>" -f cover_title="Two\nLines" -f skip_pexels=true -f directory=none
+gh workflow run blog-post.yml --ref main -f action=dry-run -f file=posts-new/post-<slug>.html -f keyword="<keyword>" -f skip_pexels=true
+gh workflow run blog-post.yml --ref main -f action=draft -f file=posts-new/post-<slug>.html -f keyword="<keyword>" -f cover_title="Two\nLines" -f skip_pexels=true -f directory=none
 ```
 Use `gh run watch <id> --exit-status`. The last step of a draft or publish run prints what landed in WordPress and fails if images or the cover are missing.
 
