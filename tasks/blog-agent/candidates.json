@@ -211,7 +211,7 @@
           "sd": 28
         }
       },
-      "note": "Trend falling from 880 in mid 2025. SERP and gap-scan not run. /motion-app-alternative/ exists.",
+      "note": "gap-scan 2026-11-05: overlap with /motion-app-alternative/, see scan.",
       "revisit_after": null
     },
     {
@@ -224,7 +224,7 @@
           "sd": 25
         }
       },
-      "note": "SERP and gap-scan not run. Many Todoist posts already on site.",
+      "note": "gap-scan 2026-11-05: high overlap, 443 mentions across 34 posts, several FAQ headings repeat (Is Todoist free?, good for ADHD, cost).",
       "revisit_after": null
     },
     {
@@ -237,7 +237,7 @@
           "sd": 28
         }
       },
-      "note": "SERP and gap-scan not run. /ticktick-alternative/ exists.",
+      "note": "gap-scan 2026-11-05: high overlap, 319 mentions across 26 posts, repeated FAQ headings.",
       "revisit_after": null
     },
     {
@@ -250,7 +250,7 @@
           "sd": 23
         }
       },
-      "note": "SERP and gap-scan not run. No dedicated post on site.",
+      "note": "gap-scan 2026-11-05: low overlap, sections in 4 posts, no dedicated post.",
       "revisit_after": null
     },
     {
