@@ -1,0 +1,47 @@
+name: Cannibalization Check
+
+# Runs scripts/gap-scan.js with the WordPress secrets, for sessions that have no .env.
+# The result is in the run log, which is public while this repo is public.
+on:
+  workflow_dispatch:
+    inputs:
+      terms:
+        description: 'Concept terms, comma separated, e.g. recordo,voice brain dump'
+        type: string
+        required: true
+      query:
+        description: 'Target search query'
+        type: string
+        default: ''
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Write credential file
+        env:
+          WP_HOST: ${{ secrets.WP_HOST }}
+          WP_USER: ${{ secrets.WP_USER }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+        run: |
+          umask 077
+          printf 'WP_HOST=%s\nWP_USER=%s\nWP_APP_PASSWORD=%s\n' "$WP_HOST" "$WP_USER" "$WP_APP_PASSWORD" > .env
+
+      - name: Scan published posts and drafts
+        env:
+          TERMS: ${{ inputs.terms }}
+          QUERY: ${{ inputs.query }}
+        run: |
+          IFS=',' read -ra terms <<< "$TERMS"
+          args=("${terms[@]}" --drafts)
+          [ -n "$QUERY" ] && args+=(--query "$QUERY")
+          node scripts/gap-scan.js "${args[@]}"

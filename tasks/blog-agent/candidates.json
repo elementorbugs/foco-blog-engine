@@ -1,0 +1,14 @@
+{
+  "note": "Memory of the blog agent. Every app or tool ever proposed. status: proposed, picked, drafted, published, skipped. Never re-propose an entry before its revisit_after date. See .claude/skills/blog-agent/SKILL.md.",
+  "candidates": [
+    {
+      "name": "Recordo",
+      "slug": "recordo-app-review",
+      "status": "drafted",
+      "proposed_on": "2026-11-05",
+      "keywords_us": { "recordo app": { "volume": 10, "sd": 18 }, "recordo app review": { "volume": 0, "sd": 12 } },
+      "note": "Asked for by Adi. Low volume, no independent review ranks. First run through the agent flow.",
+      "revisit_after": null
+    }
+  ]
+}

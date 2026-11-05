@@ -112,6 +112,11 @@ jobs:
           printf 'WP_HOST=%s\nWP_USER=%s\nWP_APP_PASSWORD=%s\n' "$WP_HOST" "$WP_USER" "$WP_APP_PASSWORD" > .env
           if [ -n "$PEXELS_KEY" ]; then printf '%s' "$PEXELS_KEY" > .pexels-key; fi
 
+      # {{media:<file>}} placeholders point at post-media/<slug>/<file>.
+      - name: Upload post images
+        if: inputs.action == 'draft' || inputs.action == 'publish'
+        run: node scripts/upload-post-media.js "$POST_FILE"
+
       - name: Run pipeline
         if: inputs.action != 'delete-draft'
         run: |
@@ -126,6 +131,12 @@ jobs:
           [ "$ACTION" = "dry-run" ]   && args+=("--dry-run")
           [ "$ACTION" = "publish" ]   && args+=("--publish")
           node create-post.js "${args[@]}"
+
+      - name: Check the result in WordPress
+        if: inputs.action == 'draft' || inputs.action == 'publish'
+        run: |
+          slug="$(basename "$POST_FILE" .html)"
+          node scripts/check-post.js "${slug#post-}"
 
       - name: Delete draft
         if: inputs.action == 'delete-draft'

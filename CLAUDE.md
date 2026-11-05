@@ -258,6 +258,8 @@ Cloud sessions have no WordPress password. Don't ask Adi for it: the `Blog Post 
 2. `gh workflow run blog-post.yml -f action=draft -f file=posts-new/post-{slug}.html -f keyword="..."`, plus `-f title=`, `-f cover_title=`, `-f directory=`, `-f pillar=true`, `-f howto=true`, `-f skip_cover=true`, `-f skip_pexels=true` as needed.
 3. Follow it with `gh run watch`, read the log with `gh run view --log`, and report the post ID and edit URL.
 
+Images for a post go in `post-media/<slug>/` and are referenced in the post as `{{media:<file>}}`; the workflow uploads them and swaps in the URLs. Cannibalization check: `gh workflow run gap-scan.yml -f terms="a,b" -f query="..."`. The daily scout and post flow are in the `blog-agent` skill.
+
 `action` is `dry-run`, `draft` (default), `publish` or `delete-draft`. Use `publish` only when Adi explicitly asked for that post to go live. `delete-draft` refuses anything that is not a draft and also removes that post's own cover. The workflow only covers this pipeline: other scripts that need WordPress access still need a workflow of their own, or Adi's local machine. The repo is public, so post files and run logs are visible to anyone as soon as they are pushed.
 
 ### Steps the script runs (in order)
