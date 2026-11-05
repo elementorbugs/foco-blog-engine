@@ -242,16 +242,25 @@
     },
     {
       "name": "Reclaim",
-      "status": "backlog",
+      "status": "drafted",
       "proposed_on": "2026-11-05",
       "keywords_us": {
         "reclaim ai review": {
           "volume": 210,
           "sd": 23
+        },
+        "reclaim ai": {
+          "volume": 6600,
+          "sd": 36
+        },
+        "reclaim ai pricing": {
+          "volume": 110,
+          "sd": 18
         }
       },
       "note": "gap-scan 2026-11-05: low overlap, sections in 4 posts, no dedicated post.",
-      "revisit_after": null
+      "revisit_after": null,
+      "slug": "reclaim-ai-review"
     },
     {
       "name": "Sweepy",
