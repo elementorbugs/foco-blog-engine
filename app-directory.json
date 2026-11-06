@@ -212,6 +212,11 @@
       "name": "Recordo",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-recordo-1.png",
       "appStoreId": 6756238969
+    },
+    "joon": {
+      "name": "Joon",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-joon-1.png",
+      "appStoreId": 1482225056
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
@@ -406,6 +411,12 @@
       "slug": "reclaim-ai-review",
       "title": "Reclaim AI Review: Is It Worth It for ADHD?",
       "desc": "Reclaim AI is a calendar tool that books your tasks, habits, focus time and breaks around your...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "joon-app-review",
+      "title": "Joon App Review: The ADHD Chore Game for Kids",
+      "desc": "Short answer: Joon is a chore app for kids ages 6 to 12 with ADHD: parents assign tasks, and...",
       "cat": "reviews"
     },
     {
