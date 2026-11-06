@@ -588,6 +588,266 @@
       },
       "note": "Low volume; new.",
       "revisit_after": "2027-02-01"
+    },
+    {
+      "status": "proposed",
+      "proposed_on": "2026-11-06",
+      "revisit_after": null,
+      "name": "Neurolist",
+      "slug": "neurolist-app-review",
+      "keywords_us": {
+        "neurolist app": {
+          "volume": 110,
+          "sd": 30
+        },
+        "neurolist app review": {
+          "volume": 50,
+          "sd": 28
+        },
+        "neurolist review": {
+          "volume": 10,
+          "sd": 18
+        }
+      },
+      "app_store": {
+        "id": 6468689182,
+        "rating": 4.81,
+        "ratings": 916,
+        "last_update": "2026-04-21"
+      },
+      "note": "Direct task-breakdown competitor. SERP (collected 2026-09-20): own site, stores, Reddit launch post, Instagram, aggregators. No independent review ranks. gap-scan 2026-11-06 clean."
+    },
+    {
+      "status": "proposed",
+      "proposed_on": "2026-11-06",
+      "revisit_after": null,
+      "name": "Dubbii",
+      "slug": "dubbii-app-review",
+      "keywords_us": {
+        "dubbii app": {
+          "volume": 320,
+          "sd": 30
+        },
+        "dubbii app review": {
+          "volume": 30,
+          "sd": 29
+        },
+        "dubbii review": {
+          "volume": 0,
+          "sd": 17
+        }
+      },
+      "app_store": {
+        "id": 6450302677,
+        "rating": 4.85,
+        "ratings": 765,
+        "last_update": "2026-11-02"
+      },
+      "note": "Body doubling app. Volume is the brand term; review term is only 30. SERP (2026-09-09): stores, own site, Reddit, Facebook, the developer agency. No independent review ranks. gap-scan clean on the name; 'body doubling app' appears in lofi-town-review, best-apps-for-adhd-task-paralysis, adhd-activation without targeting Dubbii."
+    },
+    {
+      "status": "proposed",
+      "proposed_on": "2026-11-06",
+      "revisit_after": null,
+      "name": "Joon",
+      "slug": "joon-app-review",
+      "keywords_us": {
+        "joon app": {
+          "volume": 1000,
+          "sd": 29
+        },
+        "joon app review": {
+          "volume": 110,
+          "sd": 30
+        },
+        "joon review": {
+          "volume": 140,
+          "sd": 31
+        }
+      },
+      "app_store": {
+        "id": 1482225056,
+        "rating": 4.68,
+        "ratings": 6563,
+        "last_update": "2026-09-15"
+      },
+      "note": "For parents of kids with ADHD, not FOCO's adult user; fits P4 only. SERP (2026-09-20): Reddit, ChoosingTherapy (DA 60), stores, Facebook, small blogs (dinkumtribe, timily). Independent reviews exist but are weak. gap-scan clean."
+    },
+    {
+      "status": "not_proposed",
+      "proposed_on": "2026-11-06",
+      "revisit_after": "2027-02-01",
+      "name": "Blitzit",
+      "keywords_us": {
+        "blitzit app": {
+          "volume": 140,
+          "sd": 30
+        },
+        "blitzit review": {
+          "volume": 40,
+          "sd": 34
+        },
+        "blitzit app review": {
+          "volume": 40,
+          "sd": 23
+        }
+      },
+      "note": "Qualifies on the brand term only, cut by the limit of 3. Search trend fell through 2026, only 10 US iOS ratings; not ADHD-specific."
+    },
+    {
+      "status": "not_proposed",
+      "proposed_on": "2026-11-06",
+      "revisit_after": "2027-02-01",
+      "name": "Focus Bear",
+      "keywords_us": {
+        "focus bear app": {
+          "volume": 30,
+          "sd": 33
+        },
+        "focus bear review": {
+          "volume": 10,
+          "sd": 13
+        },
+        "focus bear app review": {
+          "volume": 10,
+          "sd": 5
+        }
+      },
+      "note": "Low volume, no clear momentum."
+    },
+    {
+      "status": "not_proposed",
+      "proposed_on": "2026-11-06",
+      "revisit_after": "2027-02-01",
+      "name": "Bixie",
+      "keywords_us": {
+        "bixie app": {
+          "volume": 10,
+          "sd": 18
+        },
+        "bixie app review": {
+          "volume": 0,
+          "sd": 12
+        }
+      },
+      "note": "Low volume, no clear momentum."
+    },
+    {
+      "status": "not_proposed",
+      "proposed_on": "2026-11-06",
+      "revisit_after": "2027-02-01",
+      "name": "Sprout ADHD",
+      "keywords_us": {
+        "sprout adhd app": {
+          "volume": 10,
+          "sd": 14
+        }
+      },
+      "note": "Low volume, no clear momentum."
+    },
+    {
+      "status": "not_proposed",
+      "proposed_on": "2026-11-06",
+      "revisit_after": "2027-02-01",
+      "name": "Soothfy",
+      "keywords_us": {
+        "soothfy app": {
+          "volume": 20,
+          "sd": 18
+        }
+      },
+      "note": "Low volume, no clear momentum."
+    },
+    {
+      "status": "not_proposed",
+      "proposed_on": "2026-11-06",
+      "revisit_after": "2027-02-01",
+      "name": "Splitti",
+      "keywords_us": {
+        "splitti app": {
+          "volume": 10,
+          "sd": 18
+        }
+      },
+      "note": "Low volume, no clear momentum."
+    },
+    {
+      "status": "not_proposed",
+      "proposed_on": "2026-11-06",
+      "revisit_after": "2027-02-01",
+      "name": "ADHD Easy-Do",
+      "keywords_us": {
+        "adhd easy-do app": {
+          "volume": 0,
+          "sd": 12
+        }
+      },
+      "note": "Low volume, no clear momentum."
+    },
+    {
+      "status": "not_proposed",
+      "proposed_on": "2026-11-06",
+      "revisit_after": "2027-02-01",
+      "name": "Calma",
+      "keywords_us": {
+        "calma adhd app": {
+          "volume": 0,
+          "sd": 12
+        }
+      },
+      "note": "Low volume, no clear momentum."
+    },
+    {
+      "status": "not_proposed",
+      "proposed_on": "2026-11-06",
+      "revisit_after": "2027-02-01",
+      "name": "Minddump",
+      "keywords_us": {
+        "minddump app": {
+          "volume": 0,
+          "sd": 17
+        }
+      },
+      "note": "Low volume, no clear momentum."
+    },
+    {
+      "status": "not_proposed",
+      "proposed_on": "2026-11-06",
+      "revisit_after": "2027-02-01",
+      "name": "DeeDee",
+      "keywords_us": {
+        "deedee adhd app": {
+          "volume": 0,
+          "sd": 12
+        }
+      },
+      "note": "Low volume, no clear momentum."
+    },
+    {
+      "status": "not_proposed",
+      "proposed_on": "2026-11-06",
+      "revisit_after": "2027-02-01",
+      "name": "Univi",
+      "keywords_us": {
+        "univi app": {
+          "volume": 10,
+          "sd": 19
+        }
+      },
+      "note": "Low volume, no clear momentum."
+    },
+    {
+      "status": "not_proposed",
+      "proposed_on": "2026-11-06",
+      "revisit_after": "2027-02-01",
+      "name": "Neuro Notion",
+      "keywords_us": {
+        "neuro notion adhd": {
+          "volume": 0,
+          "sd": 12
+        }
+      },
+      "note": "Low volume, no clear momentum."
     }
   ]
 }
