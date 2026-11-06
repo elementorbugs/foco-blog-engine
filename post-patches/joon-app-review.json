@@ -48,8 +48,8 @@
   "new": " cover refunds, and its homepage lists a 30-day refund policy. ChoosingTherapy adds that"
  },
  {
-  "old": "<h2>What does Joon do with kids' data?</h2>",
-  "new": "<h2>What does Joon's privacy policy say?</h2>"
+  "old": "What does Joon do with kids' data?",
+  "new": "What does Joon's privacy policy say?"
  },
  {
   "old": "<p>Quests can involve children uploading photos, and the policy says both that certain authorized personnel may decrypt and view them and that they are accessible to a single team member. The App Store's 13+ rating page also lists messaging and chat plus user-generated content, so read the policy and look through the app together.</p>",
