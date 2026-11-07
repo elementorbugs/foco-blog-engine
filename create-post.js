@@ -948,10 +948,17 @@ async function generateCover(slug, h1, coverTitleArg) {
   // STEP 9: Inline visuals — mascot dividers default, Pexels opt-in
   log.step('STEP 9/14: Inline visuals (mascot dividers + optional Pexels)');
 
-  // Always strip any old Pexels images on every run (legacy cleanup)
-  const beforePx = (content.match(/class="foco-img"/g) || []).length;
-  content = stripPexelsImages(content);
-  if (beforePx > 0) log.ok(`Stripped ${beforePx} legacy Pexels image(s)`);
+  // Existing in-body images are kept. They used to be stripped on every run as "legacy Pexels"
+  // cleanup, which also deleted real screenshots added by hand (2026-11-07). Pexels injection
+  // already skips sections that have an image, so re-runs do not duplicate. --strip-images
+  // restores the old clean-slate behavior when that is really wanted.
+  if (flag('strip-images')) {
+    const beforePx = (content.match(/class="foco-img"/g) || []).length;
+    content = stripPexelsImages(content);
+    if (beforePx > 0) log.ok(`Stripped ${beforePx} image(s) (--strip-images)`);
+  } else {
+    log.ok(`Kept ${(content.match(/class="foco-img"/g) || []).length} existing in-body image(s)`);
+  }
 
   // Strip ALL existing mascot dividers (clean slate every run)
   const beforeMd = (content.match(/class="foco-mascot-divider"/g) || []).length;

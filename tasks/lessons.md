@@ -99,6 +99,8 @@ Pruned quarterly. Keep under 60 lines.
 
 ## create-post.js pitfalls
 
+- **The pipeline used to delete every `<!-- wp:html --><figure class="foco-img">` on each run (fixed 2026-11-07).** That stripped real screenshots, not only legacy Pexels photos: a preview of /best-adhd-planner/ lost 7 of 9 images. Images are now kept by default; `--strip-images` is opt-in. Always compare image counts before and after a re-run of a live post.
+
 - **Every app except FOCO and RemindHer is a competitor: nofollow (Adi, 2026-11-07).** That includes App Store links to them, which COMPETITOR_RE (domain based) does not catch, so set rel="nofollow noopener" by hand. RemindHer links stay dofollow. Authority sources (NIMH, CDC, CHADD, PubMed) stay dofollow.
 - **Every table is designed (Adi, 2026-11-07): "you never write without designing."** Use `<div class="foco-table-wrap foco-cmp2">` with `cm-label` headers and `th scope="row"` row labels. Never ship a bare inline-styled table.
 
