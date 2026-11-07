@@ -16,7 +16,7 @@ PIN = 'style="background:#E60023 !important;color:#ffffff !important"'
 
 def ver(key):
     # Bump a file's version whenever it changes: the uploader reuses media with the same name.
-    return 'v3' if key == 'brain-dump' else 'v2'
+    return 'v4'
 
 
 def pin(key, desc):
@@ -66,13 +66,13 @@ html = f'''<h1>ADHD Planner Printable: Free 7-Page Kit (PDF)</h1>
 
 <p>Seven printable pages for brains that plan fine and still can't start. Download the whole kit, or just the page you need below.</p>
 
-<!-- wp:html --><figure class="foco-kit-hero" style="margin:24px 0 8px"><img src="{{{{media:adhd-planner-kit-hero-v2.webp}}}}" alt="Free ADHD planner printable kit: daily, task breakdown, brain dump, weekly and habit tracker pages" width="1600" height="860" style="width:100%;height:auto;border-radius:18px;display:block"/></figure><!-- /wp:html -->
+<!-- wp:html --><figure class="foco-kit-hero" style="margin:24px 0 8px"><img src="{{{{media:adhd-planner-kit-hero-v4.webp}}}}" alt="Free ADHD planner printable kit: daily, task breakdown, brain dump, weekly and habit tracker pages" width="1600" height="860" style="width:100%;height:auto;border-radius:18px;display:block"/></figure><!-- /wp:html -->
 
-<!-- wp:html --><div class="foco-kit-dl" style="display:flex;flex-wrap:wrap;gap:12px;margin:20px 0 8px"><a href="{{{{media:foco-adhd-planner-kit-letter-v3.pdf}}}}" target="_blank" rel="noopener" style="{BTN};background:#7C3AED !important;color:#ffffff !important">Download the full kit (PDF, dark)</a><a href="{{{{media:foco-adhd-planner-kit-ink-saver-letter-v3.pdf}}}}" target="_blank" rel="noopener" style="{BTN};background:#160F22 !important;color:#ffffff !important">Download the ink-saver version (PDF)</a><a href="{pin('kit', 'The ADHD planner kit: 7 free printable pages')}" target="_blank" rel="noopener" style="{BTN};background:#E60023 !important;color:#ffffff !important">Save the kit on Pinterest</a></div><!-- /wp:html -->
+<!-- wp:html --><div class="foco-kit-dl" style="display:flex;flex-wrap:wrap;gap:12px;margin:20px 0 8px"><a href="{{{{media:foco-adhd-planner-kit-ink-saver-letter-v4.pdf}}}}" target="_blank" rel="noopener" style="{BTN};background:#7C3AED !important;color:#ffffff !important">Download the kit to print (PDF)</a><a href="{{{{media:foco-adhd-planner-kit-letter-v4.pdf}}}}" target="_blank" rel="noopener" style="{BTN};background:#160F22 !important;color:#ffffff !important">Tablet version (dark PDF)</a><a href="{pin('kit', 'The ADHD planner kit: 7 free printable pages')}" target="_blank" rel="noopener" style="{BTN};background:#E60023 !important;color:#ffffff !important">Save the kit on Pinterest</a></div><!-- /wp:html -->
 
-<p>Printing on A4? Get the <a href="{{{{media:foco-adhd-planner-kit-a4-v3.pdf}}}}" target="_blank" rel="noopener">A4 kit (dark)</a> or the <a href="{{{{media:foco-adhd-planner-kit-ink-saver-a4-v3.pdf}}}}" target="_blank" rel="noopener">A4 ink-saver kit</a>.</p>
+<p>Printing on A4? Get the <a href="{{{{media:foco-adhd-planner-kit-ink-saver-a4-v4.pdf}}}}" target="_blank" rel="noopener">A4 kit to print</a> or the <a href="{{{{media:foco-adhd-planner-kit-a4-v4.pdf}}}}" target="_blank" rel="noopener">A4 tablet version</a>.</p>
 
-<p>The dark version looks best on a tablet or in a note-taking app like GoodNotes. The ink-saver version is the same design on white paper, and it works in black and white.</p>
+<p>The print version is white, uses little ink and works in black and white, with 7 mm writing lines. The dark version is for a tablet or a note-taking app like GoodNotes.</p>
 
 <h2 id="pick-a-page">Which planner page should you start with?</h2>
 
@@ -99,7 +99,7 @@ html = f'''<h1>ADHD Planner Printable: Free 7-Page Kit (PDF)</h1>
 
 <!-- wp:html --><div class="foco-kit-grid">{grid_css}{cards}</div><!-- /wp:html -->
 
-<p>Single-page PDFs are the ink-saver version, ready to print.</p>
+<p>Single-page PDFs are the print version, on white.</p>
 
 <p>Want more layouts for one format? See the <a href="https://www.tryfoco.com/adhd-daily-planner/">ADHD daily planner</a>, the <a href="https://www.tryfoco.com/adhd-weekly-planner/">ADHD weekly planner</a> and the <a href="https://www.tryfoco.com/adhd-habit-tracker-printable/">ADHD habit tracker printable</a>.</p>
 

@@ -20,10 +20,10 @@ const repo = path.join(__dirname, '..', '..');
 const font = (pkg, file) => 'data:font/woff2;base64,' + fs.readFileSync(require.resolve(`@fontsource/${pkg}/files/${file}`)).toString('base64');
 const LOGO = 'data:image/png;base64,' + fs.readFileSync(path.join(repo, 'assets/foco-logo.png')).toString('base64');
 const ROOM = 'https://www.tryfoco.com/body-doubling/?utm_source=printable&utm_medium=pdf&utm_campaign=adhd-planner-kit';
-const V = 'v2';
-// Bump a file's version whenever it changes: the uploader reuses media with the same name.
-const KIT_V = 'v3';
-const PAGE_V = { 'brain-dump': 'v3' };
+// Bump the version whenever the pages change: the uploader reuses media with the same name.
+const V = 'v4';
+const KIT_V = V;
+const PAGE_V = {};
 
 const SIZES = { letter: { w: 816, h: 1056, pdf: 'Letter' }, a4: { w: 794, h: 1123, pdf: 'A4' } };
 
@@ -55,7 +55,7 @@ h1{font-family:Fraunces;font-weight:800;font-size:66px;line-height:.9;letter-spa
 .ring{width:15px;height:15px;border-radius:50%;border:2.5px solid var(--line);border-top-color:var(--acc);border-right-color:var(--acc);flex:none}
 .ring.q1{border-right-color:var(--line)} .ring.full{border-color:var(--acc)}
 .box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;min-height:0}
-.lines{flex:1;min-height:26px;background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 25px,var(--line) 25px,var(--line) 26px)}
+.lines{flex:1;min-height:27px;background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 26px,var(--line) 26px,var(--line) 27px)}
 .dots{flex:1;min-height:40px;background-image:radial-gradient(var(--line) 1.1px,transparent 1.3px);background-size:16px 16px}
 .row{display:flex;gap:12px;min-height:0}
 .col{display:flex;flex-direction:column;gap:12px;min-height:0}
@@ -63,7 +63,7 @@ h1{font-family:Fraunces;font-weight:800;font-size:66px;line-height:.9;letter-spa
 .ck{width:13px;height:13px;border-radius:50%;border:1.8px solid var(--acc);display:inline-block;flex:none}
 .num{width:24px;height:24px;border-radius:50%;background:var(--circle);color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;flex:none}
 .paper .num{background:#7C3AED}
-.wl{flex:1;border-bottom:1.5px solid var(--line);height:22px}
+.wl{flex:1;border-bottom:1.5px solid var(--line);height:27px}
 .t{font-size:13.5px;color:var(--ink)} .m{font-size:12.5px;color:var(--soft)}
 .band{background:var(--band);color:var(--bandInk);padding:18px 48px;display:flex;align-items:center;gap:22px;min-height:132px}
 .band .say{flex:1;font-family:Fraunces;font-weight:800;font-size:24px;line-height:1.35;letter-spacing:-.02em}
@@ -77,6 +77,7 @@ h1{font-family:Fraunces;font-weight:800;font-size:66px;line-height:.9;letter-spa
 .foot{background:var(--foot);display:flex;justify-content:space-between;padding:12px 48px;font-size:12.5px;color:var(--mute)}
 .foot b{color:var(--ink)}
 .paper .foot{border-top:1px solid var(--line)}
+.paper .band{min-height:0;padding:12px 48px}.paper .band .note{display:none}.paper .qr{width:72px;height:72px}.paper .qr img{width:46px;height:46px}.paper .band .say{font-size:21px}
 `;
 
 const qrImg = (qr) => `<div class="qr"><img src="${qr}"></div>`;
@@ -97,7 +98,7 @@ const PAGES = {
   daily: (qr) => `<div class="page">${head('Today, small.', 'Three things that matter, and <b>the tiny first step for each.</b> If only these get done, today counts.', S('☕', 130, 28, 59) + S('🗓️', 40, 112, 56) + S('✨', 190, 128, 37))}
     <div class="body">
       <div class="sec"><span class="ring"></span>Top 3 <small>with the first step written down</small></div>
-      ${[1, 2, 3].map(n => `<div style="display:flex;gap:12px;align-items:flex-start"><span class="num">${n}</span><div style="flex:1"><div class="wl"></div><div class="m" style="display:flex;gap:8px;align-items:flex-end;margin-top:6px">First tiny step <span class="wl" style="height:16px"></span></div></div><span class="ck" style="margin-top:6px"></span></div>`).join('')}
+      ${[1, 2, 3].map(n => `<div style="display:flex;gap:12px;align-items:flex-start"><span class="num">${n}</span><div style="flex:1"><div class="wl"></div><div class="m" style="display:flex;gap:8px;align-items:flex-end;margin-top:2px">First tiny step <span class="wl" style="height:24px"></span></div></div><span class="ck" style="margin-top:6px"></span></div>`).join('')}
       <div class="row grow" style="margin-top:6px">
         <div class="col" style="flex:1.2">${[['Morning', '🌅'], ['Afternoon', '🌤️'], ['Evening', '🌙']].map(([t, e]) => `<div class="box grow"><div class="sec" style="font-size:13px"><span style="font-family:'Noto Color Emoji'">${e}</span>${t}</div><div class="lines"></div></div>`).join('')}</div>
         <div class="col" style="flex:1">
@@ -111,7 +112,7 @@ const PAGES = {
   'task-breakdown': (qr) => `<div class="page">${head('Make it startable.', 'Big tasks stall because the first step is fuzzy. <b>Shrink step one until it takes 2 minutes,</b> then guess the rest.', S('🧩', 120, 28, 64) + S('🪜', 35, 112, 56) + S('✨', 185, 128, 37))}
     <div class="body">
       <div class="box"><div class="sec" style="font-size:13px"><span class="ring"></span>The task I keep avoiding</div><div class="wl" style="margin-top:6px"></div>
-        <div class="m" style="display:flex;gap:16px;margin-top:10px;align-items:center">It feels: <span><span class="ck"></span> fine</span><span><span class="ck"></span> meh</span><span><span class="ck"></span> huge</span><span style="flex:1"></span>Due <span class="wl" style="flex:none;width:110px;height:16px"></span></div></div>
+        <div class="m" style="display:flex;gap:16px;margin-top:10px;align-items:center">It feels: <span><span class="ck"></span> fine</span><span><span class="ck"></span> meh</span><span><span class="ck"></span> huge</span><span style="flex:1"></span>Due <span class="wl" style="flex:none;width:110px;height:22px"></span></div></div>
       <div class="box" style="border:2px solid var(--acc)"><div class="sec" style="font-size:13px"><span class="ring full"></span>Step one, 2 minutes or less <small>open the file · find the form · put on shoes</small></div><div class="wl" style="margin-top:6px"></div></div>
       <div class="box grow"><div class="sec" style="font-size:13px;margin-bottom:4px"><span class="ring q1"></span>Then the next steps <small>one action each · guess the minutes</small></div>
         <div style="flex:1;display:flex;flex-direction:column">${Array.from({ length: 8 }, (_, i) => `<div style="flex:1;display:flex;align-items:flex-end;gap:10px;border-bottom:1px solid var(--line);padding-bottom:4px"><span class="m" style="width:16px;font-weight:800">${i + 2}</span><span style="flex:1"></span><span class="m">___ min</span><span class="ck"></span></div>`).join('')}</div></div>
@@ -122,7 +123,7 @@ const PAGES = {
 
   'brain-dump': (qr) => `<div class="page">${head('Empty your head.', 'Write everything down, <b>no order and no judging.</b> Then sort it into four boxes, and let one box go.', S('🧠', 125, 28, 64) + S('🌀', 40, 112, 52) + S('✨', 185, 128, 37))}
     <div class="body">
-      <div class="box" style="flex:1.1"><div class="sec" style="font-size:13px"><span class="ring"></span>1. Dump it all <small>tasks, worries, ideas, errands, that email</small></div><div class="lines"></div></div>
+      <div class="box" style="flex:2.1"><div class="sec" style="font-size:13px"><span class="ring"></span>1. Dump it all <small>tasks, worries, ideas, errands, that email</small></div><div class="lines"></div></div>
       <div class="sec" style="font-size:13px;margin-bottom:-4px"><span class="ring full"></span>2. Sort it</div>
       <div class="row grow">${[['✅', 'Do today', 'small, urgent or due'], ['📅', 'Schedule it', 'give it a day']].map(([e, a, b]) => `<div class="box grow"><div class="t" style="font-weight:800;font-size:13px;display:flex;gap:6px"><span style="font-family:'Noto Color Emoji'">${e}</span>${a} <span class="m" style="font-weight:600">${b}</span></div><div class="lines"></div></div>`).join('')}</div>
       <div class="row grow">${[['🤝', 'Ask or hand off', 'someone else can'], ['🎈', 'Let it go', 'not now, maybe never']].map(([e, a, b]) => `<div class="box grow"><div class="t" style="font-weight:800;font-size:13px;display:flex;gap:6px"><span style="font-family:'Noto Color Emoji'">${e}</span>${a} <span class="m" style="font-weight:600">${b}</span></div><div class="lines"></div></div>`).join('')}</div>
@@ -164,8 +165,8 @@ const PAGES = {
   'habit-tracker': (qr) => `<div class="page">${head('Count, don\'t chain.', 'Fill a circle on any day you did it. <b>There are no streaks to break,</b> so a missed day costs nothing.', S('🌱', 128, 28, 62) + S('💧', 45, 112, 51) + S('✨', 190, 128, 37))}
     <div class="body">
       ${Array.from({ length: 5 }, () => `<div class="box grow" style="padding:10px 14px;justify-content:center">
-        <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:8px"><div class="m" style="display:flex;gap:8px;align-items:flex-end;width:62%">Habit <span class="wl" style="height:16px"></span></div><div class="m">Good days: <span style="display:inline-block;width:44px;border-bottom:1.5px solid var(--line)">&nbsp;</span></div></div>
-        <div style="display:grid;grid-template-columns:repeat(16,1fr);gap:4px 3px;text-align:center;font-size:8px;color:var(--soft)">${Array.from({ length: 31 }, (_, d) => `<div><span style="display:block;width:17px;height:17px;margin:0 auto 1px;border-radius:50%;border:1.6px solid var(--line)"></span>${d + 1}</div>`).join('')}</div></div>`).join('')}
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:8px"><div class="m" style="display:flex;gap:8px;align-items:flex-end;width:62%">Habit <span class="wl" style="height:24px"></span></div><div class="m">Good days: <span style="display:inline-block;width:44px;border-bottom:1.5px solid var(--line)">&nbsp;</span></div></div>
+        <div style="display:grid;grid-template-columns:repeat(16,1fr);gap:4px 3px;text-align:center;font-size:10.5px;font-weight:600;color:var(--soft)">${Array.from({ length: 31 }, (_, d) => `<div><span style="display:block;width:17px;height:17px;margin:0 auto 1px;border-radius:50%;border:1.6px solid var(--line)"></span>${d + 1}</div>`).join('')}</div></div>`).join('')}
     </div>
     ${band(`Ten good days is ten good days,<br>wherever they fall.`, qr)}${foot}</div>`,
 };
