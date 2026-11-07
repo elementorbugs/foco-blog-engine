@@ -851,6 +851,260 @@
         }
       },
       "note": "Low volume, no clear momentum."
+    },
+    {
+      "name": "Tweek",
+      "slug": "tweek-app-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": null,
+      "keywords_us": {
+        "tweek app": {
+          "volume": 170,
+          "sd": 27
+        },
+        "tweek calendar": {
+          "volume": 390,
+          "sd": 38
+        },
+        "tweek review": {
+          "volume": 10,
+          "sd": 20
+        },
+        "tweek app review": {
+          "volume": 10,
+          "sd": 13
+        }
+      },
+      "note": "Minimal weekly planner (iOS 4.8, 1,287 US ratings, updated 2026-11-02). SERP for 'tweek app' (2026-09-14): own site, stores, Reddit 2021, Softonic, one Medium long-term review, Morgen alternatives list. gap-scan clean (no mentions; /adhd-weekly-planner/ covers the generic term)."
+    },
+    {
+      "name": "Owaves",
+      "slug": "owaves-app-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": null,
+      "keywords_us": {
+        "owaves app": {
+          "volume": 50,
+          "sd": 29
+        },
+        "owaves review": {
+          "volume": 10,
+          "sd": 18
+        }
+      },
+      "note": "Circular visual day planner / body clock (iOS 4.6, 1,848 US ratings). Borderline: 50/mo exactly. SERP (2026-09-29): own site, App Store, Reddit, Instagram, CNET download, Softonic; no independent review. gap-scan clean."
+    },
+    {
+      "name": "Bearable",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "bearable app": {
+          "volume": 1300,
+          "sd": 31
+        },
+        "bearable app review": {
+          "volume": 110,
+          "sd": 43
+        }
+      },
+      "note": "Symptom/mood tracker. bearable app 1300 SD 31; bearable app review 110 SD 43. Above SD threshold."
+    },
+    {
+      "name": "How We Feel",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "how we feel app": {
+          "volume": 4400,
+          "sd": 35
+        },
+        "how we feel app review": {
+          "volume": 40,
+          "sd": 30
+        }
+      },
+      "note": "Emotion check-in app. how we feel app 4400 SD 35; review 40 SD 30. SD above threshold on main term."
+    },
+    {
+      "name": "Tangerine",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "tangerine app": {
+          "volume": 170,
+          "sd": 42
+        }
+      },
+      "note": "Self-care habit app. tangerine app 170 SD 42; review 10."
+    },
+    {
+      "name": "EndeavorOTC",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "endeavorotc": {
+          "volume": 390,
+          "sd": 39
+        },
+        "endeavorotc review": {
+          "volume": 20,
+          "sd": 21
+        }
+      },
+      "note": "Digital therapeutic for adult ADHD. endeavorotc 390 SD 39; review 20; app 10. SD above threshold, medical claims high-stakes."
+    },
+    {
+      "name": "Super Productivity",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "super productivity app": {
+          "volume": 320,
+          "sd": 40
+        }
+      },
+      "note": "Open-source to-do/timer. super productivity app 320 SD 40."
+    },
+    {
+      "name": "Leantime",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "leantime": {
+          "volume": 720,
+          "sd": 30
+        },
+        "leantime review": {
+          "volume": 10,
+          "sd": 26
+        }
+      },
+      "note": "Self-hosted PM tool marketed as ADHD-friendly. leantime 720 SD 30 but navigational (own site holds top 10); review 10. B2B, poor fit."
+    },
+    {
+      "name": "Daily Bean",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "daily bean app": {
+          "volume": 110,
+          "sd": 31
+        }
+      },
+      "note": "Mood journal. daily bean app 110 SD 31, weak ADHD fit."
+    },
+    {
+      "name": "Brili",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "brili app": {
+          "volume": 70,
+          "sd": 31
+        }
+      },
+      "note": "Kids routine app. brili app 70 SD 31."
+    },
+    {
+      "name": "LifeUp",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "lifeup app": {
+          "volume": 70,
+          "sd": 35
+        }
+      },
+      "note": "Gamified to-do. lifeup app 70 SD 35."
+    },
+    {
+      "name": "Daylio",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "daylio app review": {
+          "volume": 40,
+          "sd": 36
+        }
+      },
+      "note": "Mood diary. daylio app review 40 SD 36."
+    },
+    {
+      "name": "Stoic",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "Journal app. stoic app review 40 SD 34."
+    },
+    {
+      "name": "Session",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "Pomodoro app. session app review 140 SD 43; name collides with generic 'session'."
+    },
+    {
+      "name": "Habi",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "ADHD planner. habi app 40 SD 40; spike Apr-Jul 2026 then falling."
+    },
+    {
+      "name": "Weel",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "ADHD planner. weel adhd planner 10."
+    },
+    {
+      "name": "Pocket Planner",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "Life OS for ADHD (Product Hunt). pocket planner app 20, collides with generic term."
+    },
+    {
+      "name": "Elisi",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "Planner/habit app. elisi app 30."
+    },
+    {
+      "name": "Sorted 3",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "Hyper-scheduler. sorted 3 app 30 SD 33."
+    },
+    {
+      "name": "Due",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "Reminder app. due app review 10; name collides with common word."
     }
   ]
 }
