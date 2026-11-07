@@ -103,19 +103,17 @@ html = f'''<h1>ADHD Planner Printable: Free 7-Page Kit (PDF)</h1>
 
 <p>Want more layouts for one format? See the <a href="https://www.tryfoco.com/adhd-daily-planner/">ADHD daily planner</a>, the <a href="https://www.tryfoco.com/adhd-weekly-planner/">ADHD weekly planner</a> and the <a href="https://www.tryfoco.com/adhd-habit-tracker-printable/">ADHD habit tracker printable</a>.</p>
 
-<h2 id="paid-planners">What are the best paid ADHD planner printables and digital planners?</h2>
+<h2 id="paid-planners">What are the best paid ADHD planner printables?</h2>
 
-<p>If you want more pages than a free kit, Etsy and independent shops sell ADHD planners as printable PDFs and as linked digital planners for GoodNotes. Start with the free kit above, then pay only if you need more.</p>
+<p>If you want more pages than a free kit, Etsy shops sell ADHD planners as printable PDFs. Start with the free kit above, then pay only if you need more.</p>
 
 <div class="foco-table-wrap foco-cmp2">
 <table>
-<thead><tr><th scope="col"><span class="cm-label">Planner</span></th><th scope="col"><span class="cm-label">Type</span></th><th scope="col"><span class="cm-label">Price</span></th><th scope="col"><span class="cm-label">Good to know</span></th></tr></thead>
+<thead><tr><th scope="col"><span class="cm-label">Planner</span></th><th scope="col"><span class="cm-label">What you get</span></th><th scope="col"><span class="cm-label">Price</span></th><th scope="col"><span class="cm-label">Good to know</span></th></tr></thead>
 <tbody>
-<tr><th scope="row"><span class="cm-app"><span><b>FOCO ADHD planner kit</b><small>Made by FOCO</small></span></span></th><td>Printable and tablet PDF, 7 pages, Letter and A4</td><td>Free</td><td>Undated, with no email or signup</td></tr>
-<tr><th scope="row"><span class="cm-app"><span><b><a href="https://www.etsy.com/listing/1257544669/adhd-printable-planner-adult-daily" target="_blank" rel="nofollow noopener">2026 + 2027 ADHD Printable Planner</a></b><small>FutureADHD on Etsy</small></span></span></th><td>Printable PDF, 205 pages, Letter and A4</td><td>$25.14, $16.34 on sale</td><td>4.9 stars from 543 reviews; ADHD extras like an impulse-buy checklist</td></tr>
-<tr><th scope="row"><span class="cm-app"><span><b><a href="https://www.etsy.com/listing/4330385814/adhd-digital-planner-2026-lifetime" target="_blank" rel="nofollow noopener">ADHD Digital Planner 2026 2027</a></b><small>DigitizedPlanner on Etsy</small></span></span></th><td>Linked PDF for GoodNotes, Notability and Android tablets</td><td>$47.12, $23.56 on sale</td><td>Undated option and 200+ templates; only 3 reviews on this listing</td></tr>
-<tr><th scope="row"><span class="cm-app"><span><b><a href="https://www.etsy.com/listing/1680000702/digital-mega-planner-adhd-set-for" target="_blank" rel="nofollow noopener">Digital Mega Planner ADHD Set</a></b><small>DesignAuraStudio on Etsy</small></span></span></th><td>Printable PDF, 754 pages, A4, A5, Letter, Half Letter</td><td>$12.98, $6.49 on sale</td><td>Undated and minimal; 4.6 stars from 67 reviews</td></tr>
-<tr><th scope="row"><span class="cm-app"><span><b><a href="https://ipadplanner.com/products/digital-daily-planners" target="_blank" rel="nofollow noopener">ADHD Digital Daily Planner</a></b><small>iPad Planner</small></span></span></th><td>Linked PDF for GoodNotes, Notability and Noteshelf</td><td>$39.95</td><td>Dated July 2026 to June 2028; the page doesn't list ADHD-specific features</td></tr>
+<tr><th scope="row"><span class="cm-app"><span><b>FOCO ADHD planner kit</b><small>Made by FOCO</small></span></span></th><td>7 pages, Letter and A4, print and tablet versions</td><td>Free</td><td>Undated, with no email or signup</td></tr>
+<tr><th scope="row"><span class="cm-app"><span><b><a href="https://www.etsy.com/listing/1257544669/adhd-printable-planner-adult-daily" target="_blank" rel="nofollow noopener">2026 + 2027 ADHD Printable Planner</a></b><small>FutureADHD on Etsy</small></span></span></th><td>205 pages, Letter and A4</td><td>$25.14, $16.34 on sale</td><td>4.9 stars from 543 reviews; ADHD extras like an impulse-buy checklist</td></tr>
+<tr><th scope="row"><span class="cm-app"><span><b><a href="https://www.etsy.com/listing/1680000702/digital-mega-planner-adhd-set-for" target="_blank" rel="nofollow noopener">Digital Mega Planner ADHD Set</a></b><small>DesignAuraStudio on Etsy</small></span></span></th><td>754 pages, A4, A5, Letter and Half Letter</td><td>$12.98, $6.49 on sale</td><td>Undated and minimal; 4.6 stars from 67 reviews</td></tr>
 </tbody>
 </table>
 </div>
@@ -124,7 +122,7 @@ html = f'''<h1>ADHD Planner Printable: Free 7-Page Kit (PDF)</h1>
 
 <p>A big bundle isn't better if you never open it. Pick a planner with one page per day or week and no dates, so a skipped week doesn't leave blank pages behind.</p>
 
-<p>Prefer a bound paper planner, like Panda Planner or Clever Fox? We compare them, with prices, in the paper section of our <a href="https://www.tryfoco.com/best-adhd-planner/#paper-options">best ADHD planner apps</a> guide.</p>
+<p>Planning on an iPad instead? We compare digital planners for GoodNotes, plus bound paper planners like Panda Planner, in our <a href="https://www.tryfoco.com/best-adhd-planner/#goodnotes-planners">best ADHD planner apps</a> guide.</p>
 
 <h2 id="adhd-friendly">What makes a printable planner work for ADHD?</h2>
 
