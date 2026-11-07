@@ -299,6 +299,8 @@ function slugifyHeading(t) { return t.toLowerCase().replace(/[^a-z0-9\s-]/g, '')
 
 function injectTableOfContents(content) {
   if (/<h2[^>]*>\s*Table of Contents\s*<\/h2>/i.test(content)) return { content, count: 0, msg: 'TOC already present' };
+  // A page can opt out (e.g. a download page where the files should come first): <!-- no-toc -->
+  if (content.includes('<!-- no-toc -->')) return { content, count: 0, msg: 'TOC skipped (no-toc marker)' };
   const entries = [], used = new Set();
   let withIds = content.replace(/<h2(?:\s+[^>]*)?>([\s\S]*?)<\/h2>/g, (match, inner) => {
     const text = inner.replace(/<[^>]+>/g, '').trim();
