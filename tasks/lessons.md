@@ -99,6 +99,9 @@ Pruned quarterly. Keep under 60 lines.
 
 ## create-post.js pitfalls
 
+- **Every app except FOCO and RemindHer is a competitor: nofollow (Adi, 2026-11-07).** That includes App Store links to them, which COMPETITOR_RE (domain based) does not catch, so set rel="nofollow noopener" by hand. RemindHer links stay dofollow. Authority sources (NIMH, CDC, CHADD, PubMed) stay dofollow.
+- **Every table is designed (Adi, 2026-11-07): "you never write without designing."** Use `<div class="foco-table-wrap foco-cmp2">` with `cm-label` headers and `th scope="row"` row labels. Never ship a bare inline-styled table.
+
 - **Publishing is not done until 3 live posts link in (2026-11-05).** I published the Recordo review with no inbound links apart from its directory card, against the >=3 rule, because the pipeline does not check it. Patch the inbound links as part of publishing.
 
 - **No meta line above the answer box (Adi, 2026-11-05).** "Updated ... Not tested hands-on ... We make FOCO" above `foco-tldr` read as strange ("I don't think it makes sense"). New posts open with the box and disclose FOCO inside it. To edit a post that already exists from a cloud session, use `action=patch` with `post-patches/<slug>.json`, since re-running the pipeline discards local edits.
