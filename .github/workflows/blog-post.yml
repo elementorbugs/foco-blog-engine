@@ -7,11 +7,11 @@ on:
   workflow_dispatch:
     inputs:
       action:
-        description: 'dry-run, draft, publish, patch (edits an existing post from post-patches/<slug>.json), or delete-draft (drafts only)'
+        description: 'dry-run, draft, publish, patch (edits from post-patches/<slug>.json), fetch (saves a live post or draft into the repo), or delete-draft (drafts only)'
         type: choice
         required: true
         default: draft
-        options: [dry-run, draft, publish, patch, delete-draft]
+        options: [dry-run, draft, publish, patch, fetch, delete-draft]
       file:
         description: 'Post file, e.g. posts-new/post-my-slug.html'
         type: string
@@ -48,6 +48,10 @@ on:
         description: 'Skip Pexels images'
         type: boolean
         default: false
+      use_local:
+        description: 'Full rewrite: the file replaces the content of an existing post'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -72,6 +76,7 @@ jobs:
       HOWTO: ${{ inputs.howto }}
       SKIP_COVER: ${{ inputs.skip_cover }}
       SKIP_PEXELS: ${{ inputs.skip_pexels }}
+      USE_LOCAL: ${{ inputs.use_local }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -82,7 +87,7 @@ jobs:
             echo "::error::file must look like posts-new/post-my-slug.html"
             exit 1
           fi
-          if [ "$ACTION" != "delete-draft" ] && [ "$ACTION" != "patch" ] && [ -z "$KEYWORD" ]; then
+          if [ "$ACTION" != "delete-draft" ] && [ "$ACTION" != "patch" ] && [ "$ACTION" != "fetch" ] && [ -z "$KEYWORD" ]; then
             echo "::error::keyword is required for $ACTION"
             exit 1
           fi
@@ -128,6 +133,7 @@ jobs:
           [ "$HOWTO" = "true" ]       && args+=("--howto")
           [ "$SKIP_COVER" = "true" ]  && args+=("--skip-cover")
           [ "$SKIP_PEXELS" = "true" ] && args+=("--skip-pexels")
+          [ "$USE_LOCAL" = "true" ]   && args+=("--use-local")
           [ "$ACTION" = "dry-run" ]   && args+=("--dry-run")
           [ "$ACTION" = "publish" ]   && args+=("--publish")
           node create-post.js "${args[@]}"
@@ -143,6 +149,18 @@ jobs:
         run: |
           slug="$(basename "$POST_FILE" .html)"
           node scripts/check-post.js "${slug#post-}"
+
+      - name: Fetch post into the repo
+        if: inputs.action == 'fetch'
+        run: |
+          slug="$(basename "$POST_FILE" .html)"
+          node scripts/fetch-post.js "${slug#post-}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add posts-new post-meta
+          git diff --cached --quiet && { echo "Nothing new to save"; exit 0; }
+          git commit -m "Fetch ${slug#post-} from WordPress"
+          git push
 
       - name: Delete draft
         if: inputs.action == 'delete-draft'

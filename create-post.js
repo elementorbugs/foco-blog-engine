@@ -101,6 +101,7 @@ const skipCover      = flag('skip-cover');
 const skipPexels     = flag('skip-pexels');
 const directoryArg   = arg('directory');       // app-directory category, or "none"
 const directoryDesc  = arg('directory-desc');  // one-line card text (default: first TL;DR sentence)
+const useLocal       = flag('use-local');     // rewrite: the local file replaces the WP content of an existing post
 
 const PEXELS_KEY_PATH = path.join(__dirname, '.pexels-key');
 const PEXELS_KEY = (!skipPexels && fs.existsSync(PEXELS_KEY_PATH)) ? fs.readFileSync(PEXELS_KEY_PATH, 'utf8').trim() : null;
@@ -865,7 +866,9 @@ async function generateCover(slug, h1, coverTitleArg) {
     existingStatus = existing.data[0].status;
     log.ok(`Existing post #${postId} (status: ${existingStatus})`);
     const wpContent = existing.data[0].content && (existing.data[0].content.raw || existing.data[0].content.rendered);
-    if (wpContent && wpContent.length > content.length * 0.8) {
+    if (useLocal) {
+      log.ok('--use-local: the local file replaces the existing WP content (full rewrite)');
+    } else if (wpContent && wpContent.length > content.length * 0.8) {
       content = wpContent;
       log.ok(`Using WP content as base (${content.length} chars) — protects existing charts/markers from duplication`);
     }
