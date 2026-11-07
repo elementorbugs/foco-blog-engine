@@ -21,6 +21,9 @@ const font = (pkg, file) => 'data:font/woff2;base64,' + fs.readFileSync(require.
 const LOGO = 'data:image/png;base64,' + fs.readFileSync(path.join(repo, 'assets/foco-logo.png')).toString('base64');
 const ROOM = 'https://www.tryfoco.com/body-doubling/?utm_source=printable&utm_medium=pdf&utm_campaign=adhd-planner-kit';
 const V = 'v2';
+// Bump a file's version whenever it changes: the uploader reuses media with the same name.
+const KIT_V = 'v3';
+const PAGE_V = { 'brain-dump': 'v3' };
 
 const SIZES = { letter: { w: 816, h: 1056, pdf: 'Letter' }, a4: { w: 794, h: 1123, pdf: 'A4' } };
 
@@ -124,7 +127,7 @@ const PAGES = {
       <div class="row grow">${[['✅', 'Do today', 'small, urgent or due'], ['📅', 'Schedule it', 'give it a day']].map(([e, a, b]) => `<div class="box grow"><div class="t" style="font-weight:800;font-size:13px;display:flex;gap:6px"><span style="font-family:'Noto Color Emoji'">${e}</span>${a} <span class="m" style="font-weight:600">${b}</span></div><div class="lines"></div></div>`).join('')}</div>
       <div class="row grow">${[['🤝', 'Ask or hand off', 'someone else can'], ['🎈', 'Let it go', 'not now, maybe never']].map(([e, a, b]) => `<div class="box grow"><div class="t" style="font-weight:800;font-size:13px;display:flex;gap:6px"><span style="font-family:'Noto Color Emoji'">${e}</span>${a} <span class="m" style="font-weight:600">${b}</span></div><div class="lines"></div></div>`).join('')}</div>
     </div>
-    ${band(`From this page, I'll do ${F(260)} first.`, qr)}${foot}</div>`,
+    ${band(`First I'll do ${F(260)}.`, qr)}${foot}</div>`,
 
   'time-block': (qr) => `<div class="page">${head('See where time goes.', 'Guess how long each block will take, then <b>write what really happened.</b> The gap is the useful part.', S('⏰', 125, 28, 64) + S('⌛', 40, 112, 54) + S('✨', 188, 128, 37))}
     <div class="body">
@@ -182,10 +185,10 @@ const doc = (size, names, paper, qr) => `<!doctype html><html><head><meta charse
     await page.pdf({ path: path.join(out, file), format: size.pdf, printBackground: true, margin: { top: 0, right: 0, bottom: 0, left: 0 } });
   };
   for (const [key, size] of Object.entries(SIZES)) {
-    await pdf(`foco-adhd-planner-kit-${key}-${V}.pdf`, size, ORDER, false);
-    await pdf(`foco-adhd-planner-kit-ink-saver-${key}-${V}.pdf`, size, ORDER, true);
+    await pdf(`foco-adhd-planner-kit-${key}-${KIT_V}.pdf`, size, ORDER, false);
+    await pdf(`foco-adhd-planner-kit-ink-saver-${key}-${KIT_V}.pdf`, size, ORDER, true);
   }
-  for (const n of ORDER.slice(1)) await pdf(`foco-adhd-${n}-planner-${V}.pdf`, SIZES.letter, [n], true);
+  for (const n of ORDER.slice(1)) await pdf(`foco-adhd-${n}-planner-${PAGE_V[n] || V}.pdf`, SIZES.letter, [n], true);
 
   const shot = await browser.newPage({ viewport: { width: 816, height: 1056 }, deviceScaleFactor: 2 });
   for (const n of ORDER) for (const paper of [false, true]) {
