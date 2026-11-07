@@ -263,6 +263,7 @@ Images for a post go in `post-media/<slug>/` and are referenced in the post as `
 `action` is `dry-run`, `draft` (default), `publish`, `patch`, `fetch`, `seo-title` or `delete-draft`. `seo-title` sets the RankMath SEO title (the line Google shows) to the `title` input, with nothing appended, and/or the RankMath focus keyword to the `keyword` input (comma-separated for secondary keywords); check the live `<title>` afterwards. `patch` edits an existing post's live content from `post-patches/<slug>.json` (`[{"old":"...","new":"..."}]`, each `old` must match exactly once). Use `publish` only when Adi explicitly asked for that post to go live. `delete-draft` refuses anything that is not a draft and also removes that post's own cover. The workflow only covers this pipeline: other scripts that need WordPress access still need a workflow of their own, or Adi's local machine. The repo is public, so post files and run logs are visible to anyone as soon as they are pushed.
 
 ### Steps the script runs (in order)
+A post that should open with its downloads (like /adhd-planner/) can put `<!-- no-toc -->` in its HTML to skip the table of contents.
 1. **Validate** - H1, no editorial markers, no markdown links, FAQ section, Key Takeaways, ≥4 internal links, TL;DR box, ≥3 external citations. Aborts on errors.
 2. **Determine WP title** - `--title` if provided; else H1 if ≤58 chars; else aborts.
 3. **Detect existing post** - looks up by slug. If exists, fetches WP content as base (protects charts/markers/schema from duplication).
