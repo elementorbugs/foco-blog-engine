@@ -20,7 +20,7 @@ const repo = path.join(__dirname, '..', '..');
 const font = (pkg, file) => 'data:font/woff2;base64,' + fs.readFileSync(require.resolve(`@fontsource/${pkg}/files/${file}`)).toString('base64');
 const LOGO = 'data:image/png;base64,' + fs.readFileSync(path.join(repo, 'assets/foco-logo.png')).toString('base64');
 const ROOM = 'https://www.tryfoco.com/body-doubling/?utm_source=printable&utm_medium=pdf&utm_campaign=adhd-planner-kit';
-const V = 'v1';
+const V = 'v2';
 
 const SIZES = { letter: { w: 816, h: 1056, pdf: 'Letter' }, a4: { w: 794, h: 1123, pdf: 'A4' } };
 
@@ -99,7 +99,7 @@ const PAGES = {
         <div class="col" style="flex:1.2">${[['Morning', '🌅'], ['Afternoon', '🌤️'], ['Evening', '🌙']].map(([t, e]) => `<div class="box grow"><div class="sec" style="font-size:13px"><span style="font-family:'Noto Color Emoji'">${e}</span>${t}</div><div class="lines"></div></div>`).join('')}</div>
         <div class="col" style="flex:1">
           <div class="box grow"><div class="sec" style="font-size:13px"><span class="ring q1"></span>Brain dump <small>out of your head</small></div><div class="dots"></div></div>
-          <div class="box"><div class="sec" style="font-size:13px;margin-bottom:6px"><span class="ring full"></span>Body basics</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 8px" class="t">${[['🍽️', 'A real meal'], ['💧', 'Water'], ['💊', 'Meds'], ['🚶', 'Moved a bit'], ['🌳', 'Outside'], ['😴', 'Slept okay']].map(([e, x]) => `<div style="display:flex;gap:6px;align-items:center;font-size:12.5px"><span class="ck"></span><span style="font-family:'Noto Color Emoji'">${e}</span>${x}</div>`).join('')}</div></div>
+          <div class="box"><div class="sec" style="font-size:13px;margin-bottom:6px"><span class="ring full"></span>Body basics</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 8px" class="t">${[['🥗', 'A real meal'], ['💧', 'Water'], ['💊', 'Meds'], ['🚶', 'Moved a bit'], ['🌳', 'Outside'], ['😴', 'Slept okay']].map(([e, x]) => `<div style="display:flex;gap:6px;align-items:center;font-size:12.5px"><span class="ck"></span><span style="font-family:'Noto Color Emoji'">${e}</span>${x}</div>`).join('')}</div></div>
         </div>
       </div>
     </div>

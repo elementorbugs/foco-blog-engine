@@ -50,8 +50,8 @@ h1{position:absolute;left:72px;top:215px;width:860px;font-family:Fraunces;font-w
 .b b{font-weight:800}
 .pg{width:480px;border-radius:18px}
 </style></head><body><div class="c"></div><img class="logo" src="${LOGO}"><div class="k">${kicker}</div><h1>${title}</h1>
-${pages.length > 1 ? `<img class="pg" src="${img(pages[1])}" style="position:absolute;left:430px;top:600px;transform:rotate(4deg)"><img class="pg" src="${img(pages[0])}" style="position:absolute;left:90px;top:560px;transform:rotate(-4deg)">`
-    : `<img class="pg" src="${img(pages[0])}" style="position:absolute;left:220px;top:560px;width:560px;transform:rotate(-3deg)">`}
+${pages.length > 1 ? `<img class="pg" src="${img(pages[1])}" style="position:absolute;left:430px;top:580px;transform:rotate(4deg)"><img class="pg" src="${img(pages[0])}" style="position:absolute;left:90px;top:540px;transform:rotate(-4deg)">`
+    : `<img class="pg" src="${img(pages[0])}" style="position:absolute;left:220px;top:470px;width:560px;transform:rotate(-3deg)">`}
 <div class="b"><span>${bottom}</span><span>tryfoco.com</span></div></body></html>`;
 
 const PINS = [

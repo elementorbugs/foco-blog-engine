@@ -16,7 +16,7 @@ PIN = 'style="background:#E60023 !important;color:#ffffff !important"'
 
 def pin(key, desc):
     return ('https://www.pinterest.com/pin/create/button/?url=' + quote(PAGE_URL, safe='')
-            + '&amp;media={{mediaenc:adhd-planner-kit-pin-' + key + '-v1.png}}&amp;description=' + quote(desc, safe=''))
+            + '&amp;media={{mediaenc:adhd-planner-kit-pin-' + key + '-v2.png}}&amp;description=' + quote(desc, safe=''))
 
 
 CARDS = [
@@ -35,9 +35,9 @@ grid_css = ('<style>.foco-kit-grid{display:grid;grid-template-columns:1fr 1fr;ga
             '.foco-kit-btns{display:flex;flex-wrap:wrap;gap:8px}.foco-kit-btns a{display:inline-block;font-weight:700;font-size:14px;padding:9px 16px;border-radius:10px;text-decoration:none !important;border:0 !important}'
             '@media(max-width:640px){.foco-kit-grid{grid-template-columns:1fr}}</style>')
 cards = ''.join(
-    f'<figure class="foco-kit-card"><img src="{{{{media:adhd-planner-kit-{img}-v1.webp}}}}" alt="Free ADHD planner printable: {title.lower()} page" width="816" height="1056" loading="lazy"/>'
+    f'<figure class="foco-kit-card"><img src="{{{{media:adhd-planner-kit-{img}-v2.webp}}}}" alt="Free ADHD planner printable: {title.lower()} page" width="816" height="1056" loading="lazy"/>'
     f'<h3>{title}</h3><p>{text}</p><div class="foco-kit-btns">'
-    f'<a href="{{{{media:foco-adhd-{key}-planner-v1.pdf}}}}" target="_blank" rel="noopener" {CMP}>Download PDF</a>'
+    f'<a href="{{{{media:foco-adhd-{key}-planner-v2.pdf}}}}" target="_blank" rel="noopener" {CMP}>Download PDF</a>'
     f'<a href="{pin(key, title + ": free ADHD planner printable")}" target="_blank" rel="noopener" {PIN}>Pin it</a></div></figure>'
     for key, img, title, text in CARDS)
 
@@ -61,11 +61,11 @@ html = f'''<h1>ADHD Planner Printable: Free 7-Page Kit (PDF)</h1>
 
 <p>Seven printable pages for brains that plan fine and still can't start. Download the whole kit, or just the page you need below.</p>
 
-<!-- wp:html --><figure class="foco-kit-hero" style="margin:24px 0 8px"><img src="{{{{media:adhd-planner-kit-hero-v1.webp}}}}" alt="Free ADHD planner printable kit: daily, task breakdown, brain dump, weekly and habit tracker pages" width="1600" height="860" style="width:100%;height:auto;border-radius:18px;display:block"/></figure><!-- /wp:html -->
+<!-- wp:html --><figure class="foco-kit-hero" style="margin:24px 0 8px"><img src="{{{{media:adhd-planner-kit-hero-v2.webp}}}}" alt="Free ADHD planner printable kit: daily, task breakdown, brain dump, weekly and habit tracker pages" width="1600" height="860" style="width:100%;height:auto;border-radius:18px;display:block"/></figure><!-- /wp:html -->
 
-<!-- wp:html --><div class="foco-kit-dl" style="display:flex;flex-wrap:wrap;gap:12px;margin:20px 0 8px"><a href="{{{{media:foco-adhd-planner-kit-letter-v1.pdf}}}}" target="_blank" rel="noopener" style="{BTN};background:#7C3AED !important;color:#ffffff !important">Download the full kit (PDF, dark)</a><a href="{{{{media:foco-adhd-planner-kit-ink-saver-letter-v1.pdf}}}}" target="_blank" rel="noopener" style="{BTN};background:#160F22 !important;color:#ffffff !important">Download the ink-saver version (PDF)</a><a href="{pin('kit', 'The ADHD planner kit: 7 free printable pages')}" target="_blank" rel="noopener" style="{BTN};background:#E60023 !important;color:#ffffff !important">Save the kit on Pinterest</a></div><!-- /wp:html -->
+<!-- wp:html --><div class="foco-kit-dl" style="display:flex;flex-wrap:wrap;gap:12px;margin:20px 0 8px"><a href="{{{{media:foco-adhd-planner-kit-letter-v2.pdf}}}}" target="_blank" rel="noopener" style="{BTN};background:#7C3AED !important;color:#ffffff !important">Download the full kit (PDF, dark)</a><a href="{{{{media:foco-adhd-planner-kit-ink-saver-letter-v2.pdf}}}}" target="_blank" rel="noopener" style="{BTN};background:#160F22 !important;color:#ffffff !important">Download the ink-saver version (PDF)</a><a href="{pin('kit', 'The ADHD planner kit: 7 free printable pages')}" target="_blank" rel="noopener" style="{BTN};background:#E60023 !important;color:#ffffff !important">Save the kit on Pinterest</a></div><!-- /wp:html -->
 
-<p>Printing on A4? Get the <a href="{{{{media:foco-adhd-planner-kit-a4-v1.pdf}}}}" target="_blank" rel="noopener">A4 kit (dark)</a> or the <a href="{{{{media:foco-adhd-planner-kit-ink-saver-a4-v1.pdf}}}}" target="_blank" rel="noopener">A4 ink-saver kit</a>.</p>
+<p>Printing on A4? Get the <a href="{{{{media:foco-adhd-planner-kit-a4-v2.pdf}}}}" target="_blank" rel="noopener">A4 kit (dark)</a> or the <a href="{{{{media:foco-adhd-planner-kit-ink-saver-a4-v2.pdf}}}}" target="_blank" rel="noopener">A4 ink-saver kit</a>.</p>
 
 <p>The dark version looks best on a tablet or in a note-taking app like GoodNotes. The ink-saver version is the same design on white paper, and it works in black and white.</p>
 
