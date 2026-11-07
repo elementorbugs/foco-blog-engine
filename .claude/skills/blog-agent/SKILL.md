@@ -53,7 +53,7 @@ Record every proposal, and later Adi's answer, in `candidates.json`. Commit that
 6. **Commit and dry-run**, then upload a draft with the workflow below.
 7. **Tell Adi:** the edit link, word and image counts, what could not be verified, and `תענה "פרסם" או מה לתקן`.
 
-Fixes to a post that already exists: write `post-patches/<slug>.json`, commit, and run `action=patch`. Re-running the pipeline would discard local edits.
+Before patching, run `action=fetch` for that post: the local file in `posts-new/` can be stale, and a patch built from it fails. Fixes to a post that already exists: write `post-patches/<slug>.json`, commit, and run `action=patch`. Re-running the pipeline would discard local edits.
 
 **Inbound links:** the CLAUDE.md rule is at least 3 inbound links per post. When a post goes live, patch 3 relevant live posts to link to it, in the same step as publishing.
 
