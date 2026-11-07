@@ -350,11 +350,17 @@ function extractInternalLinks(content) {
   return [...slugs];
 }
 
-function checkSlugInWp(slug) {
+// Links can point at posts or at pages (tools like /body-doubling/), so look in both.
+async function checkSlugInWp(slug) {
+  const post = await checkSlugOfType(slug, 'posts');
+  return post.exists ? post : checkSlugOfType(slug, 'pages');
+}
+
+function checkSlugOfType(slug, type) {
   return new Promise(resolve => {
     const req = https.request({
       hostname: WP_HOST,
-      path: `/wp-json/wp/v2/posts?slug=${encodeURIComponent(slug)}&status=any&_fields=id,status`,
+      path: `/wp-json/wp/v2/${type}?slug=${encodeURIComponent(slug)}&status=any&_fields=id,status`,
       method: 'GET', headers: { Authorization: 'Basic ' + auth },
     }, r => {
       let chunks = [];
