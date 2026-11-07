@@ -2,8 +2,9 @@
 // Sets a post's RankMath SEO title (the line Google shows), which replaces the
 // "%title% %sep% %sitename%" template, so nothing is appended to it.
 //
-//   node scripts/set-seo-title.js <slug> "<SEO title>"
+//   node scripts/set-seo-title.js <slug> "<SEO title>" ["<focus keyword[,secondary]>"]
 //
+// Pass "" as the title to set only the focus keyword.
 // Refuses titles over 65 characters or with em dashes (CLAUDE.md rules).
 
 const fs = require('fs');
@@ -21,14 +22,14 @@ const headers = {
   Authorization: 'Basic ' + Buffer.from(`${env.WP_USER}:${env.WP_APP_PASSWORD}`).toString('base64'),
   'Content-Type': 'application/json',
 };
-const [slug, title] = process.argv.slice(2);
+const [slug, title = '', keyword = ''] = process.argv.slice(2);
 
 (async () => {
-  if (!slug || !/^[a-z0-9-]+$/.test(slug) || !title) {
+  if (!slug || !/^[a-z0-9-]+$/.test(slug) || (!title && !keyword)) {
     console.error('Usage: node scripts/set-seo-title.js <slug> "<SEO title>"');
     process.exit(1);
   }
-  if (title.length > 65) { console.error(`Title is ${title.length} characters, the limit is 65.`); process.exit(1); }
+  if (title && title.length > 65) { console.error(`Title is ${title.length} characters, the limit is 65.`); process.exit(1); }
   if (title.includes('—')) { console.error('Title contains an em dash.'); process.exit(1); }
 
   const res = await fetch(`https://${host}/wp-json/wp/v2/posts?slug=${slug}&status=any&context=edit&_fields=id,status,link,meta`, { headers });
@@ -36,7 +37,11 @@ const [slug, title] = process.argv.slice(2);
   if (!post) { console.error(`No post with slug ${slug}`); process.exit(1); }
   const before = (post.meta && post.meta.rank_math_title) || '(none, template in use)';
 
-  const body = JSON.stringify({ objectType: 'post', objectID: post.id, meta: { rank_math_title: title } });
+  const meta = {};
+  if (title) meta.rank_math_title = title;
+  if (keyword) meta.rank_math_focus_keyword = keyword;
+  const beforeKw = (post.meta && post.meta.rank_math_focus_keyword) || '(none)';
+  const body = JSON.stringify({ objectType: 'post', objectID: post.id, meta });
   let r = await fetch(`https://${host}/wp-json/rankmath/v1/updateMeta`, { method: 'POST', headers, body });
   if (r.status === 404) {
     await new Promise(res => setTimeout(res, 1500));
@@ -45,6 +50,6 @@ const [slug, title] = process.argv.slice(2);
   if (!r.ok) { console.error(`RankMath updateMeta failed: HTTP ${r.status} ${(await r.text()).slice(0, 200)}`); process.exit(1); }
 
   console.log(`Post #${post.id} (${slug}, ${post.status})`);
-  console.log(`Before: ${before}`);
-  console.log(`After:  ${title} (${title.length} chars)`);
+  if (title) { console.log(`Title before: ${before}`); console.log(`Title after:  ${title} (${title.length} chars)`); }
+  if (keyword) { console.log(`Keyword before: ${beforeKw}`); console.log(`Keyword after:  ${keyword}`); }
 })();
