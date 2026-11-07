@@ -7,11 +7,11 @@ on:
   workflow_dispatch:
     inputs:
       action:
-        description: 'dry-run, draft, publish, patch (edits from post-patches/<slug>.json), fetch (saves a live post or draft into the repo), or delete-draft (drafts only)'
+        description: 'dry-run, draft, publish, patch (edits from post-patches/<slug>.json), fetch (saves a live post or draft into the repo), seo-title (sets the RankMath SEO title from the title input), or delete-draft (drafts only)'
         type: choice
         required: true
         default: draft
-        options: [dry-run, draft, publish, patch, fetch, delete-draft]
+        options: [dry-run, draft, publish, patch, fetch, seo-title, delete-draft]
       file:
         description: 'Post file, e.g. posts-new/post-my-slug.html'
         type: string
@@ -87,7 +87,7 @@ jobs:
             echo "::error::file must look like posts-new/post-my-slug.html"
             exit 1
           fi
-          if [ "$ACTION" != "delete-draft" ] && [ "$ACTION" != "patch" ] && [ "$ACTION" != "fetch" ] && [ -z "$KEYWORD" ]; then
+          if [ "$ACTION" != "delete-draft" ] && [ "$ACTION" != "patch" ] && [ "$ACTION" != "fetch" ] && [ "$ACTION" != "seo-title" ] && [ -z "$KEYWORD" ]; then
             echo "::error::keyword is required for $ACTION"
             exit 1
           fi
@@ -161,6 +161,13 @@ jobs:
           git diff --cached --quiet && { echo "Nothing new to save"; exit 0; }
           git commit -m "Fetch ${slug#post-} from WordPress"
           git push
+
+      - name: Set RankMath SEO title
+        if: inputs.action == 'seo-title'
+        run: |
+          if [ -z "$TITLE" ]; then echo "::error::seo-title needs the title input"; exit 1; fi
+          slug="$(basename "$POST_FILE" .html)"
+          node scripts/set-seo-title.js "${slug#post-}" "$TITLE"
 
       - name: Delete draft
         if: inputs.action == 'delete-draft'
