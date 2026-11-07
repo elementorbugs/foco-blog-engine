@@ -1105,6 +1105,26 @@
       "revisit_after": "2027-02-01",
       "keywords_us": {},
       "note": "Reminder app. due app review 10; name collides with common word."
+    },
+    {
+      "name": "ADHD mom periscope guide",
+      "slug": "adhd-mom-periscope",
+      "status": "published",
+      "proposed_on": "2026-11-07",
+      "published_on": "2026-11-07",
+      "url": "https://www.tryfoco.com/adhd-mom-periscope/",
+      "keywords_us": {
+        "adhd mom periscope": {
+          "volume": 880,
+          "sd": 39
+        },
+        "mom with adhd": {
+          "volume": 480,
+          "sd": 25
+        }
+      },
+      "note": "Rewrite of the old draft #2287. RemindHer listed first with a founder disclosure.",
+      "revisit_after": null
     }
   ]
 }
