@@ -217,6 +217,14 @@
       "name": "Joon",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-joon-1.png",
       "appStoreId": 1482225056
+    },
+    "reclaim-ai": {
+      "name": "Reclaim AI",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-reclaim.png"
+    },
+    "focusmate": {
+      "name": "Focusmate",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-focusmate.png"
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
@@ -540,17 +548,17 @@
     },
     {
       "slug": "best-adhd-planner",
-      "title": "7 Best ADHD Planner Apps",
-      "desc": "Tiimo, Structured, TickTick and more, with real prices.",
+      "title": "9 Best ADHD Planner Apps",
+      "desc": "FOCO, Tiimo, Structured, TickTick, Reclaim AI and more, with real prices.",
       "cat": "focus",
       "apps": [
         "foco",
         "tiimo",
         "structured",
-        "motion",
-        "sunsama",
         "ticktick",
-        "todoist"
+        "sunsama",
+        "reclaim",
+        "motion"
       ]
     },
     {
