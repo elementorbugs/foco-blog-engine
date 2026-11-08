@@ -1125,6 +1125,114 @@
       },
       "note": "Rewrite of the old draft #2287. RemindHer listed first with a founder disclosure.",
       "revisit_after": null
+    },
+    {
+      "name": "Jomo",
+      "slug": "jomo-app-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-08",
+      "keywords_us": {
+        "jomo app": {
+          "volume": 390,
+          "sd": 23
+        },
+        "jomo app review": {
+          "volume": 30,
+          "sd": 27
+        },
+        "jomo review": {
+          "volume": 10,
+          "sd": 18
+        }
+      },
+      "note": "iOS screen-time blocker. Recommended. SERP (2026-11-08): YouTube videos, App Store listings, Jomo's own blog; no independent written review in top 10. Fits app-blocker cluster (opal, screenzen, brick, bloom reviews + best-app-blocker-apps). gap-scan failed (WP returned HTML); no mentions in local posts-new."
+    },
+    {
+      "name": "Unpluq",
+      "slug": "unpluq-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-08",
+      "keywords_us": {
+        "unpluq": {
+          "volume": 590,
+          "sd": 26
+        },
+        "unpluq review": {
+          "volume": 30,
+          "sd": 17
+        }
+      },
+      "note": "Physical-tag app blocker, Brick rival. Recommended. Volume rebounded Jul 2026 (320->590). SERP (2026-11-08): Google Play dev page, YouTube, r/dumbphones Brick vs Unpluq, 'Unpluq Reviews (2026)', 'Unpluq vs Brick' post. Overlap risk with /brick-app-review/. gap-scan failed; no mentions in local posts-new."
+    },
+    {
+      "name": "Dola",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-08",
+      "revisit_after": "2027-02-01",
+      "note": "dola app 590 SD 30 but it is now a general AI chatbot (ByteDance, Cici rebrand), not an ADHD planner. Review terms 10."
+    },
+    {
+      "name": "Howbout",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-08",
+      "revisit_after": "2027-02-01",
+      "note": "Social calendar for friends. howbout app 720 SD 27, review 50 SD 30. Weak ADHD fit."
+    },
+    {
+      "name": "Tody",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-08",
+      "revisit_after": "2027-02-01",
+      "note": "Cleaning app. tody app 880 SD 45; review 70 SD 54. SD above threshold."
+    },
+    {
+      "name": "Clearspace",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-08",
+      "revisit_after": "2027-02-01",
+      "note": "clearspace app 480 SD 41; review 40."
+    },
+    {
+      "name": "Flipd",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-08",
+      "revisit_after": "2027-02-01",
+      "note": "flipd app 210 SD 35; review 10."
+    },
+    {
+      "name": "Focus Flight",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-08",
+      "revisit_after": "2027-02-01",
+      "note": "Spike Sep 2025 then fell; 480 SD 29, spiky."
+    },
+    {
+      "name": "Focus To-Do",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-08",
+      "revisit_after": "2027-02-01",
+      "note": "focus to-do app 210 SD 14 but generic pomodoro app, weak ADHD fit; review 10."
+    },
+    {
+      "name": "Focus Plant",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-08",
+      "revisit_after": "2027-02-01",
+      "note": "focus plant app 260 SD 48."
+    },
+    {
+      "name": "BlockSite",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-08",
+      "revisit_after": "2027-02-01",
+      "note": "blocksite review 50 SD 42."
+    },
+    {
+      "name": "Goblin Tools review",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-08",
+      "revisit_after": "2027-02-01",
+      "note": "goblin tools review 50 SD 31; already 3 goblin posts (alternative, vs chatgpt, vs tiimo, foco-vs)."
     }
   ]
 }
