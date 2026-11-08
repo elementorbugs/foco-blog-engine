@@ -161,6 +161,8 @@ html = f'''<h1>ADHD Planner Printable: Free 7-Page Kit (PDF)</h1>
 
 <p>If you'd rather plan on your phone, we compare 9 apps, plus the paper planners worth buying, in the <a href="https://www.tryfoco.com/best-adhd-planner/">best ADHD planner apps</a> guide.</p>
 
+<p>Don't need ADHD-specific features? See the <a href="https://www.tryfoco.com/day-to-day-planner-app/">best day to day planner apps</a> for everyone.</p>
+
 <h2 id="body-doubling">Can body doubling help you start what you planned?</h2>
 
 <p>For many people with ADHD, yes. <strong>Body doubling</strong> means working while someone else is present, in person or on a screen.</p>
