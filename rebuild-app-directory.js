@@ -81,9 +81,11 @@ function addCard({ slug, cat, title, desc }) {
   const card = { slug, title: title || (existing && existing.title) || slug, desc: desc || (existing && existing.desc) || '', cat };
   if (existing) Object.assign(existing, card);
   else {
-    // keep cards grouped by category, in category order
+    // keep cards grouped by category, in category order, newest first inside a category
     const order = Object.keys(dir.categories);
     let at = dir.cards.length;
+    const firstSame = dir.cards.findIndex(c => c.cat === cat);
+    if (firstSame > -1) { dir.cards.splice(firstSame, 0, card); writeDir(dir); return card; }
     for (let i = dir.cards.length - 1; i >= 0; i--) if (order.indexOf(dir.cards[i].cat) <= order.indexOf(cat)) { at = i + 1; break; } else at = i;
     dir.cards.splice(at, 0, card);
   }

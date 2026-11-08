@@ -222,164 +222,32 @@
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
   "cards": [
     {
-      "slug": "routineflow-review",
-      "title": "RoutineFlow Review: Is the ADHD Routine App Worth It?",
-      "desc": "Routines as a chain of timed steps, built for ADHD mornings and evenings.",
+      "slug": "joon-app-review",
+      "title": "Joon App Review: The ADHD Chore Game for Kids",
+      "desc": "Joon is a chore app for kids ages 6 to 12 with ADHD: parents assign tasks, and...",
       "cat": "reviews"
     },
     {
-      "slug": "aligned-app-review",
-      "title": "Aligned App Review",
-      "desc": "The AI coach you talk to: what it does well, where it stops.",
+      "slug": "reclaim-ai-review",
+      "title": "Reclaim AI Review: Is It Worth It for ADHD?",
+      "desc": "Reclaim AI is a calendar tool that books your tasks, habits, focus time and breaks around your...",
       "cat": "reviews"
     },
     {
-      "slug": "inflow-review",
-      "title": "Inflow Review",
-      "desc": "CBT-based lessons and coaching for ADHD, reviewed.",
+      "slug": "sunsama-review",
+      "title": "Sunsama Review: Is the Daily Planner Worth It for ADHD?",
+      "desc": "Sunsama is a paid daily planner that walks you through planning each morning, pulls tasks from...",
       "cat": "reviews"
     },
     {
-      "slug": "ellie-planner-review",
-      "title": "Ellie Planner Review",
-      "desc": "Brain dump, then time-block your day: who it fits, where it stops.",
+      "slug": "recordo-app-review",
+      "title": "Recordo App Review: An AI ADHD Planner With Chat Coaches",
+      "desc": "Recordo is an ADHD planner where you talk or type your thoughts into a chat, and AI turns them...",
       "cat": "reviews"
     },
     {
-      "slug": "forest-app-for-adhd",
-      "title": "Forest App for ADHD",
-      "desc": "Does the tree timer help you start? Plus 3 alternatives.",
-      "cat": "reviews"
-    },
-    {
-      "slug": "numo-app-review",
-      "title": "Numo App Review",
-      "desc": "The ADHD community app: Squads, points and lessons, reviewed.",
-      "cat": "reviews"
-    },
-    {
-      "slug": "routinery-app-review",
-      "title": "Routinery App Review",
-      "desc": "Routines as timed steps with a voice guide: who it fits, where it stops.",
-      "cat": "reviews"
-    },
-    {
-      "slug": "llama-life-review",
-      "title": "Llama Life Review",
-      "desc": "A countdown on every task: who it fits, where it stops.",
-      "cat": "reviews"
-    },
-    {
-      "slug": "mindflow-ai-review",
-      "title": "Mindflow AI Review",
-      "desc": "The voice-first AI coach for ADHD, reviewed.",
-      "cat": "reviews"
-    },
-    {
-      "slug": "finch-app-review",
-      "title": "Finch App Review",
-      "desc": "The self-care pet app: tiny goals, no penalty, and its limits.",
-      "cat": "reviews"
-    },
-    {
-      "slug": "saner-ai-review",
-      "title": "Saner.AI Review",
-      "desc": "The AI assistant for scattered notes, email and Slack: who it fits, where it stops.",
-      "cat": "reviews"
-    },
-    {
-      "slug": "focus-friend-app-review",
-      "title": "Focus Friend by Hank Green: Honest App Review",
-      "desc": "Short answer: Focus Friend is a cozy focus timer from Hank Green and Honey B Games.",
-      "cat": "reviews"
-    },
-    {
-      "slug": "brick-app-review",
-      "title": "Brick App Review: Does the Phone Blocker Help ADHD?",
-      "desc": "Short answer: Brick is a $59 magnetic puck that locks the apps you choose until you tap your...",
-      "cat": "reviews"
-    },
-    {
-      "slug": "opal-app-review",
-      "title": "Opal App Review: Is It Worth $99.99 a Year for ADHD?",
-      "desc": "Short answer: Opal is a screen time app that blocks the apps and sites you choose on a...",
-      "cat": "reviews"
-    },
-    {
-      "slug": "bloom-app-blocker-review",
-      "title": "Bloom App Blocker Review: Is the $39 Card Worth It?",
-      "desc": "Updated October 29, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
-      "cat": "reviews"
-    },
-    {
-      "slug": "screenzen-review",
-      "title": "ScreenZen Review: Is the Free App Blocker Worth It?",
-      "desc": "Updated October 29, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
-      "cat": "reviews"
-    },
-    {
-      "slug": "focusmate-review",
-      "title": "Focusmate Review: Is It Worth It for ADHD?",
-      "desc": "Updated October 29, 2026 · Prices checked today · Not tested hands-on, based on Focusmate's...",
-      "cat": "reviews"
-    },
-    {
-      "slug": "fabulous-app-review",
-      "title": "Fabulous App Review: Is It Worth It for ADHD?",
-      "desc": "Updated October 29, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
-      "cat": "reviews"
-    },
-    {
-      "slug": "endel-app-review",
-      "title": "Endel App Review: Is Endel Worth It for ADHD?",
-      "desc": "Updated October 29, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
-      "cat": "reviews"
-    },
-    {
-      "slug": "brainrot-app-review",
-      "title": "Brainrot App Review: Is It Free, and Does It Work?",
-      "desc": "Updated October 29, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
-      "cat": "reviews"
-    },
-    {
-      "slug": "brain-fm-review",
-      "title": "Brain.fm Review: Is It Worth $99.99 for ADHD?",
-      "desc": "Updated October 29, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
-      "cat": "reviews"
-    },
-    {
-      "slug": "chillio-app-review",
-      "title": "Chillio App Review: Is It Legit for ADHD?",
-      "desc": "Updated November 2, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
-      "cat": "reviews"
-    },
-    {
-      "slug": "tiimo-app-review",
-      "title": "Tiimo App Review: Is It Worth It for ADHD?",
-      "desc": "Updated November 3, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
-      "cat": "reviews"
-    },
-    {
-      "slug": "structured-app-review",
-      "title": "Structured App Review: Is It Worth It for ADHD?",
-      "desc": "Updated November 3, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
-      "cat": "reviews"
-    },
-    {
-      "slug": "wisey-app-review",
-      "title": "Wisey App Review: Is It Legit or a Scam?",
-      "desc": "Updated November 3, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
-      "cat": "reviews"
-    },
-    {
-      "slug": "habitica-review",
-      "title": "Habitica Review 2026: Is the Habit Tracker Good for ADHD?",
-      "desc": "Updated November 3, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
-      "cat": "reviews"
-    },
-    {
-      "slug": "clarify-app-review",
-      "title": "Clarify App Review 2026: Is It Good for ADHD? Cost, Cancel",
+      "slug": "liven-app-review",
+      "title": "Liven App Review 2026: Is It Legit? Cost, Quiz, Cancel",
       "desc": "Updated November 3, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
       "cat": "reviews"
     },
@@ -390,33 +258,165 @@
       "cat": "reviews"
     },
     {
-      "slug": "liven-app-review",
-      "title": "Liven App Review 2026: Is It Legit? Cost, Quiz, Cancel",
+      "slug": "clarify-app-review",
+      "title": "Clarify App Review 2026: Is It Good for ADHD? Cost, Cancel",
       "desc": "Updated November 3, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
       "cat": "reviews"
     },
     {
-      "slug": "recordo-app-review",
-      "title": "Recordo App Review: An AI ADHD Planner With Chat Coaches",
-      "desc": "Recordo is an ADHD planner where you talk or type your thoughts into a chat, and AI turns them...",
+      "slug": "habitica-review",
+      "title": "Habitica Review 2026: Is the Habit Tracker Good for ADHD?",
+      "desc": "Updated November 3, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
       "cat": "reviews"
     },
     {
-      "slug": "sunsama-review",
-      "title": "Sunsama Review: Is the Daily Planner Worth It for ADHD?",
-      "desc": "Sunsama is a paid daily planner that walks you through planning each morning, pulls tasks from...",
+      "slug": "wisey-app-review",
+      "title": "Wisey App Review: Is It Legit or a Scam?",
+      "desc": "Updated November 3, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
       "cat": "reviews"
     },
     {
-      "slug": "reclaim-ai-review",
-      "title": "Reclaim AI Review: Is It Worth It for ADHD?",
-      "desc": "Reclaim AI is a calendar tool that books your tasks, habits, focus time and breaks around your...",
+      "slug": "structured-app-review",
+      "title": "Structured App Review: Is It Worth It for ADHD?",
+      "desc": "Updated November 3, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
       "cat": "reviews"
     },
     {
-      "slug": "joon-app-review",
-      "title": "Joon App Review: The ADHD Chore Game for Kids",
-      "desc": "Short answer: Joon is a chore app for kids ages 6 to 12 with ADHD: parents assign tasks, and...",
+      "slug": "tiimo-app-review",
+      "title": "Tiimo App Review: Is It Worth It for ADHD?",
+      "desc": "Updated November 3, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "chillio-app-review",
+      "title": "Chillio App Review: Is It Legit for ADHD?",
+      "desc": "Updated November 2, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "brain-fm-review",
+      "title": "Brain.fm Review: Is It Worth $99.99 for ADHD?",
+      "desc": "Updated October 29, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "brainrot-app-review",
+      "title": "Brainrot App Review: Is It Free, and Does It Work?",
+      "desc": "Updated October 29, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "endel-app-review",
+      "title": "Endel App Review: Is Endel Worth It for ADHD?",
+      "desc": "Updated October 29, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "fabulous-app-review",
+      "title": "Fabulous App Review: Is It Worth It for ADHD?",
+      "desc": "Updated October 29, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "focusmate-review",
+      "title": "Focusmate Review: Is It Worth It for ADHD?",
+      "desc": "Updated October 29, 2026 · Prices checked today · Not tested hands-on, based on Focusmate's...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "screenzen-review",
+      "title": "ScreenZen Review: Is the Free App Blocker Worth It?",
+      "desc": "Updated October 29, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "bloom-app-blocker-review",
+      "title": "Bloom App Blocker Review: Is the $39 Card Worth It?",
+      "desc": "Updated October 29, 2026 · Prices and ratings checked today · Not tested hands-on, based on...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "opal-app-review",
+      "title": "Opal App Review: Is It Worth $99.99 a Year for ADHD?",
+      "desc": "Opal is a screen time app that blocks the apps and sites you choose on a...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "brick-app-review",
+      "title": "Brick App Review: Does the Phone Blocker Help ADHD?",
+      "desc": "Brick is a $59 magnetic puck that locks the apps you choose until you tap your...",
+      "cat": "reviews"
+    },
+    {
+      "slug": "focus-friend-app-review",
+      "title": "Focus Friend by Hank Green: Honest App Review",
+      "desc": "Focus Friend is a cozy focus timer from Hank Green and Honey B Games.",
+      "cat": "reviews"
+    },
+    {
+      "slug": "saner-ai-review",
+      "title": "Saner.AI Review",
+      "desc": "The AI assistant for scattered notes, email and Slack: who it fits, where it stops.",
+      "cat": "reviews"
+    },
+    {
+      "slug": "finch-app-review",
+      "title": "Finch App Review",
+      "desc": "The self-care pet app: tiny goals, no penalty, and its limits.",
+      "cat": "reviews"
+    },
+    {
+      "slug": "mindflow-ai-review",
+      "title": "Mindflow AI Review",
+      "desc": "The voice-first AI coach for ADHD, reviewed.",
+      "cat": "reviews"
+    },
+    {
+      "slug": "llama-life-review",
+      "title": "Llama Life Review",
+      "desc": "A countdown on every task: who it fits, where it stops.",
+      "cat": "reviews"
+    },
+    {
+      "slug": "routinery-app-review",
+      "title": "Routinery App Review",
+      "desc": "Routines as timed steps with a voice guide: who it fits, where it stops.",
+      "cat": "reviews"
+    },
+    {
+      "slug": "numo-app-review",
+      "title": "Numo App Review",
+      "desc": "The ADHD community app: Squads, points and lessons, reviewed.",
+      "cat": "reviews"
+    },
+    {
+      "slug": "forest-app-for-adhd",
+      "title": "Forest App for ADHD",
+      "desc": "Does the tree timer help you start? Plus 3 alternatives.",
+      "cat": "reviews"
+    },
+    {
+      "slug": "ellie-planner-review",
+      "title": "Ellie Planner Review",
+      "desc": "Brain dump, then time-block your day: who it fits, where it stops.",
+      "cat": "reviews"
+    },
+    {
+      "slug": "inflow-review",
+      "title": "Inflow Review",
+      "desc": "CBT-based lessons and coaching for ADHD, reviewed.",
+      "cat": "reviews"
+    },
+    {
+      "slug": "aligned-app-review",
+      "title": "Aligned App Review",
+      "desc": "The AI coach you talk to: what it does well, where it stops.",
+      "cat": "reviews"
+    },
+    {
+      "slug": "routineflow-review",
+      "title": "RoutineFlow Review: Is the ADHD Routine App Worth It?",
+      "desc": "Routines as a chain of timed steps, built for ADHD mornings and evenings.",
       "cat": "reviews"
     },
     {
