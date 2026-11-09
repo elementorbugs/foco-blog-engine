@@ -422,29 +422,92 @@
     },
     {
       "name": "Things 3",
-      "status": "not_proposed",
-      "proposed_on": "2026-11-05",
+      "status": "proposed",
+      "proposed_on": "2026-11-09",
       "keywords_us": {
         "things 3 review": {
           "volume": 70,
           "sd": 31
         }
       },
-      "note": "SD just above threshold.",
-      "revisit_after": "2027-02-01"
+      "note": "Re-checked 2026-11-09 with the whole keyword cluster (the first check only looked at \"<name> review\").",
+      "cluster_us": {
+        "things 3": [
+          6600,
+          30
+        ],
+        "things 3 vs todoist": [
+          140,
+          24
+        ],
+        "todoist vs things 3": [
+          110,
+          18
+        ],
+        "tick tick vs things 3": [
+          70,
+          20
+        ],
+        "things 3 review": [
+          70,
+          31
+        ],
+        "things 3 price": [
+          50,
+          32
+        ],
+        "things 3 alternative": [
+          40,
+          30
+        ],
+        "is things 3 worth it": [
+          30,
+          25
+        ]
+      }
     },
     {
       "name": "Any.do",
-      "status": "not_proposed",
-      "proposed_on": "2026-11-05",
+      "status": "proposed",
+      "proposed_on": "2026-11-09",
       "keywords_us": {
         "any.do review": {
           "volume": 70,
           "sd": 33
         }
       },
-      "note": "SD above threshold.",
-      "revisit_after": "2027-02-01"
+      "note": "Re-checked 2026-11-09 with the whole keyword cluster (the first check only looked at \"<name> review\").",
+      "cluster_us": {
+        "any.do": [
+          2900,
+          86
+        ],
+        "todoist vs any.do": [
+          140,
+          32
+        ],
+        "any.do review": [
+          70,
+          33
+        ],
+        "any.do pricing": [
+          70,
+          38
+        ],
+        "is any.do free": [
+          40,
+          24
+        ],
+        "any.do vs ticktick": [
+          40,
+          17
+        ],
+        "any.do alternative": [
+          40,
+          32
+        ]
+      },
+      "cannibalization": "day-to-day-planner-app has an Any.do H3"
     },
     {
       "name": "Clockwise",
@@ -461,29 +524,83 @@
     },
     {
       "name": "Cold Turkey",
-      "status": "not_proposed",
-      "proposed_on": "2026-11-05",
+      "status": "proposed",
+      "proposed_on": "2026-11-09",
       "keywords_us": {
         "cold turkey blocker review": {
           "volume": 40,
           "sd": 22
         }
       },
-      "note": "Below 50.",
-      "revisit_after": "2027-02-01"
+      "note": "Re-checked 2026-11-09 with the whole keyword cluster (the first check only looked at \"<name> review\").",
+      "cluster_us": {
+        "cold turkey blocker": [
+          4400,
+          26
+        ],
+        "cold turkey blocker review": [
+          40,
+          22
+        ],
+        "cold turkey blocker pro": [
+          50,
+          31
+        ],
+        "is cold turkey blocker free": [
+          30,
+          28
+        ],
+        "how to uninstall cold turkey blocker": [
+          70,
+          29
+        ],
+        "cold turkey blocker uninstall": [
+          90,
+          29
+        ]
+      }
     },
     {
       "name": "Habitify",
-      "status": "not_proposed",
-      "proposed_on": "2026-11-05",
+      "status": "proposed",
+      "proposed_on": "2026-11-09",
       "keywords_us": {
         "habitify review": {
           "volume": 30,
           "sd": 37
         }
       },
-      "note": "Low volume.",
-      "revisit_after": "2027-02-01"
+      "note": "Re-checked 2026-11-09 with the whole keyword cluster (the first check only looked at \"<name> review\").",
+      "cluster_us": {
+        "habitify": [
+          1600,
+          32
+        ],
+        "habitify habit tracker app": [
+          720,
+          5
+        ],
+        "habitify app": [
+          210,
+          36
+        ],
+        "habitify review": [
+          30,
+          37
+        ],
+        "is habitify free": [
+          30,
+          15
+        ],
+        "habitify price": [
+          30,
+          18
+        ],
+        "habitify vs streaks": [
+          20,
+          13
+        ]
+      }
     },
     {
       "name": "RescueTime",
@@ -526,16 +643,45 @@
     },
     {
       "name": "Flow Club",
-      "status": "not_proposed",
-      "proposed_on": "2026-11-05",
+      "status": "proposed",
+      "proposed_on": "2026-11-09",
       "keywords_us": {
         "flow club review": {
           "volume": 30,
           "sd": 34
         }
       },
-      "note": "Low volume.",
-      "revisit_after": "2027-02-01"
+      "note": "Re-checked 2026-11-09 with the whole keyword cluster (the first check only looked at \"<name> review\").",
+      "cluster_us": {
+        "flow club": [
+          3600,
+          15
+        ],
+        "flow club body doubling": [
+          320,
+          28
+        ],
+        "flow club adhd": [
+          90,
+          23
+        ],
+        "flow club price": [
+          40,
+          24
+        ],
+        "flow club pricing": [
+          30,
+          14
+        ],
+        "flow club alternative": [
+          30,
+          27
+        ],
+        "flow club review": [
+          30,
+          34
+        ]
+      }
     },
     {
       "name": "Flown",
