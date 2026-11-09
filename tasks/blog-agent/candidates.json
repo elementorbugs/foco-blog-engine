@@ -1382,9 +1382,9 @@
   },
   {
    "name": "Noisli",
-   "status": "skipped",
+   "status": "proposed",
    "proposed_on": "2026-11-09",
-   "note": "noisli 1,600 SD 40 (brand). Targets: noisli alternative 50 SD 28, websites like noisli 10. SERP for 'noisli alternative': noisli.com, AlternativeTo-type lists, Reddit, Calphii; no ADHD-angle review. No post names Noisli. Angle: alternatives post (SPEC-alternatives). Adi picked Pomofocus instead on 2026-11-09."
+   "note": "noisli 1,600 SD 40 (brand). Targets: noisli alternative 50 SD 28, websites like noisli 10. SERP for 'noisli alternative': noisli.com, AlternativeTo-type lists, Reddit, Calphii; no ADHD-angle review. No post names Noisli. Angle: alternatives post (SPEC-alternatives). Not picked on 2026-11-09 (Adi chose Pomofocus); still open."
   },
   {
    "name": "Pomofocus",
