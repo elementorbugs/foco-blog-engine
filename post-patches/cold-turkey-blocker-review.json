@@ -1,0 +1,14 @@
+[
+ {
+  "old": "The free version costs nothing and has no time limit. Blocker Pro",
+  "new": "The free version costs nothing. Blocker Pro"
+ },
+ {
+  "old": "<p>It is sold directly by Cold Turkey Software,",
+  "new": "<p>It is made by Cold Turkey Software and sold through its own site,"
+ },
+ {
+  "old": "\"text\":\"It is sold directly by Cold Turkey Software,",
+  "new": "\"text\":\"It is made by Cold Turkey Software and sold through its own site,"
+ }
+]
