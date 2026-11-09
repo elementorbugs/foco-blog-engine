@@ -1,0 +1,30 @@
+[
+ {
+  "old": "Premium, monthly or yearly. The site does not publish the price (see below)",
+  "new": "Premium $3 a month, $18 a year or $54 lifetime"
+ },
+ {
+  "old": "Refunds</th><td>Full refund within 7 days of payment, per its legal notice</td></tr>",
+  "new": "Refunds</th><td>Full refund within 7 days of payment, per its legal notice</td></tr>\n<tr><th scope=\"row\">Free trial</th><td><span class=\"cm-yes\">Yes</span> 7 days of Premium, offered on the upgrade screen</td></tr>"
+ },
+ {
+  "old": "<p>Pomofocus does not publish the Premium price on its site, and its legal notice only says prices are \"listed on each product page.\" A <a href=\"https://lifestack.ai/blog/pomofocus\" target=\"_blank\" rel=\"nofollow noopener\">third-party review from October 2026</a> lists $3 a month, $18 a year or $54 lifetime, but we could not confirm that on pomofocus.io, so check the upgrade screen before you pay.</p>",
+  "new": "<p>On its upgrade screen, Premium costs $3 a month, $18 a year or $54 for lifetime access, checked on November 9, 2026. Subscriptions renew automatically, and Pomofocus says it notifies you a week before renewal.</p>\n<p>The same screen offers a free 7-day trial, and the legal notice promises a full refund within 7 days of payment. The price is not on the home page, so open Premium from the menu to see the current figures.</p>"
+ },
+ {
+  "old": "<p>Pomofocus does not list the price on its site. A third-party review from October 2026 lists $3 a month, $18 a year or $54 lifetime, which we could not confirm.</p>",
+  "new": "<p>Premium is $3 a month, $18 a year or $54 for lifetime access, as shown on its upgrade screen on November 9, 2026. There is also a free 7-day trial.</p>"
+ },
+ {
+  "old": "\"text\":\"Pomofocus does not list the price on its site. A third-party review from October 2026 lists $3 a month, $18 a year or $54 lifetime, which we could not confirm.\"",
+  "new": "\"text\":\"Premium is $3 a month, $18 a year or $54 for lifetime access, as shown on its upgrade screen on November 9, 2026. There is also a free 7-day trial.\""
+ },
+ {
+  "old": "<p>We could not find the Premium price on any official Pomofocus page, so we name the third-party source for it. We make FOCO, so we say so wherever it appears.</p>",
+  "new": "<p>Premium prices come from the upgrade screen in the menu of the free web version, which we opened without signing in or paying. We make FOCO, so we say so wherever it appears.</p>"
+ },
+ {
+  "old": "<li>Premium pricing is not published on its site, so check the upgrade screen before paying.</li>",
+  "new": "<li>Premium is $3 a month, $18 a year or $54 lifetime, with a free 7-day trial.</li>"
+ }
+]
