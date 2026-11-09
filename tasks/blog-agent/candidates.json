@@ -1388,12 +1388,18 @@
   },
   {
    "name": "Pomofocus",
-   "status": "drafted",
+   "status": "published",
    "proposed_on": "2026-11-09",
    "note": "pomofocus 6,600 SD 30 (brand, navigational). Targets: pomofocus app 170 SD 28, is pomofocus safe 20, review 10, alternative 10. SERP 'pomofocus app': pomofocus.io, MS Store, App Store clones, a Medium post 'Pomofocus App, an ADHDer's best friend?' at #10. No post names Pomofocus.",
    "picked_on": "2026-11-09",
    "post_id": 6043,
-   "slug": "pomofocus-app-review"
+   "slug": "pomofocus-app-review",
+   "published_on": "2026-11-09",
+   "inbound_links": [
+    "pomodoro-for-adhd",
+    "25-minute-timer-adhd",
+    "forest-app-for-adhd"
+   ]
   },
   {
    "name": "HabitKit",
