@@ -524,7 +524,7 @@
     },
     {
       "name": "Cold Turkey",
-      "status": "drafted",
+      "status": "published",
       "proposed_on": "2026-11-09",
       "keywords_us": {
         "cold turkey blocker review": {
@@ -560,7 +560,8 @@
         ]
       },
       "answer": "picked 2026-11-09",
-      "post_id": 6055
+      "post_id": 6055,
+      "published": "2026-11-09"
     },
     {
       "name": "Habitify",
