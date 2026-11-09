@@ -221,10 +221,20 @@
     "focusmate": {
       "name": "Focusmate",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-focusmate.png"
+    },
+    "pomofocus": {
+      "name": "Pomofocus",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-pomofocus.png"
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
   "cards": [
+    {
+      "slug": "pomofocus-app-review",
+      "title": "Pomofocus App Review: A Free Pomodoro Timer for ADHD?",
+      "desc": "A free Pomodoro timer in your browser, with no official phone app. What it does, what Premium costs, and who it suits.",
+      "cat": "reviews"
+    },
     {
       "slug": "joon-app-review",
       "title": "Joon App Review: The ADHD Chore Game for Kids",
