@@ -24,12 +24,15 @@ State lives in `tasks/blog-agent/candidates.json`. Never re-propose anything in 
 
 1. **Find candidates.** Use WebSearch across new ADHD apps and tools in the App Store and Google Play, AppGoblin, Product Hunt, AlternativeTo, and blog or press mentions. Include older apps we have not covered. Vary the queries from day to day.
 2. **Drop what we already cover.** Compare against `https://www.tryfoco.com/post-sitemap.xml`, one request only, since the server has bot protection.
-3. **Check demand and difficulty in Ubersuggest (US, locId 2840).** For each survivor run `keyword_overview` on `<name> app`, `<name> review` and `<name> app review`, plus `serp_analysis` on the best one without `refresh`.
+3. **Check demand and difficulty in Ubersuggest (US, locId 2840).** For each survivor run `keyword_suggestions` on the bare name (one call returns the whole cluster), then `serp_analysis` on the best query a review can win, without `refresh`. Never judge an app on `<name> review` alone: Habitify was skipped at 30 searches for "review" while the name had 1,600 and "habitify habit tracker app" 720 at SD 5 (Adi, 2026-11-09).
+   - **Brand queries** (`<name>`, `<name> app`, `<name> habit tracker app`) mostly go to the official site and stores. Count them as reach, not as the target.
+   - **Questions a review answers** (`review`, `is <name> free`, `<name> price` or `cost`, `<name> vs X`, `<name> alternative`, `is <name> worth it`, `<name> for adhd`) are the target. Add them up.
+   - A long brand query with low SD (like `<name> habit tracker app` at SD 5) counts as a target too.
 4. **Distrust odd numbers.** A name can collide with a common word or a typo ("thruday" shows 165,000 searches because of "Thursday"). Check that the top results are about the app.
 5. **Judge the real competition.** SD alone misleads. Say who holds the top results, and whether any independent review exists.
 6. **Check cannibalization** on the top 3 with the workflow below. If an existing post already answers the query, propose updating it instead of a new post.
 7. **Score each one:**
-   - **Recommended:** at least 50 searches a month and SD up to 30.
+   - **Recommended:** the review questions plus low-SD long brand queries add up to at least 50 searches a month, the main target has SD up to 30, and the brand itself has real demand.
    - **Exception:** under 50 searches, but the app has clear momentum and no independent review ranks. Label it "נפח נמוך" and state the evidence for momentum.
    - Anything else is not proposed.
 8. **Send up to 3 proposals, then stop and wait.** Fewer is fine. If nothing qualifies, say so in one line and do not pad.
