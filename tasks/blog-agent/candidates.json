@@ -1382,15 +1382,18 @@
   },
   {
    "name": "Noisli",
-   "status": "proposed",
+   "status": "skipped",
    "proposed_on": "2026-11-09",
-   "note": "noisli 1,600 SD 40 (brand). Targets: noisli alternative 50 SD 28, websites like noisli 10. SERP for 'noisli alternative': noisli.com, AlternativeTo-type lists, Reddit, Calphii; no ADHD-angle review. No post names Noisli. Angle: alternatives post (SPEC-alternatives)."
+   "note": "noisli 1,600 SD 40 (brand). Targets: noisli alternative 50 SD 28, websites like noisli 10. SERP for 'noisli alternative': noisli.com, AlternativeTo-type lists, Reddit, Calphii; no ADHD-angle review. No post names Noisli. Angle: alternatives post (SPEC-alternatives). Adi picked Pomofocus instead on 2026-11-09."
   },
   {
    "name": "Pomofocus",
-   "status": "proposed",
+   "status": "drafted",
    "proposed_on": "2026-11-09",
-   "note": "pomofocus 6,600 SD 30 (brand, navigational). Targets: pomofocus app 170 SD 28, is pomofocus safe 20, review 10, alternative 10. SERP 'pomofocus app': pomofocus.io, MS Store, App Store clones, a Medium post 'Pomofocus App, an ADHDer's best friend?' at #10. No post names Pomofocus."
+   "note": "pomofocus 6,600 SD 30 (brand, navigational). Targets: pomofocus app 170 SD 28, is pomofocus safe 20, review 10, alternative 10. SERP 'pomofocus app': pomofocus.io, MS Store, App Store clones, a Medium post 'Pomofocus App, an ADHDer's best friend?' at #10. No post names Pomofocus.",
+   "picked_on": "2026-11-09",
+   "post_id": 6043,
+   "slug": "pomofocus-app-review"
   },
   {
    "name": "HabitKit",
