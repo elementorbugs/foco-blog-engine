@@ -1470,6 +1470,29 @@
    "proposed_on": "2026-11-09",
    "revisit_after": "2027-02-01",
    "note": "Product Hunt launch; no Ubersuggest data."
+  },
+  {
+   "name": "Notion Calendar",
+   "status": "proposed",
+   "proposed_on": "2026-11-09",
+   "source": "Adi, toolfinder screenshot",
+   "note": "brand 22,200 SD 42. Targets: notion calendar vs google calendar 170 SD 27, is notion calendar free 90 SD 47, review 50 SD 12, alternative 50 SD 14, is good 40 SD 19, vs apple calendar 30 SD 30. SERP 'notion calendar review': AI overview, video, Reddit, comparison posts, one small 'Review 2026' site at #7. No post mentions Notion Calendar (gap-scan)."
+  },
+  {
+   "name": "Addie",
+   "status": "not_proposed",
+   "proposed_on": "2026-11-09",
+   "revisit_after": "2027-02-01",
+   "source": "Adi, toolfinder screenshot",
+   "note": "'Addie - ADHD Planner Organizer' iOS id6444955141. No Ubersuggest data for 'addie app' or 'addie adhd'."
+  },
+  {
+   "name": "VoiceFirstPlanner",
+   "status": "not_proposed",
+   "proposed_on": "2026-11-09",
+   "revisit_after": "2027-02-01",
+   "source": "Adi, toolfinder screenshot",
+   "note": "No Ubersuggest data, no web mentions found beyond toolfinder."
   }
  ]
 }
