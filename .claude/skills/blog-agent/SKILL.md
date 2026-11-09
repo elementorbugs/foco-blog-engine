@@ -75,7 +75,7 @@ gh workflow run blog-post.yml --ref main -f action=draft -f file=posts-new/post-
 ```
 Use `gh run watch <id> --exit-status`. The last step of a draft or publish run prints what landed in WordPress and fails if images or the cover are missing.
 
-Keep `directory=none` on drafts. The daily App Directory workflow picks up review posts once they are published.
+Keep `directory=none` on drafts. Right after publishing a review, add its card to `app-directory.json` yourself (top of its tab, a real `desc`, and the official icon we uploaded under `apps`), push, and run `gh workflow run app-directory.yml --ref main`. The daily refresh runs at 04:30 UTC, so waiting leaves the post out of the Reviews tab for up to a day, and its App Store icon lookup can pick a same-name clone (Adi, 2026-11-09).
 
 ## If something blocks a run
 Do not retry the same blocked action or look for a way around it. Tell Adi in one line what was blocked and what is still done.
