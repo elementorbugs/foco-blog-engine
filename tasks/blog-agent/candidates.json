@@ -1496,6 +1496,177 @@
       "revisit_after": "2027-02-01",
       "source": "Adi, toolfinder screenshot",
       "note": "No Ubersuggest data, no web mentions found beyond toolfinder."
+    },
+    {
+      "name": "Medisafe",
+      "slug": "medisafe-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-10",
+      "revisit_after": null,
+      "note": "Pill reminder app. Momentum: fully paid outside the US from 2026-01-01 (Medisafe help center), 'medisafe no longer free' searches. Target 'is medisafe free' SD 16. SERP: Facebook, App Store, medisafeapp.com, one old independent review (minimalistjourneys DA 25), circlecare DA 3. gap-scan: no heading collision; 'medication reminder' only in 3 drafts. Review questions ~140/mo + long brand queries 420/mo at SD 11-13. Reddit not scanned (blocked in cloud).",
+      "cluster_us": {
+        "medisafe": [
+          2400,
+          28
+        ],
+        "medisafe pill reminder app": [
+          2900,
+          37
+        ],
+        "medisafe app": [
+          1000,
+          35
+        ],
+        "medisafe meds & pill reminder": [
+          210,
+          11
+        ],
+        "medisafe medication app": [
+          210,
+          13
+        ],
+        "medisafe app review": [
+          30,
+          29
+        ],
+        "is medisafe free": [
+          30,
+          16
+        ],
+        "is medisafe app free": [
+          30,
+          33
+        ],
+        "medisafe alternative": [
+          10,
+          21
+        ],
+        "alternative to medisafe": [
+          10,
+          17
+        ],
+        "medisafe free vs premium": [
+          10,
+          5
+        ],
+        "medisafe no longer free": [
+          10,
+          5
+        ],
+        "medisafe app cost": [
+          10,
+          13
+        ]
+      }
+    },
+    {
+      "name": "Microsoft To Do",
+      "slug": "microsoft-to-do-vs-todoist",
+      "status": "proposed",
+      "proposed_on": "2026-11-10",
+      "revisit_after": null,
+      "note": "Vs post in the existing Todoist-vs series. Target 'microsoft to do vs todoist' 110 SD 12 + 'todoist vs microsoft to do' 140 SD 17. SERP: Reddit, todoist.com, lifestack DA 21, toolfinder DA 38, toolguide DA 6, focuzed DA 13 (SERP data from 2026-09-20). gap-scan: only the generic 'X vs Todoist at a glance' H2 pattern collides. Brand 27,100 at SD 74 is out of reach. Reddit not scanned.",
+      "cluster_us": {
+        "microsoft to do": [
+          27100,
+          74
+        ],
+        "microsoft to do app": [
+          3600,
+          30
+        ],
+        "todoist vs microsoft to do": [
+          140,
+          17
+        ],
+        "microsoft to do vs todoist": [
+          110,
+          12
+        ],
+        "microsoft to do alternative": [
+          90,
+          31
+        ],
+        "microsoft to do alternatives": [
+          70,
+          19
+        ],
+        "microsoft to do review": [
+          70,
+          33
+        ],
+        "microsoft to do vs google tasks": [
+          90,
+          33
+        ],
+        "google tasks vs microsoft to do": [
+          90,
+          16
+        ]
+      }
+    },
+    {
+      "name": "Google Tasks",
+      "slug": "google-tasks-vs-todoist",
+      "status": "proposed",
+      "proposed_on": "2026-11-10",
+      "revisit_after": null,
+      "note": "Target 'google tasks vs todoist' 260 SD 19. SERP is stronger: Reddit, Android Authority DA 91, Motion DA 48, TasksBoard, todoist.com, XDA (SERP data 2026-09-12). Other review questions: reviews 50 SD 18, review 50 SD 42, alternative 70 SD 35, is free 50 SD 28. gap-scan: no heading collision. Reddit not scanned.",
+      "cluster_us": {
+        "google tasks": [
+          49500,
+          41
+        ],
+        "google tasks vs todoist": [
+          260,
+          19
+        ],
+        "google tasks reviews": [
+          50,
+          18
+        ],
+        "google tasks review": [
+          50,
+          42
+        ],
+        "google tasks alternative": [
+          70,
+          35
+        ],
+        "is google tasks free": [
+          50,
+          28
+        ],
+        "is google tasks good": [
+          30,
+          28
+        ],
+        "google tasks vs microsoft to do": [
+          90,
+          16
+        ]
+      }
+    },
+    {
+      "name": "Remember The Milk",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-10",
+      "revisit_after": "2027-02-01",
+      "note": "Brand 1,600 SD 48; review questions ~70/mo, alternative SD 43. vs todoist 30 SD 22 only."
+    },
+    {
+      "name": "Productive habit tracker",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-10",
+      "revisit_after": "2027-02-01",
+      "note": "Brand 320 SD 43; review questions ~50 at 10 each, SD 5, but name collides with the word 'productive'."
+    },
+    {
+      "name": "Pillr / pill-reminder clones",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-10",
+      "revisit_after": "2027-02-01",
+      "note": "Tiny ADHD medication-tracker apps seen in search (Pillr, FocusDose, ADHDose). No Ubersuggest demand checked; covered by a Medisafe post if picked."
     }
   ]
 }
