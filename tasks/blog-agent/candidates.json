@@ -1676,6 +1676,41 @@
       "proposed_on": "2026-11-10",
       "revisit_after": "2027-02-01",
       "note": "Tiny ADHD medication-tracker apps seen in search (Pillr, FocusDose, ADHDose). No Ubersuggest demand checked; covered by a Medisafe post if picked."
+    },
+    {
+      "name": "Lil Planner",
+      "what": "Visual schedule app for kids with ADHD and autism (Space Sweater, LLC), iOS, free with paid tier",
+      "store": "https://apps.apple.com/app/id6448482826",
+      "rating_us": "4.86 from 4,366 (2026-11-10)",
+      "cluster_us": {
+        "lil planner app": [
+          50,
+          31
+        ]
+      },
+      "related": {
+        "visual schedule app": [
+          390,
+          23
+        ],
+        "first then visual schedule app": [
+          170,
+          28
+        ],
+        "visual schedule app autism": [
+          140,
+          31
+        ],
+        "visual schedule app for autism": [
+          110,
+          20
+        ]
+      },
+      "serp": "Only App Store listings, no independent review",
+      "cannibalization": "none (weak heading overlap with /adhd-planner/)",
+      "source": "Adi asked 2026-11-10",
+      "status": "asked",
+      "proposal": "list post 'best visual schedule apps' with Lil Planner first, vs standalone review"
     }
   ]
 }
