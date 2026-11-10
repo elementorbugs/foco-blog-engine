@@ -1,6 +1,6 @@
 [
-  {
-    "old": "<p>Comparing more options? See ",
-    "new": "<p>Comparing more options? Our <a href=\"https://www.tryfoco.com/joon-app-review/\">Joon app review</a> covers a chore game for kids, or see "
-  }
+ {
+  "old": "see our <a href=\"https://www.tryfoco.com/numo-app-review/\">Numo review</a>.</li>",
+  "new": "see our <a href=\"https://www.tryfoco.com/numo-app-review/\">Numo review</a>.</li>\n<li>You want a plain tracker with charts and no pet; see our <a href=\"https://www.tryfoco.com/habitify-review/\">Habitify review</a>.</li>"
+ }
 ]
