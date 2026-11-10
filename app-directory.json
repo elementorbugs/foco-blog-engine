@@ -225,10 +225,21 @@
     "pomofocus": {
       "name": "Pomofocus",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-pomofocus.png"
+    },
+    "habitify": {
+      "name": "Habitify",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-habitify-1.png",
+      "appStoreId": 1111447047
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
   "cards": [
+    {
+      "slug": "habitify-review",
+      "title": "Habitify Review: Habit Tracker App Pros, Cons and Price",
+      "desc": "Habitify is a habit tracker app for iPhone, iPad, Mac, Apple Watch and Android that logs...",
+      "cat": "reviews"
+    },
     {
       "slug": "cold-turkey-blocker-review",
       "title": "Cold Turkey Blocker Review: Strict Blocking for ADHD",
