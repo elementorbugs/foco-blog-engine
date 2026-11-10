@@ -565,7 +565,7 @@
     },
     {
       "name": "Habitify",
-      "status": "drafted",
+      "status": "published",
       "proposed_on": "2026-11-09",
       "keywords_us": {
         "habitify review": {
@@ -606,7 +606,13 @@
       },
       "picked_on": "2026-11-10",
       "post_id": 6068,
-      "slug": "habitify-review"
+      "slug": "habitify-review",
+      "published_on": "2026-11-10",
+      "inbound_links": [
+        "habitica-review",
+        "finch-app-review",
+        "adhd-habit-tracker-printable"
+      ]
     },
     {
       "name": "RescueTime",
