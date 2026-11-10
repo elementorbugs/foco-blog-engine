@@ -565,7 +565,7 @@
     },
     {
       "name": "Habitify",
-      "status": "proposed",
+      "status": "drafted",
       "proposed_on": "2026-11-09",
       "keywords_us": {
         "habitify review": {
@@ -603,7 +603,10 @@
           20,
           13
         ]
-      }
+      },
+      "picked_on": "2026-11-10",
+      "post_id": 6068,
+      "slug": "habitify-review"
     },
     {
       "name": "RescueTime",
