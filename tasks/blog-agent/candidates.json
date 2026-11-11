@@ -1750,8 +1750,11 @@
    "target_total": "~1,200 review-intent searches",
    "serp": "brainway review: Google Play, then theliven.com 'Brainway vs Liven' (a competitor's page). No independent review.",
    "cannibalization": "none (#4315 best-apps-for-adhd-task-paralysis has a generic anti-procrastination H3)",
-   "status": "proposed",
-   "proposed_on": "2026-11-11"
+   "status": "drafted",
+   "proposed_on": "2026-11-11",
+   "picked_on": "2026-11-11",
+   "post_id": 6079,
+   "slug": "brainway-app-review"
   },
   {
    "name": "MellowFlow",
@@ -1795,7 +1798,8 @@
    "cannibalization": "none",
    "risk": "Name shared with other apps (an ADHD Sound App and Play 'Calm mind daily'); confirm which is the mellowflow.app product before writing.",
    "status": "proposed",
-   "proposed_on": "2026-11-11"
+   "proposed_on": "2026-11-11",
+   "adi_answer": "not picked 2026-11-11 (chose Brainway)"
   },
   {
    "name": "Goally",
@@ -1835,7 +1839,8 @@
    "cannibalization": "none (visual schedule mentioned in /adhd-transitions/, /time-blindness-adhd/)",
    "note": "Fits with Lil Planner (asked 2026-11-10) in a 'best visual schedule apps' list.",
    "status": "proposed",
-   "proposed_on": "2026-11-11"
+   "proposed_on": "2026-11-11",
+   "adi_answer": "not picked 2026-11-11 (chose Brainway)"
   },
   {
    "name": "Choiceworks",
