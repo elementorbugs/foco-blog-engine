@@ -230,10 +230,21 @@
       "name": "Habitify",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-habitify-1.png",
       "appStoreId": 1111447047
+    },
+    "brainway": {
+      "name": "Brainway",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-brainway.png",
+      "appStoreId": 6450369743
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
   "cards": [
+    {
+      "slug": "brainway-app-review",
+      "title": "Brainway App Review: Price, Pros, Cons and ADHD Fit",
+      "desc": "Brainway is a subscription app that charts how your habits, sleep and mood line up with...",
+      "cat": "reviews"
+    },
     {
       "slug": "habitify-review",
       "title": "Habitify Review: Habit Tracker App Pros, Cons and Price",
