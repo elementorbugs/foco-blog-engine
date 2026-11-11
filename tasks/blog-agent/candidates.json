@@ -1750,11 +1750,17 @@
    "target_total": "~1,200 review-intent searches",
    "serp": "brainway review: Google Play, then theliven.com 'Brainway vs Liven' (a competitor's page). No independent review.",
    "cannibalization": "none (#4315 best-apps-for-adhd-task-paralysis has a generic anti-procrastination H3)",
-   "status": "drafted",
+   "status": "published",
    "proposed_on": "2026-11-11",
    "picked_on": "2026-11-11",
    "post_id": 6079,
-   "slug": "brainway-app-review"
+   "slug": "brainway-app-review",
+   "published_on": "2026-11-11",
+   "inbound_links": [
+    "liven-app-review",
+    "wisey-app-review",
+    "best-apps-for-adhd-task-paralysis"
+   ]
   },
   {
    "name": "MellowFlow",
