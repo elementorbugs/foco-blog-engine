@@ -655,7 +655,7 @@
     },
     {
       "name": "Flow Club",
-      "status": "drafted",
+      "status": "published",
       "proposed_on": "2026-11-09",
       "keywords_us": {
         "flow club review": {
@@ -696,7 +696,13 @@
       },
       "picked_on": "2026-11-12",
       "post_id": 6090,
-      "slug": "flow-club-review"
+      "slug": "flow-club-review",
+      "published_on": "2026-11-12",
+      "inbound_links": [
+        "focusmate-review",
+        "body-doubling-adhd",
+        "how-to-focus-with-adhd"
+      ]
     },
     {
       "name": "Flown",
