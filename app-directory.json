@@ -235,10 +235,27 @@
       "name": "Brainway",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-brainway.png",
       "appStoreId": 6450369743
+    },
+    "things-3": {
+      "name": "Things 3",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-things-3-1.png",
+      "appStoreId": 904237743
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
   "cards": [
+    {
+      "slug": "flow-club-review",
+      "title": "Flow Club Review: Body Doubling Sessions for ADHD",
+      "desc": "Flow Club is a paid virtual coworking service where small groups work together on video.",
+      "cat": "reviews"
+    },
+    {
+      "slug": "things-3-review",
+      "title": "Things 3 Review: Price, Pros and Cons for ADHD",
+      "desc": "Things 3 is a to-do app for Apple devices only, bought once per device type with no...",
+      "cat": "reviews"
+    },
     {
       "slug": "brainway-app-review",
       "title": "Brainway App Review: Price, Pros, Cons and ADHD Fit",
