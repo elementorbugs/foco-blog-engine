@@ -240,10 +240,21 @@
       "name": "Things 3",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-things-3-1.png",
       "appStoreId": 904237743
+    },
+    "appblock": {
+      "name": "AppBlock",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-appblock.png",
+      "appStoreId": 1515753232
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
   "cards": [
+    {
+      "slug": "appblock-review",
+      "title": "AppBlock Review: Is the App Blocker Free and Safe?",
+      "desc": "AppBlock blocks phone apps and sites by schedule, limit or location, with a Strict Mode that is hard to undo.",
+      "cat": "reviews"
+    },
     {
       "slug": "flow-club-review",
       "title": "Flow Club Review: Body Doubling Sessions for ADHD",
