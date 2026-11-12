@@ -1886,6 +1886,156 @@
       "proposed_on": "2026-11-11",
       "revisit_after": "2027-02-01",
       "note": "'sukha app' 30 SD 38, nothing else."
+    },
+    {
+      "name": "AppBlock",
+      "status": "proposed",
+      "proposed_on": "2026-11-12",
+      "keywords_us": {
+        "appblock": {
+          "volume": 4400,
+          "sd": 37
+        },
+        "appblock app": {
+          "volume": 4400,
+          "sd": 31
+        },
+        "appblock free": {
+          "volume": 480,
+          "sd": 28
+        },
+        "is appblock safe": {
+          "volume": 110,
+          "sd": 29
+        },
+        "is appblock free": {
+          "volume": 90,
+          "sd": 23
+        },
+        "appblock reviews": {
+          "volume": 70,
+          "sd": 27
+        },
+        "appblock review": {
+          "volume": 50,
+          "sd": 26
+        },
+        "appblock premium": {
+          "volume": 40,
+          "sd": 28
+        }
+      },
+      "note": "Review questions ~360/mo (+480 'appblock free'), SD 23-29. SERP for 'appblock review': Reddit, official site, stores, a critical Medium piece, unhookd.app (DA 8, a competitor). No strong independent review. Cannibalization: none; only passing 'app block' mentions."
+    },
+    {
+      "name": "Foqos",
+      "status": "proposed",
+      "proposed_on": "2026-11-12",
+      "keywords_us": {
+        "foqos": {
+          "volume": 2400,
+          "sd": 30
+        },
+        "foqos app": {
+          "volume": 720,
+          "sd": 35
+        },
+        "foqos android": {
+          "volume": 170,
+          "sd": 26
+        },
+        "foqos vs brick": {
+          "volume": 140,
+          "sd": 18
+        },
+        "is foqos safe": {
+          "volume": 30,
+          "sd": 29
+        },
+        "foqos review": {
+          "volume": 30,
+          "sd": 33
+        },
+        "foqos alternative for android": {
+          "volume": 30,
+          "sd": 18
+        },
+        "brick vs foqos": {
+          "volume": 30,
+          "sd": 28
+        }
+      },
+      "note": "Free open-source iPhone blocker that uses NFC tags or QR codes. Review questions ~260/mo, main target 'foqos vs brick' SD 18. SERP: Reddit, foqos.app, dormtherapy, PCMag explainer, habitdoom. Not covered anywhere on the site; brick/opal/bloom reviews have 'X vs Brick' H2s to trim to one line + link."
+    },
+    {
+      "name": "Caveday",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-12",
+      "revisit_after": "2027-02-01",
+      "note": "Brand 880 SD 27 but review queries only 'caveday reviews' 30 SD 36."
+    },
+    {
+      "name": "Loop Habit Tracker",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-12",
+      "revisit_after": "2027-02-01",
+      "note": "Brand 1,300 SD 49; review questions near zero."
+    },
+    {
+      "name": "HabitNow",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-12",
+      "revisit_after": "2027-02-01",
+      "note": "Brand 720 SD 41; review questions zero."
+    },
+    {
+      "name": "StayFree",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-12",
+      "revisit_after": "2027-02-01",
+      "note": "'is stayfree app safe' 110 SD 36, review 30 SD 43. SD too high."
+    },
+    {
+      "name": "Stay Focused",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-12",
+      "revisit_after": "2027-02-01",
+      "note": "'stay focused app' 320 SD 60, generic phrase."
+    },
+    {
+      "name": "Lock Me Out",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-12",
+      "revisit_after": "2027-02-01",
+      "note": "Brand 880 SD 28, no review questions."
+    },
+    {
+      "name": "Rise Science",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-12",
+      "revisit_after": "2027-02-01",
+      "note": "'rise science app' 110 SD 52, off-niche (sleep)."
+    },
+    {
+      "name": "Meowchi",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-12",
+      "revisit_after": "2027-02-01",
+      "note": "ADHD focus timer, but 'meowchi' volume is a plush toy."
+    },
+    {
+      "name": "ADHD Thrive",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-12",
+      "revisit_after": "2027-02-01",
+      "note": "No US search volume."
+    },
+    {
+      "name": "Zelmwell",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-12",
+      "revisit_after": "2027-02-01",
+      "note": "No US search volume."
     }
   ]
 }
