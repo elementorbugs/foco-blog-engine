@@ -26,7 +26,7 @@ const internal = links.filter(m => /tryfoco\.com/.test(m[1])), external = links.
 internal.forEach(m => { const u = m[1].split('#')[0].replace(/\/?$/, '/'); if (u !== 'https://www.tryfoco.com/' && !live.has(u)) errs.push('internal link not live: ' + m[1]); });
 if (internal.length < 4) errs.push('fewer than 4 internal links (' + internal.length + ')');
 if (external.length < 3) errs.push('fewer than 3 external links (' + external.length + ')');
-const authority = /nimh\.nih\.gov|chadd\.org|russellbarkley\.org|\.gov\/|\.edu\/|\.ac\.uk\/|pubmed|ncbi\.nlm/;
+const authority = /nimh\.nih\.gov|chadd\.org|russellbarkley\.org|\.gov\/|\.edu\/|\.ac\.uk\/|dl\.acm\.org\/doi|pubmed|ncbi\.nlm/;
 // "Watch on YouTube" captions under embeds link to our own channel's videos (embed-ranking-videos.js), so no nofollow
 const ownVideo = /youtube\.com\/watch\?v=/;
 external.forEach(m => { const tag = m[0]; const isAuth = authority.test(m[1]); if (!isAuth && !ownVideo.test(m[1]) && !/nofollow/.test(tag)) errs.push('competitor link without nofollow: ' + m[1]); if (!/target="_blank"/.test(tag) || !/noopener/.test(tag)) warns.push('external link missing target/noopener: ' + m[1]); });
