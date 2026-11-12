@@ -422,7 +422,7 @@
     },
     {
       "name": "Things 3",
-      "status": "drafted",
+      "status": "published",
       "proposed_on": "2026-11-09",
       "keywords_us": {
         "things 3 review": {
@@ -467,7 +467,13 @@
       },
       "picked_on": "2026-11-12",
       "post_id": 6099,
-      "slug": "things-3-review"
+      "slug": "things-3-review",
+      "published_on": "2026-11-12",
+      "inbound_links": [
+        "todoist-vs-ticktick",
+        "todoist-alternatives",
+        "ticktick-alternative"
+      ]
     },
     {
       "name": "Any.do",
