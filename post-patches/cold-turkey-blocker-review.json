@@ -1,14 +1,6 @@
 [
  {
-  "old": "The free version costs nothing and has no time limit. Blocker Pro",
-  "new": "The free version costs nothing. Blocker Pro"
- },
- {
-  "old": "<p>It is sold directly by Cold Turkey Software,",
-  "new": "<p>It is made by Cold Turkey Software and sold through its own site,"
- },
- {
-  "old": "\"text\":\"It is sold directly by Cold Turkey Software,",
-  "new": "\"text\":\"It is made by Cold Turkey Software and sold through its own site,"
+  "old": "<a href=\"https://www.tryfoco.com/brick-app-review/\">Brick</a> and <a href=\"https://www.tryfoco.com/bloom-app-blocker-review/\">Bloom</a>.",
+  "new": "<a href=\"https://www.tryfoco.com/brick-app-review/\">Brick</a>, <a href=\"https://www.tryfoco.com/bloom-app-blocker-review/\">Bloom</a> and <a href=\"https://www.tryfoco.com/appblock-review/\">AppBlock</a>."
  }
 ]
