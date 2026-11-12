@@ -422,7 +422,7 @@
     },
     {
       "name": "Things 3",
-      "status": "proposed",
+      "status": "drafted",
       "proposed_on": "2026-11-09",
       "keywords_us": {
         "things 3 review": {
@@ -464,7 +464,10 @@
           30,
           25
         ]
-      }
+      },
+      "picked_on": "2026-11-12",
+      "post_id": 6099,
+      "slug": "things-3-review"
     },
     {
       "name": "Any.do",
