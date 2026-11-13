@@ -148,6 +148,10 @@ jobs:
         if: inputs.action == 'draft' || inputs.action == 'publish' || inputs.action == 'patch'
         run: |
           slug="$(basename "$POST_FILE" .html)"
+          # A batch patch file (an object keyed by slug) has no single post to check.
+          if [ "$ACTION" = "patch" ] && node -e "process.exit(Array.isArray(require('./post-patches/${slug#post-}.json')) ? 1 : 0)"; then
+            echo "Batch patch: skipping the single-post check."; exit 0
+          fi
           node scripts/check-post.js "${slug#post-}"
 
       - name: Fetch post into the repo
