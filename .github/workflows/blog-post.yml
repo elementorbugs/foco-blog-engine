@@ -142,6 +142,13 @@ jobs:
         if: inputs.action == 'patch'
         run: |
           slug="$(basename "$POST_FILE" .html)"
+          pf="post-patches/${slug#post-}.json"
+          # {{media:<file>}} in a patch: upload post-media/<slug>/<file> and swap in the URL first.
+          if grep -q '{{media' "$pf"; then
+            cp "$pf" "/tmp/${slug}.html"
+            node scripts/upload-post-media.js "/tmp/${slug}.html"
+            cp "/tmp/${slug}.html" "$pf"
+          fi
           node scripts/patch-post.js "${slug#post-}"
 
       - name: Check the result in WordPress
