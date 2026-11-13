@@ -2040,6 +2040,169 @@
       "proposed_on": "2026-11-12",
       "revisit_after": "2027-02-01",
       "note": "No US search volume."
+    },
+    {
+      "name": "Forest",
+      "slug": "forest-app-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-13",
+      "revisit_after": null,
+      "keywords_us": {
+        "forest app": {
+          "volume": 4400,
+          "sd": 57
+        },
+        "forest app for adhd": {
+          "volume": 140,
+          "sd": 5
+        },
+        "forest app adhd": {
+          "volume": 50,
+          "sd": 41
+        },
+        "forest app review": {
+          "volume": 50,
+          "sd": 36
+        },
+        "is forest app free": {
+          "volume": 40,
+          "sd": 30
+        },
+        "is the forest app free": {
+          "volume": 30,
+          "sd": 30
+        },
+        "forest app price": {
+          "volume": 40,
+          "sd": 40
+        },
+        "forest app cost": {
+          "volume": 40,
+          "sd": 40
+        },
+        "forest app alternative": {
+          "volume": 30,
+          "sd": 24
+        }
+      },
+      "note": "Recommended. Review questions ~420/mo; main target 'forest app for adhd' 140 at SD 5. SERP (Ubersuggest 2026-11-13): Google Play, Reddit r/GetStudying, Chrome Web Store; no independent review. gap-scan: draft #2216 /forest-app-alternative/ (alternative intent, keep separate, trim 'Is Forest actually bad for ADHD?' to a line + link) and /forest-vs-flora/ live."
+    },
+    {
+      "name": "Notion (for ADHD)",
+      "slug": "notion-for-adhd",
+      "status": "proposed",
+      "proposed_on": "2026-11-13",
+      "revisit_after": null,
+      "keywords_us": {
+        "notion for adhd": {
+          "volume": 140,
+          "sd": 20
+        },
+        "notion for adhd reddit": {
+          "volume": 10,
+          "sd": 5
+        }
+      },
+      "note": "Proposed as UPDATE of existing draft #2189 /notion-for-adhd/ (gap-scan 100% match), not a new post. SERP: notion.com templates, Reddit, YouTube, two tiny blogs (DA 15, DA 3). Notion is broad; target the ADHD query only."
+    },
+    {
+      "name": "Flora",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-13",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "flora app": {
+          "volume": 1000,
+          "sd": 36
+        },
+        "flora app review": {
+          "volume": 40,
+          "sd": 24
+        }
+      },
+      "note": "flora app review 40 SD 24, is flora app free 30; under 50 and /forest-vs-flora/ already covers the overlap."
+    },
+    {
+      "name": "Yeolpumta (YPT)",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-13",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "yeolpumta": {
+          "volume": 480,
+          "sd": 28
+        }
+      },
+      "note": "Brand 480 SD 28 but no review/price questions in the cluster; study app, weak ADHD fit."
+    },
+    {
+      "name": "Timestripe",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-13",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "timestripe": {
+          "volume": 390,
+          "sd": 46
+        }
+      },
+      "note": "Brand 390 SD 46, no review questions; not ADHD-specific."
+    },
+    {
+      "name": "Dayzen",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-13",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "Found via Product Hunt visual timeboxing. No measurable US search volume in Ubersuggest."
+    },
+    {
+      "name": "Lunar: ADHD & Period Tracker",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-13",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "Found via AlternativeTo. No measurable US search volume in Ubersuggest."
+    },
+    {
+      "name": "Orbit: ADHD Time Tracker",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-13",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "Found via Product Hunt. No measurable US search volume in Ubersuggest."
+    },
+    {
+      "name": "Nudge ADHD Planner",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-13",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "Found via Google Play / hunted.space. No measurable US search volume in Ubersuggest."
+    },
+    {
+      "name": "Squirrel ADHD Task Manager",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-13",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "Found via Google Play. No measurable US search volume in Ubersuggest."
+    },
+    {
+      "name": "FocusFlow ADHD Organizer",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-13",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "Found via Google Play. No measurable US search volume in Ubersuggest."
+    },
+    {
+      "name": "Speechify (ADHD angle)",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-13",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "'speechify adhd' has no volume; reading tool, off-niche."
     }
   ]
 }
