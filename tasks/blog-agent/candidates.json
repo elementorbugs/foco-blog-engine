@@ -2231,7 +2231,7 @@
     {
       "name": "Plexii (PlexiiDesk)",
       "slug": "plexii-review",
-      "status": "drafted",
+      "status": "published",
       "proposed_on": "2026-11-13",
       "revisit_after": null,
       "keywords_us": {
@@ -2243,7 +2243,9 @@
         }
       },
       "note": "Asked for by Adi. No measurable US search volume yet; desktop app (Mac/Windows), no app store listing, no independent reviews. Draft #6191.",
-      "post_id": 6191
+      "post_id": 6191,
+      "published_on": "2026-11-13",
+      "url": "https://www.tryfoco.com/plexii-review/"
     }
   ]
 }
