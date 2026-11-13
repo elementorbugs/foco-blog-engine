@@ -44,7 +44,7 @@ def band(n, total):
     return (f'<div class="band"><img src="{ICON}" alt=""/><div class="bt"><b>Can\'t start?</b> FOCO breaks the task into tiny timed steps.</div>'
             f'<a class="bbtn" href="{GET("footer-p%d" % n)}">Get FOCO</a><span class="pn">{n} / {total}</span></div>')
 def head():
-    return f'<div class="head"><span>The ADHD App List · November 2026</span><a href="{LIVE}">Latest version: tryfoco.com/best-adhd-app</a></div>'
+    return f'<div class="head"><span>ADHD Apps List · November 2026</span><a href="{LIVE}">Latest version: tryfoco.com/best-adhd-app</a></div>'
 
 rows = [('FOCO', GET('table-foco'), '$59/year with a 7-day free trial, or $9/month', 'Starting the task you keep putting off (the app we make)', 'iPhone, Android', ICON, True)]
 for n in sorted(reviews, key=str.lower):
@@ -58,7 +58,7 @@ pages = []
 # Page 1: cover + 60 seconds
 pages.append(f'''<section class="page">{head()}<div class="body">
 <div class="kicker">Free guide · Updated November 2026</div>
-<h1>The ADHD App List</h1>
+<h1>ADHD Apps List</h1>
 <p class="sub">40 apps we reviewed, matched to the part of your day they help with.</p>
 <p class="intro">There is no single best ADHD app. Find the line that sounds like you on page 2, then use the table to compare price and platforms. Every app name links to our full review.</p>
 <ul class="inside"><li><b>Page 2:</b> Which app fits you?</li><li><b>Pages 3 to {2 + len(chunks)}:</b> All 40 apps compared</li><li><b>Page {TOTAL}:</b> FOCO, the app we make</li></ul>
@@ -117,6 +117,6 @@ td.app{display:flex;gap:8px;align-items:center;width:2.6in}td.app img{width:26px
 .cta{display:flex;gap:20px;align-items:center;border:1.5px solid #DDD3F7;border-radius:18px;padding:16px 20px;background:#FAF7FF}.ctl{flex:1}.price{font-weight:800;font-size:16px;color:#160F22}.plat{font-size:12px;color:#625A78;margin:2px 0 10px}
 .store{display:inline-block;background:#160F22;color:#fff!important;font-weight:700;font-size:12px;padding:9px 14px;border-radius:10px;margin:0 6px 6px 0}
 .qr{text-align:center;font-size:10px;color:#625A78;width:1.5in}.qr img{width:1.15in;height:1.15in;display:block;margin:0 auto 6px}'''
-doc = f'<!doctype html><html><head><meta charset="utf-8"><title>The ADHD App List 2026 - FOCO</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"><style>{CSS}</style></head><body>{"".join(pages)}</body></html>'
+doc = f'<!doctype html><html><head><meta charset="utf-8"><title>ADHD Apps List 2026: 40 Apps Compared by Need</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"><style>{CSS}</style></head><body>{"".join(pages)}</body></html>'
 open(os.path.join(D, 'adhd-app-list.html'), 'w').write(doc)
 print('pages', TOTAL, 'rows', len(rows))
