@@ -18,7 +18,7 @@ PLAY = 'https://play.google.com/store/apps/details?id=com.adiben.foco'
 LIVE = utm(f'{SITE}/best-adhd-app/', 'live-version')
 rv = lambda name: utm(f'{SITE}/{reviews[name]["slug"]}/', 'review')
 b64 = lambda p, mime: f'data:{mime};base64,' + base64.b64encode(open(os.path.join(D, p), 'rb').read()).decode()
-ICON = b64('icon-foco.png', 'image/png'); SHOT = b64('foco-screens.jpg', 'image/jpeg'); QR = b64('qr.svg', 'image/svg+xml')
+ICON = b64('icon-foco-sm.png', 'image/png'); SHOT = b64('foco-screens-sm.jpg', 'image/jpeg'); QR = b64('qr.svg', 'image/svg+xml')
 
 # need, text, [(link label, url)], ours
 PICKS = [
@@ -49,7 +49,7 @@ def head():
 rows = [('FOCO', GET('table-foco'), '$59/year with a 7-day free trial, or $9/month', 'Starting the task you keep putting off (the app we make)', 'iPhone, Android', ICON, True)]
 for n in sorted(reviews, key=str.lower):
     r = reviews[n]; p, pl = SHORT[n]
-    rows.append((n, rv(n), p, r.get('Best for') or BEST[n], pl, r['icon'], False))
+    rows.append((n, rv(n), p, r.get('Best for') or BEST[n], pl, b64('icons/' + r['slug'] + '.png', 'image/png'), False))
 PER = 14
 chunks = [rows[i:i + PER] for i in range(0, len(rows), PER)]
 TOTAL = 3 + len(chunks)
