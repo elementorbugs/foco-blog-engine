@@ -1,0 +1,20 @@
+{
+ "body-doubling-adhd": [
+  {
+   "old": "<h2>FAQ</h2>",
+   "new": "<p>Want body doubling built into the place you already work? Plexii, a desktop workspace, pairs members on camera, and our <a href=\"https://www.tryfoco.com/plexii-review/\">Plexii review</a> covers how it works.</p>\n\n<h2>FAQ</h2>"
+  }
+ ],
+ "focusmate-review": [
+  {
+   "old": "<h2>FAQ</h2>",
+   "new": "<p>Prefer body doubling inside your work app? Our <a href=\"https://www.tryfoco.com/plexii-review/\">Plexii review</a> covers a Mac and Windows workspace that pairs members on camera.</p>\n\n<h2>FAQ</h2>"
+  }
+ ],
+ "saner-ai-review": [
+  {
+   "old": "<h2>FAQ</h2>",
+   "new": "<p>Want a desktop workspace where the AI cites your own files? See our <a href=\"https://www.tryfoco.com/plexii-review/\">Plexii review</a>.</p>\n\n<h2>FAQ</h2>"
+  }
+ ]
+}
