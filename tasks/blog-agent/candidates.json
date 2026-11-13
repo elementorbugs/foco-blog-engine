@@ -2227,6 +2227,23 @@
         }
       },
       "note": "From saner.ai best-adhd-apps list (Adi link, 2026-11-13). 'headspace for adhd' no measurable volume; meditation, off-niche."
+    },
+    {
+      "name": "Plexii (PlexiiDesk)",
+      "slug": "plexii-review",
+      "status": "drafted",
+      "proposed_on": "2026-11-13",
+      "revisit_after": null,
+      "keywords_us": {
+        "plexii": {
+          "volume": 0
+        },
+        "plexiidesk": {
+          "volume": 0
+        }
+      },
+      "note": "Asked for by Adi. No measurable US search volume yet; desktop app (Mac/Windows), no app store listing, no independent reviews. Draft #6191.",
+      "post_id": 6191
     }
   ]
 }
