@@ -245,10 +245,20 @@
       "name": "AppBlock",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-appblock.png",
       "appStoreId": 1515753232
+    },
+    "plexii": {
+      "name": "Plexii",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-plexii.png"
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
   "cards": [
+    {
+      "slug": "plexii-review",
+      "title": "Plexii Review: A Desktop Workspace With ADHD Focus Tools",
+      "desc": "Plexii gives each task on your Mac or PC its own desk, with a five-minute start, focus timers and live body doubling.",
+      "cat": "reviews"
+    },
     {
       "slug": "appblock-review",
       "title": "AppBlock Review: Is the App Blocker Free and Safe?",
