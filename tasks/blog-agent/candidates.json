@@ -2085,7 +2085,7 @@
           "sd": 24
         }
       },
-      "note": "Recommended. Review questions ~420/mo; main target 'forest app for adhd' 140 at SD 5. SERP (Ubersuggest 2026-11-13): Google Play, Reddit r/GetStudying, Chrome Web Store; no independent review. gap-scan: draft #2216 /forest-app-alternative/ (alternative intent, keep separate, trim 'Is Forest actually bad for ADHD?' to a line + link) and /forest-vs-flora/ live."
+      "note": "Recommended. Review questions ~420/mo; main target 'forest app for adhd' 140 at SD 5. SERP (Ubersuggest 2026-11-13): Google Play, Reddit r/GetStudying, Chrome Web Store; no independent review. gap-scan: draft #2216 /forest-app-alternative/ (alternative intent, keep separate, trim 'Is Forest actually bad for ADHD?' to a line + link) and /forest-vs-flora/ live. Also a pick (#8) on saner.ai/best-adhd-apps (Adi link)."
     },
     {
       "name": "Notion (for ADHD)",
@@ -2203,6 +2203,30 @@
       "revisit_after": "2027-02-01",
       "keywords_us": {},
       "note": "'speechify adhd' has no volume; reading tool, off-niche."
+    },
+    {
+      "name": "Obsidian",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-13",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "obsidian for adhd": {
+          "volume": 20
+        }
+      },
+      "note": "From saner.ai best-adhd-apps list (Adi link, 2026-11-13). 'obsidian for adhd' 20/mo SD 14; note app, weak ADHD intent."
+    },
+    {
+      "name": "Headspace",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-13",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "headspace for adhd": {
+          "volume": 0
+        }
+      },
+      "note": "From saner.ai best-adhd-apps list (Adi link, 2026-11-13). 'headspace for adhd' no measurable volume; meditation, off-niche."
     }
   ]
 }
