@@ -2491,6 +2491,39 @@
       "status": "rejected",
       "reason": "no search demand for the app",
       "proposed_on": "2026-11-14"
+    },
+    {
+      "name": "Best procrastination apps (list)",
+      "cluster_us": {
+        "procrastination app": [
+          480,
+          40
+        ],
+        "best procrastination app": [
+          210,
+          32
+        ],
+        "anti procrastination app": [
+          210,
+          38
+        ],
+        "best app for procrastination": [
+          170,
+          42
+        ],
+        "best apps for procrastination": [
+          170,
+          38
+        ]
+      },
+      "serp": "theliven.com listicle #1 (DA40), reddit, habitdoom, digitaltrends, routinery blog",
+      "status": "drafted",
+      "post_id": 6239,
+      "slug": "best-procrastination-apps",
+      "todo_on_publish": [
+        "rename H3 in best-apps-for-adhd-task-paralysis",
+        "inbound links from forest, opal, cold-turkey, focusmate, structured, brainway, liven, wisey, chillio reviews"
+      ]
     }
   ]
 }
