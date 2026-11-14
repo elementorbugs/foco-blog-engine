@@ -2543,6 +2543,36 @@
         "review Freedom",
         "review one sec"
       ]
+    },
+    {
+      "name": "Freedom",
+      "what": "Cross-device app and website blocker (Eighty Percent Solutions)",
+      "cluster_us": {
+        "freedom app review": [
+          110,
+          22
+        ],
+        "freedom app blocker": [
+          1600,
+          49
+        ],
+        "freedom.to app": [
+          3600,
+          58
+        ],
+        "freedom.to coupon code": [
+          880,
+          16
+        ],
+        "freedom procrastination app": [
+          70,
+          14
+        ]
+      },
+      "status": "drafted",
+      "picked_on": "2026-11-14",
+      "post_id": 6260,
+      "slug": "freedom-app-review"
     }
   ]
 }
