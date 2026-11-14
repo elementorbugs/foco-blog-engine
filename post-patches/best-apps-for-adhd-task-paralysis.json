@@ -1,6 +1,14 @@
 [
  {
-  "old": "covers a voice-first option.</p>",
-  "new": "covers a voice-first option.</p>\n<p>Want to see which habits line up with your worst procrastination days? Our <a href=\"https://www.tryfoco.com/brainway-app-review/\">Brainway review</a> covers a tracker with short lessons.</p>"
+  "old": "<h3>What's the best anti-procrastination app for ADHD?</h3>",
+  "new": "<h3>What's the best app when ADHD procrastination is really task paralysis?</h3>"
+ },
+ {
+  "old": "\"name\":\"What's the best anti-procrastination app for ADHD?\"",
+  "new": "\"name\":\"What's the best app when ADHD procrastination is really task paralysis?\""
+ },
+ {
+  "old": "addresses the underlying pattern rather than one task at a time.</p>",
+  "new": "addresses the underlying pattern rather than one task at a time.</p>\n<p>For general procrastination, not freezing, see our list of the <a href=\"https://www.tryfoco.com/best-procrastination-apps/\">best procrastination apps</a>.</p>"
  }
 ]
