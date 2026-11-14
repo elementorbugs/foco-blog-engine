@@ -2436,10 +2436,16 @@
         ]
       },
       "proposed_on": "2026-11-14",
-      "status": "drafted",
+      "status": "published",
       "picked_on": "2026-11-14",
       "post_id": 6226,
-      "slug": "elevate-app-review"
+      "slug": "elevate-app-review",
+      "published_on": "2026-11-14",
+      "inbound_links": [
+        "working-memory-adhd",
+        "brainway-app-review",
+        "brain-fm-review"
+      ]
     },
     {
       "name": "Sweepy",
