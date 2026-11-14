@@ -287,6 +287,12 @@
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
   "cards": [
     {
+      "slug": "mellow-flow-app-review",
+      "title": "Mellow Flow App Review: Price, Refunds and Who It Fits",
+      "desc": "Short answer: MellowFlow (also written Mellow Flow) is a web program of short lessons based on...",
+      "cat": "reviews"
+    },
+    {
       "slug": "one-sec-app-review",
       "title": "one sec App Review: Does a Pause Beat a Blocker?",
       "desc": "one sec is a screen time app that adds a short pause, like a deep breath, before a distracting...",
