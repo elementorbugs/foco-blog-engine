@@ -2369,6 +2369,56 @@
       "proposed_on": "2026-11-14",
       "revisit_after": "2027-02-01",
       "note": "70/mo SD 17, nothing else in cluster. Could join the Todoist vs series later."
+    },
+    {
+      "name": "Dubbii",
+      "what": "Body doubling app by ADHD Love: live hosted sessions, focus room, cleaning videos",
+      "cluster_us": {
+        "dubbii": [
+          720,
+          29
+        ],
+        "dubbii app": [
+          320,
+          30
+        ],
+        "dubbii body doubling app": [
+          260,
+          31
+        ],
+        "dubbii app cost": [
+          40,
+          29
+        ],
+        "dubbii app review": [
+          30,
+          29
+        ]
+      },
+      "proposed_on": "2026-11-14",
+      "status": "drafted",
+      "picked_on": "2026-11-14",
+      "post_id": 6206,
+      "slug": "dubbii-review"
+    },
+    {
+      "name": "Elevate",
+      "cluster_us": {
+        "elevate app review": [
+          590,
+          29
+        ],
+        "is elevate app free": [
+          430,
+          27
+        ],
+        "elevate app cost": [
+          260,
+          20
+        ]
+      },
+      "proposed_on": "2026-11-14",
+      "status": "proposed"
     }
   ]
 }
