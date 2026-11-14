@@ -2517,13 +2517,27 @@
         ]
       },
       "serp": "theliven.com listicle #1 (DA40), reddit, habitdoom, digitaltrends, routinery blog",
-      "status": "drafted",
+      "status": "published",
       "post_id": 6239,
       "slug": "best-procrastination-apps",
       "todo_on_publish": [
         "rename H3 in best-apps-for-adhd-task-paralysis",
         "inbound links from forest, opal, cold-turkey, focusmate, structured, brainway, liven, wisey, chillio reviews"
-      ]
+      ],
+      "published_on": "2026-11-14",
+      "inbound_links": [
+        "forest-app-for-adhd",
+        "opal-app-review",
+        "cold-turkey-blocker-review",
+        "focusmate-review",
+        "structured-app-review",
+        "brainway-app-review",
+        "liven-app-review",
+        "wisey-app-review",
+        "chillio-app-review",
+        "best-apps-for-adhd-task-paralysis"
+      ],
+      "competitor_seen": "adhd-founder.com/blog/best-apps-procrastination-founders-2026 (10 apps, no prices, unsourced 42% stat)"
     }
   ]
 }
