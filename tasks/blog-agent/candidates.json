@@ -2569,10 +2569,16 @@
           14
         ]
       },
-      "status": "drafted",
+      "status": "published",
       "picked_on": "2026-11-14",
       "post_id": 6260,
-      "slug": "freedom-app-review"
+      "slug": "freedom-app-review",
+      "published_on": "2026-11-14",
+      "inbound_links": [
+        "best-procrastination-apps",
+        "best-app-blocker-apps",
+        "cold-turkey-blocker-review"
+      ]
     }
   ]
 }
