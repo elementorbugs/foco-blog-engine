@@ -267,10 +267,21 @@
     "cold-turkey-blocker": {
       "name": "Cold Turkey Blocker",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-cold-turkey-v2.png"
+    },
+    "elevate": {
+      "name": "Elevate",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-elevate-1.png",
+      "appStoreId": 875063456
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
   "cards": [
+    {
+      "slug": "elevate-app-review",
+      "title": "Elevate App Review: Is Brain Training Worth It?",
+      "desc": "Elevate is a brain training app with 40+ short games for reading, writing, speaking, memory...",
+      "cat": "reviews"
+    },
     {
       "slug": "sweepy-app-review",
       "title": "Sweepy App Review: Cleaning Schedule for ADHD Homes",
