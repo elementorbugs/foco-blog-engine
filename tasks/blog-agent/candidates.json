@@ -2601,10 +2601,16 @@
           39
         ]
       },
-      "status": "drafted",
+      "status": "published",
       "picked_on": "2026-11-14",
       "post_id": 6271,
-      "slug": "one-sec-app-review"
+      "slug": "one-sec-app-review",
+      "published_on": "2026-11-14",
+      "inbound_links": [
+        "best-procrastination-apps",
+        "screenzen-review",
+        "freedom-app-review"
+      ]
     }
   ]
 }
