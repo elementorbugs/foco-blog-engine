@@ -2436,7 +2436,10 @@
         ]
       },
       "proposed_on": "2026-11-14",
-      "status": "proposed"
+      "status": "drafted",
+      "picked_on": "2026-11-14",
+      "post_id": 6226,
+      "slug": "elevate-app-review"
     },
     {
       "name": "Sweepy",
@@ -2470,6 +2473,18 @@
         "dubbii-review",
         "habitica-review"
       ]
+    },
+    {
+      "name": "DeeDee",
+      "what": "DeeDee ADHD daily helper tools (Viktar Shalenchanka)",
+      "us_ratings": "5.0 from 4 (2026-11-14)",
+      "cluster_us": {
+        "deedee": "9,900 but about other things (hair braiding, TV)",
+        "deedee app": 0
+      },
+      "status": "rejected",
+      "reason": "no search demand for the app",
+      "proposed_on": "2026-11-14"
     }
   ]
 }
