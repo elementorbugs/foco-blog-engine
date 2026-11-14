@@ -1,6 +1,6 @@
 [
  {
-  "old": "<li>You need polished widgets and reminders that sync perfectly.</li>",
-  "new": "<li>You need polished widgets and reminders that sync perfectly; see our <a href=\"https://www.tryfoco.com/habitify-review/\">Habitify review</a> for a plain tracker.</li>"
+  "old": "see our <a href=\"https://www.tryfoco.com/habitify-review/\">Habitify review</a> for a plain tracker.</li>",
+  "new": "see our <a href=\"https://www.tryfoco.com/habitify-review/\">Habitify review</a> for a plain tracker.</li>\n<li>You mainly want to gamify housework; our <a href=\"https://www.tryfoco.com/sweepy-app-review/\">Sweepy review</a> covers a points game built for chores.</li>"
  }
 ]
