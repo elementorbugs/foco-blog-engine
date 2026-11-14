@@ -275,8 +275,8 @@
     },
     "freedom": {
       "name": "Freedom",
-      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-freedom.png",
-      "appStoreId": 1562200496
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-freedom.png",
+      "appStoreId": 1269788228
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
