@@ -259,6 +259,14 @@
       "name": "Sweepy",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-sweepy-1.png",
       "appStoreId": 1498897320
+    },
+    "flow-club": {
+      "name": "Flow Club",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-flow-club.png"
+    },
+    "cold-turkey-blocker": {
+      "name": "Cold Turkey Blocker",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-cold-turkey-v2.png"
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
