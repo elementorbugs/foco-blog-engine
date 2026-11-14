@@ -1833,10 +1833,12 @@
    "serp": "Trustpilot (mellowflow.app), a TikTok video, Google Play. No independent review.",
    "cannibalization": "none",
    "risk": "Name shared with other apps (an ADHD Sound App and Play 'Calm mind daily'); confirm which is the mellowflow.app product before writing.",
-   "status": "picked",
+   "status": "published",
    "proposed_on": "2026-11-11",
    "adi_answer": "picked 2026-11-14",
-   "slug": "mellow-flow-app-review"
+   "slug": "mellow-flow-app-review",
+   "published_on": "2026-11-14",
+   "post_id": 6282
   },
   {
    "name": "Goally",
