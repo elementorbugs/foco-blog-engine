@@ -2431,6 +2431,33 @@
       },
       "proposed_on": "2026-11-14",
       "status": "proposed"
+    },
+    {
+      "name": "Sweepy",
+      "what": "Home cleaning schedule app, gamified (Appsent)",
+      "cluster_us": {
+        "sweepy app": [
+          880,
+          34
+        ],
+        "sweepy app review": [
+          70,
+          35
+        ],
+        "sweepy app cost": [
+          30,
+          45
+        ],
+        "sweepy vs tody app": [
+          30,
+          23
+        ]
+      },
+      "proposed_on": "2026-11-14",
+      "status": "drafted",
+      "picked_on": "2026-11-14",
+      "post_id": 6217,
+      "slug": "sweepy-app-review"
     }
   ]
 }
