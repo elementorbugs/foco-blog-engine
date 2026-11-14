@@ -2579,6 +2579,32 @@
         "best-app-blocker-apps",
         "cold-turkey-blocker-review"
       ]
+    },
+    {
+      "name": "one sec",
+      "what": "Pause-before-app screen time app (riedel.wtf)",
+      "cluster_us": {
+        "one sec app": [
+          880,
+          40
+        ],
+        "one sec app review": [
+          30,
+          24
+        ],
+        "is one sec free": [
+          30,
+          29
+        ],
+        "is one sec app safe": [
+          30,
+          39
+        ]
+      },
+      "status": "drafted",
+      "picked_on": "2026-11-14",
+      "post_id": 6271,
+      "slug": "one-sec-app-review"
     }
   ]
 }
