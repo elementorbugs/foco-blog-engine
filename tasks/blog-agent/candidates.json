@@ -794,7 +794,7 @@
       "note": "Direct task-breakdown competitor. SERP (collected 2026-09-20): own site, stores, Reddit launch post, Instagram, aggregators. No independent review ranks. gap-scan 2026-11-06 clean."
     },
     {
-      "status": "proposed",
+      "status": "published",
       "proposed_on": "2026-11-06",
       "revisit_after": null,
       "name": "Dubbii",
@@ -819,7 +819,13 @@
         "ratings": 765,
         "last_update": "2026-11-02"
       },
-      "note": "Body doubling app. Volume is the brand term; review term is only 30. SERP (2026-09-09): stores, own site, Reddit, Facebook, the developer agency. No independent review ranks. gap-scan clean on the name; 'body doubling app' appears in lofi-town-review, best-apps-for-adhd-task-paralysis, adhd-activation without targeting Dubbii."
+      "note": "Body doubling app. Volume is the brand term; review term is only 30. SERP (2026-09-09): stores, own site, Reddit, Facebook, the developer agency. No independent review ranks. gap-scan clean on the name; 'body doubling app' appears in lofi-town-review, best-apps-for-adhd-task-paralysis, adhd-activation without targeting Dubbii.",
+      "published_on": "2026-11-14",
+      "inbound_links": [
+        "flow-club-review",
+        "body-doubling-adhd",
+        "adhd-cleaning-planner"
+      ]
     },
     {
       "status": "published",
@@ -2396,10 +2402,16 @@
         ]
       },
       "proposed_on": "2026-11-14",
-      "status": "drafted",
+      "status": "published",
       "picked_on": "2026-11-14",
       "post_id": 6206,
-      "slug": "dubbii-review"
+      "slug": "dubbii-review",
+      "published_on": "2026-11-14",
+      "inbound_links": [
+        "flow-club-review",
+        "body-doubling-adhd",
+        "adhd-cleaning-planner"
+      ]
     },
     {
       "name": "Elevate",
