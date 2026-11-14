@@ -1,14 +1,50 @@
 [
  {
-  "old": "<p><strong>No task breakdown for your own tasks:</strong> The videos split their chores into steps, but the app does not split your own tasks.</p>",
-  "new": "<p><strong>Steps come from its videos:</strong> Its website promises micro-steps for everyday tasks, and the store screenshots show those steps inside its own chore videos. We found no feature in the listings that splits a task you type in.</p>"
+  "old": "<p>It is a subscription with a 3-day free trial for new subscribers, and the price is shown inside the app.</p>",
+  "new": "<p>It runs on a subscription, with a 3-day free trial for new subscribers.</p>"
  },
  {
-  "old": "Google Play listing</a> and <a href=\"https://gravitywell-website",
-  "new": "Google Play listing</a>, its <a href=\"https://www.dubbii.app/\" target=\"_blank\" rel=\"nofollow noopener\">official website</a> and <a href=\"https://gravitywell-website"
+  "old": "<tr><th scope=\"row\">Price</th><td>Subscription for full access. The price is not shown on its App Store listing</td></tr>\n",
+  "new": ""
  },
  {
-  "old": "we could not find an official price, so we say so above.",
-  "new": "neither the stores nor its website list a price, so we say so above."
+  "old": "<tr><th scope=\"row\">Free trial</th><td><span class=\"cm-yes\">Yes</span> 3 days for new eligible subscribers</td></tr>",
+  "new": "<tr><th scope=\"row\">Access</th><td>Subscription, with a 3-day free trial for new eligible subscribers</td></tr>"
+ },
+ {
+  "old": "<p><strong>Price is hidden until you open it:</strong> The App Store listing shows a subscription but not its price, so you only see the cost inside the app.</p>\n",
+  "new": ""
+ },
+ {
+  "old": "<li>It is a subscription with a 3-day free trial, and the price is shown only in the app.</li>",
+  "new": "<li>It runs on a subscription, with a 3-day free trial for new subscribers.</li>"
+ },
+ {
+  "old": ", at US$40 a month when we reviewed it.",
+  "new": "."
+ },
+ {
+  "old": " neither the stores nor its website list a price, so we say so above.",
+  "new": " we report only what those pages state."
+ },
+ {
+  "old": "We did not test it hands-on, and",
+  "new": " We did not test it hands-on, so"
+ },
+ {
+  "old": "<h2 id=\"how-much-does-dubbii-cost\">How much does Dubbii cost?</h2>\n<p>Dubbii is free to download, with one \"dubbii Subscription\" for full access, according to its store listings. Its latest update added a 3-day free trial for new eligible subscribers.</p>\n<p>The App Store did not show the subscription price on November 14, 2026, so check the price in the app before the trial ends. The App Store says some subscriptions can be shared through Family Sharing.</p>\n\n",
+  "new": ""
+ },
+ {
+  "old": "<h3>How much does Dubbii cost?</h3>\n<p>The price is shown inside the app, and its App Store listing did not show it on November 14, 2026. Check it before the 3-day trial ends.</p>\n",
+  "new": ""
+ },
+ {
+  "old": "{\"@type\":\"Question\",\"name\":\"How much does Dubbii cost?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"The price is shown inside the app, and its App Store listing did not show it on November 14, 2026. Check it before the 3-day trial ends.\"}},",
+  "new": ""
+ },
+ {
+  "old": "<li><a href=\"#how-much-does-dubbii-cost\">How much does Dubbii cost?</a></li>\n  ",
+  "new": ""
  }
 ]
