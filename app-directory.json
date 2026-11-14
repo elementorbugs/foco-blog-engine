@@ -249,10 +249,32 @@
     "plexii": {
       "name": "Plexii",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-plexii.png"
+    },
+    "dubbii": {
+      "name": "Dubbii",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-dubbii-1.png",
+      "appStoreId": 6450302677
+    },
+    "sweepy": {
+      "name": "Sweepy",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-sweepy-1.png",
+      "appStoreId": 1498897320
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
   "cards": [
+    {
+      "slug": "dubbii-review",
+      "title": "Dubbii Review: Body Doubling App for ADHD Chores",
+      "desc": "Dubbii is a body doubling app from ADHD Love for iPhone, iPad and Android.",
+      "cat": "reviews"
+    },
+    {
+      "slug": "sweepy-app-review",
+      "title": "Sweepy App Review: Cleaning Schedule for ADHD Homes",
+      "desc": "Sweepy is a home cleaning app for iPhone, iPad and Android that shows how dirty each room is,...",
+      "cat": "reviews"
+    },
     {
       "slug": "plexii-review",
       "title": "Plexii Review: A Desktop Workspace With ADHD Focus Tools",
