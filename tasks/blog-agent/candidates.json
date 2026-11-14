@@ -266,7 +266,7 @@
     },
     {
       "name": "Sweepy",
-      "status": "not_proposed",
+      "status": "published",
       "proposed_on": "2026-11-05",
       "keywords_us": {
         "sweepy app review": {
@@ -275,7 +275,13 @@
         }
       },
       "note": "SD above threshold.",
-      "revisit_after": "2027-02-01"
+      "revisit_after": "2027-02-01",
+      "published_on": "2026-11-14",
+      "inbound_links": [
+        "adhd-cleaning-planner",
+        "dubbii-review",
+        "habitica-review"
+      ]
     },
     {
       "name": "Time Timer",
@@ -2454,10 +2460,16 @@
         ]
       },
       "proposed_on": "2026-11-14",
-      "status": "drafted",
+      "status": "published",
       "picked_on": "2026-11-14",
       "post_id": 6217,
-      "slug": "sweepy-app-review"
+      "slug": "sweepy-app-review",
+      "published_on": "2026-11-14",
+      "inbound_links": [
+        "adhd-cleaning-planner",
+        "dubbii-review",
+        "habitica-review"
+      ]
     }
   ]
 }
