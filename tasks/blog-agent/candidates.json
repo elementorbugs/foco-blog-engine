@@ -2246,6 +2246,129 @@
       "post_id": 6191,
       "published_on": "2026-11-13",
       "url": "https://www.tryfoco.com/plexii-review/"
+    },
+    {
+      "name": "Alarmy",
+      "slug": "alarmy-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-14",
+      "keywords_us": {
+        "alarmy": {
+          "volume": 8100,
+          "sd": 34
+        },
+        "alarmy alarm clock app": {
+          "volume": 6600,
+          "sd": 28
+        },
+        "is alarmy free": {
+          "volume": 390,
+          "sd": 40
+        },
+        "alarmy pro subscription": {
+          "volume": 110,
+          "sd": 26
+        },
+        "alarmy pro cost": {
+          "volume": 50,
+          "sd": 17
+        },
+        "alarmy alternative": {
+          "volume": 50,
+          "sd": 2
+        },
+        "apps like alarmy": {
+          "volume": 40,
+          "sd": 26
+        },
+        "alarmy review": {
+          "volume": 40,
+          "sd": 38
+        }
+      },
+      "note": "Recommended. Target 'alarmy alarm clock app' 6,600 SD 28 plus ~850/mo of price/free/alternative/review questions. SERP (2026-11-07): nowsecure, App Store, r/adhdwomen thread 'Alarmy changed my life' at #4, APK sites; no independent review. gap-scan: /adhd-alarm-clock/ #5831 has Alarmy as item 1 + H3 'Is Alarmy free?'; trim that H3 to one line + link.",
+      "revisit_after": null
+    },
+    {
+      "name": "Fantastical",
+      "slug": "fantastical-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-14",
+      "keywords_us": {
+        "fantastical calendar app": {
+          "volume": 2900,
+          "sd": 31
+        },
+        "fantastical calendar app for mac": {
+          "volume": 880,
+          "sd": 5
+        },
+        "fantastical vs google calendar": {
+          "volume": 90,
+          "sd": 14
+        },
+        "fantastical vs apple calendar": {
+          "volume": 90,
+          "sd": 26
+        },
+        "fantastical alternative": {
+          "volume": 70,
+          "sd": 15
+        },
+        "busycal vs fantastical": {
+          "volume": 70,
+          "sd": 16
+        },
+        "fantastical review": {
+          "volume": 40,
+          "sd": 22
+        },
+        "fantastical cost": {
+          "volume": 40,
+          "sd": 7
+        },
+        "is fantastical free": {
+          "volume": 40,
+          "sd": 26
+        }
+      },
+      "note": "Recommended. Bare 'fantastical' (14,800) is mostly the dictionary word, ignored. SERP for 'fantastical review' (2026-10-05): Reddit r/macapps, SoftwareAdvice, Appleosophy 2022, Product Hunt, MacStories, a DA-3 blog; old or thin. gap-scan: 0 mentions on site; heading overlap only with /best-ai-calendar-apps-for-adhd/ generic H3s.",
+      "revisit_after": null
+    },
+    {
+      "name": "Wispr Flow",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-14",
+      "revisit_after": "2027-02-01",
+      "note": "Big review cluster (review 480 SD 35, alternative 480 SD 11) but it is a dictation tool, off-niche for task initiation."
+    },
+    {
+      "name": "Willow Voice",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-14",
+      "revisit_after": "2027-02-01",
+      "note": "Dictation tool, off-niche; review 30 SD 19."
+    },
+    {
+      "name": "SelfControl",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-14",
+      "revisit_after": "2027-02-01",
+      "note": "selfcontrol app 1,000 SD 44; every variant SD 36+; no review questions."
+    },
+    {
+      "name": "FocusMe",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-14",
+      "revisit_after": "2027-02-01",
+      "note": "Brand 720 SD 45; review 10; cold turkey vs focusme 30."
+    },
+    {
+      "name": "Apple Reminders vs Todoist",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-14",
+      "revisit_after": "2027-02-01",
+      "note": "70/mo SD 17, nothing else in cluster. Could join the Todoist vs series later."
     }
   ]
 }
