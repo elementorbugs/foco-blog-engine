@@ -1,0 +1,14 @@
+[
+ {
+  "old": "<p><strong>No task breakdown for your own tasks:</strong> The videos split their chores into steps, but the app does not split your own tasks.</p>",
+  "new": "<p><strong>Steps come from its videos:</strong> Its website promises micro-steps for everyday tasks, and the store screenshots show those steps inside its own chore videos. We found no feature in the listings that splits a task you type in.</p>"
+ },
+ {
+  "old": "Google Play listing</a> and <a href=\"https://gravitywell-website",
+  "new": "Google Play listing</a>, its <a href=\"https://www.dubbii.app/\" target=\"_blank\" rel=\"nofollow noopener\">official website</a> and <a href=\"https://gravitywell-website"
+ },
+ {
+  "old": "we could not find an official price, so we say so above.",
+  "new": "neither the stores nor its website list a price, so we say so above."
+ }
+]
