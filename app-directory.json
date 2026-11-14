@@ -277,10 +277,21 @@
       "name": "Freedom",
       "icon": "https://www.tryfoco.com/wp-content/uploads/2026/10/app-icon-freedom.png",
       "appStoreId": 1269788228
+    },
+    "one-sec": {
+      "name": "one sec",
+      "icon": "https://www.tryfoco.com/wp-content/uploads/2026/11/app-icon-one-sec.png",
+      "appStoreId": 1532875441
     }
   },
   "autoCategory": "see AUTO_RULES in rebuild-app-directory.js: slug words vs/versus/comparison -> compare, alternative(s) -> alternatives, ends in review -> reviews; then the same on the title",
   "cards": [
+    {
+      "slug": "one-sec-app-review",
+      "title": "one sec App Review: Does a Pause Beat a Blocker?",
+      "desc": "one sec is a screen time app that adds a short pause, like a deep breath, before a distracting...",
+      "cat": "reviews"
+    },
     {
       "slug": "freedom-app-review",
       "title": "Freedom App Review: Block Every Device at Once",
