@@ -2537,7 +2537,12 @@
         "chillio-app-review",
         "best-apps-for-adhd-task-paralysis"
       ],
-      "competitor_seen": "adhd-founder.com/blog/best-apps-procrastination-founders-2026 (10 apps, no prices, unsourced 42% stat)"
+      "competitor_seen": "adhd-founder.com/blog/best-apps-procrastination-founders-2026 (10 apps, no prices, unsourced 42% stat)",
+      "rebuilt": "2026-11-14: 12 apps, research methods, setup guide, 2625 words",
+      "next": [
+        "review Freedom",
+        "review one sec"
+      ]
     }
   ]
 }
