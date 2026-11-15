@@ -1,6 +1,10 @@
 [
  {
-  "old": "See our <a href=\"https://www.tryfoco.com/wisey-app-review/\">Wisey review</a>.</li>",
-  "new": "See our <a href=\"https://www.tryfoco.com/wisey-app-review/\">Wisey review</a>.</li>\n<li><strong>MellowFlow</strong> sells CBT-style lessons on procrastination from $59.99 a month in the US, and refunds need proof of 7 days of lessons. See our <a href=\"https://www.tryfoco.com/mellow-flow-app-review/\">Mellow Flow app review</a>.</li>"
+  "old": "The website is free with no account, and the phone apps are a one-time $1.99 on the US App Store.</p>",
+  "new": "The website is free with no account, and the iPhone app is a one-time $0.99 on the US App Store.</p>\n<p>Putting off chores? See our list of the <a href=\"https://www.tryfoco.com/adhd-cleaning-apps/\">best ADHD cleaning apps</a>.</p>"
+ },
+ {
+  "old": "<td data-label=\"Paid\">Phone app $1.99 once (US)</td>",
+  "new": "<td data-label=\"Paid\">iPhone app $0.99 once (US)</td>"
  }
 ]
