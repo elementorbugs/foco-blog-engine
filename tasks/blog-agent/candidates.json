@@ -2614,6 +2614,153 @@
     "screenzen-review",
     "freedom-app-review"
    ]
+  },
+  {
+   "name": "Lumosity",
+   "slug": "lumosity-review",
+   "status": "proposed",
+   "proposed_on": "2026-11-15",
+   "revisit_after": null,
+   "keywords_us": {
+    "lumosity": {
+     "volume": 33100,
+     "sd": 49
+    },
+    "lumosity brain training app": {
+     "volume": 4400,
+     "sd": 31
+    },
+    "lumosity price": {
+     "volume": 590,
+     "sd": 27
+    },
+    "is lumosity free": {
+     "volume": 590,
+     "sd": 45
+    },
+    "reviews of lumosity": {
+     "volume": 390,
+     "sd": 33
+    },
+    "elevate vs lumosity": {
+     "volume": 260,
+     "sd": 31
+    },
+    "lumosity vs elevate": {
+     "volume": 210,
+     "sd": 30
+    },
+    "brainhq vs lumosity": {
+     "volume": 210,
+     "sd": 20
+    },
+    "does lumosity work": {
+     "volume": 210,
+     "sd": 36
+    },
+    "lumosity how much does it cost": {
+     "volume": 170,
+     "sd": 9
+    },
+    "lumosity app review": {
+     "volume": 90,
+     "sd": 36
+    },
+    "is lumosity worth it": {
+     "volume": 90,
+     "sd": 38
+    },
+    "lumosity and adhd": {
+     "volume": 70,
+     "sd": 42
+    }
+   },
+   "note": "Recommended. ~2,800/mo of review/price/free/vs questions; target 'lumosity price' SD 27 + 'lumosity how much does it cost' SD 9. SERP 'lumosity price' (2026-11-15): AI overview, a DA-1 wordpress page at #2, a store page, YouTube; no independent review. Natural follow-up to /elevate-app-review/ (#6226), which has H2 'How is Elevate different from Lumosity and Peak?': keep that H2 short and link to the new post. Ignore 'lumosity word bubbles' (game) volume."
+  },
+  {
+   "name": "BrainHQ",
+   "slug": "brainhq-review",
+   "status": "proposed",
+   "proposed_on": "2026-11-15",
+   "revisit_after": null,
+   "keywords_us": {
+    "brainhq app": {
+     "volume": 1300,
+     "sd": 29
+    },
+    "brainhq reviews": {
+     "volume": 720,
+     "sd": 32
+    },
+    "brainhq free": {
+     "volume": 590,
+     "sd": 30
+    },
+    "brainhq cost": {
+     "volume": 260,
+     "sd": 20
+    },
+    "brainhq vs lumosity": {
+     "volume": 210,
+     "sd": 20
+    },
+    "brainhq subscription": {
+     "volume": 170,
+     "sd": 21
+    },
+    "how much does brainhq cost": {
+     "volume": 90,
+     "sd": 25
+    },
+    "is brainhq free": {
+     "volume": 90,
+     "sd": 30
+    },
+    "is brainhq worth it": {
+     "volume": 70,
+     "sd": 30
+    },
+    "is brainhq legit": {
+     "volume": 50,
+     "sd": 6
+    }
+   },
+   "note": "Recommended. ~2,300/mo of review/cost/free/vs questions, SD 6-32. SERP 'brainhq reviews' (2026-11-15): brainhq.com FAQ, forums, Google Play; no independent review in the top. gap-scan: 1 passing mention on /how-to-focus-with-adhd/. Audience skews older (Posit Science, speed-of-processing training): ADHD angle must stay honest and hedged."
+  },
+  {
+   "name": "Peak Brain Training",
+   "status": "not_proposed",
+   "proposed_on": "2026-11-15",
+   "revisit_after": "2027-02-01",
+   "note": "peak brain training 390 SD 27; review/price 30 each. Cover inside a Lumosity/Elevate post instead."
+  },
+  {
+   "name": "Trevor AI",
+   "status": "not_proposed",
+   "proposed_on": "2026-11-15",
+   "revisit_after": "2027-02-01",
+   "note": "Brand 720 SD 28 but review 30, app 30, nothing else."
+  },
+  {
+   "name": "Apollo Neuro",
+   "status": "not_proposed",
+   "proposed_on": "2026-11-15",
+   "revisit_after": "2027-02-01",
+   "note": "Stress wearable, off-niche; review 880 at SD 38, affiliate-heavy SERP."
+  },
+  {
+   "name": "Revibe Connect",
+   "status": "not_proposed",
+   "proposed_on": "2026-11-15",
+   "revisit_after": "2027-02-01",
+   "note": "ADHD focus watch, but 'revibe' collides with clinics/salons; revibe connect 70, revibe watch 110, no review queries."
+  },
+  {
+   "name": "Lately (on-time app)",
+   "status": "not_proposed",
+   "proposed_on": "2026-11-15",
+   "revisit_after": "2027-02-01",
+   "note": "'lately app' 50, name collides with the common word."
   }
  ]
 }
