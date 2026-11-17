@@ -124,6 +124,8 @@ async function render() {
   lint();
   const pub = path.join(ROOT, "public", "carousel", slug);
   fs.mkdirSync(pub, { recursive: true });
+  // diary "cutout" blocks: transparent PNG stickers (path relative to foco-video/), served by file name
+  for (const s of spec.slides) for (const b of s.blocks || []) if (b.file) fs.copyFileSync(path.join(ROOT, b.file), path.join(pub, path.basename(b.file)));
   for (const s of spec.slides) {
     if (s.photo) continue; // reuses another slide's photo
     if (!s.query && !s.own) continue; // drawn slide with no photo (e.g. the app-list "app" slides)

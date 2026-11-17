@@ -205,6 +205,13 @@ verified working 2026-10-04). Always `git pull` first in a reused session so the
   {t:"quote", text}, {t:"photo", src?, w?, h?, rotate?}, {t:"badges"} ], "gap"? }`. Blocks stack centred in the safe band.
   Story must be TRUE (real dates, real numbers): near-failure -> low point -> fix -> "we're so close" -> comment keyword.
   Example: `diary-demo.json` (draft copy, not verified).
+  **v2 look (Adi, 2026-11-17: "not authentic, dirty it up, the handwriting isn't clear"):** crumpled paper + coffee ring
+  + grain, torn tape, lilac marker stroke BEHIND the *word* (ink text), ballpoint handwriting = Kalam Bold (legible, not
+  an elegant script), slight tilts. **Cut-out sticker block** `{t:"cutout", file:"carousels/own/<x>/cutN.png", h?, note?,
+  side?:"left"|"right"}`: the person with a white sticker outline + hand-drawn arrow + handwritten note ("me at 2:40").
+  Use it at least on slide 1. Make cut-outs: Gemini the same person on a plain white background (`--ref` the anchor),
+  then rembg `isnet-general-use` + keep the largest mask region (cutting from a room photo keeps the couch).
+  Example: `diary-jess-waiting-mode.json`.
 - `"own": "carousels/own/<file>.jpg"` on a slide uses Adi's own phone photo instead of Pexels (no `query`/`pick`).
 - Keep each bubble under ~45 characters; slides look best with one idea each.
 
