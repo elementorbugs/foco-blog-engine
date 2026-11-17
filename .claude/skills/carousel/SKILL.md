@@ -216,7 +216,7 @@ verified working 2026-10-04). Always `git pull` first in a reused session so the
   `{t:"collage", h, items:[...]}` places items at x/y in an 830-wide box: `photo` (taped polaroid), `cutout`, `note`
   (pen), `arrow` (thick, w ~175, rot/flip), `sticky` (yellow note), `notif` (drawn iOS mail banner = the dreaded
   client message), `focostep` (FOCO step card). Every slide = the person OR an object of her day (laptop, monitor,
-  paperwork, kid's backpack) + a note with an arrow. Object photos: Gemini `--ref` the room anchor, then crop.
+  paperwork, kid's backpack) + a note with an arrow. Object photos: Gemini `--ref` the room anchor, then crop. Jess anchor + prompts: `viral-lab/character/jess/`.
   Example: `diary-jess-waiting-mode.json`.
   **READABILITY (Adi, 2026-11-17: "text sometimes sits on elements with no backing and gets lost"):** notes always render
   on a torn paper scrap, arrows have a white under-stroke, text blocks use balanced wrapping (no orphan word). `render`
