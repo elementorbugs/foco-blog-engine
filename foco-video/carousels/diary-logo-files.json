@@ -1,0 +1,58 @@
+{
+  "slug": "diary-logo-files",
+  "tiktok": {
+    "caption": "ADHD task paralysis as a freelancer: i avoided one 20 minute task for 9 days and almost lost my biggest client 🫠\n\nwhat finally worked: saying the task out loud, letting it get broken into tiny steps, and doing only step 1. it took 18 minutes.\n\nwhat task have you been avoiding this week? 👇\nsave this for the next time you're stuck 📌\n\nthe app on the last slides is FOCO, link in bio 💜",
+    "hashtags": ["#adhd", "#taskparalysis", "#adhdfreelancer", "#adhdtiktok"]
+  },
+  "instagram": {
+    "caption": "ADHD freelancer diary: I avoided one 20 minute task for 9 days and almost lost my biggest client.\n\nI'm not lazy. I knew exactly what to do. I just couldn't start.\n\n1. The task: send the final logo files\n2. 9 days of opening the folder and closing it\n3. The \"just checking in\" email that made my stomach drop\n4. I said the task out loud and did only step 1: open the client folder\n\nSent at 12:40. The whole thing took 18 minutes.\n\nSave this for your next stuck day, and send it to the freelancer friend who gets it.\n\n💜 The app I use is FOCO, link in bio.",
+    "hashtags": ["#adhd", "#taskparalysis", "#adhdfreelancer", "#adhdtips"],
+    "altText": "Diary-style carousel on cream paper with taped photos of a freelance designer at home, about ADHD task paralysis: avoiding sending client logo files for 9 days, then starting with one tiny step in FOCO."
+  },
+  "slides": [
+    { "layout": "diary", "id": "s1", "own": "carousels/own/maya/hook-2.jpg", "blocks": [
+      { "t": "script", "text": "adhd freelancer diary", "size": 64 },
+      { "t": "head", "text": "yesterday i came *dangerously* close to losing my biggest client", "size": 70 },
+      { "t": "photo", "w": 560, "h": 620 }
+    ]},
+    { "layout": "diary", "id": "s2", "own": "carousels/own/maya/email-10.jpg", "blocks": [
+      { "t": "photo", "w": 520, "h": 600 },
+      { "t": "body", "text": "one task. send the final logo files. 20 minutes, tops." },
+      { "t": "head", "text": "i'd been avoiding it for *9 days.*" }
+    ]},
+    { "layout": "diary", "id": "s3", "own": "carousels/own/maya/email-12.jpg", "blocks": [
+      { "t": "photo", "w": 520, "h": 580 },
+      { "t": "body", "text": "9am. opened the folder. closed it. made coffee. cleaned my desk." },
+      { "t": "head", "text": "11am. *still* not sent." },
+      { "t": "script", "text": "my fake productive era" }
+    ]},
+    { "layout": "diary", "id": "s4", "blocks": [
+      { "t": "body", "text": "then this landed in my inbox:", "bold": true },
+      { "t": "quote", "text": "\"hey! just checking in on those files? we launch friday 🙂\"" },
+      { "t": "script", "text": "my stomach dropped.", "size": 84 }
+    ]},
+    { "layout": "diary", "id": "s5", "blocks": [
+      { "t": "big", "text": "i'm not *lazy.*" },
+      { "t": "body", "text": "i know exactly what to do. i just can't start." },
+      { "t": "script", "text": "if you know, you know" }
+    ]},
+    { "layout": "diary", "id": "s6", "blocks": [
+      { "t": "body", "text": "so i opened FOCO and just said it out loud." },
+      { "t": "head", "text": "one tap, and it broke it into *tiny* steps.", "size": 66 },
+      { "t": "foco", "step": "Open the client folder", "min": 2 },
+      { "t": "script", "text": "step 1. that's all i had to do." }
+    ]},
+    { "layout": "diary", "id": "s7", "own": "carousels/own/maya/nine-11.jpg", "blocks": [
+      { "t": "photo", "w": 520, "h": 600 },
+      { "t": "head", "text": "*sent* at 12:40.", "size": 90 },
+      { "t": "body", "text": "the whole thing took 18 minutes. 9 days of dread for 18 minutes." },
+      { "t": "script", "text": "i could actually cry" }
+    ]},
+    { "layout": "final-diary", "id": "end", "blocks": [
+      { "t": "head", "text": "you don't need another *to-do list.*", "size": 80 },
+      { "t": "script", "text": "you need help starting 💜", "size": 80 },
+      { "t": "badges" },
+      { "t": "body", "text": "same? 👇", "bold": true }
+    ]}
+  ]
+}

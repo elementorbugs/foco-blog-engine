@@ -8,6 +8,7 @@
 import React from "react";
 import { AbsoluteFill, Img, continueRender, delayRender, staticFile } from "remotion";
 import { BODY, EMOJI } from "../Composition";
+import { StepCard } from "./MoreCarousels";
 
 const SERIF = "Literata", SCRIPT = "Dancing Script";
 const fontHandle = delayRender("diary fonts");
@@ -39,7 +40,9 @@ export type DiaryBlock =
   | { t: "script"; text: string; size?: number }
   | { t: "quote"; text: string }
   | { t: "photo"; src?: string; w?: number; h?: number; rotate?: number }
-  | { t: "badges" };
+  | { t: "badges" }
+  // FOCO's first-step card, taped onto the page like a screenshot
+  | { t: "foco"; step: string; min: number };
 
 // *word* -> highlighted span
 const Hl: React.FC<{ text: string }> = ({ text }) => (
@@ -100,6 +103,15 @@ const Block: React.FC<{ b: DiaryBlock; i: number; slideId: string; slug: string 
         </div>
       );
     }
+    case "foco":
+      return (
+        <div style={{ display: "flex", justifyContent: "center", padding: "16px 0" }}>
+          <div style={{ position: "relative", transform: "rotate(-1.5deg) scale(0.98)" }}>
+            <StepCard step={b.step} min={b.min} />
+            <Tape color={P.tapeBlue} rotate={3} />
+          </div>
+        </div>
+      );
     case "badges":
       return (
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 22 }}>
