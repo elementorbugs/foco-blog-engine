@@ -8,8 +8,21 @@ description: Make a FOCO TikTok photo carousel (1080x1920 slides + caption) on a
 Format copied from a viral app carousel (Flowfy): real lifestyle photo per slide, TikTok-style lilac text bubbles,
 an in-app FOCO card, and FOCO revealed only at the end as a casual "btw". Engine lives in `foco-video/`.
 
-## CURRENT DEFAULTS (Adi, 2026-10-07): these win over anything older below
-0. **Avatar = "Jess" (2026-11-17):** WFH mom with ADHD, 34, 2 kids, works in the daycare/nap windows. Read the JESS
+## SERIES MAP (read first: never mix series)
+There are 3 separate carousel series. Each has its own avatar, format, rules and example files. Use ONLY the rules
+of the series in play; when Adi's request doesn't say which, the default is series A.
+| series | purpose | avatar | format + rules | files (start from the newest) |
+|---|---|---|---|---|
+| **A. Jess diary** (since 2026-11-17, DEFAULT) | organic TikTok/IG | Jess, WFH mom (`viral-lab/character/jess/`) | scrapbook `diary` layout, diary v3 + READABILITY below; "link in bio" ok | `diary-jess-waiting-mode` |
+| **B. Paid mom ads** (2026-11-17) | Meta/TikTok ads | mom in a nap/daycare window (stock/Gemini, not Jess's kit unless asked) | PAID section + `ad-carousel-playbook.md`; `final-ad`, no "link in bio" | `ad-mom-nap-time-v9` (Adi loved it), v2-v8 = history |
+| **C. Freelancer series** (Oct 2026, ARCHIVE) | organic, older | cast: Maya designer, male editor, faceless POV | `chat`/`notes`/`versus`/`checklist`/caption/card, CURRENT DEFAULTS 1-7 | chat-*, angle-*, notes-instead, plan-vs-reality, checklist-tried, texting-my-brain, simple-video-editor, head-to-done, just-say-it, life-moments, snap-your-list, ... |
+- Series C rules (rotate formats, cast of narrators, Maya) apply ONLY when Adi asks for that series or one of its
+  formats by name. They never override Jess in series A.
+- `diary-demo` (founder) and `diary-logo-files` (freelancer Maya) are early format drafts, not Jess: don't copy their story.
+- Engine features (layouts, build/send, safe zones) are shared by all series; only the story, avatar and ending differ.
+
+## CURRENT DEFAULTS (Adi, 2026-10-07): series C rules, also used by A/B where they don't conflict
+0. **Series A only, see SERIES MAP: avatar = "Jess" (2026-11-17):** WFH mom with ADHD, 34, 2 kids, works in the daycare/nap windows. Read the JESS
    section at the top of `audience-research.md` + `tasks/avatar-wfh-mom-2026-11-17.md` before every carousel.
 1. **Format: rotate the approved formats**, never the same one twice in a row: `chat` ("Texting my ADHD brain",
    iMessage thread me vs my brain), `notes` (iPhone Notes checklist), `versus` (plan vs reality), `checklist` (✅/❌ things I tried). Adi: "loved the new
@@ -77,7 +90,7 @@ Goal = click -> install -> trial (not saves/comments). Organic rules still apply
    NEVER "link in bio" in an ad (the ad has its own Download button). No store rating: see memory
    `project_app_store_reviews_suspicious`.
 12. **Test hooks, not carousels:** one body, 3 hook slide-1 variants. Judge by link CTR, CPI, cost per trial.
-Moms are a deliberate paid-audience test (Adi chose them 2026-11-17), not a change of the organic primary avatar.
+Moms started as a paid test (2026-11-17); the same day Adi locked Jess (a mom) as the organic avatar too (series A).
 
 ## Steps
 1. **Concept + hook.** Write 3 hook options (see "The hook") and get Adi's pick first.
