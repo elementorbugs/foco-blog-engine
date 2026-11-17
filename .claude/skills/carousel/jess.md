@@ -44,3 +44,8 @@ The persona below is a COMPOSITE: the facts and quotes are real, the name and ex
 - Product gap worth raising with Adi: **picking a task back up after an interruption** (she starts, the kid wakes up).
 - Story slides: nap window, the client email, the jump scare notification, waiting mode, dinner on top of it.
 - Never: "mental load" as an abstract word, perfect-routine content, shame about the kids.
+
+## Performance log (fill after every post)
+| carousel | posted | platform | views | saves | shares | comments | link clicks | note |
+|---|---|---|---|---|---|---|---|---|
+| diary-jess-waiting-mode | | | | | | | | approved by Adi 2026-11-17 |
