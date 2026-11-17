@@ -45,7 +45,30 @@ The persona below is a COMPOSITE: the facts and quotes are real, the name and ex
 - Story slides: nap window, the client email, the jump scare notification, waiting mode, dinner on top of it.
 - Never: "mental load" as an abstract word, perfect-routine content, shame about the kids.
 
-## Performance log (fill after every post)
-| carousel | posted | platform | views | saves | shares | comments | link clicks | note |
-|---|---|---|---|---|---|---|---|---|
-| diary-jess-waiting-mode | | | | | | | | approved by Adi 2026-11-17 |
+
+## Sources (spec §4: quotes on slides must be exact and come from this list)
+| quote (start) | source |
+|---|---|
+| "Where the fuck do I tell my brain to start?" / "genuinely nothing has been done" / "jump scare ... Outlook notification" / "If I'm caught up with work, the house is a mess" / "eating garbage" | r/adhdwomen "ADHD Working Moms - How the Fuck Are You Doing It?" https://www.reddit.com/r/adhdwomen/comments/1kwap1a/ |
+| "Always on alert incase the child needs something + don't want to have to task change if I start doing a chore then the child needs something/wants to 'help' = no doing of the anything" (u/vlawso) | r/adhdwomen "Kids don't work for body doubling" https://www.reddit.com/r/adhdwomen/comments/1vrk88d/ |
+| "I think it's that my kids put me into waiting mode. I'm not sure what I'm waiting for, and it probably varies." (u/OGQueenClumsy) **used on diary-jess-waiting-mode slide 4** | same thread 1vrk88d |
+| "I am in waiting mode.. Off course! Never getting anything done, but not relaxing either." (u/Substantial-Tear-287) | same thread 1vrk88d |
+| "the constant anticipation of an unexpected transition" / "angry at myself for being in waiting mode" | same thread 1vrk88d (also r/ADHD 180pxri) |
+| "I don't do well getting things done in a small window of time" / "anxiety around even responding to clients" / "no brain these days" | r/workingmoms "Best tips for ADHD task paralysis" https://www.reddit.com/r/workingmoms/comments/1mf9rwo/ |
+| "made for non-working single people with no kids" | r/adhdwomen "Apps for productivity for MOMS?" https://www.reddit.com/r/adhdwomen/comments/1urtz9t/ |
+| "My 572nd attempt to keep a planner" | r/adhdwomen https://www.reddit.com/r/adhdwomen/comments/s4xmnv/ |
+| "Part time is what has kept me sane" / "blob of a person" | r/adhdwomen https://www.reddit.com/r/adhdwomen/comments/1qygcbv/ |
+| "This list would stress me the fuck out every day" | r/adhdwomen https://www.reddit.com/r/adhdwomen/comments/1s4j2v3/ |
+| "I'm supposed to be the breadwinner" | r/adhdwomen https://www.reddit.com/r/adhdwomen/comments/1t55nvk/ |
+| "Willing to pay a fee ... someone vouching for its effectiveness" | r/ADHDmoms https://www.reddit.com/r/ADHDmoms/comments/1hrxzzm/ |
+| diagnosed after their son | r/adhdwomen https://www.reddit.com/r/adhdwomen/comments/1e6g4m7/ |
+| "I get interrupted about 1 billion times" / "Who has time for that in the morning?" | source NOT re-found: paraphrase only, never in quote marks |
+
+## Recurring themes (frequency indicators, 2026-11-17)
+- **Waiting mode:** very common. 45+ threads titled with it across r/adhdwomen, r/ADHD (e.g. "what the hell is waiting
+  mode", 198 comments; "Revelation about Waiting Mode", 455 upvotes). Mostly triggered by an appointment later in the
+  day (spec angle C); with kids home it becomes constant (1vrk88d).
+- **Can't start inside a small window / nothing done by pickup:** repeated in 1kwap1a, 1mf9rwo, 1t55nvk.
+- **Client/message dread (angle I):** 1kwap1a, 1mf9rwo.
+- **Planner/app fatigue (angle F):** s4xmnv, 1urtz9t.
+- **Interrupted, hard to return (angle D):** 1vrk88d, 1kwap1a.
