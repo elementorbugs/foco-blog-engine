@@ -100,3 +100,22 @@ Ranked by recurrence + mom-specificity + how naturally a first step fits. Quotes
    client-email concept; email avoidance is a common topic, so it needs a sharper twist).
 Single anecdotes (don't build a series on them): forgot to pay daycare for a year (1ujq3rp), early-intervention referral
 left on the car roof (1mjf5gd).
+
+## THE POINT: pain -> what she tried -> why it failed -> what FOCO does (every carousel must carry this)
+- **Core pain:** she knows WHAT to do and even has the time, but can't START. The window (daycare/nap) ends with nothing
+  done ("time to fetch the kids, and genuinely nothing has been done"), then guilt ("blob of a person").
+  Made worse by: small windows, waiting mode, constant interruptions, dread of client messages.
+- **What she tried:** planners ("my 572nd attempt to keep a planner", Happy Planner, bullet journal, digital planners),
+  to-do lists ("constantly writing to-do lists but never actually DOING what I’ve written down", 2,507 up,
+  https://www.reddit.com/r/adhdwomen/comments/1fm4b0x/), internet routines ("This list would stress me the fuck out"),
+  time-blocking ("I am absolutely going to start this right now and then only use it for like 3 days", 219 up,
+  https://www.reddit.com/r/adhdwomen/comments/1jk15k0/), productivity apps ("made for non-working single people with no kids").
+- **Why it failed:** they all help her PLAN (what, when). Her problem is STARTING. They need setup and upkeep (one more
+  task), assume long quiet hours, and a list item like "write the proposal" is still too big to begin; when the day
+  breaks (a kid wakes up) the plan breaks and she feels worse.
+- **What FOCO does differently:** it doesn't ask her to plan, it gets her to start. Say it in 5 seconds (no setup) ->
+  it's in her day -> if she wants, one tap turns the scary task into a tiny first step with minutes (2 min fits any
+  window) -> focus on that ONE step with a timer + sound, like someone working next to her.
+- **What FOCO does NOT do (never imply):** do the work, stop interruptions, resume a task after a kid wakes up (product gap).
+- **One-line point:** "I don't need another planner. I need help starting." (= "You don't need another to-do list.
+  You need help starting.")
