@@ -23,7 +23,11 @@ Engine (tools, not rules): `foco-video/` (spec `carousels/<slug>.json`, images `
 
 ## Workflow (spec §15, with our tools)
 1. **Concept (Stage 1):** read `spec.md`, `jess.md`, `log.md`. Pick an angle from spec §5 that is NOT one of the
-   recent rows in `log.md` (angle C waiting mode is done). Write: audience, problem, angle, character, work task,
+   recent rows in `log.md` (angle C waiting mode is done). **Filter every candidate situation FIRST by FOCO fit:
+   does a real FOCO feature (say/type/snap the task, optional one-tap breakdown, one-step focus session) solve THIS
+   moment's starting problem? Rate fit strong/medium/weak and drop weak (e.g. resuming after an interruption).
+   Only then rank by recurrence and relatability** (Adi, 2026-11-17: "how is all this related to FOCO?"). Ideal: the
+   product insight lives inside the story (the dish is easy because it's small; FOCO makes work that small). Write: audience, problem, angle, character, work task,
    time window, stakes, emotional takeaway, why FOCO fits, and ONE test hypothesis (spec §13, one variable).
 2. **Story approval (Stage 2):** send Adi the slide-by-slide text (6-8 slides, each with its narrative function)
    + hook + CTA type + hypothesis. **Wait for his OK before making images.**
