@@ -26,7 +26,7 @@ export type SpecSlide =
   | { layout: "hook"; id: string; lines: string[]; tag?: string; textTop?: number; hookStyle?: "callout"; punchFont?: "hand" }
   | { layout: "pair"; id: string; topLabel: string; top: string; bottomLabel: string; bottom: string }
   | { layout: "card"; id: string; label: string; comment?: string; title: string; steps: Step[]; result?: string }
-  | { layout: "step"; id: string; label: string; step: string; min: number }
+  | { layout: "step"; id: string; label: string; step: string; min: number; style?: "pro"; title?: string; steps?: Step[] }
   | { layout: "caption"; id: string; label: string; comment?: string; time?: string }
   | { layout: "focus"; id: string; label: string; comment?: string; stepNo: number; stepTotal: number; step: string; min: number; sound: string; result?: string }
   | { layout: "life"; id: string; label: string; comment?: string; chip?: string; side?: "left" | "right"; inset: Inset }
@@ -138,6 +138,36 @@ const FocoStep: React.FC<{ text: string; min?: number; width?: number }> = ({ te
     {min ? <div style={{ fontFamily: BODY, fontWeight: 800, fontSize: 30, color: "#FFFFFF", border: "2px solid rgba(167,139,250,0.6)", borderRadius: 14, padding: "6px 12px" }}>{min} min</div> : null}
   </div>
 );
+
+// "pro" step card (paid ads, 2026-11-17): a light iOS-widget card with the full FOCO logo (mascot + wordmark),
+// the task, its steps (step 1 lit, the rest dimmed) and a Start button. Warmer and more premium than StepCard.
+const ProStepCard: React.FC<{ title: string; steps: Step[] }> = ({ title, steps }) => {
+  const total = steps.reduce((n, x) => n + x.min, 0);
+  return (
+    <div style={{ width: 880, borderRadius: 48, padding: "30px 34px 34px", background: "rgba(255,255,255,0.96)", boxShadow: "0 40px 100px rgba(40,10,80,0.35), 0 0 0 2px rgba(167,139,250,0.35)" }}>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <Img src={staticFile("foco-logo.png")} style={{ height: 62 }} />
+        <div style={{ fontFamily: BODY, fontWeight: 700, fontSize: 26, color: "#6D28D9", background: "#EFE7FF", borderRadius: 999, padding: "8px 18px" }}>{steps.length} steps · {total} min</div>
+      </div>
+      <div style={{ marginTop: 14, fontFamily: BODY, fontWeight: 600, fontSize: 30, color: "#7d738f" }}>{title}</div>
+      <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 8 }}>
+        {steps.map((st, i) => (
+          <div key={i} style={i === 0
+            ? { display: "flex", alignItems: "center", gap: 20, padding: "20px 22px", borderRadius: 28, background: "linear-gradient(135deg, #7C3AED 0%, #9F67FF 100%)", boxShadow: "0 14px 34px rgba(124,58,237,0.45)" }
+            : { display: "flex", alignItems: "center", gap: 20, padding: "12px 22px", opacity: 0.5 }}>
+            <div style={{ width: 52, height: 52, flexShrink: 0, borderRadius: 999, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: HEAD, fontWeight: 800, fontSize: 28,
+              ...(i === 0 ? { background: "#FFFFFF", color: "#7C3AED" } : { border: "3px dashed #A78BFA", color: "#7C3AED" }) }}>{i + 1}</div>
+            <div style={{ flex: 1, fontFamily: BODY, fontWeight: 700, fontSize: i === 0 ? 40 : 32, lineHeight: 1.15, color: i === 0 ? "#FFFFFF" : DARK }}>{st.text}</div>
+            <div style={{ fontFamily: BODY, fontWeight: 800, fontSize: i === 0 ? 30 : 26, color: i === 0 ? "#FFFFFF" : "#7d738f", ...(i === 0 ? { background: "rgba(255,255,255,0.22)", borderRadius: 14, padding: "6px 14px" } : {}) }}>{st.min} min</div>
+          </div>
+        ))}
+      </div>
+      <div style={{ marginTop: 18, height: 80, borderRadius: 999, background: DARK, color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", gap: 14, fontFamily: BODY, fontWeight: 800, fontSize: 34 }}>
+        <span style={{ fontSize: 28 }}>▶</span> Start step 1
+      </div>
+    </div>
+  );
+};
 
 const NOTES_YELLOW = "#E3A008";
 // iPhone Notes page (checklist) + optional purple handwritten scribble + optional FOCO step under the note
@@ -430,9 +460,15 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
           <div style={{ position: "absolute", top: 260, left: 60, right: 60 }}>
             <Bubble size={58}>{s.label}</Bubble>
           </div>
+          {s.style === "pro" && s.steps ? (
+            <div style={{ position: "absolute", bottom: 1920 - 1480, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
+              <ProStepCard title={s.title ?? ""} steps={s.steps} />
+            </div>
+          ) : (
           <div style={{ position: "absolute", top: 1040, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
             <StepCard step={s.step} min={s.min} />
           </div>
+          )}
         </AbsoluteFill>
       );
     case "caption":

@@ -60,6 +60,8 @@ Goal = click -> install -> trial (not saves/comments). Organic rules still apply
 0. **CLARITY FIRST (Adi, 2026-11-17): one big sentence per slide, readable in 1 second; the photo carries the
    context.** Dense story formats (`notes`, `chat`, `checklist`) failed as ads ("didn't understand anything"); use
    `hook` / `caption` / `step` / `final-card`. Squint-test preview.jpg. Example: `ad-mom-nap-time-v2`.
+11b. **FOCO step in ads = `"style": "pro"` on a `step` slide** (+ `"title"`, `"steps"`): light widget card with the full
+   FOCO logo, step 1 lit, the rest dimmed, a Start button. Adi liked it over the dark StepCard (2026-11-17).
 12. **Test hooks, not carousels:** one body, 3 hook slide-1 variants. Judge by link CTR, CPI, cost per trial.
 Moms are a deliberate paid-audience test (Adi chose them 2026-11-17), not a change of the organic primary avatar.
 
