@@ -38,6 +38,28 @@ an in-app FOCO card, and FOCO revealed only at the end as a casual "btw". Engine
 The older layouts are not retired: mix them into the new formats when they prove a point (e.g. `focus` after a
 chat turn), and use them for feature tests (Just say it / Snap your list / Big task / Just one step).
 
+## PAID / PERFORMANCE carousel (Adi, 2026-11-17): when the carousel is an AD, these win over the organic defaults
+Goal = click -> install -> trial (not saves/comments). Organic rules still apply unless overridden here.
+1. **Slide 1 = 80% of the result** (most viewers see only it): audience in line 1 + a SPECIFIC tension (number,
+   object, clock) + an open loop. Native look, never ad-looking.
+2. **"That's me" before "try this":** slides 2-3 = hyper-specific moments of that audience (moms: laundry left in
+   the machine 3 days, the school form, the pediatrician call, nap time, 11pm). Specific converts; "mental load" doesn't.
+3. **Swipe momentum:** every slide leaves a tension the next closes (clock chip moving 2:00 -> 2:20 -> 2:55,
+   a list that grows, a question).
+4. **Shame-free reframe before the product:** "I'm not lazy. I just can't start." Never skip it.
+5. **Mechanism shown, not claimed:** say it -> it's in my day -> one optional tap breaks it down -> ONE step +
+   timer + sound. One clear screen per slide.
+6. **Outcome in the audience's terms**, not "productive": "signed before pickup", "7 min left for coffee".
+7. **Trust** where possible (real store rating / real review quote). Never "free", never prices.
+8. **Final slide sells:** core line + clear action ("Try it at the next nap") + store badges. No "Same? 👇".
+9. **Ad copy ships with the slides:** write `ad-copy.md` in the out folder: 3 primary texts (first 125 chars carry
+   the hook), 3 headlines (≤40 chars), CTA button (Download / Install now).
+10. **Meta health policy:** never attribute ADHD to the viewer ("Are you a mom with ADHD?", "your ADHD"). First
+    person only ("Mom with ADHD here:", "my ADHD brain").
+11. **Placements:** Meta feed uses the `ig-slide-N` 4:5 files, Stories/Reels/TikTok use the 9:16 slides.
+12. **Test hooks, not carousels:** one body, 3 hook slide-1 variants. Judge by link CTR, CPI, cost per trial.
+Moms are a deliberate paid-audience test (Adi chose them 2026-11-17), not a change of the organic primary avatar.
+
 ## Steps
 1. **Concept + hook.** Write 3 hook options (see "The hook") and get Adi's pick first.
    **Concept.** Pick an angle for the topic Adi gave (relatable/funny, validating, or practical-tips). 5 slides by default (SIMPLE MODE), 6-8 only for a deliberate comparison test:

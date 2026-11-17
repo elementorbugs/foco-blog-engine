@@ -1,0 +1,183 @@
+{
+  "slug": "ad-mom-nap-time",
+  "tiktok": {
+    "caption": "ADHD mom nap time: what I planned vs what happened ⏳\n\nnap time is my one quiet hour. 3 tiny tasks: sign the school trip form, pay the electric bill, book the pediatrician. 20 minutes later I'd reorganized the snack drawer and scrolled. I'm not lazy. I just can't start. so I said the task out loud to FOCO, it gave me a 1-minute first step, and everything was done before she woke up.\n\nwhat's your nap time task? 👇\n\nthe app on the slides is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#adhdmom",
+      "#momswithadhd",
+      "#taskparalysis",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "ADHD mom nap time: what I planned vs what actually happened ⏳\n\nNap time is my one quiet hour. The plan was 3 tiny tasks:\n\n1. Sign the school trip form\n2. Pay the electric bill\n3. Book the pediatrician\n\n20 minutes in, I'd reorganized the snack drawer. I'm not lazy. I just can't start.\n\nSo I said it out loud to FOCO. Step 1 was \"open the school email\". 1 minute. All 3 were done at 2:55. She woke up at 3:02.\n\nYou don't need another to-do list. You need help starting.\n\n📌 Save this for the next nap, and send it to a mom friend who gets it.\n💜 The app is FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdmom",
+      "#momswithadhd",
+      "#taskparalysis",
+      "#adhdtips"
+    ],
+    "altText": "Carousel styled as an iPhone note: a mom with ADHD plans 3 small tasks for nap time, loses 20 minutes to avoidance, then FOCO gives her a 1-minute first step and all 3 tasks are done before her baby wakes up."
+  },
+  "slides": [
+    {
+      "layout": "notes",
+      "id": "hook",
+      "person": false,
+      "title": [
+        "Mom with ADHD here:",
+        "Nap time: 1 quiet hour"
+      ],
+      "date": "Today 2:00 PM",
+      "noteTitle": "Nap time ✨",
+      "items": [
+        {
+          "text": "Sign the school trip form",
+          "hl": true
+        },
+        {
+          "text": "Pay the electric bill"
+        },
+        {
+          "text": "Book the pediatrician"
+        }
+      ],
+      "scribble": "3 tiny things. easy.",
+      "own": "carousels/own/ad-mom/hook-toys.jpg"
+    },
+    {
+      "layout": "notes",
+      "id": "n2",
+      "person": false,
+      "query": "open kitchen drawer with snacks",
+      "date": "Today 2:20 PM",
+      "noteTitle": "Nap time ✨",
+      "items": [
+        {
+          "text": "Sign the school trip form",
+          "hl": true
+        },
+        {
+          "text": "Pay the electric bill"
+        },
+        {
+          "text": "Book the pediatrician"
+        },
+        {
+          "text": "Reorganize the snack drawer",
+          "done": true
+        }
+      ],
+      "scribble": "20 min gone. why 🫠",
+      "pick": 3
+    },
+    {
+      "layout": "notes",
+      "id": "n3",
+      "person": false,
+      "query": "kids toys scattered on living room floor",
+      "date": "Today 2:28 PM",
+      "noteTitle": "Nap time ✨",
+      "items": [
+        {
+          "text": "Sign the school trip form",
+          "hl": true
+        },
+        {
+          "text": "Pay the electric bill"
+        },
+        {
+          "text": "Book the pediatrician"
+        },
+        {
+          "text": "Reorganize the snack drawer",
+          "done": true
+        },
+        {
+          "text": "Scroll \"for one sec\"",
+          "done": true
+        }
+      ],
+      "scribble": "I'm not lazy. I just can't start.",
+      "pick": 3
+    },
+    {
+      "layout": "notes",
+      "id": "n4",
+      "person": false,
+      "query": "hand holding smartphone on couch at home",
+      "date": "Today 2:30 PM",
+      "noteTitle": "Nap time ✨",
+      "items": [
+        {
+          "text": "Sign the school trip form",
+          "hl": true
+        }
+      ],
+      "scribble": "ok. said it out loud to FOCO",
+      "foco": {
+        "text": "Open the school email",
+        "min": 1
+      },
+      "pick": 1
+    },
+    {
+      "layout": "focus",
+      "id": "focus",
+      "person": false,
+      "query": "phone on kitchen table with coffee mug morning light",
+      "label": "then ONE step on my screen",
+      "comment": "rainy sounds. no step 3 yet.",
+      "stepNo": 2,
+      "stepTotal": 3,
+      "step": "Fill in the trip form",
+      "min": 4,
+      "sound": "Rainy",
+      "pick": 2
+    },
+    {
+      "layout": "notes",
+      "id": "n6",
+      "person": false,
+      "query": "cup of coffee on table window light afternoon",
+      "date": "Today 2:55 PM",
+      "noteTitle": "Nap time ✨",
+      "items": [
+        {
+          "text": "Sign the school trip form",
+          "done": true,
+          "hl": true
+        },
+        {
+          "text": "Pay the electric bill",
+          "done": true
+        },
+        {
+          "text": "Book the pediatrician",
+          "done": true
+        }
+      ],
+      "scribble": "she woke up at 3:02 🥹",
+      "pick": 2
+    },
+    {
+      "layout": "final-card",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "You don't need another to-do list.",
+        "You need help starting 💜"
+      ],
+      "title": "Sign the school trip form",
+      "steps": [
+        {
+          "text": "Open the school email",
+          "min": 1
+        }
+      ],
+      "ask": "Try it at the next nap ⏳"
+    }
+  ]
+}
