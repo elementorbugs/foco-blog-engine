@@ -1,7 +1,7 @@
 {
   "slug": "diary-jess-waiting-mode",
   "tiktok": {
-    "caption": "ADHD mom waiting mode is real: my toddler napped for 2 hours and i didn't start anything 🫠\n\nit's not laziness. when the kids are home part of your brain stays on alert for the next interruption, so starting feels impossible. what helped: one tiny first step, not the whole task.\n\ndo you get waiting mode too? 👇\nsave this for the next nap 📌\n\nthe app on the last slides is FOCO, link in bio 💜",
+    "caption": "ADHD mom waiting mode is real: my toddler napped for 2 hours and i didn't start anything 🫠\n\nit's not laziness. when the kids are home part of your brain stays on alert for the next interruption, so starting feels impossible. what helped: one tiny first step, not the whole task.\n\ndo you get waiting mode too? 👇\nsave this for the next nap 📌\n\nthe app on the last slides is FOCO, link in bio 💜",
     "hashtags": [
       "#adhdmom",
       "#waitingmode",
@@ -17,17 +17,18 @@
       "#taskparalysis",
       "#adhdwomen"
     ],
-    "altText": "Diary-style carousel on cream paper with taped photos of a mom working from home during her toddler's nap, about ADHD waiting mode and starting a work task with one tiny step in FOCO."
+    "altText": "Scrapbook-style diary carousel of a mom working from home during her toddler's nap: taped photos of her laptop, baby monitor and paperwork, cut-out photos of her with hand-drawn arrows, about ADHD waiting mode and starting a work task with one tiny step in FOCO."
   },
   "slides": [
     {
       "layout": "diary",
       "id": "s1",
+      "gap": 26,
       "blocks": [
         {
           "t": "script",
           "text": "adhd mom diary",
-          "size": 62
+          "size": 60
         },
         {
           "t": "head",
@@ -35,27 +36,101 @@
           "size": 68
         },
         {
-          "t": "cutout",
-          "file": "carousels/own/jess-waiting/cut2.png",
-          "h": 600,
-          "note": "me. \"about to start\" at 1:00",
-          "side": "left"
+          "t": "collage",
+          "h": 820,
+          "items": [
+            {
+              "k": "photo",
+              "file": "carousels/own/jess-waiting/laptop.jpg",
+              "x": 0,
+              "y": 40,
+              "w": 400,
+              "h": 320,
+              "rot": -5
+            },
+            {
+              "k": "sticky",
+              "text": "proposal due TOMORROW!!",
+              "x": 20,
+              "y": 470,
+              "w": 290,
+              "rot": 4
+            },
+            {
+              "k": "cutout",
+              "file": "carousels/own/jess-waiting/cut2.png",
+              "x": 380,
+              "y": 150,
+              "h": 660,
+              "rot": 2
+            },
+            {
+              "k": "note",
+              "text": "me, \"about to start\"",
+              "x": 300,
+              "y": -10,
+              "w": 300,
+              "rot": -3
+            },
+            {
+              "k": "arrow",
+              "x": 430,
+              "y": 70,
+              "w": 170,
+              "rot": 0
+            }
+          ]
         }
       ]
     },
     {
       "layout": "diary",
       "id": "s2",
-      "own": "carousels/own/jess-waiting/s2.jpg",
+      "gap": 28,
       "blocks": [
         {
-          "t": "photo",
-          "w": 520,
-          "h": 620
+          "t": "collage",
+          "h": 660,
+          "items": [
+            {
+              "k": "photo",
+              "file": "carousels/own/jess-waiting/monitor.jpg",
+              "x": 0,
+              "y": 40,
+              "w": 430,
+              "h": 360,
+              "rot": -4
+            },
+            {
+              "k": "photo",
+              "file": "carousels/own/jess-waiting/paper.jpg",
+              "x": 390,
+              "y": 250,
+              "w": 410,
+              "h": 330,
+              "rot": 5
+            },
+            {
+              "k": "note",
+              "text": "1:00. she's out.",
+              "x": 490,
+              "y": 10,
+              "w": 340,
+              "rot": 3
+            },
+            {
+              "k": "arrow",
+              "x": 440,
+              "y": 90,
+              "w": 175,
+              "flip": true,
+              "rot": 10
+            }
+          ]
         },
         {
           "t": "body",
-          "text": "1:00. nap starts. the client proposal is due tomorrow."
+          "text": "the client proposal is due tomorrow."
         },
         {
           "t": "head",
@@ -66,26 +141,59 @@
     {
       "layout": "diary",
       "id": "s3",
+      "gap": 30,
       "blocks": [
         {
           "t": "big",
           "text": "waited for *what?*",
-          "size": 104
+          "size": 100
         },
         {
           "t": "body",
           "text": "for her to wake up. for the school to call. for the next thing."
         },
         {
+          "t": "collage",
+          "h": 560,
+          "items": [
+            {
+              "k": "photo",
+              "file": "carousels/own/jess-waiting/floor.jpg",
+              "x": 20,
+              "y": 50,
+              "w": 430,
+              "h": 400,
+              "rot": -3
+            },
+            {
+              "k": "note",
+              "text": "the school could call any minute",
+              "x": 510,
+              "y": 40,
+              "w": 320,
+              "rot": 4
+            },
+            {
+              "k": "arrow",
+              "x": 470,
+              "y": 250,
+              "w": 175,
+              "flip": true,
+              "rot": 15
+            }
+          ]
+        },
+        {
           "t": "script",
           "text": "it's called waiting mode.",
-          "size": 80
+          "size": 72
         }
       ]
     },
     {
       "layout": "diary",
       "id": "s4",
+      "gap": 30,
       "blocks": [
         {
           "t": "body",
@@ -97,54 +205,148 @@
           "text": "\"always on alert in case the kid needs something. so no doing of anything.\""
         },
         {
+          "t": "collage",
+          "h": 560,
+          "items": [
+            {
+              "k": "photo",
+              "file": "carousels/own/jess-waiting/s2.jpg",
+              "x": 60,
+              "y": 30,
+              "w": 380,
+              "h": 480,
+              "rot": -4
+            },
+            {
+              "k": "note",
+              "text": "literally me today",
+              "x": 510,
+              "y": 110,
+              "w": 300,
+              "rot": 5
+            },
+            {
+              "k": "arrow",
+              "x": 450,
+              "y": 260,
+              "w": 175,
+              "flip": true,
+              "rot": 10
+            }
+          ]
+        },
+        {
           "t": "script",
-          "text": "i felt so seen",
-          "size": 84
+          "text": "i felt so seen"
         }
       ]
     },
     {
       "layout": "diary",
       "id": "s5",
+      "gap": 26,
       "blocks": [
         {
-          "t": "cutout",
-          "file": "carousels/own/jess-waiting/cut5.png",
-          "h": 560,
-          "note": "me at 2:40 🙃",
-          "side": "right"
+          "t": "collage",
+          "h": 840,
+          "items": [
+            {
+              "k": "notif",
+              "from": "Sarah (client)",
+              "text": "hey! just checking in on the proposal? we'd love it by tomorrow 🙂",
+              "x": 15,
+              "y": 20,
+              "w": 800,
+              "rot": -1.5
+            },
+            {
+              "k": "cutout",
+              "file": "carousels/own/jess-waiting/cut5.png",
+              "x": 360,
+              "y": 250,
+              "h": 580,
+              "rot": -2
+            },
+            {
+              "k": "note",
+              "text": "2:40. me reading that 🙃",
+              "x": 0,
+              "y": 360,
+              "w": 340,
+              "rot": -4
+            },
+            {
+              "k": "arrow",
+              "x": 190,
+              "y": 540,
+              "w": 175,
+              "rot": -15
+            }
+          ]
         },
         {
           "t": "head",
-          "text": "nap almost over. *still* nothing."
+          "text": "nap almost over. *still* nothing.",
+          "size": 70
         },
         {
           "t": "body",
           "text": "and now i'm mad at myself for being in waiting mode."
-        },
-        {
-          "t": "script",
-          "text": "fun bonus round"
         }
       ]
     },
     {
       "layout": "diary",
       "id": "s6",
+      "gap": 26,
       "blocks": [
         {
           "t": "body",
           "text": "so i opened FOCO and just said it out loud."
         },
         {
-          "t": "head",
-          "text": "it gave me *one* tiny step.",
-          "size": 72
+          "t": "collage",
+          "h": 720,
+          "items": [
+            {
+              "k": "sticky",
+              "text": "\"write the client proposal\"",
+              "x": 10,
+              "y": 20,
+              "w": 360,
+              "rot": -4
+            },
+            {
+              "k": "note",
+              "text": "one tap and it broke it into tiny steps",
+              "x": 430,
+              "y": 10,
+              "w": 400,
+              "rot": 3
+            },
+            {
+              "k": "arrow",
+              "x": 560,
+              "y": 200,
+              "w": 175,
+              "flip": true,
+              "rot": 35
+            },
+            {
+              "k": "focostep",
+              "step": "Open the proposal doc",
+              "min": 2,
+              "x": 0,
+              "y": 360,
+              "scale": 1,
+              "rot": -1.5
+            }
+          ]
         },
         {
-          "t": "foco",
-          "step": "Open the proposal doc",
-          "min": 2
+          "t": "head",
+          "text": "step 1 was *2 minutes.*",
+          "size": 74
         },
         {
           "t": "script",
@@ -155,50 +357,110 @@
     {
       "layout": "diary",
       "id": "s7",
+      "gap": 26,
       "blocks": [
         {
-          "t": "cutout",
-          "file": "carousels/own/jess-waiting/cut7.png",
-          "h": 560,
-          "note": "actually working??",
-          "side": "left"
+          "t": "collage",
+          "h": 840,
+          "items": [
+            {
+              "k": "photo",
+              "file": "carousels/own/jess-waiting/done.jpg",
+              "x": 0,
+              "y": 30,
+              "w": 460,
+              "h": 380,
+              "rot": -4
+            },
+            {
+              "k": "cutout",
+              "file": "carousels/own/jess-waiting/cut7.png",
+              "x": 420,
+              "y": 230,
+              "h": 600,
+              "rot": 2
+            },
+            {
+              "k": "note",
+              "text": "me, actually working??",
+              "x": 10,
+              "y": 520,
+              "w": 340,
+              "rot": -4
+            },
+            {
+              "k": "arrow",
+              "x": 250,
+              "y": 640,
+              "w": 175,
+              "rot": -20
+            }
+          ]
         },
         {
           "t": "head",
           "text": "2:58. *first page done.*",
-          "size": 80
+          "size": 78
         },
         {
           "t": "body",
           "text": "she woke up at 3:05. for once, i'd started."
-        },
-        {
-          "t": "script",
-          "text": "i'll take it"
         }
       ]
     },
     {
       "layout": "final-diary",
       "id": "end",
+      "gap": 26,
       "blocks": [
         {
           "t": "head",
           "text": "you don't need another *to-do list.*",
-          "size": 80
+          "size": 78
         },
         {
           "t": "script",
           "text": "you need help starting 💜",
-          "size": 80
+          "size": 62
+        },
+        {
+          "t": "collage",
+          "h": 470,
+          "items": [
+            {
+              "k": "focostep",
+              "step": "Open the proposal doc",
+              "min": 2,
+              "x": 0,
+              "y": 20,
+              "scale": 0.82,
+              "rot": -2.5
+            },
+            {
+              "k": "note",
+              "text": "try it at the next nap",
+              "x": 470,
+              "y": 290,
+              "w": 360,
+              "rot": -3
+            },
+            {
+              "k": "arrow",
+              "x": 330,
+              "y": 330,
+              "w": 175,
+              "rot": 40
+            }
+          ]
         },
         {
           "t": "badges"
         },
         {
           "t": "body",
-          "text": "waiting mode, same? 👇",
-          "bold": true
+          "text": "link in bio 💜 waiting mode, same? 👇",
+          "bold": true,
+          "size": 40
         }
       ]
     }

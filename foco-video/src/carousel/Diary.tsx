@@ -46,7 +46,18 @@ export type DiaryBlock =
   | { t: "cutout"; file: string; h?: number; note?: string; side?: "left" | "right"; rotate?: number }
   | { t: "badges" }
   // FOCO's first-step card, taped onto the page like a screenshot
-  | { t: "foco"; step: string; min: number };
+  | { t: "foco"; step: string; min: number }
+  // free scrapbook collage: every item placed at x/y (px) inside an 830 x h box, so no slide has dead space
+  | { t: "collage"; h: number; items: CollageItem[] };
+
+export type CollageItem =
+  | { k: "photo"; file: string; x: number; y: number; w: number; h: number; rot?: number; tape?: "pink" | "blue" }
+  | { k: "cutout"; file: string; x: number; y: number; h: number; rot?: number }
+  | { k: "note"; text: string; x: number; y: number; size?: number; rot?: number; w?: number }
+  | { k: "arrow"; x: number; y: number; w?: number; rot?: number; flip?: boolean }
+  | { k: "sticky"; text: string; x: number; y: number; w?: number; rot?: number }
+  | { k: "notif"; from: string; text: string; x: number; y: number; w?: number; rot?: number }
+  | { k: "focostep"; step: string; min: number; x: number; y: number; scale?: number; rot?: number };
 
 // *word* -> ink text with a rough marker stroke behind it
 const Hl: React.FC<{ text: string }> = ({ text }) => (
@@ -80,12 +91,59 @@ const Polaroid: React.FC<{ src: string; w: number; h: number; rotate: number; ta
 const STICKER = "drop-shadow(6px 0 0 #fff) drop-shadow(-6px 0 0 #fff) drop-shadow(0 6px 0 #fff) drop-shadow(0 -6px 0 #fff) drop-shadow(0 14px 18px rgba(40,25,30,0.28))";
 
 // hand-drawn curved arrow (points down-right toward the sticker when side = "left")
-const Arrow: React.FC<{ flip: boolean }> = ({ flip }) => (
-  <svg width={190} height={150} viewBox="0 0 190 150" style={{ transform: flip ? "scaleX(-1)" : undefined, overflow: "visible" }}>
-    <path d="M10 18 C 70 0, 140 30, 160 112" fill="none" stroke={P.pen} strokeWidth={6} strokeLinecap="round" />
-    <path d="M136 96 L 161 118 L 176 88" fill="none" stroke={P.pen} strokeWidth={6} strokeLinecap="round" strokeLinejoin="round" />
+const Arrow: React.FC<{ flip: boolean; w?: number }> = ({ flip, w = 190 }) => (
+  <svg width={w} height={(w * 150) / 190} viewBox="0 0 190 150" style={{ transform: flip ? "scaleX(-1)" : undefined, overflow: "visible" }}>
+    <path d="M10 18 C 70 0, 140 30, 160 112" fill="none" stroke={P.pen} strokeWidth={11} strokeLinecap="round" />
+    <path d="M128 92 L 161 120 L 182 82" fill="none" stroke={P.pen} strokeWidth={11} strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
+
+const fileSrc = (slug: string, file: string) => staticFile(`carousel/${slug}/${file.split("/").pop()}`);
+
+const Item: React.FC<{ it: CollageItem; slug: string; n: number }> = ({ it, slug, n }) => {
+  const pos: React.CSSProperties = { position: "absolute", left: it.x, top: it.y, transform: `rotate(${it.rot ?? 0}deg)` };
+  switch (it.k) {
+    case "photo":
+      return (
+        <div style={{ ...pos, padding: "14px 14px 18px", background: "#FBF8F2", boxShadow: "0 12px 26px rgba(40,25,30,0.22), 0 2px 4px rgba(40,25,30,0.12)" }}>
+          <Img src={fileSrc(slug, it.file)} style={{ display: "block", width: it.w, height: it.h, objectFit: "cover", filter: "saturate(0.9) contrast(0.95) sepia(0.08)" }} />
+          <Tape color={it.tape === "blue" || (!it.tape && n % 2) ? P.tapeBlue : P.tapePink} rotate={-(it.rot ?? 0) * 1.4 - 3} />
+        </div>
+      );
+    case "cutout":
+      return <Img src={fileSrc(slug, it.file)} style={{ ...pos, height: it.h, filter: STICKER }} />;
+    case "note":
+      return <div style={{ ...pos, width: it.w ?? 320, fontFamily: `${PEN}, "${EMOJI}"`, fontWeight: 700, fontSize: it.size ?? 54, lineHeight: 1.05, color: P.pen }}>{it.text}</div>;
+    case "arrow":
+      return <div style={pos}><Arrow flip={!!it.flip} w={it.w ?? 170} /></div>;
+    case "sticky":
+      return (
+        <div style={{ ...pos, width: it.w ?? 280, padding: "26px 22px 30px", background: "#FFE97A", boxShadow: "0 10px 20px rgba(40,25,30,0.18)", fontFamily: `${PEN}, "${EMOJI}"`, fontWeight: 700, fontSize: 46, lineHeight: 1.08, color: "#2B2233" }}>
+          {it.text}
+          <Tape color={P.tapeBlue} rotate={-4} style={{ width: 110, marginLeft: -55, top: -20 }} />
+        </div>
+      );
+    case "notif":
+      // iOS-style mail notification, drawn (not a screenshot): the message she's been dreading
+      return (
+        <div style={{ ...pos, width: it.w ?? 760, padding: "22px 26px", borderRadius: 30, background: "rgba(250,250,252,0.97)", boxShadow: "0 18px 40px rgba(20,10,30,0.28)", fontFamily: `${BODY}, "${EMOJI}"` }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 14, fontSize: 24, fontWeight: 700, color: "#8A8494", letterSpacing: 1 }}>
+            <div style={{ width: 44, height: 44, borderRadius: 11, background: "linear-gradient(#5AB0FF,#1E6FF0)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 26 }}>✉️</div>
+            <span style={{ flex: 1 }}>MAIL</span><span>now</span>
+          </div>
+          <div style={{ marginTop: 10, fontSize: 36, fontWeight: 800, color: "#16121C" }}>{it.from}</div>
+          <div style={{ marginTop: 2, fontSize: 34, fontWeight: 700, lineHeight: 1.25, color: "#3A3443" }}>{it.text}</div>
+        </div>
+      );
+    case "focostep":
+      return (
+        <div style={{ ...pos, transformOrigin: "top left", transform: `rotate(${it.rot ?? -1.5}deg) scale(${it.scale ?? 0.9})` }}>
+          <StepCard step={it.step} min={it.min} />
+          <Tape color={P.tapeBlue} rotate={4} />
+        </div>
+      );
+  }
+};
 
 const Star: React.FC<{ x: number; y: number; size: number; color: string }> = ({ x, y, size, color }) => (
   <svg style={{ position: "absolute", left: x, top: y, width: size, height: size }} viewBox="0 0 24 24">
@@ -145,6 +203,12 @@ const Block: React.FC<{ b: DiaryBlock; i: number; slideId: string; slug: string 
         </div>
       );
     }
+    case "collage":
+      return (
+        <div style={{ position: "relative", width: 830, height: b.h, alignSelf: "center" }}>
+          {b.items.map((it, n) => <Item key={n} it={it} slug={slug} n={n} />)}
+        </div>
+      );
     case "foco":
       return (
         <div style={{ display: "flex", justifyContent: "center", padding: "16px 0" }}>

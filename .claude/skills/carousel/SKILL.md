@@ -211,6 +211,12 @@ verified working 2026-10-04). Always `git pull` first in a reused session so the
   side?:"left"|"right"}`: the person with a white sticker outline + hand-drawn arrow + handwritten note ("me at 2:40").
   Use it at least on slide 1. Make cut-outs: Gemini the same person on a plain white background (`--ref` the anchor),
   then rembg `isnet-general-use` + keep the largest mask region (cutting from a room photo keeps the couch).
+  **v3 = scrapbook collage (Adi, 2026-11-17: "mix her with photos of her laptop, paperwork, something different each
+  slide, no big empty areas, thicker arrows; authenticity is the formula, it has to convert"):** block
+  `{t:"collage", h, items:[...]}` places items at x/y in an 830-wide box: `photo` (taped polaroid), `cutout`, `note`
+  (pen), `arrow` (thick, w ~175, rot/flip), `sticky` (yellow note), `notif` (drawn iOS mail banner = the dreaded
+  client message), `focostep` (FOCO step card). Every slide = the person OR an object of her day (laptop, monitor,
+  paperwork, kid's backpack) + a note with an arrow. Object photos: Gemini `--ref` the room anchor, then crop.
   Example: `diary-jess-waiting-mode.json`.
 - `"own": "carousels/own/<file>.jpg"` on a slide uses Adi's own phone photo instead of Pexels (no `query`/`pick`).
 - Keep each bubble under ~45 characters; slides look best with one idea each.
