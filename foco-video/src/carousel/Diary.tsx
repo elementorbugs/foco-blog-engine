@@ -72,7 +72,7 @@ const Star: React.FC<{ x: number; y: number; size: number; color: string }> = ({
 
 // a few stars per slide, placed in the margins (never over text), varied by slide index
 const STAR_SETS: [number, number, number, "p" | "b"][][] = [
-  [[70, 420, 46, "b"], [930, 330, 54, "p"], [960, 1180, 44, "b"], [90, 1320, 40, "p"]],
+  [[50, 980, 46, "b"], [930, 330, 54, "p"], [960, 1180, 44, "b"], [90, 1320, 40, "p"]],
   [[930, 260, 50, "b"], [70, 700, 44, "p"], [950, 980, 40, "p"], [110, 1400, 52, "b"]],
   [[80, 300, 52, "p"], [940, 620, 44, "b"], [60, 1100, 40, "b"], [920, 1380, 50, "p"]],
   [[940, 240, 44, "p"], [60, 560, 52, "b"], [960, 1250, 46, "b"], [80, 1420, 38, "p"]],

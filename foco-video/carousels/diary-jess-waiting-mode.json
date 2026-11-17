@@ -1,0 +1,58 @@
+{
+  "slug": "diary-jess-waiting-mode",
+  "tiktok": {
+    "caption": "ADHD mom waiting mode is real: my toddler napped for 2 hours and i didn't start anything 🫠\n\nit's not laziness. when the kids are home part of your brain stays on alert for the next interruption, so starting feels impossible. what helped: one tiny first step, not the whole task.\n\ndo you get waiting mode too? 👇\nsave this for the next nap 📌\n\nthe app on the last slides is FOCO, link in bio 💜",
+    "hashtags": ["#adhdmom", "#waitingmode", "#taskparalysis", "#adhdtiktok"]
+  },
+  "instagram": {
+    "caption": "ADHD mom diary: my toddler napped for 2 hours and I didn't start anything. It's called waiting mode.\n\nIt's not laziness. Part of my brain stays on alert for the next interruption, so I can't start.\n\n1. 1:00, nap starts, proposal due tomorrow\n2. I sit down to start... and wait\n3. 2:40, still nothing, now I'm mad at myself too\n4. I said the task out loud and did only step 1: open the doc\n\n2:58, first page done. She woke up at 3:05.\n\nSave this for the next nap, and send it to the mom friend who gets it.\n\n💜 The app I use is FOCO, link in bio.",
+    "hashtags": ["#adhdmom", "#waitingmode", "#taskparalysis", "#adhdwomen"],
+    "altText": "Diary-style carousel on cream paper with taped photos of a mom working from home during her toddler's nap, about ADHD waiting mode and starting a work task with one tiny step in FOCO."
+  },
+  "slides": [
+    { "layout": "diary", "id": "s1", "own": "carousels/own/jess-waiting/s1.jpg", "blocks": [
+      { "t": "script", "text": "adhd mom diary", "size": 64 },
+      { "t": "head", "text": "my toddler napped for 2 hours and i didn't start *anything.*", "size": 70 },
+      { "t": "photo", "w": 560, "h": 620 }
+    ]},
+    { "layout": "diary", "id": "s2", "own": "carousels/own/jess-waiting/s2.jpg", "blocks": [
+      { "t": "photo", "w": 520, "h": 620 },
+      { "t": "body", "text": "1:00. nap starts. the client proposal is due tomorrow." },
+      { "t": "head", "text": "i sat down to start. *and waited.*" }
+    ]},
+    { "layout": "diary", "id": "s3", "blocks": [
+      { "t": "big", "text": "waited for *what?*", "size": 104 },
+      { "t": "body", "text": "for her to wake up. for the school to call. for the next thing." },
+      { "t": "script", "text": "it's called waiting mode.", "size": 80 }
+    ]},
+    { "layout": "diary", "id": "s4", "blocks": [
+      { "t": "body", "text": "a mom on reddit put it perfectly:", "bold": true },
+      { "t": "quote", "text": "\"always on alert in case the kid needs something. so no doing of anything.\"" },
+      { "t": "script", "text": "i felt so seen", "size": 84 }
+    ]},
+    { "layout": "diary", "id": "s5", "own": "carousels/own/jess-waiting/s5.jpg", "blocks": [
+      { "t": "photo", "w": 520, "h": 600 },
+      { "t": "head", "text": "2:40. nap almost over. *still* nothing." },
+      { "t": "body", "text": "and now i'm mad at myself for being in waiting mode." },
+      { "t": "script", "text": "fun bonus round" }
+    ]},
+    { "layout": "diary", "id": "s6", "blocks": [
+      { "t": "body", "text": "so i opened FOCO and just said it out loud." },
+      { "t": "head", "text": "it gave me *one* tiny step.", "size": 72 },
+      { "t": "foco", "step": "Open the proposal doc", "min": 2 },
+      { "t": "script", "text": "not the whole proposal. just that." }
+    ]},
+    { "layout": "diary", "id": "s7", "own": "carousels/own/jess-waiting/s7.jpg", "blocks": [
+      { "t": "photo", "w": 520, "h": 600 },
+      { "t": "head", "text": "2:58. *first page done.*", "size": 80 },
+      { "t": "body", "text": "she woke up at 3:05. for once, i'd started." },
+      { "t": "script", "text": "i'll take it" }
+    ]},
+    { "layout": "final-diary", "id": "end", "blocks": [
+      { "t": "head", "text": "you don't need another *to-do list.*", "size": 80 },
+      { "t": "script", "text": "you need help starting 💜", "size": 80 },
+      { "t": "badges" },
+      { "t": "body", "text": "waiting mode, same? 👇", "bold": true }
+    ]}
+  ]
+}
