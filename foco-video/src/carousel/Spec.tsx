@@ -26,6 +26,8 @@ export type SpecSlide =
   | { layout: "hook"; id: string; lines: string[]; tag?: string; textTop?: number; hookStyle?: "callout"; punchFont?: "hand" }
   | { layout: "pair"; id: string; topLabel: string; top: string; bottomLabel: string; bottom: string }
   | { layout: "card"; id: string; label: string; comment?: string; title: string; steps: Step[]; result?: string }
+  | { layout: "voice"; id: string; label: string; transcript: string }
+  | { layout: "plan"; id: string; label: string; chip?: string; tasks: { title: string; min: number }[]; step: Step }
   | { layout: "step"; id: string; label: string; step: string; min: number; style?: "pro"; title?: string; steps?: Step[] }
   | { layout: "caption"; id: string; label: string; comment?: string; time?: string }
   | { layout: "focus"; id: string; label: string; comment?: string; stepNo: number; stepTotal: number; step: string; min: number; sound: string; result?: string }
@@ -38,7 +40,7 @@ export type SpecSlide =
   | { layout: "calendar"; id: string; label: string; comment?: string; title?: string; min?: number; category?: string; tasks?: CalTask[]; result?: string; breakdownButton?: boolean }
   | { layout: "inputs"; id: string; label: string; comment?: string; result?: string }
   | { layout: "phone"; id: string; label: string; comment?: string; screenshot?: number; image?: string; result?: string; crop?: [number, number]; aspect?: number }
-  | { layout: "final-card"; id: string; lines: string[]; title: string; steps: Step[]; ask: string }
+  | { layout: "final-card"; id: string; style?: "pro"; lines: string[]; title: string; steps: Step[]; ask: string }
   | { layout: "final-phone"; id: string; lines: string[]; screenshot?: number; image?: string; aspect?: number; ask: string }
   // cozy app-list format (AppList.tsx): photo cover, one app per graph-paper slide, FOCO last with the download panel
   | { layout: "applist-cover"; id: string; title: string; sub: string; icons: string[]; textTop?: number; teaser?: string }
@@ -168,6 +170,63 @@ const ProStepCard: React.FC<{ title: string; steps: Step[] }> = ({ title, steps 
     </div>
   );
 };
+
+// WOW pair for ads (2026-11-17): "voice" = the messy brain dump being recorded (before); "plan" = 2 seconds later,
+// the same dump sorted into tasks with step 1 lit (after). The swipe between them is the reveal.
+const LightCard: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <div style={{ width: 880, borderRadius: 48, padding: "30px 34px 34px", background: "rgba(255,255,255,0.96)", boxShadow: "0 40px 100px rgba(40,10,80,0.35), 0 0 0 2px rgba(167,139,250,0.35)" }}>{children}</div>
+);
+const VoiceCard: React.FC<{ transcript: string }> = ({ transcript }) => {
+  const bars = [18, 34, 52, 28, 64, 40, 22, 58, 46, 30, 70, 38, 24, 54, 42, 26, 60, 34, 20, 48, 36, 56, 28, 44];
+  return (
+    <LightCard>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <Img src={staticFile("foco-logo.png")} style={{ height: 56 }} />
+        <div style={{ display: "flex", alignItems: "center", gap: 10, fontFamily: BODY, fontWeight: 700, fontSize: 26, color: "#DC2626", background: "#FEE2E2", borderRadius: 999, padding: "8px 18px" }}>
+          <span style={{ width: 14, height: 14, borderRadius: 999, background: "#DC2626", display: "inline-block" }} /> 0:12
+        </div>
+      </div>
+      <div style={{ marginTop: 22, fontFamily: `"${HAND}", "${EMOJI}"`, fontSize: 50, lineHeight: 1.15, color: "#3b3150" }}>"{transcript}"</div>
+      <div style={{ marginTop: 22, display: "flex", alignItems: "center", gap: 22 }}>
+        <div style={{ width: 96, height: 96, flexShrink: 0, borderRadius: 999, background: "linear-gradient(135deg, #7C3AED, #A78BFA)", boxShadow: "0 0 0 12px rgba(124,58,237,0.18), 0 0 0 24px rgba(124,58,237,0.08)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="#fff"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"/></svg>
+        </div>
+        <div style={{ flex: 1, display: "flex", alignItems: "center", gap: 6, height: 80 }}>
+          {bars.map((h, i) => <div key={i} style={{ flex: 1, height: h, borderRadius: 8, background: i < 16 ? "#7C3AED" : "#DDD6FE" }} />)}
+        </div>
+      </div>
+    </LightCard>
+  );
+};
+const PlanCard: React.FC<{ chip?: string; tasks: { title: string; min: number }[]; step: Step }> = ({ chip, tasks, step }) => (
+  <LightCard>
+    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+      <Img src={staticFile("foco-logo.png")} style={{ height: 56 }} />
+      <div style={{ fontFamily: `${BODY}, "${EMOJI}"`, fontWeight: 700, fontSize: 26, color: "#15803D", background: "#DCFCE7", borderRadius: 999, padding: "8px 18px" }}>{chip ?? "sorted ✨"}</div>
+    </div>
+    <div style={{ marginTop: 18, display: "flex", flexDirection: "column", gap: 10 }}>
+      {tasks.map((t, i) => (
+        <div key={i} style={{ borderRadius: 26, padding: i === 0 ? "16px 18px 18px" : "14px 18px", background: i === 0 ? "#F5F0FF" : "transparent", border: i === 0 ? "2px solid #DDD6FE" : "2px solid #F1EDF8" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+            <div style={{ width: 40, height: 40, flexShrink: 0, borderRadius: 999, border: "3px solid #A78BFA" }} />
+            <div style={{ flex: 1, fontFamily: BODY, fontWeight: 700, fontSize: 34, color: DARK }}>{t.title}</div>
+            <div style={{ fontFamily: BODY, fontWeight: 700, fontSize: 26, color: "#7d738f" }}>{t.min} min</div>
+          </div>
+          {i === 0 ? (
+            <div style={{ marginTop: 14, display: "flex", alignItems: "center", gap: 16, padding: "16px 18px", borderRadius: 20, background: "linear-gradient(135deg, #7C3AED 0%, #9F67FF 100%)", boxShadow: "0 12px 30px rgba(124,58,237,0.4)" }}>
+              <div style={{ fontFamily: BODY, fontWeight: 800, fontSize: 22, letterSpacing: 2, color: "#EDE4FF" }}>STEP 1</div>
+              <div style={{ flex: 1, fontFamily: BODY, fontWeight: 800, fontSize: 34, color: "#FFFFFF" }}>{step.text}</div>
+              <div style={{ fontFamily: BODY, fontWeight: 800, fontSize: 26, color: "#FFFFFF", background: "rgba(255,255,255,0.22)", borderRadius: 12, padding: "4px 12px" }}>{step.min} min</div>
+            </div>
+          ) : null}
+        </div>
+      ))}
+    </div>
+    <div style={{ marginTop: 18, height: 80, borderRadius: 999, background: DARK, color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", gap: 14, fontFamily: BODY, fontWeight: 800, fontSize: 34 }}>
+      <span style={{ fontSize: 28 }}>▶</span> Start step 1
+    </div>
+  </LightCard>
+);
 
 const NOTES_YELLOW = "#E3A008";
 // iPhone Notes page (checklist) + optional purple handwritten scribble + optional FOCO step under the note
@@ -453,6 +512,19 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
           ) : null}
         </AbsoluteFill>
       );
+    case "voice":
+    case "plan":
+      return (
+        <AbsoluteFill style={{ background: "#000" }}>
+          <Photo name={photo} />
+          <div style={{ position: "absolute", top: 260, left: 60, right: 60 }}>
+            <Bubble size={58}>{s.label}</Bubble>
+          </div>
+          <div style={{ position: "absolute", bottom: 1920 - 1480, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
+            {s.layout === "voice" ? <VoiceCard transcript={s.transcript} /> : <PlanCard chip={s.chip} tasks={s.tasks} step={s.step} />}
+          </div>
+        </AbsoluteFill>
+      );
     case "step":
       return (
         <AbsoluteFill style={{ background: "#000" }}>
@@ -726,7 +798,11 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
               </div>
             ))}
           </div>
-          {s.layout === "final-card" && s.steps.length === 1 ? (
+          {s.layout === "final-card" && (s as { style?: string }).style === "pro" ? (
+            <div style={{ position: "absolute", top: Math.max(400, below + 40), left: 0, right: 0, display: "flex", justifyContent: "center", transform: "scale(0.86)", transformOrigin: "top center" }}>
+              <ProStepCard title={s.title} steps={s.steps} />
+            </div>
+          ) : s.layout === "final-card" && s.steps.length === 1 ? (
             // simple ending: just the ONE first step, big, with the mascot (no 4-step plan)
             <>
               <div style={{ position: "absolute", top: Math.max(520, below + 120), left: 0, right: 0, display: "flex", justifyContent: "center" }}>
