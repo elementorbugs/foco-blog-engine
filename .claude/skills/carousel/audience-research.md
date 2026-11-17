@@ -1,5 +1,22 @@
 # FOCO audience research + phrase bank (from Adi, 2026-10-05)
 
+## AVATAR "JESS" (Adi, 2026-11-17: "this is gold, with this we make winning carousels")
+Full research + verbatim quotes: `tasks/avatar-wfh-mom-2026-11-17.md` (217 Reddit posts). READ IT before writing.
+- 34, married, 2 kids (son 6, recently diagnosed with ADHD; daughter 2, half-day daycare). Diagnosed at 32, AFTER her son.
+- Works from home ~25 h/week, self-employed or remote (social media / bookkeeping / design for small businesses).
+- Windows: 9:00-12:30 daycare, 13:00-15:00 nap, after 20:30. Husband full time "helps"; she carries the mental load.
+- FOCO's job for her: start the ONE work task inside the window she has, before the nap ends.
+Her words (use them on slides):
+- "Where do I tell my brain to start?" ... "time to fetch the kids and genuinely nothing has been done."
+- "Waiting mode": "always on alert in case the child needs something", "the constant anticipation of an unexpected
+  transition", "angry at myself for being in waiting mode". (strongest insight)
+- "I don't do well getting things done in a small window of time. It just adds to the overwhelm."
+- "Even when I start, I get interrupted about 1 billion times."
+- "So much anxiety around even responding to clients." / "a jump scare every time I get an Outlook notification."
+- "If I'm caught up with work, the house is a mess."
+- Apps "seem made for non-working single people with no kids." / "my 572nd attempt to keep a planner"
+Never: abstract "mental load", perfect routines, shame about the kids.
+
 Read this before writing ANY carousel. Hooks and bubbles should come from (or stay very close to) the real
 phrases below: they are the audience's own words, not ours.
 

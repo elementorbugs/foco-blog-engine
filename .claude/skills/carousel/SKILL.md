@@ -9,6 +9,8 @@ Format copied from a viral app carousel (Flowfy): real lifestyle photo per slide
 an in-app FOCO card, and FOCO revealed only at the end as a casual "btw". Engine lives in `foco-video/`.
 
 ## CURRENT DEFAULTS (Adi, 2026-10-07): these win over anything older below
+0. **Avatar = "Jess" (2026-11-17):** WFH mom with ADHD, 34, 2 kids, works in the daycare/nap windows. Read the JESS
+   section at the top of `audience-research.md` + `tasks/avatar-wfh-mom-2026-11-17.md` before every carousel.
 1. **Format: rotate the approved formats**, never the same one twice in a row: `chat` ("Texting my ADHD brain",
    iMessage thread me vs my brain), `notes` (iPhone Notes checklist), `versus` (plan vs reality), `checklist` (✅/❌ things I tried). Adi: "loved the new
    designs". The older caption/card photo format felt boring: use it only when a new idea needs it. When a format
