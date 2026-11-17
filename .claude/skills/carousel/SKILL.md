@@ -67,6 +67,14 @@ proposal, invoice, reply to a client) inside one of those windows. Strongest ins
 - Object photos: generate from her POV with the anchor as ref, crop to the object.
 - Put files in `foco-video/carousels/own/<folder>/`. AI images: turn on the AI-generated label when posting.
 
+## Another mom (when Adi asks for a different face)
+Same avatar (Jess's life, research and story rules), different woman. One woman per carousel, never mixed inside one.
+1. Generate a new anchor: one candid photo of the new mom in HER apartment (prompt style of `kit/prompts/p1.txt`,
+   describe age/look/home). Show it to Adi before building on it.
+2. Save as `kit/<name>-anchor.png` (+ `kit/<name>-white-bg.png` for cut-outs) and add one line to `kit/README.md`.
+3. Every image of that carousel uses `--ref kit/<name>-anchor.png`; slides, rules and structure stay the same.
+Default stays Jess: a diary series builds trust when the same woman returns, so switch faces deliberately (e.g. a test).
+
 ## Spec (diary layout)
 ```json
 { "slug": "diary-jess-<topic>",
