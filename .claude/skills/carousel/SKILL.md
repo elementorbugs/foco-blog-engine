@@ -57,6 +57,9 @@ Goal = click -> install -> trial (not saves/comments). Organic rules still apply
 10. **Meta health policy:** never attribute ADHD to the viewer ("Are you a mom with ADHD?", "your ADHD"). First
     person only ("Mom with ADHD here:", "my ADHD brain").
 11. **Placements:** Meta feed uses the `ig-slide-N` 4:5 files, Stories/Reels/TikTok use the 9:16 slides.
+0. **CLARITY FIRST (Adi, 2026-11-17): one big sentence per slide, readable in 1 second; the photo carries the
+   context.** Dense story formats (`notes`, `chat`, `checklist`) failed as ads ("didn't understand anything"); use
+   `hook` / `caption` / `step` / `final-card`. Squint-test preview.jpg. Example: `ad-mom-nap-time-v2`.
 12. **Test hooks, not carousels:** one body, 3 hook slide-1 variants. Judge by link CTR, CPI, cost per trial.
 Moms are a deliberate paid-audience test (Adi chose them 2026-11-17), not a change of the organic primary avatar.
 

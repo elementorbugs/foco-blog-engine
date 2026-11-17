@@ -1,0 +1,104 @@
+{
+  "slug": "ad-mom-nap-time-v2",
+  "tiktok": {
+    "caption": "ADHD mom nap time: what I planned vs what happened ⏳\n\nbaby's asleep, I have one hour and 3 tiny tasks. 20 minutes later I'd organized the snack drawer. I'm not lazy. I just can't start. so I told FOCO the task and it gave me one tiny first step. all done before she woke up.\n\nwhat's your nap time task? 👇\n\nthe app on the slides is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#adhdmom",
+      "#momswithadhd",
+      "#taskparalysis",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "ADHD mom nap time: what I planned vs what actually happened ⏳\n\nBaby's asleep. I have one hour and 3 tiny tasks.\n\n20 minutes later I'd organized the snack drawer. I'm not lazy. I just can't start.\n\nSo I told FOCO the task. It gave me one tiny first step: open the school email. 1 minute. Everything was done before she woke up.\n\nYou don't need another to-do list. You need help starting.\n\n📌 Save this for the next nap, and send it to a mom friend who gets it.\n💜 The app is FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdmom",
+      "#momswithadhd",
+      "#taskparalysis",
+      "#adhdtips"
+    ],
+    "altText": "Carousel: a mom with ADHD has one hour of nap time and 3 small tasks, spends 20 minutes organizing the snack drawer instead, then FOCO gives her one tiny first step and she finishes before her baby wakes up."
+  },
+  "slides": [
+    {
+      "layout": "hook",
+      "id": "hook",
+      "person": false,
+      "query": "baby sleeping in crib top view",
+      "lines": [
+        "Mom with ADHD here:",
+        "baby is asleep. ONE hour ⏳"
+      ],
+      "pick": 2
+    },
+    {
+      "layout": "caption",
+      "id": "plan",
+      "person": false,
+      "query": "handwritten to do list notebook on table",
+      "time": "2:00 pm",
+      "label": "the plan: 3 tiny tasks",
+      "comment": "form, bill, doctor. easy 📝",
+      "pick": 6
+    },
+    {
+      "layout": "caption",
+      "id": "drawer",
+      "person": false,
+      "query": "open kitchen drawer with snacks",
+      "time": "2:20 pm",
+      "label": "20 minutes later:",
+      "comment": "I organized the snack drawer 🫠",
+      "pick": 3
+    },
+    {
+      "layout": "caption",
+      "id": "stuck",
+      "person": false,
+      "query": "hand holding smartphone on couch at home",
+      "time": "2:28 pm",
+      "label": "I'm not lazy.",
+      "comment": "I just can't start.",
+      "pick": 1
+    },
+    {
+      "layout": "step",
+      "id": "foco",
+      "person": false,
+      "query": "phone on kitchen table with coffee mug morning light",
+      "label": "so I told FOCO the task. it gave me ONE tiny step:",
+      "step": "Open the school email",
+      "min": 1,
+      "pick": 2
+    },
+    {
+      "layout": "caption",
+      "id": "done",
+      "person": false,
+      "query": "cup of coffee on table window light afternoon",
+      "time": "2:55 pm",
+      "label": "all 3 done ✅",
+      "comment": "before the baby woke up 🥹",
+      "pick": 2
+    },
+    {
+      "layout": "final-card",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "You don't need another to-do list.",
+        "You need help starting 💜"
+      ],
+      "title": "Sign the school trip form",
+      "steps": [
+        {
+          "text": "Open the school email",
+          "min": 1
+        }
+      ],
+      "ask": "Try it at the next nap ⏳"
+    }
+  ]
+}
