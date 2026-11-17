@@ -39,6 +39,7 @@ The older layouts are not retired: mix them into the new formats when they prove
 chat turn), and use them for feature tests (Just say it / Snap your list / Big task / Just one step).
 
 ## PAID / PERFORMANCE carousel (Adi, 2026-11-17): when the carousel is an AD, these win over the organic defaults
+**FULL DESIGN SYSTEM + story template: read `ad-carousel-playbook.md` (same folder) before every ad carousel.**
 Goal = click -> install -> trial (not saves/comments). Organic rules still apply unless overridden here.
 1. **Slide 1 = 80% of the result** (most viewers see only it): audience in line 1 + a SPECIFIC tension (number,
    object, clock) + an open loop. Native look, never ad-looking.
