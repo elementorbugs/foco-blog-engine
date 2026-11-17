@@ -27,6 +27,8 @@ export type SpecSlide =
   | { layout: "pair"; id: string; topLabel: string; top: string; bottomLabel: string; bottom: string }
   | { layout: "card"; id: string; label: string; comment?: string; title: string; steps: Step[]; result?: string }
   | { layout: "voice"; id: string; label: string; transcript: string }
+  | { layout: "daycal"; id: string; label: string; tasks: { time: string; title: string; min: number }[]; step: Step; stepsTotal: number }
+  | { layout: "withme"; id: string; label: string; step: Step; stepNo: number; stepTotal: number; clock: string; sound: string }
   | { layout: "plan"; id: string; label: string; chip?: string; tasks: { title: string; min: number }[]; step: Step }
   | { layout: "step"; id: string; label: string; step: string; min: number; style?: "pro"; title?: string; steps?: Step[] }
   | { layout: "caption"; id: string; label: string; comment?: string; time?: string }
@@ -224,6 +226,67 @@ const PlanCard: React.FC<{ chip?: string; tasks: { title: string; min: number }[
     </div>
     <div style={{ marginTop: 18, height: 80, borderRadius: 999, background: DARK, color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", gap: 14, fontFamily: BODY, fontWeight: 800, fontSize: 34 }}>
       <span style={{ fontSize: 28 }}>▶</span> Start step 1
+    </div>
+  </LightCard>
+);
+
+// "daycal" = the dump landed in today's calendar (times + step 1 of the first task); "withme" = FOCO's character
+// sitting with her in focus mode (timer + sound). Together with "voice" they show FOCO's 3 differentiators.
+const DayCalCard: React.FC<{ tasks: { time: string; title: string; min: number }[]; step: Step; stepsTotal: number }> = ({ tasks, step, stepsTotal }) => (
+  <LightCard>
+    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+      <Img src={staticFile("foco-logo.png")} style={{ height: 56 }} />
+      <div style={{ fontFamily: BODY, fontWeight: 700, fontSize: 26, color: "#6D28D9", background: "#EFE7FF", borderRadius: 999, padding: "8px 18px" }}>📅 Today</div>
+    </div>
+    <div style={{ marginTop: 18, display: "flex", flexDirection: "column", gap: 10 }}>
+      {tasks.map((t, i) => (
+        <div key={i} style={{ display: "flex", gap: 16 }}>
+          <div style={{ width: 118, flexShrink: 0, paddingTop: 16, fontFamily: BODY, fontWeight: 700, fontSize: 26, color: "#7d738f" }}>{t.time}</div>
+          <div style={{ flex: 1, borderRadius: 22, padding: "14px 18px", background: i === 0 ? "#F5F0FF" : "#FAF8FE", borderLeft: `8px solid ${["#7C3AED", "#FB923C", "#22C55E"][i % 3]}` }}>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <div style={{ flex: 1, fontFamily: BODY, fontWeight: 700, fontSize: 32, color: DARK }}>{t.title}</div>
+              <div style={{ fontFamily: BODY, fontWeight: 700, fontSize: 24, color: "#7d738f" }}>{t.min} min</div>
+            </div>
+            {i === 0 ? (
+              <>
+                <div style={{ marginTop: 6, fontFamily: `${BODY}, "${EMOJI}"`, fontWeight: 600, fontSize: 22, color: "#7C3AED" }}>✨ split into {stepsTotal} tiny steps, 1 tap</div>
+                <div style={{ marginTop: 10, display: "flex", alignItems: "center", gap: 14, padding: "12px 16px", borderRadius: 16, background: "linear-gradient(135deg, #7C3AED 0%, #9F67FF 100%)", boxShadow: "0 10px 26px rgba(124,58,237,0.4)" }}>
+                  <div style={{ fontFamily: BODY, fontWeight: 800, fontSize: 20, letterSpacing: 2, color: "#EDE4FF" }}>STEP 1</div>
+                  <div style={{ flex: 1, fontFamily: BODY, fontWeight: 800, fontSize: 30, color: "#FFFFFF" }}>{step.text}</div>
+                  <div style={{ fontFamily: BODY, fontWeight: 800, fontSize: 24, color: "#FFFFFF" }}>{step.min} min</div>
+                </div>
+              </>
+            ) : null}
+          </div>
+        </div>
+      ))}
+    </div>
+  </LightCard>
+);
+const WithMeCard: React.FC<{ step: Step; stepNo: number; stepTotal: number; clock: string; sound: string }> = ({ step, stepNo, stepTotal, clock, sound }) => (
+  <LightCard>
+    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+      <Img src={staticFile("foco-logo.png")} style={{ height: 56 }} />
+      <div style={{ display: "flex", alignItems: "center", gap: 10, fontFamily: BODY, fontWeight: 700, fontSize: 26, color: "#6D28D9", background: "#EFE7FF", borderRadius: 999, padding: "8px 18px" }}>
+        <span style={{ width: 12, height: 12, borderRadius: 999, background: "#7C3AED", display: "inline-block" }} /> focus mode
+      </div>
+    </div>
+    <div style={{ marginTop: 16, display: "flex", alignItems: "center", gap: 24 }}>
+      <div style={{ width: 230, height: 230, flexShrink: 0, borderRadius: 999, background: "radial-gradient(circle, rgba(167,139,250,0.45) 0%, rgba(167,139,250,0.12) 55%, transparent 72%)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <Img src={staticFile("mascots-hd/focus.png")} style={{ height: 200 }} />
+      </div>
+      <div style={{ flex: 1 }}>
+        <div style={{ fontFamily: BODY, fontWeight: 800, fontSize: 22, letterSpacing: 3, color: "#A78BFA" }}>STEP {stepNo} OF {stepTotal}</div>
+        <div style={{ marginTop: 6, fontFamily: BODY, fontWeight: 800, fontSize: 38, lineHeight: 1.15, color: DARK }}>{step.text}</div>
+        <div style={{ marginTop: 10, fontFamily: HEAD, fontWeight: 800, fontSize: 72, color: "#7C3AED", lineHeight: 1 }}>{clock}</div>
+        <div style={{ marginTop: 10, height: 12, borderRadius: 999, background: "#EFE7FF", overflow: "hidden" }}>
+          <div style={{ width: "22%", height: "100%", borderRadius: 999, background: "linear-gradient(90deg, #7C3AED, #A78BFA)" }} />
+        </div>
+      </div>
+    </div>
+    <div style={{ marginTop: 18, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 14 }}>
+      <div style={{ fontFamily: `${BODY}, "${EMOJI}"`, fontWeight: 700, fontSize: 28, color: "#6D28D9", background: "#F5F0FF", border: "2px solid #DDD6FE", borderRadius: 999, padding: "12px 22px" }}>🌧️ {sound} sounds playing</div>
+      <div style={{ fontFamily: `"${HAND}", "${EMOJI}"`, fontSize: 40, color: "#7C3AED" }}>I'm here with you 💜</div>
     </div>
   </LightCard>
 );
@@ -514,6 +577,8 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
       );
     case "voice":
     case "plan":
+    case "daycal":
+    case "withme":
       return (
         <AbsoluteFill style={{ background: "#000" }}>
           <Photo name={photo} />
@@ -521,7 +586,7 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
             <Bubble size={58}>{s.label}</Bubble>
           </div>
           <div style={{ position: "absolute", bottom: 1920 - 1480, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
-            {s.layout === "voice" ? <VoiceCard transcript={s.transcript} /> : <PlanCard chip={s.chip} tasks={s.tasks} step={s.step} />}
+            {s.layout === "voice" ? <VoiceCard transcript={s.transcript} /> : s.layout === "daycal" ? <DayCalCard tasks={s.tasks} step={s.step} stepsTotal={s.stepsTotal} /> : s.layout === "withme" ? <WithMeCard step={s.step} stepNo={s.stepNo} stepTotal={s.stepTotal} clock={s.clock} sound={s.sound} /> : <PlanCard chip={s.chip} tasks={s.tasks} step={s.step} />}
           </div>
         </AbsoluteFill>
       );

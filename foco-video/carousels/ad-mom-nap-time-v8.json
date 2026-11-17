@@ -1,0 +1,152 @@
+{
+  "slug": "ad-mom-nap-time-v8",
+  "tiktok": {
+    "caption": "ADHD mom contact nap: what I planned vs what happened ⏳\n\nbaby fell asleep on me, so I had one hour and my phone. 3 tasks I could do from my phone: sign the school form, pay the bill, book the pediatrician. 40 minutes later I'd watched 30 reels. I'm not lazy. I just can't start. so I told FOCO the task and it gave me one tiny first step. all 3 done before she woke up.\n\nwhat's your nap time task? 👇\n\nthe app on the slides is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#adhdmom",
+      "#momswithadhd",
+      "#taskparalysis",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "ADHD mom contact nap: what I planned vs what actually happened ⏳\n\nBaby fell asleep on me. One hour, one phone, 3 tasks I could do from it.\n\n40 minutes later I'd watched 30 reels. I'm not lazy. I just can't start.\n\nSo I told FOCO the task. It gave me one tiny first step: open the school email. 1 minute. All 3 were done before she woke up.\n\nYou don't need another to-do list. You need help starting.\n\n📌 Save this for the next nap, and send it to a mom friend who gets it.\n💜 The app is FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#adhdmom",
+      "#momswithadhd",
+      "#taskparalysis",
+      "#adhdtips"
+    ],
+    "altText": "Carousel: a mom with ADHD is stuck under her sleeping baby with only her phone and 3 small tasks, scrolls for 40 minutes, then FOCO gives her one tiny first step and she finishes all 3 before the baby wakes up."
+  },
+  "slides": [
+    {
+      "layout": "hook",
+      "id": "hook",
+      "person": false,
+      "lines": [
+        "Mom with ADHD here:",
+        "baby fell asleep ON me ⏳"
+      ],
+      "tag": "1 hour. just me and my phone.",
+      "textTop": 1100,
+      "own": "carousels/own/ad-mom-ai2/s1.jpg"
+    },
+    {
+      "layout": "caption",
+      "id": "plan",
+      "person": false,
+      "time": "2:00 pm",
+      "label": "3 things I can do from my phone",
+      "comment": "form, bill, doctor. easy 📱",
+      "own": "carousels/own/ad-mom-ai2/s2.jpg"
+    },
+    {
+      "layout": "caption",
+      "id": "drawer",
+      "person": false,
+      "time": "2:40 pm",
+      "label": "40 minutes later:",
+      "comment": "I'd watched 30 reels 🫠",
+      "own": "carousels/own/ad-mom-ai2/s3.jpg"
+    },
+    {
+      "layout": "caption",
+      "id": "stuck",
+      "person": false,
+      "time": "2:42 pm",
+      "label": "I'm not lazy.",
+      "comment": "I just can't start.",
+      "own": "carousels/own/ad-mom-ai2/s4.jpg"
+    },
+    {
+      "layout": "voice",
+      "id": "voice",
+      "person": false,
+      "own": "carousels/own/ad-mom-ai2/s7.jpg",
+      "label": "so I just said it out loud 🎙️",
+      "transcript": "ok um. the school trip form. and the electric bill. oh and call the pediatrician before friday..."
+    },
+    {
+      "layout": "daycal",
+      "id": "cal",
+      "person": false,
+      "own": "carousels/own/ad-mom-ai2/s5.jpg",
+      "label": "2 seconds later: in my day ✨",
+      "stepsTotal": 3,
+      "step": {
+        "text": "Open the school email",
+        "min": 1
+      },
+      "tasks": [
+        {
+          "time": "2:45 pm",
+          "title": "Sign the school trip form",
+          "min": 7
+        },
+        {
+          "time": "2:52 pm",
+          "title": "Pay the electric bill",
+          "min": 5
+        },
+        {
+          "time": "2:57 pm",
+          "title": "Book the pediatrician",
+          "min": 5
+        }
+      ]
+    },
+    {
+      "layout": "withme",
+      "id": "withme",
+      "person": false,
+      "own": "carousels/own/ad-mom-ai2/s8.jpg",
+      "label": "then FOCO stayed with me while I started 💜",
+      "step": {
+        "text": "Open the school email",
+        "min": 1
+      },
+      "stepNo": 1,
+      "stepTotal": 3,
+      "clock": "00:47",
+      "sound": "Rainy"
+    },
+    {
+      "layout": "caption",
+      "id": "done",
+      "person": false,
+      "time": "2:58 pm",
+      "label": "all 3 done in 16 min ✅",
+      "comment": "right before she woke up 🥹",
+      "own": "carousels/own/ad-mom-ai2/s6.jpg"
+    },
+    {
+      "layout": "final-card",
+      "id": "end",
+      "photo": "hook",
+      "lines": [
+        "You don't need another to-do list.",
+        "You need help starting 💜"
+      ],
+      "title": "Sign the school trip form",
+      "steps": [
+        {
+          "text": "Open the school email",
+          "min": 1
+        },
+        {
+          "text": "Fill in the trip form",
+          "min": 4
+        },
+        {
+          "text": "Sign it and send it back",
+          "min": 2
+        }
+      ],
+      "ask": "Try it at the next nap ⏳",
+      "style": "pro"
+    }
+  ]
+}

@@ -66,6 +66,9 @@ Goal = click -> install -> trial (not saves/comments). Organic rules still apply
    transcript in handwriting + waveform) then `plan` slide ("2 seconds later ✨": tasks sorted, step 1 lit, Start).
    Same photo framing on both so the swipe is the reveal. Add a number contrast after it ("40 min scrolling" vs
    "all 3 done in 16 min"). Example: `ad-mom-nap-time-v7`.
+11d. **Show all 3 differentiators in the turn** (Adi, 2026-11-17): `voice` (say it) -> `daycal` (it lands in today's
+   calendar with times, task 1 split into steps with 1 tap) -> `withme` (FOCO's character in focus mode: step, timer,
+   sound, "I'm here with you"). Example: `ad-mom-nap-time-v8`.
 12. **Test hooks, not carousels:** one body, 3 hook slide-1 variants. Judge by link CTR, CPI, cost per trial.
 Moms are a deliberate paid-audience test (Adi chose them 2026-11-17), not a change of the organic primary avatar.
 
