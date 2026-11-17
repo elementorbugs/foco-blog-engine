@@ -7,6 +7,7 @@ import { Bubble, FocoCard, Photo } from "./Carousel";
 import { StepCard, TimeChip } from "./MoreCarousels";
 import { Tag } from "./MoreCarousels2";
 import { AppListCover, AppSlide, type AppInfo } from "./AppList";
+import { DiarySlide, type DiaryBlock } from "./Diary";
 
 type Step = { text: string; min: number };
 type CalTask = { title: string; min: number; category: string };
@@ -47,6 +48,8 @@ export type SpecSlide =
   | { layout: "final-phone"; id: string; lines: string[]; screenshot?: number; image?: string; aspect?: number; ask: string }
   // cozy app-list format (AppList.tsx): photo cover, one app per graph-paper slide, FOCO last with the download panel
   | { layout: "applist-cover"; id: string; title: string; sub: string; icons: string[]; textTop?: number; teaser?: string }
+  // founder-diary format (Diary.tsx): cream paper, taped polaroids, *highlighted* word, script asides; final-diary ends it
+  | { layout: "diary" | "final-diary"; id: string; blocks: DiaryBlock[]; gap?: number }
   | ({ layout: "app"; id: string } & AppInfo)
   | ({ layout: "final-app"; id: string; ask: string } & AppInfo);
 
@@ -887,6 +890,9 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
         </AbsoluteFill>
       );
     }
+    case "diary":
+    case "final-diary":
+      return <DiarySlide slug={spec.slug} id={s.id} index={index} blocks={s.blocks} gap={s.gap} />;
     case "applist-cover":
       return <AppListCover photo={photo} title={s.title} sub={s.sub} icons={s.icons} top={s.textTop} teaser={s.teaser} />;
     case "app":

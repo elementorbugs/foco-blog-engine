@@ -195,6 +195,14 @@ verified working 2026-10-04). Always `git pull` first in a reused session so the
 - chat/notes/versus/checklist photos: the card covers y ~1000-1470, so pick Maya shots with her face in the TOP half and check
   every slide in safezones.jpg (swap any where the face is hidden). More chat examples: chat-all-urgent,
   chat-not-lazy, chat-off-at-5, chat-redesign.
+- `diary` / `final-diary` = FORMAT "Founder diary" (2026-11-17, from itskateydixon's launch diary; see viral-lab/playbook.md
+  "Founder-diary"). Cream paper, real phone photos as taped polaroids, bold lowercase sans headline with ONE `*highlighted*`
+  word (FOCO purple), Literata serif body, blue Dancing Script asides, star stickers. Faceless: Adi never appears
+  (memory `feedback_no_founder_on_camera`), photos = hands/desk/phone/notebook, ideally Adi's own (`"own"`).
+  `{ "layout": "diary"|"final-diary", "id", "own"|"query", "blocks": [ {t:"head"|"big"|"body"|"script", text, size?},
+  {t:"quote", text}, {t:"photo", src?, w?, h?, rotate?}, {t:"badges"} ], "gap"? }`. Blocks stack centred in the safe band.
+  Story must be TRUE (real dates, real numbers): near-failure -> low point -> fix -> "we're so close" -> comment keyword.
+  Example: `diary-demo.json` (draft copy, not verified).
 - `"own": "carousels/own/<file>.jpg"` on a slide uses Adi's own phone photo instead of Pexels (no `query`/`pick`).
 - Keep each bubble under ~45 characters; slides look best with one idea each.
 

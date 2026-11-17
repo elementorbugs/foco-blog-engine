@@ -1,0 +1,157 @@
+{
+  "slug": "diary-demo",
+  "tiktok": {
+    "caption": "building an ADHD app for people who can't start, and my own first screen made people freeze 🙃\n\nfounder diary: i'm cutting the setup down to one box. say the task you're avoiding, start step 1.\n\nwhat should the first screen ask you? 👇\n\nthe app is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhd",
+      "#buildinpublic",
+      "#taskparalysis",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "Building an ADHD app for people who can't start (and my first screen made them freeze)\n\nFounder diary, week 1.\n\n1. People opened the app to start something\n2. It asked them to set things up first\n3. So the new first screen is one box: say the task you're avoiding\n\nWhat should it ask you first? Tell me below 👇\n\n💜 The app is FOCO, link in bio.",
+    "hashtags": [
+      "#adhd",
+      "#buildinpublic",
+      "#taskparalysis",
+      "#adhdtips"
+    ],
+    "altText": "Founder diary carousel on cream paper with taped phone photos of a laptop, phone and notebook, about simplifying the first screen of FOCO, an ADHD task initiation app."
+  },
+  "slides": [
+    {
+      "layout": "diary",
+      "id": "s1",
+      "query": "hands on laptop keyboard at night desk lamp",
+      "blocks": [
+        {
+          "t": "head",
+          "text": "this week i almost *deleted* my app's first screen"
+        },
+        {
+          "t": "photo",
+          "w": 560,
+          "h": 640
+        },
+        {
+          "t": "script",
+          "text": "founder diary, week 1"
+        }
+      ],
+      "pick": 6
+    },
+    {
+      "layout": "diary",
+      "id": "s2",
+      "query": "hand holding phone cozy blanket close-up",
+      "blocks": [
+        {
+          "t": "photo",
+          "w": 520,
+          "h": 560
+        },
+        {
+          "t": "body",
+          "text": "i'm building FOCO, an app for ADHD brains that freeze before they start."
+        },
+        {
+          "t": "head",
+          "text": "and my first screen made you *freeze.*",
+          "size": 70
+        }
+      ],
+      "pick": 2
+    },
+    {
+      "layout": "diary",
+      "id": "s3",
+      "blocks": [
+        {
+          "t": "head",
+          "text": "too many questions *before* step 1."
+        },
+        {
+          "t": "body",
+          "text": "you opened the app to start something. it asked you to set things up first."
+        },
+        {
+          "t": "script",
+          "text": "the irony hurt.",
+          "size": 84
+        }
+      ]
+    },
+    {
+      "layout": "diary",
+      "id": "s4",
+      "query": "open notebook pen sketches on desk overhead",
+      "blocks": [
+        {
+          "t": "photo",
+          "w": 600,
+          "h": 520
+        },
+        {
+          "t": "body",
+          "text": "so i went back to the notebook."
+        },
+        {
+          "t": "head",
+          "text": "new rule: *one* box.",
+          "size": 86
+        },
+        {
+          "t": "script",
+          "text": "say the task. that's it."
+        }
+      ],
+      "pick": 7
+    },
+    {
+      "layout": "diary",
+      "id": "s5",
+      "blocks": [
+        {
+          "t": "quote",
+          "text": "\"what's the one task you've been avoiding?\""
+        },
+        {
+          "t": "body",
+          "text": "that's the whole first screen now."
+        },
+        {
+          "t": "script",
+          "text": "and it already feels lighter"
+        }
+      ]
+    },
+    {
+      "layout": "final-diary",
+      "id": "end",
+      "blocks": [
+        {
+          "t": "big",
+          "text": "we're *so close.*",
+          "size": 110
+        },
+        {
+          "t": "body",
+          "text": "the new first screen ships soon. i'll show you every step here."
+        },
+        {
+          "t": "script",
+          "text": "what should it ask you first?"
+        },
+        {
+          "t": "badges"
+        },
+        {
+          "t": "body",
+          "text": "comment *START* 👇",
+          "bold": true
+        }
+      ]
+    }
+  ]
+}
