@@ -72,3 +72,31 @@ The persona below is a COMPOSITE: the facts and quotes are real, the name and ex
 - **Client/message dread (angle I):** 1kwap1a, 1mf9rwo.
 - **Planner/app fatigue (angle F):** s4xmnv, 1urtz9t.
 - **Interrupted, hard to return (angle D):** 1vrk88d, 1kwap1a.
+
+## Situation bank (research round 2, 2026-11-17: 468 threads searched, ~30 read in depth)
+Ranked by recurrence + mom-specificity + how naturally a first step fits. Quotes verbatim.
+1. **Stuck in the parked car (transition paralysis).** Very recurring: "Do you sit in your car for a while when you first
+   get home?" (1,589 up, 600 comments) https://www.reddit.com/r/adhdwomen/comments/1e54ws2/ · "Car sitters tap in." (946 up)
+   https://www.reddit.com/r/adhdwomen/comments/192ojic/ · "Does anyone else sit in their parked car for unreasonable amounts
+   of time?" (768 up) https://www.reddit.com/r/adhdwomen/comments/1id46rb/ · "Anyone hang out in their cars in parking lots
+   too?" (471 up) https://www.reddit.com/r/adhdwomen/comments/1i3xa1r/
+   - "My brain thinks this time is fake and not passing. Unfortunately my brain is wrong, and time is passing" (192ojic OP)
+   - "I’m reading this from my parked car in my garage 🤣 my kids are inside so I’m going to enjoy the quiet lol" (u/InternationalJob6840, 1id46rb)
+   - "if I park and go to get straight out, my 4 y/o will tell me, no, sit a while mommy!" (u/InquisitiveMind997, 1i3xa1r)
+   - "Currently sitting in the car. I have to go in and make dinner for 7 people, and work for hours" (u/mariegalante, 192ojic)
+   - "I know once I get out of the car and move to the next thing it will mean more tasks to do" (u/21ratsinatrenchcoat, https://www.reddit.com/r/adhdwomen/comments/1lhoomm/)
+2. **One breakfast dish turns into cleaning the whole room (productive avoidance after drop-off).**
+   - "I get sucked into the 'go to wash one breakfast dish, which turns into cleaning the entire dining area because children
+     eat like barn animals' frenzy" (u/magicalturtlefairy, https://www.reddit.com/r/adhdwomen/comments/1l8zom9/)
+   - "can't wash one pan, must wash all pans ... if I don't start working by 11 am, my day is basically over" (OP, https://www.reddit.com/r/adhdwomen/comments/1w029ry/)
+   - productive procrastination also in https://www.reddit.com/r/adhdwomen/comments/1fm4b0x/ (2,507 up)
+3. **The phone call avoided for weeks** (pediatrician, insurance, daycare office). "I will procrastinate making phone calls
+   to the point that I've put some important ones off for days, even months" (1,069 up, https://www.reddit.com/r/adhdwomen/comments/1fsih8w/)
+   · "I have a minimum of 2 phone calls that I am currently avoiding at all times" (u/SpamLikely404, same thread)
+   · "I did the phone call I’d been pathologically avoiding 🎉🎉🎉 It took 13 minutes." (491 up, https://www.reddit.com/r/adhdwomen/comments/1nx365f/)
+4. **Kid home sick + something due.** "somehow whenever I have something time sensitive is always when he gets up from the
+   couch and needs my attention immediately" (u/goldenpandora, https://www.reddit.com/r/workingmoms/comments/1ovane4/)
+5. **Avoided emails pile up into shame** (client/grant). https://www.reddit.com/r/adhdwomen/comments/11uqwpa/ (supports the
+   client-email concept; email avoidance is a common topic, so it needs a sharper twist).
+Single anecdotes (don't build a series on them): forgot to pay daycare for a year (1ujq3rp), early-intervention referral
+left on the car roof (1mjf5gd).
