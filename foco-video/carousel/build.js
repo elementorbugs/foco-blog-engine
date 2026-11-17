@@ -127,6 +127,34 @@ async function render() {
   // diary "cutout" blocks: transparent PNG stickers (path relative to foco-video/), served by file name
   for (const s of spec.slides)
     for (const b of s.blocks || []) for (const x of [b, ...(b.items || [])]) if (x.file) fs.copyFileSync(path.join(ROOT, x.file), path.join(pub, path.basename(x.file)));
+  // diary collage self-check: arrows must not cross handwriting, text items must not overlap each other
+  {
+    const box = (it) => {
+      if (it.k === "arrow") { const w = it.w || 170; return [it.x + 0.1 * w, it.y + 0.05 * w, it.x + w, it.y + 0.8 * w]; }
+      if (it.k === "note" || it.k === "sticky") {
+        const w = it.w || (it.k === "note" ? 320 : 280), size = it.size || (it.k === "note" ? 50 : 46);
+        const lines = Math.ceil(it.text.length / Math.max(1, Math.floor((w - 44) / (size * 0.5))));
+        return [it.x, it.y, it.x + w, it.y + lines * size * 1.1 + (it.k === "note" ? 34 : 56)];
+      }
+      if (it.k === "notif") return [it.x, it.y, it.x + (it.w || 760), it.y + 200];
+      return null;
+    };
+    const inter = (a, b) => Math.max(0, Math.min(a[2], b[2]) - Math.max(a[0], b[0])) * Math.max(0, Math.min(a[3], b[3]) - Math.max(a[1], b[1]));
+    let warn = 0;
+    for (const s of spec.slides) for (const b of s.blocks || []) {
+      if (b.t !== "collage") continue;
+      const items = b.items.map((it) => ({ it, r: box(it) })).filter((o) => o.r);
+      for (let i = 0; i < items.length; i++) for (let j = i + 1; j < items.length; j++) {
+        const A = items[i], B = items[j];
+        if (A.it.k === "arrow" && B.it.k === "arrow") continue;
+        const arrow = A.it.k === "arrow" ? A : B.it.k === "arrow" ? B : null;
+        const area = (r) => (r[2] - r[0]) * (r[3] - r[1]);
+        const ov = inter(A.r, B.r) / Math.min(area(A.r), area(B.r));
+        if (ov > (arrow ? 0.12 : 0.02)) { warn++; console.log(`  ⚠ ${s.id}: ${A.it.k} "${A.it.text || ""}" overlaps ${B.it.k} "${B.it.text || ""}" (${Math.round(ov * 100)}%)`); }
+      }
+    }
+    if (warn) console.log(`  ⚠ ${warn} collage overlap(s): move the items, then re-render`);
+  }
   for (const s of spec.slides) {
     if (s.photo) continue; // reuses another slide's photo
     if (!s.query && !s.own) continue; // drawn slide with no photo (e.g. the app-list "app" slides)

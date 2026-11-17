@@ -218,6 +218,11 @@ verified working 2026-10-04). Always `git pull` first in a reused session so the
   client message), `focostep` (FOCO step card). Every slide = the person OR an object of her day (laptop, monitor,
   paperwork, kid's backpack) + a note with an arrow. Object photos: Gemini `--ref` the room anchor, then crop.
   Example: `diary-jess-waiting-mode.json`.
+  **READABILITY (Adi, 2026-11-17: "text sometimes sits on elements with no backing and gets lost"):** notes always render
+  on a torn paper scrap, arrows have a white under-stroke, text blocks use balanced wrapping (no orphan word). `render`
+  prints a ⚠ overlap self-check (arrow crossing a note, text on text): fix every real hit. Then ALWAYS check the PNGs
+  at large size (not just preview.jpg; slide-N.jpg is only rebuilt by send.js): every word readable, nothing on a
+  busy photo without a backing, no orphans, the story reads in order.
 - `"own": "carousels/own/<file>.jpg"` on a slide uses Adi's own phone photo instead of Pexels (no `query`/`pick`).
 - Keep each bubble under ~45 characters; slides look best with one idea each.
 

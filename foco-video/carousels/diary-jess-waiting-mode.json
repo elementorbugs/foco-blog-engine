@@ -51,9 +51,9 @@
             {
               "k": "sticky",
               "text": "proposal due TOMORROW!!",
-              "x": 20,
-              "y": 470,
-              "w": 290,
+              "x": 10,
+              "y": 575,
+              "w": 340,
               "rot": 4
             },
             {
@@ -67,16 +67,16 @@
             {
               "k": "note",
               "text": "me, \"about to start\"",
-              "x": 300,
-              "y": -10,
-              "w": 300,
+              "x": 0,
+              "y": 395,
+              "w": 330,
               "rot": -3
             },
             {
               "k": "arrow",
-              "x": 430,
-              "y": 70,
-              "w": 170,
+              "x": 320,
+              "y": 430,
+              "w": 150,
               "rot": 0
             }
           ]
@@ -113,10 +113,11 @@
             {
               "k": "note",
               "text": "1:00. she's out.",
-              "x": 490,
-              "y": 10,
-              "w": 340,
-              "rot": 3
+              "x": 400,
+              "y": -20,
+              "w": 420,
+              "rot": 3,
+              "size": 48
             },
             {
               "k": "arrow",
@@ -272,7 +273,7 @@
               "text": "2:40. me reading that 🙃",
               "x": 0,
               "y": 360,
-              "w": 340,
+              "w": 390,
               "rot": -4
             },
             {
@@ -302,7 +303,7 @@
       "blocks": [
         {
           "t": "body",
-          "text": "so i opened FOCO and just said it out loud."
+          "text": "so i opened FOCO and said it out loud."
         },
         {
           "t": "collage",
@@ -350,7 +351,8 @@
         },
         {
           "t": "script",
-          "text": "not the whole proposal. just that."
+          "text": "not the whole proposal. just that.",
+          "size": 54
         }
       ]
     },
@@ -404,7 +406,8 @@
         },
         {
           "t": "body",
-          "text": "she woke up at 3:05. for once, i'd started."
+          "text": "she woke up at 3:05. for once, i'd started.",
+          "size": 42
         }
       ]
     },
@@ -446,9 +449,9 @@
             },
             {
               "k": "arrow",
-              "x": 330,
-              "y": 330,
-              "w": 175,
+              "x": 280,
+              "y": 370,
+              "w": 160,
               "rot": 40
             }
           ]

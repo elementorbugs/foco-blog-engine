@@ -25,7 +25,7 @@ Promise.all([
 const P = {
   paper: "#F2EBDF",
   ink: "#1E1626",
-  body: "#3A3040",
+  body: "#231A2B",
   marker: "rgba(196,170,255,0.85)", // lilac highlighter behind the key word
   pen: "#2340A8", // ballpoint blue
   starPink: "#F28DB2",
@@ -93,6 +93,9 @@ const STICKER = "drop-shadow(6px 0 0 #fff) drop-shadow(-6px 0 0 #fff) drop-shado
 // hand-drawn curved arrow (points down-right toward the sticker when side = "left")
 const Arrow: React.FC<{ flip: boolean; w?: number }> = ({ flip, w = 190 }) => (
   <svg width={w} height={(w * 150) / 190} viewBox="0 0 190 150" style={{ transform: flip ? "scaleX(-1)" : undefined, overflow: "visible" }}>
+    {/* white under-stroke so the arrow reads on photos and cut-outs too */}
+    <path d="M10 18 C 70 0, 140 30, 160 112" fill="none" stroke="#fff" strokeWidth={21} strokeLinecap="round" />
+    <path d="M128 92 L 161 120 L 182 82" fill="none" stroke="#fff" strokeWidth={21} strokeLinecap="round" strokeLinejoin="round" />
     <path d="M10 18 C 70 0, 140 30, 160 112" fill="none" stroke={P.pen} strokeWidth={11} strokeLinecap="round" />
     <path d="M128 92 L 161 120 L 182 82" fill="none" stroke={P.pen} strokeWidth={11} strokeLinecap="round" strokeLinejoin="round" />
   </svg>
@@ -113,12 +116,17 @@ const Item: React.FC<{ it: CollageItem; slug: string; n: number }> = ({ it, slug
     case "cutout":
       return <Img src={fileSrc(slug, it.file)} style={{ ...pos, height: it.h, filter: STICKER }} />;
     case "note":
-      return <div style={{ ...pos, width: it.w ?? 320, fontFamily: `${PEN}, "${EMOJI}"`, fontWeight: 700, fontSize: it.size ?? 54, lineHeight: 1.05, color: P.pen }}>{it.text}</div>;
+      // handwriting on a torn scrap of notebook paper: never bare text on top of a photo
+      return (
+        <div style={{ ...pos, width: it.w ?? 320, filter: "drop-shadow(0 6px 10px rgba(40,25,30,0.22))" }}>
+          <div style={{ padding: "14px 22px 20px", background: "#FFFDF7", clipPath: "polygon(1% 4%, 22% 0, 48% 3%, 76% 0, 99% 3%, 100% 30%, 98% 62%, 100% 96%, 74% 100%, 50% 97%, 24% 100%, 0 97%, 2% 64%, 0 32%)", fontFamily: `${PEN}, "${EMOJI}"`, fontWeight: 700, fontSize: it.size ?? 50, lineHeight: 1.1, color: P.pen }}>{it.text}</div>
+        </div>
+      );
     case "arrow":
       return <div style={pos}><Arrow flip={!!it.flip} w={it.w ?? 170} /></div>;
     case "sticky":
       return (
-        <div style={{ ...pos, width: it.w ?? 280, padding: "26px 22px 30px", background: "#FFE97A", boxShadow: "0 10px 20px rgba(40,25,30,0.18)", fontFamily: `${PEN}, "${EMOJI}"`, fontWeight: 700, fontSize: 46, lineHeight: 1.08, color: "#2B2233" }}>
+        <div style={{ ...pos, width: it.w ?? 280, padding: "26px 22px 30px", background: "#FFE97A", boxShadow: "0 10px 20px rgba(40,25,30,0.18)", fontFamily: `${PEN}, "${EMOJI}"`, fontWeight: 700, fontSize: Math.min(46, Math.floor(((it.w ?? 280) - 44) / (Math.max(...it.text.split(/\s+/).map((w) => w.length)) * 0.62))), overflowWrap: "break-word", lineHeight: 1.08, color: "#2B2233" }}>
           {it.text}
           <Tape color={P.tapeBlue} rotate={-4} style={{ width: 110, marginLeft: -55, top: -20 }} />
         </div>
@@ -153,7 +161,7 @@ const Star: React.FC<{ x: number; y: number; size: number; color: string }> = ({
 
 // a few stars + one coffee ring per slide, in the margins, varied by slide index
 const STAR_SETS: [number, number, number, "p" | "b"][][] = [
-  [[50, 980, 42, "b"], [930, 330, 48, "p"], [90, 1320, 36, "p"]],
+  [[50, 980, 42, "b"], [930, 330, 48, "p"], [40, 1440, 36, "p"]],
   [[930, 260, 46, "b"], [70, 700, 40, "p"], [110, 1400, 46, "b"]],
   [[80, 300, 46, "p"], [940, 620, 40, "b"], [920, 1380, 44, "p"]],
   [[940, 240, 40, "p"], [60, 560, 46, "b"], [80, 1420, 36, "p"]],
@@ -164,13 +172,13 @@ const Block: React.FC<{ b: DiaryBlock; i: number; slideId: string; slug: string 
   const tilt = i % 2 ? 0.8 : -0.9;
   switch (b.t) {
     case "head":
-      return <div style={{ fontFamily: BODY, fontWeight: 800, fontSize: b.size ?? 76, lineHeight: 1.1, letterSpacing: -1.5, color: P.ink, textAlign: "center", textTransform: "lowercase", transform: `rotate(${tilt}deg)` }}><Hl text={b.text} /></div>;
+      return <div style={{ fontFamily: BODY, fontWeight: 800, fontSize: b.size ?? 76, lineHeight: 1.1, letterSpacing: -1.5, color: P.ink, textAlign: "center", textWrap: "balance", textTransform: "lowercase", transform: `rotate(${tilt}deg)` }}><Hl text={b.text} /></div>;
     case "big":
-      return <div style={{ fontFamily: BODY, fontWeight: 800, fontSize: b.size ?? 120, lineHeight: 1.02, letterSpacing: -3, color: P.ink, textAlign: "center", transform: `rotate(${tilt}deg)` }}><Hl text={b.text} /></div>;
+      return <div style={{ fontFamily: BODY, fontWeight: 800, fontSize: b.size ?? 120, lineHeight: 1.02, letterSpacing: -3, color: P.ink, textAlign: "center", textWrap: "balance", transform: `rotate(${tilt}deg)` }}><Hl text={b.text} /></div>;
     case "body":
-      return <div style={{ fontFamily: `${SERIF}, "${EMOJI}"`, fontWeight: 400, fontSize: b.size ?? 46, lineHeight: 1.36, color: P.body, textAlign: "center", padding: "0 20px", ...(b.bold ? { fontFamily: `${BODY}, "${EMOJI}"`, fontWeight: 800, color: P.ink } : {}) }}><Hl text={b.text} /></div>;
+      return <div style={{ fontFamily: `${SERIF}, "${EMOJI}"`, fontWeight: 400, fontSize: b.size ?? 46, lineHeight: 1.36, color: P.body, textAlign: "center", textWrap: "balance", padding: "0 20px", ...(b.bold ? { fontFamily: `${BODY}, "${EMOJI}"`, fontWeight: 800, color: P.ink } : {}) }}><Hl text={b.text} /></div>;
     case "script":
-      return <div style={{ fontFamily: `${PEN}, "${EMOJI}"`, fontWeight: 700, fontSize: b.size ?? 64, lineHeight: 1.12, color: P.pen, textAlign: "center", transform: `rotate(${i % 2 ? 2 : -2.5}deg)` }}>{b.text}</div>;
+      return <div style={{ fontFamily: `${PEN}, "${EMOJI}"`, fontWeight: 700, fontSize: b.size ?? 64, lineHeight: 1.12, color: P.pen, textAlign: "center", textWrap: "balance", transform: `rotate(${i % 2 ? 2 : -2.5}deg)` }}>{b.text}</div>;
     case "quote":
       return (
         <div style={{ position: "relative", margin: "0 30px", padding: "44px 44px 40px", background: "#FBF8F2", transform: "rotate(-1.2deg)", boxShadow: "0 10px 22px rgba(40,25,30,0.16)" }}>
