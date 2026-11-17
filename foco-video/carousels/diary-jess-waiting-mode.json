@@ -12,7 +12,7 @@
   "slides": [
     { "layout": "diary", "id": "s1", "own": "carousels/own/jess-waiting/s1.jpg", "blocks": [
       { "t": "script", "text": "adhd mom diary", "size": 64 },
-      { "t": "head", "text": "my toddler napped for 2 hours and i didn't start *anything.*", "size": 70 },
+      { "t": "head", "text": "my toddler napped for 2 hours and i didn't start *anything.*", "size": 70 },
       { "t": "photo", "w": 560, "h": 620 }
     ]},
     { "layout": "diary", "id": "s2", "own": "carousels/own/jess-waiting/s2.jpg", "blocks": [
