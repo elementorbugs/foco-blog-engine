@@ -27,6 +27,7 @@ export type SpecSlide =
   | { layout: "pair"; id: string; topLabel: string; top: string; bottomLabel: string; bottom: string }
   | { layout: "card"; id: string; label: string; comment?: string; title: string; steps: Step[]; result?: string }
   | { layout: "voice"; id: string; label: string; transcript: string }
+  | { layout: "final-ad"; id: string; lines: string[]; recap: { icon: string; text: string }[]; ask: string }
   | { layout: "daycal"; id: string; label: string; tasks: { time: string; title: string; min: number }[]; step: Step; stepsTotal: number }
   | { layout: "withme"; id: string; label: string; step: Step; stepNo: number; stepTotal: number; clock: string; sound: string }
   | { layout: "plan"; id: string; label: string; chip?: string; tasks: { title: string; min: number }[]; step: Step }
@@ -289,6 +290,42 @@ const WithMeCard: React.FC<{ step: Step; stepNo: number; stepTotal: number; cloc
       <div style={{ fontFamily: `"${HAND}", "${EMOJI}"`, fontSize: 40, color: "#7C3AED" }}>I'm here with you 💜</div>
     </div>
   </LightCard>
+);
+
+// Paid-ad final slide (2026-11-17): sharp happy-ending photo, core line, a 3-icon recap of what FOCO does (for viewers
+// who skipped slides) and the download panel with the store badges. No "link in bio": ads have their own CTA button.
+const AdDownload: React.FC<{ ask: string }> = ({ ask }) => (
+  <>
+    <div style={{ position: "absolute", top: 1216, left: SAFE.left, width: SAFE.railX - SAFE.left - 10, display: "flex", justifyContent: "center", zIndex: 2 }}>
+      <div style={{ fontFamily: `${BODY}, "${EMOJI}"`, fontWeight: 800, fontSize: 34, color: "#FFFFFF", background: "linear-gradient(135deg, #7C3AED, #9F67FF)", padding: "10px 32px", borderRadius: 999, boxShadow: "0 10px 26px rgba(124,58,237,0.5)" }}>{ask}</div>
+    </div>
+    <div style={{ position: "absolute", top: 1262, left: SAFE.left, width: SAFE.railX - SAFE.left - 10, padding: "40px 30px 24px", borderRadius: 34, background: "#FFFFFF", boxShadow: "0 24px 60px rgba(0,0,0,0.45)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
+        <Img src={staticFile("apps/foco-icon.png")} style={{ width: 96, height: 96, borderRadius: 24 }} />
+        <div>
+          <div style={{ fontFamily: BODY, fontWeight: 800, fontSize: 22, letterSpacing: 3, color: "#7C3AED" }}>ADHD PLANNER</div>
+          <div style={{ fontFamily: HEAD, fontWeight: 800, fontSize: 56, lineHeight: 1, color: DARK }}>FOCO</div>
+        </div>
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: 12, alignItems: "flex-end" }}>
+        <Img src={staticFile("badges/app-store.svg")} style={{ height: 70 }} />
+        <Img src={staticFile("badges/google-play-cropped.png")} style={{ height: 70 }} />
+      </div>
+    </div>
+  </>
+);
+const Recap: React.FC<{ items: { icon: string; text: string }[] }> = ({ items }) => (
+  <div style={{ width: 880, borderRadius: 40, padding: "24px 20px", background: "rgba(255,255,255,0.96)", boxShadow: "0 30px 80px rgba(40,10,80,0.35), 0 0 0 2px rgba(167,139,250,0.35)", display: "flex", alignItems: "flex-start", justifyContent: "space-between" }}>
+    {items.map((it, i) => (
+      <React.Fragment key={i}>
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
+          <div style={{ width: 92, height: 92, borderRadius: 999, background: "#F5F0FF", border: "2px solid #DDD6FE", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: `"${EMOJI}"`, fontSize: 48 }}>{it.icon}</div>
+          <div style={{ textAlign: "center", fontFamily: BODY, fontWeight: 800, fontSize: 28, lineHeight: 1.15, color: DARK }}>{it.text}</div>
+        </div>
+        {i < items.length - 1 ? <div style={{ paddingTop: 30, fontFamily: BODY, fontWeight: 800, fontSize: 36, color: "#A78BFA" }}>→</div> : null}
+      </React.Fragment>
+    ))}
+  </div>
 );
 
 const NOTES_YELLOW = "#E3A008";
@@ -573,6 +610,24 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
               <Bubble bg="#DCFCE7" color="#15803D" size={52}>{s.result}</Bubble>
             </div>
           ) : null}
+        </AbsoluteFill>
+      );
+    case "final-ad":
+      return (
+        <AbsoluteFill style={{ background: "#120822" }}>
+          <Photo name={photo} />
+          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(18,8,34,0.55) 0%, rgba(18,8,34,0.15) 36%, rgba(18,8,34,0) 50%, rgba(18,8,34,0) 66%, rgba(18,8,34,0.85) 80%, #120822 90%)" }} />
+          <div style={{ position: "absolute", top: 210, left: 60, right: 60 }}>
+            {s.lines.map((l, i) => (
+              <div key={l} style={{ marginBottom: 10 }}>
+                {duo && i === s.lines.length - 1 && s.lines.length > 1 ? <Voice duo size={52}>{l}</Voice> : <Bubble size={52}>{l}</Bubble>}
+              </div>
+            ))}
+          </div>
+          <div style={{ position: "absolute", top: 440, left: 0, right: 0, display: "flex", justifyContent: "center" }}>
+            <Recap items={s.recap} />
+          </div>
+          <AdDownload ask={s.ask} />
         </AbsoluteFill>
       );
     case "voice":

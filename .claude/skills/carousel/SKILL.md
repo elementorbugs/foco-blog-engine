@@ -69,6 +69,10 @@ Goal = click -> install -> trial (not saves/comments). Organic rules still apply
 11d. **Show all 3 differentiators in the turn** (Adi, 2026-11-17): `voice` (say it) -> `daycal` (it lands in today's
    calendar with times, task 1 split into steps with 1 tap) -> `withme` (FOCO's character in focus mode: step, timer,
    sound, "I'm here with you"). Example: `ad-mom-nap-time-v8`.
+11e. **Ad final slide = `final-ad`** (2026-11-17): sharp happy-ending photo (wide crop so faces show), core line,
+   3-icon recap (Say it -> It's in your day -> Start with FOCO), purple CTA pill + download panel with badges.
+   NEVER "link in bio" in an ad (the ad has its own Download button). No store rating: see memory
+   `project_app_store_reviews_suspicious`.
 12. **Test hooks, not carousels:** one body, 3 hook slide-1 variants. Judge by link CTR, CPI, cost per trial.
 Moms are a deliberate paid-audience test (Adi chose them 2026-11-17), not a change of the organic primary avatar.
 
