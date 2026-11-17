@@ -10,7 +10,7 @@
     ]
   },
   "instagram": {
-    "caption": "ADHD mom diary: my toddler napped for 2 hours and I didn't start anything. It's called waiting mode.\n\nIt's not laziness. Part of my brain stays on alert for the next interruption, so I can't start.\n\n1. 1:00, nap starts, proposal due tomorrow\n2. I sit down to start... and wait\n3. 2:40, still nothing, now I'm mad at myself too\n4. I said the task out loud and did only step 1: open the doc\n\n2:58, first page done. She woke up at 3:05.\n\nSave this for the next nap, and send it to the mom friend who gets it.\n\n💜 The app I use is FOCO, link in bio.",
+    "caption": "ADHD mom diary: my toddler napped for 2 hours and I didn't start anything. It's called waiting mode.\n\nIt's not laziness. Part of my brain stays on alert for the next interruption, so I can't start.\n\n1. 1pm, nap starts, proposal due tomorrow\n2. I sit down to start... and wait\n3. 2:40pm, still nothing, now I'm mad at myself too\n4. I said the task out loud and did only step 1: open the doc\n\n2:58, first page done. She woke up at 3:05.\n\nSave this for the next nap, and send it to the mom friend who gets it.\n\n💜 The app I use is FOCO, link in bio.",
     "hashtags": [
       "#adhdmom",
       "#waitingmode",
@@ -112,7 +112,7 @@
             },
             {
               "k": "note",
-              "text": "1:00. she's out.",
+              "text": "1pm. she's napping.",
               "x": 400,
               "y": -20,
               "w": 420,
@@ -122,7 +122,7 @@
             {
               "k": "arrow",
               "x": 440,
-              "y": 90,
+              "y": 130,
               "w": 175,
               "flip": true,
               "rot": 10
