@@ -1,7 +1,7 @@
 {
   "slug": "story-jess-planners",
   "tiktok": {
-    "caption": "ADHD mom confession: 4 planners this year, same task on page 1 of every one 🫠\n\nplanners tell me what to do. they never helped me start. what finally did: making step 1 as small as washing a dish.\n\nhow many planners are you on? 👇\nsave this for the next drop-off 📌\n\nthe app on the last slides is FOCO, link in bio 💜",
+    "caption": "ADHD mom confession: 4 planners this year, same task on page 1 of every one 🫠\n\nplanners tell me what to do. they never helped me start. what finally worked: making step 1 easier than washing a dish.\n\nhow many planners are you on? 👇\nsave this for your next drop-off 📌\n\nthe app on the last slides is FOCO, link in bio 💜",
     "hashtags": [
       "#adhdmom",
       "#adhdplanner",
@@ -10,14 +10,14 @@
     ]
   },
   "instagram": {
-    "caption": "ADHD planner confession: 4 planners this year, and the same task sits on page 1 of every one.\n\nI'm not lazy. I can wash a dish because a dish is small. \"Write the newsletter\" isn't, and no planner ever changed that.\n\n1. 9:10, daycare drop-off, 3 hours for one job\n2. I went to wash one dish and cleaned the whole kitchen\n3. 11:20, my client emails, pickup is at 12:30\n4. I said the task out loud and did only step 1: open last month's newsletter\n\n12:14, first draft done.\n\nSave this, and send it to the mom friend with a planner collection.\n\n💜 The app I use is FOCO, link in bio.",
+    "caption": "ADHD planner confession: 4 planners this year, and the same task sits on page 1 of every one.\n\nI'm not lazy. Washing a dish is easy to start. \"Write the newsletter\" isn't, and no planner ever changed that.\n\n1. 9:10, daycare drop-off, 3 hours for one job\n2. I went to wash one dish... and cleaned the whole kitchen\n3. 11:20, my client emails, pickup is at 12:30\n4. I snapped my planner page with FOCO. One tap broke the newsletter into tiny steps, and I did only step 1\n\n12:14, first draft done.\n\nSave this, and send it to the mom friend with a planner collection.\n\n💜 The app I use is FOCO, link in bio.",
     "hashtags": [
       "#adhdmom",
       "#adhdplanner",
       "#taskparalysis",
       "#adhdwomen"
     ],
-    "altText": "Scrapbook-style diary carousel of a mom working from home during daycare hours: four open planners with the same task on page one, a spotless kitchen she cleaned instead, a client email, and the task broken into tiny steps in FOCO until the first draft is done before pickup."
+    "altText": "Story-style video of a mom working from home during daycare hours: four planners with the same task on page one, a kitchen she cleaned instead, a client email, then she scans her planner page with FOCO, the task lands in her day, one tap breaks it into tiny steps, and she starts with FOCO's focus timer and finishes a first draft before pickup."
   },
   "slides": [
     {
@@ -37,7 +37,7 @@
         },
         {
           "k": "txt",
-          "text": "same task on page 1 of every single one 🙃",
+          "text": "same task on page one of every single one 🙃",
           "x": 64,
           "y": 330,
           "w": 760,
@@ -167,7 +167,8 @@
           "size": 42,
           "style": "dark"
         }
-      ]
+      ],
+      "enter": "cut"
     },
     {
       "layout": "story",
@@ -179,7 +180,7 @@
         },
         {
           "k": "txt",
-          "text": "so first i went to wash ONE dish.",
+          "text": "\"i'll just wash ONE dish first.\"",
           "x": 64,
           "y": 200,
           "w": 900,
@@ -196,7 +197,7 @@
         },
         {
           "k": "hand",
-          "text": "10:35. spotless.",
+          "text": "spotless.",
           "x": 560,
           "y": 1000,
           "w": 460,
@@ -206,7 +207,7 @@
         },
         {
           "k": "txt",
-          "text": "and cleaned the entire kitchen 🫠",
+          "text": "...then cleaned the entire kitchen 🫠",
           "x": 64,
           "y": 1240,
           "w": 900,
@@ -222,7 +223,9 @@
           "size": 42,
           "style": "dark"
         }
-      ]
+      ],
+      "enter": "time",
+      "time": "10:35"
     },
     {
       "layout": "story",
@@ -241,7 +244,7 @@
         },
         {
           "k": "txt",
-          "text": "a dish is just small.",
+          "text": "dishes are easy to start.",
           "x": 64,
           "y": 330,
           "size": 56,
@@ -258,7 +261,7 @@
         },
         {
           "k": "hand",
-          "text": "4 times.",
+          "text": "rewrote it 4 times.",
           "x": 130,
           "y": 930,
           "w": 320,
@@ -268,14 +271,15 @@
         },
         {
           "k": "txt",
-          "text": "\"wash one dish\" i can start. \"write the newsletter\" i can't.",
+          "text": "\"write the newsletter\"? not so much.",
           "x": 64,
           "y": 1340,
           "w": 860,
           "size": 40,
           "style": "dark"
         }
-      ]
+      ],
+      "enter": "cut"
     },
     {
       "layout": "story",
@@ -335,11 +339,92 @@
           "size": 56,
           "style": "box"
         }
-      ]
+      ],
+      "enter": "buzz"
     },
     {
       "layout": "story",
       "id": "s6",
+      "blocks": [
+        {
+          "k": "bg",
+          "file": "carousels/own/jess-planners/page-full.jpg"
+        },
+        {
+          "k": "txt",
+          "text": "so i snapped my planner page with FOCO 📸",
+          "x": 64,
+          "y": 190,
+          "w": 900,
+          "size": 58
+        },
+        {
+          "k": "scan",
+          "x": 250,
+          "y": 780,
+          "w": 790,
+          "h": 880,
+          "found": "4 tasks found"
+        },
+        {
+          "k": "txt",
+          "text": "one second later, it was all in my day.",
+          "x": 64,
+          "y": 400,
+          "w": 900,
+          "size": 46,
+          "style": "box"
+        },
+        {
+          "k": "daycal",
+          "x": 90,
+          "y": 560,
+          "w": 900,
+          "day": "Wednesday",
+          "date": "Nov 18, 2026",
+          "sections": [
+            {
+              "name": "MORNING",
+              "tasks": [
+                {
+                  "icon": "📰",
+                  "title": "Write Lena's newsletter",
+                  "meta": "45m • Work",
+                  "hl": true
+                }
+              ]
+            },
+            {
+              "name": "ANYTIME",
+              "tasks": [
+                {
+                  "icon": "🛒",
+                  "title": "Groceries",
+                  "meta": "30m • Home",
+                  "done": true
+                },
+                {
+                  "icon": "📞",
+                  "title": "Call daycare",
+                  "meta": "5m • Family",
+                  "done": true
+                },
+                {
+                  "icon": "🧺",
+                  "title": "Laundry",
+                  "meta": "20m • Home",
+                  "done": true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "enter": "flash"
+    },
+    {
+      "layout": "story",
+      "id": "s7",
       "blocks": [
         {
           "k": "bg",
@@ -349,21 +434,11 @@
         },
         {
           "k": "txt",
-          "text": "so i opened FOCO and just said it:",
+          "text": "one tap broke the newsletter into tiny steps.",
           "x": 64,
           "y": 200,
           "w": 900,
-          "size": 58
-        },
-        {
-          "k": "hand",
-          "text": "\"write Lena's newsletter\"",
-          "x": 80,
-          "y": 390,
-          "w": 800,
-          "size": 66,
-          "color": "#FFD60A",
-          "rot": -3
+          "size": 56
         },
         {
           "k": "focosteps",
@@ -390,25 +465,24 @@
             }
           ],
           "x": 110,
-          "y": 560,
+          "y": 520,
           "w": 820,
           "rot": -1.5
         },
         {
           "k": "txt",
-          "text": "one tap. tiny steps. step 1 was 2 minutes.",
+          "text": "step 1: 2 minutes.",
           "x": 64,
-          "y": 1200,
-          "w": 880,
-          "size": 48,
+          "y": 1180,
+          "size": 60,
           "style": "box"
         },
         {
           "k": "txt",
-          "text": "as small as a dish.",
+          "text": "easier than washing a dish.",
           "x": 64,
-          "y": 1360,
-          "w": 600,
+          "y": 1320,
+          "w": 800,
           "size": 46,
           "style": "dark"
         }
@@ -416,27 +490,73 @@
     },
     {
       "layout": "story",
-      "id": "s7",
+      "id": "s8",
       "blocks": [
         {
           "k": "bg",
-          "file": "carousels/own/jess-planners/draft-full.jpg"
+          "file": "carousels/own/jess-planners/blank-full.jpg"
         },
         {
           "k": "txt",
-          "text": "rain sounds on. one step at a time.",
+          "text": "i hit start. rain sounds on.",
           "x": 64,
           "y": 200,
           "w": 900,
-          "size": 56
+          "size": 62
         },
         {
           "k": "shot",
           "file": "carousels/own/jess-planners/focus.jpg",
-          "x": 40,
+          "x": 500,
           "y": 360,
-          "w": 440,
+          "w": 480,
+          "rot": 4
+        },
+        {
+          "k": "cutout",
+          "file": "carousels/own/jess-waiting/cut7.png",
+          "x": 40,
+          "y": 700,
+          "h": 700,
+          "rot": -2
+        },
+        {
+          "k": "mascot",
+          "state": "focus",
+          "x": 560,
+          "y": 900,
+          "h": 340,
+          "rot": 6
+        },
+        {
+          "k": "hand",
+          "text": "FOCO, focusing with me 💜",
+          "x": 470,
+          "y": 1260,
+          "w": 520,
+          "size": 58,
+          "color": "#FFD60A",
           "rot": -5
+        },
+        {
+          "k": "txt",
+          "text": "just step 1. then the next one.",
+          "x": 64,
+          "y": 1400,
+          "w": 800,
+          "size": 44,
+          "style": "dark"
+        }
+      ],
+      "enter": "focus"
+    },
+    {
+      "layout": "story",
+      "id": "s9",
+      "blocks": [
+        {
+          "k": "bg",
+          "file": "carousels/own/jess-planners/draft-full.jpg"
         },
         {
           "k": "circle",
@@ -449,12 +569,20 @@
         },
         {
           "k": "hand",
-          "text": "12:14 ✓",
+          "text": "done ✓",
           "x": 600,
           "y": 740,
           "w": 300,
           "size": 72,
           "color": "#FFD60A",
+          "rot": -6
+        },
+        {
+          "k": "mascot",
+          "state": "completion",
+          "x": 70,
+          "y": 820,
+          "h": 330,
           "rot": -6
         },
         {
@@ -467,14 +595,16 @@
         },
         {
           "k": "txt",
-          "text": "pickup was at 12:30. i made it.",
+          "text": "made it to pickup with 16 minutes to spare.",
           "x": 64,
           "y": 1380,
-          "w": 800,
+          "w": 860,
           "size": 42,
           "style": "dark"
         }
-      ]
+      ],
+      "enter": "time",
+      "time": "12:14"
     },
     {
       "layout": "story",
@@ -490,7 +620,7 @@
           "k": "txt",
           "text": "i didn't need a 5th planner.",
           "x": 64,
-          "y": 280,
+          "y": 240,
           "w": 900,
           "size": 72
         },
@@ -498,16 +628,35 @@
           "k": "txt",
           "text": "i needed help starting.",
           "x": 64,
-          "y": 520,
+          "y": 470,
           "w": 900,
           "size": 64,
           "style": "box"
         },
         {
+          "k": "recap",
+          "x": 64,
+          "y": 640,
+          "items": [
+            {
+              "icon": "🎙️",
+              "text": "say it"
+            },
+            {
+              "icon": "📸",
+              "text": "snap it"
+            },
+            {
+              "icon": "▶️",
+              "text": "start"
+            }
+          ]
+        },
+        {
           "k": "hand",
-          "text": "try it at the next drop-off 💜",
+          "text": "try it after your next drop-off 💜",
           "x": 60,
-          "y": 740,
+          "y": 800,
           "w": 940,
           "size": 58,
           "color": "#FFD60A",
@@ -517,11 +666,11 @@
           "k": "arrow",
           "from": [
             440,
-            880
+            930
           ],
           "to": [
             470,
-            1010
+            1050
           ],
           "bend": -0.2,
           "color": "#FFD60A"
@@ -529,18 +678,22 @@
         {
           "k": "badges",
           "x": 140,
-          "y": 1040
+          "y": 1080
         },
         {
           "k": "txt",
           "text": "link in bio · how many planners are you on? 👇",
           "x": 64,
-          "y": 1260,
+          "y": 1290,
           "w": 880,
           "size": 42,
           "style": "dark"
         }
       ]
     }
-  ]
+  ],
+  "music": "factory/musiclib/chill_wave.mp3",
+  "musicKey": "chill_wave",
+  "musicCredit": "\"Chill Wave\" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0",
+  "musicVolume": 0.24
 }

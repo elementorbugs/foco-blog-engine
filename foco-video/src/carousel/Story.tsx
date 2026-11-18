@@ -32,12 +32,20 @@ export type StoryItem =
   | { k: "shot"; file: string; x: number; y: number; w: number; rot?: number }
   | { k: "notif"; from: string; text: string; x: number; y: number; w?: number; rot?: number }
   | { k: "focosteps"; steps: { text: string; min: number }[]; x: number; y: number; w?: number; rot?: number; lit?: number }
-  | { k: "badges"; x: number; y: number };
+  | { k: "badges"; x: number; y: number }
+  // FOCO's scanner over a photo of a paper list/planner: purple corners, a sweeping scan line, "N tasks found"
+  | { k: "scan"; x: number; y: number; w: number; h: number; found?: string }
+  // copy of the real FOCO day view ("It all lands in your day"): what she snapped/said is in her day 1 second later
+  | { k: "daycal"; x: number; y: number; w?: number; day: string; date: string; sections: { name: string; tasks: { icon: string; title: string; meta: string; hl?: boolean; done?: boolean }[] }[] }
+  // the OFFICIAL FOCO character (public/mascots-hd) as a sticker; only when she starts / finishes, never in the pain part
+  | { k: "mascot"; state: "focus" | "completion" | "alignment" | "presence"; x: number; y: number; h: number; rot?: number }
+  // feature recap chips for the last slide (say it / snap it / start)
+  | { k: "recap"; x: number; y: number; items: { icon: string; text: string }[] };
 
 export const FPS = 30;
 // how long each kind takes to "arrive" before the next item starts (frames), and its sound
-const STEP: Record<StoryItem["k"], number> = { bg: 4, txt: 10, hand: 12, circle: 10, arrow: 7, under: 7, cutout: 10, shot: 10, notif: 14, focosteps: 28, badges: 10 };
-export const SFX: Partial<Record<StoryItem["k"], string>> = { txt: "explainer-sfx/pop.wav", hand: "explainer-sfx/pop-soft.wav", circle: "explainer-sfx/pop-soft.wav", cutout: "explainer-sfx/thud.wav", shot: "explainer-sfx/thud.wav", notif: "sfx/ding.wav", focosteps: "explainer-sfx/check.wav", badges: "explainer-sfx/pop.wav" };
+const STEP: Record<StoryItem["k"], number> = { bg: 4, txt: 10, hand: 12, circle: 10, arrow: 7, under: 7, cutout: 10, shot: 10, notif: 14, focosteps: 28, badges: 10, scan: 30, daycal: 26, mascot: 10, recap: 12 };
+export const SFX: Partial<Record<StoryItem["k"], string>> = { txt: "explainer-sfx/pop.wav", hand: "explainer-sfx/pop-soft.wav", circle: "explainer-sfx/pop-soft.wav", cutout: "explainer-sfx/thud.wav", shot: "explainer-sfx/thud.wav", notif: "sfx/ding.wav", focosteps: "explainer-sfx/check.wav", badges: "explainer-sfx/pop.wav", scan: "sfx/mouse-click.wav", daycal: "explainer-sfx/pop-soft.wav", mascot: "explainer-sfx/pop.wav", recap: "explainer-sfx/pop-soft.wav" };
 
 const words = (it: StoryItem) => ("text" in it && it.text ? it.text.split(/\s+/).length : 0);
 // start frame of every item + total slide length (enter sequence + time to read)
@@ -45,7 +53,7 @@ export const schedule = (blocks: StoryItem[]) => {
   let t = 4;
   const starts = blocks.map((b) => { const s = t; t += STEP[b.k]; return s; });
   const read = blocks.reduce((n, b) => n + words(b), 0);
-  return { starts, dur: Math.round(Math.max(t + 26, t + 10 + read * 4.2)) };
+  return { starts, dur: Math.round(Math.max(t + 22, t + 8 + read * 3.5)) };
 };
 
 const src = (slug: string, file: string) => staticFile(`carousel/${slug}/${file.split("/").pop()}`);
@@ -84,13 +92,13 @@ const Stroke: React.FC<{ d: string; color?: string; p?: number }> = ({ d, color 
 
 // a = frames since this item started (Infinity = still image, fully shown)
 const Item: React.FC<{ it: StoryItem; slug: string; a: number; slideT: number; dur: number }> = ({ it, slug, a, slideT, dur }) => {
-  if (a < 0) return null;
+  if (a < 0 && it.k !== "bg") return null; // the photo is already there during a time-jump / transition
   const sp = (damping = 12, delay = 0) => (a === Infinity ? 1 : spring({ frame: a - delay, fps: FPS, config: { damping, stiffness: 170, mass: 0.8 } }));
   const lin = (n: number) => (a === Infinity ? 1 : ease(a / n));
   switch (it.k) {
     case "bg": {
       // slow push-in over the whole slide (Ken Burns)
-      const z = (it.zoom ?? 1) * (slideT === Infinity ? 1 : 1 + 0.07 * (slideT / dur));
+      const z = (it.zoom ?? 1) * (slideT === Infinity ? 1 : 1 + 0.07 * (Math.max(0, slideT) / dur));
       return (
         <>
           <Img src={src(slug, it.file)} style={{ position: "absolute", inset: 0, width: 1080, height: 1920, objectFit: "cover", objectPosition: it.pos ?? "center", transform: `scale(${z})`, filter: `saturate(1.05) contrast(1.03)${it.blur ? ` blur(${it.blur}px)` : ""}` }} />
@@ -162,6 +170,76 @@ const Item: React.FC<{ it: StoryItem; slug: string; a: number; slideT: number; d
         </div>
       );
     }
+    case "scan": {
+      // shutter flash, corners snap in, a scan line sweeps the page, then "N tasks found"
+      const c = sp(14), sweep = a === Infinity ? 1 : Math.min(1, Math.max(0, (a - 6) / 18));
+      const flash = a === Infinity ? 0 : Math.max(0, 1 - a / 5);
+      const L = 90, W = 12, col = "#A78BFA";
+      const corner = (st: React.CSSProperties) => <div style={{ position: "absolute", width: L, height: L, ...st }} />;
+      return (
+        <>
+          {flash ? <div style={{ position: "absolute", inset: 0, background: `rgba(255,255,255,${0.85 * flash})` }} /> : null}
+          <div style={{ position: "absolute", left: it.x, top: it.y, width: it.w, height: it.h, transform: `scale(${1.08 - 0.08 * c})`, opacity: Math.min(1, c * 2) }}>
+            {corner({ left: 0, top: 0, borderLeft: `${W}px solid ${col}`, borderTop: `${W}px solid ${col}`, borderTopLeftRadius: 26 })}
+            {corner({ right: 0, top: 0, borderRight: `${W}px solid ${col}`, borderTop: `${W}px solid ${col}`, borderTopRightRadius: 26 })}
+            {corner({ left: 0, bottom: 0, borderLeft: `${W}px solid ${col}`, borderBottom: `${W}px solid ${col}`, borderBottomLeftRadius: 26 })}
+            {corner({ right: 0, bottom: 0, borderRight: `${W}px solid ${col}`, borderBottom: `${W}px solid ${col}`, borderBottomRightRadius: 26 })}
+            {sweep < 1 ? <div style={{ position: "absolute", left: 20, right: 20, top: `${sweep * 100}%`, height: 10, borderRadius: 5, background: col, boxShadow: "0 0 30px 10px rgba(167,139,250,0.6)" }} /> : null}
+            {sweep >= 1 && it.found ? (
+              <div style={{ position: "absolute", left: "50%", top: -34, transform: "translateX(-50%)", whiteSpace: "nowrap", padding: "12px 26px", borderRadius: 40, background: "#7C3AED", color: "#fff", fontFamily: NATIVE, fontWeight: 700, fontSize: 34, boxShadow: "0 10px 26px rgba(0,0,0,0.35)" }}>✓ {it.found}</div>
+            ) : null}
+          </div>
+        </>
+      );
+    }
+    case "daycal": {
+      const s = sp(13);
+      let row = 0;
+      const rowIn = () => { const r = row++; return a === Infinity ? 1 : Math.min(1, Math.max(0, (a - 8 - r * 3) / 6)); };
+      const glow = a === Infinity ? 0.6 : Math.max(0, Math.sin((a - 24) / 6)) * Math.min(1, Math.max(0, (a - 24) / 6));
+      return (
+        <div style={{ position: "absolute", left: it.x, top: it.y, width: it.w ?? 900, padding: "34px 30px 26px", borderRadius: 44, background: "#0B0B14", border: "2px solid rgba(167,139,250,0.25)", boxShadow: "0 30px 60px rgba(0,0,0,0.5)", fontFamily: NATIVE, color: "#fff", transform: `translateY(${(1 - s) * 260}px)`, opacity: Math.min(1, s * 1.6) }}>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <div style={{ flex: 1 }}>
+              <div style={{ fontSize: 54, fontWeight: 800 }}>{it.day}</div>
+              <div style={{ fontSize: 26, fontWeight: 600, color: "#A78BFA" }}>{it.date} ›</div>
+            </div>
+            <div style={{ width: 76, height: 76, borderRadius: 20, background: "#8B7CF6", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 50, fontWeight: 400 }}>+</div>
+          </div>
+          {it.sections.map((sec, i) => (
+            <div key={i}>
+              <div style={{ marginTop: 26, fontSize: 22, fontWeight: 700, letterSpacing: 3, color: "#8E88A3" }}>{sec.name} <span style={{ color: "#A78BFA" }}>{sec.tasks.length}</span></div>
+              {sec.tasks.map((t, j) => {
+                const r = rowIn();
+                return (
+                  <div key={j} style={{ display: "flex", alignItems: "center", gap: 20, marginTop: 14, padding: "20px 24px", borderRadius: 26, background: t.hl ? "rgba(124,58,237,0.22)" : "#1B1C30", border: t.hl ? "2px solid #8B5CF6" : "2px solid transparent", boxShadow: t.hl ? `0 0 ${30 * glow}px rgba(139,92,246,${0.85 * glow})` : undefined, opacity: r, transform: `translateX(${(1 - r) * 50}px)` }}>
+                    <div style={{ width: 58, height: 58, borderRadius: 29, background: "rgba(255,255,255,0.08)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 32, fontFamily: `"${EMOJI}"` }}>{t.icon}</div>
+                    <div style={{ flex: 1 }}>
+                      <div style={{ fontSize: 34, fontWeight: 700, color: t.done ? "rgba(255,255,255,0.45)" : "#fff", textDecoration: t.done ? "line-through" : "none" }}>{t.title}</div>
+                      <div style={{ fontSize: 24, fontWeight: 600, color: "#8E88A3" }}>{t.meta}</div>
+                    </div>
+                    <div style={{ width: 48, height: 48, borderRadius: 24, border: `3px solid ${t.done ? "#7C3AED" : "rgba(255,255,255,0.45)"}`, background: t.done ? "#7C3AED" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 28, fontWeight: 800 }}>{t.done ? "✓" : ""}</div>
+                  </div>
+                );
+              })}
+            </div>
+          ))}
+        </div>
+      );
+    }
+    case "mascot": {
+      const s = sp(8), bob = a === Infinity ? 0 : Math.sin(a / 11) * 7;
+      return <Img src={staticFile(`mascots-hd/${it.state}.png`)} style={{ position: "absolute", left: it.x, top: it.y, height: it.h, opacity: Math.min(1, s * 2), transformOrigin: "50% 90%", transform: `translateY(${bob}px) rotate(${(it.rot ?? 0) + (1 - s) * -14}deg) scale(${0.4 + 0.6 * s})`, filter: "drop-shadow(6px 0 0 #fff) drop-shadow(-6px 0 0 #fff) drop-shadow(0 6px 0 #fff) drop-shadow(0 -6px 0 #fff) drop-shadow(0 14px 20px rgba(0,0,0,0.35))" }} />;
+    }
+    case "recap":
+      return (
+        <div style={{ position: "absolute", left: it.x, top: it.y, display: "flex", gap: 16, fontFamily: `${NATIVE}, "${EMOJI}"` }}>
+          {it.items.map((r, i) => {
+            const s = a === Infinity ? 1 : spring({ frame: a - i * 4, fps: FPS, config: { damping: 11, stiffness: 170 } });
+            return <div key={i} style={{ padding: "16px 26px", borderRadius: 40, background: "#fff", color: "#111", fontSize: 38, fontWeight: 700, transform: `scale(${0.5 + 0.5 * s})`, opacity: Math.min(1, s * 2), boxShadow: "0 10px 24px rgba(0,0,0,0.3)" }}>{r.icon} {r.text}</div>;
+          })}
+        </div>
+      );
     case "badges": {
       const s = sp(10);
       return (

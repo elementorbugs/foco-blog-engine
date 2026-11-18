@@ -68,8 +68,10 @@ if (process.argv.includes("--video")) {
 }
 
 const read = (f) => (fs.existsSync(path.join(out, f)) ? fs.readFileSync(path.join(out, f), "utf8") : "");
+// a video with library music must carry the license credit (CC BY 4.0) in its caption
+const credit = process.argv.includes("--video") && read("music-credit.txt") ? `\n\n${read("music-credit.txt")}` : "";
 const caption = read("caption-tiktok.txt")
-  ? `=== TIKTOK ===\n${read("caption-tiktok.txt")}\n=== INSTAGRAM ===\n${read("caption-instagram.txt")}`
+  ? `=== TIKTOK ===\n${read("caption-tiktok.txt")}${credit}\n=== INSTAGRAM ===\n${read("caption-instagram.txt")}${credit}`
   : read("caption.txt");
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
 

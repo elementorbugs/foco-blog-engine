@@ -1,7 +1,7 @@
 {
   "slug": "diary-jess-planners-purple",
   "tiktok": {
-    "caption": "ADHD mom confession: 4 planners this year, same task on page 1 of every one 🫠\n\nplanners tell me what to do. they never helped me start. what finally did: making step 1 as small as washing a dish.\n\nhow many planners are you on? 👇\nsave this for the next drop-off 📌\n\nthe app on the last slides is FOCO, link in bio 💜",
+    "caption": "ADHD mom confession: 4 planners this year, same task on page 1 of every one 🫠\n\nplanners tell me what to do. they never helped me start. what finally worked: making step 1 easier than washing a dish.\n\nhow many planners are you on? 👇\nsave this for your next drop-off 📌\n\nthe app on the last slides is FOCO, link in bio 💜",
     "hashtags": [
       "#adhdmom",
       "#adhdplanner",
@@ -10,7 +10,7 @@
     ]
   },
   "instagram": {
-    "caption": "ADHD planner confession: 4 planners this year, and the same task sits on page 1 of every one.\n\nI'm not lazy. I can wash a dish because a dish is small. \"Write the newsletter\" isn't, and no planner ever changed that.\n\n1. 9:10, daycare drop-off, 3 hours for one job\n2. I went to wash one dish and cleaned the whole kitchen\n3. 11:20, my client emails, pickup is at 12:30\n4. I said the task out loud and did only step 1: open last month's newsletter\n\n12:14, first draft done.\n\nSave this, and send it to the mom friend with a planner collection.\n\n💜 The app I use is FOCO, link in bio.",
+    "caption": "ADHD planner confession: 4 planners this year, and the same task sits on page 1 of every one.\n\nI'm not lazy. Washing a dish is easy to start. \"Write the newsletter\" isn't, and no planner ever changed that.\n\n1. 9:10, daycare drop-off, 3 hours for one job\n2. I went to wash one dish... and cleaned the whole kitchen\n3. 11:20, my client emails, pickup is at 12:30\n4. I said the task out loud and did only step 1: open last month's newsletter\n\n12:14, first draft done.\n\nSave this, and send it to the mom friend with a planner collection.\n\n💜 The app I use is FOCO, link in bio.",
     "hashtags": [
       "#adhdmom",
       "#adhdplanner",
@@ -118,7 +118,7 @@
         },
         {
           "t": "body",
-          "text": "my client's monthly newsletter. the doc was still blank."
+          "text": "my client's monthly newsletter. still a blank doc."
         }
       ]
     },
@@ -129,7 +129,7 @@
       "blocks": [
         {
           "t": "body",
-          "text": "so first, i went to wash one breakfast dish.",
+          "text": "\"i'll just wash one dish first.\"",
           "size": 48
         },
         {
@@ -165,7 +165,7 @@
         },
         {
           "t": "head",
-          "text": "and cleaned the *entire kitchen.*",
+          "text": "...then cleaned the *entire kitchen.*",
           "size": 72
         }
       ]
@@ -182,7 +182,7 @@
         },
         {
           "t": "head",
-          "text": "a dish is just *small.*",
+          "text": "dishes are *easy to start.*",
           "size": 74
         },
         {
@@ -200,7 +200,7 @@
             },
             {
               "k": "note",
-              "text": "planner #4. same line, 4 times",
+              "text": "planner #4. rewrote it 4 times.",
               "x": 0,
               "y": 120,
               "w": 300,
@@ -217,11 +217,11 @@
         },
         {
           "t": "body",
-          "text": "\"wash one dish\" i can start. \"write the newsletter\" i can't."
+          "text": "\"write the newsletter\"? not so much."
         },
         {
           "t": "script",
-          "text": "no planner ever fixed that part."
+          "text": "and no planner ever fixed that."
         }
       ]
     },
@@ -282,7 +282,7 @@
       "blocks": [
         {
           "t": "body",
-          "text": "so i opened FOCO and just said it. it went straight into my day."
+          "text": "so i opened FOCO and just said it out loud. it went straight into my day."
         },
         {
           "t": "collage",
@@ -350,7 +350,7 @@
         },
         {
           "t": "script",
-          "text": "as small as a dish."
+          "text": "easier than washing a dish."
         }
       ]
     },
@@ -418,7 +418,7 @@
         },
         {
           "t": "body",
-          "text": "pickup was at 12:30. i made it."
+          "text": "made it to pickup with 16 minutes to spare."
         }
       ]
     },
@@ -447,7 +447,7 @@
             },
             {
               "k": "note",
-              "text": "try it at the next drop-off 💜",
+              "text": "try it after your next drop-off 💜",
               "x": 435,
               "y": 40,
               "w": 390,

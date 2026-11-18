@@ -82,6 +82,31 @@ the photo, carousel-like swipe between slides, light sound effects; music is add
 `schedule()` in Story.tsx (entrance per item + reading time); keep the whole video ~35-45 s. Check sampled frames
 (ffmpeg -ss) before sending. Email it with `node carousel/send.js <slug> --video` (re-encoded to fit Gmail).
 
+**Video rules (Adi, 2026-11-18):**
+- **Music: a different track every video.** `video.js` picks from the CC BY 4.0 library (`factory/music.json`, Kevin
+  MacLeod; moods lofi/warm/calm/piano/upbeat, never "quirky"), never one of the last 5 (`carousels/music-used.json`);
+  force one with `--music <key>`. Never fall back to the same track ("the same music every time gets old fast").
+  The license REQUIRES the credit line in the caption: `send.js --video` adds `🎵 Music: "<title>" Kevin MacLeod
+  (incompetech.com), licensed under CC BY 4.0` to both captions; tell Adi to keep it.
+- **Music is baked in** under the effects (soft bed, fade in/out, -14 LUFS), because music added in the app would bury
+  the effects. If Adi adds a trending sound anyway: lower the added sound in the app's Volume settings.
+- **Transitions belong to her story, never a technical swipe.** Per slide `"enter"`: `cut` (default, like tapping
+  to the next story), `time` + `"time": "10:35"` (her clock jumps, big time stamp over the blurred next moment),
+  `buzz` (phone buzz shake: message/notification slides), `flash` (camera shutter: when she snaps/scans),
+  `focus` (blur clears to sharp: when she starts working). Pick each one from what happens in the story.
+- **Show the product's ease between tasks** (Adi: "in a second it's in her day, in another second she can start"):
+  when it fits the story, show HOW the task got in: `scan` (her paper planner/list snapped, "N tasks found"), say it
+  (voice), then `daycal` (the real "lands in your day" view), then `focosteps`, then the start (timer screen + sound).
+  The last slide gets a `recap` row (🎙️ say it · 📸 snap it · ▶️ start).
+- **The FOCO character only near the end:** `mascot` (official `public/mascots-hd` states) as a sticker NEXT TO
+  her when she starts (`focus`) or finishes (`completion`). Never in the pain part of her story.
+- Length ~40-48 s for 10 slides; check a 2 fps contact sheet of the whole video before sending.
+
+**Copy pass before every render (Adi, 2026-11-18: "you don't check your English").** Read every line out loud as
+marketing copy: natural American English, idiomatic, clear in one read, catchy. Kill awkward lines ("a dish is just
+small" -> "dishes are easy to start."), check prepositions ("after your next drop-off"), keep callbacks consistent,
+and check captions too. List all slide text and fix it BEFORE making images or rendering.
+
 Shared rules for every style:
 - Readability first: no bare text on a busy photo (paper scrap, stroke or box), arrows never cross text, no orphan words.
 - TikTok safe zones: top 0-180, bottom 1500+, right rail x 950+ at y 850-1500.
