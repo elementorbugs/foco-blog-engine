@@ -67,15 +67,20 @@ Engine (tools, not rules): `foco-video/` (spec `carousels/<slug>.json`, images `
   the largest region, fill holes, save PNG.
 - Objects: from her POV with the anchor as ref, cropped. Only objects that belong to the story (spec §10: no filler props).
 
-## Current design system (until Adi sends the separate design spec)
-Scrapbook diary on crumpled cream paper: taped polaroids, the character as a white-outlined cut-out sticker, Kalam
-ballpoint notes on torn paper scraps, thick arrows with white under-stroke, lilac marker behind ONE key word, bold
-lowercase headline, serif body, drawn mail banner, FOCO step card. Balanced wrapping (no orphan word). Every slide
-gets the character or an object of her day + a note; no dead empty areas, but no crowding either (spec §10).
-TikTok safe zones: top 0-180, bottom 1500+, right rail x 950+ at y 850-1500.
-Reference example (angle C, approved by Adi 2026-11-17): `foco-video/carousels/diary-jess-waiting-mode.json`.
-**Open question for Adi:** the drawn FOCO step card must match the real app UI (spec §9); confirm it or give a
-real screenshot to match.
+## Design styles (Adi picks one by NAME; if he doesn't name one, ask which, or use the last one he approved)
+Every style uses the same story rules and the same QA. Add each new style here with a name, a layout and an example.
+
+| name (Adi says) | Hebrew | look | layout | example |
+|---|---|---|---|---|
+| **Scrapbook** | סקראפבוק | handmade diary on crumpled cream paper: taped polaroids, the character as a white-outlined cut-out, Kalam ballpoint notes on torn paper scraps, thick blue arrows, lilac marker behind ONE key word, bold lowercase headline + serif body, drawn mail banner | `diary` / `final-diary` (blocks + `collage`) | `diary-jess-waiting-mode`, `diary-jess-planners` |
+| **Story** | סטורי | "made on a phone" in 2 minutes: the real photo full-bleed, native TikTok/IG text (white + black stroke, or text on white/black boxes), Instagram-pen scribbles (uneven circles, arrows, underlines) in yellow/white, iPhone cut-out sticker, crooked screenshots. No paper, stars or tape. Approved 2026-11-18 ("looks less effortful but still aesthetic") | `story` (free-positioned `blocks`: bg, txt, hand, circle, arrow, under, cutout, shot, focosteps, badges) | `story-sample` (slides 1-2) |
+
+Shared rules for every style:
+- Readability first: no bare text on a busy photo (paper scrap, stroke or box), arrows never cross text, no orphan words.
+- TikTok safe zones: top 0-180, bottom 1500+, right rail x 950+ at y 850-1500.
+- FOCO UI only as real screenshots or the real-UI `focosteps` component (copy of "N TINY STEPS BY FOCO"); never invent screens.
+- Pen circles/arrows must land exactly on what they point at: check at full size.
+- Every object in a photo must fit the story (e.g. no baby monitor when the kid is at daycare).
 
 ## Spec JSON (diary layout)
 ```json
