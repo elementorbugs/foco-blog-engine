@@ -24,9 +24,17 @@ const slug = process.argv[2];
 const patchFile = path.join(root, 'post-patches', `${slug}.json`);
 
 async function patchOne(slug, edits) {
-  const res = await fetch(`https://${host}/wp-json/wp/v2/posts?slug=${slug}&status=any&context=edit&_fields=id,status,content`, { headers });
-  const post = (await res.json())[0];
-  if (!post) throw new Error(`No post with slug ${slug}`);
+  // Posts first, then pages (the homepage is a page).
+  let type = 'posts';
+  let res = await fetch(`https://${host}/wp-json/wp/v2/posts?slug=${slug}&status=any&context=edit&_fields=id,status,content`, { headers });
+  let post = (await res.json())[0];
+  if (!post) {
+    type = 'pages';
+    res = await fetch(`https://${host}/wp-json/wp/v2/pages?slug=${slug}&status=any&context=edit&_fields=id,status,content`, { headers });
+    post = (await res.json())[0];
+    if (post) fs.writeFileSync('/tmp/patched-page', slug);
+  }
+  if (!post) throw new Error(`No post or page with slug ${slug}`);
 
   let content = post.content.raw;
   for (const { old: from, new: to } of edits) {
@@ -35,13 +43,13 @@ async function patchOne(slug, edits) {
     content = content.split(from).join(to);
   }
 
-  const put = await fetch(`https://${host}/wp-json/wp/v2/posts/${post.id}`, {
+  const put = await fetch(`https://${host}/wp-json/wp/v2/${type}/${post.id}`, {
     method: 'POST',
     headers: { ...headers, 'Content-Type': 'application/json' },
     body: JSON.stringify({ content }),
   });
   if (put.status !== 200) throw new Error(`Update of ${slug} failed: HTTP ${put.status}`);
-  console.log(`Patched post #${post.id} ${slug} (${post.status}): ${edits.length} edit(s).`);
+  console.log(`Patched ${type.slice(0,-1)} #${post.id} ${slug} (${post.status}): ${edits.length} edit(s).`);
 }
 
 (async () => {

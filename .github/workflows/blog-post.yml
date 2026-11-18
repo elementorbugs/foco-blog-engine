@@ -159,6 +159,7 @@ jobs:
           if [ "$ACTION" = "patch" ] && node -e "process.exit(Array.isArray(require('./post-patches/${slug#post-}.json')) ? 1 : 0)"; then
             echo "Batch patch: skipping the single-post check."; exit 0
           fi
+          if [ -f /tmp/patched-page ]; then echo "Patched a page, not a post: skipping the post check."; exit 0; fi
           node scripts/check-post.js "${slug#post-}"
 
       - name: Fetch post into the repo
