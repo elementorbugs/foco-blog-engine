@@ -22,7 +22,7 @@ export type StoryItem =
   | { k: "bg"; file: string; pos?: string; zoom?: number; blur?: number; dim?: number }
   // TikTok/IG text. stroke = white + black outline (TikTok classic), box = black text on white boxes per line,
   // dark = white text on black boxes
-  | { k: "txt"; text: string; x: number; y: number; w?: number; size?: number; style?: "stroke" | "box" | "dark"; align?: "left" | "center" | "right"; rot?: number }
+  | { k: "txt"; text: string; x: number; y: number; w?: number; size?: number; style?: "stroke" | "box" | "dark"; align?: "left" | "center" | "right"; rot?: number; color?: string }
   // words written with the Instagram pen (handwriting), always with a dark outline so it reads on any photo
   | { k: "hand"; text: string; x: number; y: number; w?: number; size?: number; color?: string; rot?: number }
   | { k: "circle"; cx: number; cy: number; rx: number; ry: number; rot?: number; color?: string; seed?: number }
@@ -51,7 +51,8 @@ const words = (it: StoryItem) => ("text" in it && it.text ? it.text.split(/\s+/)
 // start frame of every item + total slide length (enter sequence + time to read)
 export const schedule = (blocks: StoryItem[]) => {
   let t = 4;
-  const starts = blocks.map((b) => { const s = t; t += STEP[b.k]; return s; });
+  // optional per-item `wait` (frames): extra pause before the next item, e.g. a list that lands one line per beat
+  const starts = blocks.map((b) => { const s = t; t += STEP[b.k] + ((b as { wait?: number }).wait ?? 0); return s; });
   const read = blocks.reduce((n, b) => n + words(b), 0);
   return { starts, dur: Math.round(Math.max(t + 22, t + 8 + read * 3.5)) };
 };
@@ -113,7 +114,7 @@ const Item: React.FC<{ it: StoryItem; slug: string; a: number; slideT: number; d
         // TikTok text: each word pops in
         const ws = it.text.split(" ");
         return (
-          <div style={{ ...base, color: "#fff", WebkitTextStroke: `${size * 0.16}px #000`, paintOrder: "stroke fill", textShadow: "0 2px 6px rgba(0,0,0,0.25)" } as React.CSSProperties}>
+          <div style={{ ...base, color: it.color ?? "#fff", WebkitTextStroke: `${size * 0.16}px #000`, paintOrder: "stroke fill", textShadow: "0 2px 6px rgba(0,0,0,0.25)" } as React.CSSProperties}>
             {ws.map((w, i) => {
               const s = sp(11, i * 2.2);
               return <span key={i} style={{ display: "inline-block", transform: `scale(${0.55 + 0.45 * s}) translateY(${(1 - s) * 18}px)`, opacity: Math.min(1, s * 1.6), marginRight: "0.26em" }}>{w}</span>;

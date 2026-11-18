@@ -42,7 +42,8 @@ if (!to || (!resendKey && !pass)) {
 
 const out = path.join(ROOT, "out", `tiktok-${slug}`);
 const slides = fs.readdirSync(out).filter((f) => /^slide-\d+\.png$/.test(f)).sort((a, b) => parseInt(a.slice(6)) - parseInt(b.slice(6)));
-if (!slides.length) throw new Error(`no rendered slides in ${out}; run build.js ${slug} render first`);
+// a video-only story (e.g. a one-shot meme reel with no end card) has no stills: --video needs only video.mp4
+if (!slides.length && !process.argv.includes("--video")) throw new Error(`no rendered slides in ${out}; run build.js ${slug} render first`);
 
 // PNGs are ~1-2 MB each; JPEG q2 keeps them sharp on a phone and the email well under Gmail's 25 MB limit
 // TikTok 9:16 slides, then Instagram 4:5 versions (IG crops 9:16 and cuts the text)
@@ -113,7 +114,7 @@ async function viaGmail(mail) {
   const mail = {
     to,
     // time in the subject so each send is its own email (same subject = Gmail stacks it into the old thread)
-    subject: `FOCO Social: carousel "${slug}" (${slides.length} slides) ${new Date().toLocaleString("en-GB", { timeZone: "Asia/Jerusalem", day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" })}`,
+    subject: `FOCO Social: ${process.argv.includes("--video") ? "video" : "carousel"} "${slug}"${process.argv.includes("--video") ? "" : ` (${slides.length} slides)`} ${new Date().toLocaleString("en-GB", { timeZone: "Asia/Jerusalem", day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" })}`,
     text: `Your carousel is ready. TikTok: slide-1..N (9:16). Instagram: ig-slide-1..N (4:5, use these on IG so nothing gets cut). Both in order, 1 = hook.
 
 Captions to paste:

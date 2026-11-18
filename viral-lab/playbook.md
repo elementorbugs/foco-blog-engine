@@ -101,3 +101,14 @@ Refs: references/instagram-277423956-DfuLp88J1Rw, -DfjHbTTpx2E (talking reels), 
 - Script: personal reason (daughter dropped naps) -> what I built -> 5 steps -> "I still keep control" -> real number -> "comment WAITLIST".
 - Carousel: cream paper bg, taped polaroid phone photos, serif body + bold sans headline with ONE dark-red word, blue script handwritten asides, scattered star stickers. Story arc: near-failure -> low point -> someone helps -> pivot -> "we're so close" -> comment keyword. "if you're new here, hi I'm Katey" slide = re-intro.
 - Why it works: stakes are real and dated, numbers are real, she's tired on camera, the product is the side character.
+
+## Mom mental-load "list" reels (Adi's references, 2026-11-18: 37K + 39K likes)
+Two IG reels, same engine: **one identity line + a list of roles that piles up on screen + a calm/frozen visual + a trending song. No voice, no story, under 13s.**
+- The list IS the content. Each item lands on a beat; the pile-up makes the overload felt, not explained.
+- Hook = identity label ("2026 Moms be like:" / "I'M A MOTHER but I'm also a"). The unfinished "but I'm also a" is an open loop.
+- Visual does the opposite of the text: the list grows, she doesn't move (stare at a table / slow walk on a beach). That contrast is the joke/the ache.
+- 8-13s, 0-1 cuts, ends on the full list = loops; too many words to read once = rewatch.
+- Comment trigger is built in: viewers add the job that's missing. Share trigger: "this is me" repost / send to partner.
+- Faceless or face half-hidden, phone-shot, zero brand look. Fits our no-founder rule and Jess.
+- FOCO version: "ADHD moms be like:" + list -> she stares (= paralysis). Or "I HAVE ADHD / but I'm also the family's" + role flood. Product, if any, is one quiet final frame, never a CTA voice.
+First FOCO remake: `story-jess-be-like` (2026-11-18), Jess at 9pm, 19.6s, list stacks one line per ~0.9s (Story engine `wait` per item), then "not lazy. just 7 tasks and no first step." + FOCO steps card. Waiting for numbers.

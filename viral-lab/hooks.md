@@ -59,3 +59,7 @@ On-screen text for the silent aesthetic vlog (real desk, phone with FOCO on it, 
 | i let claude edit my reels but kept one thing | confession + withheld item | itskateydixon IG | - | - | - | founder talking reel, 2-tier handwritten+bold title |
 | i taught claude to edit my reels | "I built X" founder | itskateydixon IG | - | - | - | personal reason (kid dropped naps) in line 2 |
 | yesterday i came dangerously close to bailing this entire launch | founder diary near-failure | itskateydixon IG carousel | - | - | - | 11-slide diary, comment WAITLIST close |
+| 2026 Moms be like: (list stacks: make money / career / cook and clean / loving wife / raise child like an expert / in shape / social life) | generational label + growing list over a frozen stare | justchaiandchaos IG | - | 37K likes | - | 12.8s, 0 cuts, 775 comments; mental-load list, she never moves |
+| I'M A MOTHER / but I'm also a (Mind Reader, Driver, Money Keeper, Scheduling Expert... flood the screen) | identity + unfinished sentence, words flood in | charupawar IG | - | 39K likes | - | 8.3s, faceless beach B-roll, too many words to read = rewatch |
+| ADHD moms be like: (same list) -> she just stares | FOCO remake of the stacked list | FOCO idea 2026-11-18 | - | - | - | Jess; stare = paralysis, shown not told |
+| I HAVE ADHD / but I'm also the family's (calendar, alarm clock, memory, lost & found...) | FOCO remake of identity + flood | FOCO idea 2026-11-18 | - | - | - | faceless B-roll, words flood |

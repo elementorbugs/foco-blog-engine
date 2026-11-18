@@ -1,0 +1,205 @@
+{
+  "slug": "story-jess-be-like",
+  "tiktok": {
+    "caption": "moms with ADHD at 9pm: kids asleep, laptop open, 7 things to do... and zero idea where to start 🫠\n\nit's not laziness. it's that none of them has a first step yet.\n\nwhat's on your list tonight? 👇\n\nthe app at the end is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhdmom",
+      "#momswithadhd",
+      "#taskparalysis",
+      "#mentalload"
+    ]
+  },
+  "instagram": {
+    "caption": "Moms with ADHD be like: the kids are finally asleep, the laptop is open, and the list in my head is 7 things long.\n\nClient work. 23 emails. The dentist. The school form. Dinner. Laundry. Texting my mom back.\n\nSo I just sit there. Not because I'm lazy, but because not one of those things has a first step yet.\n\nWhat helps me: I pick ONE, let FOCO break it into tiny steps, and do only step 1.\n\nWhat's on your list tonight? Add the one I forgot 👇\n\n💜 The app is FOCO, link in bio.",
+    "hashtags": [
+      "#adhdmom",
+      "#momswithadhd",
+      "#taskparalysis",
+      "#mentalload",
+      "#adhdwomen"
+    ],
+    "altText": "Short video of a mom at her desk at night, chin in her hand, staring out of the window while a list of seven tasks stacks up on screen. Then she starts typing, next to FOCO's card that breaks one task into three tiny steps."
+  },
+  "slides": [
+    {
+      "layout": "story",
+      "id": "s1",
+      "blocks": [
+        {
+          "k": "bg",
+          "file": "carousels/own/jess-be-like/bl1.jpg",
+          "dim": 0.12
+        },
+        {
+          "k": "txt",
+          "text": "Moms with ADHD be like:",
+          "x": 70,
+          "y": 790,
+          "w": 940,
+          "size": 60,
+          "align": "center",
+          "wait": 22
+        },
+        {
+          "k": "txt",
+          "text": "I need to finish client work",
+          "x": 70,
+          "y": 885,
+          "w": 940,
+          "size": 42,
+          "align": "center",
+          "color": "#FFD60A",
+          "wait": 17
+        },
+        {
+          "k": "txt",
+          "text": "answer 23 emails",
+          "x": 70,
+          "y": 950,
+          "w": 940,
+          "size": 42,
+          "align": "center",
+          "color": "#FFD60A",
+          "wait": 17
+        },
+        {
+          "k": "txt",
+          "text": "call the dentist back",
+          "x": 70,
+          "y": 1015,
+          "w": 940,
+          "size": 42,
+          "align": "center",
+          "color": "#FFD60A",
+          "wait": 17
+        },
+        {
+          "k": "txt",
+          "text": "sign the school form",
+          "x": 70,
+          "y": 1080,
+          "w": 940,
+          "size": 42,
+          "align": "center",
+          "color": "#FFD60A",
+          "wait": 17
+        },
+        {
+          "k": "txt",
+          "text": "make a dinner that isn't cereal",
+          "x": 70,
+          "y": 1145,
+          "w": 940,
+          "size": 42,
+          "align": "center",
+          "color": "#FFD60A",
+          "wait": 17
+        },
+        {
+          "k": "txt",
+          "text": "fold Tuesday's laundry",
+          "x": 70,
+          "y": 1210,
+          "w": 940,
+          "size": 42,
+          "align": "center",
+          "color": "#FFD60A",
+          "wait": 17
+        },
+        {
+          "k": "txt",
+          "text": "and text my mom back",
+          "x": 70,
+          "y": 1275,
+          "w": 940,
+          "size": 42,
+          "align": "center",
+          "color": "#FFD60A",
+          "wait": 40
+        },
+        {
+          "k": "hand",
+          "text": "...where do I even start?",
+          "x": 230,
+          "y": 1352,
+          "w": 700,
+          "size": 58,
+          "rot": -3
+        }
+      ]
+    },
+    {
+      "layout": "story",
+      "id": "s2",
+      "enter": "focus",
+      "blocks": [
+        {
+          "k": "bg",
+          "file": "carousels/own/jess-be-like/bl2.jpg",
+          "dim": 0.08
+        },
+        {
+          "k": "txt",
+          "text": "not lazy.",
+          "x": 64,
+          "y": 760,
+          "size": 56,
+          "style": "box"
+        },
+        {
+          "k": "txt",
+          "text": "just 7 tasks and no first step.",
+          "x": 64,
+          "y": 850,
+          "w": 640,
+          "size": 40,
+          "style": "dark"
+        },
+        {
+          "k": "focosteps",
+          "x": 64,
+          "y": 960,
+          "w": 600,
+          "lit": 0,
+          "steps": [
+            {
+              "text": "Open the client doc",
+              "min": 1
+            },
+            {
+              "text": "Reread the last line",
+              "min": 2
+            },
+            {
+              "text": "Write one sentence",
+              "min": 5
+            }
+          ]
+        },
+        {
+          "k": "mascot",
+          "state": "focus",
+          "x": 700,
+          "y": 1170,
+          "h": 240,
+          "rot": 5
+        },
+        {
+          "k": "hand",
+          "text": "so I only do step 1 💜",
+          "x": 64,
+          "y": 1350,
+          "w": 620,
+          "size": 54,
+          "color": "#FFD60A",
+          "rot": -3,
+          "wait": 30
+        }
+      ]
+    }
+  ],
+  "music": "factory/musiclib/perspectives.mp3",
+  "musicKey": "perspectives",
+  "musicCredit": "\"Perspectives\" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0",
+  "musicVolume": 0.24
+}
