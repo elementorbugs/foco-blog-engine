@@ -1,7 +1,7 @@
 {
   "slug": "story-jess-be-like-real",
   "tiktok": {
-    "caption": "moms with ADHD: kids everywhere, laptop open, 7 things to do... and zero idea where to start 🫠\n\nit's not laziness. it's that none of them has a first step yet.\n\nwhat's on your list tonight? 👇\n\nthe app at the end is FOCO, link in bio 💜",
+    "caption": "moms with ADHD: kids everywhere, laptop open, 7 things in my head... and zero idea where to start 🫠\n\nwhat helps: I get it OUT of my head. I just say it to FOCO, it all lands in my day, and it breaks the first task into tiny steps so I can actually start.\n\nwhat's on your list right now? 👇\n\nFOCO, link in bio 💜",
     "hashtags": [
       "#adhdmom",
       "#momswithadhd",
@@ -10,7 +10,7 @@
     ]
   },
   "instagram": {
-    "caption": "Moms with ADHD be like: the kids are bouncing off the couch, the laptop is open, and the list in my head is 7 things long.\n\nClient work. 23 emails. The dentist. The school form. Dinner. Laundry. Texting my mom back.\n\nSo I just sit there. Not because I'm lazy, but because not one of those things has a first step yet.\n\nWhat helps me: I pick ONE, let FOCO break it into tiny steps, and do only step 1.\n\nWhat's on your list tonight? Add the one I forgot 👇\n\n💜 The app is FOCO, link in bio.",
+    "caption": "Moms with ADHD be like: the kids are bouncing off the couch, the laptop is open, and the list in my head is 7 things long.\n\nClient work. 23 emails. The dentist. The school form. Dinner. Laundry. Texting my mom back.\n\nWhat helps me: getting it out of my head. I just say it to FOCO, everything lands in my day, and one tap breaks the first task into tiny steps. Then I only do step 1.\n\nWhat's on your list right now? Add the one I forgot 👇\n\n💜 FOCO, link in bio.",
     "hashtags": [
       "#adhdmom",
       "#momswithadhd",
@@ -18,9 +18,9 @@
       "#mentalload",
       "#adhdwomen"
     ],
-    "altText": "Short video of a tired mom on the couch while her kids jump and play a trombone behind her, as a list of seven tasks stacks up on screen. Then her hands start typing on the laptop next to FOCO's card that breaks one task into three tiny steps."
+    "altText": "Short video of a tired mom on the couch while her kids jump and play a trombone behind her, as a list of seven tasks stacks up on screen. Then the tasks land in FOCO's day view, and her hands start typing next to FOCO's card that breaks one task into three tiny steps."
   },
-  "credits": "Footage: Ron Lach (Pexels) 8670999, 8670995, 8670998",
+  "credits": "Footage: Ron Lach (Pexels) 8670999, 8670995, 8671001, 8670998",
   "slides": [
     {
       "layout": "story",
@@ -138,29 +138,105 @@
       "blocks": [
         {
           "k": "vid",
+          "file": "carousels/own/jess-be-like-real/shotD.mp4",
+          "dim": 0.35
+        },
+        {
+          "k": "txt",
+          "text": "so I get it out of my head 🧠",
+          "x": 40,
+          "y": 280,
+          "w": 1000,
+          "size": 52,
+          "style": "box",
+          "align": "center"
+        },
+        {
+          "k": "hand",
+          "text": "I just say it to FOCO 🎙️",
+          "x": 180,
+          "y": 385,
+          "w": 760,
+          "size": 58,
+          "color": "#FFD60A",
+          "rot": -3
+        },
+        {
+          "k": "daycal",
+          "x": 110,
+          "y": 490,
+          "w": 860,
+          "day": "Wednesday",
+          "date": "Nov 18, 2026",
+          "sections": [
+            {
+              "name": "MORNING",
+              "tasks": [
+                {
+                  "icon": "💻",
+                  "title": "Finish client work",
+                  "meta": "45m • Work",
+                  "hl": true
+                },
+                {
+                  "icon": "📧",
+                  "title": "Answer emails",
+                  "meta": "20m • Work"
+                }
+              ]
+            },
+            {
+              "name": "ANYTIME",
+              "tasks": [
+                {
+                  "icon": "🦷",
+                  "title": "Call the dentist",
+                  "meta": "5m • Health"
+                },
+                {
+                  "icon": "✍️",
+                  "title": "Sign the school form",
+                  "meta": "2m • Family"
+                }
+              ]
+            }
+          ],
+          "wait": 20
+        },
+        {
+          "k": "hand",
+          "text": "and it all lands in my day 📅",
+          "x": 120,
+          "y": 1290,
+          "w": 860,
+          "size": 54,
+          "color": "#FFD60A",
+          "rot": -2,
+          "wait": 25
+        }
+      ]
+    },
+    {
+      "layout": "story",
+      "id": "s3",
+      "blocks": [
+        {
+          "k": "vid",
           "file": "carousels/own/jess-be-like-real/shotC.mp4"
         },
         {
           "k": "txt",
-          "text": "not lazy.",
+          "text": "then it gets me started",
           "x": 40,
-          "y": 600,
-          "size": 54,
+          "y": 560,
+          "w": 960,
+          "size": 50,
           "style": "box"
-        },
-        {
-          "k": "txt",
-          "text": "just 7 tasks and no first step.",
-          "x": 40,
-          "y": 690,
-          "w": 560,
-          "size": 38,
-          "style": "dark"
         },
         {
           "k": "focosteps",
           "x": 40,
-          "y": 830,
+          "y": 670,
           "w": 560,
           "lit": 0,
           "steps": [
@@ -180,16 +256,44 @@
         },
         {
           "k": "hand",
-          "text": "so I only do step 1 💜",
+          "text": "one task at a time ✓",
           "x": 40,
-          "y": 1250,
-          "w": 640,
-          "size": 54,
+          "y": 1090,
+          "w": 620,
+          "size": 56,
           "color": "#FFD60A",
-          "rot": -3,
-          "wait": 30
+          "rot": -3
+        },
+        {
+          "k": "recap",
+          "x": 40,
+          "y": 1200,
+          "items": [
+            {
+              "icon": "🎙️",
+              "text": "say it"
+            },
+            {
+              "icon": "📅",
+              "text": "in my day"
+            },
+            {
+              "icon": "▶️",
+              "text": "start"
+            }
+          ]
+        },
+        {
+          "k": "txt",
+          "text": "FOCO 💜 link in bio",
+          "x": 40,
+          "y": 1330,
+          "size": 42,
+          "style": "dark",
+          "wait": 40
         }
-      ]
+      ],
+      "enter": "focus"
     }
   ],
   "music": "factory/musiclib/carefree.mp3",
