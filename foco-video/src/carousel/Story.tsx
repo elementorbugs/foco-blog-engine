@@ -6,7 +6,7 @@
 // The same slide renders as a still (carousel) or animated (StoryVideo): pass `t` = local frame and each item
 // enters in array order (schedule()), so the video plays the story the way a person would build the story.
 import React from "react";
-import { AbsoluteFill, Img, continueRender, delayRender, interpolate, spring, staticFile } from "remotion";
+import { AbsoluteFill, Img, OffthreadVideo, Sequence, continueRender, delayRender, interpolate, spring, staticFile, useCurrentFrame } from "remotion";
 import { EMOJI } from "../Composition";
 import { StepsCard } from "./Diary";
 
@@ -20,6 +20,9 @@ Promise.all([
 type Pt = [number, number];
 export type StoryItem =
   | { k: "bg"; file: string; pos?: string; zoom?: number; blur?: number; dim?: number }
+  // REAL footage as the background (Adi, 2026-11-18: a still "doesn't move, not authentic"). Pre-crop to 1080x1920.
+  // Always drawn under the text; a later vid in the same slide is a hard cut, so text (a list) survives the cut.
+  | { k: "vid"; file: string; from?: number; dim?: number }
   // TikTok/IG text. stroke = white + black outline (TikTok classic), box = black text on white boxes per line,
   // dark = white text on black boxes
   | { k: "txt"; text: string; x: number; y: number; w?: number; size?: number; style?: "stroke" | "box" | "dark"; align?: "left" | "center" | "right"; rot?: number; color?: string }
@@ -44,7 +47,7 @@ export type StoryItem =
 
 export const FPS = 30;
 // how long each kind takes to "arrive" before the next item starts (frames), and its sound
-const STEP: Record<StoryItem["k"], number> = { bg: 4, txt: 10, hand: 12, circle: 10, arrow: 7, under: 7, cutout: 10, shot: 10, notif: 14, focosteps: 28, badges: 10, scan: 30, daycal: 26, mascot: 10, recap: 12 };
+const STEP: Record<StoryItem["k"], number> = { bg: 4, vid: 0, txt: 10, hand: 12, circle: 10, arrow: 7, under: 7, cutout: 10, shot: 10, notif: 14, focosteps: 28, badges: 10, scan: 30, daycal: 26, mascot: 10, recap: 12 };
 export const SFX: Partial<Record<StoryItem["k"], string>> = { txt: "explainer-sfx/pop.wav", hand: "explainer-sfx/pop-soft.wav", circle: "explainer-sfx/pop-soft.wav", cutout: "explainer-sfx/thud.wav", shot: "explainer-sfx/thud.wav", notif: "sfx/ding.wav", focosteps: "explainer-sfx/check.wav", badges: "explainer-sfx/pop.wav", scan: "sfx/mouse-click.wav", daycal: "explainer-sfx/pop-soft.wav", mascot: "explainer-sfx/pop.wav", recap: "explainer-sfx/pop-soft.wav" };
 
 const words = (it: StoryItem) => ("text" in it && it.text ? it.text.split(/\s+/).length : 0);
@@ -92,11 +95,17 @@ const Stroke: React.FC<{ d: string; color?: string; p?: number }> = ({ d, color 
 };
 
 // a = frames since this item started (Infinity = still image, fully shown)
-const Item: React.FC<{ it: StoryItem; slug: string; a: number; slideT: number; dur: number }> = ({ it, slug, a, slideT, dur }) => {
-  if (a < 0 && it.k !== "bg") return null; // the photo is already there during a time-jump / transition
+const Item: React.FC<{ it: StoryItem; slug: string; a: number; slideT: number; dur: number; lead?: boolean }> = ({ it, slug, a, slideT, dur, lead }) => {
+  if (a < 0 && it.k !== "bg" && it.k !== "vid") return null; // the photo is already there during a time-jump / transition
   const sp = (damping = 12, delay = 0) => (a === Infinity ? 1 : spring({ frame: a - delay, fps: FPS, config: { damping, stiffness: 170, mass: 0.8 } }));
   const lin = (n: number) => (a === Infinity ? 1 : ease(a / n));
   switch (it.k) {
+    case "vid": {
+      if (a === Infinity) return null;
+      // the slide's opening footage covers the few lead-in frames too (no black flash before the hook)
+      if (a < 0 && !(lead && slideT >= 0 && slideT < 6)) return null;
+      return <VidBg file={src(slug, it.file)} from={it.from ?? 0} a={Math.max(0, a)} dim={it.dim} />;
+    }
     case "bg": {
       // slow push-in over the whole slide (Ken Burns)
       const z = (it.zoom ?? 1) * (slideT === Infinity ? 1 : 1 + 0.07 * (Math.max(0, slideT) / dur));
@@ -254,12 +263,25 @@ const Item: React.FC<{ it: StoryItem; slug: string; a: number; slideT: number; d
   }
 };
 
+// footage starts at its own entrance: a Sequence anchored at (now - a) so the clip's frame 0 = the item's start
+const VidBg: React.FC<{ file: string; from: number; a: number; dim?: number }> = ({ file, from, a, dim }) => {
+  const f = useCurrentFrame();
+  return (
+    <Sequence from={f - a} layout="none">
+      <OffthreadVideo src={file} startFrom={Math.round(from * FPS)} muted style={{ position: "absolute", inset: 0, width: 1080, height: 1920, objectFit: "cover" }} />
+      {dim ? <div style={{ position: "absolute", inset: 0, background: `rgba(0,0,0,${dim})` }} /> : null}
+    </Sequence>
+  );
+};
+
 export const StorySlide: React.FC<{ slug: string; blocks: StoryItem[]; t?: number }> = ({ slug, blocks, t }) => {
   const { starts, dur } = schedule(blocks);
   const T = t ?? Infinity;
   return (
     <AbsoluteFill style={{ background: "#111", overflow: "hidden" }}>
-      {blocks.map((it, i) => <Item key={i} it={it} slug={slug} a={T === Infinity ? Infinity : T - starts[i]} slideT={T} dur={dur} />)}
+      {/* footage first (under everything), then the rest in order */}
+      {blocks.map((it, i) => (it.k === "vid" ? <Item key={i} it={it} slug={slug} a={T === Infinity ? Infinity : T - starts[i]} slideT={T} dur={dur} lead={i === blocks.findIndex((b) => b.k === "vid")} /> : null))}
+      {blocks.map((it, i) => (it.k !== "vid" ? <Item key={i} it={it} slug={slug} a={T === Infinity ? Infinity : T - starts[i]} slideT={T} dur={dur} /> : null))}
     </AbsoluteFill>
   );
 };

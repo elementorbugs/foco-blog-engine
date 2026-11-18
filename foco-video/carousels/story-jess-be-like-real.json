@@ -1,0 +1,199 @@
+{
+  "slug": "story-jess-be-like-real",
+  "tiktok": {
+    "caption": "moms with ADHD: kids everywhere, laptop open, 7 things to do... and zero idea where to start 🫠\n\nit's not laziness. it's that none of them has a first step yet.\n\nwhat's on your list tonight? 👇\n\nthe app at the end is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhdmom",
+      "#momswithadhd",
+      "#taskparalysis",
+      "#mentalload"
+    ]
+  },
+  "instagram": {
+    "caption": "Moms with ADHD be like: the kids are bouncing off the couch, the laptop is open, and the list in my head is 7 things long.\n\nClient work. 23 emails. The dentist. The school form. Dinner. Laundry. Texting my mom back.\n\nSo I just sit there. Not because I'm lazy, but because not one of those things has a first step yet.\n\nWhat helps me: I pick ONE, let FOCO break it into tiny steps, and do only step 1.\n\nWhat's on your list tonight? Add the one I forgot 👇\n\n💜 The app is FOCO, link in bio.",
+    "hashtags": [
+      "#adhdmom",
+      "#momswithadhd",
+      "#taskparalysis",
+      "#mentalload",
+      "#adhdwomen"
+    ],
+    "altText": "Short video of a tired mom on the couch while her kids jump and play a trombone behind her, as a list of seven tasks stacks up on screen. Then her hands start typing on the laptop next to FOCO's card that breaks one task into three tiny steps."
+  },
+  "credits": "Footage: Ron Lach (Pexels) 8670999, 8670995, 8670998",
+  "slides": [
+    {
+      "layout": "story",
+      "id": "s1",
+      "blocks": [
+        {
+          "k": "vid",
+          "file": "carousels/own/jess-be-like-real/shotA.mp4"
+        },
+        {
+          "k": "txt",
+          "text": "Moms with ADHD be like:",
+          "x": 40,
+          "y": 280,
+          "w": 1000,
+          "size": 58,
+          "align": "center",
+          "wait": 50
+        },
+        {
+          "k": "vid",
+          "file": "carousels/own/jess-be-like-real/shotB.mp4"
+        },
+        {
+          "k": "txt",
+          "text": "I need to finish client work",
+          "x": 40,
+          "y": 372,
+          "w": 1000,
+          "size": 40,
+          "align": "center",
+          "color": "#FFD60A",
+          "wait": 17
+        },
+        {
+          "k": "txt",
+          "text": "answer 23 emails",
+          "x": 40,
+          "y": 428,
+          "w": 1000,
+          "size": 40,
+          "align": "center",
+          "color": "#FFD60A",
+          "wait": 17
+        },
+        {
+          "k": "txt",
+          "text": "call the dentist back",
+          "x": 40,
+          "y": 484,
+          "w": 1000,
+          "size": 40,
+          "align": "center",
+          "color": "#FFD60A",
+          "wait": 17
+        },
+        {
+          "k": "txt",
+          "text": "sign the school form",
+          "x": 40,
+          "y": 540,
+          "w": 1000,
+          "size": 40,
+          "align": "center",
+          "color": "#FFD60A",
+          "wait": 17
+        },
+        {
+          "k": "txt",
+          "text": "make a dinner that isn't cereal",
+          "x": 40,
+          "y": 596,
+          "w": 1000,
+          "size": 40,
+          "align": "center",
+          "color": "#FFD60A",
+          "wait": 17
+        },
+        {
+          "k": "txt",
+          "text": "fold Tuesday's laundry",
+          "x": 40,
+          "y": 652,
+          "w": 1000,
+          "size": 40,
+          "align": "center",
+          "color": "#FFD60A",
+          "wait": 17
+        },
+        {
+          "k": "txt",
+          "text": "and text my mom back",
+          "x": 40,
+          "y": 708,
+          "w": 1000,
+          "size": 40,
+          "align": "center",
+          "color": "#FFD60A",
+          "wait": 30
+        },
+        {
+          "k": "hand",
+          "text": "...where do I even start?",
+          "x": 200,
+          "y": 772,
+          "w": 700,
+          "size": 56,
+          "rot": -3
+        }
+      ]
+    },
+    {
+      "layout": "story",
+      "id": "s2",
+      "blocks": [
+        {
+          "k": "vid",
+          "file": "carousels/own/jess-be-like-real/shotC.mp4"
+        },
+        {
+          "k": "txt",
+          "text": "not lazy.",
+          "x": 40,
+          "y": 600,
+          "size": 54,
+          "style": "box"
+        },
+        {
+          "k": "txt",
+          "text": "just 7 tasks and no first step.",
+          "x": 40,
+          "y": 690,
+          "w": 560,
+          "size": 38,
+          "style": "dark"
+        },
+        {
+          "k": "focosteps",
+          "x": 40,
+          "y": 830,
+          "w": 560,
+          "lit": 0,
+          "steps": [
+            {
+              "text": "Open the client doc",
+              "min": 1
+            },
+            {
+              "text": "Reread the last line",
+              "min": 2
+            },
+            {
+              "text": "Write one sentence",
+              "min": 5
+            }
+          ]
+        },
+        {
+          "k": "hand",
+          "text": "so I only do step 1 💜",
+          "x": 40,
+          "y": 1250,
+          "w": 640,
+          "size": 54,
+          "color": "#FFD60A",
+          "rot": -3,
+          "wait": 30
+        }
+      ]
+    }
+  ],
+  "music": "factory/musiclib/carefree.mp3",
+  "musicKey": "carefree",
+  "musicCredit": "\"Carefree\" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0",
+  "musicVolume": 0.24
+}
