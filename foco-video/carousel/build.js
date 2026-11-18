@@ -42,7 +42,7 @@ function lint() {
   }
   if (/not a calendar/i.test(text)) problems.push("FOCO HAS a built-in calendar");
   const last = spec.slides[spec.slides.length - 1];
-  if (!last.layout.startsWith("final")) problems.push("last slide must be final-card or final-phone");
+  if (!last.layout.startsWith("final") && !(last.layout === "story" && (last.blocks || []).some((b) => b.k === "badges")) && !spec.sample) problems.push("last slide must be a final layout (or a story slide with badges)");
   if (problems.length) {
     console.error("spec problems:\n - " + problems.join("\n - "));
     process.exit(1);

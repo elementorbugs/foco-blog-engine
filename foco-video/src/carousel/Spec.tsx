@@ -8,6 +8,7 @@ import { StepCard, TimeChip } from "./MoreCarousels";
 import { Tag } from "./MoreCarousels2";
 import { AppListCover, AppSlide, type AppInfo } from "./AppList";
 import { DiarySlide, type DiaryBlock } from "./Diary";
+import { StorySlide, type StoryItem } from "./Story";
 
 type Step = { text: string; min: number };
 type CalTask = { title: string; min: number; category: string };
@@ -50,6 +51,8 @@ export type SpecSlide =
   | { layout: "applist-cover"; id: string; title: string; sub: string; icons: string[]; textTop?: number; teaser?: string }
   // founder-diary format (Diary.tsx): cream paper, taped polaroids, *highlighted* word, script asides; final-diary ends it
   | { layout: "diary" | "final-diary"; id: string; blocks: DiaryBlock[]; gap?: number }
+  // "made on a phone" format (Story.tsx): full-bleed photo, native TikTok/IG text, IG-pen scribbles, cut-out stickers
+  | { layout: "story"; id: string; blocks: StoryItem[] }
   | ({ layout: "app"; id: string } & AppInfo)
   | ({ layout: "final-app"; id: string; ask: string } & AppInfo);
 
@@ -890,6 +893,8 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
         </AbsoluteFill>
       );
     }
+    case "story":
+      return <StorySlide slug={spec.slug} blocks={s.blocks} />;
     case "diary":
     case "final-diary":
       return <DiarySlide slug={spec.slug} id={s.id} index={index} blocks={s.blocks} gap={s.gap} />;

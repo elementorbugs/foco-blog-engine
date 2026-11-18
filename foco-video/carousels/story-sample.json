@@ -1,0 +1,172 @@
+{
+  "slug": "story-sample",
+  "tiktok": {
+    "caption": "sample",
+    "hashtags": [
+      "#adhdmom",
+      "#adhdplanner",
+      "#taskparalysis"
+    ]
+  },
+  "instagram": {
+    "caption": "sample",
+    "hashtags": [
+      "#adhdmom",
+      "#adhdplanner",
+      "#taskparalysis"
+    ],
+    "altText": "sample"
+  },
+  "slides": [
+    {
+      "layout": "story",
+      "id": "s1",
+      "blocks": [
+        {
+          "k": "bg",
+          "file": "carousels/own/jess-planners/planners-full.jpg"
+        },
+        {
+          "k": "txt",
+          "text": "4 planners this year.",
+          "x": 64,
+          "y": 200,
+          "size": 82
+        },
+        {
+          "k": "txt",
+          "text": "same task on page 1 of every single one 🙃",
+          "x": 64,
+          "y": 330,
+          "w": 760,
+          "size": 44,
+          "style": "box"
+        },
+        {
+          "k": "circle",
+          "cx": 632,
+          "cy": 754,
+          "rx": 100,
+          "ry": 46,
+          "color": "#FFD60A",
+          "seed": 3
+        },
+        {
+          "k": "circle",
+          "cx": 495,
+          "cy": 884,
+          "rx": 104,
+          "ry": 44,
+          "color": "#FFD60A",
+          "seed": 7
+        },
+        {
+          "k": "circle",
+          "cx": 730,
+          "cy": 948,
+          "rx": 100,
+          "ry": 44,
+          "color": "#FFD60A",
+          "seed": 11
+        },
+        {
+          "k": "cutout",
+          "file": "carousels/own/jess-planners/cut1.png",
+          "x": 20,
+          "y": 860,
+          "h": 900,
+          "rot": -3
+        },
+        {
+          "k": "hand",
+          "text": "me, very organized",
+          "x": 360,
+          "y": 1090,
+          "w": 400,
+          "size": 64,
+          "rot": -6
+        },
+        {
+          "k": "arrow",
+          "from": [
+            350,
+            1150
+          ],
+          "to": [
+            250,
+            990
+          ],
+          "bend": -0.25
+        }
+      ]
+    },
+    {
+      "layout": "story",
+      "id": "s2",
+      "blocks": [
+        {
+          "k": "bg",
+          "file": "carousels/own/jess-planners/blank-full.jpg"
+        },
+        {
+          "k": "txt",
+          "text": "9:10. drop-off done.",
+          "x": 64,
+          "y": 200,
+          "size": 78
+        },
+        {
+          "k": "circle",
+          "cx": 745,
+          "cy": 655,
+          "rx": 285,
+          "ry": 225,
+          "color": "#FFD60A",
+          "rot": -4,
+          "seed": 5
+        },
+        {
+          "k": "hand",
+          "text": "still blank.",
+          "x": 70,
+          "y": 560,
+          "w": 380,
+          "size": 70,
+          "color": "#FFD60A",
+          "rot": -7
+        },
+        {
+          "k": "arrow",
+          "from": [
+            300,
+            700
+          ],
+          "to": [
+            460,
+            640
+          ],
+          "bend": 0.3,
+          "color": "#FFD60A"
+        },
+        {
+          "k": "txt",
+          "text": "3 hours. one job.",
+          "x": 64,
+          "y": 1230,
+          "size": 66,
+          "style": "box"
+        },
+        {
+          "k": "txt",
+          "text": "my client's newsletter. due friday.",
+          "x": 64,
+          "y": 1360,
+          "w": 800,
+          "size": 42,
+          "style": "dark"
+        }
+      ]
+    }
+  ],
+  "sample": true
+}
