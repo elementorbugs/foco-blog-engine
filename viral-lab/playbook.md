@@ -111,4 +111,4 @@ Two IG reels, same engine: **one identity line + a list of roles that piles up o
 - Comment trigger is built in: viewers add the job that's missing. Share trigger: "this is me" repost / send to partner.
 - Faceless or face half-hidden, phone-shot, zero brand look. Fits our no-founder rule and Jess.
 - FOCO version: "ADHD moms be like:" + list -> she stares (= paralysis). Or "I HAVE ADHD / but I'm also the family's" + role flood. Product, if any, is one quiet final frame, never a CTA voice.
-First FOCO remake: `story-jess-be-like` (2026-11-18), Jess at 9pm, 19.6s, list stacks one line per ~0.9s (Story engine `wait` per item), then "not lazy. just 7 tasks and no first step." + FOCO steps card. Waiting for numbers.
+First FOCO remake: `story-jess-be-like-real` (2026-11-18), real Pexels footage (Ron Lach shoot): close-up -> couch chaos while the list stacks one line per ~0.9s -> tasks land in FOCO's day -> steps + start. An AI-still version was rejected ("she sits there and doesn't move"). Waiting for numbers.
