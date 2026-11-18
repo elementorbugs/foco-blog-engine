@@ -897,7 +897,7 @@ const SlideBody: React.FC<{ spec: Spec; index: number }> = ({ spec, index }) => 
       return <StorySlide slug={spec.slug} blocks={s.blocks} />;
     case "diary":
     case "final-diary":
-      return <DiarySlide slug={spec.slug} id={s.id} index={index} blocks={s.blocks} gap={s.gap} />;
+      return <DiarySlide slug={spec.slug} id={s.id} index={index} blocks={s.blocks} gap={s.gap} theme={(spec as { theme?: string }).theme} />;
     case "applist-cover":
       return <AppListCover photo={photo} title={s.title} sub={s.sub} icons={s.icons} top={s.textTop} teaser={s.teaser} />;
     case "app":

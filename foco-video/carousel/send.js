@@ -47,11 +47,25 @@ if (!slides.length) throw new Error(`no rendered slides in ${out}; run build.js 
 // PNGs are ~1-2 MB each; JPEG q2 keeps them sharp on a phone and the email well under Gmail's 25 MB limit
 // TikTok 9:16 slides, then Instagram 4:5 versions (IG crops 9:16 and cuts the text)
 const igSlides = fs.readdirSync(out).filter((f) => /^ig-slide-\d+\.png$/.test(f)).sort((a, b) => parseInt(a.slice(9)) - parseInt(b.slice(9)));
-const attachments = [...slides, ...igSlides].map((f) => {
+let attachments = [...slides, ...igSlides].map((f) => {
   const jpg = path.join(out, f.replace(".png", ".jpg"));
   execFileSync(FFMPEG, ["-y", "-loglevel", "error", "-i", path.join(out, f), "-q:v", "2", jpg]);
   return { filename: path.basename(jpg), path: jpg };
 });
+// --video: email the animated video instead of the slides, re-encoded to fit Gmail (~18 MB); the full-quality
+// video.mp4 stays in the out folder for upload
+if (process.argv.includes("--video")) {
+  const src = path.join(out, "video.mp4");
+  if (!fs.existsSync(src)) throw new Error(`no video.mp4 in ${out}; run carousel/video.js ${slug} first`);
+  // ffmpeg-static has no ffprobe: read the duration from ffmpeg's own header line
+  const head = require("child_process").spawnSync(FFMPEG, ["-i", src]).stderr.toString();
+  const [, hh, mm, ss] = head.match(/Duration: (\d+):(\d+):([\d.]+)/);
+  const dur = +hh * 3600 + +mm * 60 + +ss;
+  const kbps = Math.floor((18 * 8192) / dur) - 128;
+  const mail = path.join(out, "video-email.mp4");
+  execFileSync(FFMPEG, ["-y", "-loglevel", "error", "-i", src, "-c:v", "libx264", "-b:v", `${kbps}k`, "-maxrate", `${kbps}k`, "-bufsize", `${kbps * 2}k`, "-c:a", "aac", "-b:a", "128k", mail]);
+  attachments = [{ filename: `${slug}.mp4`, path: mail }];
+}
 
 const read = (f) => (fs.existsSync(path.join(out, f)) ? fs.readFileSync(path.join(out, f), "utf8") : "");
 const caption = read("caption-tiktok.txt")

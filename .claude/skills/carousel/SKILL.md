@@ -72,8 +72,15 @@ Every style uses the same story rules and the same QA. Add each new style here w
 
 | name (Adi says) | Hebrew | look | layout | example |
 |---|---|---|---|---|
-| **Scrapbook** | סקראפבוק | handmade diary on crumpled cream paper: taped polaroids, the character as a white-outlined cut-out, Kalam ballpoint notes on torn paper scraps, thick blue arrows, lilac marker behind ONE key word, bold lowercase headline + serif body, drawn mail banner | `diary` / `final-diary` (blocks + `collage`) | `diary-jess-waiting-mode`, `diary-jess-planners` |
-| **Story** | סטורי | "made on a phone" in 2 minutes: the real photo full-bleed, native TikTok/IG text (white + black stroke, or text on white/black boxes), Instagram-pen scribbles (uneven circles, arrows, underlines) in yellow/white, iPhone cut-out sticker, crooked screenshots. No paper, stars or tape. Approved 2026-11-18 ("looks less effortful but still aesthetic") | `story` (free-positioned `blocks`: bg, txt, hand, circle, arrow, under, cutout, shot, focosteps, badges) | `story-sample` (slides 1-2) |
+| **Scrapbook** | סקראפבוק | handmade diary on crumpled cream paper: taped polaroids, the character as a white-outlined cut-out, Kalam ballpoint notes on torn paper scraps, thick blue arrows, lilac marker behind ONE key word, bold lowercase headline + serif body, drawn mail banner | `diary` / `final-diary` (blocks + `collage`). **Two colour themes** (Adi, 2026-11-18: "so not everything looks the same"): `"theme": "beige"` (default, cream paper + lilac marker) or `"theme": "purple"` (lilac paper + yellow marker) at the spec top level; alternate them across posts | `diary-jess-waiting-mode`, `diary-jess-planners` (beige), `diary-jess-planners-purple` |
+| **Story** | סטורי | "made on a phone" in 2 minutes: the real photo full-bleed, native TikTok/IG text (white + black stroke, or text on white/black boxes), Instagram-pen scribbles (uneven circles, arrows, underlines) in yellow/white, iPhone cut-out sticker, crooked screenshots. No paper, stars or tape. Approved 2026-11-18 ("looks less effortful but still aesthetic") | `story` (free-positioned `blocks`: bg (+blur/dim), txt, hand, circle, arrow, under, cutout, shot, notif, focosteps, badges) | `story-jess-planners` (8 slides), `story-sample` |
+
+**Video (Story style only):** the same Story spec renders as an animated video: `node carousel/video.js <slug>` ->
+`out/tiktok-<slug>/video.mp4` (1080x1920, items enter in array order: TikTok text pops word by word, pen marks draw
+themselves, the sticker slaps on with a bounce, the mail drops in, FOCO's steps appear and step 1 glows, slow zoom on
+the photo, carousel-like swipe between slides, light sound effects; music is added on upload). Timing comes from
+`schedule()` in Story.tsx (entrance per item + reading time); keep the whole video ~35-45 s. Check sampled frames
+(ffmpeg -ss) before sending. Email it with `node carousel/send.js <slug> --video` (re-encoded to fit Gmail).
 
 Shared rules for every style:
 - Readability first: no bare text on a busy photo (paper scrap, stroke or box), arrows never cross text, no orphan words.

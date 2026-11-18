@@ -1,0 +1,479 @@
+{
+  "slug": "diary-jess-planners-purple",
+  "tiktok": {
+    "caption": "ADHD mom confession: 4 planners this year, same task on page 1 of every one 🫠\n\nplanners tell me what to do. they never helped me start. what finally did: making step 1 as small as washing a dish.\n\nhow many planners are you on? 👇\nsave this for the next drop-off 📌\n\nthe app on the last slides is FOCO, link in bio 💜",
+    "hashtags": [
+      "#adhdmom",
+      "#adhdplanner",
+      "#taskparalysis",
+      "#adhdtiktok"
+    ]
+  },
+  "instagram": {
+    "caption": "ADHD planner confession: 4 planners this year, and the same task sits on page 1 of every one.\n\nI'm not lazy. I can wash a dish because a dish is small. \"Write the newsletter\" isn't, and no planner ever changed that.\n\n1. 9:10, daycare drop-off, 3 hours for one job\n2. I went to wash one dish and cleaned the whole kitchen\n3. 11:20, my client emails, pickup is at 12:30\n4. I said the task out loud and did only step 1: open last month's newsletter\n\n12:14, first draft done.\n\nSave this, and send it to the mom friend with a planner collection.\n\n💜 The app I use is FOCO, link in bio.",
+    "hashtags": [
+      "#adhdmom",
+      "#adhdplanner",
+      "#taskparalysis",
+      "#adhdwomen"
+    ],
+    "altText": "Scrapbook-style diary carousel of a mom working from home during daycare hours: four open planners with the same task on page one, a spotless kitchen she cleaned instead, a client email, and the task broken into tiny steps in FOCO until the first draft is done before pickup."
+  },
+  "slides": [
+    {
+      "layout": "diary",
+      "id": "s1",
+      "gap": 26,
+      "blocks": [
+        {
+          "t": "script",
+          "text": "adhd mom diary",
+          "size": 60
+        },
+        {
+          "t": "head",
+          "text": "4 planners this year. same task on page 1 of *every one.*",
+          "size": 70
+        },
+        {
+          "t": "collage",
+          "h": 820,
+          "items": [
+            {
+              "k": "photo",
+              "file": "carousels/own/jess-planners/planners.jpg",
+              "x": 0,
+              "y": 60,
+              "w": 470,
+              "h": 570,
+              "rot": -3
+            },
+            {
+              "k": "cutout",
+              "file": "carousels/own/jess-planners/cut1.png",
+              "x": 585,
+              "y": 150,
+              "h": 680,
+              "rot": 2
+            },
+            {
+              "k": "note",
+              "text": "me, very organized 🙃",
+              "x": 470,
+              "y": 10,
+              "w": 340,
+              "rot": 3
+            },
+            {
+              "k": "arrow",
+              "x": 500,
+              "y": 170,
+              "w": 120,
+              "rot": 15
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layout": "diary",
+      "id": "s2",
+      "gap": 28,
+      "blocks": [
+        {
+          "t": "collage",
+          "h": 640,
+          "items": [
+            {
+              "k": "photo",
+              "file": "carousels/own/jess-planners/blank.jpg",
+              "x": 0,
+              "y": 160,
+              "w": 440,
+              "h": 420,
+              "rot": -3
+            },
+            {
+              "k": "note",
+              "text": "9:10. daycare drop-off done.",
+              "x": 40,
+              "y": -10,
+              "w": 440,
+              "rot": -2
+            },
+            {
+              "k": "sticky",
+              "text": "Lena's newsletter, due FRI!!",
+              "x": 530,
+              "y": 230,
+              "w": 290,
+              "rot": 5
+            }
+          ]
+        },
+        {
+          "t": "head",
+          "text": "3 hours. *one job.*",
+          "size": 84
+        },
+        {
+          "t": "body",
+          "text": "my client's monthly newsletter. the doc was still blank."
+        }
+      ]
+    },
+    {
+      "layout": "diary",
+      "id": "s3",
+      "gap": 28,
+      "blocks": [
+        {
+          "t": "body",
+          "text": "so first, i went to wash one breakfast dish.",
+          "size": 48
+        },
+        {
+          "t": "collage",
+          "h": 700,
+          "items": [
+            {
+              "k": "photo",
+              "file": "carousels/own/jess-planners/kitchen.jpg",
+              "x": 20,
+              "y": 30,
+              "w": 540,
+              "h": 600,
+              "rot": -2
+            },
+            {
+              "k": "note",
+              "text": "10:35. spotless. newsletter: 0 words",
+              "x": 520,
+              "y": 360,
+              "w": 310,
+              "rot": 4
+            },
+            {
+              "k": "arrow",
+              "x": 450,
+              "y": 230,
+              "w": 150,
+              "flip": true,
+              "rot": 0
+            }
+          ]
+        },
+        {
+          "t": "head",
+          "text": "and cleaned the *entire kitchen.*",
+          "size": 72
+        }
+      ]
+    },
+    {
+      "layout": "diary",
+      "id": "s4",
+      "gap": 28,
+      "blocks": [
+        {
+          "t": "big",
+          "text": "i'm not lazy.",
+          "size": 92
+        },
+        {
+          "t": "head",
+          "text": "a dish is just *small.*",
+          "size": 74
+        },
+        {
+          "t": "collage",
+          "h": 560,
+          "items": [
+            {
+              "k": "photo",
+              "file": "carousels/own/jess-planners/page.jpg",
+              "x": 300,
+              "y": 20,
+              "w": 440,
+              "h": 510,
+              "rot": 3
+            },
+            {
+              "k": "note",
+              "text": "planner #4. same line, 4 times",
+              "x": 0,
+              "y": 120,
+              "w": 300,
+              "rot": -4
+            },
+            {
+              "k": "arrow",
+              "x": 140,
+              "y": 330,
+              "w": 160,
+              "rot": -15
+            }
+          ]
+        },
+        {
+          "t": "body",
+          "text": "\"wash one dish\" i can start. \"write the newsletter\" i can't."
+        },
+        {
+          "t": "script",
+          "text": "no planner ever fixed that part."
+        }
+      ]
+    },
+    {
+      "layout": "diary",
+      "id": "s5",
+      "gap": 26,
+      "blocks": [
+        {
+          "t": "collage",
+          "h": 840,
+          "items": [
+            {
+              "k": "notif",
+              "from": "Lena (client)",
+              "text": "so excited for Friday's newsletter! 🙌 how's it going?",
+              "x": 15,
+              "y": 20,
+              "w": 800,
+              "rot": -1.5
+            },
+            {
+              "k": "cutout",
+              "file": "carousels/own/jess-planners/cut5.png",
+              "x": 470,
+              "y": 240,
+              "h": 590,
+              "rot": -2
+            },
+            {
+              "k": "note",
+              "text": "11:20. pickup's at 12:30 😬",
+              "x": 0,
+              "y": 330,
+              "w": 390,
+              "rot": -4
+            },
+            {
+              "k": "arrow",
+              "x": 290,
+              "y": 520,
+              "w": 170,
+              "rot": -12
+            }
+          ]
+        },
+        {
+          "t": "head",
+          "text": "and i still hadn't *started.*",
+          "size": 72
+        }
+      ]
+    },
+    {
+      "layout": "diary",
+      "id": "s6",
+      "gap": 24,
+      "blocks": [
+        {
+          "t": "body",
+          "text": "so i opened FOCO and just said it. it went straight into my day."
+        },
+        {
+          "t": "collage",
+          "h": 850,
+          "items": [
+            {
+              "k": "sticky",
+              "text": "\"write Lena's newsletter\"",
+              "x": 0,
+              "y": 0,
+              "w": 330,
+              "rot": -4
+            },
+            {
+              "k": "note",
+              "text": "one tap broke it into tiny steps",
+              "x": 420,
+              "y": 10,
+              "w": 400,
+              "rot": 3
+            },
+            {
+              "k": "arrow",
+              "x": 600,
+              "y": 205,
+              "w": 110,
+              "flip": true,
+              "rot": 30
+            },
+            {
+              "k": "focosteps",
+              "x": 15,
+              "y": 300,
+              "w": 800,
+              "rot": -1.5,
+              "steps": [
+                {
+                  "text": "Open last month's newsletter",
+                  "min": 2
+                },
+                {
+                  "text": "List 3 things from this month",
+                  "min": 5
+                },
+                {
+                  "text": "Write the intro",
+                  "min": 8
+                },
+                {
+                  "text": "Draft the 3 sections",
+                  "min": 20
+                },
+                {
+                  "text": "Add photos and links",
+                  "min": 10
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "t": "head",
+          "text": "step 1 was *2 minutes.*",
+          "size": 72
+        },
+        {
+          "t": "script",
+          "text": "as small as a dish."
+        }
+      ]
+    },
+    {
+      "layout": "diary",
+      "id": "s7",
+      "gap": 26,
+      "blocks": [
+        {
+          "t": "body",
+          "text": "rain sounds on. just that one step. then the next."
+        },
+        {
+          "t": "collage",
+          "h": 760,
+          "items": [
+            {
+              "k": "photo",
+              "file": "carousels/own/jess-planners/focus.jpg",
+              "x": 0,
+              "y": 20,
+              "w": 430,
+              "h": 364,
+              "rot": -3
+            },
+            {
+              "k": "photo",
+              "file": "carousels/own/jess-planners/draft.jpg",
+              "x": 390,
+              "y": 300,
+              "w": 420,
+              "h": 420,
+              "rot": 4
+            },
+            {
+              "k": "note",
+              "text": "FOCO, focusing with me",
+              "x": 470,
+              "y": 30,
+              "w": 340,
+              "rot": 4
+            },
+            {
+              "k": "arrow",
+              "x": 380,
+              "y": 120,
+              "w": 130,
+              "flip": true,
+              "rot": 10
+            },
+            {
+              "k": "note",
+              "text": "12:14 ✓",
+              "x": 60,
+              "y": 500,
+              "w": 230,
+              "rot": -5
+            }
+          ]
+        },
+        {
+          "t": "head",
+          "text": "*first draft done.*",
+          "size": 80
+        },
+        {
+          "t": "body",
+          "text": "pickup was at 12:30. i made it."
+        }
+      ]
+    },
+    {
+      "layout": "final-diary",
+      "id": "end",
+      "gap": 26,
+      "blocks": [
+        {
+          "t": "head",
+          "text": "i didn't need a 5th planner. i needed help *starting.*",
+          "size": 72
+        },
+        {
+          "t": "collage",
+          "h": 400,
+          "items": [
+            {
+              "k": "photo",
+              "file": "carousels/own/jess-planners/planners.jpg",
+              "x": 30,
+              "y": 20,
+              "w": 380,
+              "h": 320,
+              "rot": -4
+            },
+            {
+              "k": "note",
+              "text": "try it at the next drop-off 💜",
+              "x": 435,
+              "y": 40,
+              "w": 390,
+              "rot": 3,
+              "size": 44
+            },
+            {
+              "k": "arrow",
+              "x": 560,
+              "y": 240,
+              "w": 140,
+              "rot": 45
+            }
+          ]
+        },
+        {
+          "t": "badges"
+        },
+        {
+          "t": "body",
+          "text": "link in bio 💜 how many planners are you on? 👇",
+          "bold": true,
+          "size": 40
+        }
+      ]
+    }
+  ],
+  "theme": "purple"
+}

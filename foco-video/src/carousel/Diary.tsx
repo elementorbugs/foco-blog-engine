@@ -23,10 +23,10 @@ Promise.all([
 });
 
 const P = {
-  paper: "#F2EBDF",
+  paper: "var(--paper, #F2EBDF)",
   ink: "#1E1626",
   body: "#231A2B",
-  marker: "rgba(196,170,255,0.85)", // lilac highlighter behind the key word
+  marker: "var(--marker, rgba(196,170,255,0.85))", // highlighter behind the key word (theme decides the colour)
   pen: "#2340A8", // ballpoint blue
   starPink: "#F28DB2",
   starBlue: "#4A6FE0",
@@ -105,7 +105,10 @@ const Arrow: React.FC<{ flip: boolean; w?: number }> = ({ flip, w = 190 }) => (
 
 const fileSrc = (slug: string, file: string) => staticFile(`carousel/${slug}/${file.split("/").pop()}`);
 
-export const StepsCard: React.FC<{ steps: { text: string; min: number }[]; x: number; y: number; w?: number; rot?: number; lit?: number; tape?: boolean }> = (it) => {
+export const StepsCard: React.FC<{ steps: { text: string; min: number }[]; x: number; y: number; w?: number; rot?: number; lit?: number; tape?: boolean; reveal?: number }> = (it) => {
+  // reveal = frames since the card arrived (video only): rows appear one by one, then step 1 glows
+  const rv = it.reveal, rowIn = (i: number) => (rv === undefined ? 1 : Math.min(1, Math.max(0, (rv - 6 - i * 4) / 6)));
+  const glow = rv === undefined ? 0 : Math.max(0, Math.sin((rv - 30) / 6)) * Math.min(1, Math.max(0, (rv - 30) / 6));
   const pos: React.CSSProperties = { position: "absolute", left: it.x, top: it.y, transform: `rotate(${it.rot ?? 0}deg)` };
   const total = it.steps.reduce((t, s) => t + s.min, 0), lit = it.lit ?? 0;
   return (
@@ -115,7 +118,7 @@ export const StepsCard: React.FC<{ steps: { text: string; min: number }[]; x: nu
             <span style={{ letterSpacing: 0, color: "#8E88A3", fontWeight: 600 }}>{total} min total</span>
           </div>
           {it.steps.map((s, i) => (
-            <div key={i} style={{ display: "flex", alignItems: "center", gap: 18, padding: "15px 18px", marginTop: 10, borderRadius: 16, background: i === lit ? "rgba(124,58,237,0.22)" : "rgba(255,255,255,0.03)", border: i === lit ? "2px solid #8B5CF6" : "2px solid rgba(255,255,255,0.06)" }}>
+            <div key={i} style={{ opacity: rowIn(i), transform: `translateX(${(1 - rowIn(i)) * 40}px)`, boxShadow: i === lit && glow ? `0 0 ${24 * glow}px rgba(139,92,246,${0.9 * glow})` : undefined, display: "flex", alignItems: "center", gap: 18, padding: "15px 18px", marginTop: 10, borderRadius: 16, background: i === lit ? "rgba(124,58,237,0.22)" : "rgba(255,255,255,0.03)", border: i === lit ? "2px solid #8B5CF6" : "2px solid rgba(255,255,255,0.06)" }}>
               <div style={{ width: 40, height: 40, borderRadius: 20, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, fontWeight: 700, color: "#fff", background: i === lit ? "#7C3AED" : "transparent", border: i === lit ? "none" : "2px solid rgba(255,255,255,0.25)" }}>{i + 1}</div>
               <div style={{ flex: 1, fontSize: 31, fontWeight: 600, color: i === lit ? "#fff" : "rgba(255,255,255,0.78)" }}>{s.text}</div>
               <div style={{ fontSize: 26, fontWeight: 600, color: "rgba(255,255,255,0.6)" }}>{s.min} min</div>
@@ -262,11 +265,17 @@ const Block: React.FC<{ b: DiaryBlock; i: number; slideId: string; slug: string 
   }
 };
 
-export const DiarySlide: React.FC<{ slug: string; id: string; index: number; blocks: DiaryBlock[]; gap?: number }> = ({ slug, id, index, blocks, gap }) => {
+// colour themes for the Scrapbook style (Adi, 2026-11-18: "two tones so not everything looks the same")
+const THEMES: Record<string, Record<string, string>> = {
+  beige: { "--paper": "#F2EBDF", "--marker": "rgba(196,170,255,0.85)" },
+  purple: { "--paper": "#E3D5F8", "--marker": "rgba(255,214,10,0.72)" },
+};
+
+export const DiarySlide: React.FC<{ slug: string; id: string; index: number; blocks: DiaryBlock[]; gap?: number; theme?: string }> = ({ slug, id, index, blocks, gap, theme }) => {
   const stars = STAR_SETS[index % STAR_SETS.length];
   const [rx, ry, rr] = RINGS[index % RINGS.length];
   return (
-    <AbsoluteFill style={{ background: P.paper }}>
+    <AbsoluteFill style={{ ...(THEMES[theme ?? "beige"] as React.CSSProperties), background: P.paper }}>
       <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}>
         {/* crumpled paper: low-frequency noise lit from the top left */}
         <filter id={`crumple${index}`}>
