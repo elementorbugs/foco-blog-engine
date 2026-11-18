@@ -7,8 +7,8 @@ description: Make a FOCO story carousel about our avatar Jess (WFH freelance mom
 
 **`spec.md` is the MASTER (Adi's spec V2, 2026-11-17). Read it in full before every carousel; it wins wherever this
 file differs.** This file only says how to execute it with our tools.
-Old formats/rules (Maya freelancer series, chat/notes/versus, paid-ad playbook) are archived in
-`tasks/archive/carousel-old-2026-10/`: never used unless Adi asks for them by name.
+Old formats/rules (Maya freelancer series, chat/notes/versus, paid-ad playbook and ad carousels) were DELETED
+2026-11-18 (Adi). Never rebuild them; only the styles in "Design styles" below exist.
 
 ## This folder = everything
 | file | what |
@@ -16,19 +16,25 @@ Old formats/rules (Maya freelancer series, chat/notes/versus, paid-ad playbook) 
 | `spec.md` | MASTER content & performance spec (mission, angles A-J, structure, writing, product, CTA, tests, QA, scoring) |
 | `SKILL.md` | how to run it in our engine (this file) |
 | `jess.md` | Jess's profile + research: verbatim quotes WITH source links, recurring themes, frequency |
+| `tasks/avatar-research-2026-11-18/avatar-adhd-freelancer.md` + `pain-bank.md` | **THE pain source (Adi, 2026-11-18: "the most important thing")**: the chosen avatar's pains ranked by frequency and intensity, in their exact words, plus their dreams; P1-P20 with the true FOCO answer. Every carousel starts from one P-number |
 | `log.md` | learning log: one row per carousel (hypothesis, angle, hook, CTA, results, next test) |
 | `kit/` | character references: `jess-anchor.png` (+ `jess-white-bg.png`) and the Gemini prompts; test moms get `<name>-anchor.png` + `<name>.md` profile here |
 Engine (tools, not rules): `foco-video/` (spec `carousels/<slug>.json`, images `carousels/own/<folder>/`,
 `src/carousel/Diary.tsx`, `carousel/build.js`, `carousel/send.js`).
 
 ## Workflow (spec §15, with our tools)
-1. **Concept (Stage 1):** read `spec.md`, `jess.md`, `log.md`. Pick an angle from spec §5 that is NOT one of the
+1. **Concept (Stage 1):** read `spec.md`, `jess.md`, `log.md` and the pain source (`avatar-adhd-freelancer.md` +
+   `pain-bank.md`). Pick ONE pain (P-number, write it in the log row) and an angle from spec §5 that is NOT one of the
    recent rows in `log.md` (angle C waiting mode is done). **Filter every candidate situation FIRST by FOCO fit:
    does a real FOCO feature (say/type/snap the task, optional one-tap breakdown, one-step focus session) solve THIS
    moment's starting problem? Rate fit strong/medium/weak and drop weak (e.g. resuming after an interruption).
    Only then rank by recurrence and relatability** (Adi, 2026-11-17: "how is all this related to FOCO?"). Ideal: the
    product insight lives inside the story (the dish is easy because it's small; FOCO makes work that small). Write: audience, problem, angle, character, work task,
    time window, stakes, emotional takeaway, why FOCO fits, and ONE test hypothesis (spec §13, one variable).
+   **Cold-read test (Adi, 2026-11-18: "I didn't understand the script"):** before showing Adi, give ONLY the slide
+   text (no concept, no context) to a fresh subagent: "retell what happens on each slide in one sentence, list
+   anything confusing". Every time stamp must say what happened since the last one (e.g. "since then I answered 14
+   other emails"). If the retelling is wrong anywhere, rewrite and test again.
 2. **Story approval (Stage 2):** send Adi the slide-by-slide text (6-8 slides, each with its narrative function)
    + hook + CTA type + hypothesis. **Wait for his OK before making images.**
 3. **Visuals (Stage 3):** images from the approved character reference (below), then the spec JSON, then
@@ -48,9 +54,9 @@ Engine (tools, not rules): `foco-video/` (spec `carousels/<slug>.json`, images `
 - FOCO facts only as verified with Adi: say it / type it / snap a list, ONE optional tap breaks a task into steps
   (never "automatic"), focus session with timer + sounds, calendar. Never "free", prices, store ratings or review
   quotes, discounts. Don't recommend competitors.
-- **Reddit quotes on a slide: copy exact wording from `jess.md` (which holds the link).** An excerpt is fine only
-  as a contiguous piece with "…"; never reword inside quote marks. If it isn't in `jess.md` with a link, it can't
-  be a quote: paraphrase it in the character's voice instead.
+- **Reddit quotes on a slide: copy exact wording from `jess.md` or `avatar-adhd-freelancer.md` (links in reports
+  01-05 of the same folder).** An excerpt is fine only as a contiguous piece with "…"; never reword inside quote
+  marks. If you can't find it with a link, it can't be a quote: paraphrase it in the character's voice instead.
 - Times read unambiguously ("1pm", not "1:00") and the clock moves forward consistently.
 - "link in bio" only while the bio link is live.
 
@@ -78,8 +84,8 @@ Every style uses the same story rules and the same QA. Add each new style here w
 **Video (Story style only):** the same Story spec renders as an animated video: `node carousel/video.js <slug>` ->
 `out/tiktok-<slug>/video.mp4` (1080x1920, items enter in array order: TikTok text pops word by word, pen marks draw
 themselves, the sticker slaps on with a bounce, the mail drops in, FOCO's steps appear and step 1 glows, slow zoom on
-the photo, carousel-like swipe between slides, light sound effects; music is added on upload). Timing comes from
-`schedule()` in Story.tsx (entrance per item + reading time); keep the whole video ~35-45 s. Check sampled frames
+the photo, story transitions between slides, light sound effects, music baked in: see Video rules below). Timing comes from
+`schedule()` in Story.tsx (entrance per item + reading time); keep the whole video ~40-48 s for 10 slides. Check sampled frames
 (ffmpeg -ss) before sending. Email it with `node carousel/send.js <slug> --video` (re-encoded to fit Gmail).
 
 **Video rules (Adi, 2026-11-18):**
