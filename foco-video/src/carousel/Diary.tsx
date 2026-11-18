@@ -57,7 +57,9 @@ export type CollageItem =
   | { k: "arrow"; x: number; y: number; w?: number; rot?: number; flip?: boolean }
   | { k: "sticky"; text: string; x: number; y: number; w?: number; rot?: number }
   | { k: "notif"; from: string; text: string; x: number; y: number; w?: number; rot?: number }
-  | { k: "focostep"; step: string; min: number; x: number; y: number; scale?: number; rot?: number };
+  | { k: "focostep"; step: string; min: number; x: number; y: number; scale?: number; rot?: number }
+  // faithful copy of the real FOCO breakdown screen ("N TINY STEPS BY FOCO", step 1 lit), see public/apps/foconew-6.png
+  | { k: "focosteps"; steps: { text: string; min: number }[]; x: number; y: number; w?: number; rot?: number; lit?: number };
 
 // *word* -> ink text with a rough marker stroke behind it
 const Hl: React.FC<{ text: string }> = ({ text }) => (
@@ -143,6 +145,25 @@ const Item: React.FC<{ it: CollageItem; slug: string; n: number }> = ({ it, slug
           <div style={{ marginTop: 2, fontSize: 34, fontWeight: 700, lineHeight: 1.25, color: "#3A3443" }}>{it.text}</div>
         </div>
       );
+    case "focosteps": {
+      const total = it.steps.reduce((t, s) => t + s.min, 0), lit = it.lit ?? 0;
+      return (
+        <div style={{ ...pos, width: it.w ?? 760, padding: "26px 24px 22px", borderRadius: 28, background: "#0E0B1C", border: "2px solid rgba(167,139,250,0.35)", boxShadow: "0 18px 40px rgba(20,10,30,0.35)", fontFamily: BODY }}>
+          <div style={{ display: "flex", alignItems: "center", fontSize: 22, fontWeight: 700, letterSpacing: 2, color: "#C4B5FD", padding: "0 6px 16px" }}>
+            <span style={{ flex: 1 }}>✦ {it.steps.length} TINY STEPS BY FOCO</span>
+            <span style={{ letterSpacing: 0, color: "#8E88A3", fontWeight: 600 }}>{total} min total</span>
+          </div>
+          {it.steps.map((s, i) => (
+            <div key={i} style={{ display: "flex", alignItems: "center", gap: 18, padding: "15px 18px", marginTop: 10, borderRadius: 16, background: i === lit ? "rgba(124,58,237,0.22)" : "rgba(255,255,255,0.03)", border: i === lit ? "2px solid #8B5CF6" : "2px solid rgba(255,255,255,0.06)" }}>
+              <div style={{ width: 40, height: 40, borderRadius: 20, flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, fontWeight: 700, color: "#fff", background: i === lit ? "#7C3AED" : "transparent", border: i === lit ? "none" : "2px solid rgba(255,255,255,0.25)" }}>{i + 1}</div>
+              <div style={{ flex: 1, fontSize: 31, fontWeight: 600, color: i === lit ? "#fff" : "rgba(255,255,255,0.78)" }}>{s.text}</div>
+              <div style={{ fontSize: 26, fontWeight: 600, color: "rgba(255,255,255,0.6)" }}>{s.min} min</div>
+            </div>
+          ))}
+          <Tape color={P.tapeBlue} rotate={-3} />
+        </div>
+      );
+    }
     case "focostep":
       return (
         <div style={{ ...pos, transformOrigin: "top left", transform: `rotate(${it.rot ?? -1.5}deg) scale(${it.scale ?? 0.9})` }}>
