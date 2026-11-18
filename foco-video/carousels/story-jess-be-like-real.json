@@ -1,7 +1,7 @@
 {
   "slug": "story-jess-be-like-real",
   "tiktok": {
-    "caption": "moms with ADHD: kids everywhere, laptop open, 7 things in my head... and zero idea where to start 🫠\n\nwhat helps: say it, and it's in your day. FOCO breaks the first task into tiny steps and helps you start.\n\nwhat's on your list right now? 👇\n\nFOCO, the ADHD planner for busy moms. link in bio 💜",
+    "caption": "moms with ADHD: the list is huge, the energy is not, and the starting part? impossible 🫠\n\nwhat helps me: I just say it out loud and it's already in my day. then FOCO breaks the first task into tiny steps and helps me start.\n\nwhat would you add to the list? 👇\n\nFOCO, the ADHD planner for busy moms. link in bio 💜",
     "hashtags": [
       "#adhdmom",
       "#momswithadhd",
@@ -10,7 +10,7 @@
     ]
   },
   "instagram": {
-    "caption": "Moms with ADHD be like: the kids are bouncing off the couch, the laptop is open, and the list in my head is 7 things long.\n\nClient work. 23 emails. The dentist. The school form. Dinner. Laundry. Texting my mom back.\n\nGet it out of your head: say it, and it's in your day. Then FOCO breaks the first task into tiny steps and helps you start.\n\nWhat's on your list right now? Add the one I forgot 👇\n\n💜 FOCO, the ADHD planner for busy moms. Link in bio.",
+    "caption": "Moms with ADHD be like: finish the client project, answer every school email, remember every appointment, make a dinner with an actual vegetable, keep the house semi-livable, be the calm, fun, present mom.\n\nAnd somehow start any of it.\n\nWhat helps me: I say it out loud and it's already in my day. Then FOCO breaks the first task into tiny steps and helps me start.\n\nWhat would you add to the list? 👇\n\n💜 FOCO, the ADHD planner for busy moms. Link in bio.",
     "hashtags": [
       "#adhdmom",
       "#momswithadhd",
@@ -18,7 +18,7 @@
       "#mentalload",
       "#adhdwomen"
     ],
-    "altText": "Short video of a tired mom on the couch while her kids jump and play a trombone behind her, as a list of seven tasks stacks up on screen. Then the tasks land in FOCO's day view, FOCO breaks one task into three tiny steps while she types, and an end card shows the FOCO app icon with App Store and Google Play badges."
+    "altText": "Short video of a tired mom on the couch while her kids play behind her, as a list of six expectations appears in thin yellow text, ending with \"and somehow start any of it\". Then she says her tasks out loud and they land in FOCO's day view, FOCO breaks one task into three tiny steps while she types, and an end card shows the FOCO app icon with App Store and Google Play badges."
   },
   "credits": "Footage: Ron Lach (Pexels) 8670999, 8670995, 8671001, 8670998",
   "slides": [
@@ -32,13 +32,14 @@
         },
         {
           "k": "txt",
+          "style": "serif",
           "text": "Moms with ADHD be like:",
           "x": 40,
-          "y": 280,
+          "y": 276,
           "w": 1000,
-          "size": 58,
+          "size": 78,
           "align": "center",
-          "wait": 50
+          "wait": 45
         },
         {
           "k": "vid",
@@ -46,89 +47,87 @@
         },
         {
           "k": "txt",
-          "text": "I need to finish client work",
+          "style": "ig",
+          "text": "I need to finish the client project",
           "x": 40,
-          "y": 372,
+          "y": 378,
           "w": 1000,
-          "size": 40,
+          "size": 38,
           "align": "center",
           "color": "#FFD60A",
           "wait": 17
         },
         {
           "k": "txt",
-          "text": "answer 23 emails",
+          "style": "ig",
+          "text": "Answer every school email",
           "x": 40,
-          "y": 428,
+          "y": 432,
           "w": 1000,
-          "size": 40,
+          "size": 38,
           "align": "center",
           "color": "#FFD60A",
           "wait": 17
         },
         {
           "k": "txt",
-          "text": "call the dentist back",
+          "style": "ig",
+          "text": "Remember every appointment",
           "x": 40,
-          "y": 484,
+          "y": 486,
           "w": 1000,
-          "size": 40,
+          "size": 38,
           "align": "center",
           "color": "#FFD60A",
           "wait": 17
         },
         {
           "k": "txt",
-          "text": "sign the school form",
+          "style": "ig",
+          "text": "Make a dinner with an actual vegetable",
           "x": 40,
           "y": 540,
           "w": 1000,
-          "size": 40,
+          "size": 38,
           "align": "center",
           "color": "#FFD60A",
           "wait": 17
         },
         {
           "k": "txt",
-          "text": "make a dinner that isn't cereal",
+          "style": "ig",
+          "text": "Keep the house semi-livable",
           "x": 40,
-          "y": 596,
+          "y": 594,
           "w": 1000,
-          "size": 40,
+          "size": 38,
           "align": "center",
           "color": "#FFD60A",
           "wait": 17
         },
         {
           "k": "txt",
-          "text": "fold Tuesday's laundry",
+          "style": "ig",
+          "text": "Be the calm, fun, present mom",
           "x": 40,
-          "y": 652,
+          "y": 648,
           "w": 1000,
-          "size": 40,
+          "size": 38,
           "align": "center",
           "color": "#FFD60A",
           "wait": 17
         },
         {
           "k": "txt",
-          "text": "and text my mom back",
+          "style": "serif",
+          "italic": true,
+          "text": "and somehow start any of it",
           "x": 40,
-          "y": 708,
+          "y": 716,
           "w": 1000,
-          "size": 40,
+          "size": 62,
           "align": "center",
-          "color": "#FFD60A",
-          "wait": 30
-        },
-        {
-          "k": "hand",
-          "text": "...where do I even start?",
-          "x": 200,
-          "y": 772,
-          "w": 700,
-          "size": 56,
-          "rot": -3
+          "wait": 60
         }
       ]
     },
@@ -143,12 +142,12 @@
         },
         {
           "k": "txt",
-          "text": "say it 🎙️",
+          "style": "serif",
+          "text": "So now I just say it out loud",
           "x": 40,
-          "y": 300,
+          "y": 330,
           "w": 1000,
-          "size": 76,
-          "style": "box",
+          "size": 70,
           "align": "center",
           "wait": 8
         },
@@ -165,29 +164,29 @@
               "tasks": [
                 {
                   "icon": "💻",
-                  "title": "Finish client work",
+                  "title": "Finish client project",
                   "meta": "45m • Work",
                   "hl": true
                 },
                 {
                   "icon": "📧",
-                  "title": "Answer emails",
-                  "meta": "20m • Work"
+                  "title": "Answer school emails",
+                  "meta": "15m • Family"
                 }
               ]
             },
             {
-              "name": "ANYTIME",
+              "name": "AFTERNOON",
               "tasks": [
                 {
                   "icon": "🦷",
-                  "title": "Call the dentist",
-                  "meta": "5m • Health"
+                  "title": "Dentist, 4:30",
+                  "meta": "1h • Health"
                 },
                 {
-                  "icon": "✍️",
-                  "title": "Sign the school form",
-                  "meta": "2m • Family"
+                  "icon": "🥦",
+                  "title": "Buy vegetables",
+                  "meta": "20m • Home"
                 }
               ]
             }
@@ -195,14 +194,16 @@
           "wait": 10
         },
         {
-          "k": "hand",
-          "text": "...and it's in your day 📅",
-          "x": 150,
-          "y": 1270,
-          "w": 800,
-          "size": 60,
+          "k": "txt",
+          "style": "ig",
+          "text": "and it's already in my day",
+          "x": 40,
+          "y": 1275,
+          "w": 1000,
+          "size": 42,
+          "align": "center",
           "color": "#FFD60A",
-          "rot": -2
+          "wait": 25
         }
       ]
     },
@@ -216,12 +217,14 @@
         },
         {
           "k": "txt",
-          "text": "FOCO helps you start",
+          "style": "serif",
+          "italic": true,
+          "text": "and FOCO helps me start",
           "x": 40,
-          "y": 560,
-          "w": 960,
-          "size": 56,
-          "style": "box"
+          "y": 575,
+          "w": 1000,
+          "size": 70,
+          "align": "left"
         },
         {
           "k": "focosteps",
@@ -231,11 +234,11 @@
           "lit": 0,
           "steps": [
             {
-              "text": "Open the client doc",
+              "text": "Open the client file",
               "min": 1
             },
             {
-              "text": "Reread the last line",
+              "text": "Read the last line",
               "min": 2
             },
             {

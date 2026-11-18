@@ -10,11 +10,14 @@ import { AbsoluteFill, Img, OffthreadVideo, Sequence, continueRender, delayRende
 import { EMOJI } from "../Composition";
 import { StepsCard } from "./Diary";
 
-const NATIVE = "Montserrat", PEN = "Kalam";
+const NATIVE = "Montserrat", PEN = "Kalam", IGSERIF = "Instrument Serif", IGSANS = "Inter";
 const h = delayRender("story fonts");
 Promise.all([
   new FontFace(NATIVE, `url(${staticFile("fonts/Montserrat.ttf")})`, { weight: "100 900" }).load(),
   new FontFace(PEN, `url(${staticFile("fonts/Kalam-Bold.ttf")})`, { weight: "700" }).load(),
+  new FontFace(IGSERIF, `url(${staticFile("fonts/InstrumentSerif.ttf")})`).load(),
+  new FontFace(IGSERIF, `url(${staticFile("fonts/InstrumentSerif-Italic.ttf")})`, { style: "italic" }).load(),
+  new FontFace(IGSANS, `url(${staticFile("fonts/Inter.ttf")})`, { weight: "100 900" }).load(),
 ]).then((f) => { f.forEach((x) => document.fonts.add(x)); continueRender(h); });
 
 type Pt = [number, number];
@@ -24,8 +27,10 @@ export type StoryItem =
   // Always drawn under the text; a later vid in the same slide is a hard cut, so text (a list) survives the cut.
   | { k: "vid"; file: string; from?: number; dim?: number }
   // TikTok/IG text. stroke = white + black outline (TikTok classic), box = black text on white boxes per line,
-  // dark = white text on black boxes
-  | { k: "txt"; text: string; x: number; y: number; w?: number; size?: number; style?: "stroke" | "box" | "dark"; align?: "left" | "center" | "right"; rot?: number; color?: string }
+  // dark = white text on black boxes. serif / ig = what real mom reels use (Adi, 2026-11-18: the bold stroke text
+  // "doesn't create interest", reads like an ad): Instagram's thin editorial serif for the label, small thin sans for
+  // the lines, no stroke, no box, just a soft shadow, and it simply appears (a 4-frame fade), like typing it in IG.
+  | { k: "txt"; text: string; x: number; y: number; w?: number; size?: number; style?: "stroke" | "box" | "dark" | "serif" | "ig"; italic?: boolean; align?: "left" | "center" | "right"; rot?: number; color?: string }
   // words written with the Instagram pen (handwriting), always with a dark outline so it reads on any photo
   | { k: "hand"; text: string; x: number; y: number; w?: number; size?: number; color?: string; rot?: number }
   | { k: "circle"; cx: number; cy: number; rx: number; ry: number; rot?: number; color?: string; seed?: number }
@@ -123,6 +128,12 @@ const Item: React.FC<{ it: StoryItem; slug: string; a: number; slideT: number; d
     case "txt": {
       const size = it.size ?? 54, style = it.style ?? "stroke";
       const base: React.CSSProperties = { position: "absolute", left: it.x, top: it.y, width: it.w ?? 940, textAlign: it.align ?? "left", transform: `rotate(${it.rot ?? 0}deg)`, transformOrigin: "left top", fontFamily: `${NATIVE}, "${EMOJI}"`, fontWeight: 700, fontSize: size, lineHeight: 1.32, textWrap: "balance" } as React.CSSProperties;
+      if (style === "serif" || style === "ig") {
+        const serif = style === "serif";
+        return (
+          <div style={{ ...base, fontFamily: serif ? `"${IGSERIF}", "${EMOJI}"` : `"${IGSANS}", "${EMOJI}"`, fontWeight: serif ? 400 : 500, fontStyle: it.italic ? "italic" : "normal", letterSpacing: serif ? "-0.01em" : "-0.005em", lineHeight: serif ? 1.05 : 1.3, color: it.color ?? "#fff", opacity: lin(4), textShadow: "0 1px 3px rgba(0,0,0,0.55), 0 0 18px rgba(0,0,0,0.35)" } as React.CSSProperties}>{it.text}</div>
+        );
+      }
       if (style === "stroke") {
         // TikTok text: each word pops in
         const ws = it.text.split(" ");
