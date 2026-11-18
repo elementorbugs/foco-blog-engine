@@ -2993,6 +2993,125 @@
       "proposed_on": "2026-11-17",
       "revisit_after": "2027-02-01",
       "note": "Cerebral acquired Inflow (2026-03-24, BusinessWire). /inflow-review/ and /foco-vs-inflow/ exist; consider a patch noting the acquisition. 'cerebral inflow' no volume."
+    },
+    {
+      "name": "Paprika Recipe Manager",
+      "slug": "paprika-app-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-18",
+      "revisit_after": null,
+      "keywords_us": {
+        "paprika app": {
+          "volume": 4400,
+          "sd": 34
+        },
+        "paprika app review": {
+          "volume": 210,
+          "sd": 29
+        },
+        "paprika app cost": {
+          "volume": 260,
+          "sd": 46
+        },
+        "is paprika app free": {
+          "volume": 50,
+          "sd": 40
+        },
+        "paprika app price": {
+          "volume": 30,
+          "sd": 30
+        },
+        "umami vs paprika app": {
+          "volume": 40,
+          "sd": 17
+        }
+      },
+      "note": "Review questions ~700/mo. SERP for 'paprika app review': plantoeat.com (competitor blog, 2023), reluctantgourmet, thekitchn (old), reddit. No ADHD angle ranks. Mealime shut down (mealime.com/closing), so recipe/meal app switchers are searching."
+    },
+    {
+      "name": "Plan to Eat",
+      "slug": "plan-to-eat-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-18",
+      "revisit_after": null,
+      "keywords_us": {
+        "plan to eat app": {
+          "volume": 1000,
+          "sd": 44
+        },
+        "plan to eat review": {
+          "volume": 50,
+          "sd": 19
+        },
+        "plan to eat app review": {
+          "volume": 50,
+          "sd": 40
+        },
+        "plan to eat app cost": {
+          "volume": 90,
+          "sd": 43
+        },
+        "plan to eat vs paprika": {
+          "volume": 30,
+          "sd": 17
+        }
+      },
+      "note": "'plan to eat' 5,400 is inflated by the common phrase; 'plan to eat app' 1,000 is the real brand. Review questions ~300. SERP for 'plan to eat review' has no actual review of the app (off-topic results)."
+    },
+    {
+      "name": "AnyList",
+      "slug": "anylist-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-18",
+      "revisit_after": null,
+      "keywords_us": {
+        "anylist": {
+          "volume": 8100,
+          "sd": 28
+        },
+        "anylist app": {
+          "volume": 1300,
+          "sd": 35
+        },
+        "anylist reviews": {
+          "volume": 50,
+          "sd": 28
+        },
+        "anylist subscription": {
+          "volume": 70,
+          "sd": 20
+        },
+        "is anylist free": {
+          "volume": 50,
+          "sd": 15
+        },
+        "anylist complete subscription": {
+          "volume": 50,
+          "sd": 20
+        }
+      },
+      "note": "Review/pricing questions ~350. SERP for 'anylist reviews': reddit, App Store, Trustpilot, thekitchn (old), pann-app.com (DA 4, vendor). Weak independent coverage."
+    },
+    {
+      "name": "Mealime",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-18",
+      "revisit_after": "2027-02-01",
+      "note": "Shut down (mealime.com/closing). 'mealime review' 110 is moot; 'mealime alternative' SERP is flooded with vendor listicles. Use the closure as a hook inside Paprika/Plan to Eat/AnyList posts or /adhd-meal-planner/."
+    },
+    {
+      "name": "Dopamind",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-18",
+      "revisit_after": "2027-02-01",
+      "note": "AI planner for ADHD on App Store; no US search volume in Ubersuggest."
+    },
+    {
+      "name": "Alune",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-18",
+      "revisit_after": "2027-02-01",
+      "note": "AI ADHD planner (aluneapp.com); no US search volume in Ubersuggest."
     }
   ]
 }
