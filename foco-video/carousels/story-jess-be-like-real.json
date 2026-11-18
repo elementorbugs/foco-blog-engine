@@ -1,7 +1,7 @@
 {
   "slug": "story-jess-be-like-real",
   "tiktok": {
-    "caption": "moms with ADHD: kids everywhere, laptop open, 7 things in my head... and zero idea where to start 🫠\n\nwhat helps: I get it OUT of my head. I just say it to FOCO, it all lands in my day, and it breaks the first task into tiny steps so I can actually start.\n\nwhat's on your list right now? 👇\n\nFOCO, link in bio 💜",
+    "caption": "moms with ADHD: kids everywhere, laptop open, 7 things in my head... and zero idea where to start 🫠\n\nwhat helps: say it, and it's in your day. FOCO breaks the first task into tiny steps and helps you start.\n\nwhat's on your list right now? 👇\n\nFOCO, the ADHD planner for busy moms. link in bio 💜",
     "hashtags": [
       "#adhdmom",
       "#momswithadhd",
@@ -10,7 +10,7 @@
     ]
   },
   "instagram": {
-    "caption": "Moms with ADHD be like: the kids are bouncing off the couch, the laptop is open, and the list in my head is 7 things long.\n\nClient work. 23 emails. The dentist. The school form. Dinner. Laundry. Texting my mom back.\n\nWhat helps me: getting it out of my head. I just say it to FOCO, everything lands in my day, and one tap breaks the first task into tiny steps. Then I only do step 1.\n\nWhat's on your list right now? Add the one I forgot 👇\n\n💜 FOCO, link in bio.",
+    "caption": "Moms with ADHD be like: the kids are bouncing off the couch, the laptop is open, and the list in my head is 7 things long.\n\nClient work. 23 emails. The dentist. The school form. Dinner. Laundry. Texting my mom back.\n\nGet it out of your head: say it, and it's in your day. Then FOCO breaks the first task into tiny steps and helps you start.\n\nWhat's on your list right now? Add the one I forgot 👇\n\n💜 FOCO, the ADHD planner for busy moms. Link in bio.",
     "hashtags": [
       "#adhdmom",
       "#momswithadhd",
@@ -18,7 +18,7 @@
       "#mentalload",
       "#adhdwomen"
     ],
-    "altText": "Short video of a tired mom on the couch while her kids jump and play a trombone behind her, as a list of seven tasks stacks up on screen. Then the tasks land in FOCO's day view, and her hands start typing next to FOCO's card that breaks one task into three tiny steps."
+    "altText": "Short video of a tired mom on the couch while her kids jump and play a trombone behind her, as a list of seven tasks stacks up on screen. Then the tasks land in FOCO's day view, FOCO breaks one task into three tiny steps while she types, and an end card shows the FOCO app icon with App Store and Google Play badges."
   },
   "credits": "Footage: Ron Lach (Pexels) 8670999, 8670995, 8671001, 8670998",
   "slides": [
@@ -143,28 +143,19 @@
         },
         {
           "k": "txt",
-          "text": "so I get it out of my head 🧠",
+          "text": "say it 🎙️",
           "x": 40,
-          "y": 280,
+          "y": 300,
           "w": 1000,
-          "size": 52,
+          "size": 76,
           "style": "box",
-          "align": "center"
-        },
-        {
-          "k": "hand",
-          "text": "I just say it to FOCO 🎙️",
-          "x": 180,
-          "y": 385,
-          "w": 760,
-          "size": 58,
-          "color": "#FFD60A",
-          "rot": -3
+          "align": "center",
+          "wait": 8
         },
         {
           "k": "daycal",
           "x": 110,
-          "y": 490,
+          "y": 470,
           "w": 860,
           "day": "Wednesday",
           "date": "Nov 18, 2026",
@@ -201,18 +192,17 @@
               ]
             }
           ],
-          "wait": 20
+          "wait": 10
         },
         {
           "k": "hand",
-          "text": "and it all lands in my day 📅",
-          "x": 120,
-          "y": 1290,
-          "w": 860,
-          "size": 54,
+          "text": "...and it's in your day 📅",
+          "x": 150,
+          "y": 1270,
+          "w": 800,
+          "size": 60,
           "color": "#FFD60A",
-          "rot": -2,
-          "wait": 25
+          "rot": -2
         }
       ]
     },
@@ -226,17 +216,17 @@
         },
         {
           "k": "txt",
-          "text": "then it gets me started",
+          "text": "FOCO helps you start",
           "x": 40,
           "y": 560,
           "w": 960,
-          "size": 50,
+          "size": 56,
           "style": "box"
         },
         {
           "k": "focosteps",
           "x": 40,
-          "y": 670,
+          "y": 680,
           "w": 560,
           "lit": 0,
           "steps": [
@@ -252,48 +242,23 @@
               "text": "Write one sentence",
               "min": 5
             }
-          ]
-        },
-        {
-          "k": "hand",
-          "text": "one task at a time ✓",
-          "x": 40,
-          "y": 1090,
-          "w": 620,
-          "size": 56,
-          "color": "#FFD60A",
-          "rot": -3
-        },
-        {
-          "k": "recap",
-          "x": 40,
-          "y": 1200,
-          "items": [
-            {
-              "icon": "🎙️",
-              "text": "say it"
-            },
-            {
-              "icon": "📅",
-              "text": "in my day"
-            },
-            {
-              "icon": "▶️",
-              "text": "start"
-            }
-          ]
-        },
-        {
-          "k": "txt",
-          "text": "FOCO 💜 link in bio",
-          "x": 40,
-          "y": 1330,
-          "size": 42,
-          "style": "dark",
+          ],
           "wait": 40
         }
       ],
       "enter": "focus"
+    },
+    {
+      "layout": "story",
+      "id": "end",
+      "blocks": [
+        {
+          "k": "endcard",
+          "title": "DOWNLOAD FOCO",
+          "sub": "ADHD PLANNER FOR BUSY MOTHERS",
+          "wait": 45
+        }
+      ]
     }
   ],
   "music": "factory/musiclib/carefree.mp3",

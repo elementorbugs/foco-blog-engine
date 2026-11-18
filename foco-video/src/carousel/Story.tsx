@@ -43,14 +43,18 @@ export type StoryItem =
   // the OFFICIAL FOCO character (public/mascots-hd) as a sticker; only when she starts / finishes, never in the pain part
   | { k: "mascot"; state: "focus" | "completion" | "alignment" | "presence"; x: number; y: number; h: number; rot?: number }
   // feature recap chips for the last slide (say it / snap it / start)
-  | { k: "recap"; x: number; y: number; items: { icon: string; text: string }[] };
+  | { k: "recap"; x: number; y: number; items: { icon: string; text: string }[] }
+  // animated download end card (Adi, 2026-11-18): brand ground, FOCO icon drops in with a sparkle burst, the title pops
+  // letter by letter, the tagline wipes in, both OFFICIAL store badges spring up and a shine sweeps across them
+  | { k: "endcard"; title: string; sub: string };
 
 export const FPS = 30;
 // how long each kind takes to "arrive" before the next item starts (frames), and its sound
-const STEP: Record<StoryItem["k"], number> = { bg: 4, vid: 0, txt: 10, hand: 12, circle: 10, arrow: 7, under: 7, cutout: 10, shot: 10, notif: 14, focosteps: 28, badges: 10, scan: 30, daycal: 26, mascot: 10, recap: 12 };
-export const SFX: Partial<Record<StoryItem["k"], string>> = { txt: "explainer-sfx/pop.wav", hand: "explainer-sfx/pop-soft.wav", circle: "explainer-sfx/pop-soft.wav", cutout: "explainer-sfx/thud.wav", shot: "explainer-sfx/thud.wav", notif: "sfx/ding.wav", focosteps: "explainer-sfx/check.wav", badges: "explainer-sfx/pop.wav", scan: "sfx/mouse-click.wav", daycal: "explainer-sfx/pop-soft.wav", mascot: "explainer-sfx/pop.wav", recap: "explainer-sfx/pop-soft.wav" };
+const STEP: Record<StoryItem["k"], number> = { bg: 4, vid: 0, txt: 10, hand: 12, circle: 10, arrow: 7, under: 7, cutout: 10, shot: 10, notif: 14, focosteps: 28, badges: 10, scan: 30, daycal: 26, mascot: 10, recap: 12, endcard: 60 };
+export const SFX: Partial<Record<StoryItem["k"], string>> = { txt: "explainer-sfx/pop.wav", hand: "explainer-sfx/pop-soft.wav", circle: "explainer-sfx/pop-soft.wav", cutout: "explainer-sfx/thud.wav", shot: "explainer-sfx/thud.wav", notif: "sfx/ding.wav", focosteps: "explainer-sfx/check.wav", badges: "explainer-sfx/pop.wav", scan: "sfx/mouse-click.wav", daycal: "explainer-sfx/pop-soft.wav", mascot: "explainer-sfx/pop.wav", recap: "explainer-sfx/pop-soft.wav", endcard: "sfx/whoosh.wav" };
 
 const words = (it: StoryItem) => ("text" in it && it.text ? it.text.split(/\s+/).length : 0);
+const fr = (a: number) => (a === Infinity ? 999 : a);
 // start frame of every item + total slide length (enter sequence + time to read)
 export const schedule = (blocks: StoryItem[]) => {
   let t = 4;
@@ -250,6 +254,41 @@ const Item: React.FC<{ it: StoryItem; slug: string; a: number; slideT: number; d
           })}
         </div>
       );
+    case "endcard": {
+      const t = fr(a);
+      const spr = (d: number, damping = 11, stiffness = 160) => spring({ frame: t - d, fps: FPS, config: { damping, stiffness, mass: 0.8 } });
+      const icon = spr(0, 9, 140), glow = 0.55 + 0.45 * Math.sin(t / 7);
+      const letters = it.title.split("");
+      const wipe = Math.min(1, Math.max(0, (t - 26) / 14));
+      const bA = spr(34, 12), bG = spr(40, 12);
+      const shine = ((t - 52) % 54) / 54; // sweeps every ~1.8 s once the badges land
+      const sparks = Array.from({ length: 16 }, (_, i) => {
+        const ang = (i / 16) * Math.PI * 2 + 0.3, p = Math.min(1, Math.max(0, (t - 6) / 22)), d = 120 + 260 * ease(p);
+        return { x: 540 + Math.cos(ang) * d, y: 590 + Math.sin(ang) * d * 0.85, o: p > 0 && p < 1 ? 1 - p : 0, r: i % 3 === 0 ? 12 : 7, c: i % 2 ? "#FB923C" : "#A78BFA" };
+      });
+      const Badge: React.FC<{ file: string; s: number; from: number }> = ({ file, s: b, from }) => (
+        <div style={{ position: "relative", overflow: "hidden", borderRadius: 18, transform: `translateY(${(1 - b) * 260}px) translateX(${(1 - b) * from}px) scale(${0.7 + 0.3 * b})`, opacity: Math.min(1, b * 2), boxShadow: "0 18px 40px rgba(0,0,0,0.5)" }}>
+          <Img src={staticFile(file)} style={{ height: 120, display: "block" }} />
+          {t > 52 ? <div style={{ position: "absolute", top: -20, bottom: -20, width: 90, left: `${-30 + shine * 160}%`, background: "linear-gradient(100deg, transparent, rgba(255,255,255,0.55), transparent)", transform: "skewX(-18deg)" }} /> : null}
+        </div>
+      );
+      return (
+        <AbsoluteFill style={{ background: "linear-gradient(160deg, #040208 0%, #0a0410 35%, #1a0a2e 65%, #2d1257 100%)", overflow: "hidden" }}>
+          <div style={{ position: "absolute", left: 540 - 520, top: 590 - 520, width: 1040, height: 1040, borderRadius: "50%", background: `radial-gradient(circle, rgba(124,58,237,${0.45 * glow}) 0%, rgba(124,58,237,0) 62%)` }} />
+          <div style={{ position: "absolute", left: 0, right: 0, top: 0, height: 8, background: "linear-gradient(90deg, #7C3AED, #A78BFA, #7C3AED)" }} />
+          {sparks.map((p, i) => <div key={i} style={{ position: "absolute", left: p.x - p.r, top: p.y - p.r, width: p.r * 2, height: p.r * 2, borderRadius: "50%", background: p.c, opacity: p.o, boxShadow: `0 0 14px ${p.c}` }} />)}
+          <Img src={staticFile("apps/foco-icon.png")} style={{ position: "absolute", left: 540 - 140, top: 450, width: 280, height: 280, borderRadius: 64, transform: `translateY(${(1 - icon) * -420}px) scale(${0.4 + 0.6 * icon}) rotate(${(1 - icon) * -14}deg)`, boxShadow: `0 0 ${50 + 40 * glow}px rgba(167,139,250,${0.7 * glow})` }} />
+          <div style={{ position: "absolute", left: 0, right: 0, top: 790, textAlign: "center", fontFamily: NATIVE, fontWeight: 900, fontSize: 84, color: "#fff", letterSpacing: 2, whiteSpace: "pre" }}>
+            {letters.map((ch, i) => { const l = spr(14 + i * 1.3, 10, 200); return <span key={i} style={{ display: "inline-block", transform: `translateY(${(1 - l) * 60}px) scale(${0.3 + 0.7 * l})`, opacity: Math.min(1, l * 2) }}>{ch === " " ? " " : ch}</span>; })}
+          </div>
+          <div style={{ position: "absolute", left: 0, right: 0, top: 915, textAlign: "center", fontFamily: NATIVE, fontWeight: 800, fontSize: 38, letterSpacing: 4, color: "#A78BFA", clipPath: `inset(0 ${(1 - wipe) * 50}% 0 ${(1 - wipe) * 50}%)` }}>{it.sub}</div>
+          <div style={{ position: "absolute", left: 0, right: 0, top: 1040, display: "flex", justifyContent: "center", gap: 26 }}>
+            <Badge file="badges/app-store.svg" s={bA} from={-120} />
+            <Badge file="badges/google-play-cropped.png" s={bG} from={120} />
+          </div>
+        </AbsoluteFill>
+      );
+    }
     case "badges": {
       const s = sp(10);
       return (
