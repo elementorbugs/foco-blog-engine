@@ -56,6 +56,8 @@ def apply(s, done_url=None):
     s = re.sub(r'<style id="fh-feat-opal">[\s\S]*?</style><script id="fh-feat-opal-js">[\s\S]*?</script>', '', s)
     if done_url:  # swap the stats screen (red "abandoned" bar) for the "You did it!" completion screen
         s = re.sub(re.escape(STATS_OLD) + r'" alt="[^"]*"', done_url + '" alt="FOCO completion screen: You did it, step complete, Reply to important emails"', s)
+    s = s.replace('<p>Your stats show your streak, your focus minutes today, this week and all time, and how many focus sessions you finished. Small wins, made visible.</p>',
+                  "<p>Finish a step and FOCO celebrates it with you, then counts it: this session, today's total, and your streak and focus minutes over time. Small wins, made visible.</p>")
     i = s.index(ANCHOR)
     return s[:i] + CSS + s[i:]
 

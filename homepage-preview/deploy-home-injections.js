@@ -8,7 +8,7 @@ async function upload(file,name,type){const b=fs.readFileSync(file);const r=awai
   const pos='https://www.tryfoco.com/wp-content/uploads/2026/11/foco-home-hero-woman.jpg';
   console.log(vid,pos);
   const g=await rq('GET','/wp-json/wp/v2/pages/4760?context=edit');
-  const raw=g.j.content.raw; fs.writeFileSync('homepage-backup/page-4760-2026-11-19-pre-ulcenter.html',raw);
+  const raw=g.j.content.raw; fs.writeFileSync('homepage-backup/page-4760-2026-11-19-pre-proofcopy.html',raw);
   fs.writeFileSync('.tmp/hp/raw.html',raw);
   execFileSync('python',['homepage-preview/hero-video-inject.py',vid,pos,'.tmp/hp/raw.html','.tmp/hp/new0.html']);
   const DU='homepage-preview/done-url.txt'; let doneUrl=fs.existsSync(DU)?fs.readFileSync(DU,'utf8').trim():'';
