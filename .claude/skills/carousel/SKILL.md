@@ -78,7 +78,7 @@ Engine (tools, not rules): `foco-video/` (spec `carousels/<slug>.json`, images `
 
 **Rotate series (Adi, 2026-11-19: "all the carousels look the same").** Never two posts in a row in the same style; Jess
 Story at most 1 post in 4. Every style keeps the brand codes (FOCO purple, the dark FOCO UI, the character only as itself)
-and shows the product only as real recorded screens. Benchmark contact sheets of the top ADHD carousels: see the
+and shows the product only as real recorded screens. **Every post ends with the fixed CTA slide** (Adi, 2026-11-19), styled per series but same copy: app icon or character, "start the task you're avoiding." / "say it. break it down. focus for 5 minutes." + App Store and Google Play badges (dark.js `{end,sub,blur}`, comic.js `"end":{text,sub}`). No prices, no "free". Benchmark contact sheets of the top ADHD carousels: see the
 2026-11-19 lesson in tasks/lessons.md. (Adi picks one by NAME; if he doesn't name one, ask which, or use the last one he approved)
 Every style uses the same story rules and the same QA. Add each new style here with a name, a layout and an example.
 

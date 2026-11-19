@@ -78,6 +78,11 @@
    "bright": 0.95,
    "dark": true,
    "text": "the reply took 12 minutes.<br>avoiding it took 3 days."
+  },
+  {
+   "end": "start the task<br>you're avoiding.",
+   "sub": "say it. break it down. focus for 5 minutes.",
+   "blur": "carousels/own/dark-email-avoid/photos/blur-bg.jpg"
   }
  ],
  "tiktok": {

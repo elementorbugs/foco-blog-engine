@@ -16,6 +16,8 @@ html,body{margin:0}.s{position:relative;width:1080px;height:1350px;overflow:hidd
 .txt{position:absolute;left:100px;right:100px;top:120px;text-align:center;font-family:Kalam;font-size:60px;line-height:1.22;color:#f6f2ff;text-shadow:0 2px 14px rgba(10,4,24,.9)}
 .txt b{font-family:KalamB;font-weight:400;color:#c9b0ff}
 .n,.tag{position:absolute;bottom:56px;font-family:KalamB;font-size:30px;color:#a78bfa}.n{left:62px}.tag{right:62px;letter-spacing:.05em}
+.end{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;padding:0 90px;text-align:center}
+.end .m{width:330px;filter:drop-shadow(0 0 40px rgba(124,58,237,.6))}.end .h{font-family:KalamB;font-size:66px;line-height:1.15;color:#f6f2ff}.end .sb{font-family:Kalam;font-size:40px;color:#c9b0ff}.end .bd{display:flex;gap:22px;margin-top:10px}.end .bd img{height:84px}
 .cell{position:absolute;width:500px;height:625px;overflow:hidden;border-radius:6px}.cell img{width:100%;height:100%}
 .pill{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#160b2b;border:4px solid #efe8ff;color:#fff;font-family:KalamB;font-size:42px;padding:6px 36px;border-radius:999px}`;
 (async () => {
@@ -29,5 +31,6 @@ html,body{margin:0}.s{position:relative;width:1080px;height:1350px;overflow:hidd
   };
   for (let i = 0; i < n; i++) await go(`<div class="s"><div class="bg" style="background-image:url(${U(spec.panels[i].image)})"></div><div class="txt">${spec.panels[i].text}</div><div class="frame"></div><div class="n">${i + 1}/${n}</div><div class="tag">FOCO</div></div>`, `slide-${i + 1}`);
   await go(`<div class="s">${spec.panels.slice(0, 4).map((_, i) => `<div class="cell" style="left:${26 + (i % 2) * 528}px;top:${34 + Math.floor(i / 2) * 656}px"><img src="${U(path.join(out, `slide-${i + 1}.png`))}"></div>`).join("")}<div class="pill">FOCO</div></div>`, `slide-${n + 1}`);
-  await b.close(); console.log("rendered", n + 1, "->", out);
+  if (spec.end) await go(`<div class="s"><div class="bg" style="background-image:url(${U(spec.panels[0].image)});filter:blur(18px) brightness(.5)"></div><div class="end"><img class="m" src="${U("public/mascots-hd/alignment.png")}"><div class="h">${spec.end.text}</div><div class="sb">${spec.end.sub}</div><div class="bd"><img src="${U("public/badges/app-store.svg")}"><img src="${U("public/badges/google-play-cropped.png")}"></div></div><div class="frame"></div></div>`, `slide-${n + 2}`);
+  await b.close(); console.log("rendered", n + (spec.end ? 2 : 1), "->", out);
 })();

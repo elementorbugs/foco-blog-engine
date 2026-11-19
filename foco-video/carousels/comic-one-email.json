@@ -38,5 +38,9 @@
    "#adhdwomen"
   ],
   "altText": "Four-panel comic starring FOCO, a small glowing purple character at a desk. Panel 1: it sits by a laptop, ready to reply to one email. Panel 2: it's caught in a tornado of sticky notes, folders and envelopes. Panel 3: at 4 p.m., it's wrapped in a blanket, the inbox still open. Panel 4: it presses one glowing button, calm and relieved. The final slide shows all four panels in a grid."
+ },
+ "end": {
+  "text": "start the task<br>you're avoiding.",
+  "sub": "say it. break it down. focus for 5 minutes."
  }
 }
