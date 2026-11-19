@@ -3112,6 +3112,188 @@
       "proposed_on": "2026-11-18",
       "revisit_after": "2027-02-01",
       "note": "AI ADHD planner (aluneapp.com); no US search volume in Ubersuggest."
+    },
+    {
+      "name": "Ahead (Emotional Intelligence)",
+      "slug": "ahead-app-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-19",
+      "revisit_after": null,
+      "keywords_us": {
+        "ahead app": {
+          "volume": 880,
+          "sd": 31
+        },
+        "ahead app reviews": {
+          "volume": 390,
+          "sd": 29
+        },
+        "ahead app review": {
+          "volume": 50,
+          "sd": 29
+        },
+        "ahead app cost": {
+          "volume": 50,
+          "sd": 27
+        },
+        "is ahead app free": {
+          "volume": 40,
+          "sd": 29
+        },
+        "what is ahead app": {
+          "volume": 40,
+          "sd": 30
+        },
+        "is the ahead app free": {
+          "volume": 30,
+          "sd": 30
+        },
+        "how much is ahead app": {
+          "volume": 20,
+          "sd": 11
+        }
+      },
+      "note": "Emotions/impulse coaching app (id1570430177). Review questions ~620/mo. SERP for 'ahead app reviews': only App Store + Google Play, no independent review at all. Fits P2 emotional-regulation-adhd. 'ahead app' cluster also has unrelated 'order ahead' noise; counted only Ahead-specific queries. gap-scan: no heading collision."
+    },
+    {
+      "name": "Goodnotes",
+      "slug": "goodnotes-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-19",
+      "revisit_after": null,
+      "keywords_us": {
+        "goodnotes": {
+          "volume": 74000,
+          "sd": 54
+        },
+        "is goodnotes free": {
+          "volume": 2900,
+          "sd": 30
+        },
+        "goodnotes subscription": {
+          "volume": 1900,
+          "sd": 28
+        },
+        "goodnotes cost": {
+          "volume": 1000,
+          "sd": 30
+        },
+        "goodnotes one time purchase": {
+          "volume": 720,
+          "sd": 27
+        },
+        "goodnotes essential subscription": {
+          "volume": 880,
+          "sd": 26
+        },
+        "does goodnotes cost money": {
+          "volume": 320,
+          "sd": 23
+        },
+        "is goodnotes worth it": {
+          "volume": 210,
+          "sd": 20
+        },
+        "goodnotes review": {
+          "volume": 210,
+          "sd": 35
+        }
+      },
+      "note": "Pricing/review questions several thousand/mo. SERP for 'is goodnotes free': Facebook group, theflourishplanner (DA 14) #5, YouTube, reddit, spotsaas (DA 41). No ADHD angle. Student angle (P4). gap-scan: /adhd-planner/ and /best-adhd-planner/ mention GoodNotes digital planners, no heading collision; link to them."
+    },
+    {
+      "name": "Milanote",
+      "slug": "milanote-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-19",
+      "revisit_after": null,
+      "keywords_us": {
+        "milanote": {
+          "volume": 90500,
+          "sd": 59
+        },
+        "is milanote free": {
+          "volume": 880,
+          "sd": 24
+        },
+        "milanote price": {
+          "volume": 590,
+          "sd": 30
+        },
+        "milanote alternatives": {
+          "volume": 480,
+          "sd": 13
+        },
+        "milanote cost": {
+          "volume": 110,
+          "sd": 21
+        },
+        "milanote reviews": {
+          "volume": 110,
+          "sd": 28
+        },
+        "how much is milanote": {
+          "volume": 90,
+          "sd": 22
+        }
+      },
+      "note": "Visual board tool for creatives. Review/pricing questions ~2,200/mo. SERP for 'is milanote free': official plans page, reddit pricing complaint, refern.app (DA 13, competitor). ADHD fit is partial (visual thinkers, brain dumps). gap-scan: no heading collision."
+    },
+    {
+      "name": "Cozi",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-19",
+      "revisit_after": "2027-02-01",
+      "note": "Strong numbers ('cozi app reviews' 140 SD 34, cost/free ~200) but RemindHer already has cozi-review, cozi-vs-skylight, cozi-alternatives. Do not compete with Adi's own site."
+    },
+    {
+      "name": "Skylight Calendar",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-19",
+      "revisit_after": "2027-02-01",
+      "note": "Huge demand ('skylight calendar plus subscription' 5,400 SD 25) but RemindHer covers skylight-calendar-review, alternatives, vs Hearth/Cozyla. Hardware device too."
+    },
+    {
+      "name": "FamilyWall",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-19",
+      "revisit_after": "2027-02-01",
+      "note": "Review questions ~280 at SD 16-32, but remindher.app/familywall-review/ already ranks for it."
+    },
+    {
+      "name": "OurHome",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-19",
+      "revisit_after": "2027-02-01",
+      "note": "Brand 480, review 30. App appears shut down (several 'OurHome shut down' alternative pages); 'alternative to ourhome app' shows 0."
+    },
+    {
+      "name": "Insight Timer",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-19",
+      "revisit_after": "2027-02-01",
+      "note": "Review/free queries all SD 35-53. Too hard, weak ADHD fit."
+    },
+    {
+      "name": "Sectograph",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-19",
+      "revisit_after": "2027-02-01",
+      "note": "Brand 170, review questions ~10/mo."
+    },
+    {
+      "name": "Timepage",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-19",
+      "revisit_after": "2027-02-01",
+      "note": "'timepage app' 70, no review cluster."
+    },
+    {
+      "name": "Maple (family organizer)",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-19",
+      "revisit_after": "2027-02-01",
+      "note": "'maple family app' 90, no review cluster; family space belongs to RemindHer."
     }
   ]
 }
