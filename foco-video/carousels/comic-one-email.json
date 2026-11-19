@@ -1,0 +1,42 @@
+{
+ "slug": "comic-one-email",
+ "series": "comic",
+ "note": "FOCO comic series #1 (2026-11-19). Benchmark ADHDinos 457K. Panels: Gemini gemini-3-pro-image-preview with official refs, panels 2-4 --ref panel-1; prompts next to the images.",
+ "panels": [
+  {
+   "image": "carousels/own/comic-one-email/panel-1.png",
+   "text": "today's task:<br><b>reply to one email.</b>"
+  },
+  {
+   "image": "carousels/own/comic-one-email/panel-2.png",
+   "text": "my brain: sure, but first let's<br>organize the whole inbox."
+  },
+  {
+   "image": "carousels/own/comic-one-email/panel-3.png",
+   "text": "4pm. inbox still open.<br>zero replies."
+  },
+  {
+   "image": "carousels/own/comic-one-email/panel-4.png",
+   "text": "what actually works:<br><b>hit reply.</b><br>that's the whole first step."
+  }
+ ],
+ "tiktok": {
+  "caption": "my brain every time i have to reply to one email 🫠\n\nwhat's your brain's favorite side quest? 👇",
+  "hashtags": [
+   "#adhd",
+   "#adhdcomic",
+   "#taskparalysis",
+   "#adhdtiktok"
+  ]
+ },
+ "instagram": {
+  "caption": "Today's task: reply to one email.\nMy brain: sure, but first let's organize the whole inbox.\n\nWhat actually works for me is making the first step tiny: hit reply. That's it.\n\nTag someone whose brain does this too.",
+  "hashtags": [
+   "#adhd",
+   "#adhdcomic",
+   "#taskparalysis",
+   "#adhdwomen"
+  ],
+  "altText": "Four-panel comic starring FOCO, a small glowing purple character at a desk. Panel 1: it sits by a laptop, ready to reply to one email. Panel 2: it's caught in a tornado of sticky notes, folders and envelopes. Panel 3: at 4 p.m., it's wrapped in a blanket, the inbox still open. Panel 4: it presses one glowing button, calm and relieved. The final slide shows all four panels in a grid."
+ }
+}

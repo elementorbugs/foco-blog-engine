@@ -74,13 +74,20 @@ Engine (tools, not rules): `foco-video/` (spec `carousels/<slug>.json`, images `
   the largest region, fill holes, save PNG.
 - Objects: from her POV with the anchor as ref, cropped. Only objects that belong to the story (spec §10: no filler props).
 
-## Design styles (Adi picks one by NAME; if he doesn't name one, ask which, or use the last one he approved)
+## Design styles
+
+**Rotate series (Adi, 2026-11-19: "all the carousels look the same").** Never two posts in a row in the same style; Jess
+Story at most 1 post in 4. Every style keeps the brand codes (FOCO purple, the dark FOCO UI, the character only as itself)
+and shows the product only as real recorded screens. Benchmark contact sheets of the top ADHD carousels: see the
+2026-11-19 lesson in tasks/lessons.md. (Adi picks one by NAME; if he doesn't name one, ask which, or use the last one he approved)
 Every style uses the same story rules and the same QA. Add each new style here with a name, a layout and an example.
 
 | name (Adi says) | Hebrew | look | layout | example |
 |---|---|---|---|---|
 | **Scrapbook** | סקראפבוק | handmade diary on crumpled cream paper: taped polaroids, the character as a white-outlined cut-out, Kalam ballpoint notes on torn paper scraps, thick blue arrows, lilac marker behind ONE key word, bold lowercase headline + serif body, drawn mail banner | `diary` / `final-diary` (blocks + `collage`). **Two colour themes** (Adi, 2026-11-18: "so not everything looks the same"): `"theme": "beige"` (default, cream paper + lilac marker) or `"theme": "purple"` (lilac paper + yellow marker) at the spec top level; alternate them across posts | `diary-jess-waiting-mode`, `diary-jess-planners` (beige), `diary-jess-planners-purple` |
 | **Story** | סטורי | "made on a phone" in 2 minutes: the real photo full-bleed, native TikTok/IG text (white + black stroke, or text on white/black boxes), Instagram-pen scribbles (uneven circles, arrows, underlines) in yellow/white, iPhone cut-out sticker, crooked screenshots. No paper, stars or tape. Approved 2026-11-18 ("looks less effortful but still aesthetic") | `story` (free-positioned `blocks`: bg (+blur/dim), txt, hand, circle, arrow, under, cutout, shot, notif, focosteps, badges) | `story-jess-planners` (8 slides), `story-sample` |
+| **Dark mood** | אווירה כהה | faceless "person sharing" slideshow (benchmark: mybuddymomo, 778K plays): 5 moody night photos with ONE small lowercase centered line each (the pain, no product), then 3 REAL FOCO screens (voice, steps, timer) big on a blurred dark photo with a white caption sticker, last slide in daylight (dark to light = stuck to started). Approved 2026-11-19 | `carousel/series/dark.js` (spec `"series": "dark"`, slides `{photo,...}` or `{screen,...,stk}`); assets in `carousels/own/<slug>/` | `dark-email-avoid` (9 slides) |
+| **FOCO comic** | קומיקס | 4 panels starring the FOCO character in ONE recurring scene (desk, laptop, mug), one handwritten Kalam line per panel, white panel frame, "n/4" + FOCO tag, then a grid slide (benchmark: ADHDinos, 457K plays). Panels: Gemini `gemini-3-pro-image-preview` with the official states as refs, panels 2-4 with `--ref panel-1.png` so the style matches; check every panel against `viral-lab/character/official` (no white eyeballs, no pastel body, glossy deep purple, glow outline). ~$0.04 per image. Approved 2026-11-19 | `carousel/series/comic.js` (spec `"series": "comic"`, `panels:[{image,text}]`), 1080x1350 | `comic-one-email` (5 slides) |
 
 **Video (Story style only):** the same Story spec renders as an animated video: `node carousel/video.js <slug>` ->
 `out/tiktok-<slug>/video.mp4` (1080x1920, items enter in array order: TikTok text pops word by word, pen marks draw

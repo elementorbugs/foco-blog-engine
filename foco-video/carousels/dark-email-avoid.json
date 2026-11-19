@@ -1,0 +1,102 @@
+{
+ "slug": "dark-email-avoid",
+ "series": "dark",
+ "note": "Dark mood series #1 (2026-11-19). Sub-avatar 1, pain: client email avoidance. Benchmark mybuddymomo 778K. Photos Pexels; screens = real frames of public/demo-clips/voice.mp4 (10.5s voice, 51s steps, 121s timer).",
+ "slides": [
+  {
+   "photo": "carousels/own/dark-email-avoid/photos/p16058832.jpg",
+   "top": 820,
+   "bright": 0.8,
+   "text": "what avoiding one client email<br>looks like with adhd",
+   "sub": "(it's not laziness)"
+  },
+  {
+   "photo": "carousels/own/dark-email-avoid/photos/p4069064.jpg",
+   "pos": "55% 50%",
+   "top": 1180,
+   "bright": 0.9,
+   "text": "i open it. read it. close it.<br>six times a day."
+  },
+  {
+   "photo": "carousels/own/dark-email-avoid/photos/p30149857.jpg",
+   "pos": "45% 50%",
+   "top": 320,
+   "text": "14 tabs open.<br>none of them are the email."
+  },
+  {
+   "photo": "carousels/own/dark-email-avoid/photos/p6943420.jpg",
+   "pos": "40% 60%",
+   "top": 320,
+   "bright": 0.9,
+   "text": "\"i'll start at 2.\" then 3.<br>then it's 4:08."
+  },
+  {
+   "photo": "carousels/own/dark-email-avoid/photos/p8036745.jpg",
+   "top": 1250,
+   "bright": 0.9,
+   "text": "at night i write the whole<br>reply in my head."
+  },
+  {
+   "screen": "carousels/own/dark-email-avoid/screens/cv.png",
+   "blur": "carousels/own/dark-email-avoid/photos/blur-bg.jpg",
+   "rot": -2,
+   "top": 420,
+   "h": 960,
+   "fit": "bottom",
+   "stk": {
+    "x": 150,
+    "y": 300,
+    "rot": -2
+   },
+   "text": "what helped: i just said the task out loud to FOCO."
+  },
+  {
+   "screen": "carousels/own/dark-email-avoid/screens/c51.png",
+   "blur": "carousels/own/dark-email-avoid/photos/blur-bg.jpg",
+   "rot": -2,
+   "stk": {
+    "x": 280,
+    "y": 1400,
+    "rot": 2
+   },
+   "text": "then i tapped to break it into tiny steps."
+  },
+  {
+   "screen": "carousels/own/dark-email-avoid/screens/ct.png",
+   "blur": "carousels/own/dark-email-avoid/photos/blur-bg.jpg",
+   "rot": 2,
+   "stk": {
+    "x": 110,
+    "y": 1380,
+    "rot": -2
+   },
+   "text": "step 1 was just \"open the email.\" i hit start on a 5&#8209;minute timer."
+  },
+  {
+   "photo": "carousels/own/dark-email-avoid/photos/p3807977.jpg",
+   "top": 330,
+   "bright": 0.95,
+   "dark": true,
+   "text": "the reply took 12 minutes.<br>avoiding it took 3 days."
+  }
+ ],
+ "tiktok": {
+  "caption": "the reply took 12 minutes. avoiding it took 3 days 🫠\n\nif your brain does this too, you know starting is the whole battle.\n\nwhat email have you been avoiding? 👇",
+  "hashtags": [
+   "#adhd",
+   "#adhdfreelancer",
+   "#taskparalysis",
+   "#adhdtiktok"
+  ]
+ },
+ "instagram": {
+  "caption": "What avoiding one client email looks like with ADHD.\n\nI opened it and closed it six times a day. I wrote the whole reply in my head at night. It sat there for three days.\n\nWhat helped: I said the task out loud to FOCO and tapped once to break it into tiny steps. Step 1 was just \"open the email.\" I set a 5-minute timer. The reply took 12 minutes.\n\nSave this for the next email you can't make yourself answer.",
+  "hashtags": [
+   "#adhd",
+   "#adhdfreelancer",
+   "#taskparalysis",
+   "#adhdwomen"
+  ],
+  "altText": "Nine-slide photo story. Five nighttime photos show someone avoiding one client email: a woman at her laptop in the dark, a glowing screen, a desk at night, a bedside clock reading 4:08, someone lying awake in bed. Then three screens from the FOCO app: recording the task by voice, the task broken into small steps, and a 5-minute focus timer. The last photo is in daylight: a woman at a sunny window with her laptop, reply sent."
+ }
+}

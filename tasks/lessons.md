@@ -190,3 +190,7 @@ Pruned quarterly. Keep under 60 lines.
 - Rule: no inverted or clever-literary syntax in social copy. Plain subject-verb order ("starting was the hard part").
 - Rule: before render, give ALL slide text + captions to a fresh native-copy-editor subagent ("flag anything unnatural, literary or stiff") and fix every flag. The cold-read test checks the story, not the English.
 - Homepage v2 also rejected (2026-11-19: "generic, looks like AI", too many mascot images, too big). Dark purple + glow + gradient text + glass cards + bento + centred headings IS the AI-SaaS template. What makes Opal/Forest real is bespoke imagery (cinematic render, own illustrated world), not CSS effects. Mascot = signature, use 1-2 times, not as filler. Next time: 2-3 hero directions as quick mockups for Adi to pick BEFORE building a full page.
+
+## 2026-11-19 Carousels all look the same (Adi: "is this good work for a brand manager/designer?")
+- One engine layout (full-bleed photo + text boxes + sticker) + the same 8 Jess images + the same story arc = every post looks identical. Swapping text is NOT a new format.
+- Rule: run 3-4 recurring SERIES, each with its own designed template (different layout, imagery type, type treatment), sharing only the brand codes. Benchmark real top carousels in the niche before designing, and judge my output against them, not against my last carousel.
