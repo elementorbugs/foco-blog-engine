@@ -67,6 +67,14 @@ Update it when Adi gives a correction or when the playbook turns a hypothesis in
 - 180-220 words per minute, almost no pauses (references 180-226; ours were 130-167 = too slow).
 
 ## Script
+**HARD GATE: English self-check before ANY text reaches Adi or a render (Adi, 2026-11-19: "why do you repeat this mistake? from now on you are obligated to check yourself").**
+This already failed twice (2026-11-18 "you don't check your English", 2026-11-19 "what is STARTING IT WAS"). It is not optional and not "when there's time":
+1. Collect EVERY line that will be seen: slides/overlays, captions, hashtags line, email text to Adi, alt text.
+2. Send them to a fresh native-copy-editor subagent: "native American English editor for casual TikTok/IG copy; flag anything unnatural, literary, inverted, stiff or non-native; give a natural replacement".
+3. Fix every flag, then re-check the changed lines the same way.
+4. Only then render / show / send, and say in the reply that the check ran.
+Banned in social copy: inverted or clever-literary syntax ("starting it was"), parenthetical cleverness ("the longer (and sorrier)"), vague plurals that don't match what's shown ("the first steps were" for two).
+- **Strategy first (Adi, 2026-11-19: "the most important file there is"):** `tasks/avatar-research-2026-11-18/strategy-avatars-positioning-2026-11.md`. Every creative names its sub-avatar (1-6) and one pain row before anything is written; where it conflicts with these rules (em dashes, "finally", proposed-not-shipped features, prices/reviews), these rules win.
 - **Start from ONE pain (Adi, 2026-11-18: "the most important thing").** Source: `tasks/avatar-research-2026-11-18/
   avatar-adhd-freelancer.md` (the chosen avatar's pains in their exact words + dreams) and `pain-bank.md` (P1-P20,
   each with its true FOCO answer). The video plan built on it: `viral-lab/pain-videos-plan-2026-11-18.md`.

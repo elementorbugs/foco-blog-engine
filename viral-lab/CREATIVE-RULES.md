@@ -12,11 +12,21 @@ rule from Adi wins.
 
 ## 1. Always (every format)
 
+**HARD GATE: English self-check before ANY text reaches Adi or a render (Adi, 2026-11-19: "why do you repeat this mistake? from now on you are obligated to check yourself").**
+This already failed twice (2026-11-18 "you don't check your English", 2026-11-19 "what is STARTING IT WAS"). It is not optional and not "when there's time":
+1. Collect EVERY line that will be seen: slides/overlays, captions, hashtags line, email text to Adi, alt text.
+2. Send them to a fresh native-copy-editor subagent: "native American English editor for casual TikTok/IG copy; flag anything unnatural, literary, inverted, stiff or non-native; give a natural replacement".
+3. Fix every flag, then re-check the changed lines the same way.
+4. Only then render / show / send, and say in the reply that the check ran.
+Banned in social copy: inverted or clever-literary syntax ("starting it was"), parenthetical cleverness ("the longer (and sorrier)"), vague plurals that don't match what's shown ("the first steps were" for two).
+
+
 **Truth**
 - FOCO does only what is verified: say / type / snap a task, it lands in your day, ONE optional tap breaks it into
   steps (never "automatic"), focus session with a timer + sounds and the character with you. FOCO does not do the work,
   stop interruptions, sync Google/Apple calendar or resume a task after an interruption.
 - No prices, no "free", no discounts, no store rating, no review quotes, no fake urgency.
+- **Strategy first (Adi, 2026-11-19: "the most important file there is"):** `tasks/avatar-research-2026-11-18/strategy-avatars-positioning-2026-11.md`. Every creative names its sub-avatar (1-6) and one pain row before anything is written; where it conflicts with these rules (em dashes, "finally", proposed-not-shipped features, prices/reviews), these rules win.
 - No invented statistics, studies, quotes or customers. A Reddit quote is copied exactly from `jess.md` or from
   `tasks/avatar-research-2026-11-18/avatar-adhd-freelancer.md` (its link is in reports 01-05 of that folder; find the
   link before using it), or it is paraphrased in the character's voice without quote marks.

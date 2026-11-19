@@ -16,6 +16,7 @@ Old formats/rules (Maya freelancer series, chat/notes/versus, paid-ad playbook a
 | `spec.md` | MASTER content & performance spec (mission, angles A-J, structure, writing, product, CTA, tests, QA, scoring) |
 | `SKILL.md` | how to run it in our engine (this file) |
 | `jess.md` | Jess's profile + research: verbatim quotes WITH source links, recurring themes, frequency |
+| `tasks/avatar-research-2026-11-18/strategy-avatars-positioning-2026-11.md` | **THE strategy (Adi, 2026-11-19: "the most important file there is")**: 6 sub-avatars with hooks, pain map, positioning, messaging, creative concepts. Every carousel names its sub-avatar (1-6) first |
 | `tasks/avatar-research-2026-11-18/avatar-adhd-freelancer.md` + `pain-bank.md` | **THE pain source (Adi, 2026-11-18: "the most important thing")**: the chosen avatar's pains ranked by frequency and intensity, in their exact words, plus their dreams; P1-P20 with the true FOCO answer. Every carousel starts from one P-number |
 | `log.md` | learning log: one row per carousel (hypothesis, angle, hook, CTA, results, next test) |
 | `kit/` | character references: `jess-anchor.png` (+ `jess-white-bg.png`) and the Gemini prompts; test moms get `<name>-anchor.png` + `<name>.md` profile here |
@@ -107,6 +108,15 @@ the photo, story transitions between slides, light sound effects, music baked in
 - **The FOCO character only near the end:** `mascot` (official `public/mascots-hd` states) as a sticker NEXT TO
   her when she starts (`focus`) or finishes (`completion`). Never in the pain part of her story.
 - Length ~40-48 s for 10 slides; check a 2 fps contact sheet of the whole video before sending.
+
+
+**HARD GATE: English self-check before ANY text reaches Adi or a render (Adi, 2026-11-19: "why do you repeat this mistake? from now on you are obligated to check yourself").**
+This already failed twice (2026-11-18 "you don't check your English", 2026-11-19 "what is STARTING IT WAS"). It is not optional and not "when there's time":
+1. Collect EVERY line that will be seen: slides/overlays, captions, hashtags line, email text to Adi, alt text.
+2. Send them to a fresh native-copy-editor subagent: "native American English editor for casual TikTok/IG copy; flag anything unnatural, literary, inverted, stiff or non-native; give a natural replacement".
+3. Fix every flag, then re-check the changed lines the same way.
+4. Only then render / show / send, and say in the reply that the check ran.
+Banned in social copy: inverted or clever-literary syntax ("starting it was"), parenthetical cleverness ("the longer (and sorrier)"), vague plurals that don't match what's shown ("the first steps were" for two).
 
 **Copy pass before every render (Adi, 2026-11-18: "you don't check your English").** Read every line out loud as
 marketing copy: natural American English, idiomatic, clear in one read, catchy. Kill awkward lines ("a dish is just
