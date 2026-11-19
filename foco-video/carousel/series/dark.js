@@ -32,7 +32,7 @@ const html = s => s.end
     const p = await b.newPage({ viewport: { width: 1080, height: 1920 } }), hf = path.join(out, `.s${i + 1}.html`);
     fs.writeFileSync(hf, `<!doctype html><html><head><meta charset="utf-8"><style>${css}</style></head><body>${html(spec.slides[i])}</body></html>`);
     await p.goto("file:///" + hf.split(path.sep).join("/")); await p.evaluate(() => document.fonts.ready); await p.waitForTimeout(250);
-    await p.screenshot({ path: path.join(out, `slide-${i + 1}.png`) }); await p.close(); fs.unlinkSync(hf);
+    await p.screenshot({ path: path.join(out, `slide-${i + 1}.jpg`), type: "jpeg", quality: 93 }); await p.close(); fs.unlinkSync(hf);
   }
   await b.close(); console.log("rendered", spec.slides.length, "->", out);
 })();

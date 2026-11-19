@@ -27,10 +27,10 @@ html,body{margin:0}.s{position:relative;width:1080px;height:1350px;overflow:hidd
     const p = await b.newPage({ viewport: { width: 1080, height: 1350 } }), hf = path.join(out, `.${name}.html`);
     fs.writeFileSync(hf, `<!doctype html><html><head><meta charset="utf-8"><style>${css}</style></head><body>${body}</body></html>`);
     await p.goto("file:///" + hf.split(path.sep).join("/")); await p.evaluate(() => document.fonts.ready); await p.waitForTimeout(300);
-    await p.screenshot({ path: path.join(out, name + ".png") }); await p.close(); fs.unlinkSync(hf);
+    await p.screenshot({ path: path.join(out, name + ".jpg"), type: "jpeg", quality: 93 }); await p.close(); fs.unlinkSync(hf);
   };
   for (let i = 0; i < n; i++) await go(`<div class="s"><div class="bg" style="background-image:url(${U(spec.panels[i].image)})"></div><div class="txt">${spec.panels[i].text}</div><div class="frame"></div><div class="n">${i + 1}/${n}</div><div class="tag">FOCO</div></div>`, `slide-${i + 1}`);
-  await go(`<div class="s">${spec.panels.slice(0, 4).map((_, i) => `<div class="cell" style="left:${26 + (i % 2) * 528}px;top:${34 + Math.floor(i / 2) * 656}px"><img src="${U(path.join(out, `slide-${i + 1}.png`))}"></div>`).join("")}<div class="pill">FOCO</div></div>`, `slide-${n + 1}`);
+  await go(`<div class="s">${spec.panels.slice(0, 4).map((_, i) => `<div class="cell" style="left:${26 + (i % 2) * 528}px;top:${34 + Math.floor(i / 2) * 656}px"><img src="${U(path.join(out, `slide-${i + 1}.jpg`))}"></div>`).join("")}<div class="pill">FOCO</div></div>`, `slide-${n + 1}`);
   if (spec.end) await go(`<div class="s"><div class="bg" style="background-image:url(${U(spec.panels[0].image)});filter:blur(18px) brightness(.5)"></div><div class="end"><img class="m" src="${U("public/mascots-hd/alignment.png")}"><div class="h">${spec.end.text}</div><div class="sb">${spec.end.sub}</div><div class="bd"><img src="${U("public/badges/app-store.svg")}"><img src="${U("public/badges/google-play-cropped.png")}"></div></div><div class="frame"></div></div>`, `slide-${n + 2}`);
   await b.close(); console.log("rendered", n + (spec.end ? 2 : 1), "->", out);
 })();
