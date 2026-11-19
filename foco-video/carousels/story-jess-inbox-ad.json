@@ -2,7 +2,7 @@
   "slug": "story-jess-inbox-ad",
   "note": "PAID AD version of story-jess-dana-email (same story, Adi-approved ad text 2026-11-19). Strategy: sub-avatar 1/2, pain P3 (late reply -> shame -> ghosting). Real FOCO data: the 5 steps + minutes and the Start Focus screen are from foco-video/public/demo-clips/voice.mp4 (51s, 94s, 107.5s). No 'link in bio' (the ad has its own button).",
   "tiktok": {
-    "caption": "my inbox was open for 47 minutes and I hadn't answered one email 🫠\n\nit was never a hard email. starting it was. one tap turned it into 5 tiny steps, and the first one was just \"open it.\"\n\nwhat's the email you've been avoiding? 👇",
+    "caption": "my inbox was open for 47 minutes and i hadn't answered one email 🫠\n\nthe email wasn't hard. starting was the hard part. one tap turned it into 5 tiny steps, and the first one was just \"open it.\"\n\nwhat's the email you've been avoiding? 👇",
     "hashtags": [
       "#adhdmom",
       "#adhdfreelancer",
@@ -11,7 +11,7 @@
     ]
   },
   "instagram": {
-    "caption": "ADHD and client emails: my inbox was open for 47 minutes and I hadn't answered one.\n\nDana's \"quick question\" was 6 days old, and the longer I waited, the longer (and sorrier) the reply got.\n\nSo I said it to FOCO: reply to important emails. One tap turned it into 5 tiny steps. The first ones were just \"open it\" and \"flag the 3 urgent ones,\" and I hit start.\n\n2:31pm, Dana had her answer. The baby was still asleep.\n\nTry it on the email you've been avoiding.",
+    "caption": "ADHD and client emails: my inbox was open for 47 minutes and I hadn't answered one.\n\nDana's \"quick question\" was 6 days old, and the longer I waited, the bigger the apology got.\n\nSo I told FOCO: reply to important emails. One tap turned it into 5 tiny steps. The first ones were just \"open it\" and \"flag the 3 urgent ones,\" and I hit start.\n\n2:31pm, Dana had her answer. The baby was still asleep.\n\nTry it on the email you've been avoiding.",
     "hashtags": [
       "#adhdmom",
       "#adhdfreelancer",
@@ -187,7 +187,7 @@
         },
         {
           "k": "txt",
-          "text": "and the longer i wait, the longer (and sorrier) this reply gets.",
+          "text": "and the longer i wait, the bigger the apology.",
           "x": 64,
           "y": 400,
           "w": 880,
@@ -208,7 +208,7 @@
         },
         {
           "k": "txt",
-          "text": "so i said it to FOCO:",
+          "text": "so i told FOCO:",
           "x": 64,
           "y": 200,
           "w": 900,
@@ -276,7 +276,7 @@
         },
         {
           "k": "txt",
-          "text": "the first steps were tiny:",
+          "text": "the first two were tiny:",
           "x": 64,
           "y": 200,
           "w": 900,
@@ -309,11 +309,11 @@
         },
         {
           "k": "txt",
-          "text": "5 minutes.",
+          "text": "just 5 minutes.",
           "x": 64,
           "y": 1180,
-          "w": 400,
-          "size": 50,
+          "w": 420,
+          "size": 46,
           "style": "dark"
         }
       ]
@@ -336,7 +336,7 @@
         },
         {
           "k": "txt",
-          "text": "i opened it, flagged the 3, then wrote dana first.",
+          "text": "opened it. flagged the 3. answered dana first.",
           "x": 64,
           "y": 340,
           "w": 880,
@@ -374,7 +374,7 @@
         },
         {
           "k": "txt",
-          "text": "it was never a hard email.",
+          "text": "the email wasn't hard.",
           "x": 64,
           "y": 260,
           "w": 900,
@@ -382,7 +382,7 @@
         },
         {
           "k": "txt",
-          "text": "starting it was.",
+          "text": "starting was the hard part.",
           "x": 64,
           "y": 480,
           "w": 900,
