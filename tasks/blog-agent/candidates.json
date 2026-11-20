@@ -3294,6 +3294,162 @@
       "proposed_on": "2026-11-19",
       "revisit_after": "2027-02-01",
       "note": "'maple family app' 90, no review cluster; family space belongs to RemindHer."
+    },
+    {
+      "name": "ElevenReader",
+      "slug": "elevenreader-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-20",
+      "keywords_us": {
+        "elevenreader": {
+          "volume": 5400,
+          "sd": 29
+        },
+        "is elevenreader free": {
+          "volume": 140,
+          "sd": 39
+        },
+        "elevenreader pricing": {
+          "volume": 110,
+          "sd": 20
+        },
+        "elevenreader vs speechify": {
+          "volume": 70,
+          "sd": 9
+        },
+        "elevenreader cost": {
+          "volume": 50,
+          "sd": 16
+        },
+        "elevenreader review": {
+          "volume": 50,
+          "sd": 31
+        },
+        "speechify vs elevenreader": {
+          "volume": 30,
+          "sd": 11
+        },
+        "elevenreader alternative": {
+          "volume": 30,
+          "sd": 18
+        }
+      },
+      "note": "Recommended. ElevenLabs' read-aloud app; reading with ADHD angle. Review questions ~480/mo; main target 'elevenreader pricing' SD 20. SERP (Ubersuggest 2026-09-20): elevenreader.io pages, 2 Reddit pricing complaints, ElevenLabs help, speechcentral.net (competitor); no independent review. gap-scan: only a mention in draft #1985 /adhd-and-dyslexia/.",
+      "revisit_after": null
+    },
+    {
+      "name": "Voice Dream Reader",
+      "slug": "voice-dream-reader-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-20",
+      "keywords_us": {
+        "voice dream reader": {
+          "volume": 1300,
+          "sd": 40
+        },
+        "voice dream reader app": {
+          "volume": 110,
+          "sd": 34
+        },
+        "voice dream reader cost": {
+          "volume": 70,
+          "sd": 26
+        },
+        "voice dream reader price": {
+          "volume": 30,
+          "sd": 30
+        },
+        "is voice dream reader free": {
+          "volume": 30,
+          "sd": 37
+        },
+        "voice dream reader subscription": {
+          "volume": 30,
+          "sd": 24
+        }
+      },
+      "note": "Recommended (borderline). Text-to-speech reader, moved to subscription. Review questions ~170/mo; target 'voice dream reader cost' SD 26. SERP (2026-09-24): App Store, r/Blind, voicedream.com, older reviews from afb.org, readingrockets.org, perkins.org (blind/dyslexia angle, none ADHD). gap-scan: mention in draft #1985 only.",
+      "revisit_after": null
+    },
+    {
+      "name": "Saner.ai",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-20",
+      "keywords_us": {
+        "saner ai": {
+          "volume": 2400,
+          "sd": 34
+        },
+        "saner ai review": {
+          "volume": 140,
+          "sd": 26
+        }
+      },
+      "note": "Already covered: /saner-ai-review/ is live.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Bionic Reading",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-20",
+      "keywords_us": {
+        "bionic reading": {
+          "volume": 4400,
+          "sd": 30
+        },
+        "bionic reading adhd": {
+          "volume": 140,
+          "sd": 33
+        },
+        "bionic reading for adhd": {
+          "volume": 110,
+          "sd": 44
+        },
+        "adhd bionic reading": {
+          "volume": 50,
+          "sd": 22
+        }
+      },
+      "note": "A reading method more than an app; ADHD queries ~300/mo but main target SD 33-44. Possible future topic post ('does bionic reading help ADHD'), not a review.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Natural Reader",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-20",
+      "keywords_us": {
+        "natural reader": {
+          "volume": 27100,
+          "sd": 34
+        },
+        "natural reader review": {
+          "volume": 90,
+          "sd": 32
+        },
+        "speechify vs natural reader": {
+          "volume": 140,
+          "sd": 13
+        },
+        "natural reader pricing": {
+          "volume": 210,
+          "sd": 44
+        }
+      },
+      "note": "Generic TTS tool, weak ADHD fit; best target is a vs-Speechify page and Speechify is on hold until 2027-02.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Anki (for ADHD)",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-20",
+      "keywords_us": {
+        "anki for adhd": {
+          "volume": null,
+          "sd": null
+        }
+      },
+      "note": "No measurable ADHD-angle volume in Ubersuggest.",
+      "revisit_after": "2027-02-01"
     }
   ]
 }
