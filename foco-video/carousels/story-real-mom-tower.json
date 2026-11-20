@@ -1,0 +1,291 @@
+{
+  "slug": "story-real-mom-tower",
+  "tiktok": {
+    "caption": "my toddler doesn't plan the tower. she just grabs the next tile. turns out it works for invoices too 🧱\n\nwhat's the task you keep saving for a \"quiet afternoon\"? 👇",
+    "hashtags": [
+      "#adhdmom",
+      "#momswithadhd",
+      "#workfromhomemom",
+      "#adhdtips"
+    ]
+  },
+  "instagram": {
+    "caption": "She doesn't plan the tower. She just grabs the next tile.\n\nI'd been saving my October invoice for a quiet afternoon. With a toddler, that afternoon doesn't exist. So I typed it into FOCO, tapped once, and it broke it down into three tiny steps. Two were done before she looked up from her tower.\n\nWhat's the task you keep saving for a quiet afternoon? 👇",
+    "hashtags": [
+      "#adhdmom",
+      "#momswithadhd",
+      "#workfromhomemom",
+      "#adhdtips",
+      "#freelancemom"
+    ],
+    "altText": "Real home photos: a toddler stacks a tall magnet-tile tower on the floor next to her mom's laptop. The mom has been putting off her October invoice. She types it into FOCO, which breaks it into three tiny steps, makes a peace sign after two of them, and sends the invoice while the tower is still standing. Ends with the FOCO app and App Store and Google Play badges."
+  },
+  "slides": [
+    {
+      "layout": "story",
+      "id": "s1",
+      "blocks": [
+        {
+          "k": "bg",
+          "file": "carousels/own/real-mom-tower/tower-build-x.jpg",
+          "dim": 0.28,
+          "pos": "88% center"
+        },
+        {
+          "k": "txt",
+          "style": "serif",
+          "text": "my toddler built this whole tower",
+          "x": 60,
+          "y": 300,
+          "w": 900,
+          "size": 80,
+          "align": "left"
+        },
+        {
+          "k": "txt",
+          "style": "ig",
+          "text": "my october invoice is still blank",
+          "x": 62,
+          "y": 520,
+          "w": 880,
+          "size": 46,
+          "align": "left",
+          "color": "#FFD60A"
+        }
+      ]
+    },
+    {
+      "layout": "story",
+      "id": "s2",
+      "blocks": [
+        {
+          "k": "bg",
+          "file": "carousels/own/real-mom-tower/tile-x.jpg",
+          "dim": 0.3
+        },
+        {
+          "k": "txt",
+          "style": "serif",
+          "text": "she doesn't plan the tower.",
+          "x": 60,
+          "y": 1080,
+          "w": 900,
+          "size": 80,
+          "align": "left"
+        },
+        {
+          "k": "txt",
+          "style": "ig",
+          "text": "she just grabs the next tile.",
+          "x": 62,
+          "y": 1200,
+          "w": 880,
+          "size": 46,
+          "align": "left",
+          "color": "#FFD60A"
+        }
+      ]
+    },
+    {
+      "layout": "story",
+      "id": "s3",
+      "blocks": [
+        {
+          "k": "bg",
+          "file": "carousels/own/real-mom-tower/selfie-x.jpg",
+          "dim": 0.38
+        },
+        {
+          "k": "txt",
+          "style": "ig",
+          "text": "i keep waiting for a quiet afternoon to do my invoices.",
+          "x": 62,
+          "y": 420,
+          "w": 880,
+          "size": 50,
+          "align": "left"
+        },
+        {
+          "k": "txt",
+          "style": "serif",
+          "text": "meanwhile i'm a whole month behind on getting paid.",
+          "x": 60,
+          "y": 620,
+          "w": 900,
+          "size": 74,
+          "align": "left",
+          "italic": true
+        }
+      ]
+    },
+    {
+      "layout": "story",
+      "id": "s4",
+      "blocks": [
+        {
+          "k": "bg",
+          "file": "carousels/own/real-mom-tower/tower-build-x.jpg",
+          "dim": 0.5,
+          "blur": 16
+        },
+        {
+          "k": "txt",
+          "style": "serif",
+          "text": "so i tried my toddler's way. one tile at a time.",
+          "x": 60,
+          "y": 260,
+          "w": 900,
+          "size": 68,
+          "align": "left"
+        },
+        {
+          "k": "txt",
+          "style": "ig",
+          "text": "i typed \"send october invoice\" into FOCO, tapped once, and it broke it down into tiny steps.",
+          "x": 62,
+          "y": 500,
+          "w": 880,
+          "size": 40,
+          "align": "left"
+        },
+        {
+          "k": "focosteps",
+          "steps": [
+            {
+              "text": "Pull up your October hours",
+              "min": 2
+            },
+            {
+              "text": "Add the client and the total",
+              "min": 3
+            },
+            {
+              "text": "Hit send",
+              "min": 1
+            }
+          ],
+          "x": 110,
+          "y": 720,
+          "w": 820,
+          "lit": 0
+        }
+      ]
+    },
+    {
+      "layout": "story",
+      "id": "s5",
+      "blocks": [
+        {
+          "k": "bg",
+          "file": "carousels/own/real-mom-tower/peace-x.jpg",
+          "dim": 0.25,
+          "pos": "30% center"
+        },
+        {
+          "k": "txt",
+          "style": "serif",
+          "text": "first two tiles: done in 5 minutes ✌️",
+          "x": 60,
+          "y": 300,
+          "w": 900,
+          "size": 72,
+          "align": "left"
+        },
+        {
+          "k": "txt",
+          "style": "ig",
+          "text": "my toddler didn't even look up from her tower.",
+          "x": 62,
+          "y": 520,
+          "w": 880,
+          "size": 46,
+          "align": "left",
+          "color": "#FFD60A"
+        }
+      ]
+    },
+    {
+      "layout": "story",
+      "id": "s6",
+      "blocks": [
+        {
+          "k": "bg",
+          "file": "carousels/own/real-mom-tower/tower-wide-x.jpg",
+          "dim": 0.3,
+          "pos": "90% center"
+        },
+        {
+          "k": "txt",
+          "style": "serif",
+          "text": "third tile: invoice sent.",
+          "x": 60,
+          "y": 300,
+          "w": 900,
+          "size": 80,
+          "align": "left"
+        },
+        {
+          "k": "txt",
+          "style": "ig",
+          "text": "her tower's still standing.",
+          "x": 62,
+          "y": 430,
+          "w": 880,
+          "size": 52,
+          "align": "left",
+          "color": "#FFD60A"
+        }
+      ]
+    },
+    {
+      "layout": "story",
+      "id": "end",
+      "blocks": [
+        {
+          "k": "bg",
+          "file": "carousels/own/real-mom-tower/tower-wide-x.jpg",
+          "dim": 0.55,
+          "blur": 14,
+          "pos": "90% center"
+        },
+        {
+          "k": "mascot",
+          "state": "focus",
+          "x": 380,
+          "y": 330,
+          "h": 320
+        },
+        {
+          "k": "txt",
+          "style": "serif",
+          "text": "start the task you're avoiding.",
+          "x": 40,
+          "y": 720,
+          "w": 1000,
+          "size": 84,
+          "align": "center"
+        },
+        {
+          "k": "txt",
+          "style": "ig",
+          "text": "say it. break it down. focus for 5 minutes.",
+          "x": 40,
+          "y": 900,
+          "w": 1000,
+          "size": 46,
+          "align": "center",
+          "color": "#FFD60A"
+        },
+        {
+          "k": "badges",
+          "x": 140,
+          "y": 1060
+        }
+      ]
+    }
+  ],
+  "music": "factory/musiclib/cool_vibes.mp3",
+  "musicKey": "cool_vibes",
+  "musicCredit": "\"Cool Vibes\" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0",
+  "musicVolume": 0.24
+}

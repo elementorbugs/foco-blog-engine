@@ -194,3 +194,4 @@ Pruned quarterly. Keep under 60 lines.
 ## 2026-11-19 Carousels all look the same (Adi: "is this good work for a brand manager/designer?")
 - One engine layout (full-bleed photo + text boxes + sticker) + the same 8 Jess images + the same story arc = every post looks identical. Swapping text is NOT a new format.
 - Rule: run 3-4 recurring SERIES, each with its own designed template (different layout, imagery type, type treatment), sharing only the brand codes. Benchmark real top carousels in the niche before designing, and judge my output against them, not against my last carousel.
+- Rotate the WORK TASK across creatives, not only the style (Adi, 2026-11-20: "why always email, change direction"). Client email was the task in 3 posts in a row. Before a new story, check log.md and pick a different stake: invoices, proposal, portfolio/website update, school form, tax receipts, etc.
