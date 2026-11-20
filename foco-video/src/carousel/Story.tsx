@@ -56,7 +56,7 @@ export type StoryItem =
 export const FPS = 30;
 // how long each kind takes to "arrive" before the next item starts (frames), and its sound
 const STEP: Record<StoryItem["k"], number> = { bg: 4, vid: 0, txt: 10, hand: 12, circle: 10, arrow: 7, under: 7, cutout: 10, shot: 10, notif: 14, focosteps: 28, badges: 10, scan: 30, daycal: 26, mascot: 10, recap: 12, endcard: 60 };
-export const SFX: Partial<Record<StoryItem["k"], string>> = { txt: "explainer-sfx/pop.wav", hand: "explainer-sfx/pop-soft.wav", circle: "explainer-sfx/pop-soft.wav", cutout: "explainer-sfx/thud.wav", shot: "explainer-sfx/thud.wav", notif: "sfx/ding.wav", focosteps: "explainer-sfx/check.wav", badges: "explainer-sfx/pop.wav", scan: "sfx/mouse-click.wav", daycal: "explainer-sfx/pop-soft.wav", mascot: "explainer-sfx/pop.wav", recap: "explainer-sfx/pop-soft.wav", endcard: "sfx/whoosh.wav" };
+export const SFX: Partial<Record<StoryItem["k"], string>> = { txt: "explainer-sfx/pop.wav", hand: "explainer-sfx/pop-soft.wav", circle: "explainer-sfx/pop-soft.wav", arrow: "explainer-sfx/swipe.wav", cutout: "explainer-sfx/thud.wav", shot: "explainer-sfx/thud.wav", notif: "sfx/ding.wav", focosteps: "explainer-sfx/check.wav", badges: "explainer-sfx/pop.wav", scan: "sfx/mouse-click.wav", daycal: "explainer-sfx/pop-soft.wav", mascot: "explainer-sfx/pop.wav", recap: "explainer-sfx/pop-soft.wav", endcard: "sfx/whoosh.wav" };
 
 const words = (it: StoryItem) => ("text" in it && it.text ? it.text.split(/\s+/).length : 0);
 const fr = (a: number) => (a === Infinity ? 999 : a);
@@ -131,7 +131,7 @@ const Item: React.FC<{ it: StoryItem; slug: string; a: number; slideT: number; d
       if (style === "serif" || style === "ig") {
         const serif = style === "serif";
         return (
-          <div style={{ ...base, fontFamily: serif ? `"${IGSERIF}", "${EMOJI}"` : `"${IGSANS}", "${EMOJI}"`, fontWeight: serif ? 400 : 500, fontStyle: it.italic ? "italic" : "normal", letterSpacing: serif ? "-0.01em" : "-0.005em", lineHeight: serif ? 1.05 : 1.3, color: it.color ?? "#fff", opacity: lin(4), textShadow: "0 1px 3px rgba(0,0,0,0.55), 0 0 18px rgba(0,0,0,0.35)" } as React.CSSProperties}>{it.text}</div>
+          <div style={{ ...base, fontFamily: serif ? `"${IGSERIF}", "${EMOJI}"` : `"${IGSANS}", "${EMOJI}"`, fontWeight: serif ? 400 : 500, fontStyle: it.italic ? "italic" : "normal", letterSpacing: serif ? "-0.01em" : "-0.005em", lineHeight: serif ? 1.05 : 1.3, color: it.color ?? "#fff", opacity: lin(4), textShadow: "0 2px 4px rgba(0,0,0,0.7), 0 0 24px rgba(0,0,0,0.55), 0 0 60px rgba(0,0,0,0.35)" } as React.CSSProperties}>{it.text}</div>
         );
       }
       if (style === "stroke") {

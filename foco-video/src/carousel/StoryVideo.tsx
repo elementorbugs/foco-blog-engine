@@ -14,6 +14,8 @@ import React from "react";
 import { AbsoluteFill, Sequence, spring, staticFile, useCurrentFrame } from "remotion";
 import { Audio } from "@remotion/media";
 import { StorySlide, SFX, schedule, type StoryItem } from "./Story";
+// Native IG text (serif / ig) enters silently: sound only on the creative moments (screenshot, pen circle, arrow,
+// handwriting, mascot, badges, end card). Adi, 2026-11-20: "not a sound every second a text pops".
 
 type Enter = "cut" | "time" | "buzz" | "flash" | "focus";
 type VSlide = { id: string; blocks: StoryItem[]; enter?: Enter; time?: string };
@@ -81,7 +83,7 @@ export const StoryVideo: React.FC<{ spec: VSpec }> = ({ spec }) => {
       {spec.slides.map((s, i) => (
         <React.Fragment key={`a${i}`}>
           {ENTER_SFX[s.enter ?? "cut"] ? <Sequence from={tl[i].at} durationInFrames={30}><Audio src={staticFile(ENTER_SFX[s.enter ?? "cut"]!)} volume={0.35} /></Sequence> : null}
-          {s.blocks.map((b, j) => (SFX[b.k] ? (
+          {s.blocks.map((b, j) => (SFX[b.k] && !(b.k === "txt" && ((b as { style?: string }).style === "serif" || (b as { style?: string }).style === "ig")) ? (
             <Sequence key={j} from={tl[i].at + tl[i].pre + tl[i].starts[j]} durationInFrames={30}><Audio src={staticFile(SFX[b.k]!)} volume={b.k === "notif" ? 0.6 : 0.3} /></Sequence>
           ) : null))}
         </React.Fragment>

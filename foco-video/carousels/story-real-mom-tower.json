@@ -35,20 +35,20 @@
           "k": "txt",
           "style": "serif",
           "text": "she built this in 20 minutes.",
-          "x": 60,
-          "y": 300,
-          "w": 900,
-          "size": 80,
+          "x": 50,
+          "y": 270,
+          "w": 960,
+          "size": 116,
           "align": "left"
         },
         {
           "k": "txt",
           "style": "ig",
           "text": "i haven't touched my client presentation.",
-          "x": 62,
-          "y": 430,
-          "w": 880,
-          "size": 46,
+          "x": 50,
+          "y": 547.6,
+          "w": 960,
+          "size": 64,
           "align": "left",
           "color": "#FFD60A"
         }
@@ -70,7 +70,7 @@
           "x": 60,
           "y": 1080,
           "w": 900,
-          "size": 80,
+          "size": 100,
           "align": "left"
         },
         {
@@ -80,7 +80,7 @@
           "x": 62,
           "y": 1200,
           "w": 880,
-          "size": 46,
+          "size": 58,
           "align": "left",
           "color": "#FFD60A"
         }
@@ -100,20 +100,20 @@
           "k": "txt",
           "style": "ig",
           "text": "i keep waiting for a quiet afternoon to work on it.",
-          "x": 62,
-          "y": 360,
-          "w": 880,
-          "size": 50,
+          "x": 50,
+          "y": 270,
+          "w": 960,
+          "size": 64,
           "align": "left"
         },
         {
           "k": "txt",
           "style": "serif",
           "text": "it's due friday.",
-          "x": 60,
-          "y": 520,
-          "w": 900,
-          "size": 96,
+          "x": 50,
+          "y": 464.4,
+          "w": 960,
+          "size": 116,
           "align": "left",
           "italic": true
         }
@@ -133,20 +133,20 @@
           "k": "txt",
           "style": "serif",
           "text": "so i did it her way.",
-          "x": 60,
-          "y": 250,
-          "w": 900,
-          "size": 78,
+          "x": 50,
+          "y": 230,
+          "w": 960,
+          "size": 94,
           "align": "left"
         },
         {
           "k": "txt",
           "style": "ig",
           "text": "typed it into FOCO. one tap broke it into steps.",
-          "x": 62,
-          "y": 370,
-          "w": 880,
-          "size": 46,
+          "x": 50,
+          "y": 362.7,
+          "w": 960,
+          "size": 56,
           "align": "left",
           "color": "#FFD60A"
         },
@@ -154,14 +154,14 @@
           "k": "shot",
           "file": "carousels/own/real-mom-tower/shot-steps.png",
           "x": 60,
-          "y": 520,
+          "y": 556.3,
           "w": 540,
           "rot": -4
         },
         {
           "k": "circle",
           "cx": 345,
-          "cy": 842,
+          "cy": 878.3,
           "rx": 250,
           "ry": 58,
           "rot": -4,
@@ -172,11 +172,11 @@
           "k": "arrow",
           "from": [
             610,
-            860
+            896.3
           ],
           "to": [
             680,
-            1080
+            1116.3
           ],
           "bend": -0.3,
           "color": "#FFD60A"
@@ -185,7 +185,7 @@
           "k": "hand",
           "text": "1 step = 1 tile",
           "x": 600,
-          "y": 700,
+          "y": 736.3,
           "w": 440,
           "size": 58,
           "color": "#FFD60A",
@@ -207,20 +207,20 @@
           "k": "txt",
           "style": "serif",
           "text": "step 1. step 2. ✌️",
-          "x": 60,
-          "y": 300,
-          "w": 900,
-          "size": 80,
+          "x": 50,
+          "y": 270,
+          "w": 960,
+          "size": 116,
           "align": "left"
         },
         {
           "k": "txt",
           "style": "ig",
           "text": "8 minutes. she didn't even look up.",
-          "x": 62,
-          "y": 430,
-          "w": 880,
-          "size": 46,
+          "x": 50,
+          "y": 425.8,
+          "w": 960,
+          "size": 64,
           "align": "left",
           "color": "#FFD60A"
         }
@@ -240,20 +240,20 @@
           "k": "txt",
           "style": "serif",
           "text": "presentation: started.",
-          "x": 60,
-          "y": 300,
-          "w": 900,
-          "size": 80,
+          "x": 50,
+          "y": 270,
+          "w": 960,
+          "size": 116,
           "align": "left"
         },
         {
           "k": "txt",
           "style": "ig",
           "text": "tower: still standing.",
-          "x": 62,
-          "y": 430,
-          "w": 880,
-          "size": 52,
+          "x": 50,
+          "y": 547.6,
+          "w": 960,
+          "size": 64,
           "align": "left",
           "color": "#FFD60A"
         }
@@ -284,7 +284,7 @@
           "x": 40,
           "y": 720,
           "w": 1000,
-          "size": 84,
+          "size": 96,
           "align": "center"
         },
         {
@@ -294,7 +294,7 @@
           "x": 40,
           "y": 900,
           "w": 1000,
-          "size": 46,
+          "size": 54,
           "align": "center",
           "color": "#FFD60A"
         },
