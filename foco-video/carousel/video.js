@@ -1,4 +1,6 @@
-// Render a Story carousel spec as an animated video: node carousel/video.js <slug> [--music <key>]
+// Render a Story carousel spec as an animated video: node carousel/video.js <slug> [--music <key>] [--no-music]
+// --no-music: sound effects only -> video-no-music.mp4 (Adi, 2026-11-20: add a trending sound in TikTok without it
+// burying the effects; in TikTok: Volume -> Original sound 100%, Added sound ~20%).
 // -> out/tiktok-<slug>/video.mp4 (1080x1920, 30fps, story transitions, sound effects, a soft music bed, -14 LUFS)
 //
 // Music (Adi, 2026-11-18: "the same music every time gets old fast"): every video gets a DIFFERENT track from the
@@ -21,6 +23,7 @@ const MOODS = ["lofi", "warm", "calm", "piano", "upbeat"]; // diary stories: no 
 const usedFile = path.join(ROOT, "carousels", "music-used.json");
 const used = fs.existsSync(usedFile) ? JSON.parse(fs.readFileSync(usedFile, "utf8")) : [];
 const forced = process.argv.includes("--music") ? process.argv[process.argv.indexOf("--music") + 1] : null;
+const noMusic = process.argv.includes("--no-music");
 let track = CATALOG.find((m) => m.key === (forced || spec.musicKey));
 if (!track) {
   const recent = used.filter((u) => u.slug !== slug).slice(-5).map((u) => u.key);
@@ -28,6 +31,7 @@ if (!track) {
   let h = 0; for (const c of slug) h = (h * 31 + c.charCodeAt(0)) >>> 0;
   track = pool[h % pool.length];
 }
+if (!noMusic) {
 spec.music = track.file;
 spec.musicKey = track.key;
 spec.musicCredit = track.credit;
@@ -35,6 +39,7 @@ spec.musicVolume = spec.musicVolume ?? 0.24;
 fs.writeFileSync(specFile, JSON.stringify(spec, null, 2));
 fs.writeFileSync(usedFile, JSON.stringify([...used.filter((u) => u.slug !== slug), { slug, key: track.key, date: new Date().toISOString().slice(0, 10) }], null, 2));
 console.log(`music: ${track.title} (${track.mood})`);
+}
 
 (async () => {
   const pub = path.join(ROOT, "public", "carousel", slug);
@@ -43,17 +48,17 @@ console.log(`music: ${track.title} (${track.mood})`);
   const { bundle } = require("@remotion/bundler");
   const { selectComposition, renderMedia } = require("@remotion/renderer");
   const serveUrl = await bundle({ entryPoint: path.join(ROOT, "src", "index.ts") });
-  const inputProps = { spec };
+  const inputProps = { spec: noMusic ? { ...spec, music: "none" } : spec };
   const composition = await selectComposition({ serveUrl, id: "StoryVideo", inputProps });
   const out = path.join(ROOT, "out", `tiktok-${slug}`);
   fs.mkdirSync(out, { recursive: true });
-  const file = path.join(out, "video.mp4");
+  const file = path.join(out, noMusic ? "video-no-music.mp4" : "video.mp4");
   await renderMedia({ composition, serveUrl, codec: "h264", outputLocation: file, inputProps, concurrency: 4, onProgress: ({ progress }) => process.stdout.write(`\r${Math.round(progress * 100)}%`) });
   // loudness to the social-video standard (-14 LUFS, like TikTok/Reels) without changing the music/SFX balance
   const FFMPEG = require("ffmpeg-static"), tmp = file.replace(".mp4", "-raw.mp4");
   fs.renameSync(file, tmp);
   require("child_process").execFileSync(FFMPEG, ["-y", "-loglevel", "error", "-i", tmp, "-c:v", "copy", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-c:a", "aac", "-b:a", "192k", file]);
   fs.unlinkSync(tmp);
-  fs.writeFileSync(path.join(out, "music-credit.txt"), `🎵 Music: ${track.credit}`);
+  if (!noMusic) fs.writeFileSync(path.join(out, "music-credit.txt"), `🎵 Music: ${track.credit}`);
   console.log(`\nvideo: ${file} (${(composition.durationInFrames / 30).toFixed(1)}s)`);
 })();

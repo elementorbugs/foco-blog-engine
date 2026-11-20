@@ -102,6 +102,7 @@ the photo, story transitions between slides, light sound effects, music baked in
   force one with `--music <key>`. Never fall back to the same track ("the same music every time gets old fast").
   The license REQUIRES the credit line in the caption: `send.js --video` adds `🎵 Music: "<title>" Kevin MacLeod
   (incompetech.com), licensed under CC BY 4.0` to both captions; tell Adi to keep it.
+- **Effects-only version for TikTok (Adi, 2026-11-20: "the music is annoying, I love the effects"):** also render `node carousel/video.js <slug> --no-music` -> `video-no-music.mp4` (no credit needed). Adi adds a trending sound in TikTok and sets Volume: Original sound 100%, Added sound ~15-25%, so the effects stay on top.
 - **Music is baked in** under the effects (soft bed, fade in/out, -14 LUFS), because music added in the app would bury
   the effects. If Adi adds a trending sound anyway: lower the added sound in the app's Volume settings.
 - **Transitions belong to her story, never a technical swipe.** Per slide `"enter"`: `cut` (default, like tapping
