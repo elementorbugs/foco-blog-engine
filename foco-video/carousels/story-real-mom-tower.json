@@ -1,7 +1,7 @@
 {
   "slug": "story-real-mom-tower",
   "tiktok": {
-    "caption": "my toddler doesn't plan the tower. she just grabs the next tile. turns out it works for invoices too 🧱\n\nwhat's the task you keep saving for a \"quiet afternoon\"? 👇",
+    "caption": "my toddler doesn't plan the tower. she just grabs the next tile. turns out it works for client presentations too 🧱\n\nwhat's the task you keep saving for a quiet afternoon? 👇",
     "hashtags": [
       "#adhdmom",
       "#momswithadhd",
@@ -10,7 +10,7 @@
     ]
   },
   "instagram": {
-    "caption": "She doesn't plan the tower. She just grabs the next tile.\n\nI'd been saving my October invoice for a quiet afternoon. With a toddler, that afternoon doesn't exist. So I typed it into FOCO, tapped once, and it broke it down into three tiny steps. Two were done before she looked up from her tower.\n\nWhat's the task you keep saving for a quiet afternoon? 👇",
+    "caption": "She doesn't plan the tower. She just grabs the next tile.\n\nI'd been saving my client presentation for a quiet afternoon. With a toddler, that afternoon doesn't exist. So I typed it into FOCO, tapped once, and it broke it down into tiny steps. Two steps done in 8 minutes, and she never looked up from her tower.\n\nWhat's the task you keep saving for a quiet afternoon? 👇",
     "hashtags": [
       "#adhdmom",
       "#momswithadhd",
@@ -18,7 +18,7 @@
       "#adhdtips",
       "#freelancemom"
     ],
-    "altText": "Real home photos: a toddler stacks a tall magnet-tile tower on the floor next to her mom's laptop. The mom has been putting off her October invoice. She types it into FOCO, which breaks it into three tiny steps, makes a peace sign after two of them, and sends the invoice while the tower is still standing. Ends with the FOCO app and App Store and Google Play badges."
+    "altText": "Real home photos: a toddler stacks a tall magnet-tile tower next to her mom's open laptop. The mom has been putting off a client presentation due Friday. A real FOCO screenshot shows the presentation broken into small steps, with step 1 circled and an arrow to the tower: 1 step = 1 tile. She finishes two steps in 8 minutes and ends with the presentation started and the tower still standing. Ends with the FOCO app and App Store and Google Play badges."
   },
   "slides": [
     {
@@ -34,7 +34,7 @@
         {
           "k": "txt",
           "style": "serif",
-          "text": "my toddler built this whole tower",
+          "text": "she built this in 20 minutes.",
           "x": 60,
           "y": 300,
           "w": 900,
@@ -44,9 +44,9 @@
         {
           "k": "txt",
           "style": "ig",
-          "text": "my october invoice is still blank",
+          "text": "i haven't touched my client presentation.",
           "x": 62,
-          "y": 520,
+          "y": 430,
           "w": 880,
           "size": 46,
           "align": "left",
@@ -92,15 +92,16 @@
       "blocks": [
         {
           "k": "bg",
-          "file": "carousels/own/real-mom-tower/selfie-x.jpg",
-          "dim": 0.38
+          "file": "carousels/own/real-mom-tower/tower-wide-x.jpg",
+          "dim": 0.38,
+          "pos": "0% center"
         },
         {
           "k": "txt",
           "style": "ig",
-          "text": "i keep waiting for a quiet afternoon to do my invoices.",
+          "text": "i keep waiting for a quiet afternoon to work on it.",
           "x": 62,
-          "y": 420,
+          "y": 360,
           "w": 880,
           "size": 50,
           "align": "left"
@@ -108,11 +109,11 @@
         {
           "k": "txt",
           "style": "serif",
-          "text": "meanwhile i'm a whole month behind on getting paid.",
+          "text": "it's due friday.",
           "x": 60,
-          "y": 620,
+          "y": 520,
           "w": 900,
-          "size": 74,
+          "size": 96,
           "align": "left",
           "italic": true
         }
@@ -124,50 +125,71 @@
       "blocks": [
         {
           "k": "bg",
-          "file": "carousels/own/real-mom-tower/tower-build-x.jpg",
-          "dim": 0.5,
-          "blur": 16
+          "file": "carousels/own/real-mom-tower/tower-wide-x.jpg",
+          "dim": 0.35,
+          "pos": "90% center"
         },
         {
           "k": "txt",
           "style": "serif",
-          "text": "so i tried my toddler's way. one tile at a time.",
+          "text": "so i did it her way.",
           "x": 60,
-          "y": 260,
+          "y": 250,
           "w": 900,
-          "size": 68,
+          "size": 78,
           "align": "left"
         },
         {
           "k": "txt",
           "style": "ig",
-          "text": "i typed \"send october invoice\" into FOCO, tapped once, and it broke it down into tiny steps.",
+          "text": "typed it into FOCO. one tap broke it into steps.",
           "x": 62,
-          "y": 500,
+          "y": 370,
           "w": 880,
-          "size": 40,
-          "align": "left"
+          "size": 46,
+          "align": "left",
+          "color": "#FFD60A"
         },
         {
-          "k": "focosteps",
-          "steps": [
-            {
-              "text": "Pull up your October hours",
-              "min": 2
-            },
-            {
-              "text": "Add the client and the total",
-              "min": 3
-            },
-            {
-              "text": "Hit send",
-              "min": 1
-            }
+          "k": "shot",
+          "file": "carousels/own/real-mom-tower/shot-steps.png",
+          "x": 60,
+          "y": 520,
+          "w": 540,
+          "rot": -4
+        },
+        {
+          "k": "circle",
+          "cx": 345,
+          "cy": 842,
+          "rx": 250,
+          "ry": 58,
+          "rot": -4,
+          "color": "#FFD60A",
+          "seed": 7
+        },
+        {
+          "k": "arrow",
+          "from": [
+            610,
+            860
           ],
-          "x": 110,
-          "y": 720,
-          "w": 820,
-          "lit": 0
+          "to": [
+            680,
+            1080
+          ],
+          "bend": -0.3,
+          "color": "#FFD60A"
+        },
+        {
+          "k": "hand",
+          "text": "1 step = 1 tile",
+          "x": 600,
+          "y": 700,
+          "w": 440,
+          "size": 58,
+          "color": "#FFD60A",
+          "rot": -6
         }
       ]
     },
@@ -184,19 +206,19 @@
         {
           "k": "txt",
           "style": "serif",
-          "text": "first two tiles: done in 5 minutes ✌️",
+          "text": "step 1. step 2. ✌️",
           "x": 60,
           "y": 300,
           "w": 900,
-          "size": 72,
+          "size": 80,
           "align": "left"
         },
         {
           "k": "txt",
           "style": "ig",
-          "text": "my toddler didn't even look up from her tower.",
+          "text": "8 minutes. she didn't even look up.",
           "x": 62,
-          "y": 520,
+          "y": 430,
           "w": 880,
           "size": 46,
           "align": "left",
@@ -217,7 +239,7 @@
         {
           "k": "txt",
           "style": "serif",
-          "text": "third tile: invoice sent.",
+          "text": "presentation: started.",
           "x": 60,
           "y": 300,
           "w": 900,
@@ -227,7 +249,7 @@
         {
           "k": "txt",
           "style": "ig",
-          "text": "her tower's still standing.",
+          "text": "tower: still standing.",
           "x": 62,
           "y": 430,
           "w": 880,
