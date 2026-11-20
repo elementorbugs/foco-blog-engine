@@ -1,0 +1,329 @@
+{
+  "slug": "story-real-mom-nap",
+  "tiktok": {
+    "caption": "nap time math: 40 minutes, 3 options, no decisions 🫠 this time i just said it quietly and did the first tiny step.\n\nwhat do you do with nap time? 👇",
+    "hashtags": [
+      "#adhdmom",
+      "#momswithadhd",
+      "#naptime",
+      "#workfromhomemom"
+    ]
+  },
+  "instagram": {
+    "caption": "She's finally asleep. I have maybe 40 minutes, and I usually burn them deciding what to do.\n\nThis time I quietly told FOCO \"update my website,\" and it gave me one tiny first step: pick 3 photos for the homepage. Silence on, hit start. 3 steps in, she was still asleep. The website isn't done, but it's started.\n\nWhat do you do with nap time? 👇",
+    "hashtags": [
+      "#adhdmom",
+      "#momswithadhd",
+      "#naptime",
+      "#workfromhomemom",
+      "#freelancemom"
+    ],
+    "altText": "Real home photos at nap time: a toddler asleep in her crib in a dim room. The mom has about 40 minutes and usually loses them lying down. This time she quietly tells FOCO \"update my website\" on the Hold to speak screen, gets one tiny first step, picks Silence on FOCO's focus screen and hits start next to the crib. Three steps later the toddler is still asleep and the website is started. Ends with the FOCO app and App Store and Google Play badges."
+  },
+  "slides": [
+    {
+      "layout": "story",
+      "id": "s1",
+      "blocks": [
+        {
+          "k": "bg",
+          "file": "carousels/own/real-mom-nap/crib.jpg",
+          "dim": 0.25
+        },
+        {
+          "k": "txt",
+          "style": "serif",
+          "text": "she's finally asleep.",
+          "x": 60,
+          "y": 300,
+          "w": 900,
+          "size": 80,
+          "align": "left"
+        },
+        {
+          "k": "txt",
+          "style": "ig",
+          "text": "i have maybe 40 minutes.",
+          "x": 62,
+          "y": 420,
+          "w": 880,
+          "size": 46,
+          "align": "left",
+          "color": "#FFD60A"
+        }
+      ]
+    },
+    {
+      "layout": "story",
+      "id": "s2",
+      "blocks": [
+        {
+          "k": "bg",
+          "file": "carousels/own/real-mom-nap/wall.jpg",
+          "dim": 0.22,
+          "pos": "30% center"
+        },
+        {
+          "k": "txt",
+          "style": "serif",
+          "text": "do i work? do i nap?",
+          "x": 60,
+          "y": 300,
+          "w": 900,
+          "size": 80,
+          "align": "left"
+        },
+        {
+          "k": "txt",
+          "style": "ig",
+          "text": "or the website i've been avoiding since june?",
+          "x": 62,
+          "y": 420,
+          "w": 880,
+          "size": 46,
+          "align": "left",
+          "color": "#FFD60A"
+        }
+      ]
+    },
+    {
+      "layout": "story",
+      "id": "s3",
+      "blocks": [
+        {
+          "k": "bg",
+          "file": "carousels/own/real-mom-nap/bed.jpg",
+          "dim": 0.3
+        },
+        {
+          "k": "txt",
+          "style": "serif",
+          "text": "usually i just lie down for a sec.",
+          "x": 60,
+          "y": 300,
+          "w": 900,
+          "size": 76,
+          "align": "left"
+        },
+        {
+          "k": "txt",
+          "style": "ig",
+          "text": "and the 40 minutes are gone.",
+          "x": 62,
+          "y": 530,
+          "w": 880,
+          "size": 46,
+          "align": "left",
+          "color": "#FFD60A"
+        }
+      ]
+    },
+    {
+      "layout": "story",
+      "id": "s4",
+      "blocks": [
+        {
+          "k": "bg",
+          "file": "carousels/own/real-mom-nap/laptop.jpg",
+          "dim": 0.45,
+          "blur": 10,
+          "pos": "60% center"
+        },
+        {
+          "k": "txt",
+          "style": "serif",
+          "text": "this time i told FOCO instead. quietly.",
+          "x": 60,
+          "y": 250,
+          "w": 900,
+          "size": 72,
+          "align": "left"
+        },
+        {
+          "k": "txt",
+          "style": "ig",
+          "text": "\"update my website.\" that's all i said.",
+          "x": 62,
+          "y": 480,
+          "w": 880,
+          "size": 46,
+          "align": "left",
+          "color": "#FFD60A"
+        },
+        {
+          "k": "shot",
+          "file": "carousels/own/real-mom-nap/shot-voice.png",
+          "x": 250,
+          "y": 600,
+          "w": 520,
+          "rot": 3
+        },
+        {
+          "k": "circle",
+          "cx": 495,
+          "cy": 1205,
+          "rx": 95,
+          "ry": 80,
+          "color": "#FFD60A",
+          "seed": 4
+        },
+        {
+          "k": "hand",
+          "text": "🤫",
+          "x": 600,
+          "y": 1120,
+          "w": 200,
+          "size": 90,
+          "rot": -6
+        }
+      ]
+    },
+    {
+      "layout": "story",
+      "id": "s5",
+      "enter": "focus",
+      "blocks": [
+        {
+          "k": "bg",
+          "file": "carousels/own/real-mom-nap/laptop.jpg",
+          "dim": 0.35,
+          "pos": "60% center"
+        },
+        {
+          "k": "txt",
+          "style": "serif",
+          "text": "it gave me one tiny first step:",
+          "x": 60,
+          "y": 250,
+          "w": 900,
+          "size": 70,
+          "align": "left"
+        },
+        {
+          "k": "txt",
+          "style": "ig",
+          "text": "pick 3 photos for the homepage.",
+          "x": 62,
+          "y": 400,
+          "w": 880,
+          "size": 46,
+          "align": "left",
+          "color": "#FFD60A"
+        },
+        {
+          "k": "shot",
+          "file": "carousels/own/real-mom-nap/shot-focus.png",
+          "x": 80,
+          "y": 560,
+          "w": 560,
+          "rot": -3
+        },
+        {
+          "k": "arrow",
+          "from": [
+            800,
+            1000
+          ],
+          "to": [
+            600,
+            1070
+          ],
+          "bend": 0.3,
+          "color": "#FFD60A"
+        },
+        {
+          "k": "hand",
+          "text": "hit start",
+          "x": 690,
+          "y": 910,
+          "w": 360,
+          "size": 62,
+          "color": "#FFD60A",
+          "rot": -6
+        }
+      ]
+    },
+    {
+      "layout": "story",
+      "id": "s6",
+      "blocks": [
+        {
+          "k": "bg",
+          "file": "carousels/own/real-mom-nap/laptop.jpg",
+          "dim": 0.3,
+          "pos": "15% center"
+        },
+        {
+          "k": "txt",
+          "style": "serif",
+          "text": "3 steps in, she's still asleep.",
+          "x": 60,
+          "y": 300,
+          "w": 900,
+          "size": 76,
+          "align": "left"
+        },
+        {
+          "k": "txt",
+          "style": "ig",
+          "text": "the website isn't done. but it's started.",
+          "x": 62,
+          "y": 530,
+          "w": 880,
+          "size": 46,
+          "align": "left",
+          "color": "#FFD60A"
+        }
+      ]
+    },
+    {
+      "layout": "story",
+      "id": "end",
+      "blocks": [
+        {
+          "k": "bg",
+          "file": "carousels/own/real-mom-nap/crib.jpg",
+          "dim": 0.55,
+          "blur": 14
+        },
+        {
+          "k": "mascot",
+          "state": "focus",
+          "x": 380,
+          "y": 330,
+          "h": 320
+        },
+        {
+          "k": "txt",
+          "style": "serif",
+          "text": "start the task you're avoiding.",
+          "x": 40,
+          "y": 720,
+          "w": 1000,
+          "size": 84,
+          "align": "center"
+        },
+        {
+          "k": "txt",
+          "style": "ig",
+          "text": "say it. break it down. focus for 5 minutes.",
+          "x": 40,
+          "y": 900,
+          "w": 1000,
+          "size": 46,
+          "align": "center",
+          "color": "#FFD60A"
+        },
+        {
+          "k": "badges",
+          "x": 140,
+          "y": 1060
+        }
+      ]
+    }
+  ],
+  "music": "factory/musiclib/wallpaper.mp3",
+  "musicKey": "wallpaper",
+  "musicCredit": "\"Wallpaper\" Kevin MacLeod (incompetech.com), licensed under CC BY 4.0",
+  "musicVolume": 0.24
+}
