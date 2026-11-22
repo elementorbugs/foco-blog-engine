@@ -1,3594 +1,3708 @@
 {
- "note": "Memory of the blog agent. Every app or tool ever proposed. status: proposed, picked, drafted, published, skipped. Never re-propose an entry before its revisit_after date. See .claude/skills/blog-agent/SKILL.md.",
- "candidates": [
-  {
-   "name": "Recordo",
-   "slug": "recordo-app-review",
-   "status": "published",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "recordo app": {
-     "volume": 10,
-     "sd": 18
-    },
-    "recordo app review": {
-     "volume": 0,
-     "sd": 12
-    }
-   },
-   "note": "Asked for by Adi. Low volume, no independent review ranks. First run through the agent flow.",
-   "revisit_after": null,
-   "published_on": "2026-11-05",
-   "url": "https://www.tryfoco.com/recordo-app-review/"
-  },
-  {
-   "status": "proposed",
-   "proposed_on": "2026-11-05",
-   "revisit_after": null,
-   "name": "Lunatask",
-   "slug": "lunatask-review",
-   "keywords_us": {
-    "lunatask": {
-     "volume": 880,
-     "sd": 28
-    },
-    "lunatask review": {
-     "volume": 40,
-     "sd": 22
-    },
-    "lunatask app": {
-     "volume": 50,
-     "sd": 30
-    },
-    "lunatask app review": {
-     "volume": 0,
-     "sd": 12
-    }
-   },
-   "note": "Review term is 40/mo, below the 50 threshold; brand term is 880 but mostly navigational. SERP is weak. gap-scan clean."
-  },
-  {
-   "status": "proposed",
-   "proposed_on": "2026-11-05",
-   "revisit_after": null,
-   "name": "Akiflow",
-   "slug": "akiflow-review",
-   "keywords_us": {
-    "akiflow review": {
-     "volume": 110,
-     "sd": 27
-    },
-    "akiflow": {
-     "volume": 4400,
-     "sd": 46
-    },
-    "akiflow app": {
-     "volume": 90,
-     "sd": 35
-    },
-    "akiflow app review": {
-     "volume": 0,
-     "sd": 12
-    }
-   },
-   "note": "Recommended. SERP already has several dedicated reviews. Only mention on site is a section of /best-ai-calendar-apps-for-adhd/."
-  },
-  {
-   "status": "published",
-   "proposed_on": "2026-11-05",
-   "revisit_after": null,
-   "name": "Sunsama",
-   "slug": "sunsama-review",
-   "keywords_us": {
-    "sunsama review": {
-     "volume": 170,
-     "sd": 25
-    },
-    "sunsama": {
-     "volume": 8100,
-     "sd": 44
-    },
-    "sunsama app": {
-     "volume": 480,
-     "sd": 28
-    },
-    "sunsama app review": {
-     "volume": 10,
-     "sd": 19
-    }
-   },
-   "note": "Partial overlap with /sunsama-alternative/ (H3s on cost and ADHD fit). Trim those to one line and link out if picked.",
-   "published_on": "2026-11-05",
-   "url": "https://www.tryfoco.com/sunsama-review/"
-  },
-  {
-   "name": "Shimmer",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "shimmer adhd": {
-     "volume": 260,
-     "sd": 43
-    },
-    "shimmer adhd review": {
-     "volume": 0,
-     "sd": 12
-    }
-   },
-   "note": "SD above threshold on the main term.",
-   "revisit_after": "2027-02-01"
-  },
-  {
-   "name": "Hypermonkey",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "hypermonkey": {
-     "volume": 90,
-     "sd": 44
-    }
-   },
-   "note": "SD above threshold.",
-   "revisit_after": "2027-02-01"
-  },
-  {
-   "name": "Thruday",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "thruday": {
-     "volume": 165000,
-     "sd": 68
-    }
-   },
-   "note": "Volume looks like a misspelling of Thursday, not the app.",
-   "revisit_after": null
-  },
-  {
-   "name": "Focus One",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "focus one adhd": {
-     "volume": 0,
-     "sd": 12
-    }
-   },
-   "note": "2 US ratings, no demand.",
-   "revisit_after": "2027-02-01"
-  },
-  {
-   "name": "JustStart",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "juststart adhd": {
-     "volume": 0,
-     "sd": 17
-    }
-   },
-   "note": "0 US ratings, no demand.",
-   "revisit_after": "2027-02-01"
-  },
-  {
-   "name": "Indy",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "indy adhd app": {
-     "volume": 20,
-     "sd": 13
-    }
-   },
-   "note": "Low volume, falling since January.",
-   "revisit_after": "2027-02-01"
-  },
-  {
-   "name": "Amazing Marvin",
-   "slug": "amazing-marvin-review",
-   "status": "proposed",
-   "proposed_on": "2026-11-05",
-   "revisit_after": null,
-   "keywords_us": {
-    "amazing marvin": {
-     "volume": 1600,
-     "sd": 33
-    },
-    "amazing marvin review": {
-     "volume": 50,
-     "sd": 22
-    }
-   },
-   "note": "Weak SERP. Overlap with /foco-vs-amazing-marvin/ and a draft /amazing-marvin-alternative/ (#4450)."
-  },
-  {
-   "name": "Motion",
-   "status": "backlog",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "motion app review": {
-     "volume": 390,
-     "sd": 28
-    }
-   },
-   "note": "gap-scan 2026-11-05: overlap with /motion-app-alternative/, see scan.",
-   "revisit_after": null
-  },
-  {
-   "name": "Todoist",
-   "status": "backlog",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "todoist review": {
-     "volume": 390,
-     "sd": 25
-    }
-   },
-   "note": "gap-scan 2026-11-05: high overlap, 443 mentions across 34 posts, several FAQ headings repeat (Is Todoist free?, good for ADHD, cost).",
-   "revisit_after": null
-  },
-  {
-   "name": "TickTick",
-   "status": "backlog",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "ticktick review": {
-     "volume": 210,
-     "sd": 28
-    }
-   },
-   "note": "gap-scan 2026-11-05: high overlap, 319 mentions across 26 posts, repeated FAQ headings.",
-   "revisit_after": null
-  },
-  {
-   "name": "Reclaim",
-   "status": "published",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "reclaim ai review": {
-     "volume": 210,
-     "sd": 23
-    },
-    "reclaim ai": {
-     "volume": 6600,
-     "sd": 36
-    },
-    "reclaim ai pricing": {
-     "volume": 110,
-     "sd": 18
-    }
-   },
-   "note": "gap-scan 2026-11-05: low overlap, sections in 4 posts, no dedicated post.",
-   "revisit_after": null,
-   "slug": "reclaim-ai-review",
-   "published_on": "2026-11-05",
-   "url": "https://www.tryfoco.com/reclaim-ai-review/"
-  },
-  {
-   "name": "Sweepy",
-   "status": "published",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "sweepy app review": {
-     "volume": 70,
-     "sd": 35
-    }
-   },
-   "note": "SD above threshold.",
-   "revisit_after": "2027-02-01",
-   "published_on": "2026-11-14",
-   "inbound_links": [
-    "adhd-cleaning-planner",
-    "dubbii-review",
-    "habitica-review"
-   ]
-  },
-  {
-   "name": "Time Timer",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "time timer app": {
-     "volume": 1000,
-     "sd": 46
-    }
-   },
-   "note": "SD above threshold; spiky volume.",
-   "revisit_after": "2027-02-01"
-  },
-  {
-   "name": "Focus Keeper",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "focus keeper app": {
-     "volume": 140,
-     "sd": 49
-    }
-   },
-   "note": "SD above threshold.",
-   "revisit_after": "2027-02-01"
-  },
-  {
-   "name": "Yoodoo",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "yoodoo app": {
-     "volume": 50,
-     "sd": 31
-    }
-   },
-   "note": "SD just above threshold; 22 US ratings.",
-   "revisit_after": "2027-02-01"
-  },
-  {
-   "name": "Superlist",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "superlist review": {
-     "volume": 30,
-     "sd": 29
-    }
-   },
-   "note": "Low volume.",
-   "revisit_after": "2027-02-01"
-  },
-  {
-   "name": "NotePlan",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "noteplan review": {
-     "volume": 30,
-     "sd": 39
-    }
-   },
-   "note": "Low volume.",
-   "revisit_after": "2027-02-01"
-  },
-  {
-   "name": "Lifestack",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "lifestack review": {
-     "volume": 30,
-     "sd": 18
-    }
-   },
-   "note": "Low volume on review term; lifestack app 110, SD 37.",
-   "revisit_after": "2027-02-01"
-  },
-  {
-   "name": "Morgen",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "morgen calendar review": {
-     "volume": 10,
-     "sd": 15
-    }
-   },
-   "note": "Low volume.",
-   "revisit_after": "2027-02-01"
-  },
-  {
-   "name": "Me+",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "me+ app review": {
-     "volume": 10,
-     "sd": 13
-    }
-   },
-   "note": "Low volume.",
-   "revisit_after": "2027-02-01"
-  },
-  {
-   "name": "Comigo",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "comigo adhd": {
-     "volume": 10,
-     "sd": 18
-    }
-   },
-   "note": "Low volume.",
-   "revisit_after": "2027-02-01"
-  },
-  {
-   "name": "Freedom",
-   "status": "proposed",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "freedom app review": {
-     "volume": 110,
-     "sd": 22
-    }
-   },
-   "note": "SERP: Reddit test post, blog reviews, stores. See mentions in existing posts.",
-   "revisit_after": null
-  },
-  {
-   "name": "Streaks",
-   "status": "proposed",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "streaks app review": {
-     "volume": 50,
-     "sd": 26
-    }
-   },
-   "note": "SERP: App Store, 2018 blog, Reddit, MacStories. iPhone-only style habit tracker.",
-   "revisit_after": null
-  },
-  {
-   "name": "Things 3",
-   "status": "published",
-   "proposed_on": "2026-11-09",
-   "keywords_us": {
-    "things 3 review": {
-     "volume": 70,
-     "sd": 31
-    }
-   },
-   "note": "Re-checked 2026-11-09 with the whole keyword cluster (the first check only looked at \"<name> review\").",
-   "cluster_us": {
-    "things 3": [
-     6600,
-     30
-    ],
-    "things 3 vs todoist": [
-     140,
-     24
-    ],
-    "todoist vs things 3": [
-     110,
-     18
-    ],
-    "tick tick vs things 3": [
-     70,
-     20
-    ],
-    "things 3 review": [
-     70,
-     31
-    ],
-    "things 3 price": [
-     50,
-     32
-    ],
-    "things 3 alternative": [
-     40,
-     30
-    ],
-    "is things 3 worth it": [
-     30,
-     25
-    ]
-   },
-   "picked_on": "2026-11-12",
-   "post_id": 6099,
-   "slug": "things-3-review",
-   "published_on": "2026-11-12",
-   "inbound_links": [
-    "todoist-vs-ticktick",
-    "todoist-alternatives",
-    "ticktick-alternative"
-   ]
-  },
-  {
-   "name": "Any.do",
-   "status": "proposed",
-   "proposed_on": "2026-11-09",
-   "keywords_us": {
-    "any.do review": {
-     "volume": 70,
-     "sd": 33
-    }
-   },
-   "note": "Re-checked 2026-11-09 with the whole keyword cluster (the first check only looked at \"<name> review\").",
-   "cluster_us": {
-    "any.do": [
-     2900,
-     86
-    ],
-    "todoist vs any.do": [
-     140,
-     32
-    ],
-    "any.do review": [
-     70,
-     33
-    ],
-    "any.do pricing": [
-     70,
-     38
-    ],
-    "is any.do free": [
-     40,
-     24
-    ],
-    "any.do vs ticktick": [
-     40,
-     17
-    ],
-    "any.do alternative": [
-     40,
-     32
-    ]
-   },
-   "cannibalization": "day-to-day-planner-app has an Any.do H3"
-  },
-  {
-   "name": "Clockwise",
-   "status": "backlog",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "clockwise review": {
-     "volume": 50,
-     "sd": 29
-    }
-   },
-   "note": "Falling; not gap-scanned.",
-   "revisit_after": null
-  },
-  {
-   "name": "Cold Turkey",
-   "status": "published",
-   "proposed_on": "2026-11-09",
-   "keywords_us": {
-    "cold turkey blocker review": {
-     "volume": 40,
-     "sd": 22
-    }
-   },
-   "note": "Re-checked 2026-11-09 with the whole keyword cluster (the first check only looked at \"<name> review\").",
-   "cluster_us": {
-    "cold turkey blocker": [
-     4400,
-     26
-    ],
-    "cold turkey blocker review": [
-     40,
-     22
-    ],
-    "cold turkey blocker pro": [
-     50,
-     31
-    ],
-    "is cold turkey blocker free": [
-     30,
-     28
-    ],
-    "how to uninstall cold turkey blocker": [
-     70,
-     29
-    ],
-    "cold turkey blocker uninstall": [
-     90,
-     29
-    ]
-   },
-   "answer": "picked 2026-11-09",
-   "post_id": 6055,
-   "published": "2026-11-09"
-  },
-  {
-   "name": "Habitify",
-   "status": "published",
-   "proposed_on": "2026-11-09",
-   "keywords_us": {
-    "habitify review": {
-     "volume": 30,
-     "sd": 37
-    }
-   },
-   "note": "Re-checked 2026-11-09 with the whole keyword cluster (the first check only looked at \"<name> review\").",
-   "cluster_us": {
-    "habitify": [
-     1600,
-     32
-    ],
-    "habitify habit tracker app": [
-     720,
-     5
-    ],
-    "habitify app": [
-     210,
-     36
-    ],
-    "habitify review": [
-     30,
-     37
-    ],
-    "is habitify free": [
-     30,
-     15
-    ],
-    "habitify price": [
-     30,
-     18
-    ],
-    "habitify vs streaks": [
-     20,
-     13
-    ]
-   },
-   "picked_on": "2026-11-10",
-   "post_id": 6068,
-   "slug": "habitify-review",
-   "published_on": "2026-11-10",
-   "inbound_links": [
-    "habitica-review",
-    "finch-app-review",
-    "adhd-habit-tracker-printable"
-   ]
-  },
-  {
-   "name": "RescueTime",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "rescuetime review": {
-     "volume": 30,
-     "sd": 42
-    }
-   },
-   "note": "Low volume.",
-   "revisit_after": "2027-02-01"
-  },
-  {
-   "name": "Rize",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "rize app review": {
-     "volume": 30,
-     "sd": 14
-    }
-   },
-   "note": "Low volume.",
-   "revisit_after": "2027-02-01"
-  },
-  {
-   "name": "One Sec",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "one sec app review": {
-     "volume": 30,
-     "sd": 24
-    }
-   },
-   "note": "Low volume.",
-   "revisit_after": "2027-02-01"
-  },
-  {
-   "name": "Flow Club",
-   "status": "published",
-   "proposed_on": "2026-11-09",
-   "keywords_us": {
-    "flow club review": {
-     "volume": 30,
-     "sd": 34
-    }
-   },
-   "note": "Re-checked 2026-11-09 with the whole keyword cluster (the first check only looked at \"<name> review\").",
-   "cluster_us": {
-    "flow club": [
-     3600,
-     15
-    ],
-    "flow club body doubling": [
-     320,
-     28
-    ],
-    "flow club adhd": [
-     90,
-     23
-    ],
-    "flow club price": [
-     40,
-     24
-    ],
-    "flow club pricing": [
-     30,
-     14
-    ],
-    "flow club alternative": [
-     30,
-     27
-    ],
-    "flow club review": [
-     30,
-     34
-    ]
-   },
-   "picked_on": "2026-11-12",
-   "post_id": 6090,
-   "slug": "flow-club-review",
-   "published_on": "2026-11-12",
-   "inbound_links": [
-    "focusmate-review",
-    "body-doubling-adhd",
-    "how-to-focus-with-adhd"
-   ]
-  },
-  {
-   "name": "Flown",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "flown review": {
-     "volume": 0,
-     "sd": 17
-    }
-   },
-   "note": "No volume.",
-   "revisit_after": "2027-02-01"
-  },
-  {
-   "name": "Focus@Will",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "focus@will review": {
-     "volume": 0,
-     "sd": 17
-    }
-   },
-   "note": "No volume.",
-   "revisit_after": "2027-02-01"
-  },
-  {
-   "name": "Solo Focus",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "solo focus adhd": {
-     "volume": 0,
-     "sd": 12
-    }
-   },
-   "note": "No volume; new listing.",
-   "revisit_after": "2027-02-01"
-  },
-  {
-   "name": "Focana",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-05",
-   "keywords_us": {
-    "focana": {
-     "volume": 30,
-     "sd": 31
-    }
-   },
-   "note": "Low volume; new.",
-   "revisit_after": "2027-02-01"
-  },
-  {
-   "status": "proposed",
-   "proposed_on": "2026-11-06",
-   "revisit_after": null,
-   "name": "Neurolist",
-   "slug": "neurolist-app-review",
-   "keywords_us": {
-    "neurolist app": {
-     "volume": 110,
-     "sd": 30
-    },
-    "neurolist app review": {
-     "volume": 50,
-     "sd": 28
-    },
-    "neurolist review": {
-     "volume": 10,
-     "sd": 18
-    }
-   },
-   "app_store": {
-    "id": 6468689182,
-    "rating": 4.81,
-    "ratings": 916,
-    "last_update": "2026-04-21"
-   },
-   "note": "Direct task-breakdown competitor. SERP (collected 2026-09-20): own site, stores, Reddit launch post, Instagram, aggregators. No independent review ranks. gap-scan 2026-11-06 clean."
-  },
-  {
-   "status": "published",
-   "proposed_on": "2026-11-06",
-   "revisit_after": null,
-   "name": "Dubbii",
-   "slug": "dubbii-app-review",
-   "keywords_us": {
-    "dubbii app": {
-     "volume": 320,
-     "sd": 30
-    },
-    "dubbii app review": {
-     "volume": 30,
-     "sd": 29
-    },
-    "dubbii review": {
-     "volume": 0,
-     "sd": 17
-    }
-   },
-   "app_store": {
-    "id": 6450302677,
-    "rating": 4.85,
-    "ratings": 765,
-    "last_update": "2026-11-02"
-   },
-   "note": "Body doubling app. Volume is the brand term; review term is only 30. SERP (2026-09-09): stores, own site, Reddit, Facebook, the developer agency. No independent review ranks. gap-scan clean on the name; 'body doubling app' appears in lofi-town-review, best-apps-for-adhd-task-paralysis, adhd-activation without targeting Dubbii.",
-   "published_on": "2026-11-14",
-   "inbound_links": [
-    "flow-club-review",
-    "body-doubling-adhd",
-    "adhd-cleaning-planner"
-   ]
-  },
-  {
-   "status": "published",
-   "proposed_on": "2026-11-06",
-   "revisit_after": null,
-   "name": "Joon",
-   "slug": "joon-app-review",
-   "keywords_us": {
-    "joon app": {
-     "volume": 1000,
-     "sd": 29
-    },
-    "joon app review": {
-     "volume": 110,
-     "sd": 30
-    },
-    "joon review": {
-     "volume": 140,
-     "sd": 31
-    }
-   },
-   "app_store": {
-    "id": 1482225056,
-    "rating": 4.68,
-    "ratings": 6563,
-    "last_update": "2026-09-15"
-   },
-   "note": "For parents of kids with ADHD, not FOCO's adult user; fits P4 only. SERP (2026-09-20): Reddit, ChoosingTherapy (DA 60), stores, Facebook, small blogs (dinkumtribe, timily). Independent reviews exist but are weak. gap-scan clean.",
-   "picked_on": "2026-11-06",
-   "post_id": 5907,
-   "published_on": "2026-11-06"
-  },
-  {
-   "status": "not_proposed",
-   "proposed_on": "2026-11-06",
-   "revisit_after": "2027-02-01",
-   "name": "Blitzit",
-   "keywords_us": {
-    "blitzit app": {
-     "volume": 140,
-     "sd": 30
-    },
-    "blitzit review": {
-     "volume": 40,
-     "sd": 34
-    },
-    "blitzit app review": {
-     "volume": 40,
-     "sd": 23
-    }
-   },
-   "note": "Qualifies on the brand term only, cut by the limit of 3. Search trend fell through 2026, only 10 US iOS ratings; not ADHD-specific."
-  },
-  {
-   "status": "not_proposed",
-   "proposed_on": "2026-11-06",
-   "revisit_after": "2027-02-01",
-   "name": "Focus Bear",
-   "keywords_us": {
-    "focus bear app": {
-     "volume": 30,
-     "sd": 33
-    },
-    "focus bear review": {
-     "volume": 10,
-     "sd": 13
-    },
-    "focus bear app review": {
-     "volume": 10,
-     "sd": 5
-    }
-   },
-   "note": "Low volume, no clear momentum."
-  },
-  {
-   "status": "not_proposed",
-   "proposed_on": "2026-11-06",
-   "revisit_after": "2027-02-01",
-   "name": "Bixie",
-   "keywords_us": {
-    "bixie app": {
-     "volume": 10,
-     "sd": 18
-    },
-    "bixie app review": {
-     "volume": 0,
-     "sd": 12
-    }
-   },
-   "note": "Low volume, no clear momentum."
-  },
-  {
-   "status": "not_proposed",
-   "proposed_on": "2026-11-06",
-   "revisit_after": "2027-02-01",
-   "name": "Sprout ADHD",
-   "keywords_us": {
-    "sprout adhd app": {
-     "volume": 10,
-     "sd": 14
-    }
-   },
-   "note": "Low volume, no clear momentum."
-  },
-  {
-   "status": "not_proposed",
-   "proposed_on": "2026-11-06",
-   "revisit_after": "2027-02-01",
-   "name": "Soothfy",
-   "keywords_us": {
-    "soothfy app": {
-     "volume": 20,
-     "sd": 18
-    }
-   },
-   "note": "Low volume, no clear momentum."
-  },
-  {
-   "status": "not_proposed",
-   "proposed_on": "2026-11-06",
-   "revisit_after": "2027-02-01",
-   "name": "Splitti",
-   "keywords_us": {
-    "splitti app": {
-     "volume": 10,
-     "sd": 18
-    }
-   },
-   "note": "Low volume, no clear momentum."
-  },
-  {
-   "status": "not_proposed",
-   "proposed_on": "2026-11-06",
-   "revisit_after": "2027-02-01",
-   "name": "ADHD Easy-Do",
-   "keywords_us": {
-    "adhd easy-do app": {
-     "volume": 0,
-     "sd": 12
-    }
-   },
-   "note": "Low volume, no clear momentum."
-  },
-  {
-   "status": "not_proposed",
-   "proposed_on": "2026-11-06",
-   "revisit_after": "2027-02-01",
-   "name": "Calma",
-   "keywords_us": {
-    "calma adhd app": {
-     "volume": 0,
-     "sd": 12
-    }
-   },
-   "note": "Low volume, no clear momentum."
-  },
-  {
-   "status": "not_proposed",
-   "proposed_on": "2026-11-06",
-   "revisit_after": "2027-02-01",
-   "name": "Minddump",
-   "keywords_us": {
-    "minddump app": {
-     "volume": 0,
-     "sd": 17
-    }
-   },
-   "note": "Low volume, no clear momentum."
-  },
-  {
-   "status": "not_proposed",
-   "proposed_on": "2026-11-06",
-   "revisit_after": "2027-02-01",
-   "name": "DeeDee",
-   "keywords_us": {
-    "deedee adhd app": {
-     "volume": 0,
-     "sd": 12
-    }
-   },
-   "note": "Low volume, no clear momentum."
-  },
-  {
-   "status": "not_proposed",
-   "proposed_on": "2026-11-06",
-   "revisit_after": "2027-02-01",
-   "name": "Univi",
-   "keywords_us": {
-    "univi app": {
-     "volume": 10,
-     "sd": 19
-    }
-   },
-   "note": "Low volume, no clear momentum."
-  },
-  {
-   "status": "not_proposed",
-   "proposed_on": "2026-11-06",
-   "revisit_after": "2027-02-01",
-   "name": "Neuro Notion",
-   "keywords_us": {
-    "neuro notion adhd": {
-     "volume": 0,
-     "sd": 12
-    }
-   },
-   "note": "Low volume, no clear momentum."
-  },
-  {
-   "name": "Tweek",
-   "slug": "tweek-app-review",
-   "status": "proposed",
-   "proposed_on": "2026-11-07",
-   "revisit_after": null,
-   "keywords_us": {
-    "tweek app": {
-     "volume": 170,
-     "sd": 27
-    },
-    "tweek calendar": {
-     "volume": 390,
-     "sd": 38
-    },
-    "tweek review": {
-     "volume": 10,
-     "sd": 20
-    },
-    "tweek app review": {
-     "volume": 10,
-     "sd": 13
-    }
-   },
-   "note": "Minimal weekly planner (iOS 4.8, 1,287 US ratings, updated 2026-11-02). SERP for 'tweek app' (2026-09-14): own site, stores, Reddit 2021, Softonic, one Medium long-term review, Morgen alternatives list. gap-scan clean (no mentions; /adhd-weekly-planner/ covers the generic term)."
-  },
-  {
-   "name": "Owaves",
-   "slug": "owaves-app-review",
-   "status": "proposed",
-   "proposed_on": "2026-11-07",
-   "revisit_after": null,
-   "keywords_us": {
-    "owaves app": {
-     "volume": 50,
-     "sd": 29
-    },
-    "owaves review": {
-     "volume": 10,
-     "sd": 18
-    }
-   },
-   "note": "Circular visual day planner / body clock (iOS 4.6, 1,848 US ratings). Borderline: 50/mo exactly. SERP (2026-09-29): own site, App Store, Reddit, Instagram, CNET download, Softonic; no independent review. gap-scan clean."
-  },
-  {
-   "name": "Bearable",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-07",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {
-    "bearable app": {
-     "volume": 1300,
-     "sd": 31
-    },
-    "bearable app review": {
-     "volume": 110,
-     "sd": 43
-    }
-   },
-   "note": "Symptom/mood tracker. bearable app 1300 SD 31; bearable app review 110 SD 43. Above SD threshold."
-  },
-  {
-   "name": "How We Feel",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-07",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {
-    "how we feel app": {
-     "volume": 4400,
-     "sd": 35
-    },
-    "how we feel app review": {
-     "volume": 40,
-     "sd": 30
-    }
-   },
-   "note": "Emotion check-in app. how we feel app 4400 SD 35; review 40 SD 30. SD above threshold on main term."
-  },
-  {
-   "name": "Tangerine",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-07",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {
-    "tangerine app": {
-     "volume": 170,
-     "sd": 42
-    }
-   },
-   "note": "Self-care habit app. tangerine app 170 SD 42; review 10."
-  },
-  {
-   "name": "EndeavorOTC",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-07",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {
-    "endeavorotc": {
-     "volume": 390,
-     "sd": 39
-    },
-    "endeavorotc review": {
-     "volume": 20,
-     "sd": 21
-    }
-   },
-   "note": "Digital therapeutic for adult ADHD. endeavorotc 390 SD 39; review 20; app 10. SD above threshold, medical claims high-stakes."
-  },
-  {
-   "name": "Super Productivity",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-07",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {
-    "super productivity app": {
-     "volume": 320,
-     "sd": 40
-    }
-   },
-   "note": "Open-source to-do/timer. super productivity app 320 SD 40."
-  },
-  {
-   "name": "Leantime",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-07",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {
-    "leantime": {
-     "volume": 720,
-     "sd": 30
-    },
-    "leantime review": {
-     "volume": 10,
-     "sd": 26
-    }
-   },
-   "note": "Self-hosted PM tool marketed as ADHD-friendly. leantime 720 SD 30 but navigational (own site holds top 10); review 10. B2B, poor fit."
-  },
-  {
-   "name": "Daily Bean",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-07",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {
-    "daily bean app": {
-     "volume": 110,
-     "sd": 31
-    }
-   },
-   "note": "Mood journal. daily bean app 110 SD 31, weak ADHD fit."
-  },
-  {
-   "name": "Brili",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-07",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {
-    "brili app": {
-     "volume": 70,
-     "sd": 31
-    }
-   },
-   "note": "Kids routine app. brili app 70 SD 31."
-  },
-  {
-   "name": "LifeUp",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-07",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {
-    "lifeup app": {
-     "volume": 70,
-     "sd": 35
-    }
-   },
-   "note": "Gamified to-do. lifeup app 70 SD 35."
-  },
-  {
-   "name": "Daylio",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-07",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {
-    "daylio app review": {
-     "volume": 40,
-     "sd": 36
-    }
-   },
-   "note": "Mood diary. daylio app review 40 SD 36."
-  },
-  {
-   "name": "Stoic",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-07",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {},
-   "note": "Journal app. stoic app review 40 SD 34."
-  },
-  {
-   "name": "Session",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-07",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {},
-   "note": "Pomodoro app. session app review 140 SD 43; name collides with generic 'session'."
-  },
-  {
-   "name": "Habi",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-07",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {},
-   "note": "ADHD planner. habi app 40 SD 40; spike Apr-Jul 2026 then falling."
-  },
-  {
-   "name": "Weel",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-07",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {},
-   "note": "ADHD planner. weel adhd planner 10."
-  },
-  {
-   "name": "Pocket Planner",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-07",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {},
-   "note": "Life OS for ADHD (Product Hunt). pocket planner app 20, collides with generic term."
-  },
-  {
-   "name": "Elisi",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-07",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {},
-   "note": "Planner/habit app. elisi app 30."
-  },
-  {
-   "name": "Sorted 3",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-07",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {},
-   "note": "Hyper-scheduler. sorted 3 app 30 SD 33."
-  },
-  {
-   "name": "Due",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-07",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {},
-   "note": "Reminder app. due app review 10; name collides with common word."
-  },
-  {
-   "name": "ADHD mom periscope guide",
-   "slug": "adhd-mom-periscope",
-   "status": "published",
-   "proposed_on": "2026-11-07",
-   "published_on": "2026-11-07",
-   "url": "https://www.tryfoco.com/adhd-mom-periscope/",
-   "keywords_us": {
-    "adhd mom periscope": {
-     "volume": 880,
-     "sd": 39
-    },
-    "mom with adhd": {
-     "volume": 480,
-     "sd": 25
-    }
-   },
-   "note": "Rewrite of the old draft #2287. RemindHer listed first with a founder disclosure.",
-   "revisit_after": null
-  },
-  {
-   "name": "Jomo",
-   "slug": "jomo-app-review",
-   "status": "proposed",
-   "proposed_on": "2026-11-08",
-   "keywords_us": {
-    "jomo app": {
-     "volume": 390,
-     "sd": 23
-    },
-    "jomo app review": {
-     "volume": 30,
-     "sd": 27
-    },
-    "jomo review": {
-     "volume": 10,
-     "sd": 18
-    }
-   },
-   "note": "iOS screen-time blocker. Recommended. SERP (2026-11-08): YouTube videos, App Store listings, Jomo's own blog; no independent written review in top 10. Fits app-blocker cluster (opal, screenzen, brick, bloom reviews + best-app-blocker-apps). gap-scan failed (WP returned HTML); no mentions in local posts-new."
-  },
-  {
-   "name": "Unpluq",
-   "slug": "unpluq-review",
-   "status": "proposed",
-   "proposed_on": "2026-11-08",
-   "keywords_us": {
-    "unpluq": {
-     "volume": 590,
-     "sd": 26
-    },
-    "unpluq review": {
-     "volume": 30,
-     "sd": 17
-    }
-   },
-   "note": "Physical-tag app blocker, Brick rival. Recommended. Volume rebounded Jul 2026 (320->590). SERP (2026-11-08): Google Play dev page, YouTube, r/dumbphones Brick vs Unpluq, 'Unpluq Reviews (2026)', 'Unpluq vs Brick' post. Overlap risk with /brick-app-review/. gap-scan failed; no mentions in local posts-new."
-  },
-  {
-   "name": "Dola",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-08",
-   "revisit_after": "2027-02-01",
-   "note": "dola app 590 SD 30 but it is now a general AI chatbot (ByteDance, Cici rebrand), not an ADHD planner. Review terms 10."
-  },
-  {
-   "name": "Howbout",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-08",
-   "revisit_after": "2027-02-01",
-   "note": "Social calendar for friends. howbout app 720 SD 27, review 50 SD 30. Weak ADHD fit."
-  },
-  {
-   "name": "Tody",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-08",
-   "revisit_after": "2027-02-01",
-   "note": "Cleaning app. tody app 880 SD 45; review 70 SD 54. SD above threshold."
-  },
-  {
-   "name": "Clearspace",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-08",
-   "revisit_after": "2027-02-01",
-   "note": "clearspace app 480 SD 41; review 40."
-  },
-  {
-   "name": "Flipd",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-08",
-   "revisit_after": "2027-02-01",
-   "note": "flipd app 210 SD 35; review 10."
-  },
-  {
-   "name": "Focus Flight",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-08",
-   "revisit_after": "2027-02-01",
-   "note": "Spike Sep 2025 then fell; 480 SD 29, spiky."
-  },
-  {
-   "name": "Focus To-Do",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-08",
-   "revisit_after": "2027-02-01",
-   "note": "focus to-do app 210 SD 14 but generic pomodoro app, weak ADHD fit; review 10."
-  },
-  {
-   "name": "Focus Plant",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-08",
-   "revisit_after": "2027-02-01",
-   "note": "focus plant app 260 SD 48."
-  },
-  {
-   "name": "BlockSite",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-08",
-   "revisit_after": "2027-02-01",
-   "note": "blocksite review 50 SD 42."
-  },
-  {
-   "name": "Goblin Tools review",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-08",
-   "revisit_after": "2027-02-01",
-   "note": "goblin tools review 50 SD 31; already 3 goblin posts (alternative, vs chatgpt, vs tiimo, foco-vs)."
-  },
-  {
-   "name": "Noisli",
-   "status": "proposed",
-   "proposed_on": "2026-11-09",
-   "note": "noisli 1,600 SD 40 (brand). Targets: noisli alternative 50 SD 28, websites like noisli 10. SERP for 'noisli alternative': noisli.com, AlternativeTo-type lists, Reddit, Calphii; no ADHD-angle review. No post names Noisli. Angle: alternatives post (SPEC-alternatives). Not picked on 2026-11-09 (Adi chose Pomofocus); still open."
-  },
-  {
-   "name": "Pomofocus",
-   "status": "published",
-   "proposed_on": "2026-11-09",
-   "note": "pomofocus 6,600 SD 30 (brand, navigational). Targets: pomofocus app 170 SD 28, is pomofocus safe 20, review 10, alternative 10. SERP 'pomofocus app': pomofocus.io, MS Store, App Store clones, a Medium post 'Pomofocus App, an ADHDer's best friend?' at #10. No post names Pomofocus.",
-   "picked_on": "2026-11-09",
-   "post_id": 6043,
-   "slug": "pomofocus-app-review",
-   "published_on": "2026-11-09",
-   "inbound_links": [
-    "pomodoro-for-adhd",
-    "25-minute-timer-adhd",
-    "forest-app-for-adhd"
-   ]
-  },
-  {
-   "name": "HabitKit",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-09",
-   "revisit_after": "2027-02-01",
-   "note": "habitkit 390 SD 35, app 30, reddit 30; no review questions."
-  },
-  {
-   "name": "Taskade",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-09",
-   "revisit_after": "2027-02-01",
-   "note": "taskade 3,600 but team/AI-agent tool, off-niche; review 70 SD 42."
-  },
-  {
-   "name": "Toggl Track",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-09",
-   "revisit_after": "2027-02-01",
-   "note": "B2B time tracking, off-niche; review 40 SD 21, pricing 70 SD 18."
-  },
-  {
-   "name": "Focus Traveller",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-09",
-   "revisit_after": "2027-02-01",
-   "note": "brand 9,900 SD 30 but app 40 and no review questions."
-  },
-  {
-   "name": "Study Bunny",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-09",
-   "revisit_after": "2027-02-01",
-   "note": "study bunny app 210 SD 35, review 10."
-  },
-  {
-   "name": "Amie",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-09",
-   "revisit_after": "2027-02-01",
-   "note": "amie calendar 260 SD 34, alternative 10."
-  },
-  {
-   "name": "Centered",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-09",
-   "revisit_after": "2027-02-01",
-   "note": "centered app 390 SD 30, generic word; no review cluster."
-  },
-  {
-   "name": "Atoms",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-09",
-   "revisit_after": "2027-02-01",
-   "note": "atoms habit app 20."
-  },
-  {
-   "name": "Noro ADHD Planner",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-09",
-   "revisit_after": "2027-02-01",
-   "note": "Product Hunt launch; no Ubersuggest data."
-  },
-  {
-   "name": "Taskmelt",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-09",
-   "revisit_after": "2027-02-01",
-   "note": "Product Hunt launch; no Ubersuggest data."
-  },
-  {
-   "name": "Notion Calendar",
-   "status": "proposed",
-   "proposed_on": "2026-11-09",
-   "source": "Adi, toolfinder screenshot",
-   "note": "brand 22,200 SD 42. Targets: notion calendar vs google calendar 170 SD 27, is notion calendar free 90 SD 47, review 50 SD 12, alternative 50 SD 14, is good 40 SD 19, vs apple calendar 30 SD 30. SERP 'notion calendar review': AI overview, video, Reddit, comparison posts, one small 'Review 2026' site at #7. No post mentions Notion Calendar (gap-scan)."
-  },
-  {
-   "name": "Addie",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-09",
-   "revisit_after": "2027-02-01",
-   "source": "Adi, toolfinder screenshot",
-   "note": "'Addie - ADHD Planner Organizer' iOS id6444955141. No Ubersuggest data for 'addie app' or 'addie adhd'."
-  },
-  {
-   "name": "VoiceFirstPlanner",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-09",
-   "revisit_after": "2027-02-01",
-   "source": "Adi, toolfinder screenshot",
-   "note": "No Ubersuggest data, no web mentions found beyond toolfinder."
-  },
-  {
-   "name": "Medisafe",
-   "slug": "medisafe-review",
-   "status": "proposed",
-   "proposed_on": "2026-11-10",
-   "revisit_after": null,
-   "note": "Pill reminder app. Momentum: fully paid outside the US from 2026-01-01 (Medisafe help center), 'medisafe no longer free' searches. Target 'is medisafe free' SD 16. SERP: Facebook, App Store, medisafeapp.com, one old independent review (minimalistjourneys DA 25), circlecare DA 3. gap-scan: no heading collision; 'medication reminder' only in 3 drafts. Review questions ~140/mo + long brand queries 420/mo at SD 11-13. Reddit not scanned (blocked in cloud).",
-   "cluster_us": {
-    "medisafe": [
-     2400,
-     28
-    ],
-    "medisafe pill reminder app": [
-     2900,
-     37
-    ],
-    "medisafe app": [
-     1000,
-     35
-    ],
-    "medisafe meds & pill reminder": [
-     210,
-     11
-    ],
-    "medisafe medication app": [
-     210,
-     13
-    ],
-    "medisafe app review": [
-     30,
-     29
-    ],
-    "is medisafe free": [
-     30,
-     16
-    ],
-    "is medisafe app free": [
-     30,
-     33
-    ],
-    "medisafe alternative": [
-     10,
-     21
-    ],
-    "alternative to medisafe": [
-     10,
-     17
-    ],
-    "medisafe free vs premium": [
-     10,
-     5
-    ],
-    "medisafe no longer free": [
-     10,
-     5
-    ],
-    "medisafe app cost": [
-     10,
-     13
-    ]
-   }
-  },
-  {
-   "name": "Microsoft To Do",
-   "slug": "microsoft-to-do-vs-todoist",
-   "status": "proposed",
-   "proposed_on": "2026-11-10",
-   "revisit_after": null,
-   "note": "Vs post in the existing Todoist-vs series. Target 'microsoft to do vs todoist' 110 SD 12 + 'todoist vs microsoft to do' 140 SD 17. SERP: Reddit, todoist.com, lifestack DA 21, toolfinder DA 38, toolguide DA 6, focuzed DA 13 (SERP data from 2026-09-20). gap-scan: only the generic 'X vs Todoist at a glance' H2 pattern collides. Brand 27,100 at SD 74 is out of reach. Reddit not scanned.",
-   "cluster_us": {
-    "microsoft to do": [
-     27100,
-     74
-    ],
-    "microsoft to do app": [
-     3600,
-     30
-    ],
-    "todoist vs microsoft to do": [
-     140,
-     17
-    ],
-    "microsoft to do vs todoist": [
-     110,
-     12
-    ],
-    "microsoft to do alternative": [
-     90,
-     31
-    ],
-    "microsoft to do alternatives": [
-     70,
-     19
-    ],
-    "microsoft to do review": [
-     70,
-     33
-    ],
-    "microsoft to do vs google tasks": [
-     90,
-     33
-    ],
-    "google tasks vs microsoft to do": [
-     90,
-     16
-    ]
-   }
-  },
-  {
-   "name": "Google Tasks",
-   "slug": "google-tasks-vs-todoist",
-   "status": "proposed",
-   "proposed_on": "2026-11-10",
-   "revisit_after": null,
-   "note": "Target 'google tasks vs todoist' 260 SD 19. SERP is stronger: Reddit, Android Authority DA 91, Motion DA 48, TasksBoard, todoist.com, XDA (SERP data 2026-09-12). Other review questions: reviews 50 SD 18, review 50 SD 42, alternative 70 SD 35, is free 50 SD 28. gap-scan: no heading collision. Reddit not scanned.",
-   "cluster_us": {
-    "google tasks": [
-     49500,
-     41
-    ],
-    "google tasks vs todoist": [
-     260,
-     19
-    ],
-    "google tasks reviews": [
-     50,
-     18
-    ],
-    "google tasks review": [
-     50,
-     42
-    ],
-    "google tasks alternative": [
-     70,
-     35
-    ],
-    "is google tasks free": [
-     50,
-     28
-    ],
-    "is google tasks good": [
-     30,
-     28
-    ],
-    "google tasks vs microsoft to do": [
-     90,
-     16
-    ]
-   }
-  },
-  {
-   "name": "Remember The Milk",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-10",
-   "revisit_after": "2027-02-01",
-   "note": "Brand 1,600 SD 48; review questions ~70/mo, alternative SD 43. vs todoist 30 SD 22 only."
-  },
-  {
-   "name": "Productive habit tracker",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-10",
-   "revisit_after": "2027-02-01",
-   "note": "Brand 320 SD 43; review questions ~50 at 10 each, SD 5, but name collides with the word 'productive'."
-  },
-  {
-   "name": "Pillr / pill-reminder clones",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-10",
-   "revisit_after": "2027-02-01",
-   "note": "Tiny ADHD medication-tracker apps seen in search (Pillr, FocusDose, ADHDose). No Ubersuggest demand checked; covered by a Medisafe post if picked."
-  },
-  {
-   "name": "Lil Planner",
-   "what": "Visual schedule app for kids with ADHD and autism (Space Sweater, LLC), iOS, free with paid tier",
-   "store": "https://apps.apple.com/app/id6448482826",
-   "rating_us": "4.86 from 4,366 (2026-11-10)",
-   "cluster_us": {
-    "lil planner app": [
-     50,
-     31
-    ]
-   },
-   "related": {
-    "visual schedule app": [
-     390,
-     23
-    ],
-    "first then visual schedule app": [
-     170,
-     28
-    ],
-    "visual schedule app autism": [
-     140,
-     31
-    ],
-    "visual schedule app for autism": [
-     110,
-     20
-    ]
-   },
-   "serp": "Only App Store listings, no independent review",
-   "cannibalization": "none (weak heading overlap with /adhd-planner/)",
-   "source": "Adi asked 2026-11-10",
-   "status": "asked",
-   "proposal": "list post 'best visual schedule apps' with Lil Planner first, vs standalone review"
-  },
-  {
-   "name": "Brainway",
-   "what": "CBT-style anti-procrastination app with quiz funnel (MEDICAL SCORE UAB, Lithuania), iOS + Android",
-   "store": "https://apps.apple.com/app/id6450369743",
-   "rating_us": "4.14 from 1,685 (2026-11-11)",
-   "cluster_us": {
-    "brainway review": [
-     480,
-     19
-    ],
-    "brainway app review": [
-     390,
-     34
-    ],
-    "brainway app cost": [
-     90,
-     35
-    ],
-    "brainway app reviews": [
-     70,
-     34
-    ],
-    "is brainway app legit": [
-     40,
-     2
-    ],
-    "brainway cost": [
-     40,
-     28
-    ],
-    "brainway app": [
-     880,
-     30
-    ]
-   },
-   "target_total": "~1,200 review-intent searches",
-   "serp": "brainway review: Google Play, then theliven.com 'Brainway vs Liven' (a competitor's page). No independent review.",
-   "cannibalization": "none (#4315 best-apps-for-adhd-task-paralysis has a generic anti-procrastination H3)",
-   "status": "published",
-   "proposed_on": "2026-11-11",
-   "picked_on": "2026-11-11",
-   "post_id": 6079,
-   "slug": "brainway-app-review",
-   "published_on": "2026-11-11",
-   "inbound_links": [
-    "liven-app-review",
-    "wisey-app-review",
-    "best-apps-for-adhd-task-paralysis"
-   ]
-  },
-  {
-   "name": "MellowFlow",
-   "what": "Anti-procrastination quiz-funnel app (mellowflow.app); US iOS listing id6743442157 not available in US store, Play: com.solovista.mellowflow 'Mellow Flow: Calm mind daily'",
-   "cluster_us": {
-    "mellow flow app review": [
-     590,
-     28
-    ],
-    "mellow flow reviews": [
-     260,
-     28
-    ],
-    "mellow flow review": [
-     110,
-     41
-    ],
-    "is mellow flow legit": [
-     90,
-     31
-    ],
-    "mellow flow app cost": [
-     70,
-     25
-    ],
-    "mellow flow app reviews complaints": [
-     50,
-     25
-    ],
-    "how much is mellow flow app": [
-     50,
-     30
-    ],
-    "mellow flow": [
-     1900,
-     29
-    ]
-   },
-   "target_total": "~1,300 review-intent searches",
-   "serp": "Trustpilot (mellowflow.app), a TikTok video, Google Play. No independent review.",
-   "cannibalization": "none",
-   "risk": "Name shared with other apps (an ADHD Sound App and Play 'Calm mind daily'); confirm which is the mellowflow.app product before writing.",
-   "status": "published",
-   "proposed_on": "2026-11-11",
-   "adi_answer": "picked 2026-11-14",
-   "slug": "mellow-flow-app-review",
-   "published_on": "2026-11-14",
-   "post_id": 6282
-  },
-  {
-   "name": "Goally",
-   "what": "Visual schedule tablet + app for kids with ADHD/autism (getgoally.com)",
-   "cluster_us": {
-    "goally": [
-     1000,
-     30
-    ],
-    "goally tablet": [
-     390,
-     30
-    ],
-    "goally tablet reviews": [
-     40,
-     30
-    ],
-    "goally reviews": [
-     30,
-     31
-    ],
-    "goally visual schedule app": [
-     20,
-     5
-    ],
-    "apps like goally": [
-     10,
-     13
-    ],
-    "goally tablet price": [
-     10,
-     17
-    ]
-   },
-   "target_total": "~130 review-intent searches",
-   "serp": "goally reviews: YouTube (Goally's own), Reddit r/Autism_Parenting. No independent review.",
-   "cannibalization": "none (visual schedule mentioned in /adhd-transitions/, /time-blindness-adhd/)",
-   "note": "Fits with Lil Planner (asked 2026-11-10) in a 'best visual schedule apps' list.",
-   "status": "proposed",
-   "proposed_on": "2026-11-11",
-   "adi_answer": "not picked 2026-11-11 (chose Brainway)"
-  },
-  {
-   "name": "Choiceworks",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-11",
-   "revisit_after": "2027-02-01",
-   "note": "Brand 880 SD 38, 'choiceworks app' 480 SD 28, but almost no review questions. Use inside a visual-schedule list post instead."
-  },
-  {
-   "name": "Gravity Focus",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-11",
-   "revisit_after": "2027-02-01",
-   "note": "Product Hunt ADHD planner, zero US search volume."
-  },
-  {
-   "name": "Sukha",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-11",
-   "revisit_after": "2027-02-01",
-   "note": "'sukha app' 30 SD 38, nothing else."
-  },
-  {
-   "name": "AppBlock",
-   "status": "published",
-   "proposed_on": "2026-11-12",
-   "keywords_us": {
-    "appblock": {
-     "volume": 4400,
-     "sd": 37
-    },
-    "appblock app": {
-     "volume": 4400,
-     "sd": 31
-    },
-    "appblock free": {
-     "volume": 480,
-     "sd": 28
-    },
-    "is appblock safe": {
-     "volume": 110,
-     "sd": 29
-    },
-    "is appblock free": {
-     "volume": 90,
-     "sd": 23
-    },
-    "appblock reviews": {
-     "volume": 70,
-     "sd": 27
-    },
-    "appblock review": {
-     "volume": 50,
-     "sd": 26
-    },
-    "appblock premium": {
-     "volume": 40,
-     "sd": 28
-    }
-   },
-   "note": "Review questions ~360/mo (+480 'appblock free'), SD 23-29. SERP for 'appblock review': Reddit, official site, stores, a critical Medium piece, unhookd.app (DA 8, a competitor). No strong independent review. Cannibalization: none; only passing 'app block' mentions.",
-   "slug": "appblock-review",
-   "picked_on": "2026-11-12",
-   "post_id": 6110,
-   "published_on": "2026-11-12"
-  },
-  {
-   "name": "Foqos",
-   "status": "proposed",
-   "proposed_on": "2026-11-12",
-   "keywords_us": {
-    "foqos": {
-     "volume": 2400,
-     "sd": 30
-    },
-    "foqos app": {
-     "volume": 720,
-     "sd": 35
-    },
-    "foqos android": {
-     "volume": 170,
-     "sd": 26
-    },
-    "foqos vs brick": {
-     "volume": 140,
-     "sd": 18
-    },
-    "is foqos safe": {
-     "volume": 30,
-     "sd": 29
-    },
-    "foqos review": {
-     "volume": 30,
-     "sd": 33
-    },
-    "foqos alternative for android": {
-     "volume": 30,
-     "sd": 18
-    },
-    "brick vs foqos": {
-     "volume": 30,
-     "sd": 28
-    }
-   },
-   "note": "Free open-source iPhone blocker that uses NFC tags or QR codes. Review questions ~260/mo, main target 'foqos vs brick' SD 18. SERP: Reddit, foqos.app, dormtherapy, PCMag explainer, habitdoom. Not covered anywhere on the site; brick/opal/bloom reviews have 'X vs Brick' H2s to trim to one line + link. Adi picked AppBlock first on 2026-11-12; Foqos still open."
-  },
-  {
-   "name": "Caveday",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-12",
-   "revisit_after": "2027-02-01",
-   "note": "Brand 880 SD 27 but review queries only 'caveday reviews' 30 SD 36."
-  },
-  {
-   "name": "Loop Habit Tracker",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-12",
-   "revisit_after": "2027-02-01",
-   "note": "Brand 1,300 SD 49; review questions near zero."
-  },
-  {
-   "name": "HabitNow",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-12",
-   "revisit_after": "2027-02-01",
-   "note": "Brand 720 SD 41; review questions zero."
-  },
-  {
-   "name": "StayFree",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-12",
-   "revisit_after": "2027-02-01",
-   "note": "'is stayfree app safe' 110 SD 36, review 30 SD 43. SD too high."
-  },
-  {
-   "name": "Stay Focused",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-12",
-   "revisit_after": "2027-02-01",
-   "note": "'stay focused app' 320 SD 60, generic phrase."
-  },
-  {
-   "name": "Lock Me Out",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-12",
-   "revisit_after": "2027-02-01",
-   "note": "Brand 880 SD 28, no review questions."
-  },
-  {
-   "name": "Rise Science",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-12",
-   "revisit_after": "2027-02-01",
-   "note": "'rise science app' 110 SD 52, off-niche (sleep)."
-  },
-  {
-   "name": "Meowchi",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-12",
-   "revisit_after": "2027-02-01",
-   "note": "ADHD focus timer, but 'meowchi' volume is a plush toy."
-  },
-  {
-   "name": "ADHD Thrive",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-12",
-   "revisit_after": "2027-02-01",
-   "note": "No US search volume."
-  },
-  {
-   "name": "Zelmwell",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-12",
-   "revisit_after": "2027-02-01",
-   "note": "No US search volume."
-  },
-  {
-   "name": "Forest",
-   "slug": "forest-app-review",
-   "status": "proposed",
-   "proposed_on": "2026-11-13",
-   "revisit_after": null,
-   "keywords_us": {
-    "forest app": {
-     "volume": 4400,
-     "sd": 57
-    },
-    "forest app for adhd": {
-     "volume": 140,
-     "sd": 5
-    },
-    "forest app adhd": {
-     "volume": 50,
-     "sd": 41
-    },
-    "forest app review": {
-     "volume": 50,
-     "sd": 36
-    },
-    "is forest app free": {
-     "volume": 40,
-     "sd": 30
-    },
-    "is the forest app free": {
-     "volume": 30,
-     "sd": 30
-    },
-    "forest app price": {
-     "volume": 40,
-     "sd": 40
-    },
-    "forest app cost": {
-     "volume": 40,
-     "sd": 40
-    },
-    "forest app alternative": {
-     "volume": 30,
-     "sd": 24
-    }
-   },
-   "note": "Recommended. Review questions ~420/mo; main target 'forest app for adhd' 140 at SD 5. SERP (Ubersuggest 2026-11-13): Google Play, Reddit r/GetStudying, Chrome Web Store; no independent review. gap-scan: draft #2216 /forest-app-alternative/ (alternative intent, keep separate, trim 'Is Forest actually bad for ADHD?' to a line + link) and /forest-vs-flora/ live. Also a pick (#8) on saner.ai/best-adhd-apps (Adi link)."
-  },
-  {
-   "name": "Notion (for ADHD)",
-   "slug": "notion-for-adhd",
-   "status": "proposed",
-   "proposed_on": "2026-11-13",
-   "revisit_after": null,
-   "keywords_us": {
-    "notion for adhd": {
-     "volume": 140,
-     "sd": 20
-    },
-    "notion for adhd reddit": {
-     "volume": 10,
-     "sd": 5
-    }
-   },
-   "note": "Proposed as UPDATE of existing draft #2189 /notion-for-adhd/ (gap-scan 100% match), not a new post. SERP: notion.com templates, Reddit, YouTube, two tiny blogs (DA 15, DA 3). Notion is broad; target the ADHD query only."
-  },
-  {
-   "name": "Flora",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-13",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {
-    "flora app": {
-     "volume": 1000,
-     "sd": 36
-    },
-    "flora app review": {
-     "volume": 40,
-     "sd": 24
-    }
-   },
-   "note": "flora app review 40 SD 24, is flora app free 30; under 50 and /forest-vs-flora/ already covers the overlap."
-  },
-  {
-   "name": "Yeolpumta (YPT)",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-13",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {
-    "yeolpumta": {
-     "volume": 480,
-     "sd": 28
-    }
-   },
-   "note": "Brand 480 SD 28 but no review/price questions in the cluster; study app, weak ADHD fit."
-  },
-  {
-   "name": "Timestripe",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-13",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {
-    "timestripe": {
-     "volume": 390,
-     "sd": 46
-    }
-   },
-   "note": "Brand 390 SD 46, no review questions; not ADHD-specific."
-  },
-  {
-   "name": "Dayzen",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-13",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {},
-   "note": "Found via Product Hunt visual timeboxing. No measurable US search volume in Ubersuggest."
-  },
-  {
-   "name": "Lunar: ADHD & Period Tracker",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-13",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {},
-   "note": "Found via AlternativeTo. No measurable US search volume in Ubersuggest."
-  },
-  {
-   "name": "Orbit: ADHD Time Tracker",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-13",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {},
-   "note": "Found via Product Hunt. No measurable US search volume in Ubersuggest."
-  },
-  {
-   "name": "Nudge ADHD Planner",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-13",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {},
-   "note": "Found via Google Play / hunted.space. No measurable US search volume in Ubersuggest."
-  },
-  {
-   "name": "Squirrel ADHD Task Manager",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-13",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {},
-   "note": "Found via Google Play. No measurable US search volume in Ubersuggest."
-  },
-  {
-   "name": "FocusFlow ADHD Organizer",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-13",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {},
-   "note": "Found via Google Play. No measurable US search volume in Ubersuggest."
-  },
-  {
-   "name": "Speechify (ADHD angle)",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-13",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {},
-   "note": "'speechify adhd' has no volume; reading tool, off-niche."
-  },
-  {
-   "name": "Obsidian",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-13",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {
-    "obsidian for adhd": {
-     "volume": 20
-    }
-   },
-   "note": "From saner.ai best-adhd-apps list (Adi link, 2026-11-13). 'obsidian for adhd' 20/mo SD 14; note app, weak ADHD intent."
-  },
-  {
-   "name": "Headspace",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-13",
-   "revisit_after": "2027-02-01",
-   "keywords_us": {
-    "headspace for adhd": {
-     "volume": 0
-    }
-   },
-   "note": "From saner.ai best-adhd-apps list (Adi link, 2026-11-13). 'headspace for adhd' no measurable volume; meditation, off-niche."
-  },
-  {
-   "name": "Plexii (PlexiiDesk)",
-   "slug": "plexii-review",
-   "status": "published",
-   "proposed_on": "2026-11-13",
-   "revisit_after": null,
-   "keywords_us": {
-    "plexii": {
-     "volume": 0
-    },
-    "plexiidesk": {
-     "volume": 0
-    }
-   },
-   "note": "Asked for by Adi. No measurable US search volume yet; desktop app (Mac/Windows), no app store listing, no independent reviews. Draft #6191.",
-   "post_id": 6191,
-   "published_on": "2026-11-13",
-   "url": "https://www.tryfoco.com/plexii-review/"
-  },
-  {
-   "name": "Alarmy",
-   "slug": "alarmy-review",
-   "status": "proposed",
-   "proposed_on": "2026-11-14",
-   "keywords_us": {
-    "alarmy": {
-     "volume": 8100,
-     "sd": 34
-    },
-    "alarmy alarm clock app": {
-     "volume": 6600,
-     "sd": 28
-    },
-    "is alarmy free": {
-     "volume": 390,
-     "sd": 40
-    },
-    "alarmy pro subscription": {
-     "volume": 110,
-     "sd": 26
-    },
-    "alarmy pro cost": {
-     "volume": 50,
-     "sd": 17
-    },
-    "alarmy alternative": {
-     "volume": 50,
-     "sd": 2
-    },
-    "apps like alarmy": {
-     "volume": 40,
-     "sd": 26
-    },
-    "alarmy review": {
-     "volume": 40,
-     "sd": 38
-    }
-   },
-   "note": "Recommended. Target 'alarmy alarm clock app' 6,600 SD 28 plus ~850/mo of price/free/alternative/review questions. SERP (2026-11-07): nowsecure, App Store, r/adhdwomen thread 'Alarmy changed my life' at #4, APK sites; no independent review. gap-scan: /adhd-alarm-clock/ #5831 has Alarmy as item 1 + H3 'Is Alarmy free?'; trim that H3 to one line + link.",
-   "revisit_after": null
-  },
-  {
-   "name": "Fantastical",
-   "slug": "fantastical-review",
-   "status": "proposed",
-   "proposed_on": "2026-11-14",
-   "keywords_us": {
-    "fantastical calendar app": {
-     "volume": 2900,
-     "sd": 31
-    },
-    "fantastical calendar app for mac": {
-     "volume": 880,
-     "sd": 5
-    },
-    "fantastical vs google calendar": {
-     "volume": 90,
-     "sd": 14
-    },
-    "fantastical vs apple calendar": {
-     "volume": 90,
-     "sd": 26
-    },
-    "fantastical alternative": {
-     "volume": 70,
-     "sd": 15
-    },
-    "busycal vs fantastical": {
-     "volume": 70,
-     "sd": 16
-    },
-    "fantastical review": {
-     "volume": 40,
-     "sd": 22
-    },
-    "fantastical cost": {
-     "volume": 40,
-     "sd": 7
-    },
-    "is fantastical free": {
-     "volume": 40,
-     "sd": 26
-    }
-   },
-   "note": "Recommended. Bare 'fantastical' (14,800) is mostly the dictionary word, ignored. SERP for 'fantastical review' (2026-10-05): Reddit r/macapps, SoftwareAdvice, Appleosophy 2022, Product Hunt, MacStories, a DA-3 blog; old or thin. gap-scan: 0 mentions on site; heading overlap only with /best-ai-calendar-apps-for-adhd/ generic H3s.",
-   "revisit_after": null
-  },
-  {
-   "name": "Wispr Flow",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-14",
-   "revisit_after": "2027-02-01",
-   "note": "Big review cluster (review 480 SD 35, alternative 480 SD 11) but it is a dictation tool, off-niche for task initiation."
-  },
-  {
-   "name": "Willow Voice",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-14",
-   "revisit_after": "2027-02-01",
-   "note": "Dictation tool, off-niche; review 30 SD 19."
-  },
-  {
-   "name": "SelfControl",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-14",
-   "revisit_after": "2027-02-01",
-   "note": "selfcontrol app 1,000 SD 44; every variant SD 36+; no review questions."
-  },
-  {
-   "name": "FocusMe",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-14",
-   "revisit_after": "2027-02-01",
-   "note": "Brand 720 SD 45; review 10; cold turkey vs focusme 30."
-  },
-  {
-   "name": "Apple Reminders vs Todoist",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-14",
-   "revisit_after": "2027-02-01",
-   "note": "70/mo SD 17, nothing else in cluster. Could join the Todoist vs series later."
-  },
-  {
-   "name": "Dubbii",
-   "what": "Body doubling app by ADHD Love: live hosted sessions, focus room, cleaning videos",
-   "cluster_us": {
-    "dubbii": [
-     720,
-     29
-    ],
-    "dubbii app": [
-     320,
-     30
-    ],
-    "dubbii body doubling app": [
-     260,
-     31
-    ],
-    "dubbii app cost": [
-     40,
-     29
-    ],
-    "dubbii app review": [
-     30,
-     29
-    ]
-   },
-   "proposed_on": "2026-11-14",
-   "status": "published",
-   "picked_on": "2026-11-14",
-   "post_id": 6206,
-   "slug": "dubbii-review",
-   "published_on": "2026-11-14",
-   "inbound_links": [
-    "flow-club-review",
-    "body-doubling-adhd",
-    "adhd-cleaning-planner"
-   ]
-  },
-  {
-   "name": "Elevate",
-   "cluster_us": {
-    "elevate app review": [
-     590,
-     29
-    ],
-    "is elevate app free": [
-     430,
-     27
-    ],
-    "elevate app cost": [
-     260,
-     20
-    ]
-   },
-   "proposed_on": "2026-11-14",
-   "status": "published",
-   "picked_on": "2026-11-14",
-   "post_id": 6226,
-   "slug": "elevate-app-review",
-   "published_on": "2026-11-14",
-   "inbound_links": [
-    "working-memory-adhd",
-    "brainway-app-review",
-    "brain-fm-review"
-   ]
-  },
-  {
-   "name": "Sweepy",
-   "what": "Home cleaning schedule app, gamified (Appsent)",
-   "cluster_us": {
-    "sweepy app": [
-     880,
-     34
-    ],
-    "sweepy app review": [
-     70,
-     35
-    ],
-    "sweepy app cost": [
-     30,
-     45
-    ],
-    "sweepy vs tody app": [
-     30,
-     23
-    ]
-   },
-   "proposed_on": "2026-11-14",
-   "status": "published",
-   "picked_on": "2026-11-14",
-   "post_id": 6217,
-   "slug": "sweepy-app-review",
-   "published_on": "2026-11-14",
-   "inbound_links": [
-    "adhd-cleaning-planner",
-    "dubbii-review",
-    "habitica-review"
-   ]
-  },
-  {
-   "name": "DeeDee",
-   "what": "DeeDee ADHD daily helper tools (Viktar Shalenchanka)",
-   "us_ratings": "5.0 from 4 (2026-11-14)",
-   "cluster_us": {
-    "deedee": "9,900 but about other things (hair braiding, TV)",
-    "deedee app": 0
-   },
-   "status": "rejected",
-   "reason": "no search demand for the app",
-   "proposed_on": "2026-11-14"
-  },
-  {
-   "name": "Best procrastination apps (list)",
-   "cluster_us": {
-    "procrastination app": [
-     480,
-     40
-    ],
-    "best procrastination app": [
-     210,
-     32
-    ],
-    "anti procrastination app": [
-     210,
-     38
-    ],
-    "best app for procrastination": [
-     170,
-     42
-    ],
-    "best apps for procrastination": [
-     170,
-     38
-    ]
-   },
-   "serp": "theliven.com listicle #1 (DA40), reddit, habitdoom, digitaltrends, routinery blog",
-   "status": "published",
-   "post_id": 6239,
-   "slug": "best-procrastination-apps",
-   "todo_on_publish": [
-    "rename H3 in best-apps-for-adhd-task-paralysis",
-    "inbound links from forest, opal, cold-turkey, focusmate, structured, brainway, liven, wisey, chillio reviews"
-   ],
-   "published_on": "2026-11-14",
-   "inbound_links": [
-    "forest-app-for-adhd",
-    "opal-app-review",
-    "cold-turkey-blocker-review",
-    "focusmate-review",
-    "structured-app-review",
-    "brainway-app-review",
-    "liven-app-review",
-    "wisey-app-review",
-    "chillio-app-review",
-    "best-apps-for-adhd-task-paralysis"
-   ],
-   "competitor_seen": "adhd-founder.com/blog/best-apps-procrastination-founders-2026 (10 apps, no prices, unsourced 42% stat)",
-   "rebuilt": "2026-11-14: 12 apps, research methods, setup guide, 2625 words",
-   "next": [
-    "review Freedom",
-    "review one sec"
-   ]
-  },
-  {
-   "name": "Freedom",
-   "what": "Cross-device app and website blocker (Eighty Percent Solutions)",
-   "cluster_us": {
-    "freedom app review": [
-     110,
-     22
-    ],
-    "freedom app blocker": [
-     1600,
-     49
-    ],
-    "freedom.to app": [
-     3600,
-     58
-    ],
-    "freedom.to coupon code": [
-     880,
-     16
-    ],
-    "freedom procrastination app": [
-     70,
-     14
-    ]
-   },
-   "status": "published",
-   "picked_on": "2026-11-14",
-   "post_id": 6260,
-   "slug": "freedom-app-review",
-   "published_on": "2026-11-14",
-   "inbound_links": [
-    "best-procrastination-apps",
-    "best-app-blocker-apps",
-    "cold-turkey-blocker-review"
-   ]
-  },
-  {
-   "name": "one sec",
-   "what": "Pause-before-app screen time app (riedel.wtf)",
-   "cluster_us": {
-    "one sec app": [
-     880,
-     40
-    ],
-    "one sec app review": [
-     30,
-     24
-    ],
-    "is one sec free": [
-     30,
-     29
-    ],
-    "is one sec app safe": [
-     30,
-     39
-    ]
-   },
-   "status": "published",
-   "picked_on": "2026-11-14",
-   "post_id": 6271,
-   "slug": "one-sec-app-review",
-   "published_on": "2026-11-14",
-   "inbound_links": [
-    "best-procrastination-apps",
-    "screenzen-review",
-    "freedom-app-review"
-   ]
-  },
-  {
-   "name": "Lumosity",
-   "slug": "lumosity-review",
-   "status": "proposed",
-   "proposed_on": "2026-11-15",
-   "revisit_after": null,
-   "keywords_us": {
-    "lumosity": {
-     "volume": 33100,
-     "sd": 49
-    },
-    "lumosity brain training app": {
-     "volume": 4400,
-     "sd": 31
-    },
-    "lumosity price": {
-     "volume": 590,
-     "sd": 27
-    },
-    "is lumosity free": {
-     "volume": 590,
-     "sd": 45
-    },
-    "reviews of lumosity": {
-     "volume": 390,
-     "sd": 33
-    },
-    "elevate vs lumosity": {
-     "volume": 260,
-     "sd": 31
-    },
-    "lumosity vs elevate": {
-     "volume": 210,
-     "sd": 30
-    },
-    "brainhq vs lumosity": {
-     "volume": 210,
-     "sd": 20
-    },
-    "does lumosity work": {
-     "volume": 210,
-     "sd": 36
-    },
-    "lumosity how much does it cost": {
-     "volume": 170,
-     "sd": 9
-    },
-    "lumosity app review": {
-     "volume": 90,
-     "sd": 36
-    },
-    "is lumosity worth it": {
-     "volume": 90,
-     "sd": 38
-    },
-    "lumosity and adhd": {
-     "volume": 70,
-     "sd": 42
-    }
-   },
-   "note": "Recommended. ~2,800/mo of review/price/free/vs questions; target 'lumosity price' SD 27 + 'lumosity how much does it cost' SD 9. SERP 'lumosity price' (2026-11-15): AI overview, a DA-1 wordpress page at #2, a store page, YouTube; no independent review. Natural follow-up to /elevate-app-review/ (#6226), which has H2 'How is Elevate different from Lumosity and Peak?': keep that H2 short and link to the new post. Ignore 'lumosity word bubbles' (game) volume."
-  },
-  {
-   "name": "BrainHQ",
-   "slug": "brainhq-review",
-   "status": "proposed",
-   "proposed_on": "2026-11-15",
-   "revisit_after": null,
-   "keywords_us": {
-    "brainhq app": {
-     "volume": 1300,
-     "sd": 29
-    },
-    "brainhq reviews": {
-     "volume": 720,
-     "sd": 32
-    },
-    "brainhq free": {
-     "volume": 590,
-     "sd": 30
-    },
-    "brainhq cost": {
-     "volume": 260,
-     "sd": 20
-    },
-    "brainhq vs lumosity": {
-     "volume": 210,
-     "sd": 20
-    },
-    "brainhq subscription": {
-     "volume": 170,
-     "sd": 21
-    },
-    "how much does brainhq cost": {
-     "volume": 90,
-     "sd": 25
-    },
-    "is brainhq free": {
-     "volume": 90,
-     "sd": 30
-    },
-    "is brainhq worth it": {
-     "volume": 70,
-     "sd": 30
-    },
-    "is brainhq legit": {
-     "volume": 50,
-     "sd": 6
-    }
-   },
-   "note": "Recommended. ~2,300/mo of review/cost/free/vs questions, SD 6-32. SERP 'brainhq reviews' (2026-11-15): brainhq.com FAQ, forums, Google Play; no independent review in the top. gap-scan: 1 passing mention on /how-to-focus-with-adhd/. Audience skews older (Posit Science, speed-of-processing training): ADHD angle must stay honest and hedged."
-  },
-  {
-   "name": "Peak Brain Training",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-15",
-   "revisit_after": "2027-02-01",
-   "note": "peak brain training 390 SD 27; review/price 30 each. Cover inside a Lumosity/Elevate post instead."
-  },
-  {
-   "name": "Trevor AI",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-15",
-   "revisit_after": "2027-02-01",
-   "note": "Brand 720 SD 28 but review 30, app 30, nothing else."
-  },
-  {
-   "name": "Apollo Neuro",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-15",
-   "revisit_after": "2027-02-01",
-   "note": "Stress wearable, off-niche; review 880 at SD 38, affiliate-heavy SERP."
-  },
-  {
-   "name": "Revibe Connect",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-15",
-   "revisit_after": "2027-02-01",
-   "note": "ADHD focus watch, but 'revibe' collides with clinics/salons; revibe connect 70, revibe watch 110, no review queries."
-  },
-  {
-   "name": "Lately (on-time app)",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-15",
-   "revisit_after": "2027-02-01",
-   "note": "'lately app' 50, name collides with the common word."
-  },
-  {
-   "name": "Impulse Brain Training",
-   "slug": "impulse-brain-training-review",
-   "status": "proposed",
-   "proposed_on": "2026-11-16",
-   "revisit_after": null,
-   "keywords_us": {
-    "impulse brain training": {
-     "volume": 2900,
-     "sd": 30
-    },
-    "impulse brain training review": {
-     "volume": 390,
-     "sd": 29
-    },
-    "impulse brain training reviews": {
-     "volume": 260,
-     "sd": 29
-    },
-    "impulse brain training app": {
-     "volume": 170,
-     "sd": 25
-    },
-    "is impulse brain training legit": {
-     "volume": 90,
-     "sd": 32
-    },
-    "is impulse brain training free": {
-     "volume": 50,
-     "sd": 28
-    },
-    "impulse brain training cost": {
-     "volume": 40,
-     "sd": 29
-    }
-   },
-   "note": "Recommended. ~950/mo of review/legit/free/cost questions at SD 25-32. iOS 4.7 with 852,888 US ratings, updated 2026-11-11 (GMRD Apps). Runs ADHD tests in-app. SERP 'impulse brain training review' (2026-11-16): AI overview, geniusmind.sg DA 11, Google Play, a Google support thread; no strong independent review. gap-scan clean. Fits brain-training cluster (Elevate published, Lumosity/BrainHQ proposed)."
-  },
-  {
-   "name": "Headway (book summaries)",
-   "slug": "headway-app-review",
-   "status": "proposed",
-   "proposed_on": "2026-11-16",
-   "revisit_after": null,
-   "keywords_us": {
-    "headway app": {
-     "volume": 8100,
-     "sd": 29
-    },
-    "headway app review": {
-     "volume": 5400,
-     "sd": 28
-    },
-    "headway app reviews": {
-     "volume": 6600,
-     "sd": 40
-    },
-    "headway app cost": {
-     "volume": 590,
-     "sd": 34
-    },
-    "is headway app free": {
-     "volume": 390,
-     "sd": 47
-    },
-    "how much is headway app": {
-     "volume": 210,
-     "sd": 34
-    },
-    "is headway app worth it": {
-     "volume": 110,
-     "sd": 35
-    }
-   },
-   "note": "Recommended, fit borderline: microlearning/book-summary app, same genre as published Liven and Wisey reviews. Part of 'headway app reviews' is the Headway therapy network (name collision); 'headway app review' SERP is about the book app. iOS 4.6, 117,349 US ratings, updated 2026-11-12. SERP (2026-09-08): littlealmanack DA 14 at #2, Reddit, App Store, small blogs, Trustpilot, Medium. gap-scan clean."
-  },
-  {
-   "name": "YNAB",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-16",
-   "revisit_after": "2027-02-01",
-   "note": "Off-niche (personal finance, YMYL). Brand 110,000 SD 69; 'ynab alternatives' 590 SD 11 and 'ynab vs monarch' 1,600 SD 12 but finance SERPs. Has an official 'budgeting with ADHD' page; could fit an ADHD-money article later."
-  },
-  {
-   "name": "Toodledo",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-16",
-   "revisit_after": "2027-02-01",
-   "note": "Brand 1,300 SD 38; review questions ~50 total (alternatives 30, pricing 20). Old app, no momentum."
-  },
-  {
-   "name": "Letterly",
-   "slug": "letterly-review",
-   "status": "proposed",
-   "proposed_on": "2026-11-17",
-   "revisit_after": null,
-   "keywords_us": {
-    "letterly": {
-     "volume": 1600,
-     "sd": 33
-    },
-    "letterly app": {
-     "volume": 210,
-     "sd": 25
-    },
-    "letterly reviews": {
-     "volume": 170,
-     "sd": 21
-    },
-    "letterly pricing": {
-     "volume": 90,
-     "sd": 20
-    },
-    "letterly app review": {
-     "volume": 30,
-     "sd": 23
-    },
-    "letterly lifetime deal": {
-     "volume": 20,
-     "sd": 15
-    }
-   },
-   "note": "Recommended. AI voice-to-text note app (letterly.app); brain-dump angle. Name collides with Letterly jewelry store (letterly.io: 'shop', 'pendant', 'stationery' excluded). Review questions ~330/mo at SD 15-23. SERP 'letterly reviews' (2026-11-17): AI overview, affihouse.com DA 8 at #2, AppSumo, YouTube; weak. iOS 4.7 with 1,140 US ratings, updated 2026-11-11. gap-scan clean (no post mentions it). Scout ran without Reddit."
-  },
-  {
-   "name": "Voicenotes",
-   "slug": "voicenotes-review",
-   "status": "proposed",
-   "proposed_on": "2026-11-17",
-   "revisit_after": null,
-   "keywords_us": {
-    "voicenotes": {
-     "volume": 1600,
-     "sd": 26
-    },
-    "voicenotes app": {
-     "volume": 1300,
-     "sd": 38
-    },
-    "voicenotes ai": {
-     "volume": 170,
-     "sd": 43
-    },
-    "voicenotes review": {
-     "volume": 30,
-     "sd": 30
-    },
-    "voicenotes app review": {
-     "volume": 30,
-     "sd": 37
-    },
-    "voicenotes pricing": {
-     "volume": 30,
-     "sd": 31
-    },
-    "is voicenotes free": {
-     "volume": 20,
-     "sd": 14
-    },
-    "voicenotes free plan": {
-     "volume": 20,
-     "sd": 19
-    },
-    "voicenotes ai review": {
-     "volume": 20,
-     "sd": 23
-    }
-   },
-   "note": "Recommended. AI voice notes app (voicenotes.com). Bare 'voicenotes' partly Charlie Puth's album (collision). Review questions ~190/mo at SD 14-37. SERP 'voicenotes review' (2026-10-12): AI overview, skywork.ai DA 40, Google Play, Reddit, App Store, YouTube; no strong independent review. iOS 4.8 with 7,293 US ratings, updated 2026-11-11. gap-scan clean."
-  },
-  {
-   "name": "AudioPen",
-   "slug": "audiopen-review",
-   "status": "proposed",
-   "proposed_on": "2026-11-17",
-   "revisit_after": null,
-   "keywords_us": {
-    "audiopen": {
-     "volume": 720,
-     "sd": 32
-    },
-    "audiopen ai": {
-     "volume": 90,
-     "sd": 25
-    },
-    "audiopen pricing": {
-     "volume": 30,
-     "sd": 24
-    },
-    "audiopen review": {
-     "volume": 20,
-     "sd": 18
-    },
-    "audiopen free": {
-     "volume": 10,
-     "sd": 46
-    },
-    "audiopen alternatives": {
-     "volume": 10,
-     "sd": 40
-    }
-   },
-   "note": "Recommended (smallest of today's three). AI voice-to-text (Nicheless, Inc.). Review questions ~100/mo plus 'audiopen ai' 90 at SD 25. SERP 'audiopen review' (2026-11-17): AI overview, opentools.ai DA 41, aidetectornews DA 12, scam-detector, Reddit; no real review. iOS 4.7 with 204 US ratings, updated 2026-11-16. gap-scan clean."
-  },
-  {
-   "name": "Rosebud (AI journal)",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-17",
-   "revisit_after": "2027-02-01",
-   "note": "Brand 'rosebud journal' 480 SD 47, 'rosebud journal app' 210 SD 49; review questions ~30 total."
-  },
-  {
-   "name": "Mem AI",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-17",
-   "revisit_after": "2027-02-01",
-   "note": "Brand 2,400 SD 31; review/pricing/alternatives ~150 but general note-taking, weak ADHD fit."
-  },
-  {
-   "name": "Cog ADHD",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-17",
-   "revisit_after": "2027-02-01",
-   "note": "UK ADHD care app; no US search volume in Ubersuggest."
-  },
-  {
-   "name": "Inflow (Cerebral acquisition)",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-17",
-   "revisit_after": "2027-02-01",
-   "note": "Cerebral acquired Inflow (2026-03-24, BusinessWire). /inflow-review/ and /foco-vs-inflow/ exist; consider a patch noting the acquisition. 'cerebral inflow' no volume."
-  },
-  {
-   "name": "Paprika Recipe Manager",
-   "slug": "paprika-app-review",
-   "status": "proposed",
-   "proposed_on": "2026-11-18",
-   "revisit_after": null,
-   "keywords_us": {
-    "paprika app": {
-     "volume": 4400,
-     "sd": 34
-    },
-    "paprika app review": {
-     "volume": 210,
-     "sd": 29
-    },
-    "paprika app cost": {
-     "volume": 260,
-     "sd": 46
-    },
-    "is paprika app free": {
-     "volume": 50,
-     "sd": 40
-    },
-    "paprika app price": {
-     "volume": 30,
-     "sd": 30
-    },
-    "umami vs paprika app": {
-     "volume": 40,
-     "sd": 17
-    }
-   },
-   "note": "Review questions ~700/mo. SERP for 'paprika app review': plantoeat.com (competitor blog, 2023), reluctantgourmet, thekitchn (old), reddit. No ADHD angle ranks. Mealime shut down (mealime.com/closing), so recipe/meal app switchers are searching."
-  },
-  {
-   "name": "Plan to Eat",
-   "slug": "plan-to-eat-review",
-   "status": "proposed",
-   "proposed_on": "2026-11-18",
-   "revisit_after": null,
-   "keywords_us": {
-    "plan to eat app": {
-     "volume": 1000,
-     "sd": 44
-    },
-    "plan to eat review": {
-     "volume": 50,
-     "sd": 19
-    },
-    "plan to eat app review": {
-     "volume": 50,
-     "sd": 40
-    },
-    "plan to eat app cost": {
-     "volume": 90,
-     "sd": 43
-    },
-    "plan to eat vs paprika": {
-     "volume": 30,
-     "sd": 17
-    }
-   },
-   "note": "'plan to eat' 5,400 is inflated by the common phrase; 'plan to eat app' 1,000 is the real brand. Review questions ~300. SERP for 'plan to eat review' has no actual review of the app (off-topic results)."
-  },
-  {
-   "name": "AnyList",
-   "slug": "anylist-review",
-   "status": "proposed",
-   "proposed_on": "2026-11-18",
-   "revisit_after": null,
-   "keywords_us": {
-    "anylist": {
-     "volume": 8100,
-     "sd": 28
-    },
-    "anylist app": {
-     "volume": 1300,
-     "sd": 35
-    },
-    "anylist reviews": {
-     "volume": 50,
-     "sd": 28
-    },
-    "anylist subscription": {
-     "volume": 70,
-     "sd": 20
-    },
-    "is anylist free": {
-     "volume": 50,
-     "sd": 15
-    },
-    "anylist complete subscription": {
-     "volume": 50,
-     "sd": 20
-    }
-   },
-   "note": "Review/pricing questions ~350. SERP for 'anylist reviews': reddit, App Store, Trustpilot, thekitchn (old), pann-app.com (DA 4, vendor). Weak independent coverage."
-  },
-  {
-   "name": "Mealime",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-18",
-   "revisit_after": "2027-02-01",
-   "note": "Shut down (mealime.com/closing). 'mealime review' 110 is moot; 'mealime alternative' SERP is flooded with vendor listicles. Use the closure as a hook inside Paprika/Plan to Eat/AnyList posts or /adhd-meal-planner/."
-  },
-  {
-   "name": "Dopamind",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-18",
-   "revisit_after": "2027-02-01",
-   "note": "AI planner for ADHD on App Store; no US search volume in Ubersuggest."
-  },
-  {
-   "name": "Alune",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-18",
-   "revisit_after": "2027-02-01",
-   "note": "AI ADHD planner (aluneapp.com); no US search volume in Ubersuggest."
-  },
-  {
-   "name": "Ahead (Emotional Intelligence)",
-   "slug": "ahead-app-review",
-   "status": "proposed",
-   "proposed_on": "2026-11-19",
-   "revisit_after": null,
-   "keywords_us": {
-    "ahead app": {
-     "volume": 880,
-     "sd": 31
-    },
-    "ahead app reviews": {
-     "volume": 390,
-     "sd": 29
-    },
-    "ahead app review": {
-     "volume": 50,
-     "sd": 29
-    },
-    "ahead app cost": {
-     "volume": 50,
-     "sd": 27
-    },
-    "is ahead app free": {
-     "volume": 40,
-     "sd": 29
-    },
-    "what is ahead app": {
-     "volume": 40,
-     "sd": 30
-    },
-    "is the ahead app free": {
-     "volume": 30,
-     "sd": 30
-    },
-    "how much is ahead app": {
-     "volume": 20,
-     "sd": 11
-    }
-   },
-   "note": "Emotions/impulse coaching app (id1570430177). Review questions ~620/mo. SERP for 'ahead app reviews': only App Store + Google Play, no independent review at all. Fits P2 emotional-regulation-adhd. 'ahead app' cluster also has unrelated 'order ahead' noise; counted only Ahead-specific queries. gap-scan: no heading collision."
-  },
-  {
-   "name": "Goodnotes",
-   "slug": "goodnotes-review",
-   "status": "proposed",
-   "proposed_on": "2026-11-19",
-   "revisit_after": null,
-   "keywords_us": {
-    "goodnotes": {
-     "volume": 74000,
-     "sd": 54
-    },
-    "is goodnotes free": {
-     "volume": 2900,
-     "sd": 30
-    },
-    "goodnotes subscription": {
-     "volume": 1900,
-     "sd": 28
-    },
-    "goodnotes cost": {
-     "volume": 1000,
-     "sd": 30
-    },
-    "goodnotes one time purchase": {
-     "volume": 720,
-     "sd": 27
-    },
-    "goodnotes essential subscription": {
-     "volume": 880,
-     "sd": 26
-    },
-    "does goodnotes cost money": {
-     "volume": 320,
-     "sd": 23
-    },
-    "is goodnotes worth it": {
-     "volume": 210,
-     "sd": 20
-    },
-    "goodnotes review": {
-     "volume": 210,
-     "sd": 35
-    }
-   },
-   "note": "Pricing/review questions several thousand/mo. SERP for 'is goodnotes free': Facebook group, theflourishplanner (DA 14) #5, YouTube, reddit, spotsaas (DA 41). No ADHD angle. Student angle (P4). gap-scan: /adhd-planner/ and /best-adhd-planner/ mention GoodNotes digital planners, no heading collision; link to them."
-  },
-  {
-   "name": "Milanote",
-   "slug": "milanote-review",
-   "status": "proposed",
-   "proposed_on": "2026-11-19",
-   "revisit_after": null,
-   "keywords_us": {
-    "milanote": {
-     "volume": 90500,
-     "sd": 59
-    },
-    "is milanote free": {
-     "volume": 880,
-     "sd": 24
-    },
-    "milanote price": {
-     "volume": 590,
-     "sd": 30
-    },
-    "milanote alternatives": {
-     "volume": 480,
-     "sd": 13
-    },
-    "milanote cost": {
-     "volume": 110,
-     "sd": 21
-    },
-    "milanote reviews": {
-     "volume": 110,
-     "sd": 28
-    },
-    "how much is milanote": {
-     "volume": 90,
-     "sd": 22
-    }
-   },
-   "note": "Visual board tool for creatives. Review/pricing questions ~2,200/mo. SERP for 'is milanote free': official plans page, reddit pricing complaint, refern.app (DA 13, competitor). ADHD fit is partial (visual thinkers, brain dumps). gap-scan: no heading collision."
-  },
-  {
-   "name": "Cozi",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-19",
-   "revisit_after": "2027-02-01",
-   "note": "Strong numbers ('cozi app reviews' 140 SD 34, cost/free ~200) but RemindHer already has cozi-review, cozi-vs-skylight, cozi-alternatives. Do not compete with Adi's own site."
-  },
-  {
-   "name": "Skylight Calendar",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-19",
-   "revisit_after": "2027-02-01",
-   "note": "Huge demand ('skylight calendar plus subscription' 5,400 SD 25) but RemindHer covers skylight-calendar-review, alternatives, vs Hearth/Cozyla. Hardware device too."
-  },
-  {
-   "name": "FamilyWall",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-19",
-   "revisit_after": "2027-02-01",
-   "note": "Review questions ~280 at SD 16-32, but remindher.app/familywall-review/ already ranks for it."
-  },
-  {
-   "name": "OurHome",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-19",
-   "revisit_after": "2027-02-01",
-   "note": "Brand 480, review 30. App appears shut down (several 'OurHome shut down' alternative pages); 'alternative to ourhome app' shows 0."
-  },
-  {
-   "name": "Insight Timer",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-19",
-   "revisit_after": "2027-02-01",
-   "note": "Review/free queries all SD 35-53. Too hard, weak ADHD fit."
-  },
-  {
-   "name": "Sectograph",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-19",
-   "revisit_after": "2027-02-01",
-   "note": "Brand 170, review questions ~10/mo."
-  },
-  {
-   "name": "Timepage",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-19",
-   "revisit_after": "2027-02-01",
-   "note": "'timepage app' 70, no review cluster."
-  },
-  {
-   "name": "Maple (family organizer)",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-19",
-   "revisit_after": "2027-02-01",
-   "note": "'maple family app' 90, no review cluster; family space belongs to RemindHer."
-  },
-  {
-   "name": "ElevenReader",
-   "slug": "elevenreader-review",
-   "status": "proposed",
-   "proposed_on": "2026-11-20",
-   "keywords_us": {
-    "elevenreader": {
-     "volume": 5400,
-     "sd": 29
-    },
-    "is elevenreader free": {
-     "volume": 140,
-     "sd": 39
-    },
-    "elevenreader pricing": {
-     "volume": 110,
-     "sd": 20
-    },
-    "elevenreader vs speechify": {
-     "volume": 70,
-     "sd": 9
-    },
-    "elevenreader cost": {
-     "volume": 50,
-     "sd": 16
-    },
-    "elevenreader review": {
-     "volume": 50,
-     "sd": 31
-    },
-    "speechify vs elevenreader": {
-     "volume": 30,
-     "sd": 11
-    },
-    "elevenreader alternative": {
-     "volume": 30,
-     "sd": 18
-    }
-   },
-   "note": "Recommended. ElevenLabs' read-aloud app; reading with ADHD angle. Review questions ~480/mo; main target 'elevenreader pricing' SD 20. SERP (Ubersuggest 2026-09-20): elevenreader.io pages, 2 Reddit pricing complaints, ElevenLabs help, speechcentral.net (competitor); no independent review. gap-scan: only a mention in draft #1985 /adhd-and-dyslexia/.",
-   "revisit_after": null
-  },
-  {
-   "name": "Voice Dream Reader",
-   "slug": "voice-dream-reader-review",
-   "status": "proposed",
-   "proposed_on": "2026-11-20",
-   "keywords_us": {
-    "voice dream reader": {
-     "volume": 1300,
-     "sd": 40
-    },
-    "voice dream reader app": {
-     "volume": 110,
-     "sd": 34
-    },
-    "voice dream reader cost": {
-     "volume": 70,
-     "sd": 26
-    },
-    "voice dream reader price": {
-     "volume": 30,
-     "sd": 30
-    },
-    "is voice dream reader free": {
-     "volume": 30,
-     "sd": 37
-    },
-    "voice dream reader subscription": {
-     "volume": 30,
-     "sd": 24
-    }
-   },
-   "note": "Recommended (borderline). Text-to-speech reader, moved to subscription. Review questions ~170/mo; target 'voice dream reader cost' SD 26. SERP (2026-09-24): App Store, r/Blind, voicedream.com, older reviews from afb.org, readingrockets.org, perkins.org (blind/dyslexia angle, none ADHD). gap-scan: mention in draft #1985 only.",
-   "revisit_after": null
-  },
-  {
-   "name": "Saner.ai",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-20",
-   "keywords_us": {
-    "saner ai": {
-     "volume": 2400,
-     "sd": 34
-    },
-    "saner ai review": {
-     "volume": 140,
-     "sd": 26
-    }
-   },
-   "note": "Already covered: /saner-ai-review/ is live.",
-   "revisit_after": "2027-02-01"
-  },
-  {
-   "name": "Bionic Reading",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-20",
-   "keywords_us": {
-    "bionic reading": {
-     "volume": 4400,
-     "sd": 30
-    },
-    "bionic reading adhd": {
-     "volume": 140,
-     "sd": 33
-    },
-    "bionic reading for adhd": {
-     "volume": 110,
-     "sd": 44
-    },
-    "adhd bionic reading": {
-     "volume": 50,
-     "sd": 22
-    }
-   },
-   "note": "A reading method more than an app; ADHD queries ~300/mo but main target SD 33-44. Possible future topic post ('does bionic reading help ADHD'), not a review.",
-   "revisit_after": "2027-02-01"
-  },
-  {
-   "name": "Natural Reader",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-20",
-   "keywords_us": {
-    "natural reader": {
-     "volume": 27100,
-     "sd": 34
-    },
-    "natural reader review": {
-     "volume": 90,
-     "sd": 32
-    },
-    "speechify vs natural reader": {
-     "volume": 140,
-     "sd": 13
-    },
-    "natural reader pricing": {
-     "volume": 210,
-     "sd": 44
-    }
-   },
-   "note": "Generic TTS tool, weak ADHD fit; best target is a vs-Speechify page and Speechify is on hold until 2027-02.",
-   "revisit_after": "2027-02-01"
-  },
-  {
-   "name": "Anki (for ADHD)",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-20",
-   "keywords_us": {
-    "anki for adhd": {
-     "volume": null,
-     "sd": null
-    }
-   },
-   "note": "No measurable ADHD-angle volume in Ubersuggest.",
-   "revisit_after": "2027-02-01"
-  },
-  {
-   "name": "Mightier",
-   "status": "proposed",
-   "proposed_on": "2026-11-21",
-   "keywords_us": {
-    "mightier": {
-     "volume": 1900,
-     "sd": 15
-    },
-    "mightier app": {
-     "volume": 390,
-     "sd": 40
-    },
-    "mightier review": {
-     "volume": 320,
-     "sd": 27
-    },
-    "mightier reviews": {
-     "volume": 260,
-     "sd": 36
-    },
-    "mightier app review": {
-     "volume": 70,
-     "sd": 36
-    },
-    "mightier promo code": {
-     "volume": 40,
-     "sd": 31
-    },
-    "mightier cost": {
-     "volume": 30,
-     "sd": 15
-    },
-    "mightier reviews complaints": {
-     "volume": 30,
-     "sd": 30
-    },
-    "mightier reviews reddit": {
-     "volume": 30,
-     "sd": 23
-    },
-    "mightier parent app": {
-     "volume": 30,
-     "sd": 20
-    }
-   },
-   "note": "Biofeedback games for kids' emotional regulation (Boston Children's spinout, NIH-funded ADHD study). SERP for 'mightier review': AI overview, YouTube, a DA-20 therapy-clinic blog, official site; no strong independent review. gap-scan: clean. Parent/P4 + emotional-regulation angle. Note 'mightier' brand number mixes in the 'pen is mightier' idiom; review questions are clean."
-  },
-  {
-   "name": "Whisper Memos",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-21",
-   "keywords_us": {
-    "whisper memos": {
-     "volume": 170,
-     "sd": 16
-    },
-    "whisper memos app": {
-     "volume": 50,
-     "sd": 31
-    }
-   },
-   "note": "No review-question demand; voice-notes space already crowded in candidates (AudioPen, Letterly, Voicenotes)."
-  },
-  {
-   "name": "Shelpful",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-21",
-   "keywords_us": {
-    "shelpful": {
-     "volume": 320,
-     "sd": 49
-    },
-    "shelpful app": {
-     "volume": 70,
-     "sd": 40
-    }
-   },
-   "note": "Brand demand only, SD 40+, no review questions.",
-   "revisit_after": "2027-03-01"
-  },
-  {
-   "name": "Homey (chores & allowance)",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-21",
-   "keywords_us": {
-    "homey chore app": {
-     "volume": 590,
-     "sd": 31
-    }
-   },
-   "note": "Only a brand query that goes to the stores; review questions show 0. 'homey' collides with Athom smart-home Homey."
-  },
-  {
-   "name": "NeuroNation",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-21",
-   "keywords_us": {
-    "neuronation": {
-     "volume": 590,
-     "sd": 39
-    },
-    "neuronation reviews": {
-     "volume": 40,
-     "sd": 33
-    }
-   },
-   "note": "Review questions ~60 but SD 33+, and brain-training is already covered by Elevate/Lumosity posts."
-  },
-  {
-   "name": "Tide (focus app)",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-21",
-   "note": "'tide app' volume is tide charts/fishing, not the focus app."
-  },
-  {
-   "name": "BeeDone",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-21",
-   "keywords_us": {
-    "beedone": {
-     "volume": 90,
-     "sd": 23
-    }
-   },
-   "note": "Brand only, no review questions."
-  },
-  {
-   "name": "Be Focused",
-   "status": "not_proposed",
-   "proposed_on": "2026-11-21",
-   "keywords_us": {
-    "be focused app": {
-     "volume": 90,
-     "sd": 40
-    }
-   },
-   "note": "Low demand, SD 40."
-  }
- ]
+  "note": "Memory of the blog agent. Every app or tool ever proposed. status: proposed, picked, drafted, published, skipped. Never re-propose an entry before its revisit_after date. See .claude/skills/blog-agent/SKILL.md.",
+  "candidates": [
+    {
+      "name": "Recordo",
+      "slug": "recordo-app-review",
+      "status": "published",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "recordo app": {
+          "volume": 10,
+          "sd": 18
+        },
+        "recordo app review": {
+          "volume": 0,
+          "sd": 12
+        }
+      },
+      "note": "Asked for by Adi. Low volume, no independent review ranks. First run through the agent flow.",
+      "revisit_after": null,
+      "published_on": "2026-11-05",
+      "url": "https://www.tryfoco.com/recordo-app-review/"
+    },
+    {
+      "status": "proposed",
+      "proposed_on": "2026-11-05",
+      "revisit_after": null,
+      "name": "Lunatask",
+      "slug": "lunatask-review",
+      "keywords_us": {
+        "lunatask": {
+          "volume": 880,
+          "sd": 28
+        },
+        "lunatask review": {
+          "volume": 40,
+          "sd": 22
+        },
+        "lunatask app": {
+          "volume": 50,
+          "sd": 30
+        },
+        "lunatask app review": {
+          "volume": 0,
+          "sd": 12
+        }
+      },
+      "note": "Review term is 40/mo, below the 50 threshold; brand term is 880 but mostly navigational. SERP is weak. gap-scan clean."
+    },
+    {
+      "status": "proposed",
+      "proposed_on": "2026-11-05",
+      "revisit_after": null,
+      "name": "Akiflow",
+      "slug": "akiflow-review",
+      "keywords_us": {
+        "akiflow review": {
+          "volume": 110,
+          "sd": 27
+        },
+        "akiflow": {
+          "volume": 4400,
+          "sd": 46
+        },
+        "akiflow app": {
+          "volume": 90,
+          "sd": 35
+        },
+        "akiflow app review": {
+          "volume": 0,
+          "sd": 12
+        }
+      },
+      "note": "Recommended. SERP already has several dedicated reviews. Only mention on site is a section of /best-ai-calendar-apps-for-adhd/."
+    },
+    {
+      "status": "published",
+      "proposed_on": "2026-11-05",
+      "revisit_after": null,
+      "name": "Sunsama",
+      "slug": "sunsama-review",
+      "keywords_us": {
+        "sunsama review": {
+          "volume": 170,
+          "sd": 25
+        },
+        "sunsama": {
+          "volume": 8100,
+          "sd": 44
+        },
+        "sunsama app": {
+          "volume": 480,
+          "sd": 28
+        },
+        "sunsama app review": {
+          "volume": 10,
+          "sd": 19
+        }
+      },
+      "note": "Partial overlap with /sunsama-alternative/ (H3s on cost and ADHD fit). Trim those to one line and link out if picked.",
+      "published_on": "2026-11-05",
+      "url": "https://www.tryfoco.com/sunsama-review/"
+    },
+    {
+      "name": "Shimmer",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "shimmer adhd": {
+          "volume": 260,
+          "sd": 43
+        },
+        "shimmer adhd review": {
+          "volume": 0,
+          "sd": 12
+        }
+      },
+      "note": "SD above threshold on the main term.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Hypermonkey",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "hypermonkey": {
+          "volume": 90,
+          "sd": 44
+        }
+      },
+      "note": "SD above threshold.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Thruday",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "thruday": {
+          "volume": 165000,
+          "sd": 68
+        }
+      },
+      "note": "Volume looks like a misspelling of Thursday, not the app.",
+      "revisit_after": null
+    },
+    {
+      "name": "Focus One",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "focus one adhd": {
+          "volume": 0,
+          "sd": 12
+        }
+      },
+      "note": "2 US ratings, no demand.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "JustStart",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "juststart adhd": {
+          "volume": 0,
+          "sd": 17
+        }
+      },
+      "note": "0 US ratings, no demand.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Indy",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "indy adhd app": {
+          "volume": 20,
+          "sd": 13
+        }
+      },
+      "note": "Low volume, falling since January.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Amazing Marvin",
+      "slug": "amazing-marvin-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-05",
+      "revisit_after": null,
+      "keywords_us": {
+        "amazing marvin": {
+          "volume": 1600,
+          "sd": 33
+        },
+        "amazing marvin review": {
+          "volume": 50,
+          "sd": 22
+        }
+      },
+      "note": "Weak SERP. Overlap with /foco-vs-amazing-marvin/ and a draft /amazing-marvin-alternative/ (#4450)."
+    },
+    {
+      "name": "Motion",
+      "status": "backlog",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "motion app review": {
+          "volume": 390,
+          "sd": 28
+        }
+      },
+      "note": "gap-scan 2026-11-05: overlap with /motion-app-alternative/, see scan.",
+      "revisit_after": null
+    },
+    {
+      "name": "Todoist",
+      "status": "backlog",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "todoist review": {
+          "volume": 390,
+          "sd": 25
+        }
+      },
+      "note": "gap-scan 2026-11-05: high overlap, 443 mentions across 34 posts, several FAQ headings repeat (Is Todoist free?, good for ADHD, cost).",
+      "revisit_after": null
+    },
+    {
+      "name": "TickTick",
+      "status": "backlog",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "ticktick review": {
+          "volume": 210,
+          "sd": 28
+        }
+      },
+      "note": "gap-scan 2026-11-05: high overlap, 319 mentions across 26 posts, repeated FAQ headings.",
+      "revisit_after": null
+    },
+    {
+      "name": "Reclaim",
+      "status": "published",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "reclaim ai review": {
+          "volume": 210,
+          "sd": 23
+        },
+        "reclaim ai": {
+          "volume": 6600,
+          "sd": 36
+        },
+        "reclaim ai pricing": {
+          "volume": 110,
+          "sd": 18
+        }
+      },
+      "note": "gap-scan 2026-11-05: low overlap, sections in 4 posts, no dedicated post.",
+      "revisit_after": null,
+      "slug": "reclaim-ai-review",
+      "published_on": "2026-11-05",
+      "url": "https://www.tryfoco.com/reclaim-ai-review/"
+    },
+    {
+      "name": "Sweepy",
+      "status": "published",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "sweepy app review": {
+          "volume": 70,
+          "sd": 35
+        }
+      },
+      "note": "SD above threshold.",
+      "revisit_after": "2027-02-01",
+      "published_on": "2026-11-14",
+      "inbound_links": [
+        "adhd-cleaning-planner",
+        "dubbii-review",
+        "habitica-review"
+      ]
+    },
+    {
+      "name": "Time Timer",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "time timer app": {
+          "volume": 1000,
+          "sd": 46
+        }
+      },
+      "note": "SD above threshold; spiky volume.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Focus Keeper",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "focus keeper app": {
+          "volume": 140,
+          "sd": 49
+        }
+      },
+      "note": "SD above threshold.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Yoodoo",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "yoodoo app": {
+          "volume": 50,
+          "sd": 31
+        }
+      },
+      "note": "SD just above threshold; 22 US ratings.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Superlist",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "superlist review": {
+          "volume": 30,
+          "sd": 29
+        }
+      },
+      "note": "Low volume.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "NotePlan",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "noteplan review": {
+          "volume": 30,
+          "sd": 39
+        }
+      },
+      "note": "Low volume.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Lifestack",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "lifestack review": {
+          "volume": 30,
+          "sd": 18
+        }
+      },
+      "note": "Low volume on review term; lifestack app 110, SD 37.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Morgen",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "morgen calendar review": {
+          "volume": 10,
+          "sd": 15
+        }
+      },
+      "note": "Low volume.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Me+",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "me+ app review": {
+          "volume": 10,
+          "sd": 13
+        }
+      },
+      "note": "Low volume.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Comigo",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "comigo adhd": {
+          "volume": 10,
+          "sd": 18
+        }
+      },
+      "note": "Low volume.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Freedom",
+      "status": "proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "freedom app review": {
+          "volume": 110,
+          "sd": 22
+        }
+      },
+      "note": "SERP: Reddit test post, blog reviews, stores. See mentions in existing posts.",
+      "revisit_after": null
+    },
+    {
+      "name": "Streaks",
+      "status": "proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "streaks app review": {
+          "volume": 50,
+          "sd": 26
+        }
+      },
+      "note": "SERP: App Store, 2018 blog, Reddit, MacStories. iPhone-only style habit tracker.",
+      "revisit_after": null
+    },
+    {
+      "name": "Things 3",
+      "status": "published",
+      "proposed_on": "2026-11-09",
+      "keywords_us": {
+        "things 3 review": {
+          "volume": 70,
+          "sd": 31
+        }
+      },
+      "note": "Re-checked 2026-11-09 with the whole keyword cluster (the first check only looked at \"<name> review\").",
+      "cluster_us": {
+        "things 3": [
+          6600,
+          30
+        ],
+        "things 3 vs todoist": [
+          140,
+          24
+        ],
+        "todoist vs things 3": [
+          110,
+          18
+        ],
+        "tick tick vs things 3": [
+          70,
+          20
+        ],
+        "things 3 review": [
+          70,
+          31
+        ],
+        "things 3 price": [
+          50,
+          32
+        ],
+        "things 3 alternative": [
+          40,
+          30
+        ],
+        "is things 3 worth it": [
+          30,
+          25
+        ]
+      },
+      "picked_on": "2026-11-12",
+      "post_id": 6099,
+      "slug": "things-3-review",
+      "published_on": "2026-11-12",
+      "inbound_links": [
+        "todoist-vs-ticktick",
+        "todoist-alternatives",
+        "ticktick-alternative"
+      ]
+    },
+    {
+      "name": "Any.do",
+      "status": "proposed",
+      "proposed_on": "2026-11-09",
+      "keywords_us": {
+        "any.do review": {
+          "volume": 70,
+          "sd": 33
+        }
+      },
+      "note": "Re-checked 2026-11-09 with the whole keyword cluster (the first check only looked at \"<name> review\").",
+      "cluster_us": {
+        "any.do": [
+          2900,
+          86
+        ],
+        "todoist vs any.do": [
+          140,
+          32
+        ],
+        "any.do review": [
+          70,
+          33
+        ],
+        "any.do pricing": [
+          70,
+          38
+        ],
+        "is any.do free": [
+          40,
+          24
+        ],
+        "any.do vs ticktick": [
+          40,
+          17
+        ],
+        "any.do alternative": [
+          40,
+          32
+        ]
+      },
+      "cannibalization": "day-to-day-planner-app has an Any.do H3"
+    },
+    {
+      "name": "Clockwise",
+      "status": "backlog",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "clockwise review": {
+          "volume": 50,
+          "sd": 29
+        }
+      },
+      "note": "Falling; not gap-scanned.",
+      "revisit_after": null
+    },
+    {
+      "name": "Cold Turkey",
+      "status": "published",
+      "proposed_on": "2026-11-09",
+      "keywords_us": {
+        "cold turkey blocker review": {
+          "volume": 40,
+          "sd": 22
+        }
+      },
+      "note": "Re-checked 2026-11-09 with the whole keyword cluster (the first check only looked at \"<name> review\").",
+      "cluster_us": {
+        "cold turkey blocker": [
+          4400,
+          26
+        ],
+        "cold turkey blocker review": [
+          40,
+          22
+        ],
+        "cold turkey blocker pro": [
+          50,
+          31
+        ],
+        "is cold turkey blocker free": [
+          30,
+          28
+        ],
+        "how to uninstall cold turkey blocker": [
+          70,
+          29
+        ],
+        "cold turkey blocker uninstall": [
+          90,
+          29
+        ]
+      },
+      "answer": "picked 2026-11-09",
+      "post_id": 6055,
+      "published": "2026-11-09"
+    },
+    {
+      "name": "Habitify",
+      "status": "published",
+      "proposed_on": "2026-11-09",
+      "keywords_us": {
+        "habitify review": {
+          "volume": 30,
+          "sd": 37
+        }
+      },
+      "note": "Re-checked 2026-11-09 with the whole keyword cluster (the first check only looked at \"<name> review\").",
+      "cluster_us": {
+        "habitify": [
+          1600,
+          32
+        ],
+        "habitify habit tracker app": [
+          720,
+          5
+        ],
+        "habitify app": [
+          210,
+          36
+        ],
+        "habitify review": [
+          30,
+          37
+        ],
+        "is habitify free": [
+          30,
+          15
+        ],
+        "habitify price": [
+          30,
+          18
+        ],
+        "habitify vs streaks": [
+          20,
+          13
+        ]
+      },
+      "picked_on": "2026-11-10",
+      "post_id": 6068,
+      "slug": "habitify-review",
+      "published_on": "2026-11-10",
+      "inbound_links": [
+        "habitica-review",
+        "finch-app-review",
+        "adhd-habit-tracker-printable"
+      ]
+    },
+    {
+      "name": "RescueTime",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "rescuetime review": {
+          "volume": 30,
+          "sd": 42
+        }
+      },
+      "note": "Low volume.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Rize",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "rize app review": {
+          "volume": 30,
+          "sd": 14
+        }
+      },
+      "note": "Low volume.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "One Sec",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "one sec app review": {
+          "volume": 30,
+          "sd": 24
+        }
+      },
+      "note": "Low volume.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Flow Club",
+      "status": "published",
+      "proposed_on": "2026-11-09",
+      "keywords_us": {
+        "flow club review": {
+          "volume": 30,
+          "sd": 34
+        }
+      },
+      "note": "Re-checked 2026-11-09 with the whole keyword cluster (the first check only looked at \"<name> review\").",
+      "cluster_us": {
+        "flow club": [
+          3600,
+          15
+        ],
+        "flow club body doubling": [
+          320,
+          28
+        ],
+        "flow club adhd": [
+          90,
+          23
+        ],
+        "flow club price": [
+          40,
+          24
+        ],
+        "flow club pricing": [
+          30,
+          14
+        ],
+        "flow club alternative": [
+          30,
+          27
+        ],
+        "flow club review": [
+          30,
+          34
+        ]
+      },
+      "picked_on": "2026-11-12",
+      "post_id": 6090,
+      "slug": "flow-club-review",
+      "published_on": "2026-11-12",
+      "inbound_links": [
+        "focusmate-review",
+        "body-doubling-adhd",
+        "how-to-focus-with-adhd"
+      ]
+    },
+    {
+      "name": "Flown",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "flown review": {
+          "volume": 0,
+          "sd": 17
+        }
+      },
+      "note": "No volume.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Focus@Will",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "focus@will review": {
+          "volume": 0,
+          "sd": 17
+        }
+      },
+      "note": "No volume.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Solo Focus",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "solo focus adhd": {
+          "volume": 0,
+          "sd": 12
+        }
+      },
+      "note": "No volume; new listing.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Focana",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-05",
+      "keywords_us": {
+        "focana": {
+          "volume": 30,
+          "sd": 31
+        }
+      },
+      "note": "Low volume; new.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "status": "proposed",
+      "proposed_on": "2026-11-06",
+      "revisit_after": null,
+      "name": "Neurolist",
+      "slug": "neurolist-app-review",
+      "keywords_us": {
+        "neurolist app": {
+          "volume": 110,
+          "sd": 30
+        },
+        "neurolist app review": {
+          "volume": 50,
+          "sd": 28
+        },
+        "neurolist review": {
+          "volume": 10,
+          "sd": 18
+        }
+      },
+      "app_store": {
+        "id": 6468689182,
+        "rating": 4.81,
+        "ratings": 916,
+        "last_update": "2026-04-21"
+      },
+      "note": "Direct task-breakdown competitor. SERP (collected 2026-09-20): own site, stores, Reddit launch post, Instagram, aggregators. No independent review ranks. gap-scan 2026-11-06 clean."
+    },
+    {
+      "status": "published",
+      "proposed_on": "2026-11-06",
+      "revisit_after": null,
+      "name": "Dubbii",
+      "slug": "dubbii-app-review",
+      "keywords_us": {
+        "dubbii app": {
+          "volume": 320,
+          "sd": 30
+        },
+        "dubbii app review": {
+          "volume": 30,
+          "sd": 29
+        },
+        "dubbii review": {
+          "volume": 0,
+          "sd": 17
+        }
+      },
+      "app_store": {
+        "id": 6450302677,
+        "rating": 4.85,
+        "ratings": 765,
+        "last_update": "2026-11-02"
+      },
+      "note": "Body doubling app. Volume is the brand term; review term is only 30. SERP (2026-09-09): stores, own site, Reddit, Facebook, the developer agency. No independent review ranks. gap-scan clean on the name; 'body doubling app' appears in lofi-town-review, best-apps-for-adhd-task-paralysis, adhd-activation without targeting Dubbii.",
+      "published_on": "2026-11-14",
+      "inbound_links": [
+        "flow-club-review",
+        "body-doubling-adhd",
+        "adhd-cleaning-planner"
+      ]
+    },
+    {
+      "status": "published",
+      "proposed_on": "2026-11-06",
+      "revisit_after": null,
+      "name": "Joon",
+      "slug": "joon-app-review",
+      "keywords_us": {
+        "joon app": {
+          "volume": 1000,
+          "sd": 29
+        },
+        "joon app review": {
+          "volume": 110,
+          "sd": 30
+        },
+        "joon review": {
+          "volume": 140,
+          "sd": 31
+        }
+      },
+      "app_store": {
+        "id": 1482225056,
+        "rating": 4.68,
+        "ratings": 6563,
+        "last_update": "2026-09-15"
+      },
+      "note": "For parents of kids with ADHD, not FOCO's adult user; fits P4 only. SERP (2026-09-20): Reddit, ChoosingTherapy (DA 60), stores, Facebook, small blogs (dinkumtribe, timily). Independent reviews exist but are weak. gap-scan clean.",
+      "picked_on": "2026-11-06",
+      "post_id": 5907,
+      "published_on": "2026-11-06"
+    },
+    {
+      "status": "not_proposed",
+      "proposed_on": "2026-11-06",
+      "revisit_after": "2027-02-01",
+      "name": "Blitzit",
+      "keywords_us": {
+        "blitzit app": {
+          "volume": 140,
+          "sd": 30
+        },
+        "blitzit review": {
+          "volume": 40,
+          "sd": 34
+        },
+        "blitzit app review": {
+          "volume": 40,
+          "sd": 23
+        }
+      },
+      "note": "Qualifies on the brand term only, cut by the limit of 3. Search trend fell through 2026, only 10 US iOS ratings; not ADHD-specific."
+    },
+    {
+      "status": "not_proposed",
+      "proposed_on": "2026-11-06",
+      "revisit_after": "2027-02-01",
+      "name": "Focus Bear",
+      "keywords_us": {
+        "focus bear app": {
+          "volume": 30,
+          "sd": 33
+        },
+        "focus bear review": {
+          "volume": 10,
+          "sd": 13
+        },
+        "focus bear app review": {
+          "volume": 10,
+          "sd": 5
+        }
+      },
+      "note": "Low volume, no clear momentum."
+    },
+    {
+      "status": "not_proposed",
+      "proposed_on": "2026-11-06",
+      "revisit_after": "2027-02-01",
+      "name": "Bixie",
+      "keywords_us": {
+        "bixie app": {
+          "volume": 10,
+          "sd": 18
+        },
+        "bixie app review": {
+          "volume": 0,
+          "sd": 12
+        }
+      },
+      "note": "Low volume, no clear momentum."
+    },
+    {
+      "status": "not_proposed",
+      "proposed_on": "2026-11-06",
+      "revisit_after": "2027-02-01",
+      "name": "Sprout ADHD",
+      "keywords_us": {
+        "sprout adhd app": {
+          "volume": 10,
+          "sd": 14
+        }
+      },
+      "note": "Low volume, no clear momentum."
+    },
+    {
+      "status": "not_proposed",
+      "proposed_on": "2026-11-06",
+      "revisit_after": "2027-02-01",
+      "name": "Soothfy",
+      "keywords_us": {
+        "soothfy app": {
+          "volume": 20,
+          "sd": 18
+        }
+      },
+      "note": "Low volume, no clear momentum."
+    },
+    {
+      "status": "not_proposed",
+      "proposed_on": "2026-11-06",
+      "revisit_after": "2027-02-01",
+      "name": "Splitti",
+      "keywords_us": {
+        "splitti app": {
+          "volume": 10,
+          "sd": 18
+        }
+      },
+      "note": "Low volume, no clear momentum."
+    },
+    {
+      "status": "not_proposed",
+      "proposed_on": "2026-11-06",
+      "revisit_after": "2027-02-01",
+      "name": "ADHD Easy-Do",
+      "keywords_us": {
+        "adhd easy-do app": {
+          "volume": 0,
+          "sd": 12
+        }
+      },
+      "note": "Low volume, no clear momentum."
+    },
+    {
+      "status": "not_proposed",
+      "proposed_on": "2026-11-06",
+      "revisit_after": "2027-02-01",
+      "name": "Calma",
+      "keywords_us": {
+        "calma adhd app": {
+          "volume": 0,
+          "sd": 12
+        }
+      },
+      "note": "Low volume, no clear momentum."
+    },
+    {
+      "status": "not_proposed",
+      "proposed_on": "2026-11-06",
+      "revisit_after": "2027-02-01",
+      "name": "Minddump",
+      "keywords_us": {
+        "minddump app": {
+          "volume": 0,
+          "sd": 17
+        }
+      },
+      "note": "Low volume, no clear momentum."
+    },
+    {
+      "status": "not_proposed",
+      "proposed_on": "2026-11-06",
+      "revisit_after": "2027-02-01",
+      "name": "DeeDee",
+      "keywords_us": {
+        "deedee adhd app": {
+          "volume": 0,
+          "sd": 12
+        }
+      },
+      "note": "Low volume, no clear momentum."
+    },
+    {
+      "status": "not_proposed",
+      "proposed_on": "2026-11-06",
+      "revisit_after": "2027-02-01",
+      "name": "Univi",
+      "keywords_us": {
+        "univi app": {
+          "volume": 10,
+          "sd": 19
+        }
+      },
+      "note": "Low volume, no clear momentum."
+    },
+    {
+      "status": "not_proposed",
+      "proposed_on": "2026-11-06",
+      "revisit_after": "2027-02-01",
+      "name": "Neuro Notion",
+      "keywords_us": {
+        "neuro notion adhd": {
+          "volume": 0,
+          "sd": 12
+        }
+      },
+      "note": "Low volume, no clear momentum."
+    },
+    {
+      "name": "Tweek",
+      "slug": "tweek-app-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": null,
+      "keywords_us": {
+        "tweek app": {
+          "volume": 170,
+          "sd": 27
+        },
+        "tweek calendar": {
+          "volume": 390,
+          "sd": 38
+        },
+        "tweek review": {
+          "volume": 10,
+          "sd": 20
+        },
+        "tweek app review": {
+          "volume": 10,
+          "sd": 13
+        }
+      },
+      "note": "Minimal weekly planner (iOS 4.8, 1,287 US ratings, updated 2026-11-02). SERP for 'tweek app' (2026-09-14): own site, stores, Reddit 2021, Softonic, one Medium long-term review, Morgen alternatives list. gap-scan clean (no mentions; /adhd-weekly-planner/ covers the generic term)."
+    },
+    {
+      "name": "Owaves",
+      "slug": "owaves-app-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": null,
+      "keywords_us": {
+        "owaves app": {
+          "volume": 50,
+          "sd": 29
+        },
+        "owaves review": {
+          "volume": 10,
+          "sd": 18
+        }
+      },
+      "note": "Circular visual day planner / body clock (iOS 4.6, 1,848 US ratings). Borderline: 50/mo exactly. SERP (2026-09-29): own site, App Store, Reddit, Instagram, CNET download, Softonic; no independent review. gap-scan clean."
+    },
+    {
+      "name": "Bearable",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "bearable app": {
+          "volume": 1300,
+          "sd": 31
+        },
+        "bearable app review": {
+          "volume": 110,
+          "sd": 43
+        }
+      },
+      "note": "Symptom/mood tracker. bearable app 1300 SD 31; bearable app review 110 SD 43. Above SD threshold."
+    },
+    {
+      "name": "How We Feel",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "how we feel app": {
+          "volume": 4400,
+          "sd": 35
+        },
+        "how we feel app review": {
+          "volume": 40,
+          "sd": 30
+        }
+      },
+      "note": "Emotion check-in app. how we feel app 4400 SD 35; review 40 SD 30. SD above threshold on main term."
+    },
+    {
+      "name": "Tangerine",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "tangerine app": {
+          "volume": 170,
+          "sd": 42
+        }
+      },
+      "note": "Self-care habit app. tangerine app 170 SD 42; review 10."
+    },
+    {
+      "name": "EndeavorOTC",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "endeavorotc": {
+          "volume": 390,
+          "sd": 39
+        },
+        "endeavorotc review": {
+          "volume": 20,
+          "sd": 21
+        }
+      },
+      "note": "Digital therapeutic for adult ADHD. endeavorotc 390 SD 39; review 20; app 10. SD above threshold, medical claims high-stakes."
+    },
+    {
+      "name": "Super Productivity",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "super productivity app": {
+          "volume": 320,
+          "sd": 40
+        }
+      },
+      "note": "Open-source to-do/timer. super productivity app 320 SD 40."
+    },
+    {
+      "name": "Leantime",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "leantime": {
+          "volume": 720,
+          "sd": 30
+        },
+        "leantime review": {
+          "volume": 10,
+          "sd": 26
+        }
+      },
+      "note": "Self-hosted PM tool marketed as ADHD-friendly. leantime 720 SD 30 but navigational (own site holds top 10); review 10. B2B, poor fit."
+    },
+    {
+      "name": "Daily Bean",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "daily bean app": {
+          "volume": 110,
+          "sd": 31
+        }
+      },
+      "note": "Mood journal. daily bean app 110 SD 31, weak ADHD fit."
+    },
+    {
+      "name": "Brili",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "brili app": {
+          "volume": 70,
+          "sd": 31
+        }
+      },
+      "note": "Kids routine app. brili app 70 SD 31."
+    },
+    {
+      "name": "LifeUp",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "lifeup app": {
+          "volume": 70,
+          "sd": 35
+        }
+      },
+      "note": "Gamified to-do. lifeup app 70 SD 35."
+    },
+    {
+      "name": "Daylio",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "daylio app review": {
+          "volume": 40,
+          "sd": 36
+        }
+      },
+      "note": "Mood diary. daylio app review 40 SD 36."
+    },
+    {
+      "name": "Stoic",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "Journal app. stoic app review 40 SD 34."
+    },
+    {
+      "name": "Session",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "Pomodoro app. session app review 140 SD 43; name collides with generic 'session'."
+    },
+    {
+      "name": "Habi",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "ADHD planner. habi app 40 SD 40; spike Apr-Jul 2026 then falling."
+    },
+    {
+      "name": "Weel",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "ADHD planner. weel adhd planner 10."
+    },
+    {
+      "name": "Pocket Planner",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "Life OS for ADHD (Product Hunt). pocket planner app 20, collides with generic term."
+    },
+    {
+      "name": "Elisi",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "Planner/habit app. elisi app 30."
+    },
+    {
+      "name": "Sorted 3",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "Hyper-scheduler. sorted 3 app 30 SD 33."
+    },
+    {
+      "name": "Due",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-07",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "Reminder app. due app review 10; name collides with common word."
+    },
+    {
+      "name": "ADHD mom periscope guide",
+      "slug": "adhd-mom-periscope",
+      "status": "published",
+      "proposed_on": "2026-11-07",
+      "published_on": "2026-11-07",
+      "url": "https://www.tryfoco.com/adhd-mom-periscope/",
+      "keywords_us": {
+        "adhd mom periscope": {
+          "volume": 880,
+          "sd": 39
+        },
+        "mom with adhd": {
+          "volume": 480,
+          "sd": 25
+        }
+      },
+      "note": "Rewrite of the old draft #2287. RemindHer listed first with a founder disclosure.",
+      "revisit_after": null
+    },
+    {
+      "name": "Jomo",
+      "slug": "jomo-app-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-08",
+      "keywords_us": {
+        "jomo app": {
+          "volume": 390,
+          "sd": 23
+        },
+        "jomo app review": {
+          "volume": 30,
+          "sd": 27
+        },
+        "jomo review": {
+          "volume": 10,
+          "sd": 18
+        }
+      },
+      "note": "iOS screen-time blocker. Recommended. SERP (2026-11-08): YouTube videos, App Store listings, Jomo's own blog; no independent written review in top 10. Fits app-blocker cluster (opal, screenzen, brick, bloom reviews + best-app-blocker-apps). gap-scan failed (WP returned HTML); no mentions in local posts-new."
+    },
+    {
+      "name": "Unpluq",
+      "slug": "unpluq-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-08",
+      "keywords_us": {
+        "unpluq": {
+          "volume": 590,
+          "sd": 26
+        },
+        "unpluq review": {
+          "volume": 30,
+          "sd": 17
+        }
+      },
+      "note": "Physical-tag app blocker, Brick rival. Recommended. Volume rebounded Jul 2026 (320->590). SERP (2026-11-08): Google Play dev page, YouTube, r/dumbphones Brick vs Unpluq, 'Unpluq Reviews (2026)', 'Unpluq vs Brick' post. Overlap risk with /brick-app-review/. gap-scan failed; no mentions in local posts-new."
+    },
+    {
+      "name": "Dola",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-08",
+      "revisit_after": "2027-02-01",
+      "note": "dola app 590 SD 30 but it is now a general AI chatbot (ByteDance, Cici rebrand), not an ADHD planner. Review terms 10."
+    },
+    {
+      "name": "Howbout",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-08",
+      "revisit_after": "2027-02-01",
+      "note": "Social calendar for friends. howbout app 720 SD 27, review 50 SD 30. Weak ADHD fit."
+    },
+    {
+      "name": "Tody",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-08",
+      "revisit_after": "2027-02-01",
+      "note": "Cleaning app. tody app 880 SD 45; review 70 SD 54. SD above threshold."
+    },
+    {
+      "name": "Clearspace",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-08",
+      "revisit_after": "2027-02-01",
+      "note": "clearspace app 480 SD 41; review 40."
+    },
+    {
+      "name": "Flipd",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-08",
+      "revisit_after": "2027-02-01",
+      "note": "flipd app 210 SD 35; review 10."
+    },
+    {
+      "name": "Focus Flight",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-08",
+      "revisit_after": "2027-02-01",
+      "note": "Spike Sep 2025 then fell; 480 SD 29, spiky."
+    },
+    {
+      "name": "Focus To-Do",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-08",
+      "revisit_after": "2027-02-01",
+      "note": "focus to-do app 210 SD 14 but generic pomodoro app, weak ADHD fit; review 10."
+    },
+    {
+      "name": "Focus Plant",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-08",
+      "revisit_after": "2027-02-01",
+      "note": "focus plant app 260 SD 48."
+    },
+    {
+      "name": "BlockSite",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-08",
+      "revisit_after": "2027-02-01",
+      "note": "blocksite review 50 SD 42."
+    },
+    {
+      "name": "Goblin Tools review",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-08",
+      "revisit_after": "2027-02-01",
+      "note": "goblin tools review 50 SD 31; already 3 goblin posts (alternative, vs chatgpt, vs tiimo, foco-vs)."
+    },
+    {
+      "name": "Noisli",
+      "status": "proposed",
+      "proposed_on": "2026-11-09",
+      "note": "noisli 1,600 SD 40 (brand). Targets: noisli alternative 50 SD 28, websites like noisli 10. SERP for 'noisli alternative': noisli.com, AlternativeTo-type lists, Reddit, Calphii; no ADHD-angle review. No post names Noisli. Angle: alternatives post (SPEC-alternatives). Not picked on 2026-11-09 (Adi chose Pomofocus); still open."
+    },
+    {
+      "name": "Pomofocus",
+      "status": "published",
+      "proposed_on": "2026-11-09",
+      "note": "pomofocus 6,600 SD 30 (brand, navigational). Targets: pomofocus app 170 SD 28, is pomofocus safe 20, review 10, alternative 10. SERP 'pomofocus app': pomofocus.io, MS Store, App Store clones, a Medium post 'Pomofocus App, an ADHDer's best friend?' at #10. No post names Pomofocus.",
+      "picked_on": "2026-11-09",
+      "post_id": 6043,
+      "slug": "pomofocus-app-review",
+      "published_on": "2026-11-09",
+      "inbound_links": [
+        "pomodoro-for-adhd",
+        "25-minute-timer-adhd",
+        "forest-app-for-adhd"
+      ]
+    },
+    {
+      "name": "HabitKit",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-09",
+      "revisit_after": "2027-02-01",
+      "note": "habitkit 390 SD 35, app 30, reddit 30; no review questions."
+    },
+    {
+      "name": "Taskade",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-09",
+      "revisit_after": "2027-02-01",
+      "note": "taskade 3,600 but team/AI-agent tool, off-niche; review 70 SD 42."
+    },
+    {
+      "name": "Toggl Track",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-09",
+      "revisit_after": "2027-02-01",
+      "note": "B2B time tracking, off-niche; review 40 SD 21, pricing 70 SD 18."
+    },
+    {
+      "name": "Focus Traveller",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-09",
+      "revisit_after": "2027-02-01",
+      "note": "brand 9,900 SD 30 but app 40 and no review questions."
+    },
+    {
+      "name": "Study Bunny",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-09",
+      "revisit_after": "2027-02-01",
+      "note": "study bunny app 210 SD 35, review 10."
+    },
+    {
+      "name": "Amie",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-09",
+      "revisit_after": "2027-02-01",
+      "note": "amie calendar 260 SD 34, alternative 10."
+    },
+    {
+      "name": "Centered",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-09",
+      "revisit_after": "2027-02-01",
+      "note": "centered app 390 SD 30, generic word; no review cluster."
+    },
+    {
+      "name": "Atoms",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-09",
+      "revisit_after": "2027-02-01",
+      "note": "atoms habit app 20."
+    },
+    {
+      "name": "Noro ADHD Planner",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-09",
+      "revisit_after": "2027-02-01",
+      "note": "Product Hunt launch; no Ubersuggest data."
+    },
+    {
+      "name": "Taskmelt",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-09",
+      "revisit_after": "2027-02-01",
+      "note": "Product Hunt launch; no Ubersuggest data."
+    },
+    {
+      "name": "Notion Calendar",
+      "status": "proposed",
+      "proposed_on": "2026-11-09",
+      "source": "Adi, toolfinder screenshot",
+      "note": "brand 22,200 SD 42. Targets: notion calendar vs google calendar 170 SD 27, is notion calendar free 90 SD 47, review 50 SD 12, alternative 50 SD 14, is good 40 SD 19, vs apple calendar 30 SD 30. SERP 'notion calendar review': AI overview, video, Reddit, comparison posts, one small 'Review 2026' site at #7. No post mentions Notion Calendar (gap-scan)."
+    },
+    {
+      "name": "Addie",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-09",
+      "revisit_after": "2027-02-01",
+      "source": "Adi, toolfinder screenshot",
+      "note": "'Addie - ADHD Planner Organizer' iOS id6444955141. No Ubersuggest data for 'addie app' or 'addie adhd'."
+    },
+    {
+      "name": "VoiceFirstPlanner",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-09",
+      "revisit_after": "2027-02-01",
+      "source": "Adi, toolfinder screenshot",
+      "note": "No Ubersuggest data, no web mentions found beyond toolfinder."
+    },
+    {
+      "name": "Medisafe",
+      "slug": "medisafe-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-10",
+      "revisit_after": null,
+      "note": "Pill reminder app. Momentum: fully paid outside the US from 2026-01-01 (Medisafe help center), 'medisafe no longer free' searches. Target 'is medisafe free' SD 16. SERP: Facebook, App Store, medisafeapp.com, one old independent review (minimalistjourneys DA 25), circlecare DA 3. gap-scan: no heading collision; 'medication reminder' only in 3 drafts. Review questions ~140/mo + long brand queries 420/mo at SD 11-13. Reddit not scanned (blocked in cloud).",
+      "cluster_us": {
+        "medisafe": [
+          2400,
+          28
+        ],
+        "medisafe pill reminder app": [
+          2900,
+          37
+        ],
+        "medisafe app": [
+          1000,
+          35
+        ],
+        "medisafe meds & pill reminder": [
+          210,
+          11
+        ],
+        "medisafe medication app": [
+          210,
+          13
+        ],
+        "medisafe app review": [
+          30,
+          29
+        ],
+        "is medisafe free": [
+          30,
+          16
+        ],
+        "is medisafe app free": [
+          30,
+          33
+        ],
+        "medisafe alternative": [
+          10,
+          21
+        ],
+        "alternative to medisafe": [
+          10,
+          17
+        ],
+        "medisafe free vs premium": [
+          10,
+          5
+        ],
+        "medisafe no longer free": [
+          10,
+          5
+        ],
+        "medisafe app cost": [
+          10,
+          13
+        ]
+      }
+    },
+    {
+      "name": "Microsoft To Do",
+      "slug": "microsoft-to-do-vs-todoist",
+      "status": "proposed",
+      "proposed_on": "2026-11-10",
+      "revisit_after": null,
+      "note": "Vs post in the existing Todoist-vs series. Target 'microsoft to do vs todoist' 110 SD 12 + 'todoist vs microsoft to do' 140 SD 17. SERP: Reddit, todoist.com, lifestack DA 21, toolfinder DA 38, toolguide DA 6, focuzed DA 13 (SERP data from 2026-09-20). gap-scan: only the generic 'X vs Todoist at a glance' H2 pattern collides. Brand 27,100 at SD 74 is out of reach. Reddit not scanned.",
+      "cluster_us": {
+        "microsoft to do": [
+          27100,
+          74
+        ],
+        "microsoft to do app": [
+          3600,
+          30
+        ],
+        "todoist vs microsoft to do": [
+          140,
+          17
+        ],
+        "microsoft to do vs todoist": [
+          110,
+          12
+        ],
+        "microsoft to do alternative": [
+          90,
+          31
+        ],
+        "microsoft to do alternatives": [
+          70,
+          19
+        ],
+        "microsoft to do review": [
+          70,
+          33
+        ],
+        "microsoft to do vs google tasks": [
+          90,
+          33
+        ],
+        "google tasks vs microsoft to do": [
+          90,
+          16
+        ]
+      }
+    },
+    {
+      "name": "Google Tasks",
+      "slug": "google-tasks-vs-todoist",
+      "status": "proposed",
+      "proposed_on": "2026-11-10",
+      "revisit_after": null,
+      "note": "Target 'google tasks vs todoist' 260 SD 19. SERP is stronger: Reddit, Android Authority DA 91, Motion DA 48, TasksBoard, todoist.com, XDA (SERP data 2026-09-12). Other review questions: reviews 50 SD 18, review 50 SD 42, alternative 70 SD 35, is free 50 SD 28. gap-scan: no heading collision. Reddit not scanned.",
+      "cluster_us": {
+        "google tasks": [
+          49500,
+          41
+        ],
+        "google tasks vs todoist": [
+          260,
+          19
+        ],
+        "google tasks reviews": [
+          50,
+          18
+        ],
+        "google tasks review": [
+          50,
+          42
+        ],
+        "google tasks alternative": [
+          70,
+          35
+        ],
+        "is google tasks free": [
+          50,
+          28
+        ],
+        "is google tasks good": [
+          30,
+          28
+        ],
+        "google tasks vs microsoft to do": [
+          90,
+          16
+        ]
+      }
+    },
+    {
+      "name": "Remember The Milk",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-10",
+      "revisit_after": "2027-02-01",
+      "note": "Brand 1,600 SD 48; review questions ~70/mo, alternative SD 43. vs todoist 30 SD 22 only."
+    },
+    {
+      "name": "Productive habit tracker",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-10",
+      "revisit_after": "2027-02-01",
+      "note": "Brand 320 SD 43; review questions ~50 at 10 each, SD 5, but name collides with the word 'productive'."
+    },
+    {
+      "name": "Pillr / pill-reminder clones",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-10",
+      "revisit_after": "2027-02-01",
+      "note": "Tiny ADHD medication-tracker apps seen in search (Pillr, FocusDose, ADHDose). No Ubersuggest demand checked; covered by a Medisafe post if picked."
+    },
+    {
+      "name": "Lil Planner",
+      "what": "Visual schedule app for kids with ADHD and autism (Space Sweater, LLC), iOS, free with paid tier",
+      "store": "https://apps.apple.com/app/id6448482826",
+      "rating_us": "4.86 from 4,366 (2026-11-10)",
+      "cluster_us": {
+        "lil planner app": [
+          50,
+          31
+        ]
+      },
+      "related": {
+        "visual schedule app": [
+          390,
+          23
+        ],
+        "first then visual schedule app": [
+          170,
+          28
+        ],
+        "visual schedule app autism": [
+          140,
+          31
+        ],
+        "visual schedule app for autism": [
+          110,
+          20
+        ]
+      },
+      "serp": "Only App Store listings, no independent review",
+      "cannibalization": "none (weak heading overlap with /adhd-planner/)",
+      "source": "Adi asked 2026-11-10",
+      "status": "asked",
+      "proposal": "list post 'best visual schedule apps' with Lil Planner first, vs standalone review"
+    },
+    {
+      "name": "Brainway",
+      "what": "CBT-style anti-procrastination app with quiz funnel (MEDICAL SCORE UAB, Lithuania), iOS + Android",
+      "store": "https://apps.apple.com/app/id6450369743",
+      "rating_us": "4.14 from 1,685 (2026-11-11)",
+      "cluster_us": {
+        "brainway review": [
+          480,
+          19
+        ],
+        "brainway app review": [
+          390,
+          34
+        ],
+        "brainway app cost": [
+          90,
+          35
+        ],
+        "brainway app reviews": [
+          70,
+          34
+        ],
+        "is brainway app legit": [
+          40,
+          2
+        ],
+        "brainway cost": [
+          40,
+          28
+        ],
+        "brainway app": [
+          880,
+          30
+        ]
+      },
+      "target_total": "~1,200 review-intent searches",
+      "serp": "brainway review: Google Play, then theliven.com 'Brainway vs Liven' (a competitor's page). No independent review.",
+      "cannibalization": "none (#4315 best-apps-for-adhd-task-paralysis has a generic anti-procrastination H3)",
+      "status": "published",
+      "proposed_on": "2026-11-11",
+      "picked_on": "2026-11-11",
+      "post_id": 6079,
+      "slug": "brainway-app-review",
+      "published_on": "2026-11-11",
+      "inbound_links": [
+        "liven-app-review",
+        "wisey-app-review",
+        "best-apps-for-adhd-task-paralysis"
+      ]
+    },
+    {
+      "name": "MellowFlow",
+      "what": "Anti-procrastination quiz-funnel app (mellowflow.app); US iOS listing id6743442157 not available in US store, Play: com.solovista.mellowflow 'Mellow Flow: Calm mind daily'",
+      "cluster_us": {
+        "mellow flow app review": [
+          590,
+          28
+        ],
+        "mellow flow reviews": [
+          260,
+          28
+        ],
+        "mellow flow review": [
+          110,
+          41
+        ],
+        "is mellow flow legit": [
+          90,
+          31
+        ],
+        "mellow flow app cost": [
+          70,
+          25
+        ],
+        "mellow flow app reviews complaints": [
+          50,
+          25
+        ],
+        "how much is mellow flow app": [
+          50,
+          30
+        ],
+        "mellow flow": [
+          1900,
+          29
+        ]
+      },
+      "target_total": "~1,300 review-intent searches",
+      "serp": "Trustpilot (mellowflow.app), a TikTok video, Google Play. No independent review.",
+      "cannibalization": "none",
+      "risk": "Name shared with other apps (an ADHD Sound App and Play 'Calm mind daily'); confirm which is the mellowflow.app product before writing.",
+      "status": "published",
+      "proposed_on": "2026-11-11",
+      "adi_answer": "picked 2026-11-14",
+      "slug": "mellow-flow-app-review",
+      "published_on": "2026-11-14",
+      "post_id": 6282
+    },
+    {
+      "name": "Goally",
+      "what": "Visual schedule tablet + app for kids with ADHD/autism (getgoally.com)",
+      "cluster_us": {
+        "goally": [
+          1000,
+          30
+        ],
+        "goally tablet": [
+          390,
+          30
+        ],
+        "goally tablet reviews": [
+          40,
+          30
+        ],
+        "goally reviews": [
+          30,
+          31
+        ],
+        "goally visual schedule app": [
+          20,
+          5
+        ],
+        "apps like goally": [
+          10,
+          13
+        ],
+        "goally tablet price": [
+          10,
+          17
+        ]
+      },
+      "target_total": "~130 review-intent searches",
+      "serp": "goally reviews: YouTube (Goally's own), Reddit r/Autism_Parenting. No independent review.",
+      "cannibalization": "none (visual schedule mentioned in /adhd-transitions/, /time-blindness-adhd/)",
+      "note": "Fits with Lil Planner (asked 2026-11-10) in a 'best visual schedule apps' list.",
+      "status": "proposed",
+      "proposed_on": "2026-11-11",
+      "adi_answer": "not picked 2026-11-11 (chose Brainway)"
+    },
+    {
+      "name": "Choiceworks",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-11",
+      "revisit_after": "2027-02-01",
+      "note": "Brand 880 SD 38, 'choiceworks app' 480 SD 28, but almost no review questions. Use inside a visual-schedule list post instead."
+    },
+    {
+      "name": "Gravity Focus",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-11",
+      "revisit_after": "2027-02-01",
+      "note": "Product Hunt ADHD planner, zero US search volume."
+    },
+    {
+      "name": "Sukha",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-11",
+      "revisit_after": "2027-02-01",
+      "note": "'sukha app' 30 SD 38, nothing else."
+    },
+    {
+      "name": "AppBlock",
+      "status": "published",
+      "proposed_on": "2026-11-12",
+      "keywords_us": {
+        "appblock": {
+          "volume": 4400,
+          "sd": 37
+        },
+        "appblock app": {
+          "volume": 4400,
+          "sd": 31
+        },
+        "appblock free": {
+          "volume": 480,
+          "sd": 28
+        },
+        "is appblock safe": {
+          "volume": 110,
+          "sd": 29
+        },
+        "is appblock free": {
+          "volume": 90,
+          "sd": 23
+        },
+        "appblock reviews": {
+          "volume": 70,
+          "sd": 27
+        },
+        "appblock review": {
+          "volume": 50,
+          "sd": 26
+        },
+        "appblock premium": {
+          "volume": 40,
+          "sd": 28
+        }
+      },
+      "note": "Review questions ~360/mo (+480 'appblock free'), SD 23-29. SERP for 'appblock review': Reddit, official site, stores, a critical Medium piece, unhookd.app (DA 8, a competitor). No strong independent review. Cannibalization: none; only passing 'app block' mentions.",
+      "slug": "appblock-review",
+      "picked_on": "2026-11-12",
+      "post_id": 6110,
+      "published_on": "2026-11-12"
+    },
+    {
+      "name": "Foqos",
+      "status": "proposed",
+      "proposed_on": "2026-11-12",
+      "keywords_us": {
+        "foqos": {
+          "volume": 2400,
+          "sd": 30
+        },
+        "foqos app": {
+          "volume": 720,
+          "sd": 35
+        },
+        "foqos android": {
+          "volume": 170,
+          "sd": 26
+        },
+        "foqos vs brick": {
+          "volume": 140,
+          "sd": 18
+        },
+        "is foqos safe": {
+          "volume": 30,
+          "sd": 29
+        },
+        "foqos review": {
+          "volume": 30,
+          "sd": 33
+        },
+        "foqos alternative for android": {
+          "volume": 30,
+          "sd": 18
+        },
+        "brick vs foqos": {
+          "volume": 30,
+          "sd": 28
+        }
+      },
+      "note": "Free open-source iPhone blocker that uses NFC tags or QR codes. Review questions ~260/mo, main target 'foqos vs brick' SD 18. SERP: Reddit, foqos.app, dormtherapy, PCMag explainer, habitdoom. Not covered anywhere on the site; brick/opal/bloom reviews have 'X vs Brick' H2s to trim to one line + link. Adi picked AppBlock first on 2026-11-12; Foqos still open."
+    },
+    {
+      "name": "Caveday",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-12",
+      "revisit_after": "2027-02-01",
+      "note": "Brand 880 SD 27 but review queries only 'caveday reviews' 30 SD 36."
+    },
+    {
+      "name": "Loop Habit Tracker",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-12",
+      "revisit_after": "2027-02-01",
+      "note": "Brand 1,300 SD 49; review questions near zero."
+    },
+    {
+      "name": "HabitNow",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-12",
+      "revisit_after": "2027-02-01",
+      "note": "Brand 720 SD 41; review questions zero."
+    },
+    {
+      "name": "StayFree",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-12",
+      "revisit_after": "2027-02-01",
+      "note": "'is stayfree app safe' 110 SD 36, review 30 SD 43. SD too high."
+    },
+    {
+      "name": "Stay Focused",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-12",
+      "revisit_after": "2027-02-01",
+      "note": "'stay focused app' 320 SD 60, generic phrase."
+    },
+    {
+      "name": "Lock Me Out",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-12",
+      "revisit_after": "2027-02-01",
+      "note": "Brand 880 SD 28, no review questions."
+    },
+    {
+      "name": "Rise Science",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-12",
+      "revisit_after": "2027-02-01",
+      "note": "'rise science app' 110 SD 52, off-niche (sleep)."
+    },
+    {
+      "name": "Meowchi",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-12",
+      "revisit_after": "2027-02-01",
+      "note": "ADHD focus timer, but 'meowchi' volume is a plush toy."
+    },
+    {
+      "name": "ADHD Thrive",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-12",
+      "revisit_after": "2027-02-01",
+      "note": "No US search volume."
+    },
+    {
+      "name": "Zelmwell",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-12",
+      "revisit_after": "2027-02-01",
+      "note": "No US search volume."
+    },
+    {
+      "name": "Forest",
+      "slug": "forest-app-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-13",
+      "revisit_after": null,
+      "keywords_us": {
+        "forest app": {
+          "volume": 4400,
+          "sd": 57
+        },
+        "forest app for adhd": {
+          "volume": 140,
+          "sd": 5
+        },
+        "forest app adhd": {
+          "volume": 50,
+          "sd": 41
+        },
+        "forest app review": {
+          "volume": 50,
+          "sd": 36
+        },
+        "is forest app free": {
+          "volume": 40,
+          "sd": 30
+        },
+        "is the forest app free": {
+          "volume": 30,
+          "sd": 30
+        },
+        "forest app price": {
+          "volume": 40,
+          "sd": 40
+        },
+        "forest app cost": {
+          "volume": 40,
+          "sd": 40
+        },
+        "forest app alternative": {
+          "volume": 30,
+          "sd": 24
+        }
+      },
+      "note": "Recommended. Review questions ~420/mo; main target 'forest app for adhd' 140 at SD 5. SERP (Ubersuggest 2026-11-13): Google Play, Reddit r/GetStudying, Chrome Web Store; no independent review. gap-scan: draft #2216 /forest-app-alternative/ (alternative intent, keep separate, trim 'Is Forest actually bad for ADHD?' to a line + link) and /forest-vs-flora/ live. Also a pick (#8) on saner.ai/best-adhd-apps (Adi link)."
+    },
+    {
+      "name": "Notion (for ADHD)",
+      "slug": "notion-for-adhd",
+      "status": "proposed",
+      "proposed_on": "2026-11-13",
+      "revisit_after": null,
+      "keywords_us": {
+        "notion for adhd": {
+          "volume": 140,
+          "sd": 20
+        },
+        "notion for adhd reddit": {
+          "volume": 10,
+          "sd": 5
+        }
+      },
+      "note": "Proposed as UPDATE of existing draft #2189 /notion-for-adhd/ (gap-scan 100% match), not a new post. SERP: notion.com templates, Reddit, YouTube, two tiny blogs (DA 15, DA 3). Notion is broad; target the ADHD query only."
+    },
+    {
+      "name": "Flora",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-13",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "flora app": {
+          "volume": 1000,
+          "sd": 36
+        },
+        "flora app review": {
+          "volume": 40,
+          "sd": 24
+        }
+      },
+      "note": "flora app review 40 SD 24, is flora app free 30; under 50 and /forest-vs-flora/ already covers the overlap."
+    },
+    {
+      "name": "Yeolpumta (YPT)",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-13",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "yeolpumta": {
+          "volume": 480,
+          "sd": 28
+        }
+      },
+      "note": "Brand 480 SD 28 but no review/price questions in the cluster; study app, weak ADHD fit."
+    },
+    {
+      "name": "Timestripe",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-13",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "timestripe": {
+          "volume": 390,
+          "sd": 46
+        }
+      },
+      "note": "Brand 390 SD 46, no review questions; not ADHD-specific."
+    },
+    {
+      "name": "Dayzen",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-13",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "Found via Product Hunt visual timeboxing. No measurable US search volume in Ubersuggest."
+    },
+    {
+      "name": "Lunar: ADHD & Period Tracker",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-13",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "Found via AlternativeTo. No measurable US search volume in Ubersuggest."
+    },
+    {
+      "name": "Orbit: ADHD Time Tracker",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-13",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "Found via Product Hunt. No measurable US search volume in Ubersuggest."
+    },
+    {
+      "name": "Nudge ADHD Planner",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-13",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "Found via Google Play / hunted.space. No measurable US search volume in Ubersuggest."
+    },
+    {
+      "name": "Squirrel ADHD Task Manager",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-13",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "Found via Google Play. No measurable US search volume in Ubersuggest."
+    },
+    {
+      "name": "FocusFlow ADHD Organizer",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-13",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "Found via Google Play. No measurable US search volume in Ubersuggest."
+    },
+    {
+      "name": "Speechify (ADHD angle)",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-13",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {},
+      "note": "'speechify adhd' has no volume; reading tool, off-niche."
+    },
+    {
+      "name": "Obsidian",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-13",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "obsidian for adhd": {
+          "volume": 20
+        }
+      },
+      "note": "From saner.ai best-adhd-apps list (Adi link, 2026-11-13). 'obsidian for adhd' 20/mo SD 14; note app, weak ADHD intent."
+    },
+    {
+      "name": "Headspace",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-13",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "headspace for adhd": {
+          "volume": 0
+        }
+      },
+      "note": "From saner.ai best-adhd-apps list (Adi link, 2026-11-13). 'headspace for adhd' no measurable volume; meditation, off-niche."
+    },
+    {
+      "name": "Plexii (PlexiiDesk)",
+      "slug": "plexii-review",
+      "status": "published",
+      "proposed_on": "2026-11-13",
+      "revisit_after": null,
+      "keywords_us": {
+        "plexii": {
+          "volume": 0
+        },
+        "plexiidesk": {
+          "volume": 0
+        }
+      },
+      "note": "Asked for by Adi. No measurable US search volume yet; desktop app (Mac/Windows), no app store listing, no independent reviews. Draft #6191.",
+      "post_id": 6191,
+      "published_on": "2026-11-13",
+      "url": "https://www.tryfoco.com/plexii-review/"
+    },
+    {
+      "name": "Alarmy",
+      "slug": "alarmy-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-14",
+      "keywords_us": {
+        "alarmy": {
+          "volume": 8100,
+          "sd": 34
+        },
+        "alarmy alarm clock app": {
+          "volume": 6600,
+          "sd": 28
+        },
+        "is alarmy free": {
+          "volume": 390,
+          "sd": 40
+        },
+        "alarmy pro subscription": {
+          "volume": 110,
+          "sd": 26
+        },
+        "alarmy pro cost": {
+          "volume": 50,
+          "sd": 17
+        },
+        "alarmy alternative": {
+          "volume": 50,
+          "sd": 2
+        },
+        "apps like alarmy": {
+          "volume": 40,
+          "sd": 26
+        },
+        "alarmy review": {
+          "volume": 40,
+          "sd": 38
+        }
+      },
+      "note": "Recommended. Target 'alarmy alarm clock app' 6,600 SD 28 plus ~850/mo of price/free/alternative/review questions. SERP (2026-11-07): nowsecure, App Store, r/adhdwomen thread 'Alarmy changed my life' at #4, APK sites; no independent review. gap-scan: /adhd-alarm-clock/ #5831 has Alarmy as item 1 + H3 'Is Alarmy free?'; trim that H3 to one line + link.",
+      "revisit_after": null
+    },
+    {
+      "name": "Fantastical",
+      "slug": "fantastical-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-14",
+      "keywords_us": {
+        "fantastical calendar app": {
+          "volume": 2900,
+          "sd": 31
+        },
+        "fantastical calendar app for mac": {
+          "volume": 880,
+          "sd": 5
+        },
+        "fantastical vs google calendar": {
+          "volume": 90,
+          "sd": 14
+        },
+        "fantastical vs apple calendar": {
+          "volume": 90,
+          "sd": 26
+        },
+        "fantastical alternative": {
+          "volume": 70,
+          "sd": 15
+        },
+        "busycal vs fantastical": {
+          "volume": 70,
+          "sd": 16
+        },
+        "fantastical review": {
+          "volume": 40,
+          "sd": 22
+        },
+        "fantastical cost": {
+          "volume": 40,
+          "sd": 7
+        },
+        "is fantastical free": {
+          "volume": 40,
+          "sd": 26
+        }
+      },
+      "note": "Recommended. Bare 'fantastical' (14,800) is mostly the dictionary word, ignored. SERP for 'fantastical review' (2026-10-05): Reddit r/macapps, SoftwareAdvice, Appleosophy 2022, Product Hunt, MacStories, a DA-3 blog; old or thin. gap-scan: 0 mentions on site; heading overlap only with /best-ai-calendar-apps-for-adhd/ generic H3s.",
+      "revisit_after": null
+    },
+    {
+      "name": "Wispr Flow",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-14",
+      "revisit_after": "2027-02-01",
+      "note": "Big review cluster (review 480 SD 35, alternative 480 SD 11) but it is a dictation tool, off-niche for task initiation."
+    },
+    {
+      "name": "Willow Voice",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-14",
+      "revisit_after": "2027-02-01",
+      "note": "Dictation tool, off-niche; review 30 SD 19."
+    },
+    {
+      "name": "SelfControl",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-14",
+      "revisit_after": "2027-02-01",
+      "note": "selfcontrol app 1,000 SD 44; every variant SD 36+; no review questions."
+    },
+    {
+      "name": "FocusMe",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-14",
+      "revisit_after": "2027-02-01",
+      "note": "Brand 720 SD 45; review 10; cold turkey vs focusme 30."
+    },
+    {
+      "name": "Apple Reminders vs Todoist",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-14",
+      "revisit_after": "2027-02-01",
+      "note": "70/mo SD 17, nothing else in cluster. Could join the Todoist vs series later."
+    },
+    {
+      "name": "Dubbii",
+      "what": "Body doubling app by ADHD Love: live hosted sessions, focus room, cleaning videos",
+      "cluster_us": {
+        "dubbii": [
+          720,
+          29
+        ],
+        "dubbii app": [
+          320,
+          30
+        ],
+        "dubbii body doubling app": [
+          260,
+          31
+        ],
+        "dubbii app cost": [
+          40,
+          29
+        ],
+        "dubbii app review": [
+          30,
+          29
+        ]
+      },
+      "proposed_on": "2026-11-14",
+      "status": "published",
+      "picked_on": "2026-11-14",
+      "post_id": 6206,
+      "slug": "dubbii-review",
+      "published_on": "2026-11-14",
+      "inbound_links": [
+        "flow-club-review",
+        "body-doubling-adhd",
+        "adhd-cleaning-planner"
+      ]
+    },
+    {
+      "name": "Elevate",
+      "cluster_us": {
+        "elevate app review": [
+          590,
+          29
+        ],
+        "is elevate app free": [
+          430,
+          27
+        ],
+        "elevate app cost": [
+          260,
+          20
+        ]
+      },
+      "proposed_on": "2026-11-14",
+      "status": "published",
+      "picked_on": "2026-11-14",
+      "post_id": 6226,
+      "slug": "elevate-app-review",
+      "published_on": "2026-11-14",
+      "inbound_links": [
+        "working-memory-adhd",
+        "brainway-app-review",
+        "brain-fm-review"
+      ]
+    },
+    {
+      "name": "Sweepy",
+      "what": "Home cleaning schedule app, gamified (Appsent)",
+      "cluster_us": {
+        "sweepy app": [
+          880,
+          34
+        ],
+        "sweepy app review": [
+          70,
+          35
+        ],
+        "sweepy app cost": [
+          30,
+          45
+        ],
+        "sweepy vs tody app": [
+          30,
+          23
+        ]
+      },
+      "proposed_on": "2026-11-14",
+      "status": "published",
+      "picked_on": "2026-11-14",
+      "post_id": 6217,
+      "slug": "sweepy-app-review",
+      "published_on": "2026-11-14",
+      "inbound_links": [
+        "adhd-cleaning-planner",
+        "dubbii-review",
+        "habitica-review"
+      ]
+    },
+    {
+      "name": "DeeDee",
+      "what": "DeeDee ADHD daily helper tools (Viktar Shalenchanka)",
+      "us_ratings": "5.0 from 4 (2026-11-14)",
+      "cluster_us": {
+        "deedee": "9,900 but about other things (hair braiding, TV)",
+        "deedee app": 0
+      },
+      "status": "rejected",
+      "reason": "no search demand for the app",
+      "proposed_on": "2026-11-14"
+    },
+    {
+      "name": "Best procrastination apps (list)",
+      "cluster_us": {
+        "procrastination app": [
+          480,
+          40
+        ],
+        "best procrastination app": [
+          210,
+          32
+        ],
+        "anti procrastination app": [
+          210,
+          38
+        ],
+        "best app for procrastination": [
+          170,
+          42
+        ],
+        "best apps for procrastination": [
+          170,
+          38
+        ]
+      },
+      "serp": "theliven.com listicle #1 (DA40), reddit, habitdoom, digitaltrends, routinery blog",
+      "status": "published",
+      "post_id": 6239,
+      "slug": "best-procrastination-apps",
+      "todo_on_publish": [
+        "rename H3 in best-apps-for-adhd-task-paralysis",
+        "inbound links from forest, opal, cold-turkey, focusmate, structured, brainway, liven, wisey, chillio reviews"
+      ],
+      "published_on": "2026-11-14",
+      "inbound_links": [
+        "forest-app-for-adhd",
+        "opal-app-review",
+        "cold-turkey-blocker-review",
+        "focusmate-review",
+        "structured-app-review",
+        "brainway-app-review",
+        "liven-app-review",
+        "wisey-app-review",
+        "chillio-app-review",
+        "best-apps-for-adhd-task-paralysis"
+      ],
+      "competitor_seen": "adhd-founder.com/blog/best-apps-procrastination-founders-2026 (10 apps, no prices, unsourced 42% stat)",
+      "rebuilt": "2026-11-14: 12 apps, research methods, setup guide, 2625 words",
+      "next": [
+        "review Freedom",
+        "review one sec"
+      ]
+    },
+    {
+      "name": "Freedom",
+      "what": "Cross-device app and website blocker (Eighty Percent Solutions)",
+      "cluster_us": {
+        "freedom app review": [
+          110,
+          22
+        ],
+        "freedom app blocker": [
+          1600,
+          49
+        ],
+        "freedom.to app": [
+          3600,
+          58
+        ],
+        "freedom.to coupon code": [
+          880,
+          16
+        ],
+        "freedom procrastination app": [
+          70,
+          14
+        ]
+      },
+      "status": "published",
+      "picked_on": "2026-11-14",
+      "post_id": 6260,
+      "slug": "freedom-app-review",
+      "published_on": "2026-11-14",
+      "inbound_links": [
+        "best-procrastination-apps",
+        "best-app-blocker-apps",
+        "cold-turkey-blocker-review"
+      ]
+    },
+    {
+      "name": "one sec",
+      "what": "Pause-before-app screen time app (riedel.wtf)",
+      "cluster_us": {
+        "one sec app": [
+          880,
+          40
+        ],
+        "one sec app review": [
+          30,
+          24
+        ],
+        "is one sec free": [
+          30,
+          29
+        ],
+        "is one sec app safe": [
+          30,
+          39
+        ]
+      },
+      "status": "published",
+      "picked_on": "2026-11-14",
+      "post_id": 6271,
+      "slug": "one-sec-app-review",
+      "published_on": "2026-11-14",
+      "inbound_links": [
+        "best-procrastination-apps",
+        "screenzen-review",
+        "freedom-app-review"
+      ]
+    },
+    {
+      "name": "Lumosity",
+      "slug": "lumosity-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-15",
+      "revisit_after": null,
+      "keywords_us": {
+        "lumosity": {
+          "volume": 33100,
+          "sd": 49
+        },
+        "lumosity brain training app": {
+          "volume": 4400,
+          "sd": 31
+        },
+        "lumosity price": {
+          "volume": 590,
+          "sd": 27
+        },
+        "is lumosity free": {
+          "volume": 590,
+          "sd": 45
+        },
+        "reviews of lumosity": {
+          "volume": 390,
+          "sd": 33
+        },
+        "elevate vs lumosity": {
+          "volume": 260,
+          "sd": 31
+        },
+        "lumosity vs elevate": {
+          "volume": 210,
+          "sd": 30
+        },
+        "brainhq vs lumosity": {
+          "volume": 210,
+          "sd": 20
+        },
+        "does lumosity work": {
+          "volume": 210,
+          "sd": 36
+        },
+        "lumosity how much does it cost": {
+          "volume": 170,
+          "sd": 9
+        },
+        "lumosity app review": {
+          "volume": 90,
+          "sd": 36
+        },
+        "is lumosity worth it": {
+          "volume": 90,
+          "sd": 38
+        },
+        "lumosity and adhd": {
+          "volume": 70,
+          "sd": 42
+        }
+      },
+      "note": "Recommended. ~2,800/mo of review/price/free/vs questions; target 'lumosity price' SD 27 + 'lumosity how much does it cost' SD 9. SERP 'lumosity price' (2026-11-15): AI overview, a DA-1 wordpress page at #2, a store page, YouTube; no independent review. Natural follow-up to /elevate-app-review/ (#6226), which has H2 'How is Elevate different from Lumosity and Peak?': keep that H2 short and link to the new post. Ignore 'lumosity word bubbles' (game) volume."
+    },
+    {
+      "name": "BrainHQ",
+      "slug": "brainhq-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-15",
+      "revisit_after": null,
+      "keywords_us": {
+        "brainhq app": {
+          "volume": 1300,
+          "sd": 29
+        },
+        "brainhq reviews": {
+          "volume": 720,
+          "sd": 32
+        },
+        "brainhq free": {
+          "volume": 590,
+          "sd": 30
+        },
+        "brainhq cost": {
+          "volume": 260,
+          "sd": 20
+        },
+        "brainhq vs lumosity": {
+          "volume": 210,
+          "sd": 20
+        },
+        "brainhq subscription": {
+          "volume": 170,
+          "sd": 21
+        },
+        "how much does brainhq cost": {
+          "volume": 90,
+          "sd": 25
+        },
+        "is brainhq free": {
+          "volume": 90,
+          "sd": 30
+        },
+        "is brainhq worth it": {
+          "volume": 70,
+          "sd": 30
+        },
+        "is brainhq legit": {
+          "volume": 50,
+          "sd": 6
+        }
+      },
+      "note": "Recommended. ~2,300/mo of review/cost/free/vs questions, SD 6-32. SERP 'brainhq reviews' (2026-11-15): brainhq.com FAQ, forums, Google Play; no independent review in the top. gap-scan: 1 passing mention on /how-to-focus-with-adhd/. Audience skews older (Posit Science, speed-of-processing training): ADHD angle must stay honest and hedged."
+    },
+    {
+      "name": "Peak Brain Training",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-15",
+      "revisit_after": "2027-02-01",
+      "note": "peak brain training 390 SD 27; review/price 30 each. Cover inside a Lumosity/Elevate post instead."
+    },
+    {
+      "name": "Trevor AI",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-15",
+      "revisit_after": "2027-02-01",
+      "note": "Brand 720 SD 28 but review 30, app 30, nothing else."
+    },
+    {
+      "name": "Apollo Neuro",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-15",
+      "revisit_after": "2027-02-01",
+      "note": "Stress wearable, off-niche; review 880 at SD 38, affiliate-heavy SERP."
+    },
+    {
+      "name": "Revibe Connect",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-15",
+      "revisit_after": "2027-02-01",
+      "note": "ADHD focus watch, but 'revibe' collides with clinics/salons; revibe connect 70, revibe watch 110, no review queries."
+    },
+    {
+      "name": "Lately (on-time app)",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-15",
+      "revisit_after": "2027-02-01",
+      "note": "'lately app' 50, name collides with the common word."
+    },
+    {
+      "name": "Impulse Brain Training",
+      "slug": "impulse-brain-training-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-16",
+      "revisit_after": null,
+      "keywords_us": {
+        "impulse brain training": {
+          "volume": 2900,
+          "sd": 30
+        },
+        "impulse brain training review": {
+          "volume": 390,
+          "sd": 29
+        },
+        "impulse brain training reviews": {
+          "volume": 260,
+          "sd": 29
+        },
+        "impulse brain training app": {
+          "volume": 170,
+          "sd": 25
+        },
+        "is impulse brain training legit": {
+          "volume": 90,
+          "sd": 32
+        },
+        "is impulse brain training free": {
+          "volume": 50,
+          "sd": 28
+        },
+        "impulse brain training cost": {
+          "volume": 40,
+          "sd": 29
+        }
+      },
+      "note": "Recommended. ~950/mo of review/legit/free/cost questions at SD 25-32. iOS 4.7 with 852,888 US ratings, updated 2026-11-11 (GMRD Apps). Runs ADHD tests in-app. SERP 'impulse brain training review' (2026-11-16): AI overview, geniusmind.sg DA 11, Google Play, a Google support thread; no strong independent review. gap-scan clean. Fits brain-training cluster (Elevate published, Lumosity/BrainHQ proposed)."
+    },
+    {
+      "name": "Headway (book summaries)",
+      "slug": "headway-app-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-16",
+      "revisit_after": null,
+      "keywords_us": {
+        "headway app": {
+          "volume": 8100,
+          "sd": 29
+        },
+        "headway app review": {
+          "volume": 5400,
+          "sd": 28
+        },
+        "headway app reviews": {
+          "volume": 6600,
+          "sd": 40
+        },
+        "headway app cost": {
+          "volume": 590,
+          "sd": 34
+        },
+        "is headway app free": {
+          "volume": 390,
+          "sd": 47
+        },
+        "how much is headway app": {
+          "volume": 210,
+          "sd": 34
+        },
+        "is headway app worth it": {
+          "volume": 110,
+          "sd": 35
+        }
+      },
+      "note": "Recommended, fit borderline: microlearning/book-summary app, same genre as published Liven and Wisey reviews. Part of 'headway app reviews' is the Headway therapy network (name collision); 'headway app review' SERP is about the book app. iOS 4.6, 117,349 US ratings, updated 2026-11-12. SERP (2026-09-08): littlealmanack DA 14 at #2, Reddit, App Store, small blogs, Trustpilot, Medium. gap-scan clean."
+    },
+    {
+      "name": "YNAB",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-16",
+      "revisit_after": "2027-02-01",
+      "note": "Off-niche (personal finance, YMYL). Brand 110,000 SD 69; 'ynab alternatives' 590 SD 11 and 'ynab vs monarch' 1,600 SD 12 but finance SERPs. Has an official 'budgeting with ADHD' page; could fit an ADHD-money article later."
+    },
+    {
+      "name": "Toodledo",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-16",
+      "revisit_after": "2027-02-01",
+      "note": "Brand 1,300 SD 38; review questions ~50 total (alternatives 30, pricing 20). Old app, no momentum."
+    },
+    {
+      "name": "Letterly",
+      "slug": "letterly-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-17",
+      "revisit_after": null,
+      "keywords_us": {
+        "letterly": {
+          "volume": 1600,
+          "sd": 33
+        },
+        "letterly app": {
+          "volume": 210,
+          "sd": 25
+        },
+        "letterly reviews": {
+          "volume": 170,
+          "sd": 21
+        },
+        "letterly pricing": {
+          "volume": 90,
+          "sd": 20
+        },
+        "letterly app review": {
+          "volume": 30,
+          "sd": 23
+        },
+        "letterly lifetime deal": {
+          "volume": 20,
+          "sd": 15
+        }
+      },
+      "note": "Recommended. AI voice-to-text note app (letterly.app); brain-dump angle. Name collides with Letterly jewelry store (letterly.io: 'shop', 'pendant', 'stationery' excluded). Review questions ~330/mo at SD 15-23. SERP 'letterly reviews' (2026-11-17): AI overview, affihouse.com DA 8 at #2, AppSumo, YouTube; weak. iOS 4.7 with 1,140 US ratings, updated 2026-11-11. gap-scan clean (no post mentions it). Scout ran without Reddit."
+    },
+    {
+      "name": "Voicenotes",
+      "slug": "voicenotes-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-17",
+      "revisit_after": null,
+      "keywords_us": {
+        "voicenotes": {
+          "volume": 1600,
+          "sd": 26
+        },
+        "voicenotes app": {
+          "volume": 1300,
+          "sd": 38
+        },
+        "voicenotes ai": {
+          "volume": 170,
+          "sd": 43
+        },
+        "voicenotes review": {
+          "volume": 30,
+          "sd": 30
+        },
+        "voicenotes app review": {
+          "volume": 30,
+          "sd": 37
+        },
+        "voicenotes pricing": {
+          "volume": 30,
+          "sd": 31
+        },
+        "is voicenotes free": {
+          "volume": 20,
+          "sd": 14
+        },
+        "voicenotes free plan": {
+          "volume": 20,
+          "sd": 19
+        },
+        "voicenotes ai review": {
+          "volume": 20,
+          "sd": 23
+        }
+      },
+      "note": "Recommended. AI voice notes app (voicenotes.com). Bare 'voicenotes' partly Charlie Puth's album (collision). Review questions ~190/mo at SD 14-37. SERP 'voicenotes review' (2026-10-12): AI overview, skywork.ai DA 40, Google Play, Reddit, App Store, YouTube; no strong independent review. iOS 4.8 with 7,293 US ratings, updated 2026-11-11. gap-scan clean."
+    },
+    {
+      "name": "AudioPen",
+      "slug": "audiopen-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-17",
+      "revisit_after": null,
+      "keywords_us": {
+        "audiopen": {
+          "volume": 720,
+          "sd": 32
+        },
+        "audiopen ai": {
+          "volume": 90,
+          "sd": 25
+        },
+        "audiopen pricing": {
+          "volume": 30,
+          "sd": 24
+        },
+        "audiopen review": {
+          "volume": 20,
+          "sd": 18
+        },
+        "audiopen free": {
+          "volume": 10,
+          "sd": 46
+        },
+        "audiopen alternatives": {
+          "volume": 10,
+          "sd": 40
+        }
+      },
+      "note": "Recommended (smallest of today's three). AI voice-to-text (Nicheless, Inc.). Review questions ~100/mo plus 'audiopen ai' 90 at SD 25. SERP 'audiopen review' (2026-11-17): AI overview, opentools.ai DA 41, aidetectornews DA 12, scam-detector, Reddit; no real review. iOS 4.7 with 204 US ratings, updated 2026-11-16. gap-scan clean."
+    },
+    {
+      "name": "Rosebud (AI journal)",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-17",
+      "revisit_after": "2027-02-01",
+      "note": "Brand 'rosebud journal' 480 SD 47, 'rosebud journal app' 210 SD 49; review questions ~30 total."
+    },
+    {
+      "name": "Mem AI",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-17",
+      "revisit_after": "2027-02-01",
+      "note": "Brand 2,400 SD 31; review/pricing/alternatives ~150 but general note-taking, weak ADHD fit."
+    },
+    {
+      "name": "Cog ADHD",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-17",
+      "revisit_after": "2027-02-01",
+      "note": "UK ADHD care app; no US search volume in Ubersuggest."
+    },
+    {
+      "name": "Inflow (Cerebral acquisition)",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-17",
+      "revisit_after": "2027-02-01",
+      "note": "Cerebral acquired Inflow (2026-03-24, BusinessWire). /inflow-review/ and /foco-vs-inflow/ exist; consider a patch noting the acquisition. 'cerebral inflow' no volume."
+    },
+    {
+      "name": "Paprika Recipe Manager",
+      "slug": "paprika-app-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-18",
+      "revisit_after": null,
+      "keywords_us": {
+        "paprika app": {
+          "volume": 4400,
+          "sd": 34
+        },
+        "paprika app review": {
+          "volume": 210,
+          "sd": 29
+        },
+        "paprika app cost": {
+          "volume": 260,
+          "sd": 46
+        },
+        "is paprika app free": {
+          "volume": 50,
+          "sd": 40
+        },
+        "paprika app price": {
+          "volume": 30,
+          "sd": 30
+        },
+        "umami vs paprika app": {
+          "volume": 40,
+          "sd": 17
+        }
+      },
+      "note": "Review questions ~700/mo. SERP for 'paprika app review': plantoeat.com (competitor blog, 2023), reluctantgourmet, thekitchn (old), reddit. No ADHD angle ranks. Mealime shut down (mealime.com/closing), so recipe/meal app switchers are searching."
+    },
+    {
+      "name": "Plan to Eat",
+      "slug": "plan-to-eat-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-18",
+      "revisit_after": null,
+      "keywords_us": {
+        "plan to eat app": {
+          "volume": 1000,
+          "sd": 44
+        },
+        "plan to eat review": {
+          "volume": 50,
+          "sd": 19
+        },
+        "plan to eat app review": {
+          "volume": 50,
+          "sd": 40
+        },
+        "plan to eat app cost": {
+          "volume": 90,
+          "sd": 43
+        },
+        "plan to eat vs paprika": {
+          "volume": 30,
+          "sd": 17
+        }
+      },
+      "note": "'plan to eat' 5,400 is inflated by the common phrase; 'plan to eat app' 1,000 is the real brand. Review questions ~300. SERP for 'plan to eat review' has no actual review of the app (off-topic results)."
+    },
+    {
+      "name": "AnyList",
+      "slug": "anylist-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-18",
+      "revisit_after": null,
+      "keywords_us": {
+        "anylist": {
+          "volume": 8100,
+          "sd": 28
+        },
+        "anylist app": {
+          "volume": 1300,
+          "sd": 35
+        },
+        "anylist reviews": {
+          "volume": 50,
+          "sd": 28
+        },
+        "anylist subscription": {
+          "volume": 70,
+          "sd": 20
+        },
+        "is anylist free": {
+          "volume": 50,
+          "sd": 15
+        },
+        "anylist complete subscription": {
+          "volume": 50,
+          "sd": 20
+        }
+      },
+      "note": "Review/pricing questions ~350. SERP for 'anylist reviews': reddit, App Store, Trustpilot, thekitchn (old), pann-app.com (DA 4, vendor). Weak independent coverage."
+    },
+    {
+      "name": "Mealime",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-18",
+      "revisit_after": "2027-02-01",
+      "note": "Shut down (mealime.com/closing). 'mealime review' 110 is moot; 'mealime alternative' SERP is flooded with vendor listicles. Use the closure as a hook inside Paprika/Plan to Eat/AnyList posts or /adhd-meal-planner/."
+    },
+    {
+      "name": "Dopamind",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-18",
+      "revisit_after": "2027-02-01",
+      "note": "AI planner for ADHD on App Store; no US search volume in Ubersuggest."
+    },
+    {
+      "name": "Alune",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-18",
+      "revisit_after": "2027-02-01",
+      "note": "AI ADHD planner (aluneapp.com); no US search volume in Ubersuggest."
+    },
+    {
+      "name": "Ahead (Emotional Intelligence)",
+      "slug": "ahead-app-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-19",
+      "revisit_after": null,
+      "keywords_us": {
+        "ahead app": {
+          "volume": 880,
+          "sd": 31
+        },
+        "ahead app reviews": {
+          "volume": 390,
+          "sd": 29
+        },
+        "ahead app review": {
+          "volume": 50,
+          "sd": 29
+        },
+        "ahead app cost": {
+          "volume": 50,
+          "sd": 27
+        },
+        "is ahead app free": {
+          "volume": 40,
+          "sd": 29
+        },
+        "what is ahead app": {
+          "volume": 40,
+          "sd": 30
+        },
+        "is the ahead app free": {
+          "volume": 30,
+          "sd": 30
+        },
+        "how much is ahead app": {
+          "volume": 20,
+          "sd": 11
+        }
+      },
+      "note": "Emotions/impulse coaching app (id1570430177). Review questions ~620/mo. SERP for 'ahead app reviews': only App Store + Google Play, no independent review at all. Fits P2 emotional-regulation-adhd. 'ahead app' cluster also has unrelated 'order ahead' noise; counted only Ahead-specific queries. gap-scan: no heading collision."
+    },
+    {
+      "name": "Goodnotes",
+      "slug": "goodnotes-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-19",
+      "revisit_after": null,
+      "keywords_us": {
+        "goodnotes": {
+          "volume": 74000,
+          "sd": 54
+        },
+        "is goodnotes free": {
+          "volume": 2900,
+          "sd": 30
+        },
+        "goodnotes subscription": {
+          "volume": 1900,
+          "sd": 28
+        },
+        "goodnotes cost": {
+          "volume": 1000,
+          "sd": 30
+        },
+        "goodnotes one time purchase": {
+          "volume": 720,
+          "sd": 27
+        },
+        "goodnotes essential subscription": {
+          "volume": 880,
+          "sd": 26
+        },
+        "does goodnotes cost money": {
+          "volume": 320,
+          "sd": 23
+        },
+        "is goodnotes worth it": {
+          "volume": 210,
+          "sd": 20
+        },
+        "goodnotes review": {
+          "volume": 210,
+          "sd": 35
+        }
+      },
+      "note": "Pricing/review questions several thousand/mo. SERP for 'is goodnotes free': Facebook group, theflourishplanner (DA 14) #5, YouTube, reddit, spotsaas (DA 41). No ADHD angle. Student angle (P4). gap-scan: /adhd-planner/ and /best-adhd-planner/ mention GoodNotes digital planners, no heading collision; link to them."
+    },
+    {
+      "name": "Milanote",
+      "slug": "milanote-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-19",
+      "revisit_after": null,
+      "keywords_us": {
+        "milanote": {
+          "volume": 90500,
+          "sd": 59
+        },
+        "is milanote free": {
+          "volume": 880,
+          "sd": 24
+        },
+        "milanote price": {
+          "volume": 590,
+          "sd": 30
+        },
+        "milanote alternatives": {
+          "volume": 480,
+          "sd": 13
+        },
+        "milanote cost": {
+          "volume": 110,
+          "sd": 21
+        },
+        "milanote reviews": {
+          "volume": 110,
+          "sd": 28
+        },
+        "how much is milanote": {
+          "volume": 90,
+          "sd": 22
+        }
+      },
+      "note": "Visual board tool for creatives. Review/pricing questions ~2,200/mo. SERP for 'is milanote free': official plans page, reddit pricing complaint, refern.app (DA 13, competitor). ADHD fit is partial (visual thinkers, brain dumps). gap-scan: no heading collision."
+    },
+    {
+      "name": "Cozi",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-19",
+      "revisit_after": "2027-02-01",
+      "note": "Strong numbers ('cozi app reviews' 140 SD 34, cost/free ~200) but RemindHer already has cozi-review, cozi-vs-skylight, cozi-alternatives. Do not compete with Adi's own site."
+    },
+    {
+      "name": "Skylight Calendar",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-19",
+      "revisit_after": "2027-02-01",
+      "note": "Huge demand ('skylight calendar plus subscription' 5,400 SD 25) but RemindHer covers skylight-calendar-review, alternatives, vs Hearth/Cozyla. Hardware device too."
+    },
+    {
+      "name": "FamilyWall",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-19",
+      "revisit_after": "2027-02-01",
+      "note": "Review questions ~280 at SD 16-32, but remindher.app/familywall-review/ already ranks for it."
+    },
+    {
+      "name": "OurHome",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-19",
+      "revisit_after": "2027-02-01",
+      "note": "Brand 480, review 30. App appears shut down (several 'OurHome shut down' alternative pages); 'alternative to ourhome app' shows 0."
+    },
+    {
+      "name": "Insight Timer",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-19",
+      "revisit_after": "2027-02-01",
+      "note": "Review/free queries all SD 35-53. Too hard, weak ADHD fit."
+    },
+    {
+      "name": "Sectograph",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-19",
+      "revisit_after": "2027-02-01",
+      "note": "Brand 170, review questions ~10/mo."
+    },
+    {
+      "name": "Timepage",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-19",
+      "revisit_after": "2027-02-01",
+      "note": "'timepage app' 70, no review cluster."
+    },
+    {
+      "name": "Maple (family organizer)",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-19",
+      "revisit_after": "2027-02-01",
+      "note": "'maple family app' 90, no review cluster; family space belongs to RemindHer."
+    },
+    {
+      "name": "ElevenReader",
+      "slug": "elevenreader-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-20",
+      "keywords_us": {
+        "elevenreader": {
+          "volume": 5400,
+          "sd": 29
+        },
+        "is elevenreader free": {
+          "volume": 140,
+          "sd": 39
+        },
+        "elevenreader pricing": {
+          "volume": 110,
+          "sd": 20
+        },
+        "elevenreader vs speechify": {
+          "volume": 70,
+          "sd": 9
+        },
+        "elevenreader cost": {
+          "volume": 50,
+          "sd": 16
+        },
+        "elevenreader review": {
+          "volume": 50,
+          "sd": 31
+        },
+        "speechify vs elevenreader": {
+          "volume": 30,
+          "sd": 11
+        },
+        "elevenreader alternative": {
+          "volume": 30,
+          "sd": 18
+        }
+      },
+      "note": "Recommended. ElevenLabs' read-aloud app; reading with ADHD angle. Review questions ~480/mo; main target 'elevenreader pricing' SD 20. SERP (Ubersuggest 2026-09-20): elevenreader.io pages, 2 Reddit pricing complaints, ElevenLabs help, speechcentral.net (competitor); no independent review. gap-scan: only a mention in draft #1985 /adhd-and-dyslexia/.",
+      "revisit_after": null
+    },
+    {
+      "name": "Voice Dream Reader",
+      "slug": "voice-dream-reader-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-20",
+      "keywords_us": {
+        "voice dream reader": {
+          "volume": 1300,
+          "sd": 40
+        },
+        "voice dream reader app": {
+          "volume": 110,
+          "sd": 34
+        },
+        "voice dream reader cost": {
+          "volume": 70,
+          "sd": 26
+        },
+        "voice dream reader price": {
+          "volume": 30,
+          "sd": 30
+        },
+        "is voice dream reader free": {
+          "volume": 30,
+          "sd": 37
+        },
+        "voice dream reader subscription": {
+          "volume": 30,
+          "sd": 24
+        }
+      },
+      "note": "Recommended (borderline). Text-to-speech reader, moved to subscription. Review questions ~170/mo; target 'voice dream reader cost' SD 26. SERP (2026-09-24): App Store, r/Blind, voicedream.com, older reviews from afb.org, readingrockets.org, perkins.org (blind/dyslexia angle, none ADHD). gap-scan: mention in draft #1985 only.",
+      "revisit_after": null
+    },
+    {
+      "name": "Saner.ai",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-20",
+      "keywords_us": {
+        "saner ai": {
+          "volume": 2400,
+          "sd": 34
+        },
+        "saner ai review": {
+          "volume": 140,
+          "sd": 26
+        }
+      },
+      "note": "Already covered: /saner-ai-review/ is live.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Bionic Reading",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-20",
+      "keywords_us": {
+        "bionic reading": {
+          "volume": 4400,
+          "sd": 30
+        },
+        "bionic reading adhd": {
+          "volume": 140,
+          "sd": 33
+        },
+        "bionic reading for adhd": {
+          "volume": 110,
+          "sd": 44
+        },
+        "adhd bionic reading": {
+          "volume": 50,
+          "sd": 22
+        }
+      },
+      "note": "A reading method more than an app; ADHD queries ~300/mo but main target SD 33-44. Possible future topic post ('does bionic reading help ADHD'), not a review.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Natural Reader",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-20",
+      "keywords_us": {
+        "natural reader": {
+          "volume": 27100,
+          "sd": 34
+        },
+        "natural reader review": {
+          "volume": 90,
+          "sd": 32
+        },
+        "speechify vs natural reader": {
+          "volume": 140,
+          "sd": 13
+        },
+        "natural reader pricing": {
+          "volume": 210,
+          "sd": 44
+        }
+      },
+      "note": "Generic TTS tool, weak ADHD fit; best target is a vs-Speechify page and Speechify is on hold until 2027-02.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Anki (for ADHD)",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-20",
+      "keywords_us": {
+        "anki for adhd": {
+          "volume": null,
+          "sd": null
+        }
+      },
+      "note": "No measurable ADHD-angle volume in Ubersuggest.",
+      "revisit_after": "2027-02-01"
+    },
+    {
+      "name": "Mightier",
+      "status": "proposed",
+      "proposed_on": "2026-11-21",
+      "keywords_us": {
+        "mightier": {
+          "volume": 1900,
+          "sd": 15
+        },
+        "mightier app": {
+          "volume": 390,
+          "sd": 40
+        },
+        "mightier review": {
+          "volume": 320,
+          "sd": 27
+        },
+        "mightier reviews": {
+          "volume": 260,
+          "sd": 36
+        },
+        "mightier app review": {
+          "volume": 70,
+          "sd": 36
+        },
+        "mightier promo code": {
+          "volume": 40,
+          "sd": 31
+        },
+        "mightier cost": {
+          "volume": 30,
+          "sd": 15
+        },
+        "mightier reviews complaints": {
+          "volume": 30,
+          "sd": 30
+        },
+        "mightier reviews reddit": {
+          "volume": 30,
+          "sd": 23
+        },
+        "mightier parent app": {
+          "volume": 30,
+          "sd": 20
+        }
+      },
+      "note": "Biofeedback games for kids' emotional regulation (Boston Children's spinout, NIH-funded ADHD study). SERP for 'mightier review': AI overview, YouTube, a DA-20 therapy-clinic blog, official site; no strong independent review. gap-scan: clean. Parent/P4 + emotional-regulation angle. Note 'mightier' brand number mixes in the 'pen is mightier' idiom; review questions are clean."
+    },
+    {
+      "name": "Whisper Memos",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-21",
+      "keywords_us": {
+        "whisper memos": {
+          "volume": 170,
+          "sd": 16
+        },
+        "whisper memos app": {
+          "volume": 50,
+          "sd": 31
+        }
+      },
+      "note": "No review-question demand; voice-notes space already crowded in candidates (AudioPen, Letterly, Voicenotes)."
+    },
+    {
+      "name": "Shelpful",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-21",
+      "keywords_us": {
+        "shelpful": {
+          "volume": 320,
+          "sd": 49
+        },
+        "shelpful app": {
+          "volume": 70,
+          "sd": 40
+        }
+      },
+      "note": "Brand demand only, SD 40+, no review questions.",
+      "revisit_after": "2027-03-01"
+    },
+    {
+      "name": "Homey (chores & allowance)",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-21",
+      "keywords_us": {
+        "homey chore app": {
+          "volume": 590,
+          "sd": 31
+        }
+      },
+      "note": "Only a brand query that goes to the stores; review questions show 0. 'homey' collides with Athom smart-home Homey."
+    },
+    {
+      "name": "NeuroNation",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-21",
+      "keywords_us": {
+        "neuronation": {
+          "volume": 590,
+          "sd": 39
+        },
+        "neuronation reviews": {
+          "volume": 40,
+          "sd": 33
+        }
+      },
+      "note": "Review questions ~60 but SD 33+, and brain-training is already covered by Elevate/Lumosity posts."
+    },
+    {
+      "name": "Tide (focus app)",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-21",
+      "note": "'tide app' volume is tide charts/fishing, not the focus app."
+    },
+    {
+      "name": "BeeDone",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-21",
+      "keywords_us": {
+        "beedone": {
+          "volume": 90,
+          "sd": 23
+        }
+      },
+      "note": "Brand only, no review questions."
+    },
+    {
+      "name": "Be Focused",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-21",
+      "keywords_us": {
+        "be focused app": {
+          "volume": 90,
+          "sd": 40
+        }
+      },
+      "note": "Low demand, SD 40."
+    },
+    {
+      "name": "Genio Notes (formerly Glean)",
+      "status": "proposed",
+      "proposed_on": "2026-11-22",
+      "keywords_us": {
+        "genio notes": {
+          "volume": 6600,
+          "sd": 33
+        },
+        "genio notes app": {
+          "volume": 90,
+          "sd": 24
+        },
+        "what is genio notes": {
+          "volume": 70,
+          "sd": 25
+        },
+        "how to use genio notes": {
+          "volume": 40,
+          "sd": 39
+        },
+        "is genio notes free": {
+          "volume": 30,
+          "sd": 13
+        },
+        "genio notes cost": {
+          "volume": 30,
+          "sd": 32
+        }
+      },
+      "serp": "what is genio notes: genio.co, App Store, university disability-office pages (CUNY, Berkeley, Rutgers), Reddit. No independent review.",
+      "cannibalization": "gap-scan clean (run 44995198011)",
+      "note": "Audio note-taking for students, used by disability offices. Rebranded from Glean (name collides with Glean enterprise AI). Target: what is genio notes / is it free / cost."
+    },
+    {
+      "name": "MindNode",
+      "status": "proposed",
+      "proposed_on": "2026-11-22",
+      "keywords_us": {
+        "mindnode": {
+          "volume": 1600,
+          "sd": 35
+        },
+        "app mindnode": {
+          "volume": 110,
+          "sd": 24
+        },
+        "mindnode alternative": {
+          "volume": 40,
+          "sd": 23
+        },
+        "mindnode alternatives": {
+          "volume": 30,
+          "sd": 19
+        },
+        "mindnode price": {
+          "volume": 30,
+          "sd": 16
+        },
+        "mindnode review": {
+          "volume": 10,
+          "sd": 19
+        },
+        "mindnode vs xmind": {
+          "volume": 10,
+          "sd": 15
+        }
+      },
+      "serp": "mindnode price: App Store, Capterra/SoftwareAdvice alternatives lists, small comparison sites. TechRadar has a review. No ADHD-angle review.",
+      "cannibalization": "gap-scan clean (run 44995203320)",
+      "note": "Mind map app (Mac/iOS), official ADHD page on mindnode.com."
+    },
+    {
+      "name": "Heptabase",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-22",
+      "revisit_after": "2027-02-01",
+      "keywords_us": {
+        "heptabase": {
+          "volume": 2900,
+          "sd": 30
+        },
+        "heptabase pricing": {
+          "volume": 50,
+          "sd": 6
+        },
+        "heptabase alternative": {
+          "volume": 40,
+          "sd": 29
+        },
+        "heptabase vs obsidian": {
+          "volume": 40,
+          "sd": 12
+        },
+        "heptabase review": {
+          "volume": 30,
+          "sd": 26
+        }
+      },
+      "note": "Good numbers and a weak SERP (tiny aggregator sites), but a PKM tool with a thin ADHD fit. Held back."
+    },
+    {
+      "name": "Focus Friend (Hank Green)",
+      "status": "published",
+      "proposed_on": "2026-11-22",
+      "note": "Already live as /focus-friend-app-review/; was missing from this file."
+    },
+    {
+      "name": "Naggr",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-22",
+      "revisit_after": "2027-02-01",
+      "note": "No search volume."
+    }
+  ]
 }
