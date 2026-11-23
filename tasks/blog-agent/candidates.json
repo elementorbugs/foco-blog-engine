@@ -3754,7 +3754,7 @@
     {
       "name": "How to cancel Chillio (guide)",
       "slug": "how-to-cancel-chillio",
-      "status": "drafted",
+      "status": "merged",
       "proposed_on": "2026-11-23",
       "revisit_after": null,
       "keywords_us": {
@@ -3791,7 +3791,7 @@
           "sd": 16
         }
       },
-      "note": "Noa suggest. SERP (Ubersuggest 2026-09-20): Reddit, Trustpilot, official refunds PDF (DA17), Instagram, JustAnswer; no dedicated guide. Our review has a cancel H2 but 0 GSC impressions on cancel queries. Billing looks web-based (get-chillio.app), verify flow. Trim review H2 to summary + link.",
+      "note": "Noa suggest. SERP (Ubersuggest 2026-09-20): Reddit, Trustpilot, official refunds PDF (DA17), Instagram, JustAnswer; no dedicated guide. Our review has a cancel H2 but 0 GSC impressions on cancel queries. Billing looks web-based (get-chillio.app), verify flow. Trim review H2 to summary + link. 2026-11-23: Adi chose to fold it into /chillio-app-review/ (patched live) instead of a standalone post; draft #6372 not published. Check GSC cancel queries on the review ~2026-12-21.",
       "picked_on": "2026-11-23"
     },
     {
