@@ -195,3 +195,6 @@ Pruned quarterly. Keep under 60 lines.
 - One engine layout (full-bleed photo + text boxes + sticker) + the same 8 Jess images + the same story arc = every post looks identical. Swapping text is NOT a new format.
 - Rule: run 3-4 recurring SERIES, each with its own designed template (different layout, imagery type, type treatment), sharing only the brand codes. Benchmark real top carousels in the niche before designing, and judge my output against them, not against my last carousel.
 - Rotate the WORK TASK across creatives, not only the style (Adi, 2026-11-20: "why always email, change direction"). Client email was the task in 3 posts in a row. Before a new story, check log.md and pick a different stake: invoices, proposal, portfolio/website update, school form, tax receipts, etc.
+
+## 2026-11-23 Image cost misquoted (Google Cloud report: ~₪34 of images in a week)
+- I quoted ~$0.04/image while running gemini-3-pro-image-preview (~$0.13). Default to gemini-2.5-flash-image; Pro only when needed, with the real total stated first. gemini-image.py now prints the cost per run.

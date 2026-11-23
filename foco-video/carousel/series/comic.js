@@ -1,6 +1,6 @@
 // "FOCO comic" series (benchmark: ADHDinos, 457K plays): 4 panels of the on-model FOCO character acting in one
 // recurring scene, one handwritten line per panel, then a grid slide. 1080x1350 (works on TikTok and IG).
-// Panels: Gemini scenes with the official states as references (viral-lab/tools/gemini-image.py, --ref panel-1 for
+// Panels (cost: flash-image ~$0.04, 3-pro-image ~$0.13 per image): Gemini scenes with the official states as references (viral-lab/tools/gemini-image.py, --ref panel-1 for
 // the next panels so desk/style stay identical); check every panel against viral-lab/character/official before use.
 // Spec: carousels/<slug>.json with "series": "comic". Usage: node carousel/series/comic.js <slug>
 const { chromium } = require("playwright");

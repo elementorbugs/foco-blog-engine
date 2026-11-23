@@ -4,6 +4,9 @@
 # GEMINI_API_KEY, from the environment or the project .env (never printed).
 # Usage: python viral-lab/tools/gemini-image.py <out.png> <prompt.txt> [--model gemini-2.5-flash-image] [--norefs] [--aspect 1:1]
 # --norefs: scene only (no FOCO references), for the composite method where the official FOCO is placed in code.
+# COST (Adi, 2026-11-23, after a ~₪34 image week): default = gemini-2.5-flash-image (~$0.04/image).
+# gemini-3-pro-image-preview costs ~$0.13/image (1K-2K) and ~$0.24 at 4K: use it ONLY for on-model character scenes
+# where flash drifts, and tell Adi the real price before a batch. Every run prints its estimated cost.
 import os, re, sys
 from google import genai
 from google.genai import types
@@ -38,6 +41,8 @@ res = client.models.generate_content(
     contents=parts + [open(prompt_file, encoding="utf8").read()],
     config=types.GenerateContentConfig(response_modalities=["IMAGE"], image_config=types.ImageConfig(aspect_ratio=ASPECT)),
 )
+PRICE_USD = {"gemini-2.5-flash-image": 0.039, "gemini-3-pro-image-preview": 0.134}
+print(f"cost ~${PRICE_USD.get(model, 0.134):.3f} ({model})")
 for p in res.candidates[0].content.parts:
     if p.inline_data:
         open(out, "wb").write(p.inline_data.data); print("saved", out); break
