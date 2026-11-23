@@ -3822,6 +3822,72 @@
         }
       },
       "note": "Noa suggest, refresh. Google ranks the hub instead of the dedicated page (pos 33)."
+    },
+    {
+      "name": "Refresh P1 pillar /adhd-task-paralysis/ for \"task paralysis\"",
+      "slug": "adhd-task-paralysis",
+      "status": "proposed",
+      "proposed_on": "2026-11-23",
+      "revisit_after": null,
+      "keywords_us": {
+        "task paralysis": {
+          "volume": 6600,
+          "sd": 11
+        },
+        "adhd task paralysis": {
+          "volume": 1300,
+          "sd": 20
+        },
+        "task paralysis adhd": {
+          "volume": 880,
+          "sd": 20
+        },
+        "what is task paralysis": {
+          "volume": 480,
+          "sd": 20
+        }
+      },
+      "note": "Noa suggest. GSC: \"task paralysis\" splits between /procrastination-vs-paralysis/ (pos 52) and the pillar (pos 74). Pillar title targets \"ADHD paralysis\"."
+    },
+    {
+      "name": "Best body doubling apps (list)",
+      "slug": "best-body-doubling-apps",
+      "status": "proposed",
+      "proposed_on": "2026-11-23",
+      "revisit_after": null,
+      "keywords_us": {
+        "body doubling app": {
+          "volume": 880,
+          "sd": 28
+        },
+        "body doubling app for adhd": {
+          "volume": 140,
+          "sd": 33
+        },
+        "adhd body doubling app": {
+          "volume": 110,
+          "sd": 37
+        },
+        "body doubling app free": {
+          "volume": 50,
+          "sd": 30
+        }
+      },
+      "note": "Noa suggest. /body-doubling-adhd/ is the concept post (no app list); /body-doubling/ is our free room tool. FOCO body doubling = AI companion only, never real people."
+    },
+    {
+      "name": "Task paralysis vs executive dysfunction",
+      "slug": "task-paralysis-vs-executive-dysfunction",
+      "status": "proposed",
+      "proposed_on": "2026-11-23",
+      "revisit_after": null,
+      "keywords_us": {
+        "task paralysis vs executive dysfunction": {
+          "volume": 210,
+          "sd": 9
+        }
+      },
+      "note": "Noa suggest. New spoke under P1; check against /procrastination-vs-paralysis/ and /adhd-executive-function/ before writing."
     }
   ]
 }
