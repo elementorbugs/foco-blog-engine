@@ -3703,6 +3703,53 @@
       "proposed_on": "2026-11-22",
       "revisit_after": "2027-02-01",
       "note": "No search volume."
+    },
+    {
+      "name": "Nibble (microlearning)",
+      "status": "proposed",
+      "proposed_on": "2026-11-23",
+      "slug": "nibble-app-review",
+      "note": "Daily microlearning quiz app. US: 'nibble app' 4,400; review 1,300 SD30, cost 480 SD27, is free 480 SD29, how much 260+210 SD28; review cluster 3,000+. SERP: Reddit, Trustpilot, App Store, YouTube, one DA29 blog. gap-scan: 0 mentions."
+    },
+    {
+      "name": "Imprint (visual learning)",
+      "status": "proposed",
+      "proposed_on": "2026-11-23",
+      "slug": "imprint-app-review",
+      "note": "Visual micro-learning app. US: 'imprint app' 6,600; review 1,900 SD30, reviews 1,600 SD30, is free 720 SD23, cost 590 SD15; review cluster 5,000+. SERP: InsideHook feature (DA77, not a review), Reddit 'scam?' thread, YouTube, stores, nerdsip DA20. gap-scan: 0 mentions."
+    },
+    {
+      "name": "Fabulous",
+      "status": "published",
+      "proposed_on": "2026-11-23",
+      "note": "Already exists as #5688 /fabulous-app-review/ (found by gap-scan; missing from posts-new and this file)."
+    },
+    {
+      "name": "Endel",
+      "status": "published",
+      "proposed_on": "2026-11-23",
+      "note": "Already exists as #5677 /endel-app-review/, and brain-fm-review has a Brain.fm vs Endel H2. 'brain fm vs endel' 180/mo SD12-14, covered by those two."
+    },
+    {
+      "name": "Notability",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-23",
+      "revisit_after": "2027-02-01",
+      "note": "Review questions small (review 30, cost 110 SD36, is free 30 SD48); mostly device/brand queries."
+    },
+    {
+      "name": "Untangle (ADHD app)",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-23",
+      "revisit_after": "2027-02-01",
+      "note": "'untangle app' 90, no review demand."
+    },
+    {
+      "name": "Breeze wellbeing",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-23",
+      "revisit_after": "2027-02-01",
+      "note": "'breeze wellbeing app' 50 SD38, review 10."
     }
   ]
 }
