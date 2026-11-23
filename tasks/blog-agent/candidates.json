@@ -3811,7 +3811,7 @@
     {
       "name": "Refresh: best-adhd-apps-for-adult-women cannibalized by /best-adhd-app/",
       "slug": "best-adhd-apps-for-adult-women",
-      "status": "proposed",
+      "status": "published",
       "proposed_on": "2026-11-23",
       "revisit_after": null,
       "keywords_us": {
@@ -3821,7 +3821,8 @@
           "landing": "/best-adhd-app/"
         }
       },
-      "note": "Noa suggest, refresh. Google ranks the hub instead of the dedicated page (pos 33)."
+      "note": "Noa suggest, refresh. Google ranks the hub instead of the dedicated page (pos 33). 2026-11-23: rewritten live (post #1042), retitled for Women, RemindHer removed (not in stores). Re-check GSC ~2026-12-21: \"best adhd apps for adult women\" should land here, not /best-adhd-app/.",
+      "refreshed_on": "2026-11-23"
     },
     {
       "name": "Refresh P1 pillar /adhd-task-paralysis/ for \"task paralysis\"",
