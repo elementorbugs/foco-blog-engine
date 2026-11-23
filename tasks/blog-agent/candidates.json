@@ -3750,6 +3750,78 @@
       "proposed_on": "2026-11-23",
       "revisit_after": "2027-02-01",
       "note": "'breeze wellbeing app' 50 SD38, review 10."
+    },
+    {
+      "name": "How to cancel Chillio (guide)",
+      "slug": "how-to-cancel-chillio",
+      "status": "drafted",
+      "proposed_on": "2026-11-23",
+      "revisit_after": null,
+      "keywords_us": {
+        "how to cancel get chillio app": {
+          "volume": 480,
+          "sd": 28
+        },
+        "chillio app unsubscribe": {
+          "volume": 480,
+          "sd": 25
+        },
+        "how to cancel chillio app": {
+          "volume": 110,
+          "sd": 28
+        },
+        "cancel chillio app": {
+          "volume": 90,
+          "sd": 25
+        },
+        "how to cancel chillio": {
+          "volume": 70,
+          "sd": 20
+        },
+        "chillio app cancel": {
+          "volume": 70,
+          "sd": 25
+        },
+        "how to cancel chillio subscription": {
+          "volume": 50,
+          "sd": 27
+        },
+        "chillio app cancel subscription": {
+          "volume": 30,
+          "sd": 16
+        }
+      },
+      "note": "Noa suggest. SERP (Ubersuggest 2026-09-20): Reddit, Trustpilot, official refunds PDF (DA17), Instagram, JustAnswer; no dedicated guide. Our review has a cancel H2 but 0 GSC impressions on cancel queries. Billing looks web-based (get-chillio.app), verify flow. Trim review H2 to summary + link.",
+      "picked_on": "2026-11-23"
+    },
+    {
+      "name": "Refresh: best-free-adhd-apps for one-time purchase intent",
+      "slug": "best-free-adhd-apps",
+      "status": "proposed",
+      "proposed_on": "2026-11-23",
+      "revisit_after": null,
+      "keywords_us": {
+        "adhd apps with one-time purchase": {
+          "gsc_impr_28d": 99,
+          "gsc_pos": 4.7
+        }
+      },
+      "note": "Noa suggest, refresh. 0 clicks at pos 4.7; Ubersuggest shows 0 volume, GSC shows demand."
+    },
+    {
+      "name": "Refresh: best-adhd-apps-for-adult-women cannibalized by /best-adhd-app/",
+      "slug": "best-adhd-apps-for-adult-women",
+      "status": "proposed",
+      "proposed_on": "2026-11-23",
+      "revisit_after": null,
+      "keywords_us": {
+        "best adhd apps for adult women": {
+          "gsc_impr_28d": 108,
+          "gsc_pos": 8.2,
+          "landing": "/best-adhd-app/"
+        }
+      },
+      "note": "Noa suggest, refresh. Google ranks the hub instead of the dedicated page (pos 33)."
     }
   ]
 }
