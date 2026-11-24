@@ -1,0 +1,160 @@
+{
+ "family-calendar-apps-for-adhd-moms": [
+  {
+   "old": "<strong>RemindHer</strong> is built specifically around the household mental load many mothers carry, with voice-to-task capture. ",
+   "new": ""
+  },
+  {
+   "old": "  <li><a href=\"#remindher\">1. RemindHer - best for household mental load</a></li>\n",
+   "new": ""
+  },
+  {
+   "old": "<tr style=\"border-top:1px solid rgba(167,139,250,0.18)\"><td style=\"padding:12px;color:#fff;font-weight:700\">RemindHer</td><td style=\"padding:12px;color:#B8B0CC\">Varies by plan</td><td style=\"padding:12px;color:#B8B0CC\">Voice-capture and household mental load</td></tr>\n",
+   "new": ""
+  },
+  {
+   "old": "<h2 id=\"remindher\">1. RemindHer - best for household mental load</h2>\n\n<p><a href=\"https://remindher.app/\" target=\"_blank\" rel=\"noopener\">RemindHer</a> is a shared family calendar built around voice-to-task capture, aimed at the invisible cognitive labor - remembering, anticipating, coordinating - that falls disproportionately on mothers. Events and tasks get captured by voice and shared instantly with a partner or co-parent.</p>\n\n",
+   "new": ""
+  },
+  {
+   "old": "<h2 id=\"timetree\">2. TimeTree",
+   "new": "<h2 id=\"timetree\">1. TimeTree"
+  },
+  {
+   "old": "<a href=\"#timetree\">2. TimeTree",
+   "new": "<a href=\"#timetree\">1. TimeTree"
+  },
+  {
+   "old": "<h2 id=\"cozi\">3. Cozi",
+   "new": "<h2 id=\"cozi\">2. Cozi"
+  },
+  {
+   "old": "<a href=\"#cozi\">3. Cozi",
+   "new": "<a href=\"#cozi\">2. Cozi"
+  },
+  {
+   "old": "<h2 id=\"skylight\">4. Skylight",
+   "new": "<h2 id=\"skylight\">3. Skylight"
+  },
+  {
+   "old": "<a href=\"#skylight\">4. Skylight",
+   "new": "<a href=\"#skylight\">3. Skylight"
+  },
+  {
+   "old": "<h2 id=\"google-calendar\">5. Google",
+   "new": "<h2 id=\"google-calendar\">4. Google"
+  },
+  {
+   "old": "<a href=\"#google-calendar\">5. Google",
+   "new": "<a href=\"#google-calendar\">4. Google"
+  },
+  {
+   "old": "<h2 id=\"apple-calendar\">6. Apple",
+   "new": "<h2 id=\"apple-calendar\">5. Apple"
+  },
+  {
+   "old": "<a href=\"#apple-calendar\">6. Apple",
+   "new": "<a href=\"#apple-calendar\">5. Apple"
+  },
+  {
+   "old": "<h2 id=\"famcal\">7. FamCal",
+   "new": "<h2 id=\"famcal\">6. FamCal"
+  },
+  {
+   "old": "<a href=\"#famcal\">7. FamCal",
+   "new": "<a href=\"#famcal\">6. FamCal"
+  },
+  {
+   "old": "<h2 id=\"familywall\">8. FamilyWall",
+   "new": "<h2 id=\"familywall\">7. FamilyWall"
+  },
+  {
+   "old": "<a href=\"#familywall\">8. FamilyWall",
+   "new": "<a href=\"#familywall\">7. FamilyWall"
+  },
+  {
+   "old": "<h2 id=\"picniic\">9. Picniic",
+   "new": "<h2 id=\"picniic\">8. Picniic"
+  },
+  {
+   "old": "<a href=\"#picniic\">9. Picniic",
+   "new": "<a href=\"#picniic\">8. Picniic"
+  },
+  {
+   "old": "<h2 id=\"ourhome\">10. OurHome",
+   "new": "<h2 id=\"ourhome\">9. OurHome"
+  },
+  {
+   "old": "<a href=\"#ourhome\">10. OurHome",
+   "new": "<a href=\"#ourhome\">9. OurHome"
+  },
+  {
+   "old": "every event, pickup, and appointment in one shared view",
+   "new": "every event, pickup and appointment in one shared view"
+  },
+  {
+   "old": "<strong>Skylight</strong> gets it off your phone entirely with a wall display.",
+   "new": "<strong>Skylight</strong> moves the calendar off your phone and onto a wall display."
+  }
+ ],
+ "adhd-mom-periscope": [
+  {
+   "old": "Apps can carry part of the load: RemindHer for the family list, FOCO for starting one stuck task, and shared calendars for the household schedule.",
+   "new": "Apps can carry part of the load: FOCO for starting one stuck task, and shared calendars like TimeTree or Cozi for the household schedule."
+  },
+  {
+   "old": "<tr><th scope=\"row\"><span class=\"cm-app\"><span><b>RemindHer</b><small>#1 pick</small></span></span></th><td>Sharing the family mental load with a partner</td><td>Free to start, with paid options</td></tr>\n",
+   "new": ""
+  },
+  {
+   "old": "<h3>1. RemindHer: best for the family mental load</h3>\n<p><a href=\"https://remindher.app/\" target=\"_blank\" rel=\"noopener\">RemindHer</a> is a shared family calendar and task app built around the invisible work of remembering everything for everyone. You can add tasks by voice, and they are shared with your partner or co-parent so the list is not only in your head.</p>\n<p>It also connects with Google Calendar, so family events can sit next to your own. Disclosure: RemindHer is made by the founder of FOCO, the app that publishes this site.</p>\n\n",
+   "new": ""
+  },
+  {
+   "old": "<h3>2. FOCO",
+   "new": "<h3>1. FOCO"
+  },
+  {
+   "old": "<h3>3. TimeTree",
+   "new": "<h3>2. TimeTree"
+  },
+  {
+   "old": "<h3>4. ",
+   "new": "<h3>3. "
+  },
+  {
+   "old": "<h3>5. ",
+   "new": "<h3>4. "
+  },
+  {
+   "old": "<p>It depends on the problem. RemindHer suits the shared family list, FOCO suits starting one task, and TimeTree or Cozi suit the household calendar.</p>",
+   "new": "<p>It depends on the problem. FOCO is best for starting a stuck task, TimeTree or Cozi for a shared household calendar, and Finch for gentle self-care.</p>"
+  },
+  {
+   "old": "\"text\":\"It depends on the problem. RemindHer suits the shared family list, FOCO suits starting one task, and TimeTree or Cozi suit the household calendar.\"",
+   "new": "\"text\":\"It depends on the problem. FOCO is best for starting a stuck task, TimeTree or Cozi for a shared household calendar, and Finch for gentle self-care.\""
+  }
+ ],
+ "household-planning-for-adhd": [
+  {
+   "old": " or the <a href=\"https://remindher.app/household-planning/\" target=\"_blank\" rel=\"noopener\">household planning guide at remindher</a>",
+   "new": ""
+  }
+ ],
+ "best-adhd-app": [
+  {
+   "old": "<li><strong>You run a household:</strong> <a href=\"https://remindher.app/\" target=\"_blank\" rel=\"noopener\">RemindHer</a> is a shared family calendar where you speak a task and it lands on everyone's schedule (<a href=\"https://www.tryfoco.com/family-calendar-apps-for-adhd-moms/\">family calendar apps</a>).</li>",
+   "new": "<li><strong>You run a household:</strong> a shared calendar means the family schedule doesn't live only in your head (<a href=\"https://www.tryfoco.com/family-calendar-apps-for-adhd-moms/\">family calendar apps</a>), and <a href=\"https://www.tryfoco.com/sweepy-app-review/\">Sweepy</a> splits the chores by room.</li>"
+  }
+ ],
+ "adhd-resources": [
+  {
+   "old": "Honest comparison of FOCO, RemindHer, Goblin Tools, Inflow, and Habitica. No affiliate spin.",
+   "new": "Honest comparisons of ADHD apps, sorted by the problem they solve. No affiliate spin."
+  },
+  {
+   "old": ">Best ADHD Apps for Adult Women</a>",
+   "new": ">Best ADHD Apps for Women</a>"
+  }
+ ]
+}
