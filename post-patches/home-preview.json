@@ -1,18 +1,6 @@
 [
   {
-    "old": "The ADHD task paralysis app</span>",
-    "new": "The ADHD task paralysis app for work</span>"
-  },
-  {
-    "old": "Kick-start your next task.",
-    "new": "Get to work, one tiny step at a time."
-  },
-  {
-    "old": "FOCO is an ADHD planner app built for task paralysis. It turns any task into one tiny step you can actually begin, then stays with you while you do it.",
-    "new": "FOCO is an ADHD planner app built for task paralysis at work. No setup, nothing to learn. Tell it what you're avoiding, get one tiny step you can start now, and FOCO stays with you while you work."
-  },
-  {
-    "old": "<span><b>7-day free trial</b> on the yearly plan</span></div> </div> <div class=\"hero-visual\">",
-    "new": "<span><b>7-day free trial</b> on the yearly plan</span><span><b>No setup.</b> No guilt when you miss a day.</span></div> </div> <div class=\"hero-visual\">"
+    "old": "Because your brain doesn't know where to begin.</span></p> </div></section>",
+    "new": "Because your brain doesn't know where to begin.</span></p> </div></section><section><div class=\"wrap center\"> <span class=\"eyebrow\">Tried every app already?</span> <h2 style=\"margin-top:16px !important\">You download a new task app.<br><span class=\"accent\">A week later, you stop opening it.</span></h2> <p style=\"max-width:640px !important;margin:22px auto 0 !important\">You add lists, colors and folders. The setup feels great. Then the reminders pile up, you miss a day, and opening the app starts to feel like guilt.</p> <p class=\"because\">FOCO has no setup and nothing to maintain. <span class=\"accent\">Tell it what you're avoiding, get one tiny step, start.</span></p> </div></section>"
   }
 ]
