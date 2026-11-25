@@ -1,6 +1,6 @@
 [
   {
-    "old": "src=\"https://www.tryfoco.com/wp-content/uploads/2026/11/foco-home-hero-woman.mp4\" poster=\"https://www.tryfoco.com/wp-content/uploads/2026/11/foco-home-hero-woman.jpg\"",
-    "new": "src=\"{{media:foco-home-hero-freelancer.mp4}}\" poster=\"{{media:foco-home-hero-freelancer.jpg}}\""
+    "old": "poster=\"https://www.tryfoco.com/wp-content/uploads/2026/11/foco-home-hero-freelancer.mp4\"",
+    "new": "poster=\"{{media:foco-home-hero-freelancer-poster.jpg}}\""
   }
 ]

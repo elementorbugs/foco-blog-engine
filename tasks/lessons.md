@@ -170,3 +170,5 @@ Pruned quarterly. Keep under 60 lines.
 
 - **A published review must show up in the /best-adhd-app/ Reviews tab the same day (Adi, 2026-11-09).** I published the Pomofocus review with `directory=none` and left the card to the daily 04:30 UTC refresh, so it was missing from the tab. Add the card to `app-directory.json` by hand (top of its tab, real desc, official icon under `apps`) and run `app-directory.yml` in the same step as publishing.
 - Write review JSON-LD compact (separators=(',',':')): create-post.js only spots an existing FAQPage as `"@type":"FAQPage"` with no spaces, so json.dumps defaults add a duplicate FAQPage (Cold Turkey #6055, 2026-11-09). Also: lint's live-posts.txt goes stale; refresh it from the sitemap before linting.
+
+- **upload-post-media.js finds existing media by file name without extension (2026-11-25).** A video and its poster named `x.mp4` + `x.jpg` collide: the jpg "reused" the mp4, so the homepage hero poster pointed at the video. Give every file in one upload a distinct base name (`x.mp4` + `x-poster.jpg`).
