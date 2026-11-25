@@ -3889,6 +3889,134 @@
         }
       },
       "note": "Noa suggest. New spoke under P1; check against /procrastination-vs-paralysis/ and /adhd-executive-function/ before writing."
+    },
+    {
+      "name": "Best budgeting apps for ADHD (list)",
+      "slug": "best-budgeting-apps-for-adhd",
+      "status": "proposed",
+      "proposed_on": "2026-11-25",
+      "revisit_after": null,
+      "keywords_us": {
+        "budgeting app for adhd": {
+          "volume": 720,
+          "sd": 24
+        },
+        "best budgeting app for adhd": {
+          "volume": 50,
+          "sd": 29
+        },
+        "budget app for adhd": {
+          "volume": 40,
+          "sd": 27
+        },
+        "best budget app for adhd": {
+          "volume": 40,
+          "sd": 30
+        }
+      },
+      "serp": "budgeting app for adhd (2026-11-25): AI overview, Quora DA93, Reddit r/ADHD, ryanmayercoaching DA14, video. No real list article ranks.",
+      "cannibalization": "gap-scan: no post covers budgeting apps; only incidental 'money'/'ADHD tax' mentions.",
+      "risk": "YMYL finance; report only listing facts and official prices, no advice. YNAB entry (not_proposed) noted an official 'budgeting with ADHD' page.",
+      "note": "List post. Ties to ADHD tax glossary term. Reddit not scanned (blocked in cloud)."
+    },
+    {
+      "name": "Best reminder apps for ADHD (list)",
+      "slug": "best-reminder-apps-for-adhd",
+      "status": "proposed",
+      "proposed_on": "2026-11-25",
+      "revisit_after": null,
+      "keywords_us": {
+        "reminder app for adhd": {
+          "volume": 110,
+          "sd": 25
+        },
+        "best reminder app for adhd": {
+          "volume": 70,
+          "sd": 24
+        }
+      },
+      "serp": "reminder app for adhd (collected 2026-09-19): Reddit, saner.ai DA33, sproutapp DA10, ADDitude DA80 (25-app roundup), mindoryapp DA13, Facebook, Play Store, add.org.",
+      "cannibalization": "gap-scan: no live post targets reminder apps; draft #2069 /visual-reminders-for-adhd/ (Post-its angle) has a near heading. FOCO and RemindHer both fit.",
+      "note": "List post; FOCO task reminders + RemindHer (dofollow). Reddit not scanned (blocked in cloud)."
+    },
+    {
+      "name": "Effecto",
+      "slug": "effecto-app-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-25",
+      "revisit_after": null,
+      "app_store": "https://apps.apple.com/app/id1617568819",
+      "us_ratings": "3.36 from 735 ratings (iTunes lookup 2026-11-25), updated 2026-11-19, seller MEDICAL SCORE UAB",
+      "keywords_us": {
+        "effecto app": {
+          "volume": 1300,
+          "sd": 29
+        },
+        "effecto app review": {
+          "volume": 880,
+          "sd": 30
+        },
+        "help effecto app": {
+          "volume": 140,
+          "sd": 27
+        },
+        "what is effecto app": {
+          "volume": 90,
+          "sd": 28
+        },
+        "effecto app cost": {
+          "volume": 50,
+          "sd": 27
+        },
+        "effecto app cancel subscription refund": {
+          "volume": 30,
+          "sd": 17
+        },
+        "effecto app cancel subscription": {
+          "volume": 30,
+          "sd": 25
+        },
+        "is effecto app free": {
+          "volume": 30,
+          "sd": 29
+        },
+        "effecto app reddit": {
+          "volume": 30,
+          "sd": 30
+        }
+      },
+      "serp": "effecto app review (2026-11-25): AI overview, Google Play, Trustpilot (74 pages of reviews), Reddit r/SuperProductReview. No independent review in top results (healthreporter.com seen in web search only).",
+      "cannibalization": "gap-scan: none; no heading collisions.",
+      "risk": "Symptom and mood tracker, ADHD is one listed use (ADHD symptom and medication tracking), not the core. Similar quiz-funnel/billing-complaint profile to Liven/Wisey reviews.",
+      "note": "Review questions ~1,200/mo. Reddit not scanned (blocked in cloud)."
+    },
+    {
+      "name": "Todait",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-25",
+      "revisit_after": "2027-02-01",
+      "note": "Study planner; 'todait' 210, 'todait app' 170 SD 26, no review questions."
+    },
+    {
+      "name": "Carly (AI ADHD assistant)",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-25",
+      "revisit_after": "2027-02-01",
+      "note": "'carly ai assistant' 10/mo."
+    },
+    {
+      "name": "Brite (britetodo)",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-25",
+      "revisit_after": "2027-02-01",
+      "note": "No search volume."
+    },
+    {
+      "name": "Mindory",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-25",
+      "revisit_after": "2027-02-01",
+      "note": "No search volume; ranks itself for reminder lists."
     }
   ]
 }
