@@ -18,7 +18,7 @@ for (const raw of fs.readFileSync(path.join(root, '.env'), 'utf8').split('\n')) 
 }
 const host = env.WP_HOST || 'tryfoco.com';
 const auth = 'Basic ' + Buffer.from(`${env.WP_USER}:${env.WP_APP_PASSWORD}`).toString('base64');
-const TYPES = { '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.pdf': 'application/pdf' };
+const TYPES = { '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.pdf': 'application/pdf', '.mp4': 'video/mp4' };
 
 const postFile = process.argv[2];
 const slug = path.basename(postFile).replace(/^post-/, '').replace(/\.html$/, '');
