@@ -4017,6 +4017,102 @@
       "proposed_on": "2026-11-25",
       "revisit_after": "2027-02-01",
       "note": "No search volume; ranks itself for reminder lists."
+    },
+    {
+      "name": "Unrot",
+      "slug": "unrot-app-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-26",
+      "revisit_after": null,
+      "app_store": "https://apps.apple.com/app/id6746537171",
+      "us_ratings": "4.67 from 57,123 ratings (iTunes lookup 2026-11-26), released 2025-06-04, updated 2026-11-26, seller Unrot OU, free with IAP",
+      "keywords_us": {
+        "unrot app": {
+          "volume": 320,
+          "sd": 27
+        },
+        "unrot app review": {
+          "volume": 70,
+          "sd": 29
+        },
+        "is unrot app free": {
+          "volume": 50,
+          "sd": 21
+        }
+      },
+      "serp": "unrot app review (Ubersuggest, collected 2026-09-24): AI overview, r/ADHD thread 'Anyone used the app unrot' #2, App Store reviews, TikTok (official), unrot.com, unrot.co (a different 'Unrot' AI-learning product, name collision), mwm.ai. No independent review.",
+      "cannibalization": "gap-scan: no post mentions Unrot; no heading collisions. Screen-time blockers covered by /best-app-blocker-apps/, /brainrot-app-review/, /screenzen-review/ (different apps).",
+      "note": "'Earn your screen time' blocker; 57k ratings in ~18 months = momentum. Review questions 120/mo. Reddit not scanned (blocked in cloud)."
+    },
+    {
+      "name": "Refocus (app blocker)",
+      "slug": "refocus-app-review",
+      "status": "proposed",
+      "proposed_on": "2026-11-26",
+      "revisit_after": null,
+      "app_store": "https://apps.apple.com/app/id1645639057",
+      "us_ratings": "4.75 from 11,986 ratings (iTunes lookup 2026-11-26), released 2022-09-22, updated 2026-11-18, seller Labi, LLC, free with IAP",
+      "keywords_us": {
+        "refocus app": {
+          "volume": 210,
+          "sd": 26
+        },
+        "refocus app blocker": {
+          "volume": 40,
+          "sd": 26
+        },
+        "refocus app blocker iphone": {
+          "volume": 30,
+          "sd": 18
+        },
+        "refocus app review": {
+          "volume": 20,
+          "sd": 13
+        },
+        "refocus app cost": {
+          "volume": 20,
+          "sd": 13
+        },
+        "is refocus app free": {
+          "volume": 10,
+          "sd": 5
+        },
+        "refocus app reddit": {
+          "volume": 10,
+          "sd": 13
+        }
+      },
+      "serp": "refocus app blocker (Ubersuggest, collected 2026-10-04): refocusapp.co DA14, App Store, Reddit r/iosapps (maker post), Zapier roundup DA81, TikTok, download sites, AppBlock. No independent review.",
+      "cannibalization": "gap-scan: no post covers Refocus; only generic 'app blocker' headings in /best-app-blocker-apps/ and /best-adhd-app/ (lexical, not the brand).",
+      "note": "Review questions + long brand ~130/mo, all SD <=26. Reddit not scanned (blocked in cloud)."
+    },
+    {
+      "name": "StudyStream",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-26",
+      "revisit_after": "2027-02-01",
+      "note": "Brand 4,400 but official site owns it; review questions ~0 ('studystream review' 0, pricing 10)."
+    },
+    {
+      "name": "TimeTree",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-26",
+      "revisit_after": "2027-02-01",
+      "note": "'timetree app' 1,900 SD32; 'timetree app review' 30; family calendar already covered by /family-calendar-apps-for-adhd-moms/."
+    },
+    {
+      "name": "Trello / ClickUp / Asana for ADHD",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-26",
+      "revisit_after": "2027-02-01",
+      "note": "'trello adhd' 30, 'asana adhd' 10, 'clickup adhd' 0."
+    },
+    {
+      "name": "Ebbi, ADHDaily, Attentli, Frend ADHD, GoblinX, ADHD Squad",
+      "status": "not_proposed",
+      "proposed_on": "2026-11-26",
+      "revisit_after": "2027-02-01",
+      "note": "No search volume in Ubersuggest."
     }
   ]
 }
