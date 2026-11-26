@@ -1,6 +1,18 @@
 [
   {
-    "old": "src=\"https://www.tryfoco.com/wp-content/uploads/2026/10/foco-home-snap.mp4\" poster=\"https://www.tryfoco.com/wp-content/uploads/2026/10/foco-home-snap.jpg\"",
-    "new": "src=\"{{media:foco-home-scan-v2.mp4}}\" poster=\"{{media:foco-home-scan-v2-poster.jpg}}\""
+    "old": "<div class=\"demo-card\"><div class=\"phone vid\"><video src=\"https://www.tryfoco.com/wp-content/uploads/2026/10/foco-home-say.mp4\" poster=\"https://www.tryfoco.com/wp-content/uploads/2026/10/foco-home-say.jpg\" autoplay muted loop playsinline>",
+    "new": "<div class=\"demo-card\"><div class=\"phone vid\"><video data-lazy src=\"https://www.tryfoco.com/wp-content/uploads/2026/10/foco-home-say.mp4\" poster=\"https://www.tryfoco.com/wp-content/uploads/2026/10/foco-home-say.jpg\" preload=\"none\" muted loop playsinline>"
+  },
+  {
+    "old": "<div class=\"demo-card\"><div class=\"phone vid\"><video src=\"https://www.tryfoco.com/wp-content/uploads/2026/11/foco-home-scan-v2.mp4\" poster=\"https://www.tryfoco.com/wp-content/uploads/2026/11/foco-home-scan-v2-poster.jpg\" autoplay muted loop playsinline>",
+    "new": "<div class=\"demo-card\"><div class=\"phone vid\"><video data-lazy src=\"{{media:foco-home-scan-v3.mp4}}\" poster=\"{{media:foco-home-scan-v3-poster.jpg}}\" preload=\"none\" muted loop playsinline>"
+  },
+  {
+    "old": "<div class=\"demo-card\"><div class=\"phone vid\"><video src=\"https://www.tryfoco.com/wp-content/uploads/2026/10/foco-home-done.mp4\" poster=\"https://www.tryfoco.com/wp-content/uploads/2026/10/foco-home-done.jpg\" autoplay muted loop playsinline>",
+    "new": "<div class=\"demo-card\"><div class=\"phone vid\"><video data-lazy src=\"https://www.tryfoco.com/wp-content/uploads/2026/10/foco-home-done.mp4\" poster=\"https://www.tryfoco.com/wp-content/uploads/2026/10/foco-home-done.jpg\" preload=\"none\" muted loop playsinline>"
+  },
+  {
+    "old": "on screen. Just this step.</p></div> </div> </div></section>",
+    "new": "on screen. Just this step.</p></div> </div> </div></section><script id=\"fh-lazy-video\">(function(){function go(){var vs=[].slice.call(document.querySelectorAll(\".fh video[data-lazy]\"));if(!vs.length)return;if(!(\"IntersectionObserver\" in window)){vs.forEach(function(v){v.play().catch(function(){})});return;}var o=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){v.play().catch(function(){})}else{v.pause()}})},{rootMargin:\"300px 0px\"});vs.forEach(function(v){o.observe(v)})}if(document.readyState===\"loading\")document.addEventListener(\"DOMContentLoaded\",go);else go();})();</script>"
   }
 ]
